@@ -12,41 +12,14 @@ from sklearn.manifold import TSNE
 import plotly.graph_objects as go
 
 
-
-def load_documents(base_path):
-    text_loader_kwargs = {'encoding': 'utf-8'}
-    documents = []
-
-    # Iterate over disease folders
-    disease_folders = glob.glob(base_path)
-
-    for disease_folder in disease_folders:
-        disease_name = os.path.basename(os.path.dirname(disease_folder))  # Extract disease name
-        country_name = os.path.basename(disease_folder)  # Extract country name
-        
-        # Load documents from country folders
-        loader = DirectoryLoader(disease_folder, glob="**/*.txt", loader_cls=TextLoader, loader_kwargs=text_loader_kwargs)
-        folder_docs = loader.load()
-        
-        for doc in folder_docs:
-            doc.metadata["disease"] = disease_name
-            doc.metadata["country"] = country_name
-            documents.append(doc)
-
-    print(f"Loaded {len(documents)} documents before chunking.")
-
-    return documents
-
-
-
-def chuncker(base_path, chunck_size, chunck_overlap):
-    # Load the documents
-    documents = load_documents(base_path)
-
-    # Use improved text splitter
+def chunker(documents, chunk_size=1000, chunk_overlap=200):
+    """
+    Splits a list of Document objects into smaller chunks using the
+    RecursiveCharacterTextSplitter. This is most useful for longer texts.
+    """
     text_splitter = RecursiveCharacterTextSplitter(
-        chunk_size=chunck_size, 
-        chunk_overlap=chunck_overlap, 
+        chunk_size=chunk_size,
+        chunk_overlap=chunk_overlap,
         separators=["\n", ".", "-", ","]
     )
 
@@ -54,31 +27,28 @@ def chuncker(base_path, chunck_size, chunck_overlap):
     chunks = text_splitter.split_documents(documents)
 
     print(f"Total chunks after chunking: {len(chunks)}")
-    
-    # Find and print metadata
-    doc_types = set(chunk.metadata['disease'] for chunk in chunks)
-    countries = set(chunk.metadata['country'] for chunk in chunks)
-
-    print(f"Document types: {', '.join(doc_types)}")
-    print(f"Countries: {', '.join(countries)}")
-    
     return chunks
 
 
 
-def create_vectorstore(chunks, db_name="vector_db"):
-
-    # Ensure we have write permissions
+def create_vectorstore(docs, db_name="pubmed_vector_db"):
+    """
+    Creates (and persists) a local Chroma vector store given a list of Document objects.
+    """
+    # Ensure we have a clean directory
     if os.path.exists(db_name):
-        shutil.rmtree(db_name)  # Force delete previous DB
-
+        shutil.rmtree(db_name)
     os.makedirs(db_name, exist_ok=True)
 
-    # Embeddings
     embeddings = OpenAIEmbeddings()
 
-    # Create vectorstore
-    vectorstore = Chroma.from_documents(documents=chunks, embedding=embeddings, persist_directory=db_name)
+    # Create the vectorstore with docs
+    vectorstore = Chroma.from_documents(
+        documents=docs, 
+        embedding=embeddings, 
+        persist_directory=db_name
+    )
+    vectorstore.persist()
     print(f"Vectorstore created with {vectorstore._collection.count()} documents")
 
     return vectorstore
@@ -86,33 +56,65 @@ def create_vectorstore(chunks, db_name="vector_db"):
 
 
 
-def visualize_vectorstore(collection):
-    result = collection.get(include=['embeddings', 'documents', 'metadatas'])
-    vectors = np.array(result['embeddings'])
-    documents = result['documents']
-    doc_types = [metadata['country'] for metadata in result['metadatas']]
-    colors = [['blue', 'green', 'red', 'orange',"yellow"][['SE', 'NL', 'DE', 'EN', "EU"].index(t)] for t in doc_types]
+import numpy as np
+from sklearn.manifold import TSNE
+import plotly.graph_objects as go
 
-    # Reduce the dimensionality of the vectors to 2D using t-SNE
+def visualize_vectorstore(vectorstore):
+    """
+    Visualize the embeddings in a Chroma vector store by reducing them to 2D 
+    with t-SNE and color-coding the points by PublicationYear (or another metadata).
+    
+    Requirements:
+      - pip install scikit-learn plotly
+      - vectorstore must be a Chroma object with embedded documents
+    """
+    # 1. Retrieve all embeddings, documents, and metadata
+    result = vectorstore._collection.get(include=["embeddings", "documents", "metadatas"])
+    vectors = np.array(result["embeddings"])
+    documents = result["documents"]
+    metadata_list = result["metadatas"]
+    
+    if len(vectors) == 0:
+        print("No embeddings found in this vector store.")
+        return
+    
+    # 2. Extract a chosen metadata field for color-coding. 
+    #    We'll use 'PublicationYear' if it exists, otherwise 'Unknown'.
+    doc_years = [md.get("PublicationYear", "Unknown") for md in metadata_list]
+    
+    # 3. Assign a color to each unique year
+    unique_years = sorted(set(doc_years))
+    color_palette = ['blue', 'green', 'red', 'orange', 'yellow', 
+                     'purple', 'brown', 'pink', 'gray', 'cyan']
+    color_map = {}
+    for i, year in enumerate(unique_years):
+        color_map[year] = color_palette[i % len(color_palette)]
+    
+    colors = [color_map[y] for y in doc_years]
+    
+    # 4. Use t-SNE to reduce vector dimensionality to 2D
     tsne = TSNE(n_components=2, random_state=42)
     reduced_vectors = tsne.fit_transform(vectors)
-
-    # Create the 2D scatter plot
+    
+    # 5. Build the scatter plot
+    #    The hover text shows the publication year and first 100 characters of the document text.
     fig = go.Figure(data=[go.Scatter(
         x=reduced_vectors[:, 0],
         y=reduced_vectors[:, 1],
         mode='markers',
-        marker=dict(size=5, color=colors, opacity=0.8),
-        text=[f"Type: {t}<br>Text: {d[:100]}..." for t, d in zip(doc_types, documents)],
+        marker=dict(size=6, color=colors, opacity=0.8),
+        text=[f"Year: {y}<br>Text: {doc[:100]}..." 
+              for y, doc in zip(doc_years, documents)],
         hoverinfo='text'
     )])
-
+    
     fig.update_layout(
         title='2D Chroma Vector Store Visualization',
-        scene=dict(xaxis_title='x', yaxis_title='y'),
         width=800,
         height=600,
         margin=dict(r=20, b=10, l=10, t=40)
     )
-
+    
     fig.show()
+

@@ -1,4 +1,5 @@
 from Bio import Entrez, Medline  # Importing necessary modules for PubMed access and parsing.
+import re
 
 """
 This script interacts with the PubMed database to retrieve and process scientific articles based on a specified search query. 
@@ -7,43 +8,43 @@ and extract key details such as the title, abstract, DOI, and authors. The resul
 """
 
 def fetch_pubmed_articles(query, email, retmax=10):
-    """
-    Searches PubMed for articles matching the given query and fetches detailed information.
+    Entrez.email = email
     
-    Parameters:
-        query (str): The search query string to find relevant articles.
-        email (str): The user's email address, required by NCBI for API access.
-        retmax (int): The maximum number of articles to retrieve (default is 10).
-    
-    Returns:
-        dict: A dictionary where each key is a PubMed ID (PMID) and the value is another dictionary 
-              containing details about the corresponding article (title, abstract, DOI, authors).
-    """
-    Entrez.email = email  # Set email for NCBI API access.
-
-    # Search PubMed with the query and retrieve up to `retmax` results.
+    # 1. Esearch
     handle = Entrez.esearch(db="pubmed", term=query, retmax=retmax)
-    search_record = Entrez.read(handle)  # Parse search results.
+    search_record = Entrez.read(handle)
     handle.close()
-
-    # Get the list of PubMed IDs from the search results.
+    
     pubmed_ids = search_record["IdList"]
-
-    # Fetch detailed article records in MEDLINE format for the retrieved IDs.
+    if not pubmed_ids:
+        return {}
+    
+    # 2. Efetch in MEDLINE format
     handle = Entrez.efetch(db="pubmed", id=pubmed_ids, rettype="medline", retmode="text")
-    records = list(Medline.parse(handle))  # Parse MEDLINE records into a list of dictionaries.
+    records = list(Medline.parse(handle))
     handle.close()
-
-    # Create a dictionary with PMIDs as keys and selected article details as values.
-    articles_dict = {
-        record["PMID"]: {
-            "PMID": record["PMID"],
-            "Title": record.get("TI", ""),  # Title of the article.
-            "Abstract": record.get("AB", ""),  # Abstract text.
-            "DOI": record.get("LID", ""),  # Digital Object Identifier.
-            "Authors": record.get("AU", [])  # List of authors.
+    
+    # 3. Build articles_dict
+    articles_dict = {}
+    for record in records:
+        pmid = record.get("PMID")
+        if not pmid:
+            continue
+        
+        # Extract publication year from DP
+        dp = record.get("DP", "")
+        pub_year = None
+        match = re.match(r"(\d{4})", dp)
+        if match:
+            pub_year = match.group(1)
+        
+        articles_dict[pmid] = {
+            "PMID": pmid,
+            "Title": record.get("TI", ""),
+            "Abstract": record.get("AB", ""),
+            "DOI": record.get("LID", ""),
+            "Authors": record.get("AU", []),
+            "PublicationYear": pub_year  # Add the year as metadata
         }
-        for record in records if "PMID" in record  # Ensure 'PMID' is present in the record.
-    }
 
     return articles_dict
