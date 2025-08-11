@@ -8,10 +8,3 @@ torch
 transformers
 langdetect
 huggingface_hub
-langdetect
-typing
-glob
-json
-shutil
-os
-
