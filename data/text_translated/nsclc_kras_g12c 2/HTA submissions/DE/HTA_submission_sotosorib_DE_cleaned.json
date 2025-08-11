@@ -403,22 +403,16 @@
     }
   },
   "_translation_metadata": {
-    "processing_timestamp": "2025-08-11T11:40:18.650499",
+    "processing_timestamp": "2025-08-11T12:17:16.125719",
     "source_file": "HTA_submission_sotosorib_DE_cleaned.json",
     "detected_language": "en",
     "was_translation_needed": false,
-    "model_attempts": [],
-    "final_model_used": null,
-    "retranslation_occurred": false,
-    "quality_comparison": {},
-    "final_quality_scores": {},
-    "chunks_translated": 0,
-    "chunks_preserved_english": 0,
-    "table_chunks_processed": 0,
-    "total_processing_time_seconds": 0.013039,
-    "translation_strategy": "simplified_medical_optimized",
-    "medical_preservation_used": "whitelist_approach",
+    "translation_strategy": "nllb_translation",
+    "max_input_tokens": 480,
+    "target_chunk_tokens": 300,
+    "overlap_tokens": 40,
     "table_content_detected": 9,
-    "translation_decision": "no_translation_needed_english"
+    "translation_decision": "no_translation_needed_english",
+    "total_processing_time_seconds": 0.013427
   }
 }
