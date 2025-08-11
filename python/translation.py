@@ -83,9 +83,9 @@ class Translator:
 
         # Improved chunking parameters for medical documents
         self.chunk_params = {
-            'max_chars': 2500,
-            'overlap_chars': 150,
-            'min_chunk_chars': 300,
+            'max_chars': 4000,
+            'overlap_chars': 200,
+            'min_chunk_chars': 500,
         }
 
         # Table detection patterns
@@ -184,22 +184,52 @@ class Translator:
         return protected_text
 
     def restore_medical_terms(self, text: str, term_db: Dict[str, str]) -> str:
-        """Restore terms with validation."""
+        """Restore terms with validation and better error handling."""
         if not text or not term_db:
             return text
             
         restored_text = text
         unreplaced_count = 0
         
+        # Debug: log what we're trying to restore
+        if term_db:
+            print(f"      🔧 Restoring {len(term_db)} medical terms: {list(term_db.keys())}")
+        
         for term_id, term in term_db.items():
             if term_id in restored_text:
                 restored_text = restored_text.replace(term_id, term)
+                print(f"      ✓ Restored {term_id} -> {term}")
             else:
                 unreplaced_count += 1
+                print(f"      ⚠️  Failed to find {term_id} (should be '{term}') in text")
+                
+                # Try partial matches with spaces/punctuation variations
+                variations = [
+                    f" {term_id} ", f"{term_id}.", f"{term_id},", f"{term_id};", 
+                    f"({term_id})", f"[{term_id}]", f'"{term_id}"'
+                ]
+                
+                found_variation = False
+                for variation in variations:
+                    if variation in restored_text:
+                        restored_text = restored_text.replace(variation, f" {term} " if variation.startswith(" ") else term)
+                        print(f"      ✓ Restored variation {variation} -> {term}")
+                        found_variation = True
+                        unreplaced_count -= 1
+                        break
+                
+                if not found_variation:
+                    # Try case-insensitive search as last resort
+                    import re
+                    pattern = re.compile(re.escape(term_id), re.IGNORECASE)
+                    if pattern.search(restored_text):
+                        restored_text = pattern.sub(term, restored_text)
+                        print(f"      ✓ Restored case-insensitive {term_id} -> {term}")
+                        unreplaced_count -= 1
         
         # Log if restoration failed
         if unreplaced_count > 0:
-            print(f"      ⚠️  {unreplaced_count} medical terms failed to restore")
+            print(f"      ⚠️  {unreplaced_count} medical terms failed to restore completely")
         
         return restored_text
 
@@ -484,7 +514,7 @@ class Translator:
         return available_models
 
     def load_nllb_model(self, model_name: str, language: str) -> Optional[Any]:
-        """Load NLLB model."""
+        """Load NLLB model with enforced language codes."""
         try:
             if self.device.startswith("cuda"):
                 torch.cuda.empty_cache()
@@ -500,24 +530,50 @@ class Translator:
             if self.device.startswith("cuda"):
                 model = model.to(self.device)
 
+            # Get source language code from mapping
+            src_lang_code = self.nllb_lang_mapping.get(language, language)
+            tgt_lang_code = 'eng_Latn'
+
             def nllb_translate(text, generation_params=None):
                 try:
-                    tgt_lang = 'eng_Latn'
-                    max_input_length = 600
+                    max_input_length = 1000
+                    
+                    # Enforce source language on tokenizer
+                    try:
+                        tokenizer.src_lang = src_lang_code
+                    except Exception as src_lang_error:
+                        print(f"      Warning: Could not set src_lang: {str(src_lang_error)[:30]}")
                     
                     inputs = tokenizer(text, return_tensors="pt", truncation=True, max_length=max_input_length)
                     if self.device.startswith("cuda"):
                         inputs = {k: v.to(self.device) for k, v in inputs.items()}
 
+                    # Base generation parameters with language enforcement
                     gen_kwargs = {
-                        'forced_bos_token_id': tokenizer.convert_tokens_to_ids(tgt_lang),
-                        'max_length': 400,
+                        'max_length': 1024,
+                        'min_new_tokens': 20,
                         'num_beams': 4,
                         'length_penalty': 1.0,
                         'do_sample': False,
                         'no_repeat_ngram_size': 3,
-                        'repetition_penalty': 1.2,
+                        'repetition_penalty': 1.1,
                     }
+
+                    # Try to enforce target language
+                    try:
+                        forced_bos_id = tokenizer.convert_tokens_to_ids(tgt_lang_code)
+                        gen_kwargs['forced_bos_token_id'] = forced_bos_id
+                    except Exception as bos_error:
+                        print(f"      Warning: Could not set forced_bos_token_id: {str(bos_error)[:30]}")
+
+                    # Override with any provided generation parameters
+                    if generation_params:
+                        # Filter to only include valid generation parameters
+                        valid_gen_params = {k: v for k, v in generation_params.items() 
+                                          if k in ['max_length', 'min_new_tokens', 'num_beams', 
+                                                  'length_penalty', 'do_sample', 'no_repeat_ngram_size', 
+                                                  'repetition_penalty', 'temperature', 'top_p', 'top_k']}
+                        gen_kwargs.update(valid_gen_params)
 
                     with torch.no_grad():
                         translated_tokens = model.generate(**inputs, **gen_kwargs)
@@ -526,10 +582,10 @@ class Translator:
                     return [{'translation_text': translation}]
 
                 except Exception as e:
-                    print(f"      NLLB translation error: {str(e)[:50]}")
+                    print(f"      NLLB translation error: {str(e)}")
                     return [{'translation_text': text}]
 
-            print(f"    ✓ NLLB model loaded successfully on {self.device}")
+            print(f"    ✓ NLLB model loaded successfully on {self.device} with language codes: {src_lang_code} -> {tgt_lang_code}")
             return nllb_translate
 
         except Exception as e:
@@ -587,29 +643,31 @@ class Translator:
             chunks = self.adaptive_chunk_for_translation(protected_text)
             
             if len(chunks) == 1:
-                # Single chunk translation
+                # Single chunk translation with optimized parameters
                 gen_params = {
-                    'max_length': 600,
-                    'truncation': True,
+                    'max_length': 1024,
+                    'min_new_tokens': 30,
+                    'num_beams': 4,
+                    'length_penalty': 1.0,
                     'no_repeat_ngram_size': 3,
                     'repetition_penalty': 1.1,
                     'do_sample': False,
-                    'num_beams': 4,
                 }
                 
                 result = translator(protected_text, generation_params=gen_params)
                 translated_text = result[0]['translation_text']
             else:
-                # Multi-chunk translation
+                # Multi-chunk translation with consistent parameters
                 translated_chunks = []
                 for chunk in chunks:
                     gen_params = {
-                        'max_length': 500,
-                        'truncation': True,
+                        'max_length': 800,
+                        'min_new_tokens': 25,
+                        'num_beams': 4,
+                        'length_penalty': 1.0,
                         'no_repeat_ngram_size': 3,
                         'repetition_penalty': 1.1,
                         'do_sample': False,
-                        'num_beams': 4,
                     }
                     
                     result = translator(chunk, generation_params=gen_params)
@@ -658,7 +716,7 @@ class Translator:
         english_count = 0
         table_count = 0
         
-        print(f"    Processing {total_chunks} chunks with simplified medical term preservation...")
+        print(f"    Processing {total_chunks} chunks with enforced language codes...")
         
         for i, chunk in enumerate(translated_data['chunks']):
             if i % 20 == 0 or i == total_chunks - 1:
@@ -774,7 +832,7 @@ class Translator:
             "chunks_preserved_english": 0,
             "table_chunks_processed": 0,
             "total_processing_time_seconds": 0,
-            "translation_strategy": "simplified_medical_optimized",
+            "translation_strategy": "enforced_language_codes",
             "medical_preservation_used": "whitelist_approach",
             "table_content_detected": sum(1 for chunk in data.get('chunks', []) 
                                         if self.is_table_content(chunk.get('text', '')))
@@ -818,7 +876,7 @@ class Translator:
             return
 
         # Translate document
-        print(f"  🎯 Starting translation with available models")
+        print(f"  🎯 Starting translation with enforced language codes")
         final_translation, final_quality, translation_stats = self.translate_document_with_tier(
             data, document_language, 1
         )
@@ -890,13 +948,13 @@ class Translator:
 
     def translate_documents(self):
         """Main translation method with total runtime tracking."""
-        print("🚀 Starting improved medical document translation...")
+        print("🚀 Starting enhanced medical document translation...")
         print("📋 Translation Strategy:")
-        print("   • Simplified medical term preservation with whitelist")
-        print("   • Improved chunking with larger sizes and better boundaries")
-        print("   • Enhanced quality assessment with placeholder detection")
-        print("   • facebook/nllb-200-3.3B as primary model with fallbacks")
-        print("   • Better English quality validation")
+        print("   • Enforced source and target language codes for each translation call")
+        print("   • Improved beam search with min_new_tokens to prevent copying")
+        print("   • facebook/nllb-200-3.3B as primary model with optimized decoding")
+        print("   • Enhanced medical term preservation with whitelist approach")
+        print("   • Better quality assessment with placeholder detection")
 
         # Start total runtime tracking
         self.total_translation_start_time = datetime.now()
@@ -941,13 +999,13 @@ class Translator:
         total_runtime_hours = total_runtime_minutes / 60
 
         # Summary with runtime information
-        print(f"\n🎉 Improved Medical Translation Complete!")
+        print(f"\n🎉 Enhanced Medical Translation Complete!")
         print(f"📊 Summary:")
         print(f"   • Total files processed: {total_files}")
         print(f"   • English chunks preserved: {self.english_chunks_preserved}")
         print(f"   • Chunks translated: {self.chunks_translated}")
-        print(f"   • Simplified medical term preservation used")
-        print(f"   • Improved chunking and quality assessment applied")
+        print(f"   • Enforced language codes used to prevent text copying")
+        print(f"   • Enhanced beam search with min_new_tokens applied")
         print(f"\n⏱️  Runtime Summary:")
         print(f"   • Start time: {self.total_translation_start_time.strftime('%Y-%m-%d %H:%M:%S')}")
         print(f"   • End time: {total_translation_end_time.strftime('%Y-%m-%d %H:%M:%S')}")
