@@ -1,0 +1,73 @@
+{
+  "doc_id": "Determina_33-2024_Lumykras",
+  "created_date": "2024",
+  "country": "IT",
+  "source_type": "hta_submission",
+  "chunks": [
+    {
+      "heading": "",
+      "text": "AG FA DET Ricl dell (Det (GU Vi reca cor modi l'Ag disp Serv Vi salu dell sull farm sett nove genn Mini pubb genn Vi dell pubb Gazz GENZIA ITALIANA DEL ARMACO TERMINAT 17 May 2024 classification of the medicinal product for human use Lumykras, within the meaning of Article 8 (10) of the Law of 24 December 1993, No 537. which terminates at No 33/2024). (24A02603) U No 121 of 25-5-2024)",
+      "start_page": 1,
+      "end_page": 1
+    },
+    {
+      "heading": "Article 48 of Decree-Law No 269 of 30 September 2003 provides that the President of the Republic may, by means of a letter of formal notice,",
+      "text": "Urgent provisions to facilitate the development and the reorientation of public finances, converted, with amendments, into Decree No 2001/83/EC of the Italian Parliament of 20 December 2003 on the establishment of a European Medicines Agency and, in particular, the reclassification of Article 5 of Regulation No V/CE of the European Parliament and of the Council of 24 September 2004 amending Directive 2001/84/EC on the reimbursement of medical expenses incurred by medicinal products for general medical use and reclassifying Articles 5 and 6 of Directive 2001/82/EC of 20 October 2003 establishing a European medicines agency and laying down a procedure for the negotiation of the price for products reimbursed by the national public health service between the Agency and manufacturers;  Law of 13 April 2004, No 245 of the Minister of Health, in consultation with the Ministers of the Public Service and the Economy and Finance, recasting Article 4 of the Commission Regulation (EC) No 1348/2000 amending, with the amendments made by Decree of the President of the Gazzetta V/C of the Parliament of 24 December 2012 amending Regulation No 138/2024 of the Ministerial Council of the Republic of 20 September 2014 amending by means of the Decree, with modifications, with references, into Law No 326/2021/EC, with regard to Regulation No. 158, recasting Urgent measures to promote the development of the country by means of a higher level of health protection, converted, with amendments, in the law of 8 November 2012, no. 189, and subsequent amendments and integrations; having regard to article 17 of law 5 August 2022, no. 118, reclassifying Annual Law for the Market and Competition 2021; Having regard to the decision AIFA of 3 July 2006, concerning List of medicinal products of class a) reimbursable by the National Health Service (SSN) pursuant to article 48, paragraph 5, letter c), of the central decree-law of 30 September 2003, no. 269, converting, with modifications, in law 24 November 2003, No. 326 (Prontuario farmaceutico nazionale 2006) converted from the ex-CD/SVD/PVC to the exclusive, exclusive and partial reimbursement of medical expenses for the purpose of the provision of the services of the European Union, with effect from 24.12.2021 to 24.20.2025, with the exclusion of the reimbursed part of the excess of the medical service of the C/C/PVD/C with effect for the purposes of the monthly repayment of the 24th monthly payment of the Exemption of the 120/22020203 monthly ex-exemption from the medical fee of the Medical Service of the Council of the EU, with an ex-C/CVDC/H/P, with a refund of the amount of €180.0203 with effect in the number of the sums, withdrawn, with changes, with the end of the seats of the 12 months of the original, withdrawing of the 2012/2020/2020 C/P/PVIC/C, with ex-S/C. For the purpose of prescribing and dispensing the medicinal product, physicians and pharmacists associated with the user centres specifically identified by the regions shall complete the computerized data collection form available for access through the institutional website of AIFA, at the following web address Physicians and Pharmacists entitled to access the MED TERM003 Monitoring Register shall prescribe and dispense the medicine in accordance with the eligibility and prescriptive suitability criteria set out in the documentation available for consultation on the MED-TERM000 portal.",
+      "start_page": 1,
+      "end_page": 5
+    }
+  ],
+  "_translation_metadata": {
+    "processing_timestamp": "2025-08-11T09:45:10.626947",
+    "source_file": "Determina_33-2024_Lumykras_cleaned.json",
+    "detected_language": "it",
+    "was_translation_needed": true,
+    "model_attempts": [
+      {
+        "model_loaded": true,
+        "model_name": "facebook/nllb-200-3.3B",
+        "processing_time_seconds": 90.970535,
+        "chunks_found": true,
+        "total_chunks": 2,
+        "chunks_translated": 3,
+        "chunks_english": 0,
+        "table_chunks_processed": 0,
+        "quality_scores": {
+          "overall": 0.7875,
+          "english_quality": 0.75,
+          "medical_preservation": 0.6,
+          "has_placeholders": 0.0,
+          "length_score": 0.75,
+          "chunk_count": 2
+        }
+      }
+    ],
+    "final_model_used": "facebook/nllb-200-3.3B",
+    "retranslation_occurred": false,
+    "quality_comparison": {},
+    "final_quality_scores": {
+      "overall": 0.7875,
+      "english_quality": 0.75,
+      "medical_preservation": 0.6,
+      "has_placeholders": 0.0,
+      "length_score": 0.75,
+      "chunk_count": 2
+    },
+    "chunks_translated": 2,
+    "chunks_preserved_english": 1,
+    "table_chunks_processed": 1,
+    "total_processing_time_seconds": 97.239294,
+    "translation_strategy": "enforced_language_codes",
+    "medical_preservation_used": "whitelist_approach",
+    "table_content_detected": 0,
+    "models_available": true,
+    "available_models": [
+      "facebook/nllb-200-3.3B",
+      "facebook/nllb-200-1.3B",
+      "facebook/nllb-200-distilled-1.3B",
+      "facebook/nllb-200-distilled-600M"
+    ],
+    "translation_decision": "translation_completed",
+    "processing_completed_timestamp": "2025-08-11T09:46:47.866247"
+  }
+}
