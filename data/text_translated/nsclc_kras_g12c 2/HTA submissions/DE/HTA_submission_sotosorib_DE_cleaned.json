@@ -403,7 +403,7 @@
     }
   },
   "_translation_metadata": {
-    "processing_timestamp": "2025-08-11T12:17:16.125719",
+    "processing_timestamp": "2025-08-11T13:42:01.650049",
     "source_file": "HTA_submission_sotosorib_DE_cleaned.json",
     "detected_language": "en",
     "was_translation_needed": false,
@@ -413,6 +413,6 @@
     "overlap_tokens": 40,
     "table_content_detected": 9,
     "translation_decision": "no_translation_needed_english",
-    "total_processing_time_seconds": 0.013427
+    "total_processing_time_seconds": 0.013444
   }
 }

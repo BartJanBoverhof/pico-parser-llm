@@ -1,17 +1,3 @@
-import os
-import re
-import json
-import shutil
-import gc
-import torch
-from datetime import datetime
-from typing import Optional, List, Dict, Any, Tuple
-from langdetect import detect
-from transformers import pipeline, AutoModelForSeq2SeqLM, AutoTokenizer
-import copy
-import math
-from collections import Counter
-
 class Translator:
 
     def __init__(self, input_dir, output_dir):
@@ -115,6 +101,7 @@ class Translator:
         self.current_translator = None
         self.current_tokenizer = None
         self.current_language = None
+        self.current_document_language = None
 
     def count_tokens_accurately(self, text: str) -> int:
         if not text:
@@ -789,23 +776,40 @@ class Translator:
             return None
 
     def is_english_chunk(self, text: str) -> bool:
-        if not text or len(text.strip()) < 10:
+        if not text or not text.strip():
             return True
 
-        text_lower = text.lower()
-        english_words = [
-            ' the ', ' and ', ' of ', ' to ', ' a ', ' in ', ' is ', ' it ', ' you ', ' that ',
-            ' he ', ' was ', ' for ', ' on ', ' are ', ' as ', ' with ', ' his ', ' they '
-        ]
+        t = text.strip()
 
-        english_count = sum(1 for word in english_words if word in f' {text_lower} ')
-        total_words = len(text.split())
+        alpha_chars = re.findall(r'[A-Za-z]', t)
+        if len(alpha_chars) < 2:
+            return True
 
-        if total_words > 5:
-            english_ratio = english_count / total_words
-            return english_ratio > 0.1
+        try:
+            try:
+                from langdetect import detect_langs as _detect_langs
+            except Exception:
+                _detect_langs = None
 
-        return False
+            if _detect_langs is not None:
+                langs = _detect_langs(t)
+                en_prob = next((l.prob for l in langs if l.lang == 'en'), 0.0)
+                doc_lang = self.current_document_language
+                doc_prob = next((l.prob for l in langs if l.lang == doc_lang), 0.0) if doc_lang else 0.0
+
+                if doc_lang and doc_lang != 'en':
+                    return en_prob >= 0.90 and en_prob >= doc_prob + 0.20
+                else:
+                    return en_prob >= 0.85
+            else:
+                lang = detect(t)
+                if self.current_document_language and self.current_document_language != 'en':
+                    return lang == 'en'
+                return lang == 'en'
+        except Exception:
+            if self.current_document_language and self.current_document_language != 'en':
+                return False
+            return True
 
     def check_model_availability(self, model_name: str) -> bool:
         try:
@@ -833,9 +837,16 @@ class Translator:
 
             self.current_tokenizer = tokenizer
 
+            src_lang_code = self.nllb_lang_mapping.get(language)
+            tgt_lang_code = self.nllb_lang_mapping.get('en', 'eng_Latn')
+            if src_lang_code:
+                try:
+                    tokenizer.src_lang = src_lang_code
+                except Exception:
+                    pass
+
             def nllb_translate(text, generation_params=None):
                 try:
-                    tgt_lang = 'eng_Latn'
                     max_input_length = self.max_input_tokens
 
                     inputs = tokenizer(text, return_tensors="pt", truncation=True, max_length=max_input_length)
@@ -846,7 +857,7 @@ class Translator:
                     output_max_length = min(512, max(200, int(input_length * 1.8)))
 
                     gen_kwargs = {
-                        'forced_bos_token_id': tokenizer.convert_tokens_to_ids(tgt_lang),
+                        'forced_bos_token_id': tokenizer.convert_tokens_to_ids(tgt_lang_code),
                         'max_length': output_max_length,
                         'num_beams': 4,
                         'length_penalty': 1.0,
@@ -974,10 +985,12 @@ class Translator:
         print(f"  📝 Translating document")
 
         translation_start_time = datetime.now()
+        self.current_document_language = language
 
         translator = self.load_translator_for_language(language)
         if not translator:
             print(f"    ✗ No translator available")
+            self.current_document_language = None
             return data, {'overall': 0.0}, {
                 'model_loaded': False,
                 'processing_time_seconds': 0,
@@ -988,6 +1001,7 @@ class Translator:
 
         if 'chunks' not in translated_data:
             print(f"    No chunks found in document")
+            self.current_document_language = None
             return translated_data, {'overall': 0.0}, {
                 'model_loaded': True,
                 'processing_time_seconds': (datetime.now() - translation_start_time).total_seconds(),
@@ -1055,6 +1069,7 @@ class Translator:
             'quality_scores': quality_scores
         }
 
+        self.current_document_language = None
         return translated_data, quality_scores, translation_metadata
 
     def clear_translator(self):
