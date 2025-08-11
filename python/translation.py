@@ -53,45 +53,13 @@ class Translator:
             ]
         }
 
-        # Model tiers - favor tier 2 for medical documents
-        self.model_tiers = {
-            1: {
-                'helsinki_models': {
-                    'fr': 'Helsinki-NLP/opus-mt-fr-en',
-                    'de': 'Helsinki-NLP/opus-mt-de-en',
-                    'es': 'Helsinki-NLP/opus-mt-es-en',
-                    'it': 'Helsinki-NLP/opus-mt-it-en',
-                    'nl': 'Helsinki-NLP/opus-mt-nl-en',
-                    'pl': 'Helsinki-NLP/opus-mt-pl-en',
-                    'pt': 'Helsinki-NLP/opus-mt-pt-en',
-                    'ru': 'Helsinki-NLP/opus-mt-ru-en',
-                    'da': 'Helsinki-NLP/opus-mt-da-en',
-                    'sv': 'Helsinki-NLP/opus-mt-sv-en',
-                    'no': 'Helsinki-NLP/opus-mt-no-en',
-                    'fi': 'Helsinki-NLP/opus-mt-fi-en',
-                    'cs': 'Helsinki-NLP/opus-mt-cs-en',
-                    'hu': 'Helsinki-NLP/opus-mt-hu-en',
-                    'bg': 'Helsinki-NLP/opus-mt-bg-en',
-                    'sk': 'Helsinki-NLP/opus-mt-sk-en',
-                    'sl': 'Helsinki-NLP/opus-mt-sl-en',
-                    'hr': 'Helsinki-NLP/opus-mt-hr-en',
-                    'et': 'Helsinki-NLP/opus-mt-et-en',
-                    'lv': 'Helsinki-NLP/opus-mt-lv-en',
-                    'lt': 'Helsinki-NLP/opus-mt-lt-en',
-                    'el': 'Helsinki-NLP/opus-mt-el-en',
-                    'ro': 'Helsinki-NLP/opus-mt-ro-en',
-                    'tr': 'Helsinki-NLP/opus-mt-tr-en',
-                },
-                'fallback': 'facebook/nllb-200-distilled-600M',
-                'description': 'Fast Helsinki models with NLLB fallback'
-            },
-            2: {
-                'nllb_xl': 'facebook/nllb-200-3.3B',
-                'nllb_large': 'facebook/nllb-200-1.3B',
-                'fallback': 'facebook/nllb-200-distilled-1.3B',
-                'description': 'Highest quality models - preferred for medical documents'
-            }
-        }
+        # Translation models - facebook/nllb-200-3.3B as primary with fallbacks
+        self.translation_models = [
+            'facebook/nllb-200-3.3B',
+            'facebook/nllb-200-1.3B',
+            'facebook/nllb-200-distilled-1.3B',
+            'facebook/nllb-200-distilled-600M'
+        ]
 
         # Language mapping for NLLB models
         self.nllb_lang_mapping = {
@@ -107,16 +75,15 @@ class Translator:
             'ca': 'cat_Latn', 'mt': 'mlt_Latn', 'cy': 'cym_Latn', 'is': 'isl_Latn',
         }
 
-        # Updated quality thresholds - lower threshold to prefer tier 2
+        # Quality thresholds
         self.quality_thresholds = {
-            'tier_1_to_2_threshold': 0.50,  # Lower threshold to prefer tier 2
             'minimum_acceptable_quality': 0.40,
-            'medical_preservation_threshold': 0.70,  # Higher expectation for medical terms
+            'medical_preservation_threshold': 0.70,
         }
 
         # Improved chunking parameters for medical documents
         self.chunk_params = {
-            'max_chars': 2500,  # Increased for better context
+            'max_chars': 2500,
             'overlap_chars': 150,
             'min_chunk_chars': 300,
         }
@@ -164,7 +131,6 @@ class Translator:
         # Current loaded translator info
         self.current_translator = None
         self.current_language = None
-        self.current_tier = None
         self.current_model_name = None
 
     def extract_medical_terms_database(self, text: str) -> Dict[str, str]:
@@ -379,10 +345,10 @@ class Translator:
         
         # Overall weighted score
         overall_score = (
-            placeholder_score * 0.30 +  # Critical: no unreplaced placeholders
-            english_quality * 0.35 +     # Important: good English
-            medical_preservation * 0.25 + # Important: preserve medical terms
-            length_score * 0.10           # Basic: reasonable length
+            placeholder_score * 0.30 +
+            english_quality * 0.35 +
+            medical_preservation * 0.25 +
+            length_score * 0.10
         )
         
         return {
@@ -424,7 +390,7 @@ class Translator:
         return final_scores
 
     def should_retranslate_with_higher_tier(self, quality_scores: Dict[str, float]) -> bool:
-        """Updated logic to prefer tier 2 for medical documents."""
+        """Check if retranslation is needed based on quality scores."""
         overall_quality = quality_scores.get('overall', 0.0)
         medical_score = quality_scores.get('medical_preservation', 0.0)
         has_placeholders = quality_scores.get('has_placeholders', 0.0)
@@ -434,7 +400,7 @@ class Translator:
             print(f"    📉 Unreplaced placeholders detected - retranslating")
             return True
         
-        if overall_quality < self.quality_thresholds['tier_1_to_2_threshold']:
+        if overall_quality < self.quality_thresholds['minimum_acceptable_quality']:
             print(f"    📉 Overall quality {overall_quality:.3f} below threshold")
             return True
         
@@ -506,69 +472,16 @@ class Translator:
             print(f"    ✗ Model {model_name} not available: {str(e)[:50]}")
             return False
 
-    def get_available_models_for_tier(self, tier: int, language: str) -> List[str]:
-        """Get available models for a tier and language."""
+    def get_available_models_for_language(self, language: str) -> List[str]:
+        """Get available models for a language."""
         available_models = []
         
-        if tier == 1:
-            helsinki_models = self.model_tiers[1]['helsinki_models']
-            if language in helsinki_models:
-                model_name = helsinki_models[language]
+        if language in self.nllb_lang_mapping:
+            for model_name in self.translation_models:
                 if self.check_model_availability(model_name):
                     available_models.append(model_name)
-            
-            if language in self.nllb_lang_mapping:
-                fallback_model = self.model_tiers[1]['fallback']
-                if self.check_model_availability(fallback_model):
-                    available_models.append(fallback_model)
-                    
-        elif tier == 2:
-            if language in self.nllb_lang_mapping:
-                for model_key in ['nllb_xl', 'nllb_large', 'fallback']:
-                    if model_key in self.model_tiers[2]:
-                        model_name = self.model_tiers[2][model_key]
-                        if self.check_model_availability(model_name):
-                            available_models.append(model_name)
         
         return available_models
-
-    def load_helsinki_model(self, model_name: str, language: str) -> Optional[Any]:
-        """Load Helsinki model."""
-        try:
-            if self.device.startswith("cuda"):
-                torch.cuda.empty_cache()
-                gc.collect()
-
-            translator = pipeline(
-                "translation",
-                model=model_name,
-                device=self.device,
-                torch_dtype=torch.float32,
-                trust_remote_code=False,
-            )
-            
-            print(f"    ✓ Helsinki model loaded successfully on {self.device}")
-            return translator
-
-        except Exception as e:
-            if self.device.startswith("cuda"):
-                print(f"    ⚠️  CUDA failed, trying CPU: {str(e)[:50]}")
-                try:
-                    translator = pipeline(
-                        "translation",
-                        model=model_name,
-                        device="cpu",
-                        torch_dtype=torch.float32,
-                        trust_remote_code=False,
-                    )
-                    self.device = "cpu"
-                    print(f"    ✓ Helsinki model loaded successfully on CPU")
-                    return translator
-                except Exception as cpu_error:
-                    print(f"    ✗ Helsinki model failed on CPU: {str(cpu_error)[:50]}")
-                    return None
-            else:
-                raise e
 
     def load_nllb_model(self, model_name: str, language: str) -> Optional[Any]:
         """Load NLLB model."""
@@ -590,7 +503,7 @@ class Translator:
             def nllb_translate(text, generation_params=None):
                 try:
                     tgt_lang = 'eng_Latn'
-                    max_input_length = 600  # Increased for better context
+                    max_input_length = 600
                     
                     inputs = tokenizer(text, return_tensors="pt", truncation=True, max_length=max_input_length)
                     if self.device.startswith("cuda"):
@@ -598,8 +511,8 @@ class Translator:
 
                     gen_kwargs = {
                         'forced_bos_token_id': tokenizer.convert_tokens_to_ids(tgt_lang),
-                        'max_length': 400,  # Increased for better translations
-                        'num_beams': 4,     # More beams for better quality
+                        'max_length': 400,
+                        'num_beams': 4,
                         'length_penalty': 1.0,
                         'do_sample': False,
                         'no_repeat_ngram_size': 3,
@@ -623,70 +536,40 @@ class Translator:
             print(f"    ✗ NLLB model failed: {str(e)[:50]}")
             return None
 
-    def load_translator_for_tier(self, language: str, tier: int) -> Optional[Any]:
-        """Load translator for given language and tier."""
-        print(f"    Loading translator for language: {language} (Tier {tier})")
-        
-        available_models = self.get_available_models_for_tier(tier, language)
+    def load_translator_for_language(self, language: str):
+        """Load translator for given language."""
+        if self.current_language == language and self.current_translator:
+            return self.current_translator
+
+        self.clear_translator()
+
+        print(f"  🔄 Loading translator for language: {language}")
+
+        available_models = self.get_available_models_for_language(language)
         
         if not available_models:
-            print(f"    No available models for language {language} at tier {tier}")
+            print(f"    ✗ No available models for language: {language}")
             return None
         
         for model_name in available_models:
             print(f"    Trying model: {model_name}")
             
             try:
-                if 'helsinki' in model_name.lower():
-                    translator = self.load_helsinki_model(model_name, language)
-                elif 'nllb' in model_name.lower():
-                    translator = self.load_nllb_model(model_name, language)
-                else:
-                    print(f"    Unknown model type: {model_name}")
-                    continue
+                translator = self.load_nllb_model(model_name, language)
                 
                 if translator:
                     self.current_model_name = model_name
+                    self.current_translator = translator
+                    self.current_language = language
+                    print(f"    ✓ Successfully loaded translator for {language}")
                     return translator
                     
             except Exception as e:
                 print(f"    Failed to load {model_name}: {str(e)[:100]}")
                 continue
         
-        print(f"    ✗ No translator could be loaded for language: {language} at tier {tier}")
+        print(f"    ✗ No translator could be loaded for language: {language}")
         return None
-
-    def load_translator_for_language(self, language: str, target_tier: int = 2):  # Changed default to tier 2
-        """Load translator for given language - now defaults to tier 2 for medical docs."""
-        if self.current_language == language and self.current_tier == target_tier and self.current_translator:
-            return self.current_translator
-
-        self.clear_translator()
-
-        print(f"  🔄 Loading translator for language: {language} (Tier {target_tier})")
-
-        translator = self.load_translator_for_tier(language, target_tier)
-        
-        if translator:
-            self.current_translator = translator
-            self.current_language = language
-            self.current_tier = target_tier
-            print(f"    ✓ Successfully loaded translator for {language}")
-            return translator
-        else:
-            # Try other tier as fallback
-            fallback_tier = 1 if target_tier == 2 else 2
-            print(f"    Trying fallback to Tier {fallback_tier}")
-            translator = self.load_translator_for_tier(language, fallback_tier)
-            if translator:
-                self.current_translator = translator
-                self.current_language = language
-                self.current_tier = fallback_tier
-                print(f"    ✓ Successfully loaded fallback translator (Tier {fallback_tier})")
-                return translator
-            
-            print(f"    ✗ No translator available for language: {language}")
-            return None
 
     def translate_single_chunk(self, text: str, translator) -> str:
         """Translate a single chunk using simplified medical term preservation."""
@@ -706,19 +589,15 @@ class Translator:
             if len(chunks) == 1:
                 # Single chunk translation
                 gen_params = {
-                    'max_length': 600,  # Increased for better translations
+                    'max_length': 600,
                     'truncation': True,
                     'no_repeat_ngram_size': 3,
-                    'repetition_penalty': 1.1,  # Reduced for more natural text
+                    'repetition_penalty': 1.1,
                     'do_sample': False,
-                    'num_beams': 4,  # More beams for quality
+                    'num_beams': 4,
                 }
                 
-                if hasattr(translator, 'model'):
-                    result = translator(protected_text, **gen_params)
-                else:
-                    result = translator(protected_text, generation_params=gen_params)
-                
+                result = translator(protected_text, generation_params=gen_params)
                 translated_text = result[0]['translation_text']
             else:
                 # Multi-chunk translation
@@ -733,11 +612,7 @@ class Translator:
                         'num_beams': 4,
                     }
                     
-                    if hasattr(translator, 'model'):
-                        result = translator(chunk, **gen_params)
-                    else:
-                        result = translator(chunk, generation_params=gen_params)
-                    
+                    result = translator(chunk, generation_params=gen_params)
                     translated_chunks.append(result[0]['translation_text'])
                 
                 translated_text = ' '.join(translated_chunks)
@@ -753,17 +628,15 @@ class Translator:
             return text
 
     def translate_document_with_tier(self, data: dict, language: str, tier: int) -> Tuple[dict, Dict[str, float], Dict[str, Any]]:
-        """Translate document with specific tier."""
-        print(f"  📝 Translating document with Tier {tier}")
+        """Translate document."""
+        print(f"  📝 Translating document")
         
-        tier_start_time = datetime.now()
+        translation_start_time = datetime.now()
 
-        translator = self.load_translator_for_language(language, tier)
-        actual_tier = self.current_tier
+        translator = self.load_translator_for_language(language)
         if not translator:
-            print(f"    ✗ No translator available for Tier {tier}")
+            print(f"    ✗ No translator available")
             return data, {'overall': 0.0}, {
-                'tier': tier,
                 'model_loaded': False,
                 'processing_time_seconds': 0,
                 'model_name': None
@@ -774,9 +647,8 @@ class Translator:
         if 'chunks' not in translated_data:
             print(f"    No chunks found in document")
             return translated_data, {'overall': 0.0}, {
-                'tier': actual_tier,
                 'model_loaded': True,
-                'processing_time_seconds': (datetime.now() - tier_start_time).total_seconds(),
+                'processing_time_seconds': (datetime.now() - translation_start_time).total_seconds(),
                 'model_name': self.current_model_name,
                 'chunks_found': False
             }
@@ -815,9 +687,9 @@ class Translator:
                     )
                     translated_count += 1
         
-        processing_time = (datetime.now() - tier_start_time).total_seconds()
+        processing_time = (datetime.now() - translation_start_time).total_seconds()
         
-        print(f"    ✓ Tier {actual_tier} translation complete:")
+        print(f"    ✓ Translation complete:")
         print(f"      English chunks: {english_count}")
         print(f"      Translated chunks: {translated_count}")
         print(f"      Table chunks: {table_count}")
@@ -825,14 +697,13 @@ class Translator:
         # Quality assessment
         quality_scores = self.assess_document_quality(translated_data, data, language)
         
-        print(f"    📊 Tier {actual_tier} Quality Assessment:")
+        print(f"    📊 Quality Assessment:")
         print(f"      Overall: {quality_scores['overall']:.3f}")
         print(f"      English Quality: {quality_scores.get('english_quality', 0):.3f}")
         print(f"      Medical Preservation: {quality_scores.get('medical_preservation', 0):.3f}")
         print(f"      Unreplaced Placeholders: {quality_scores.get('has_placeholders', 0):.3f}")
         
-        tier_metadata = {
-            'tier': actual_tier,
+        translation_metadata = {
             'model_loaded': True,
             'model_name': self.current_model_name,
             'processing_time_seconds': processing_time,
@@ -844,13 +715,12 @@ class Translator:
             'quality_scores': quality_scores
         }
         
-        return translated_data, quality_scores, tier_metadata
+        return translated_data, quality_scores, translation_metadata
 
     def clear_translator(self):
         """Clear current translator and free memory."""
         self.current_translator = None
         self.current_language = None
-        self.current_tier = None
         self.current_model_name = None
 
         gc.collect()
@@ -895,8 +765,7 @@ class Translator:
             "source_file": file_name,
             "detected_language": document_language,
             "was_translation_needed": False,
-            "tier_attempts": [],
-            "final_tier_used": None,
+            "model_attempts": [],
             "final_model_used": None,
             "retranslation_occurred": False,
             "quality_comparison": {},
@@ -925,17 +794,16 @@ class Translator:
                 json.dump(data, f, indent=2, ensure_ascii=False)
             return
 
-        # Check model availability - start with tier 2 for medical documents
-        tier_2_available = len(self.get_available_models_for_tier(2, document_language)) > 0
-        tier_1_available = len(self.get_available_models_for_tier(1, document_language)) > 0
+        # Check model availability
+        available_models = self.get_available_models_for_language(document_language)
         
         translation_metadata.update({
             "was_translation_needed": True,
-            "tier_1_available": tier_1_available,
-            "tier_2_available": tier_2_available
+            "models_available": len(available_models) > 0,
+            "available_models": available_models
         })
         
-        if not tier_1_available and not tier_2_available:
+        if not available_models:
             print(f"  📋 No translation models available for language {document_language}")
             translation_metadata.update({
                 "translation_decision": "no_models_available",
@@ -949,81 +817,18 @@ class Translator:
                 json.dump(data, f, indent=2, ensure_ascii=False)
             return
 
-        # Start with tier 2 for medical documents
-        if tier_2_available:
-            print(f"  🎯 Starting with Tier 2 translation (preferred for medical docs)")
-            tier_2_translation, tier_2_quality, tier_2_metadata = self.translate_document_with_tier(
-                data, document_language, 2
-            )
-            translation_metadata["tier_attempts"].append(tier_2_metadata)
-            
-            if not self.should_retranslate_with_higher_tier(tier_2_quality):
-                print(f"  ✅ Tier 2 quality sufficient (overall: {tier_2_quality['overall']:.3f})")
-                final_translation = tier_2_translation
-                final_quality = tier_2_quality
-                translation_metadata.update({
-                    "translation_decision": "tier_2_sufficient",
-                    "final_tier_used": 2,
-                    "final_model_used": tier_2_metadata["model_name"],
-                    "retranslation_occurred": False
-                })
-            else:
-                print(f"  📈 Tier 2 quality insufficient, trying Tier 1 as fallback")
-                
-                if tier_1_available:
-                    self.clear_translator()
-                    tier_1_translation, tier_1_quality, tier_1_metadata = self.translate_document_with_tier(
-                        data, document_language, 1
-                    )
-                    translation_metadata["tier_attempts"].append(tier_1_metadata)
-                    
-                    if self.compare_translation_quality(tier_1_quality, tier_2_quality) == 1:
-                        print(f"  🏆 Tier 1 translation is better")
-                        final_translation = tier_1_translation
-                        final_quality = tier_1_quality
-                        translation_metadata.update({
-                            "translation_decision": "tier_1_better_than_tier_2",
-                            "final_tier_used": 1,
-                            "final_model_used": tier_1_metadata["model_name"],
-                            "retranslation_occurred": True,
-                            "quality_comparison": {
-                                "tier_2_overall": tier_2_quality['overall'],
-                                "tier_1_overall": tier_1_quality['overall'],
-                                "improvement": tier_1_quality['overall'] - tier_2_quality['overall']
-                            }
-                        })
-                    else:
-                        print(f"  🥈 Tier 2 translation is still better")
-                        final_translation = tier_2_translation
-                        final_quality = tier_2_quality
-                        translation_metadata.update({
-                            "translation_decision": "tier_2_better_than_tier_1",
-                            "final_tier_used": 2,
-                            "final_model_used": tier_2_metadata["model_name"],
-                            "retranslation_occurred": True
-                        })
-                else:
-                    print(f"  ⚠️  Tier 1 not available")
-                    final_translation = tier_2_translation
-                    final_quality = tier_2_quality
-                    translation_metadata.update({
-                        "translation_decision": "tier_2_only_tier_1_unavailable",
-                        "final_tier_used": 2,
-                        "final_model_used": tier_2_metadata["model_name"],
-                        "retranslation_occurred": False
-                    })
-        else:
-            print(f"  🎯 Tier 2 not available, using Tier 1")
-            final_translation, final_quality, tier_1_metadata = self.translate_document_with_tier(
-                data, document_language, 1
-            )
-            translation_metadata["tier_attempts"].append(tier_1_metadata)
-            translation_metadata.update({
-                "translation_decision": "tier_1_only_tier_2_unavailable",
-                "final_tier_used": 1,
-                "final_model_used": tier_1_metadata["model_name"],
-                "retranslation_occurred": False
-            })
+        # Translate document
+        print(f"  🎯 Starting translation with available models")
+        final_translation, final_quality, translation_stats = self.translate_document_with_tier(
+            data, document_language, 1
+        )
+        translation_metadata["model_attempts"].append(translation_stats)
+        
+        translation_metadata.update({
+            "translation_decision": "translation_completed",
+            "final_model_used": translation_stats["model_name"],
+            "retranslation_occurred": False
+        })
 
         # Final statistics
         translated_count = 0
@@ -1086,11 +891,11 @@ class Translator:
     def translate_documents(self):
         """Main translation method with total runtime tracking."""
         print("🚀 Starting improved medical document translation...")
-        print("📋 Improved Strategy:")
+        print("📋 Translation Strategy:")
         print("   • Simplified medical term preservation with whitelist")
         print("   • Improved chunking with larger sizes and better boundaries")
         print("   • Enhanced quality assessment with placeholder detection")
-        print("   • Tier 2 models preferred for medical documents")
+        print("   • facebook/nllb-200-3.3B as primary model with fallbacks")
         print("   • Better English quality validation")
 
         # Start total runtime tracking
@@ -1153,4 +958,3 @@ class Translator:
         if total_files > 0:
             avg_time_per_file = total_runtime_seconds / total_files
             print(f"   • Average time per file: {avg_time_per_file:.2f} seconds")
-            
