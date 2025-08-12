@@ -1,6 +1,6 @@
 # Local imports
 from python.utils import FolderTree
-from python.process import PDFProcessor
+from python.process import PDFProcessor, PostCleaner
 from python.translation import Translator
 from python.vectorise import Chunker, Vectoriser
 from python.run import RagHTASubmission
