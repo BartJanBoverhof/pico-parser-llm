@@ -275,12 +275,21 @@ class Vectoriser:
         self,
         chunked_folder_path: str = "./data/text_chunked",
         embedding_choice: str = "openai",
-        db_parent_dir: str = "./data/vectorstore"
+        db_parent_dir: str = "./data/vectorstore",
+        include_metadata_in_text: bool = True,
+        metadata_fields_to_include: List[str] = None,
+        metadata_format: str = "**{field}:** ",
+        incremental_mode: bool = False
     ):
         self.chunked_folder_path = chunked_folder_path
         self.embedding_choice = embedding_choice.lower()
         self.db_parent_dir = db_parent_dir
         self.db_name = self._get_db_path()
+        self.include_metadata_in_text = include_metadata_in_text
+        self.metadata_fields_to_include = metadata_fields_to_include or ["heading", "source_type"]
+        self.metadata_format = metadata_format
+        self.incremental_mode = incremental_mode
+        self.manifest_path = os.path.join(self.db_parent_dir, f"{os.path.basename(self.db_name)}_manifest.json")
 
     def _get_db_path(self) -> str:
         store_name = {
@@ -291,21 +300,78 @@ class Vectoriser:
             raise ValueError("Unsupported embedding_choice. Use 'openai' or 'biobert'.")
         return os.path.join(self.db_parent_dir, store_name)
 
-    def load_chunked_documents(self) -> List[Document]:
+    def _enrich_text_with_metadata(self, text: str, metadata: dict) -> str:
+        """
+        Prepends relevant metadata fields to the text content for better embedding context.
+        """
+        if not self.include_metadata_in_text:
+            return text
+        
+        enriched_parts = []
+        
+        for field in self.metadata_fields_to_include:
+            value = metadata.get(field, "").strip()
+            if value and value.lower() != "unknown":
+                formatted_field = self.metadata_format.format(field=field.replace("_", " ").title())
+                enriched_parts.append(f"{formatted_field}{value}")
+        
+        if enriched_parts:
+            prefix = " ".join(enriched_parts) + "\n\n"
+            return prefix + text
+        
+        return text
+
+    def _load_manifest(self) -> dict:
+        """
+        Loads the manifest file that tracks processed documents.
+        """
+        if os.path.exists(self.manifest_path):
+            with open(self.manifest_path, "r", encoding="utf-8") as f:
+                return json.load(f)
+        return {"processed_files": {}, "total_chunks": 0}
+
+    def _save_manifest(self, manifest: dict):
+        """
+        Saves the manifest file.
+        """
+        os.makedirs(os.path.dirname(self.manifest_path), exist_ok=True)
+        with open(self.manifest_path, "w", encoding="utf-8") as f:
+            json.dump(manifest, f, indent=2, ensure_ascii=False)
+
+    def _get_file_signature(self, file_path: str) -> str:
+        """
+        Creates a signature for a file based on its modification time and size.
+        """
+        stat = os.stat(file_path)
+        return f"{stat.st_mtime}_{stat.st_size}"
+
+    def load_chunked_documents(self, only_new: bool = False) -> List[Document]:
         """
         Loads chunked JSON files into Document objects.
         Uses recursive glob to find JSON files in any subdirectory of the chunked_folder_path.
         """
         documents = []
-        # Use recursive glob to find JSON files in any subdirectory
+        manifest = self._load_manifest() if only_new else {"processed_files": {}}
+        processed_files = manifest.get("processed_files", {})
+        new_files_count = 0
+        
         json_files = glob.glob(os.path.join(self.chunked_folder_path, "**/*.json"), recursive=True)
         print(f"Found {len(json_files)} JSON files in {self.chunked_folder_path} (including subdirectories).")
 
         for jf in json_files:
+            file_signature = self._get_file_signature(jf)
+            rel_file_path = os.path.relpath(jf, self.chunked_folder_path)
+            
+            if only_new and rel_file_path in processed_files:
+                if processed_files[rel_file_path] == file_signature:
+                    continue
+            
+            if only_new:
+                new_files_count += 1
+                
             with open(jf, "r", encoding="utf-8") as f:
                 data = json.load(f)
 
-            # Get the relative path from chunked_folder_path to the json file directory
             rel_path = os.path.relpath(os.path.dirname(jf), self.chunked_folder_path)
             
             for c in data.get("chunks", []):
@@ -315,13 +381,24 @@ class Vectoriser:
                 
                 metadata = c.get("metadata", {})
                 
-                # Add the folder path as additional metadata if not already present
                 if rel_path and rel_path != "." and "folder_path" not in metadata:
                     metadata["folder_path"] = rel_path
                 
-                documents.append(Document(page_content=text_content, metadata=metadata))
+                enriched_text = self._enrich_text_with_metadata(text_content, metadata)
+                documents.append(Document(page_content=enriched_text, metadata=metadata))
+            
+            processed_files[rel_file_path] = file_signature
 
+        if only_new:
+            print(f"Found {new_files_count} new or modified files.")
+            
         print(f"Loaded {len(documents)} valid document chunks.")
+        
+        if only_new and documents:
+            manifest["processed_files"] = processed_files
+            manifest["total_chunks"] = manifest.get("total_chunks", 0) + len(documents)
+            self._save_manifest(manifest)
+        
         return documents
 
     def vectorstore_exists(self) -> bool:
@@ -342,15 +419,17 @@ class Vectoriser:
             raise ValueError("Unsupported embedding_choice. Use 'openai' or 'biobert'.")
 
     def create_vectorstore(self, docs: List[Document]):
+        import time
+        start_time = time.time()
+        
         if os.path.exists(self.db_name):
             shutil.rmtree(self.db_name)
         os.makedirs(self.db_name, exist_ok=True)
 
         embeddings = self.get_embeddings()
         
-        # Flatten your documents into two lists: texts and metadatas
         texts = [doc.page_content for doc in docs]
-        metas = [doc.metadata for doc in docs]  # Should contain "country"
+        metas = [doc.metadata for doc in docs]
 
         vectorstore = Chroma.from_texts(
             texts=texts,
@@ -366,7 +445,48 @@ class Vectoriser:
             for f in files:
                 os.chmod(os.path.join(root, f), 0o644)
 
-        print(f"Vectorstore created with {len(docs)} chunks at '{self.db_name}'.")
+        manifest = self._load_manifest()
+        manifest["total_chunks"] = len(docs)
+        all_docs = self.load_chunked_documents(only_new=False)
+        json_files = glob.glob(os.path.join(self.chunked_folder_path, "**/*.json"), recursive=True)
+        for jf in json_files:
+            rel_file_path = os.path.relpath(jf, self.chunked_folder_path)
+            manifest["processed_files"][rel_file_path] = self._get_file_signature(jf)
+        self._save_manifest(manifest)
+        
+        elapsed_time = time.time() - start_time
+        print(f"Vectorstore created with {len(docs)} chunks at '{self.db_name}'. Time taken: {elapsed_time:.2f} seconds.")
+        
+        return vectorstore
+
+    def add_new_documents(self, docs: List[Document]):
+        """
+        Adds new documents to an existing vectorstore.
+        """
+        if not docs:
+            print("No new documents to add.")
+            return
+            
+        if not self.vectorstore_exists():
+            raise ValueError("Vectorstore does not exist. Create it first using create_vectorstore().")
+        
+        import time
+        start_time = time.time()
+        
+        embeddings = self.get_embeddings()
+        vectorstore = Chroma(
+            persist_directory=self.db_name,
+            embedding_function=embeddings
+        )
+        
+        texts = [doc.page_content for doc in docs]
+        metas = [doc.metadata for doc in docs]
+        
+        vectorstore.add_texts(texts=texts, metadatas=metas)
+        vectorstore.persist()
+        
+        elapsed_time = time.time() - start_time
+        print(f"Added {len(docs)} new chunks to existing vectorstore at '{self.db_name}'. Time taken: {elapsed_time:.2f} seconds.")
         return vectorstore
 
     def load_vectorstore(self):
@@ -385,12 +505,24 @@ class Vectoriser:
         """
         Main pipeline method to either load or create the vectorstore.
         """
-        if self.vectorstore_exists():
+        if self.incremental_mode and self.vectorstore_exists():
+            print("Running in incremental mode. Checking for new documents...")
+            new_docs = self.load_chunked_documents(only_new=True)
+            
+            if new_docs:
+                print(f"Found {len(new_docs)} new document chunks. Adding to existing vectorstore...")
+                return self.add_new_documents(new_docs)
+            else:
+                print("No new documents found. Loading existing vectorstore...")
+                return self.load_vectorstore()
+        
+        elif self.vectorstore_exists() and not self.incremental_mode:
             print("Vectorstore exists. Loading now...")
             return self.load_vectorstore()
+        
         else:
-            print("No vectorstore found. Creating new one...")
-            docs = self.load_chunked_documents()
+            print("No vectorstore found or incremental mode disabled. Creating new one...")
+            docs = self.load_chunked_documents(only_new=False)
             if not docs:
                 raise ValueError("No valid documents found for vectorization.")
             return self.create_vectorstore(docs)
