@@ -841,6 +841,8 @@ class TableDetector:
         return tables_info
 
 
+import time
+
 class PDFProcessor:
     def __init__(
         self,
@@ -876,7 +878,6 @@ class PDFProcessor:
 
         # Extract source type 
         self.source_type = self.extract_source_type_from_path()
-
 
         print("--------------------------------------------")
         print(f"Source type for '{self.pdf_path}': {self.source_type}")
@@ -1239,7 +1240,6 @@ class PDFProcessor:
 
         return line_objects
 
-
     def clean_table_data(self, table_data):
         """
         Clean and standardize table data.
@@ -1265,7 +1265,6 @@ class PDFProcessor:
                 cleaned.append(cleaned_row)
         
         return cleaned
-
 
     def extract_text_by_columns(self, page):
         """
@@ -1356,6 +1355,9 @@ class PDFProcessor:
         4. Returns a dictionary with enhanced text processing including hyphenation and paragraph cohesion.
         Enhanced with better error handling for problematic PDFs and improved table handling.
         """
+        start_time = time.time()
+        print(f"Starting extraction for {self.pdf_path}")
+        
         try:
             with pdfplumber.open(self.pdf_path) as pdf:
                 # We'll first gather all lines/heading info (without handling tables)
@@ -1434,12 +1436,20 @@ class PDFProcessor:
                 # If too many pages were problematic, switch to fallback method
                 if problematic_pages > 0 and (total_pages_processed == 0 or problematic_pages / num_pages > 0.2):
                     print(f"Too many problematic pages ({problematic_pages}/{num_pages}). Switching to fallback method.")
-                    return self.extract_using_fallback()
+                    result = self.extract_using_fallback()
+                    end_time = time.time()
+                    processing_time = end_time - start_time
+                    print(f"Extraction completed in {processing_time:.2f} seconds")
+                    return result
 
                 # If we couldn't extract any content, try the fallback method
                 if not pages_with_lines:
                     print(f"No content extracted from {self.pdf_path}. Switching to fallback method.")
-                    return self.extract_using_fallback()
+                    result = self.extract_using_fallback()
+                    end_time = time.time()
+                    processing_time = end_time - start_time
+                    print(f"Extraction completed in {processing_time:.2f} seconds")
+                    return result
 
                 # Determine boilerplate lines
                 boilerplate_normed = set()
@@ -1614,12 +1624,19 @@ class PDFProcessor:
                             f"P3={table_summary['medical_table_insights']['multi_pass_detection_summary']['pass_3_medical']}")
                     print(f"  📋 Enhanced metadata added to '_table_detection_summary' field")
 
+                end_time = time.time()
+                processing_time = end_time - start_time
+                print(f"Extraction completed in {processing_time:.2f} seconds")
                 return final_structure
 
         except Exception as e:
             print(f"Error reading {self.pdf_path}: {e}")
             # Try fallback method if primary extraction fails
-            return self.extract_using_fallback()
+            result = self.extract_using_fallback()
+            end_time = time.time()
+            processing_time = end_time - start_time
+            print(f"Extraction completed in {processing_time:.2f} seconds")
+            return result
 
     def _extract_key_numbers(self, text):
         """Extract key numerical values for extraction hints."""
@@ -1656,13 +1673,14 @@ class PDFProcessor:
         
         return relationships
 
-
     def extract_using_fallback(self):
         """
         Fallback method for problematic PDFs that can't be processed normally.
         Uses PyPDF2 for more reliable text extraction when pdfplumber fails.
         Enhanced with hyphenation and paragraph cohesion improvements.
         """
+        start_time = time.time()
+        
         try:
             import PyPDF2
             
@@ -1768,12 +1786,17 @@ class PDFProcessor:
                         "end_page": len(reader.pages)
                     })
             
-            print(f"Fallback extraction completed: created {len(doc_structure['chunks'])} chunks")
+            end_time = time.time()
+            processing_time = end_time - start_time
+            print(f"Fallback extraction completed: created {len(doc_structure['chunks'])} chunks in {processing_time:.2f} seconds")
             return doc_structure
             
         except Exception as fallback_error:
             print(f"Fallback extraction also failed: {fallback_error}")
             # Return empty structure if all methods fail
+            end_time = time.time()
+            processing_time = end_time - start_time
+            print(f"Extraction failed after {processing_time:.2f} seconds")
             return {
                 "doc_id": self.doc_id,
                 "created_date": self.created_date,
@@ -1795,6 +1818,9 @@ class PDFProcessor:
         keywords=None
     ):
         """Process all PDFs in a folder and save extracted JSON data."""
+        start_time = time.time()
+        print(f"Starting PDF processing for directory: {input_dir}")
+        
         if not os.path.exists(output_dir):
             os.makedirs(output_dir)
 
@@ -1845,7 +1871,9 @@ class PDFProcessor:
                         errors += 1
                         print(f"Error processing {pdf_path}: {e}")
         
-        print(f"Processing complete. Successfully processed {processed_files} files with {errors} errors.")
+        end_time = time.time()
+        total_time = end_time - start_time
+        print(f"Processing complete. Successfully processed {processed_files} files with {errors} errors in {total_time:.2f} seconds.")
 
 
 import os
@@ -1860,15 +1888,13 @@ import glob
 
 class PostCleaner:
     """
-    Advanced class to clean up translation artifacts in processed JSON documents.
+    Lightweight cleaner to handle essential formatting fixes in processed JSON documents.
     
-    This cleaner handles complex cases including:
-    1. Numerical pattern repetition (0.09.09.09...)
-    2. Dollar sign and other symbol repetition ($$$$$)
-    3. Quoted row markers and duplicate rows
-    4. Nonsensical word repetitions (agglomeration, agitation...)
-    5. Technical phrase repetition (material injury, material...)
-    6. Mixed numerical and textual artifacts
+    This cleaner focuses on:
+    1. Table structure standardization (Row X: labels, duplicates)
+    2. Basic text normalization (punctuation, whitespace)
+    3. General repetition patterns that indicate formatting issues
+    4. Preserving meaning while fixing genuine artifacts
     """
     
     def __init__(
@@ -1878,10 +1904,10 @@ class PostCleaner:
         maintain_folder_structure: bool = True
     ):
         """
-        Initialize the translation cleaner.
+        Initialize the cleaner.
         
         Args:
-            input_dir: Directory containing translated JSON files
+            input_dir: Directory containing processed JSON files
             output_dir: Directory to save cleaned files
             maintain_folder_structure: Whether to maintain folder structure when saving
         """
@@ -1894,23 +1920,47 @@ class PostCleaner:
             "files_processed": 0,
             "text_chunks_cleaned": 0,
             "table_chunks_cleaned": 0,
-            "artifacts_removed": 0,
-            "chinese_chars_removed": 0,
+            "formatting_fixes": 0,
             "excessive_punctuation_fixed": 0,
             "table_rows_fixed": 0,
-            "repeated_phrases_removed": 0,
-            "repeated_words_fixed": 0,
-            "numerical_patterns_fixed": 0,
-            "quoted_rows_fixed": 0,
+            "repeated_patterns_fixed": 0,
+            "whitespace_normalized": 0,
             "symbol_repetition_fixed": 0,
-            "special_patterns_fixed": 0
+            "total_time_seconds": 0.0,
+            "average_time_per_file": 0.0
         }
         
         # Create output directory if it doesn't exist
         os.makedirs(self.output_dir, exist_ok=True)
     
+    def time_operation(self, operation_name: str = "Operation"):
+        """
+        Simple context manager to time operations.
+        Usage: 
+            with cleaner.time_operation("Document processing"):
+                # your code here
+        """
+        class TimingContext:
+            def __init__(self, name):
+                self.name = name
+                self.start_time = None
+            
+            def __enter__(self):
+                self.start_time = time.time()
+                print(f"Starting {self.name}...")
+                return self
+            
+            def __exit__(self, exc_type, exc_val, exc_tb):
+                end_time = time.time()
+                duration = end_time - self.start_time
+                print(f"{self.name} completed in {duration:.3f} seconds")
+        
+        return TimingContext(operation_name)
+    
     def clean_all_documents(self):
         """Process all JSON files in the input directory recursively."""
+        start_time = time.time()
+        
         # Find all JSON files
         json_files = glob.glob(os.path.join(self.input_dir, "**/*.json"), recursive=True)
         print(f"Found {len(json_files)} JSON files to clean.")
@@ -1918,21 +1968,27 @@ class PostCleaner:
         for file_path in json_files:
             self.clean_document(file_path)
         
+        # Calculate timing statistics
+        end_time = time.time()
+        total_time = end_time - start_time
+        self.stats["total_time_seconds"] = total_time
+        
+        if self.stats["files_processed"] > 0:
+            self.stats["average_time_per_file"] = total_time / self.stats["files_processed"]
+        
         # Print statistics
         print(f"\nCleaning Complete:")
         print(f"  Files processed: {self.stats['files_processed']}")
         print(f"  Text chunks cleaned: {self.stats['text_chunks_cleaned']}")
         print(f"  Table chunks cleaned: {self.stats['table_chunks_cleaned']}")
-        print(f"  Artifacts removed: {self.stats['artifacts_removed']}")
-        print(f"  Chinese characters removed: {self.stats['chinese_chars_removed']}")
+        print(f"  Formatting fixes applied: {self.stats['formatting_fixes']}")
         print(f"  Excessive punctuation fixed: {self.stats['excessive_punctuation_fixed']}")
-        print(f"  Table rows fixed: {self.stats['table_rows_fixed']}")
-        print(f"  Repeated phrases removed: {self.stats['repeated_phrases_removed']}")
-        print(f"  Repeated words fixed: {self.stats['repeated_words_fixed']}")
-        print(f"  Numerical patterns fixed: {self.stats['numerical_patterns_fixed']}")
-        print(f"  Quoted rows fixed: {self.stats['quoted_rows_fixed']}")
+        print(f"  Table rows standardized: {self.stats['table_rows_fixed']}")
+        print(f"  Repeated patterns fixed: {self.stats['repeated_patterns_fixed']}")
+        print(f"  Whitespace normalized: {self.stats['whitespace_normalized']}")
         print(f"  Symbol repetition fixed: {self.stats['symbol_repetition_fixed']}")
-        print(f"  Special patterns fixed: {self.stats['special_patterns_fixed']}")
+        print(f"  Total execution time: {total_time:.2f} seconds")
+        print(f"  Average time per file: {self.stats['average_time_per_file']:.3f} seconds")
     
     def clean_document(self, file_path: str):
         """Clean a single JSON document."""
@@ -1987,9 +2043,6 @@ class PostCleaner:
                 else:
                     chunk["text"] = self._clean_text(original_text)
                     self.stats["text_chunks_cleaned"] += 1
-                
-                # Apply advanced pattern cleaning regardless of chunk type
-                chunk["text"] = self._clean_advanced_patterns(chunk["text"])
         
         return data
     
@@ -2005,405 +2058,172 @@ class PostCleaner:
         
         return False
     
-    def _clean_quoted_rows(self, text: str) -> str:
-        """
-        Clean quoted row markers like "Row 5" "Row 6" "Row 6".
-        """
-        if not text:
-            return text
-        
-        # Count occurrences before cleaning
-        quoted_row_pattern = r'"Row \d+"'
-        count_before = len(re.findall(quoted_row_pattern, text))
-        
-        # Fix consecutive quoted rows (e.g., "Row 6" "Row 6" "Row 7" "Row 7")
-        text = re.sub(r'("Row \d+"\s*)(\1)+', r'\1', text)
-        
-        # Fix rows with too many quotes
-        text = re.sub(r'"Row (\d+)"\s+"Row \1"', r'Row \1:', text)
-        
-        # Count occurrences after cleaning
-        count_after = len(re.findall(quoted_row_pattern, text))
-        self.stats["quoted_rows_fixed"] += (count_before - count_after)
-        
-        return text
-    
-    def _clean_numerical_patterns(self, text: str) -> str:
-        """
-        Clean numerical pattern repetition like 0.09.09.09.09.09...
-        """
-        # Find patterns of repeating digits with dots or other separators
-        patterns_found = 0
-        
-        # Find decimal number patterns that repeat (like 0.09.09.09...)
-        decimal_repetition = r'(\d+\.\d{1,3})(\.\d{1,3}){3,}'
-        matches = re.findall(decimal_repetition, text)
-        for match in matches:
-            if match and match[0]:
-                # Get the first part of the pattern
-                base_pattern = match[0]
-                # Find the full repeating pattern in the text
-                full_pattern = re.escape(base_pattern) + r'(\.\d{1,3}){3,}'
-                replacement = base_pattern  # Replace with just the first occurrence
-                text = re.sub(full_pattern, replacement, text)
-                patterns_found += 1
-        
-        # Another pattern: repeating decimals like 0.090.090.09...
-        decimal_repetition2 = r'(\d+\.\d{2,3})(\d+\.\d{2,3})(\d+\.\d{2,3})+'
-        text = re.sub(decimal_repetition2, r'\1', text)
-        
-        # Yet another pattern: isolated repeating numbers
-        repeated_numbers = re.compile(r'(\d{1,3})(\1){3,}')
-        text = re.sub(repeated_numbers, r'\1\1', text)
-        
-        self.stats["numerical_patterns_fixed"] += patterns_found
-        return text
-    
     def _clean_symbol_repetition(self, text: str) -> str:
         """
-        Clean repetitive symbols like $$$$$$$$ or ######## that go beyond normal formatting.
+        Clean repetitive symbols that indicate formatting issues.
+        Conservative approach - only target clear formatting artifacts.
         """
         symbol_patterns = {
-            # Repeated $ signs
-            r'\${5,}': '$$$',
-            # Repeated # signs
-            r'#{5,}': '###',
-            # Repeated @ signs
-            r'@{5,}': '@@@',
-            # Repeated + signs
-            r'\+{5,}': '+++',
-            # Repeated * signs
-            r'\*{5,}': '***',
-            # Repeated = signs
-            r'={5,}': '===',
+            # Excessive repeated symbols (5+ occurrences)
+            r'\${5,}': '$',
+            r'#{5,}': '##',
+            r'@{5,}': '@',
+            r'\+{5,}': '+',
+            r'\*{5,}': '**',
+            r'={5,}': '==',
+            r'-{5,}': '--',
         }
         
         count = 0
         for pattern, replacement in symbol_patterns.items():
-            # Count matches before replacement
             matches = re.findall(pattern, text)
             count += len(matches)
-            
-            # Replace the repetitions
             text = re.sub(pattern, replacement, text)
         
         self.stats["symbol_repetition_fixed"] += count
         return text
     
-    def _clean_special_phrase_repetition(self, text: str) -> str:
+    def _clean_general_repetition(self, text: str) -> str:
         """
-        Clean specific phrase repetitions found in examples.
+        Clean general repetition patterns that indicate formatting issues.
+        Only targets clear artifacts, preserves intentional repetition.
         """
-        special_patterns = [
-            # Abortion of information/commission repeating
-            (r'(Abortion of (?:this information|the Commission)(?:\s+|,)){3,}', r'\1\1'),
+        count = 0
+        
+        # Only target excessive repetition (4+ occurrences) to preserve emphasis
+        patterns = [
+            # Repeated words with punctuation (e.g., "no, no, no, no")
+            (r'\b(\w+)(?:,\s*\1){3,}', r'\1, \1'),
             
-            # Agglomeration/agitation repeating
-            (r'(agglomeration|agitation)(?:\s+\1){3,}', r'\1 \1'),
+            # Repeated words without punctuation (e.g., "very very very very")
+            (r'\b(\w+)(?:\s+\1){3,}', r'\1 \1'),
             
-            # Repeated "ag ag ag" sequences
-            (r'(ag\s+){3,}', r'ag ag '),
-            
-            # material injury repetition
-            (r'((?:material |)injury,?\s+){5,}', r'material injury, '),
-            
-            # "material, material, material" repetition
-            (r'(material,?\s+){3,}', r'material, material '),
-            
-            # "etc, etc, etc" repetition
-            (r'(etc(?:,|\.)?\s*){3,}', r'etc., etc.'),
-            
-            # "of the of the of the" repetition
-            (r'(of the\s+){3,}', r'of the '),
-            
-            # "Row: Row: Row:" repetition
-            (r'(Row:\s*){3,}', r'Row: '),
-            
-            # progressively/progressionlessly/progressiveness repeating
-            (r'(progress(?:ion|ively|iveness)(?:\s+|,)){3,}', r'\1\1'),
+            # Repeated short phrases (3+ words, repeated 3+ times)
+            (r'\b(\w+\s+\w+\s+\w+)(?:\s+\1){2,}', r'\1'),
         ]
         
-        count = 0
-        for pattern, replacement in special_patterns:
-            # Count matches before replacement
+        for pattern, replacement in patterns:
             matches = len(re.findall(pattern, text))
             count += matches
-            
-            # Replace the repetitions
             text = re.sub(pattern, replacement, text)
         
-        self.stats["special_patterns_fixed"] += count
+        self.stats["repeated_patterns_fixed"] += count
         return text
     
-    def _clean_repeating_row_markers(self, text: str) -> str:
+    def _normalize_whitespace(self, text: str) -> str:
+        """Normalize whitespace while preserving structure."""
+        original = text
+        
+        # Multiple spaces to single space
+        text = re.sub(r' {2,}', ' ', text)
+        
+        # Multiple newlines to double newline (preserve paragraph breaks)
+        text = re.sub(r'\n{3,}', '\n\n', text)
+        
+        # Remove trailing whitespace from lines
+        text = re.sub(r'[ \t]+\n', '\n', text)
+        
+        if text != original:
+            self.stats["whitespace_normalized"] += 1
+        
+        return text.strip()
+    
+    def _clean_table_rows(self, text: str) -> str:
         """
-        Clean repetitive row markers, especially in tables.
+        Standardize table row formatting and remove obvious duplicates.
         """
-        # Fix sequences of repeating "Row X:" or "Row: Row: Row:"
         row_fixes = 0
         
-        # Fix "Row X: Row X: Row X:" patterns
-        row_pattern = r'(Row \d+:)\s*\1+'
-        row_fixes += len(re.findall(row_pattern, text))
-        text = re.sub(row_pattern, r'\1', text)
+        # Standardize row markers
+        patterns = [
+            # Fix "Low N:" to "Row N:"
+            (r'Low (\d+):', r'Row \1:'),
+            
+            # Fix duplicate row labels (Row 1: Row 1:)
+            (r'(Row \d+:)\s*\1+', r'\1'),
+            
+            # Fix row format issues
+            (r'Row (\d+)!!+', r'Row \1:'),
+            
+            # Remove row markers without content
+            (r'Row \d+:\s*(\n|$)', ''),
+        ]
         
-        # Fix "Row: Row: Row:" patterns
-        row_colon_pattern = r'(Row:)\s*\1+'
-        row_fixes += len(re.findall(row_colon_pattern, text))
-        text = re.sub(row_colon_pattern, r'\1', text)
+        for pattern, replacement in patterns:
+            matches = len(re.findall(pattern, text))
+            row_fixes += matches
+            text = re.sub(pattern, replacement, text)
         
-        # Fix "Row: Row: Row: Row: Row:" patterns without numbers
-        row_pattern2 = r'(Row:\s+){3,}'
-        row_fixes += len(re.findall(row_pattern2, text))
-        text = re.sub(row_pattern2, r'Row: ', text)
-        
-        # Fix sequences with numbers like "Row: 27: Row:"
-        row_pattern3 = r'Row:\s*\d+:\s*Row:'
-        row_fixes += len(re.findall(row_pattern3, text))
-        text = re.sub(row_pattern3, r'Row:', text)
+        # Ensure rows are properly separated
+        text = re.sub(r'(Row \d+:)(?!\s*\n)', r'\1\n', text)
         
         self.stats["table_rows_fixed"] += row_fixes
-        return text
-    
-    def _clean_advanced_patterns(self, text: str) -> str:
-        """
-        Apply advanced pattern cleaning that works on all document types.
-        """
-        # Save original length for artifact counting
-        original_length = len(text)
-        
-        # Apply all advanced cleaning methods
-        text = self._clean_numerical_patterns(text)
-        text = self._clean_symbol_repetition(text)
-        text = self._clean_quoted_rows(text)
-        text = self._clean_special_phrase_repetition(text)
-        text = self._clean_repeating_row_markers(text)
-        
-        # Specialized pattern for the examples you provided:
-        # Pattern with "0.09.09.09..." repeating (from the Discussion section)
-        text = re.sub(r'0\.09\.09\.09\.09\.09\.09\.09\.09\.09\.09\.09\.09\.09\.09\.09\.09\.09\.09[\.09]*', 
-                      r'0.09', text)
-        
-        # Count artifacts removed
-        artifacts_removed = original_length - len(text)
-        if artifacts_removed > 0:
-            self.stats["artifacts_removed"] += artifacts_removed
-        
-        return text
-    
-    def _find_repeated_phrases(self, text: str, min_length: int = 3, max_length: int = 30) -> List[tuple]:
-        """Find repeated phrases in text."""
-        words = text.split()
-        if len(words) < min_length * 2:  # Need at least 2 occurrences to find repetition
-            return []
-        
-        # Try different phrase lengths
-        repeated_phrases = []
-        
-        for phrase_len in range(min_length, min(max_length, len(words) // 2 + 1)):
-            # Check each possible phrase of this length
-            for i in range(len(words) - phrase_len + 1):
-                phrase = ' '.join(words[i:i+phrase_len])
-                
-                # Count occurrences
-                count = 0
-                for j in range(i + phrase_len, len(words) - phrase_len + 1, phrase_len):
-                    if ' '.join(words[j:j+phrase_len]) == phrase:
-                        count += 1
-                    else:
-                        break
-                
-                # If phrase repeats, add it to our list
-                if count > 0:
-                    repeated_phrases.append((phrase, count + 1))
-                    # Skip ahead to avoid finding sub-phrases of this repetition
-                    i += (count + 1) * phrase_len - 1
-        
-        return repeated_phrases
-    
-    def _remove_repeated_phrases(self, text: str) -> str:
-        """Remove repeated phrases, keeping just one instance."""
-        if not text:
-            return text
-        
-        # Find repeated phrases
-        repeated_phrases = self._find_repeated_phrases(text)
-        count = 0
-        
-        for phrase, occurrences in repeated_phrases:
-            # Create pattern that matches exactly this phrase repeated multiple times
-            pattern = re.escape(phrase) + r'(?:\s+' + re.escape(phrase) + r')+'
-            
-            # Replace with single instance
-            new_text = re.sub(pattern, phrase, text)
-            
-            # Update count if replacement occurred
-            if new_text != text:
-                count += 1
-                text = new_text
-        
-        self.stats["repeated_phrases_removed"] += count
-        return text
-    
-    def _remove_repeated_single_words(self, text: str) -> str:
-        """Remove long runs of the same word (e.g., 'no, no, no, no...')."""
-        if not text:
-            return text
-        
-        # Pattern for repeated words with optional punctuation
-        pattern = r'\b(\w+(?:[,.;:]? |, |\. ))\1{2,}'
-        
-        # Find all matches
-        matches = re.findall(pattern, text)
-        
-        # Replace each match with just two instances (e.g., "no, no")
-        for match in matches:
-            repeat_pattern = re.escape(match) + r'{3,}'  # 3+ occurrences
-            text = re.sub(repeat_pattern, match + match, text)
-            self.stats["repeated_words_fixed"] += 1
-        
         return text
     
     def _clean_text(self, text: str, is_heading: bool = False) -> str:
         """
-        Clean general text content.
-        This enhanced version handles complex patterns.
+        Clean general text content with essential formatting fixes.
         """
         if not text:
             return text
         
-        original_length = len(text)
+        # Apply basic cleaning
+        text = self._clean_symbol_repetition(text)
+        text = self._clean_general_repetition(text)
         
-        # Step 1: Handle basic patterns
+        # Fix excessive punctuation (4+ repetitions)
+        punct_count = len(re.findall(r'([!?.:;,\-_])\1{3,}', text))
+        text = re.sub(r'([!?.:;,\-_])\1{3,}', r'\1', text)
+        self.stats["excessive_punctuation_fixed"] += punct_count
         
-        # Remove Chinese/Japanese/Korean characters
-        chinese_char_count = len(re.findall(r'[一-龥的]', text))
-        text = re.sub(r'[一-龥的]', '', text)
-        self.stats["chinese_chars_removed"] += chinese_char_count
+        # Normalize ellipses
+        text = re.sub(r'\.{4,}', '...', text)
         
-        # Handle repeated ellipses and dots
-        text = re.sub(r'\.{5,}', '...', text)  # Replace long runs of dots with ellipsis
-        
-        # Fix excessive repetitions of common words
-        text = re.sub(r'(?:no,? ){3,}', 'no, no ', text)
-        text = re.sub(r'(?:yes,? ){3,}', 'yes, yes ', text)
-        text = re.sub(r'(?:not ){3,}', 'not not ', text)
-        
-        # Remove excessive punctuation
-        punct_matches = len(re.findall(r'([!?.:;,\-_=\*\+#&\|\[\]\{\}\(\)<>])\1{3,}', text))
-        text = re.sub(r'([!?.:;,\-_=\*\+#&\|\[\]\{\}\(\)<>])\1{3,}', r'\1', text)
-        self.stats["excessive_punctuation_fixed"] += punct_matches
-        
-        # Remove excessive letter repetitions
-        text = re.sub(r'([a-zA-Z])\1{3,}', r'\1', text)
-        
-        # Step 2: Handle repeated phrases
-        if len(text.split()) > 5:  # Only for longer texts
-            text = self._remove_repeated_phrases(text)
-            text = self._remove_repeated_single_words(text)
-        
-        # Step 3: Final formatting adjustments
-        
-        # Fix spacing issues
-        text = re.sub(r'\s+', ' ', text)
-        
-        # For headings only, apply specific rules
+        # For headings, apply specific rules
         if is_heading:
-            # Remove table markers in headings
-            text = re.sub(r'table underheading', 'table heading', text)
-            
-            # Clean up angle brackets in headings
+            # Clean up common heading artifacts
             text = re.sub(r'<([^<>]*)>', r'\1', text)
-            
-            # Remove row markers in headings
             text = re.sub(r'Row \d+:\s*', '', text)
         
-        # Update artifact counter
-        artifacts_removed = original_length - len(text)
-        if artifacts_removed > 0:
-            self.stats["artifacts_removed"] += artifacts_removed
+        # Normalize whitespace
+        text = self._normalize_whitespace(text)
         
-        return text.strip()
+        # Count formatting fixes
+        if punct_count > 0:
+            self.stats["formatting_fixes"] += 1
+        
+        return text
     
     def _clean_table_text(self, text: str) -> str:
         """
         Clean text specifically for table content.
-        Enhanced to handle complex patterns in tables.
+        Focus on table structure and formatting.
         """
         if not text:
             return text
         
-        original_length = len(text)
+        # Apply table-specific row cleaning
+        text = self._clean_table_rows(text)
         
-        # Step 1: First run special patterns for tables
+        # Apply general text cleaning
+        text = self._clean_text(text)
         
-        # Fix duplicate row labels (Row 1:Row 1:Row 1:)
-        row_fixes = 0
-        row_fixes += len(re.findall(r'(Row \d+:)\s*\1+', text))
-        text = re.sub(r'(Row \d+:)\s*\1+', r'\1', text)
+        # Table-specific formatting
+        # Remove empty rows and clean up structure
+        lines = text.split('\n')
+        cleaned_lines = []
         
-        # Fix "Low N" to "Row N"
-        row_fixes += len(re.findall(r'Low (\d+)', text))
-        text = re.sub(r'Low (\d+)', r'Row \1:', text)
+        for line in lines:
+            line = line.strip()
+            if line:
+                # Skip rows that are just "Row N:" with no content
+                if re.match(r'^Row \d+:\s*$', line):
+                    continue
+                cleaned_lines.append(line)
         
-        # Fix row label format
-        row_fixes += len(re.findall(r'Row (\d+)!!+', text))
-        text = re.sub(r'Row (\d+)!!+', r'Row \1:', text)
+        text = '\n'.join(cleaned_lines)
         
-        row_fixes += len(re.findall(r'Row (\d+):的', text))
-        text = re.sub(r'Row (\d+):的', r'Row \1:', text)
+        # Ensure proper table formatting
+        text = self._normalize_whitespace(text)
         
-        # Fix consecutive empty row numbers
-        text = re.sub(r'(Row \d+:\s*\n\s*){3,}', r'Row 1:\n', text)
-        
-        self.stats["table_rows_fixed"] += row_fixes
-        
-        # Apply advanced pattern cleaning
-        text = self._clean_advanced_patterns(text)
-        
-        # Clean repeated content within rows
-        parts = re.split(r'(Row \d+:)', text)
-        result_parts = []
-        
-        for i, part in enumerate(parts):
-            if i % 2 == 0:  # Even parts are content between "Row N:" markers
-                if part.strip():
-                    # Clean the content of this row
-                    cleaned_part = self._clean_text(part)  # Use standard text cleaning
-                    if len(part.split()) > 5:  # Only for longer content
-                        # Try to fix repeated phrases in this row
-                        cleaned_part = self._remove_repeated_phrases(cleaned_part)
-                    result_parts.append(cleaned_part)
-                else:
-                    result_parts.append(part)
-            else:  # Odd parts are "Row N:" markers
-                result_parts.append(part)
-        
-        text = ''.join(result_parts)
-        
-        # Special handling for common table artifacts
-        
-        # Repeated "Indication of AMM & " pattern
-        text = re.sub(r'(Indication of AMM &\s+)+', r'Indication of AMM & ', text)
-        
-        # Remove consecutive duplicate items in comma-separated lists
-        text = re.sub(r'([^,]+, )(\1)+', r'\1', text)
-        
-        # Fix row formatting
-        
-        # Remove empty rows
-        text = re.sub(r'Row \d+:\s*(\n|$)', '', text)
-        
-        # Fix spacing issues
-        text = re.sub(r'\s+', ' ', text)
-        text = re.sub(r' {2,}', ' ', text)
-        
-        # Make sure rows are on new lines
-        text = re.sub(r'(Row \d+:)(?!\n)', r'\1\n', text)
-        
-        # Update artifact counter
-        artifacts_removed = original_length - len(text)
-        if artifacts_removed > 0:
-            self.stats["artifacts_removed"] += artifacts_removed
-        
-        return text.strip()
+        return text
