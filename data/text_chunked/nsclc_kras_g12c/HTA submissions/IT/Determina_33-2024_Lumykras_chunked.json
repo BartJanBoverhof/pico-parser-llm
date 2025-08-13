@@ -30,7 +30,7 @@
       }
     },
     {
-      "text": "Robert Giovanni Nistico' as Chairman of the Board of Directors of the Italian Medicines Agency, pursuant to Article 7 of the aforementioned Decree of 20 September 2004, No 245 and its subsequent amendments; Having regard in particular to the Decree by the Minister for Health of 9 February 2024 on the appointment of Dr. Pierluigi Russo as Technical and Scientific Director of the Agenzia Italiana del Farmaco, in accordance with Article 10-bis of the above-mentioned Decree, No 245, dated 28 May 2020, by which the position of Director General No 643 was conferred on Dr. Having regard to the Decision of the Director-General No 643 of 28 May 2020 appointing Dr Francesco Trotta as Head of the HTA and Pharmaceutical Economy Sector, and in particular Article 8 (10) thereof, on the classification of medicinal products which may be administered by the National Health Service, and to Regulation (EC) No 1394/2007 of the European Parliament and of the Council of 13 November 2007 amending Directive 2001/83/EC on advanced therapy medicines; Having regard to Regulation (EC) No 726/2004 of the European Parliament and of the Council of 31 March 2004 laying down Community procedures for the authorisation and supervision of medicinal products for human and veterinary use and establishing a European Medicines Agency; having regard to Legislative Decree No 219 of 24 April 2006 implementing Directive 2001/83/EC (and subsequent amending directives) on a Community code relating to medicinal Products for Human Use; having regards to the Decree of the Minister for Health of 2 August 2019 establishing Criteria and modalities according to which the Italian Agency for Medicines determines, by negotiation, the prices of medicines reimbursed by the Servizio Sanitario Nazionale, published in the Gazzetta Ufficiale della Repubblica Italiana - Serie Generale n. 185 of 24 July 2012; having considered Articles 11 and 12 of Decree-Law No 138-D of 15 September 2012 on the Reimbursement of Medicinal Products, with subsequent amendments to the Emergency Refunds Law of 18 August 2003, converted into a Law on the Promotion of Competition and Protection of the National Health Care Market (Leg.",
+      "text": "Robert Giovanni Nistico' as Chairman of the Board of Directors of the Italian Medicines Agency, pursuant to Article 7 of the aforementioned Decree of 20 September 2004, No 245 and its subsequent amendments; Having regard in particular to the Decree by the Minister for Health of 9 February 2024 on the appointment of Dr. Pierluigi Russo as Technical and Scientific Director of the Agenzia Italiana del Farmaco, in accordance with Article 10-bis of the above-mentioned Decree, No 245, dated 28 May 2020, by which the position of Director General No 643 was conferred on Dr. Having regard to the Decision of the Director-General No 643 of 28 May 2020 appointing Dr Francesco Trotta as Head of the HTA and Pharmaceutical Economy Sector, and in particular Article 8 (10) thereof, on the classification of medicinal products which may be administered by the National Health Service, and to Regulation (EC) No 1394/2007 of the European Parliament and of the Council of 13 November 2007 amending Directive 2001/83/EC on advanced therapy medicines; Having regard to Regulation",
       "metadata": {
         "doc_id": "Determina_33-2024_Lumykras",
         "heading": "Article 48 of Decree-Law No 269 of 30 September 2003 is amended as follows:",
@@ -40,7 +40,23 @@
         "country": "IT",
         "source_type": "hta_submission",
         "original_file_path": "nsclc_kras_g12c/HTA submissions/IT/Determina_33-2024_Lumykras_cleaned.json",
-        "split_index": 1
+        "split_index": "1_0_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "(EC) No 726/2004 of the European Parliament and of the Council of 31 March 2004 laying down Community procedures for the authorisation and supervision of medicinal products for human and veterinary use and establishing a European Medicines Agency; having regard to Legislative Decree No 219 of 24 April 2006 implementing Directive 2001/83/EC (and subsequent amending directives) on a Community code relating to medicinal Products for Human Use; having regards to the Decree of the Minister for Health of 2 August 2019 establishing Criteria and modalities according to which the Italian Agency for Medicines determines, by negotiation, the prices of medicines reimbursed by the Servizio Sanitario Nazionale, published in the Gazzetta Ufficiale della Repubblica Italiana - Serie Generale n. 185 of 24 July 2012; having considered Articles 11 and 12 of Decree-Law No 138-D of 15 September 2012 on the Reimbursement of Medicinal Products, with subsequent amendments to the Emergency Refunds Law of 18 August 2003, converted into a Law on the Promotion of Competition and Protection of the National Health Care Market (Leg.",
+      "metadata": {
+        "doc_id": "Determina_33-2024_Lumykras",
+        "heading": "Article 48 of Decree-Law No 269 of 30 September 2003 is amended as follows:",
+        "start_page": 1,
+        "end_page": 5,
+        "created_date": "2024",
+        "country": "IT",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc_kras_g12c/HTA submissions/IT/Determina_33-2024_Lumykras_cleaned.json",
+        "split_index": "1_1_0",
+        "oversized_split": true
       }
     },
     {

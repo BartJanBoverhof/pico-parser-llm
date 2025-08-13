@@ -16,7 +16,7 @@
       }
     },
     {
-      "text": "The Commission shall, by means of implementing acts, lay down detailed rules for the application of this Regulation.",
+      "text": "The Commission shall, by means of implementing acts, lay down detailed rules for the application of this Regulation. Scheduled for 1 June 2025",
       "metadata": {
         "doc_id": "dlcg_pal_onkogen_dreven_nsclc_v.1_admgodk_010724",
         "heading": "Version 1.0 is available.",
@@ -26,21 +26,8 @@
         "country": "DK",
         "source_type": "clinical_guideline",
         "original_file_path": "nsclc_kras_g12c/clinical guidelines/DK/dlcg_pal_onkogen_dreven_nsclc_v.1_admgodk_010724_cleaned.json",
-        "split_index": 0
-      }
-    },
-    {
-      "text": "Scheduled for 1 June 2025",
-      "metadata": {
-        "doc_id": "dlcg_pal_onkogen_dreven_nsclc_v.1_admgodk_010724",
-        "heading": "The Commission shall be empowered to adopt delegated acts in accordance with this Article.",
-        "start_page": 1,
-        "end_page": 1,
-        "created_date": "2024",
-        "country": "DK",
-        "source_type": "clinical_guideline",
-        "original_file_path": "nsclc_kras_g12c/clinical guidelines/DK/dlcg_pal_onkogen_dreven_nsclc_v.1_admgodk_010724_cleaned.json",
-        "split_index": 0
+        "split_index": 0,
+        "merged": true
       }
     },
     {
@@ -58,7 +45,7 @@
       }
     },
     {
-      "text": "In the case of an oncogenetically induced tumour, the oncogenic route of administration should be indicated in the application for a veterinary medicinal product (see Appendix 8), either by the name of the veterinarian or by the pharmaceutical name (s) indicated on the application form. Appendix 3 - Guidance on application for single-patient use available in DK) expensive medicinal products that have either been rejected by e 8. Patients with oncogenic-driven non-cellular lung cancer patients with incurable pulmonary adenocarcinoma and NSCLC NOS as well as some selected patients with inoperable pulmonal planocellular carcinoma should be extended to a targeted NGS panel containing the guideline-described variants patients with classic activating EGFR mutations and performance status 0-3 should be offered line 1 treatment with osimertinib (A) patients with ALK translocation and performance state 0-3 may be offered 1. (A) Patients with activating BRAF V600E and performance status 0-2 may be offered 1st line chemotherapy +/- immunotherapy according to non-oncogene even NSCLC guidelines (A), patients with activated MET exon 14 skipping variants or MET mplification and performance state 0-2 can be offered1st line emotherapy+/- immune therapies according to the non-onkendreven NSCSC guideline (A); patients with active KRAS G12C and 0-2 performance status may also be offered1. In the case of a Member State which does not fulfil the conditions laid down in paragraph 1 of this Article, that Member State shall inform the Commission and the other Member States of the reasons for its refusal.",
+      "text": "In the case of an oncogenetically induced tumour, the oncogenic route of administration should be indicated in the application for a veterinary medicinal product (see Appendix 8), either by the name of the veterinarian or by the pharmaceutical name (s) indicated on the application form. Appendix 3 - Guidance on application for single-patient use available in DK) expensive medicinal products that have either been rejected by e 8. Patients with oncogenic-driven non-cellular lung cancer patients with incurable pulmonary adenocarcinoma and NSCLC NOS as well as some selected patients with inoperable pulmonal planocellular carcinoma should be extended to a targeted NGS panel containing the guideline-described variants patients with classic activating EGFR mutations and performance status 0-3 should be offered line 1 treatment",
       "metadata": {
         "doc_id": "dlcg_pal_onkogen_dreven_nsclc_v.1_admgodk_010724",
         "heading": "Table of contents",
@@ -68,7 +55,23 @@
         "country": "DK",
         "source_type": "clinical_guideline",
         "original_file_path": "nsclc_kras_g12c/clinical guidelines/DK/dlcg_pal_onkogen_dreven_nsclc_v.1_admgodk_010724_cleaned.json",
-        "split_index": 0
+        "split_index": "0_0_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "with osimertinib (A) patients with ALK translocation and performance state 0-3 may be offered 1. (A) Patients with activating BRAF V600E and performance status 0-2 may be offered 1st line chemotherapy +/- immunotherapy according to non-oncogene even NSCLC guidelines (A), patients with activated MET exon 14 skipping variants or MET mplification and performance state 0-2 can be offered1st line emotherapy+/- immune therapies according to the non-onkendreven NSCSC guideline (A); patients with active KRAS G12C and 0-2 performance status may also be offered1. In the case of a Member State which does not fulfil the conditions laid down in paragraph 1 of this Article, that Member State shall inform the Commission and the other Member States of the reasons for its refusal.",
+      "metadata": {
+        "doc_id": "dlcg_pal_onkogen_dreven_nsclc_v.1_admgodk_010724",
+        "heading": "Table of contents",
+        "start_page": 2,
+        "end_page": 5,
+        "created_date": "2024",
+        "country": "DK",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc_kras_g12c/clinical guidelines/DK/dlcg_pal_onkogen_dreven_nsclc_v.1_admgodk_010724_cleaned.json",
+        "split_index": "0_1_0",
+        "oversized_split": true
       }
     },
     {
@@ -142,7 +145,7 @@
       }
     },
     {
-      "text": "In general, it is recommended to treat the individual patient for as long as possible with relevant TKIs, also described in the ESMO and NCCN guidelines. The manner in which the progression manifests itself in the patients under TKI treatment has an impact on the choice of treatment. In oligoprogression, consideration may be given to continuing local treatment of the metastatic sites during TKI. In asymptomatic systemic progression, treatment with the TKI \"beyond progression\" profile may be considered under closer monitoring of disease progression. Patients with incurable pulmonary adenocarcinoma and NSCLC NOS, as well as selected patients with curable lung planocellular carcinoma, should be provided with a targeted NGS panel containing the variants described in the guideline. Following a national consultation of pathologists (DaLuPa) with special responsibility for lung cancer, the following consensus has been reached (April 2024): which patients 1) Diagnosed with incurable NSCLC of the pulmonary adenocarcinoma type or NSSCLC NOS (not otherwise specified) (all patients) 2) Diagnosis of incurable planocellular carcinoma and never smoked (< 15 years of age) or age < 50 years 3) Progression During treatment of oncogen-driven NSCCC, select patients (good, reasonable, AT expected survival) with expected treatment outcome (\"loss\" of primary oncogene drivers/ histologic transformation and/ or newly emerging target resistance variants) 4) During treatment for non-oncogen -driven nSCLC progression - select patients in whom (few) primary tumor/ histological transformation variants are suspected. EGFR variants (all in exon 18-21 with variant description) 2.",
+      "text": "In general, it is recommended to treat the individual patient for as long as possible with relevant TKIs, also described in the ESMO and NCCN guidelines. The manner in which the progression manifests itself in the patients under TKI treatment has an impact on the choice of treatment. In oligoprogression, consideration may be given to continuing local treatment of the metastatic sites during TKI. In asymptomatic systemic progression, treatment with the TKI \"beyond progression\" profile may be considered under closer monitoring of disease progression. Patients with incurable pulmonary adenocarcinoma and NSCLC NOS, as well as selected patients with curable lung planocellular carcinoma, should be provided with a targeted NGS panel containing the variants described in the guideline. Following a national",
       "metadata": {
         "doc_id": "dlcg_pal_onkogen_dreven_nsclc_v.1_admgodk_010724",
         "heading": "The Fundamentals",
@@ -152,7 +155,23 @@
         "country": "DK",
         "source_type": "clinical_guideline",
         "original_file_path": "nsclc_kras_g12c/clinical guidelines/DK/dlcg_pal_onkogen_dreven_nsclc_v.1_admgodk_010724_cleaned.json",
-        "split_index": 0
+        "split_index": "0_0_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "consultation of pathologists (DaLuPa) with special responsibility for lung cancer, the following consensus has been reached (April 2024): which patients 1) Diagnosed with incurable NSCLC of the pulmonary adenocarcinoma type or NSSCLC NOS (not otherwise specified) (all patients) 2) Diagnosis of incurable planocellular carcinoma and never smoked (< 15 years of age) or age < 50 years 3) Progression During treatment of oncogen-driven NSCCC, select patients (good, reasonable, AT expected survival) with expected treatment outcome (\"loss\" of primary oncogene drivers/ histologic transformation and/ or newly emerging target resistance variants) 4) During treatment for non-oncogen -driven nSCLC progression - select patients in whom (few) primary tumor/ histological transformation variants are suspected. EGFR variants (all in exon 18-21 with variant description) 2.",
+      "metadata": {
+        "doc_id": "dlcg_pal_onkogen_dreven_nsclc_v.1_admgodk_010724",
+        "heading": "The Fundamentals",
+        "start_page": 8,
+        "end_page": 14,
+        "created_date": "2024",
+        "country": "DK",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc_kras_g12c/clinical guidelines/DK/dlcg_pal_onkogen_dreven_nsclc_v.1_admgodk_010724_cleaned.json",
+        "split_index": "0_1_0",
+        "oversized_split": true
       }
     },
     {
@@ -170,7 +189,7 @@
       }
     },
     {
-      "text": "e. a low proportion of cells in the tumour biopsy, can induce a delay in the start of the reduction and therefore focus should be on ensuring sufficient expansion of genetic material from the biopsy or biopsy tissue with sufficient amount of tumour genetic material. Needle aspirates (e.g. EBUS) or histological biopsies (GNB/endoscopic) with sufficient material for genetic profiling should be used. NOTE: Please note that clotting material on cytological material is required for immunohistochemical analysis of PD-L1. Pleural fluid/blood (ctDNA) 1. Pleural pleural liquid can be used, but please note that there are sufficient numbers of tumour cells for genetic profiling, including RNA-based NGS 2. Blood ctDNA circulating tumour DNA The collection of sufficient and repeated tissue samples may be limited in clinical practice. Therefore, a potential solution to these challenges is to test circulating cell-free tumour (tDNA) in plasma as a supplement to tissue profiling. ctDNA analyses can be usefully used when repeated analyses are needed or when tissue biopsies are not possible or appropriate. The interpretation of ctRNA results should be carried out in dialogue with the pathologist and the molecular biologist. Analyses on ct DNA are not fully implemented in Denmark and are therefore not available as standard in several regions. The lack of variants tested on cDNA may not be used to rule out the presence of a variant. Other examples of limitations of the ct-DNA analysis are: 1) the ability to identify mutations and other changes (e.g. pancreatic cancer) and 2) the inability of the NGS to identify all transitional changes. In case of sparse tissue material, where the validity of an NGS analysis would be questionable, immunohistochemical or FISH analysis may be used instead to detect ALK or ROS1 fusion, but in case these are positive, rebioption should be performed for the detection of the fusion partner at the NGS. In addition, it is important to note that gene amplifications and amplification cannot be checked with sufficient certainty if the percentage of tumour material in the tissue is found to be positive.",
+      "text": "e. a low proportion of cells in the tumour biopsy, can induce a delay in the start of the reduction and therefore focus should be on ensuring sufficient expansion of genetic material from the biopsy or biopsy tissue with sufficient amount of tumour genetic material. Needle aspirates (e.g. EBUS) or histological biopsies (GNB/endoscopic) with sufficient material for genetic profiling should be used. NOTE: Please note that clotting material on cytological material is required for immunohistochemical analysis of PD-L1. Pleural fluid/blood (ctDNA) 1. Pleural pleural liquid can be used, but please note that there are sufficient numbers of tumour cells for genetic profiling, including RNA-based NGS 2. Blood ctDNA circulating tumour DNA The collection of sufficient and repeated tissue samples may be limited in clinical practice. Therefore, a potential solution to these challenges is to test circulating cell-free tumour (tDNA) in plasma as a supplement to tissue profiling. ctDNA analyses can be usefully used when repeated analyses are needed or when tissue biopsies are not possible or appropriate. The interpretation",
       "metadata": {
         "doc_id": "dlcg_pal_onkogen_dreven_nsclc_v.1_admgodk_010724",
         "heading": "The Fundamentals",
@@ -180,7 +199,23 @@
         "country": "DK",
         "source_type": "clinical_guideline",
         "original_file_path": "nsclc_kras_g12c/clinical guidelines/DK/dlcg_pal_onkogen_dreven_nsclc_v.1_admgodk_010724_cleaned.json",
-        "split_index": 2
+        "split_index": "2_0_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "of ctRNA results should be carried out in dialogue with the pathologist and the molecular biologist. Analyses on ct DNA are not fully implemented in Denmark and are therefore not available as standard in several regions. The lack of variants tested on cDNA may not be used to rule out the presence of a variant. Other examples of limitations of the ct-DNA analysis are: 1) the ability to identify mutations and other changes (e.g. pancreatic cancer) and 2) the inability of the NGS to identify all transitional changes. In case of sparse tissue material, where the validity of an NGS analysis would be questionable, immunohistochemical or FISH analysis may be used instead to detect ALK or ROS1 fusion, but in case these are positive, rebioption should be performed for the detection of the fusion partner at the NGS. In addition, it is important to note that gene amplifications and amplification cannot be checked with sufficient certainty if the percentage of tumour material in the tissue is found to be positive.",
+      "metadata": {
+        "doc_id": "dlcg_pal_onkogen_dreven_nsclc_v.1_admgodk_010724",
+        "heading": "The Fundamentals",
+        "start_page": 8,
+        "end_page": 14,
+        "created_date": "2024",
+        "country": "DK",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc_kras_g12c/clinical guidelines/DK/dlcg_pal_onkogen_dreven_nsclc_v.1_admgodk_010724_cleaned.json",
+        "split_index": "2_1_0",
+        "oversized_split": true
       }
     },
     {
@@ -268,7 +303,7 @@
       }
     },
     {
-      "text": "None of the studies showed improvement in OS, probably due to a higher number of patients in the chemotherapy arm subsequently treated with the TKIs studied (17-19) [1b]. A meta-analysis (20) [1a] compared the efficacy and adverse event profiles of erlotinib, gefitinib, and ofatinib. The analysis was based on 8 randomised trials and 82 cohort studies. 3 ALK translocated NSCLC is seen in 4-6% of all patients diagnosed with incurable pulmonary adenocarcinoma (21). The most common fusion partner is EML4 (85%). For ALK-EML4 there are 12 different variants, of which variants 1 and 3 are the most common. The variants are associated with varying sensitivity to ALK TKIs and they develop varying mechanisms of resistance (21). Alectinib and brigatinib are approved by the MR as first-line treatment of ALK Translocated Pulmonary Adenocarcinoma. ALECTINIB Alectinib is a 2nd generation ALK-TKI and was compared to crizotinib in the Phase 3 ALEX study in treatment-naïve patients (22) [1b]. The study showed greater efficacy of alectinib in terms of 12-month events-free rate, 68.4% with alectitinib vs. 48.7% with crisotinib. PFS was 25.7 months for alectininib and 10.4 months for crizatinib. Intracranial response rate was 81% for alectrinib versus 50% for cricotinib . Intracranial response - measured in a small group of patients with measurable brain metastases - was 81% for alectinib and 50% for crizotinib. The most frequently reported adverse reactions were nausea (15.8% with alectitinib versus 49.7% with crisotinib), elevated alanine transaminase levels (33.1% with Alectinib versus 17.1% with crizatinib) and diarrhoea (13.2% with Alecktinib versus 46.4% with crezotinib). The most frequent adverse reactions were diarrhoea (52% with brigatinib and 56% with crizotinib), elevated creatinine kinase (46% with brigitinib and 17% with crisotinib) cough (35% with brigutinib and 20% withcrizotiniB), hypertension (32% with Brigatinib, 8% withcrisotiniB) and nausea, 30% with brigotinib and 58% withcrezotinib). The most frequent adverse reactions during treatment with lorlatinib were hypercholesterolaemia 82.4% (13.9%), third-degree hyperglycaemia 60.7% (13.2%), third degree oedema 51.4% (2.3%), peripheral neuropathy 43.7% (2.4%), and low-grade systemic impairment 23.7% (1.1%).[b] Treatment with rosuvastatin should be based on first-line evidence of the presence or absence of triglycerides or CYP1A4.",
+      "text": "None of the studies showed improvement in OS, probably due to a higher number of patients in the chemotherapy arm subsequently treated with the TKIs studied (17-19) [1b]. A meta-analysis (20) [1a] compared the efficacy and adverse event profiles of erlotinib, gefitinib, and ofatinib. The analysis was based on 8 randomised trials and 82 cohort studies. 3 ALK translocated NSCLC is seen in 4-6% of all patients diagnosed with incurable pulmonary adenocarcinoma (21). The most common fusion partner is EML4 (85%). For ALK-EML4 there are 12 different variants, of which variants 1 and 3 are the most common. The variants are associated with varying sensitivity to ALK TKIs and they develop varying mechanisms of resistance (21). Alectinib and brigatinib are approved by the MR as first-line treatment of ALK Translocated Pulmonary Adenocarcinoma. ALECTINIB Alectinib is a 2nd generation ALK-TKI and was compared to crizotinib in the Phase 3 ALEX study in treatment-naïve patients (22) [1b]. The study showed greater efficacy of alectinib in terms of 12-month events-free rate, 68.4% with alectitinib vs. 48.7% with crisotinib.",
       "metadata": {
         "doc_id": "dlcg_pal_onkogen_dreven_nsclc_v.1_admgodk_010724",
         "heading": "The Fundamentals",
@@ -278,7 +313,23 @@
         "country": "DK",
         "source_type": "clinical_guideline",
         "original_file_path": "nsclc_kras_g12c/clinical guidelines/DK/dlcg_pal_onkogen_dreven_nsclc_v.1_admgodk_010724_cleaned.json",
-        "split_index": 9
+        "split_index": "9_0_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "PFS was 25.7 months for alectininib and 10.4 months for crizatinib. Intracranial response rate was 81% for alectrinib versus 50% for cricotinib . Intracranial response - measured in a small group of patients with measurable brain metastases - was 81% for alectinib and 50% for crizotinib. The most frequently reported adverse reactions were nausea (15.8% with alectitinib versus 49.7% with crisotinib), elevated alanine transaminase levels (33.1% with Alectinib versus 17.1% with crizatinib) and diarrhoea (13.2% with Alecktinib versus 46.4% with crezotinib). The most frequent adverse reactions were diarrhoea (52% with brigatinib and 56% with crizotinib), elevated creatinine kinase (46% with brigitinib and 17% with crisotinib) cough (35% with brigutinib and 20% withcrizotiniB), hypertension (32% with Brigatinib, 8% withcrisotiniB) and nausea, 30% with brigotinib and 58% withcrezotinib). The most frequent adverse reactions during treatment with lorlatinib were hypercholesterolaemia 82.4% (13.9%), third-degree hyperglycaemia 60.7% (13.2%), third degree oedema 51.4% (2.3%), peripheral neuropathy 43.7% (2.4%), and low-grade systemic impairment 23.7% (1.1%).[b] Treatment with rosuvastatin should be based on first-line evidence of the presence or absence of triglycerides or CYP1A4.",
+      "metadata": {
+        "doc_id": "dlcg_pal_onkogen_dreven_nsclc_v.1_admgodk_010724",
+        "heading": "The Fundamentals",
+        "start_page": 8,
+        "end_page": 14,
+        "created_date": "2024",
+        "country": "DK",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc_kras_g12c/clinical guidelines/DK/dlcg_pal_onkogen_dreven_nsclc_v.1_admgodk_010724_cleaned.json",
+        "split_index": "9_1_0",
+        "oversized_split": true
       }
     },
     {
@@ -422,7 +473,7 @@
       }
     },
     {
-      "text": "ORR was 64% with mDOR at 19.9 months and mPFS at 14.9 months. Recommendation 10 Patients with rare EGFR variants may be offered first line osimertinib according to the ESMO and NCCN guidelines. Afatinib is also recommended by the two guidelines, but is not available in DK without prior application to the Medicines Agency. The single-arm phase II studies (64, 65) [2b] examined the effect of osimertinib in 17 and 37 patients with the EGFR variants: EGFR exon 18 G719X, EGFR Exon 20 S768I and EGFR EXon 21 L861Q. In addition, a post-hoc analysis of the LUX-lung 2/3/6 studies (Phase II and randomized Phase III) that examined the effect of afatinib in patients with EGFR mutant NSCLC was performed. All patients with EGFR mutant lung cancer will at some point develop resistance to line 1 osimertinib. The manner in which the disease develops resistance varies from patient to patient (66). It is recommended, as in the ESMO guidelines, to treat the development of resistance on the basis of the progression pattern and symptoms. ASYMPTOMATIC PROGRESSION It is recommended, as in the ESMO and NCCN guidelines, that osimertinib be continued under close monitoring. OLIGOPROGRESSION One-fifth of patients experience progression in individual metastases (≤ 3) during Osimertinib-oligoprogression According to the ESMo and Nccn guidelines it may be considered to offer patients topical treatment against oligoprogressing sites under osimertnib. Fifteen percent of patients in progression develop a histological transformation to SCLC.",
+      "text": "ORR was 64% with mDOR at 19.9 months and mPFS at 14.9 months. Recommendation 10 Patients with rare EGFR variants may be offered first line osimertinib according to the ESMO and NCCN guidelines. Afatinib is also recommended by the two guidelines, but is not available in DK without prior application to the Medicines Agency. The single-arm phase II studies (64, 65) [2b] examined the effect of osimertinib in 17 and 37 patients with the EGFR variants: EGFR exon 18 G719X, EGFR Exon 20 S768I and EGFR EXon 21 L861Q. In addition, a post-hoc analysis of the LUX-lung 2/3/6 studies (Phase II and randomized Phase III) that examined the effect of afatinib in patients with EGFR mutant NSCLC was performed.",
       "metadata": {
         "doc_id": "dlcg_pal_onkogen_dreven_nsclc_v.1_admgodk_010724",
         "heading": "Advisory opinion 7",
@@ -432,7 +483,23 @@
         "country": "DK",
         "source_type": "clinical_guideline",
         "original_file_path": "nsclc_kras_g12c/clinical guidelines/DK/dlcg_pal_onkogen_dreven_nsclc_v.1_admgodk_010724_cleaned.json",
-        "split_index": 4
+        "split_index": "4_0_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "All patients with EGFR mutant lung cancer will at some point develop resistance to line 1 osimertinib. The manner in which the disease develops resistance varies from patient to patient (66). It is recommended, as in the ESMO guidelines, to treat the development of resistance on the basis of the progression pattern and symptoms. ASYMPTOMATIC PROGRESSION It is recommended, as in the ESMO and NCCN guidelines, that osimertinib be continued under close monitoring. OLIGOPROGRESSION One-fifth of patients experience progression in individual metastases (≤ 3) during Osimertinib-oligoprogression According to the ESMo and Nccn guidelines it may be considered to offer patients topical treatment against oligoprogressing sites under osimertnib. Fifteen percent of patients in progression develop a histological transformation to SCLC.",
+      "metadata": {
+        "doc_id": "dlcg_pal_onkogen_dreven_nsclc_v.1_admgodk_010724",
+        "heading": "Advisory opinion 7",
+        "start_page": 18,
+        "end_page": 22,
+        "created_date": "2024",
+        "country": "DK",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc_kras_g12c/clinical guidelines/DK/dlcg_pal_onkogen_dreven_nsclc_v.1_admgodk_010724_cleaned.json",
+        "split_index": "4_1_0",
+        "oversized_split": true
       }
     },
     {
@@ -492,7 +559,7 @@
       }
     },
     {
-      "text": "Significantly improved ORR (64%/63% vs. 36%) in the amivantamab arms vs. chemotherapy arm. The same was true for both PFS (6.3/ 8.2 months vs. 4.2 months) and CNS PFS (12.8/12.5 months versus 8.3 months). More adverse reactions were observed in the Amivantamba arms compared to chemotherapeutic: SAE (all) 32-52% vs. 20%. Adverse reaction rate: ≥ 72-92% vs 48%. The most frequent adverse reaction was bone marrow suppression. An increased risk of VTE was observed for the AmIVantamba arm in 10%-22% vs 5%. Treatment was discontinued in 10-22% of patients vs. 4% of patients. The combination of amiventamab/ chemotherapies is not EMA approved. Amivantamab monotherapy is not approved by EMA, studies are ongoing for EGFR-resistant variants or MET (limited evidence of linearity) variants and therefore no osiminib can be recommended as a prospective treatment for the osiminib class 2 variants under investigation. The IMPRESS study (Phase II) (76) [2b] examined the effect of gefitinib added to chemotherapy on progression during line 1 of chemotherapeutic therapy versus Gefitinib alone. The study showed no improvement in PFS or OS with the combination. The trial showed more ≥ 3 adverse reactions: 51% versus 25%. The FLAURA 2 study (9) [1b] investigated the effects of Osimertinib in combination with chemotherapies, line 1. Preliminary OS data were presented at ASCO 2024: OS for combination=NR, for osimertinib monotherapy=38.6 months. Adverse reaction rate was ≥ 64% for combination vs 27% for Osimertinib. SAE (all) was 38% in the combination arm vs. 19% in the osimertnib monotherapeutic arm. The most frequent adverse reactions were knee arthritis: 71% (combined arm) vs. 24% (brain arm).",
+      "text": "Significantly improved ORR (64%/63% vs. 36%) in the amivantamab arms vs. chemotherapy arm. The same was true for both PFS (6.3/ 8.2 months vs. 4.2 months) and CNS PFS (12.8/12.5 months versus 8.3 months). More adverse reactions were observed in the Amivantamba arms compared to chemotherapeutic: SAE (all) 32-52% vs. 20%. Adverse reaction rate: ≥ 72-92% vs 48%. The most frequent adverse reaction was bone marrow suppression. An increased risk of VTE was observed for the AmIVantamba arm in 10%-22% vs 5%. Treatment was discontinued in 10-22% of patients vs. 4% of patients. The combination of amiventamab/ chemotherapies is not EMA approved. Amivantamab monotherapy is not approved by EMA, studies are ongoing for EGFR-resistant variants or MET (limited evidence of linearity) variants and therefore no osiminib can be recommended as a prospective",
       "metadata": {
         "doc_id": "dlcg_pal_onkogen_dreven_nsclc_v.1_admgodk_010724",
         "heading": "Clinical Guideline │Cancer DLCG versus chemotherapy alone or with amivantamab, 2nd line treatment after osimertinib.",
@@ -502,7 +569,23 @@
         "country": "DK",
         "source_type": "clinical_guideline",
         "original_file_path": "nsclc_kras_g12c/clinical guidelines/DK/dlcg_pal_onkogen_dreven_nsclc_v.1_admgodk_010724_cleaned.json",
-        "split_index": 0
+        "split_index": "0_0_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "treatment for the osiminib class 2 variants under investigation. The IMPRESS study (Phase II) (76) [2b] examined the effect of gefitinib added to chemotherapy on progression during line 1 of chemotherapeutic therapy versus Gefitinib alone. The study showed no improvement in PFS or OS with the combination. The trial showed more ≥ 3 adverse reactions: 51% versus 25%. The FLAURA 2 study (9) [1b] investigated the effects of Osimertinib in combination with chemotherapies, line 1. Preliminary OS data were presented at ASCO 2024: OS for combination=NR, for osimertinib monotherapy=38.6 months. Adverse reaction rate was ≥ 64% for combination vs 27% for Osimertinib. SAE (all) was 38% in the combination arm vs. 19% in the osimertnib monotherapeutic arm. The most frequent adverse reactions were knee arthritis: 71% (combined arm) vs. 24% (brain arm).",
+      "metadata": {
+        "doc_id": "dlcg_pal_onkogen_dreven_nsclc_v.1_admgodk_010724",
+        "heading": "Clinical Guideline │Cancer DLCG versus chemotherapy alone or with amivantamab, 2nd line treatment after osimertinib.",
+        "start_page": 24,
+        "end_page": 24,
+        "created_date": "2024",
+        "country": "DK",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc_kras_g12c/clinical guidelines/DK/dlcg_pal_onkogen_dreven_nsclc_v.1_admgodk_010724_cleaned.json",
+        "split_index": "0_1_0",
+        "oversized_split": true
       }
     },
     {
@@ -548,7 +631,7 @@
       }
     },
     {
-      "text": "All studies reported significant adverse reactions, particularly interstitial lung disease/ pneumonitis, hepatic and gastrointestinal effects. The studies were discontinued prematurely due to their increased toxicity. Therefore, it is not recommended to combine immunotherapies with TKIs. One hundred and two patients were enrolled and the study showed significantly improved PFS in favour of the chemotherapy arm (PFS 1.7 months (nivo) versus 5.6 months (chemo)) independent of PD-L1 status. All patients will eventually develop resistance to ALK TKI (21) [1a]. The mechanisms of resistance are classified according to whether they are due to a change in the ALK gene itself (off-target) or whether they result from a change of tissue-generated signaling pathways independent of ALK (off target) or biological transformation (88) [2b]. In the case of progression to generation 3 ALK-TKI, lorlatinib should be offered with the same reservations as those under EGFR progression, in addition, see recommendation 11. On-target resistance mechanisms occur as both single mutations and as multiple mutations developed simultaneously (compound mutations) in the ALK gene. These acquired mutations are distinct for each ALK TKI, even within the same generation of ALK-TKIs. It may therefore, in selected cases, make sense to switch between the same generational ALKTKI in the context of resistance development (e.g. between brigatinib and alectinib (2nd generation TKI). However, it is essential to perform a new genetic profiling of progressive resistant metastases (alternative cDNA) to map the variants (21, 91) [a, 2b) ] of Lorentinib in order to overcome the frequencies at which ALKTI variants were developed during the 1st generation ALK. On-target resistance mechanisms developed under lorlatinib are often characterised by the presence of several different mutations (compound variants) in the ALK gene (most commonly G1202R + L1196M and G1203R + F1174C/ L), presumably as a result of sequential treatment with ALK-TKI. Multiple off-target resistance mechanisms that activate ALK-independent signaling pathways have been described during ALK TKI. There are case reports describing response by adding crizotinib to continued lorlatinib at acquired MET amplification (21, 89) [1a, 2b]. More studies investigating the effect of combined TKI are on the way. TKI combinations may, pending further evidence, not be recommended outside of clinical trials. Histological transformation Histologic transformation to small cell lung cancer and squamous cell carcinoma has been described under treatment with both lorlat, alectinib, and brigatinib, although it is rarely seen. The histologic transmutation should be treated according to the guidelines for non-oncogene-driven NLC or SCLC.",
+      "text": "All studies reported significant adverse reactions, particularly interstitial lung disease/ pneumonitis, hepatic and gastrointestinal effects. The studies were discontinued prematurely due to their increased toxicity. Therefore, it is not recommended to combine immunotherapies with TKIs. One hundred and two patients were enrolled and the study showed significantly improved PFS in favour of the chemotherapy arm (PFS 1.7 months (nivo) versus 5.6 months (chemo)) independent of PD-L1 status. All patients will eventually develop resistance to ALK TKI (21) [1a]. The mechanisms of resistance are classified according to whether they are due to a change in the ALK gene itself (off-target) or whether they result from a change of tissue-generated signaling pathways independent of ALK (off target) or biological transformation (88) [2b]. In the case of progression to generation 3 ALK-TKI, lorlatinib should be offered with the same reservations as those under EGFR progression, in addition, see recommendation 11. On-target resistance mechanisms occur as both single mutations and as multiple mutations developed simultaneously (compound mutations) in the ALK gene. These acquired mutations are distinct for each ALK TKI, even within the same generation of ALK-TKIs. It may therefore, in selected cases, make sense to switch between the same generational ALKTKI in the",
       "metadata": {
         "doc_id": "dlcg_pal_onkogen_dreven_nsclc_v.1_admgodk_010724",
         "heading": "In accordance with the NCCN guidelines, the DOLG recommends that in selected patients who are at risk of cancer, DLCG progression on osimertinib should be avoided.",
@@ -558,7 +641,23 @@
         "country": "DK",
         "source_type": "clinical_guideline",
         "original_file_path": "nsclc_kras_g12c/clinical guidelines/DK/dlcg_pal_onkogen_dreven_nsclc_v.1_admgodk_010724_cleaned.json",
-        "split_index": 2
+        "split_index": "2_0_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "context of resistance development (e.g. between brigatinib and alectinib (2nd generation TKI). However, it is essential to perform a new genetic profiling of progressive resistant metastases (alternative cDNA) to map the variants (21, 91) [a, 2b) ] of Lorentinib in order to overcome the frequencies at which ALKTI variants were developed during the 1st generation ALK. On-target resistance mechanisms developed under lorlatinib are often characterised by the presence of several different mutations (compound variants) in the ALK gene (most commonly G1202R + L1196M and G1203R + F1174C/ L), presumably as a result of sequential treatment with ALK-TKI. Multiple off-target resistance mechanisms that activate ALK-independent signaling pathways have been described during ALK TKI. There are case reports describing response by adding crizotinib to continued lorlatinib at acquired MET amplification (21, 89) [1a, 2b]. More studies investigating the effect of combined TKI are on the way. TKI combinations may, pending further evidence, not be recommended outside of clinical trials. Histological transformation Histologic transformation to small cell lung cancer and squamous cell carcinoma has been described under treatment with both lorlat, alectinib, and brigatinib, although it is rarely seen. The histologic transmutation should be treated according to the guidelines for non-oncogene-driven NLC or SCLC.",
+      "metadata": {
+        "doc_id": "dlcg_pal_onkogen_dreven_nsclc_v.1_admgodk_010724",
+        "heading": "In accordance with the NCCN guidelines, the DOLG recommends that in selected patients who are at risk of cancer, DLCG progression on osimertinib should be avoided.",
+        "start_page": 25,
+        "end_page": 28,
+        "created_date": "2024",
+        "country": "DK",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc_kras_g12c/clinical guidelines/DK/dlcg_pal_onkogen_dreven_nsclc_v.1_admgodk_010724_cleaned.json",
+        "split_index": "2_1_0",
+        "oversized_split": true
       }
     },
     {
@@ -590,7 +689,7 @@
       }
     },
     {
-      "text": "In an interim analysis of the Phase 3 study LIBRETTO-431, selpercatinib is assessed against platinum-based chemotherapy +/- pembrolizumab in line 1 in patients with advanced RET-fusion-activated NSCLC (38) [1b]. The study shows PFS: 24.8 months versus 11.2 months for selcatpernib versus platinum based chemo +/pembrolizumabe. The frequency of Grade 2+ adverse reactions was higher for selpercatinib than for chemotherapy (70% vs 57%). PRALSETIN Pralsetinib (96, 97) [2b] in the second line after failure of platinum-based chemo is provisionally considered to be bioequivalent to selperkatinib in MR. Pralsetnib has been studied in the phase 1/2 ARROW study with an ORR of 59% in the first line after platinum chemotherapies. In patients with PS ≥ 2 years, ESMO and NCCN guidelines recommend RET TKI. It is considered that data from the EGFR and ALK studies, which have shown high ORR, manageable adverse reactions and improvement in PS, can be extrapolated to other oncogenes (13) [5]. Patients with activated BRAF V600E and performance status 0-2 ((3) and previously treated with platinum-based chemotherapy and immunotherapy (where applicable) may be offered 2. (3.) line therapy with dabrafenib plus trametinib, alternatively encorafenib + binimetinib after approval by departmental/ regional medical board (B) Literature and Evidence Review Advisory 15 Patients who have activated bRAF v600E previously given platinum based chemotherapeutic +/ -immunotherapy, can be offered treatment with dabarafenib Plus tremetinib. The most frequent grade 3-4 AEs were neutropenia (9%), hyponatremia (7%) and anaemia (5%).",
+      "text": "In an interim analysis of the Phase 3 study LIBRETTO-431, selpercatinib is assessed against platinum-based chemotherapy +/- pembrolizumab in line 1 in patients with advanced RET-fusion-activated NSCLC (38) [1b]. The study shows PFS: 24.8 months versus 11.2 months for selcatpernib versus platinum based chemo +/pembrolizumabe. The frequency of Grade 2+ adverse reactions was higher for selpercatinib than for chemotherapy (70% vs 57%). PRALSETIN Pralsetinib (96, 97) [2b] in the second line after failure of platinum-based chemo is provisionally considered to be bioequivalent to selperkatinib in MR. Pralsetnib has been studied in the phase 1/2 ARROW study with an ORR of 59% in the first line after platinum chemotherapies. In patients with PS ≥ 2 years, ESMO and NCCN",
       "metadata": {
         "doc_id": "dlcg_pal_onkogen_dreven_nsclc_v.1_admgodk_010724",
         "heading": "In the directions for use of the additive and premixtures, the storage conditions shall be indicated.",
@@ -600,7 +699,23 @@
         "country": "DK",
         "source_type": "clinical_guideline",
         "original_file_path": "nsclc_kras_g12c/clinical guidelines/DK/dlcg_pal_onkogen_dreven_nsclc_v.1_admgodk_010724_cleaned.json",
-        "split_index": 0
+        "split_index": "0_0_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "guidelines recommend RET TKI. It is considered that data from the EGFR and ALK studies, which have shown high ORR, manageable adverse reactions and improvement in PS, can be extrapolated to other oncogenes (13) [5]. Patients with activated BRAF V600E and performance status 0-2 ((3) and previously treated with platinum-based chemotherapy and immunotherapy (where applicable) may be offered 2. (3.) line therapy with dabrafenib plus trametinib, alternatively encorafenib + binimetinib after approval by departmental/ regional medical board (B) Literature and Evidence Review Advisory 15 Patients who have activated bRAF v600E previously given platinum based chemotherapeutic +/ -immunotherapy, can be offered treatment with dabarafenib Plus tremetinib. The most frequent grade 3-4 AEs were neutropenia (9%), hyponatremia (7%) and anaemia (5%).",
+      "metadata": {
+        "doc_id": "dlcg_pal_onkogen_dreven_nsclc_v.1_admgodk_010724",
+        "heading": "In the directions for use of the additive and premixtures, the storage conditions shall be indicated.",
+        "start_page": 28,
+        "end_page": 36,
+        "created_date": "2024",
+        "country": "DK",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc_kras_g12c/clinical guidelines/DK/dlcg_pal_onkogen_dreven_nsclc_v.1_admgodk_010724_cleaned.json",
+        "split_index": "0_1_0",
+        "oversized_split": true
       }
     },
     {
@@ -786,7 +901,7 @@
       }
     },
     {
-      "text": "The development of quality in this area is supported by knowledge from the Danish Lung Cancer Register (DLCR) under the auspices of the Regional Clinical Quality Development Programme (RKKP), with the indicators in the database highlighting the relevant clinical guidelines (insert footnote to the BEK). The CQDB Steering Group has the mandate to decide on the database's set of indicators, including which specific processes and outcomes are monitored within the database. Parts of the guideline recommend treatments that have not yet been assessed in MR. It is therefore proposed to set up indicators that allow 1) monitoring of the regions' authorisation of the recommended treatments and 2) the effectiveness of the treatments (e.g. ORR, PFS and DOR).",
+      "text": "The development of quality in this area is supported by knowledge from the Danish Lung Cancer Register (DLCR) under the auspices of the Regional Clinical Quality Development Programme (RKKP), with the indicators in the database highlighting the relevant clinical guidelines (insert footnote to the BEK). The CQDB Steering Group has the mandate to decide on the database's set of indicators, including which specific processes and outcomes are monitored within the database. Parts of the guideline recommend treatments that have not yet been assessed in MR. It is therefore proposed to set up indicators that allow 1) monitoring of the regions' authorisation of the recommended treatments and 2) the effectiveness of the treatments (e.g. ORR, PFS and DOR). Title (according to the guideline) (Palliant oncology treatment for ALK-driven NSCLC) DOLG Contact with the methodologist Guideline Secretariat",
       "metadata": {
         "doc_id": "dlcg_pal_onkogen_dreven_nsclc_v.1_admgodk_010724",
         "heading": "6 Monitoring and control",
@@ -796,35 +911,8 @@
         "country": "DK",
         "source_type": "clinical_guideline",
         "original_file_path": "nsclc_kras_g12c/clinical guidelines/DK/dlcg_pal_onkogen_dreven_nsclc_v.1_admgodk_010724_cleaned.json",
-        "split_index": 0
-      }
-    },
-    {
-      "text": "Title (according to the guideline) (Palliant oncology treatment for ALK-driven NSCLC)",
-      "metadata": {
-        "doc_id": "dlcg_pal_onkogen_dreven_nsclc_v.1_admgodk_010724",
-        "heading": "Annex 1 Strategy for the search",
-        "start_page": 48,
-        "end_page": 48,
-        "created_date": "2024",
-        "country": "DK",
-        "source_type": "clinical_guideline",
-        "original_file_path": "nsclc_kras_g12c/clinical guidelines/DK/dlcg_pal_onkogen_dreven_nsclc_v.1_admgodk_010724_cleaned.json",
-        "split_index": 0
-      }
-    },
-    {
-      "text": "DOLG Contact with the methodologist Guideline Secretariat",
-      "metadata": {
-        "doc_id": "dlcg_pal_onkogen_dreven_nsclc_v.1_admgodk_010724",
-        "heading": "DMCG",
-        "start_page": 48,
-        "end_page": 48,
-        "created_date": "2024",
-        "country": "DK",
-        "source_type": "clinical_guideline",
-        "original_file_path": "nsclc_kras_g12c/clinical guidelines/DK/dlcg_pal_onkogen_dreven_nsclc_v.1_admgodk_010724_cleaned.json",
-        "split_index": 0
+        "split_index": 0,
+        "merged": true
       }
     },
     {
@@ -842,7 +930,7 @@
       }
     },
     {
-      "text": "For hver database der søges i, kopieres selve søgningen ind herunder. Medline (antal hits=78)\nSearch Add to builder Query Items found\n#5 Add 78\n#4 Add 298.212\n#3 Add 147.142\n#2 Add 88\n#1 Add 85.257\nSent On: Thu Nov 23 04:50:11 2023\nSearch: ((((Lung cancer OR Thoracic cancer OR Lung adenocarcinoma OR Non-small-cell lung cancer OR\nNSCLC OR Stage IV OR Oncogen-driven lung cancer OR Oncogen-addicted lung cancer OR Lung tumor OR\nMetastatic OR Thoracic OR ALK) AND ((observationalstudy[Filter] OR randomizedcontrolledtrial[Filter]) AND\n(2010/1/1:3000/12/12[pdat]) AND (english[Filter]))) AND ((Alectinib OR Brigatinib OR Lorlatinib OR Crizotinib\nOR Ceritinib) AND ((observationalstudy[Filter] OR randomizedcontrolledtrial[Filter]) AND\n(2010/1/1:3000/12/12[pdat]) AND (english[Filter]))) AND ((Platinum-based OR Chemotherapy OR Best\nsupportive Care OR Crizotinib) AND ((observationalstudy[Filter] OR randomizedcontrolledtrial[Filter]) AND\n(2010/1/1:3000/12/12[pdat]) AND (english[Filter]))) AND ((Overall response rate OR Outcomes OR Duration of\nresponse OR Overall survival OR Progression free survival OR Adverse events OR Side effects OR Serious adverse events) AND ((observationalstudy[Filter] OR randomizedcontrolledtrial[Filter]) AND\n(2010/1/1:3000/12/12[pdat]) AND (english[Filter])))) AND ((observationalstudy[Filter] OR\nrandomizedcontrolledtrial[Filter]) AND (2010/1/1:3000/12/12[pdat]) AND (english[Filter]))) Filters: Observational\nStudy, Randomized Controlled Trial, English, from 2010/1/1 - 3000/12/12\nKlinisk Retningsli\nTitel (på retnings",
+      "text": "For hver database der søges i, kopieres selve søgningen ind herunder. Medline (antal hits=78) Search Add to builder Query Items found #5 Add 78 #4 Add 298.212 #3 Add 147.142 #2 Add 88 #1 Add 85.257 Sent On: Thu Nov 23 04:50:11 2023 Search: ((((Lung cancer OR Thoracic cancer OR Lung adenocarcinoma OR Non-small-cell lung cancer OR NSCLC OR Stage IV OR Oncogen-driven lung cancer OR Oncogen-addicted lung cancer OR Lung tumor OR Metastatic OR Thoracic OR ALK) AND ((observationalstudy[Filter] OR randomizedcontrolledtrial[Filter]) AND (2010/1/1:3000/12/12[pdat]) AND (english[Filter]))) AND ((Alectinib OR Brigatinib",
       "metadata": {
         "doc_id": "dlcg_pal_onkogen_dreven_nsclc_v.1_admgodk_010724",
         "heading": "Search strategies (copied in)",
@@ -852,21 +940,24 @@
         "country": "DK",
         "source_type": "clinical_guideline",
         "original_file_path": "nsclc_kras_g12c/clinical guidelines/DK/dlcg_pal_onkogen_dreven_nsclc_v.1_admgodk_010724_cleaned.json",
-        "split_index": 0
+        "split_index": "0_0_0",
+        "oversized_split": true
       }
     },
     {
-      "text": "Get in touch with me.",
+      "text": "OR Lorlatinib OR Crizotinib OR Ceritinib) AND ((observationalstudy[Filter] OR randomizedcontrolledtrial[Filter]) AND (2010/1/1:3000/12/12[pdat]) AND (english[Filter]))) AND ((Platinum-based OR Chemotherapy OR Best supportive Care OR Crizotinib) AND ((observationalstudy[Filter] OR randomizedcontrolledtrial[Filter]) AND (2010/1/1:3000/12/12[pdat]) AND (english[Filter]))) AND ((Overall response rate OR Outcomes OR Duration of response OR Overall survival OR Progression free survival OR Adverse events OR Side effects OR Serious adverse events) AND ((observationalstudy[Filter] OR randomizedcontrolledtrial[Filter]) AND (2010/1/1:3000/12/12[pdat]) AND (english[Filter])))) AND ((observationalstudy[Filter] OR randomizedcontrolledtrial[Filter]) AND (2010/1/1:3000/12/12[pdat]) AND (english[Filter]))) Filters: Observational Study, Randomized Controlled Trial, English, from 2010/1/1 - 3000/12/12 Klinisk Retningsli Titel (på retnings Get in touch with me.",
       "metadata": {
         "doc_id": "dlcg_pal_onkogen_dreven_nsclc_v.1_admgodk_010724",
-        "heading": "DMCG",
-        "start_page": 50,
+        "heading": "Search strategies (copied in)",
+        "start_page": 49,
         "end_page": 50,
         "created_date": "2024",
         "country": "DK",
         "source_type": "clinical_guideline",
         "original_file_path": "nsclc_kras_g12c/clinical guidelines/DK/dlcg_pal_onkogen_dreven_nsclc_v.1_admgodk_010724_cleaned.json",
-        "split_index": 0
+        "split_index": "0_1_0",
+        "oversized_split": true,
+        "merged": true
       }
     },
     {
@@ -884,7 +975,7 @@
       }
     },
     {
-      "text": "TKIs; trials have been conducted on the effects and incidence of adverse events after the end of the primary follow-up period 2010 (Overall): Progression to Primary Outcomes: Outpatible with Retin A, including Primary Care Checkpoint: Patient Survival rate of Retin B1 Add to Items found Search Query builder #5 Add 794 #4 Add 298.212 #3 Add 147.148 #2 Add 1.238 #1 Add 88.089 Sent On: Wed Nov 22 06:59:43 2023 Search: ((((Lung cancer OR Thoracic cancer OR Lung adenocarcinoma OR Non-small-cell lung cancer NSCLC OR Stage IV OR Oncogen-driven lung cancer OR oncogenic-addicted lung cancer * OR Lung tumor OR Metastatic thoracic EGFR) AND (((controlled OR OR Triple OR Or Oral OR Oral Oral (2010/1/1000/3/12000/1/12000) OR Progressive or Over-the-counter based)) Adverse side effects and survival rate of Amipril and Gefitinib (2010/12/1000) (randomized and uncontrolled) The following are the most common side effects of amipril: In the absence of such data, the clinical trial should not be considered to have been conducted in accordance with Regulation (EC) No 1272/2008 of the European Parliament and of the Council [4].",
+      "text": "TKIs; trials have been conducted on the effects and incidence of adverse events after the end of the primary follow-up period 2010 (Overall): Progression to Primary Outcomes: Outpatible with Retin A, including Primary Care Checkpoint: Patient Survival rate of Retin B1 Add to Items found Search Query builder #5 Add 794 #4 Add 298.212 #3 Add 147.148 #2 Add 1.238 #1 Add 88.089 Sent On: Wed Nov 22 06:59:43 2023 Search: ((((Lung cancer OR Thoracic cancer OR Lung adenocarcinoma OR Non-small-cell lung cancer NSCLC OR Stage IV OR Oncogen-driven lung cancer OR oncogenic-addicted lung cancer * OR Lung tumor OR Metastatic thoracic EGFR) AND (((controlled OR OR Triple OR Or Oral OR Oral Oral (2010/1/1000/3/12000/1/12000) OR Progressive or Over-the-counter based)) Adverse side effects and survival rate of Amipril and Gefitinib (2010/12/1000) (randomized and uncontrolled) The following are the most common side effects of amipril: In the absence of such data, the clinical trial should not be considered to have been conducted in accordance with Regulation (EC) No 1272/2008 of the European Parliament and of the Council [4]. Clinical Guidance Please contact me as soon as possible",
       "metadata": {
         "doc_id": "dlcg_pal_onkogen_dreven_nsclc_v.1_admgodk_010724",
         "heading": "Last completed",
@@ -894,21 +985,8 @@
         "country": "DK",
         "source_type": "clinical_guideline",
         "original_file_path": "nsclc_kras_g12c/clinical guidelines/DK/dlcg_pal_onkogen_dreven_nsclc_v.1_admgodk_010724_cleaned.json",
-        "split_index": 1
-      }
-    },
-    {
-      "text": "Clinical Guidance Please contact me as soon as possible",
-      "metadata": {
-        "doc_id": "dlcg_pal_onkogen_dreven_nsclc_v.1_admgodk_010724",
-        "heading": "of which:",
-        "start_page": 52,
-        "end_page": 52,
-        "created_date": "2024",
-        "country": "DK",
-        "source_type": "clinical_guideline",
-        "original_file_path": "nsclc_kras_g12c/clinical guidelines/DK/dlcg_pal_onkogen_dreven_nsclc_v.1_admgodk_010724_cleaned.json",
-        "split_index": 0
+        "split_index": 1,
+        "merged": true
       }
     },
     {
@@ -940,7 +1018,7 @@
       }
     },
     {
-      "text": "PubMed (antal hits=59)\nItems found\nSearch Add to builder Query\n#5 Add 59\n#4 Add 298.212\n#3 Add 3.306\n#2 Add 638\n#1 Add 85.189\nThis message contains search results from the National Center for Biotechnology Information (NCBI) at the\nU.S. National Library of Medicine (NLM). Do not reply directly to this message\nSent On: Thu Nov 23 05:22:37 2023\nSearch: ((((Lung cancer OR Thoracic cancer OR Lung adenocarcinoma OR Non-small-cell lung cancer OR\nNSCLC OR Stage IV OR Oncogen-driven lung cancer OR Oncogen-addicted lung cancer OR Lung tumor OR\nMetastatic OR Thoracic OR RET) AND ((observationalstudy[Filter] OR randomizedcontrolledtrial[Filter]) AND\n(2010/1/1:3000/12/12[pdat]) AND (english[Filter]))) AND ((Selpercatinib OR Pralsetinib OR Checkpointinhibitor OR Pembrolizumab OR Atezolizumab) AND ((observationalstudy[Filter] OR\nrandomizedcontrolledtrial[Filter]) AND (2010/1/1:3000/12/12[pdat]) AND (english[Filter]))) AND ((Platinumbased Chemotherapy OR Best supportive Care) AND ((observationalstudy[Filter] OR\nrandomizedcontrolledtrial[Filter]) AND (2010/1/1:3000/12/12[pdat]) AND (english[Filter]))) AND ((Overall\nresponse rate OR Outcomes OR Duration of response OR Overall survival OR Progression free survival OR\nAdverse events OR Side effects OR Serious adverse events) AND ((observationalstudy[Filter] OR randomizedcontrolledtrial[Filter]) AND (2010/1/1:3000/12/12[pdat]) AND (english[Filter])))) AND\n((observationalstudy[Filter] OR randomizedcontrolledtrial[Filter]) AND (2010/1/1:3000/12/12[pdat]) AND\n(english[Filter]))) Filters: Observational Study, Randomized Controlled Trial, English, from 2010/1/1 -\nTitel (på retningslinje) Pallierende onkologisk behandling ROS1-dreven NSCLC",
+      "text": "PubMed (antal hits=59) Items found Search Add to builder Query #5 Add 59 #4 Add 298.212 #3 Add 3.306 #2 Add 638 #1 Add 85.189 This message contains search results from the National Center for Biotechnology Information (NCBI) at the U.S. National Library of Medicine (NLM). Do not reply directly to this message Sent On: Thu Nov 23 05:22:37 2023 Search: ((((Lung cancer OR Thoracic cancer OR Lung adenocarcinoma OR Non-small-cell lung cancer OR NSCLC OR Stage IV OR Oncogen-driven lung cancer OR Oncogen-addicted lung cancer OR Lung tumor OR Metastatic OR Thoracic OR RET) AND ((observationalstudy[Filter] OR",
       "metadata": {
         "doc_id": "dlcg_pal_onkogen_dreven_nsclc_v.1_admgodk_010724",
         "heading": "Search strategies (copied in)",
@@ -950,21 +1028,24 @@
         "country": "DK",
         "source_type": "clinical_guideline",
         "original_file_path": "nsclc_kras_g12c/clinical guidelines/DK/dlcg_pal_onkogen_dreven_nsclc_v.1_admgodk_010724_cleaned.json",
-        "split_index": 0
+        "split_index": "0_0_0",
+        "oversized_split": true
       }
     },
     {
-      "text": "DOLG Contact with methodologist Guideline secretariat Clinical guideline",
+      "text": "randomizedcontrolledtrial[Filter]) AND (2010/1/1:3000/12/12[pdat]) AND (english[Filter]))) AND ((Selpercatinib OR Pralsetinib OR Checkpointinhibitor OR Pembrolizumab OR Atezolizumab) AND ((observationalstudy[Filter] OR randomizedcontrolledtrial[Filter]) AND (2010/1/1:3000/12/12[pdat]) AND (english[Filter]))) AND ((Platinumbased Chemotherapy OR Best supportive Care) AND ((observationalstudy[Filter] OR randomizedcontrolledtrial[Filter]) AND (2010/1/1:3000/12/12[pdat]) AND (english[Filter]))) AND ((Overall response rate OR Outcomes OR Duration of response OR Overall survival OR Progression free survival OR Adverse events OR Side effects OR Serious adverse events) AND ((observationalstudy[Filter] OR randomizedcontrolledtrial[Filter]) AND (2010/1/1:3000/12/12[pdat]) AND (english[Filter])))) AND ((observationalstudy[Filter] OR randomizedcontrolledtrial[Filter]) AND (2010/1/1:3000/12/12[pdat]) AND (english[Filter]))) Filters: Observational Study, Randomized Controlled Trial, English, from 2010/1/1 - Titel (på retningslinje) Pallierende onkologisk behandling ROS1-dreven NSCLC DOLG Contact with methodologist Guideline secretariat Clinical guideline",
       "metadata": {
         "doc_id": "dlcg_pal_onkogen_dreven_nsclc_v.1_admgodk_010724",
-        "heading": "DMCG",
+        "heading": "Search strategies (copied in)",
         "start_page": 53,
-        "end_page": 54,
+        "end_page": 53,
         "created_date": "2024",
         "country": "DK",
         "source_type": "clinical_guideline",
         "original_file_path": "nsclc_kras_g12c/clinical guidelines/DK/dlcg_pal_onkogen_dreven_nsclc_v.1_admgodk_010724_cleaned.json",
-        "split_index": 0
+        "split_index": "0_1_0",
+        "oversized_split": true,
+        "merged": true
       }
     },
     {
@@ -1024,7 +1105,7 @@
       }
     },
     {
-      "text": "A macromolecule (2 meters long if we snore it), double chains of nucleotides. Our genome. A macromolecule (2 meters long if we string it out), double-stranded chain of nucleotides. DOLG: Danish Oncology Lung Cancer Group DOR: Duration of response (median) EBUS: Endobronchial ultrasound, i.e. ultrasonic-guided bronchoscopic biopsy EGFR: A transmembrane receptor (ERBB1), a member of the ERBB family of receptor tyrosine kinases that activates a number of signaling pathways including the MAPK and PI3K/AKT/mTOR pathways. MAPK and PI3K/AKT/mTOR signaling pathways. Exon: The parts of the DNA that code for proteins Incurable: Not possible to treat with curative intent surgery or combined chemotherapy-radiotherapy GNB: Needle biopsy KRAS: Member of the RAS family of small GTPases. They are involved in the MPAK andPI3K signaling channels. Mdr.: Months MET: Receptor tyrosine kinase, also called c-MET or hepatocyte growth factor (HGF) receptor. The receptor is involved in a number of intracellular signalling pathways, including PI3AK/TRA and RAS/FRA/MEK. MR: Medicin advised Mutation: An event in the heredity that leads to a sustained alteration of a gene (the event leading to the occurrence of a genetic variant) With this method it is possible to sequence the entire human genome. Clinical Guideline │Cancer NSCLC: Non-small-cell-lungcancer ORR: Overall response rate OS: overall survival (median) PD: progressive disease PFS: progression-free survival RET: receptor tyrosine kinase involved in a number of intracellular signalling pathways.",
+      "text": "A macromolecule (2 meters long if we snore it), double chains of nucleotides. Our genome. A macromolecule (2 meters long if we string it out), double-stranded chain of nucleotides. DOLG: Danish Oncology Lung Cancer Group DOR: Duration of response (median) EBUS: Endobronchial ultrasound, i.e. ultrasonic-guided bronchoscopic biopsy EGFR: A transmembrane receptor (ERBB1), a member of the ERBB family of receptor tyrosine kinases that activates a number of signaling pathways including the MAPK and PI3K/AKT/mTOR pathways. MAPK and PI3K/AKT/mTOR signaling pathways. Exon: The parts of the DNA that code for proteins Incurable: Not possible to treat with curative intent surgery or combined chemotherapy-radiotherapy GNB: Needle biopsy KRAS: Member of the RAS family of",
       "metadata": {
         "doc_id": "dlcg_pal_onkogen_dreven_nsclc_v.1_admgodk_010724",
         "heading": "Annex 2 - Abbreviations and explanations",
@@ -1034,7 +1115,23 @@
         "country": "DK",
         "source_type": "clinical_guideline",
         "original_file_path": "nsclc_kras_g12c/clinical guidelines/DK/dlcg_pal_onkogen_dreven_nsclc_v.1_admgodk_010724_cleaned.json",
-        "split_index": 1
+        "split_index": "1_0_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "small GTPases. They are involved in the MPAK andPI3K signaling channels. Mdr.: Months MET: Receptor tyrosine kinase, also called c-MET or hepatocyte growth factor (HGF) receptor. The receptor is involved in a number of intracellular signalling pathways, including PI3AK/TRA and RAS/FRA/MEK. MR: Medicin advised Mutation: An event in the heredity that leads to a sustained alteration of a gene (the event leading to the occurrence of a genetic variant) With this method it is possible to sequence the entire human genome. Clinical Guideline │Cancer NSCLC: Non-small-cell-lungcancer ORR: Overall response rate OS: overall survival (median) PD: progressive disease PFS: progression-free survival RET: receptor tyrosine kinase involved in a number of intracellular signalling pathways.",
+      "metadata": {
+        "doc_id": "dlcg_pal_onkogen_dreven_nsclc_v.1_admgodk_010724",
+        "heading": "Annex 2 - Abbreviations and explanations",
+        "start_page": 56,
+        "end_page": 58,
+        "created_date": "2024",
+        "country": "DK",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc_kras_g12c/clinical guidelines/DK/dlcg_pal_onkogen_dreven_nsclc_v.1_admgodk_010724_cleaned.json",
+        "split_index": "1_1_0",
+        "oversized_split": true
       }
     },
     {
@@ -1192,7 +1289,7 @@
       }
     },
     {
-      "text": "Table Title: (english[Filter]))) AND ((Platinum-based Chemotherapy OR Best supportive Care OR Crizotinib) AND\nTable contains the following columns: Search, Add to builder, Query, Column_4, Items found, Column_6\nSearch: #5, Add to builder: Add, and Column_4: 129\nSearch: #4, Add to builder: Add, and Column_4: 298.212\nSearch: #3, Add to builder: Add, and Column_4: 3.371\nSearch: #2, Add to builder: Add, and Column_4: 716\nSearch: #1, Add to builder: Add, and Column_4: 85.082",
+      "text": "Table Title: (english[Filter]))) AND ((Platinum-based Chemotherapy OR Best supportive Care OR Crizotinib) AND\nTable contains the following columns: Search, Add to builder, Query, Column_4, Items found, Column_6\nSearch: #5, Add to builder: Add, and Column_4: 129\nSearch: #4, Add to builder: Add, and Column_4: 298.212\nSearch: #3, Add to builder: Add, and Column_4: 3.371\nSearch: #2, Add to builder: Add, and Column_4: 716\nSearch: #1, Add to builder: Add, and Column_4: 85.082 It 's just that I don 't know what to do . You . Not less than € 57,6 PA DU NO EC / IN in view of the AT U",
       "metadata": {
         "doc_id": "dlcg_pal_onkogen_dreven_nsclc_v.1_admgodk_010724",
         "heading": "(english[Filter]))) AND ((Platinum-based Chemotherapy OR Best supportive Care OR Crizotinib) AND",
@@ -1202,7 +1299,8 @@
         "country": "DK",
         "source_type": "clinical_guideline",
         "original_file_path": "nsclc_kras_g12c/clinical guidelines/DK/dlcg_pal_onkogen_dreven_nsclc_v.1_admgodk_010724_cleaned.json",
-        "split_index": 0
+        "split_index": 0,
+        "merged": true
       }
     }
   ]

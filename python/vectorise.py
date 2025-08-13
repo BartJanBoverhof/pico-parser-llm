@@ -4,43 +4,30 @@ import glob
 import shutil
 from typing import List
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain.docstore.document import Document
 from langchain.embeddings.openai import OpenAIEmbeddings
 
-import os
-import json
-import glob
+
 import shutil
 import numpy as np
 from typing import List
 from langchain.docstore.document import Document
 from langchain.vectorstores import Chroma
-from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.embeddings import HuggingFaceEmbeddings
 from sklearn.manifold import TSNE
 import plotly.graph_objs as go
 import plotly.express as px
 
+
+
 import os
-import glob
 import json
+import glob
+import time
 from typing import List
 from langchain.docstore.document import Document
-from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_experimental.text_splitter import SemanticChunker
-
+from langchain.embeddings import HuggingFaceEmbeddings
 from collections import defaultdict
-
-from transformers import AutoTokenizer, AutoModel
-import torch
-
-
-
-import os
-import json
-from typing import List, Dict, Any, Optional, Union
-import re
-import logging
 
 class Chunker:
     def __init__(
@@ -48,34 +35,38 @@ class Chunker:
         json_folder_path,
         output_dir="./data/text_chunked",
         chunk_size=600,
-        chunk_overlap=100,
-        chunk_strat="recursive",  # "semantic" or "recursive"
-        maintain_folder_structure=False  # Parameter to control folder structure preservation
+        maintain_folder_structure=False,
+        max_chunk_size=1500,
+        min_chunk_size=100
     ):
         self.json_folder_path = json_folder_path
         self.chunk_size = chunk_size
-        self.chunk_overlap = chunk_overlap
-        self.chunk_strat = chunk_strat
         self.output_dir = output_dir
         self.maintain_folder_structure = maintain_folder_structure
+        self.max_chunk_size = max_chunk_size
+        self.min_chunk_size = min_chunk_size
+        self.start_time = None
         os.makedirs(self.output_dir, exist_ok=True)
 
+    def start_timer(self):
+        self.start_time = time.time()
+
+    def end_timer_and_print(self):
+        if self.start_time is not None:
+            elapsed_time = time.time() - self.start_time
+            print(f"Total processing time: {elapsed_time:.2f} seconds")
+        else:
+            print("Timer was not started.")
+
     def load_json_documents(self) -> List[Document]:
-        """
-        Loads JSON files recursively and converts each heading-based entry
-        into a preliminary LangChain Document.
-        Enhanced to detect source type from the path.
-        """
         documents = []
         json_files = glob.glob(os.path.join(self.json_folder_path, "**/*.json"), recursive=True)
         print(f"Found {len(json_files)} JSON files.")
 
         for jf in json_files:
             print(f"Processing file: {jf}")
-            # Calculate relative path from input folder to this JSON file
             rel_path = os.path.relpath(jf, self.json_folder_path)
             
-            # Detect source type from path
             source_type = "unknown"
             path_lower = jf.lower()
             if "hta submission" in path_lower or "hta submissions" in path_lower:
@@ -93,10 +84,7 @@ class Chunker:
             doc_id = data["doc_id"]
             doc_created_date = data.get("created_date", "unknown_year")
             doc_country = data.get("country", data.get("country:", "unknown"))
-            
-            # Use source_type from JSON if available, otherwise use the one detected from path
             doc_source_type = data.get("source_type", source_type)
-            
             chunks = data["chunks"]
 
             if not isinstance(chunks, list) or len(chunks) == 0:
@@ -115,8 +103,8 @@ class Chunker:
                     "end_page": c.get("end_page"),
                     "created_date": doc_created_date,
                     "country": doc_country,
-                    "source_type": doc_source_type,  # Add source type to metadata
-                    "original_file_path": rel_path  # Store the relative path for maintaining structure
+                    "source_type": doc_source_type,
+                    "original_file_path": rel_path
                 }
 
                 documents.append(
@@ -129,31 +117,15 @@ class Chunker:
         print(f"Loaded {len(documents)} heading-level documents.")
         return documents
 
-
     def chunk_documents(self, docs: List[Document]) -> List[Document]:
-        """
-        Further splits each heading-based Document using either the "recursive" or
-        "semantic" strategy, based on the chunk_strat field.
-        """
-        if self.chunk_strat == "semantic":
-            # Example: Language model–based text splitter for semantic chunking
-            text_splitter = SemanticChunker(
-                embeddings=HuggingFaceEmbeddings(model_name="pritamdeka/BioBERT-mnli-snli-scinli-scitail-mednli-stsb"),
-                breakpoint_threshold_amount=75,
-                min_chunk_size=self.chunk_size
-                )
-        else:
-            # Default: Recursive splitter
-            text_splitter = RecursiveCharacterTextSplitter(
-                chunk_size=self.chunk_size,
-                chunk_overlap=self.chunk_overlap,
-                separators=["\n\n", "\n", ".", " ", ""],
-            )
+        text_splitter = SemanticChunker(
+            embeddings=HuggingFaceEmbeddings(model_name="pritamdeka/BioBERT-mnli-snli-scinli-scitail-mednli-stsb"),
+            breakpoint_threshold_amount=75,
+            min_chunk_size=self.chunk_size
+        )
 
         all_splits = []
         for doc in docs:
-            # For semantic splitting, we'll call 'split_text' similarly,
-            # but it uses an LLM or other logic internally.
             splits = text_splitter.split_text(doc.page_content)
             for i, split_text in enumerate(splits):
                 sub_doc = Document(
@@ -163,66 +135,127 @@ class Chunker:
                 sub_doc.metadata["split_index"] = i
                 all_splits.append(sub_doc)
 
-        print(f"Total chunks after {self.chunk_strat} splitting: {len(all_splits)}")
+        print(f"Total chunks after semantic splitting: {len(all_splits)}")
+        
+        all_splits = self.enforce_max_chunk_size(all_splits)
+        all_splits = self.merge_small_chunks(all_splits)
+        
+        print(f"Final chunk count after size adjustments: {len(all_splits)}")
         return all_splits
 
+    def enforce_max_chunk_size(self, chunks: List[Document]) -> List[Document]:
+        result = []
+        
+        for chunk in chunks:
+            if len(chunk.page_content) <= self.max_chunk_size:
+                result.append(chunk)
+            else:
+                text = chunk.page_content
+                
+                words = text.split()
+                mid_point = len(words) // 2
+                first_half = " ".join(words[:mid_point])
+                second_half = " ".join(words[mid_point:])
+                
+                sub_texts = [first_half, second_half]
+                
+                for i, sub_text in enumerate(sub_texts):
+                    if len(sub_text) > self.max_chunk_size:
+                        further_split = []
+                        words_sub = sub_text.split()
+                        chunk_words = len(words_sub) // 2
+                        further_split.append(" ".join(words_sub[:chunk_words]))
+                        further_split.append(" ".join(words_sub[chunk_words:]))
+                        sub_texts_final = further_split
+                    else:
+                        sub_texts_final = [sub_text]
+                    
+                    for j, final_text in enumerate(sub_texts_final):
+                        sub_doc = Document(
+                            page_content=final_text,
+                            metadata=dict(chunk.metadata)
+                        )
+                        original_split_index = chunk.metadata.get("split_index", 0)
+                        sub_doc.metadata["split_index"] = f"{original_split_index}_{i}_{j}"
+                        sub_doc.metadata["oversized_split"] = True
+                        result.append(sub_doc)
+        
+        return result
+
+    def merge_small_chunks(self, chunks: List[Document]) -> List[Document]:
+        if not chunks:
+            return chunks
+        
+        result = []
+        skip_next = False
+        
+        for i, chunk in enumerate(chunks):
+            if skip_next:
+                skip_next = False
+                continue
+                
+            if len(chunk.page_content) >= self.min_chunk_size:
+                result.append(chunk)
+            else:
+                if result and len(result[-1].page_content) + len(chunk.page_content) <= self.max_chunk_size:
+                    prev_chunk = result[-1]
+                    prev_chunk.page_content = prev_chunk.page_content + " " + chunk.page_content
+                    prev_chunk.metadata["merged"] = True
+                elif i < len(chunks) - 1:
+                    next_chunk = chunks[i + 1]
+                    merged_content = chunk.page_content + " " + next_chunk.page_content
+                    merged_doc = Document(
+                        page_content=merged_content,
+                        metadata=dict(chunk.metadata)
+                    )
+                    merged_doc.metadata["merged"] = True
+                    result.append(merged_doc)
+                    skip_next = True
+                else:
+                    result.append(chunk)
+        
+        return result
+
     def save_chunks_to_files(self, chunks: List[Document]):
-        """
-        Saves the final chunks to files while maintaining the original folder structure if requested.
-        Each file is named <doc_id>_chunked.json and contains all chunks with that doc_id.
-        """
-        # Group chunks by doc_id and original file path
         grouped = defaultdict(list)
         
-        # Organize chunks by their document ID and original file path
         for doc in chunks:
             doc_id = doc.metadata.get("doc_id", "unknown_doc")
             original_file_path = doc.metadata.get("original_file_path", "")
             
-            # Key format: tuple of (doc_id, original_file_path)
             key = (doc_id, original_file_path)
             grouped[key].append({
                 "text": doc.page_content,
                 "metadata": doc.metadata
             })
 
-        # Save each group to its corresponding location
         for (doc_id, original_file_path), doc_chunks in grouped.items():
             if self.maintain_folder_structure and original_file_path:
-                # Extract directory path from original file path
                 original_dir = os.path.dirname(original_file_path)
-                
-                # Create target directory mirroring the original structure
                 target_dir = os.path.join(self.output_dir, original_dir)
                 os.makedirs(target_dir, exist_ok=True)
-                
-                # Construct output path preserving the directory structure
                 output_filename = f"{doc_id}_chunked.json"
                 out_path = os.path.join(target_dir, output_filename)
             else:
-                # Simple flat structure - just save in the output directory
                 out_path = os.path.join(self.output_dir, f"{doc_id}_chunked.json")
             
-            # Save the document with its chunks
             with open(out_path, "w", encoding="utf-8") as f:
                 json.dump({"doc_id": doc_id, "chunks": doc_chunks}, f, indent=2, ensure_ascii=False)
             
             print(f"Saved {len(doc_chunks)} chunks to {out_path}")
 
     def debug_print_chunks(self, docs: List[Document], num_chunks=5):
-        """
-        Prints out chunks and their metadata for debugging purposes.
-        """
         for i, doc in enumerate(docs[:num_chunks]):
             print(f"Chunk {i+1}:")
             print(f"Metadata: {doc.metadata}")
             print(f"Content:\n{doc.page_content[:500]}...\n{'-'*40}")
 
     def run_pipeline(self):
+        self.start_timer()
         heading_docs = self.load_json_documents()
         final_chunks = self.chunk_documents(heading_docs)
         self.save_chunks_to_files(final_chunks)
-
+        self.end_timer_and_print()
 
 
 

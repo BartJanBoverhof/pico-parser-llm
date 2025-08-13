@@ -50,8 +50,6 @@ chunker = Chunker(
     json_folder_path=POST_CLEANED_PATH,
     output_dir=CHUNKED_PATH,
     chunk_size=600,
-    chunk_overlap=200,
-    chunk_strat="semantic",
     maintain_folder_structure=True
 )
 chunker.run_pipeline()

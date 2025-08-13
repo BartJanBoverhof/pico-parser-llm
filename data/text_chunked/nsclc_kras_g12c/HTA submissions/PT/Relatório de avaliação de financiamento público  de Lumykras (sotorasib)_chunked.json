@@ -2,7 +2,7 @@
   "doc_id": "Relatório de avaliação de financiamento público  de Lumykras (sotorasib)",
   "chunks": [
     {
-      "text": "RE LUM Treatment advances therapeutic evaluation under MYKRAS (SOTORASIB) public laboratory evaluation of adult patients with non-small cell lung cancer (NSCLC) of the mutated KRAS G12C and who have progressed after at least one line of systemic prior to funding under Decree-Law No 97/2015, of 1 June, in its current wording. RMED, I.P. Health Technologies Assessment Directorate (DATS)",
+      "text": "RE LUM Treatment advances therapeutic evaluation under MYKRAS (SOTORASIB) public laboratory evaluation of adult patients with non-small cell lung cancer (NSCLC) of the mutated KRAS G12C and who have progressed after at least one line of systemic prior to funding under Decree-Law No 97/2015, of 1 June, in its current wording. RMED, I.P. Health Technologies Assessment Directorate (DATS) What Sotorasib looks like and contents of the pack",
       "metadata": {
         "doc_id": "Relatório de avaliação de financiamento público  de Lumykras (sotorasib)",
         "heading": "",
@@ -12,21 +12,8 @@
         "country": "PT",
         "source_type": "hta_submission",
         "original_file_path": "nsclc_kras_g12c/HTA submissions/PT/Relatório de avaliação de financiamento público  de Lumykras (sotorasib)_cleaned.json",
-        "split_index": 0
-      }
-    },
-    {
-      "text": "What Sotorasib looks like and contents of the pack",
-      "metadata": {
-        "doc_id": "Relatório de avaliação de financiamento público  de Lumykras (sotorasib)",
-        "heading": "If you have any further questions on the use of this product, ask your doctor or pharmacist.",
-        "start_page": 2,
-        "end_page": 2,
-        "created_date": "2015",
-        "country": "PT",
-        "source_type": "hta_submission",
-        "original_file_path": "nsclc_kras_g12c/HTA submissions/PT/Relatório de avaliação de financiamento público  de Lumykras (sotorasib)_cleaned.json",
-        "split_index": 0
+        "split_index": 0,
+        "merged": true
       }
     },
     {
@@ -170,7 +157,7 @@
       }
     },
     {
-      "text": "TAIM submitted an ongoing multicentre, open-label, single-arm phase I/ II study (CodeBreaK 100), a systematic review of the literature, an indirect comparison study of soto with docetaxel, and a phase 3 clinical trial for comparison of AMG 510 with docetxel in doe with CPNPC mutated KRAS p. G12C (CodebreaK 200 study). The main exclusion criteria were: number of prior treatment lines greater than three, presence of active brain metastases. Patients were allocated to a single subcutaneous treatment arm at a dose of 960 mg per day. This treatment was maintained until primary disease development, indicative of progressive disease, and the rate of intolerance or consensual toxicity (TRO) was withdrawn. The primary efficacy endpoint was the objective response rate (ORR). Secondary endpoints were duration of response (DR); disease control (CD); time to response; progression-free survival (PFS); overall survivorship (GS). Safety was assessed with an Adverse Event (AE) rate based on version 5 of the Common Terminology Criteria for Adverse Events. This pre-specified value of 23% was removed from the objective response observed in the ramucirumab treatment arm, in combination with docetaxel, in the Phase III REVEL study. The study was monitored for futility with continuous analyses using Bayana predictive probability, starting after 25 subjects completed 7 weeks of the trial, and additional 10 subjects continued to be assessed after each Phase II CodeBreaK 100 study to obtain a 90% power in detecting an objective response (primary indicator) greater than 23%, with a significance level of 5%. The intervals for the SG and SLP targets were summarised using Kaplan-Meier estimates and 95% confidence intervals.",
+      "text": "TAIM submitted an ongoing multicentre, open-label, single-arm phase I/ II study (CodeBreaK 100), a systematic review of the literature, an indirect comparison study of soto with docetaxel, and a phase 3 clinical trial for comparison of AMG 510 with docetxel in doe with CPNPC mutated KRAS p. G12C (CodebreaK 200 study). The main exclusion criteria were: number of prior treatment lines greater than three, presence of active brain metastases. Patients were allocated to a single subcutaneous treatment arm at a dose of 960 mg per day. This treatment was maintained until primary disease development, indicative of progressive disease, and the rate of intolerance or consensual toxicity (TRO) was withdrawn. The primary efficacy endpoint was the objective response rate (ORR). Secondary endpoints were duration of response (DR); disease control (CD); time to",
       "metadata": {
         "doc_id": "Relatório de avaliação de financiamento público  de Lumykras (sotorasib)",
         "heading": "5.Description of the studies evaluated",
@@ -180,7 +167,23 @@
         "country": "PT",
         "source_type": "hta_submission",
         "original_file_path": "nsclc_kras_g12c/HTA submissions/PT/Relatório de avaliação de financiamento público  de Lumykras (sotorasib)_cleaned.json",
-        "split_index": 0
+        "split_index": "0_0_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "response; progression-free survival (PFS); overall survivorship (GS). Safety was assessed with an Adverse Event (AE) rate based on version 5 of the Common Terminology Criteria for Adverse Events. This pre-specified value of 23% was removed from the objective response observed in the ramucirumab treatment arm, in combination with docetaxel, in the Phase III REVEL study. The study was monitored for futility with continuous analyses using Bayana predictive probability, starting after 25 subjects completed 7 weeks of the trial, and additional 10 subjects continued to be assessed after each Phase II CodeBreaK 100 study to obtain a 90% power in detecting an objective response (primary indicator) greater than 23%, with a significance level of 5%. The intervals for the SG and SLP targets were summarised using Kaplan-Meier estimates and 95% confidence intervals.",
+      "metadata": {
+        "doc_id": "Relatório de avaliação de financiamento público  de Lumykras (sotorasib)",
+        "heading": "5.Description of the studies evaluated",
+        "start_page": 9,
+        "end_page": 22,
+        "created_date": "2015",
+        "country": "PT",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc_kras_g12c/HTA submissions/PT/Relatório de avaliação de financiamento público  de Lumykras (sotorasib)_cleaned.json",
+        "split_index": "0_1_0",
+        "oversized_split": true
       }
     },
     {
@@ -240,7 +243,7 @@
       }
     },
     {
-      "text": "Participating subjects were randomised to receive 1:1 subgraphs of either docetaxedel or substraxels, assigned by the number of prior therapeutic lines in advanced racial disease (1), 2 vs. absent central nervous system (CNS) disease (2), and no history of CNS involvement. (1 vs 2 vs 2), race (Asian vs non-Asian) and history of central nervous system (CNS) involvement (present or absent). Previous therapeutic lines were evaluated using the criteria: chemoradiation for locally advanced and incurable disease is considered a therapy line for advanced disease if progression occurs within 6 months after the end of treatment. Chemo-radiation followed by planned systemic therapy (including checkpoint inhibitor) or vice versa with no documented intervening progression is considered 1 therapy line if the progression occurred within six months after end-of-treatment. Adjuvant therapy line is considered to be a therapy for advanced illness if progressive disease occurs in the 6 months following end of local treatment. Each systemic treatment line for progressive metastatic disease and irresolvable metastases is considered an intertherapy line or new therapy regimen is not considered a maintenance therapy line. Adjustments of the chemotherapy regimen for intolerance are not considered a new line of therapy. Tumor evaluations were performed during screening every 6 weeks from cycle 1 day 1 through week 49 and thereafter at 9 week intervals until independent central confirmation of progression, initiation of other anticancer therapy, withdrawal of consent, loss of follow-up, or death, whichever occurred first. Patients' examinations should be submitted to independent central confirmation of progress at the time of the first progressive disease. knowledge of the randomisation assignments, according to RECIST v1.1, and are being used for the primary analysis of the parameters. Eligible participants were 18 years of age and had locally advanced and untreatable or metastatic CPNPC with histologically documented KRAS p.G12C mutation and no other known oncogenic mutation for which an approved target therapy exists. They must have received and progressed or experienced disease recurrence during or after receiving at least 1 prior systemic therapy for advanced disease, including platinum-based dual chemotherapy and a checkpoint inhibitor, as an individual line or lines of therapy, unless a contraindication to that therapy occurred.",
+      "text": "Participating subjects were randomised to receive 1:1 subgraphs of either docetaxedel or substraxels, assigned by the number of prior therapeutic lines in advanced racial disease (1), 2 vs. absent central nervous system (CNS) disease (2), and no history of CNS involvement. (1 vs 2 vs 2), race (Asian vs non-Asian) and history of central nervous system (CNS) involvement (present or absent). Previous therapeutic lines were evaluated using the criteria: chemoradiation for locally advanced and incurable disease is considered a therapy line for advanced disease if progression occurs within 6 months after the end of treatment. Chemo-radiation followed by planned systemic therapy (including checkpoint inhibitor) or vice versa with no documented intervening progression is considered 1 therapy line if the progression occurred within six months after end-of-treatment. Adjuvant therapy line is considered to be a therapy for advanced illness if progressive disease occurs in the 6 months following end of local treatment. Each systemic treatment line for progressive metastatic disease and irresolvable metastases is considered an intertherapy line or new therapy regimen is not considered a maintenance therapy line. Adjustments",
       "metadata": {
         "doc_id": "Relatório de avaliação de financiamento público  de Lumykras (sotorasib)",
         "heading": "5.Description of the studies evaluated",
@@ -250,7 +253,23 @@
         "country": "PT",
         "source_type": "hta_submission",
         "original_file_path": "nsclc_kras_g12c/HTA submissions/PT/Relatório de avaliação de financiamento público  de Lumykras (sotorasib)_cleaned.json",
-        "split_index": 5
+        "split_index": "5_0_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "of the chemotherapy regimen for intolerance are not considered a new line of therapy. Tumor evaluations were performed during screening every 6 weeks from cycle 1 day 1 through week 49 and thereafter at 9 week intervals until independent central confirmation of progression, initiation of other anticancer therapy, withdrawal of consent, loss of follow-up, or death, whichever occurred first. Patients' examinations should be submitted to independent central confirmation of progress at the time of the first progressive disease. knowledge of the randomisation assignments, according to RECIST v1.1, and are being used for the primary analysis of the parameters. Eligible participants were 18 years of age and had locally advanced and untreatable or metastatic CPNPC with histologically documented KRAS p.G12C mutation and no other known oncogenic mutation for which an approved target therapy exists. They must have received and progressed or experienced disease recurrence during or after receiving at least 1 prior systemic therapy for advanced disease, including platinum-based dual chemotherapy and a checkpoint inhibitor, as an individual line or lines of therapy, unless a contraindication to that therapy occurred.",
+      "metadata": {
+        "doc_id": "Relatório de avaliação de financiamento público  de Lumykras (sotorasib)",
+        "heading": "5.Description of the studies evaluated",
+        "start_page": 9,
+        "end_page": 22,
+        "created_date": "2015",
+        "country": "PT",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc_kras_g12c/HTA submissions/PT/Relatório de avaliação de financiamento público  de Lumykras (sotorasib)_cleaned.json",
+        "split_index": "5_1_0",
+        "oversized_split": true
       }
     },
     {
@@ -296,7 +315,7 @@
       }
     },
     {
-      "text": "At the data cut-off date for this report, 25 crossover patients (54.3%) were continuing in the study, and 21 cross-over patients (45.7%) discontinued the study for the following reasons: death (17 patients [37.0%]) and withdrawal of consent (4 patients [8.7%]). and was calculated independently of the presence of crossover or subsequent therapy with KRAS inhibitors p.G12C as planned in protocol. The Kaplan-Meier estimated rate of SG at 12 months was 45.96% in the sotorasib group and 46.49% in the docetaxel group. The median follow-up time (IC 95 for SG) was 17.71 months (16.95; 19.15) in the subcutaneous group and 16.33 months (16,07; 17,08) in the doceteksel group. The median duration of follow-up (95% CI) was 15.24 (14.85; 17.31) months for sotorasib and 6.87 (5.42; 12.52) months for docetaxel. The observed benefit in PFS resulting from the subgroup intervention with sotorashib vs. docetaxil was consistent across all prespecified subgroups, including history of CNS involvement, presence of hepatic metastases, number of prior therapies and level of PD-L5 (expressed in Figure 5.1) (Figure 5.5) for patients treated with docetaxilab versus progressor-free treatment. Analysis of pre-specified subgroups for progression-free survival treated with sotorasib vs. docetaxel Figure Figure 3.3. Analysis Subgroup analysis of subgroup prespecified for survival Progression free survival, progression, and progression of the studied drug is the following: AMG, AMG 510, 510, sotoratib; CI, CI, confidence interval; CNS, CNS; central nervous system; ECOG, EECG, Eastern Cooperative Oncology Group; HR, HR, hazard ratio; PD-L1, PD-l1, programmed death; PFS, PFS-1; ligand-1; Ponte, 200B; survival of the study is free from progression Code: FFS [1]. Source: Source: Report Report of the CodeBreak 200 study [1] [2] Main secondary endpoint Primary secondary Endpoint overall survival Overall survival Rate As of the date of the Cut-off Response cut-off of the Objective data, data, 203 203 (BICR) events of OS OS had occurred, including 109 patients (64% (64% in the sotorasib group) and 94 94 patients (54% in docetaxel group) [1] The median median OS response was 10.6 months (CI 95%: 10.6 (IC: 8.9; 14.9; 14.0) for patients treated with sotorisib and 11.3 months (response 95%: 9.0 (ICIC: 9.9) for those treated with docetaxil) and 14.9 months (ICI: 9.0) for participants treated with Docetaxel.[1] The HR for OS between sotorasib and docetaxel was 1.010 (95% CI: 0.77; 1.33, p = 0.53) with docetaxil.[1] The HR of OS between SotorasiB and docettaxel was 1.01 (IC 95%: 0.77; 1.33, P = 0.53).46) and was calculated from the group of sotorashib, independently and in 23 participants to the existence of existence (all of crossover with or or partial therapeutic response) of subsequent subsequent therapy in the group with co-inhibitors KRAS p.G.12C, as provided in protocol.[1] The estimates of Kaplan-Meier (KM) to the 12 KRAS inhibitors p.",
+      "text": "At the data cut-off date for this report, 25 crossover patients (54.3%) were continuing in the study, and 21 cross-over patients (45.7%) discontinued the study for the following reasons: death (17 patients [37.0%]) and withdrawal of consent (4 patients [8.7%]). and was calculated independently of the presence of crossover or subsequent therapy with KRAS inhibitors p.G12C as planned in protocol. The Kaplan-Meier estimated rate of SG at 12 months was 45.96% in the sotorasib group and 46.49% in the docetaxel group. The median follow-up time (IC 95 for SG) was 17.71 months (16.95; 19.15) in the subcutaneous group and 16.33 months (16,07; 17,08) in the doceteksel group. The median duration of follow-up (95%",
       "metadata": {
         "doc_id": "Relatório de avaliação de financiamento público  de Lumykras (sotorasib)",
         "heading": "5.Description of the studies evaluated",
@@ -306,7 +325,38 @@
         "country": "PT",
         "source_type": "hta_submission",
         "original_file_path": "nsclc_kras_g12c/HTA submissions/PT/Relatório de avaliação de financiamento público  de Lumykras (sotorasib)_cleaned.json",
-        "split_index": 9
+        "split_index": "9_0_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "CI) was 15.24 (14.85; 17.31) months for sotorasib and 6.87 (5.42; 12.52) months for docetaxel. The observed benefit in PFS resulting from the subgroup intervention with sotorashib vs. docetaxil was consistent across all prespecified subgroups, including history of CNS involvement, presence of hepatic metastases, number of prior therapies and level of PD-L5 (expressed in Figure 5.1) (Figure 5.5) for patients treated with docetaxilab versus progressor-free treatment. Analysis of pre-specified subgroups for progression-free survival treated with sotorasib vs. docetaxel Figure Figure 3.3. Analysis Subgroup analysis of subgroup prespecified for survival Progression free survival, progression, and progression of the studied drug is the following: AMG, AMG 510, 510, sotoratib; CI, CI, confidence interval; CNS, CNS; central",
+      "metadata": {
+        "doc_id": "Relatório de avaliação de financiamento público  de Lumykras (sotorasib)",
+        "heading": "5.Description of the studies evaluated",
+        "start_page": 9,
+        "end_page": 22,
+        "created_date": "2015",
+        "country": "PT",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc_kras_g12c/HTA submissions/PT/Relatório de avaliação de financiamento público  de Lumykras (sotorasib)_cleaned.json",
+        "split_index": "9_0_1",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "nervous system; ECOG, EECG, Eastern Cooperative Oncology Group; HR, HR, hazard ratio; PD-L1, PD-l1, programmed death; PFS, PFS-1; ligand-1; Ponte, 200B; survival of the study is free from progression Code: FFS [1]. Source: Source: Report Report of the CodeBreak 200 study [1] [2] Main secondary endpoint Primary secondary Endpoint overall survival Overall survival Rate As of the date of the Cut-off Response cut-off of the Objective data, data, 203 203 (BICR) events of OS OS had occurred, including 109 patients (64% (64% in the sotorasib group) and 94 94 patients (54% in docetaxel group) [1] The median median OS response was 10.6 months (CI 95%: 10.6 (IC: 8.9; 14.9; 14.0) for patients treated with sotorisib and 11.3 months (response 95%: 9.0 (ICIC: 9.9) for those treated with docetaxil) and 14.9 months (ICI: 9.0) for participants treated with Docetaxel.[1] The HR for OS between sotorasib and docetaxel was 1.010 (95% CI: 0.77; 1.33, p = 0.53) with docetaxil.[1] The HR of OS between SotorasiB and docettaxel was 1.01 (IC 95%: 0.77; 1.33, P = 0.53).46) and was calculated from the group of sotorashib, independently and in 23 participants to the existence of existence (all of crossover with or or partial therapeutic response) of subsequent subsequent therapy in the group with co-inhibitors KRAS p.G.12C, as provided in protocol.[1] The estimates of Kaplan-Meier (KM) to the 12 KRAS inhibitors p.",
+      "metadata": {
+        "doc_id": "Relatório de avaliação de financiamento público  de Lumykras (sotorasib)",
+        "heading": "5.Description of the studies evaluated",
+        "start_page": 9,
+        "end_page": 22,
+        "created_date": "2015",
+        "country": "PT",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc_kras_g12c/HTA submissions/PT/Relatório de avaliação de financiamento público  de Lumykras (sotorasib)_cleaned.json",
+        "split_index": "9_1_0",
+        "oversized_split": true
       }
     },
     {
@@ -366,7 +416,7 @@
       }
     },
     {
-      "text": "The additional benefit of Sotorasib was analysed against the available comparator alternatives for each outcome measure. The initial evaluation matrix defined comparators as docetaxel, docetaxil + nitendanib (for adenocarcinomas), pemetrexed (if histology is not predominantly scaly), nivolumab, pembrolizumab (for tumours expressing PD-L1 with a TPS >=1%), atezolizumab, platinum doublet. or KRAS G12C) and the absence of Kaplan-Meier curves of the OS and PFS indicators in the population of interest. Thus, the systematic review only yielded data allowing indirect comparison of Sotorasib with docetaxel, and this analysis was performed using non-anchored MAICs. In terms of comparative efficacy, the indirect comparative data based on the MAIC methodology provided suggest that sotorasib is associated with a 39% reduction in risk of death (HR=0.611; 95% CI 0.451-0.829) and an extension in median survival time of 7.2 months; and a 56% decrease in the risk of progression or mortality (HR 0.442, 95% IC 0.342-0.571) with an extension of 3.5 months in the median time to event. • The objective response rate was better in the sotorasib group (28.1% [95% CI: 21.5, 35.4] vs 13.2% [95%CI: 8.6, 19.2], respectively; p< 0.001) • Overall health status/ quality of life was stable in subjects on sotorashib, while there was a deterioration in the docetaxel group, with a change in mean squared minimums from baseline to week 12 of 6.93 (95% IC: 3.66, 10.19), with delayed time to deteriorating overall health status of 0.69% (HRIC: 0.534, 0.623, 0.581, 0.599) and physical functioning of 0.95% (HRIK: 0.593, 0.629, 0.580, 0.591); In the phase III clinical trial, the incidence of Grade 3-4 serious adverse events and fatalities was higher in the sotorasib-treated group.",
+      "text": "The additional benefit of Sotorasib was analysed against the available comparator alternatives for each outcome measure. The initial evaluation matrix defined comparators as docetaxel, docetaxil + nitendanib (for adenocarcinomas), pemetrexed (if histology is not predominantly scaly), nivolumab, pembrolizumab (for tumours expressing PD-L1 with a TPS >=1%), atezolizumab, platinum doublet. or KRAS G12C) and the absence of Kaplan-Meier curves of the OS and PFS indicators in the population of interest. Thus, the systematic review only yielded data allowing indirect comparison of Sotorasib with docetaxel, and this analysis was performed using non-anchored MAICs. In terms of comparative efficacy, the indirect comparative data based on the MAIC methodology provided suggest that sotorasib is associated with a 39% reduction in risk of death (HR=0.611; 95% CI 0.451-0.829) and an extension in median survival time of 7.2 months; and a 56%",
       "metadata": {
         "doc_id": "Relatório de avaliação de financiamento público  de Lumykras (sotorasib)",
         "heading": "Evaluation of evidence by outcome",
@@ -376,7 +426,23 @@
         "country": "PT",
         "source_type": "hta_submission",
         "original_file_path": "nsclc_kras_g12c/HTA submissions/PT/Relatório de avaliação de financiamento público  de Lumykras (sotorasib)_cleaned.json",
-        "split_index": 0
+        "split_index": "0_0_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "decrease in the risk of progression or mortality (HR 0.442, 95% IC 0.342-0.571) with an extension of 3.5 months in the median time to event. • The objective response rate was better in the sotorasib group (28.1% [95% CI: 21.5, 35.4] vs 13.2% [95%CI: 8.6, 19.2], respectively; p< 0.001) • Overall health status/ quality of life was stable in subjects on sotorashib, while there was a deterioration in the docetaxel group, with a change in mean squared minimums from baseline to week 12 of 6.93 (95% IC: 3.66, 10.19), with delayed time to deteriorating overall health status of 0.69% (HRIC: 0.534, 0.623, 0.581, 0.599) and physical functioning of 0.95% (HRIK: 0.593, 0.629, 0.580, 0.591); In the phase III clinical trial, the incidence of Grade 3-4 serious adverse events and fatalities was higher in the sotorasib-treated group.",
+      "metadata": {
+        "doc_id": "Relatório de avaliação de financiamento público  de Lumykras (sotorasib)",
+        "heading": "Evaluation of evidence by outcome",
+        "start_page": 25,
+        "end_page": 27,
+        "created_date": "2015",
+        "country": "PT",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc_kras_g12c/HTA submissions/PT/Relatório de avaliação de financiamento público  de Lumykras (sotorasib)_cleaned.json",
+        "split_index": "0_1_0",
+        "oversized_split": true
       }
     },
     {
@@ -394,7 +460,7 @@
       }
     },
     {
-      "text": "The additional benefit of Lumykras (sotorasib) was assessed in the indication for the treatment of adult patients with advanced non-small cell lung cancer (NSCLC) with mutated KRAS G12C who have progressed after at least one prior systemic line of therapy. In terms of comparative efficacy, data from the interim analysis of the Phase III clinical trial indicate that treatment with sotorasib resulted in an improvement in progression-free survival of 1.1 months and a 34% reduction in the likelihood of progression or death compared to docetaxel (HR 0.66 [95% CI: 0.51, 0.86], p-value = 0.002), with improvement at 12-month progression assessment (24.8% vs 10.1%) and objective response rate (28.1% [95%CI: 21.5, 35.4] vs 13.2% [95% IC: 8.6, 19.2] Additionally, there was a delay in time to deterioration of overall health status (HR 0,694, 95% CI: 0,530, 95%), physical functioning (HR: 0,692, 951, 0,523, AIC: 0,559, 951) and overall survival was not different between groups. Conclusions The additional benefit of Lumykras (sotorasib) was assessed in the indication for the treatment of adults with advanced non-small cell lung cancer (NSCLC) with mutated KRAS G12C and who had progressed after at least one prior systemic line of therapy It was concluded that no additional benefit for sotorasib was demonstrated over standard docetaxel therapy, and therefore it was not funded in this indication This conclusion was based on the following facts: • Data from the interim analysis of the Phase III CodeBreaK 200K clinical trial showed no difference in overall survival between treatment groups, and a difference in free survival of 1.1 months was observed compared to 12 months (9.00% vs.",
+      "text": "The additional benefit of Lumykras (sotorasib) was assessed in the indication for the treatment of adult patients with advanced non-small cell lung cancer (NSCLC) with mutated KRAS G12C who have progressed after at least one prior systemic line of therapy. In terms of comparative efficacy, data from the interim analysis of the Phase III clinical trial indicate that treatment with sotorasib resulted in an improvement in progression-free survival of 1.1 months and a 34% reduction in the likelihood of progression or death compared to docetaxel (HR 0.66 [95% CI: 0.51, 0.86], p-value = 0.002), with improvement at 12-month progression assessment (24.8% vs 10.1%) and objective response rate (28.1% [95%CI: 21.5, 35.4] vs 13.2% [95% IC: 8.6, 19.2] Additionally, there was a delay in time to deterioration of overall health status (HR 0,694, 95%",
       "metadata": {
         "doc_id": "Relatório de avaliação de financiamento público  de Lumykras (sotorasib)",
         "heading": "8. Evaluation and comments on the evidence submitted",
@@ -404,11 +470,12 @@
         "country": "PT",
         "source_type": "hta_submission",
         "original_file_path": "nsclc_kras_g12c/HTA submissions/PT/Relatório de avaliação de financiamento público  de Lumykras (sotorasib)_cleaned.json",
-        "split_index": 0
+        "split_index": "0_0_0",
+        "oversized_split": true
       }
     },
     {
-      "text": "0.66% improvement in prognosis), with a 0.66% improvement over docetaxil (HR=0.0861, 0.002 month) in the comparator free survivorship alternative: Added therapeutic value linked the additional benefit of Lumykras (sotorasib) in the indication for treatment of adults with advanced non-small cell lung (SCLC) with mutated KRAS G12C response and who had received at least one month of prior systemic therapy, with no additional benefit demonstrated for sotorasib compared to standard therapy, by cetaxel, which did not indicate a similar safety profile to docetaxel.",
+      "text": "CI: 0,530, 95%), physical functioning (HR: 0,692, 951, 0,523, AIC: 0,559, 951) and overall survival was not different between groups. Conclusions The additional benefit of Lumykras (sotorasib) was assessed in the indication for the treatment of adults with advanced non-small cell lung cancer (NSCLC) with mutated KRAS G12C and who had progressed after at least one prior systemic line of therapy It was concluded that no additional benefit for sotorasib was demonstrated over standard docetaxel therapy, and therefore it was not funded in this indication This conclusion was based on the following facts: • Data from the interim analysis of the Phase III CodeBreaK 200K clinical trial showed no difference in overall survival between treatment groups, and a difference in free survival of 1.1 months was observed compared to 12 months (9.00% vs.",
       "metadata": {
         "doc_id": "Relatório de avaliação de financiamento público  de Lumykras (sotorasib)",
         "heading": "8. Evaluation and comments on the evidence submitted",
@@ -418,21 +485,23 @@
         "country": "PT",
         "source_type": "hta_submission",
         "original_file_path": "nsclc_kras_g12c/HTA submissions/PT/Relatório de avaliação de financiamento público  de Lumykras (sotorasib)_cleaned.json",
-        "split_index": 1
+        "split_index": "0_1_0",
+        "oversized_split": true
       }
     },
     {
-      "text": "Not applicable",
+      "text": "0.66% improvement in prognosis), with a 0.66% improvement over docetaxil (HR=0.0861, 0.002 month) in the comparator free survivorship alternative: Added therapeutic value linked the additional benefit of Lumykras (sotorasib) in the indication for treatment of adults with advanced non-small cell lung (SCLC) with mutated KRAS G12C response and who had received at least one month of prior systemic therapy, with no additional benefit demonstrated for sotorasib compared to standard therapy, by cetaxel, which did not indicate a similar safety profile to docetaxel. Not applicable",
       "metadata": {
         "doc_id": "Relatório de avaliação de financiamento público  de Lumykras (sotorasib)",
-        "heading": "The economic evaluation",
-        "start_page": 30,
-        "end_page": 30,
+        "heading": "8. Evaluation and comments on the evidence submitted",
+        "start_page": 27,
+        "end_page": 29,
         "created_date": "2015",
         "country": "PT",
         "source_type": "hta_submission",
         "original_file_path": "nsclc_kras_g12c/HTA submissions/PT/Relatório de avaliação de financiamento público  de Lumykras (sotorasib)_cleaned.json",
-        "split_index": 0
+        "split_index": 1,
+        "merged": true
       }
     },
     {
