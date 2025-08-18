@@ -6,8 +6,6 @@ from typing import List, Dict, Any, Optional, Union
 from langchain.chat_models import ChatOpenAI
 from langchain.schema import SystemMessage, HumanMessage, BaseMessage
 import pandas as pd
-from IPython.display import display, HTML
-
 
 
 class TextSimilarityUtils:
@@ -40,7 +38,6 @@ class TextSimilarityUtils:
     def extract_potential_comparators(text):
         """
         Extract potential drug names/comparators from text using pattern matching.
-        Completely rewritten to avoid any look-behind patterns.
         """
         words = text.split()
         capitalized_words = []
@@ -72,7 +69,6 @@ class TextSimilarityUtils:
         return set(filtered_matches)
 
 
-
 class DocumentDeduplicator:
     """
     Class to handle deduplication of retrieved documents and context optimization.
@@ -87,18 +83,17 @@ class DocumentDeduplicator:
         """
         unique_docs = []
         seen_texts = set()
-        removed_docs = []  # Track removed documents
+        removed_docs = []
         
         for doc in docs:
             # Simple deduplication for identical content
             text = doc.page_content.strip()
             if text in seen_texts:
-                removed_info = {
+                removed_docs.append({
                     "doc": doc,
                     "reason": "exact duplicate",
                     "similar_to": None
-                }
-                removed_docs.append(removed_info)
+                })
                 continue
                 
             # Check for near-duplicates or subset relationships
@@ -120,12 +115,11 @@ class DocumentDeduplicator:
                     break
             
             if is_duplicate:
-                removed_info = {
+                removed_docs.append({
                     "doc": doc,
                     "reason": f"similarity: {similarity:.2f}" if 'similarity' in locals() else "subset relation",
                     "similar_to": similar_to
-                }
-                removed_docs.append(removed_info)
+                })
             else:
                 unique_docs.append(doc)
                 seen_texts.add(text)
@@ -168,8 +162,9 @@ class DocumentDeduplicator:
                 covered_comparators.update(comparators)
             else:
                 # If no more unique comparators, just take the next document
-                doc, comparators = doc_comparators.pop(0)
-                selected_docs.append(doc)
+                if doc_comparators:
+                    doc, comparators = doc_comparators.pop(0)
+                    selected_docs.append(doc)
         
         # Remaining docs weren't selected
         for doc, comparators in doc_comparators:
@@ -177,36 +172,6 @@ class DocumentDeduplicator:
             
         return selected_docs, skipped_docs, covered_comparators
 
-
-
-class ChunkRetriever:
-    """
-    Retriever with improved deduplication and adaptive context handling.
-    """
-    def __init__(self, vectorstore):
-        self.vectorstore = vectorstore
-        self.chroma_collection = self.vectorstore._collection
-        self.deduplicator = DocumentDeduplicator()
-        self.similarity_utils = TextSimilarityUtils()
-        self.context_manager = ContextManager()
-        self.debug_mode = False
-
-    def primary_filter_by_country(
-        self, 
-        country: str,
-        limit: int = 1000
-    ) -> List[Dict[str, Any]]:
-        result = self.chroma_collection.get(
-            where={"country": country},
-            limit=limit
-        )
-        return [
-            {"text": txt, "metadata": meta}
-            for txt, meta in zip(result["documents"], result["metadatas"])
-        ]
-
-
-# Modified portions of the ChunkRetriever class in retrieve.py
 
 class ChunkRetriever:
     """
@@ -219,100 +184,77 @@ class ChunkRetriever:
         self.deduplicator = DocumentDeduplicator()
         self.similarity_utils = TextSimilarityUtils()
         self.context_manager = ContextManager()
-        self.debug_mode = False
+
+    def _build_filter(self, country: str, source_type: Optional[str] = None) -> Dict[str, Any]:
+        """
+        Build proper ChromaDB filter combining country and optional source type.
+        """
+        filter_dict = {"country": country}
+        if source_type:
+            filter_dict["source_type"] = source_type
+        return filter_dict
 
     def primary_filter_by_country(
         self, 
         country: str,
-        source_filter: Optional[Dict[str, Any]] = None,
+        source_type: Optional[str] = None,
         limit: int = 1000
     ) -> List[Dict[str, Any]]:
         """
-        Filter by country with optional additional source type filter.
-        
-        Args:
-            country: Country code to filter by
-            source_filter: Optional additional filter by source type
-            limit: Maximum number of results to return
+        Filter by country with optional source type filter.
         """
-        # Combine country filter with source filter if provided
-        where_filter = {"country": country}
-        if source_filter:
-            where_filter.update(source_filter)
-            
-        result = self.chroma_collection.get(
-            where=where_filter,
-            limit=limit
-        )
-        return [
-            {"text": txt, "metadata": meta}
-            for txt, meta in zip(result["documents"], result["metadatas"])
-        ]
+        filter_dict = self._build_filter(country, source_type)
+        
+        try:
+            result = self.chroma_collection.get(
+                where=filter_dict,
+                limit=limit
+            )
+            return [
+                {"text": txt, "metadata": meta}
+                for txt, meta in zip(result["documents"], result["metadatas"])
+            ]
+        except Exception as e:
+            print(f"Error in primary_filter_by_country for {country}: {e}")
+            return []
 
     def vector_similarity_search(
         self,
         query: str,
-        filter_meta: Optional[Dict[str, Any]] = None,
+        country: str,
+        source_type: Optional[str] = None,
         heading_keywords: Optional[List[str]] = None,
         drug_keywords: Optional[List[str]] = None,
         initial_k: int = 30,
         final_k: int = 10,
         heading_boost: float = 3.0,
-        drug_boost: float = 8.0,
-        source_filter: Optional[Dict[str, Any]] = None
+        drug_boost: float = 8.0
     ) -> List[Dict[str, Any]]:
         """
-        Retrieve documents by vector similarity with heading and drug boosts.
-        Enhanced to support source type filtering.
+        Retrieve documents by vector similarity with keyword boosts.
         """
-        # For tracking retrieval process in debug mode
-        retrieval_info = {
-            "initial_docs": [],
-            "removed_docs": [],
-            "scored_docs": [],
-            "skipped_docs": [],
-            "final_docs": [],
-            "all_comparators": set()
-        }
+        # Build filter
+        filter_dict = self._build_filter(country, source_type)
         
-        # Combine filter_meta with source_filter if provided
-        combined_filter = filter_meta or {}
-        if source_filter:
-            combined_filter.update(source_filter)
+        try:
+            # Get initial chunks via vector similarity
+            docs = self.vectorstore.similarity_search(
+                query=query,
+                k=initial_k,
+                filter=filter_dict,
+            )
+        except Exception as e:
+            print(f"Error in vector similarity search for {country}: {e}")
+            return []
         
-        # Get initial chunks via vector similarity
-        docs = self.vectorstore.similarity_search(
-            query=query,
-            k=initial_k,
-            filter=combined_filter,
-        )
-        
-        # Store initial docs for debug
-        if self.debug_mode:
-            for i, doc in enumerate(docs):
-                retrieval_info["initial_docs"].append({
-                    "position": i+1,
-                    "doc": doc,
-                    "heading": doc.metadata.get("heading", "No heading"),
-                    "text_preview": doc.page_content[:150] + "..." if len(doc.page_content) > 150 else doc.page_content,
-                    "length": len(doc.page_content)
-                })
+        if not docs:
+            return []
         
         # Deduplicate similar chunks
-        unique_docs, removed_docs = self.deduplicator.deduplicate_documents(docs)
+        unique_docs, _ = self.deduplicator.deduplicate_documents(docs)
         
-        # Store removed docs for debug
-        if self.debug_mode:
-            for removed in removed_docs:
-                doc = removed["doc"]
-                similar_to = removed["similar_to"]
-                retrieval_info["removed_docs"].append({
-                    "doc": doc,
-                    "heading": doc.metadata.get("heading", "No heading"),
-                    "text_preview": doc.page_content[:150] + "..." if len(doc.page_content) > 150 else doc.page_content,
-                    "reason": removed["reason"],
-                    "similar_to": similar_to.page_content[:150] + "..." if similar_to else None
-                })
+        if not unique_docs:
+            return []
         
         # Score chunks by heading and drug keyword relevance
         keyword_set = set(kw.lower() for kw in (heading_keywords or []))
@@ -325,291 +267,101 @@ class ChunkRetriever:
             
             # Heading boost
             heading_lower = doc.metadata.get("heading", "").lower()
-            heading_boost_applied = 0
             if any(k in heading_lower for k in keyword_set):
-                heading_boost_applied = heading_boost
-                base_score += heading_boost_applied
+                base_score += heading_boost
                 
             # Drug name boost
             text_lower = doc.page_content.lower()
-            drug_boost_applied = 0
             if any(drug in text_lower for drug in drug_set):
-                drug_boost_applied = drug_boost
-                base_score += drug_boost_applied
+                base_score += drug_boost
                 
-            scored_docs.append((doc, base_score, heading_boost_applied, drug_boost_applied))
-            
-            # Store scored docs for debug
-            if self.debug_mode:
-                comparators = self.similarity_utils.extract_potential_comparators(doc.page_content)
-                retrieval_info["scored_docs"].append({
-                    "position": i+1,
-                    "doc": doc,
-                    "heading": doc.metadata.get("heading", "No heading"),
-                    "text_preview": doc.page_content[:150] + "..." if len(doc.page_content) > 150 else doc.page_content,
-                    "base_score": base_score - heading_boost_applied - drug_boost_applied,
-                    "heading_boost": heading_boost_applied,
-                    "drug_boost": drug_boost_applied,
-                    "total_score": base_score,
-                    "comparators": list(comparators)
-                })
+            scored_docs.append((doc, base_score))
         
         # Sort by score (highest first)
         scored_docs.sort(key=lambda x: x[1], reverse=True)
         
-        # Take top K by score, then ensure maximal comparator coverage 
-        # by prioritizing documents with unique comparators
-        initial_top_docs = [doc for doc, _, _, _ in scored_docs[:final_k*2]]  # Get more than needed initially
+        # Take top chunks, prioritizing comparator coverage
+        top_docs = [doc for doc, _ in scored_docs[:final_k*2]]  # Get more than needed initially
         
         # Prioritize by comparator coverage
-        selected_docs, skipped_docs, covered_comparators = self.deduplicator.prioritize_by_comparator_coverage(
-            initial_top_docs, 
+        selected_docs, _, _ = self.deduplicator.prioritize_by_comparator_coverage(
+            top_docs, 
             final_k=final_k
         )
         
-        # Store final selection and skipped docs for debug
-        if self.debug_mode:
-            retrieval_info["all_comparators"] = covered_comparators
-            
-            for i, doc in enumerate(selected_docs):
-                comparators = self.similarity_utils.extract_potential_comparators(doc.page_content)
-                retrieval_info["final_docs"].append({
-                    "position": i+1,
-                    "doc": doc,
-                    "heading": doc.metadata.get("heading", "No heading"),
-                    "text_preview": doc.page_content[:150] + "..." if len(doc.page_content) > 150 else doc.page_content,
-                    "comparators": list(comparators)
-                })
-                
-            for i, (doc, comparators) in enumerate(skipped_docs):
-                retrieval_info["skipped_docs"].append({
-                    "doc": doc,
-                    "heading": doc.metadata.get("heading", "No heading"),
-                    "text_preview": doc.page_content[:150] + "..." if len(doc.page_content) > 150 else doc.page_content,
-                    "comparators": list(comparators),
-                    "reason": "Insufficient unique comparators or over limit"
-                })
-        
         # Return the formatted results
-        formatted_docs = [
+        return [
             {"text": doc.page_content, "metadata": doc.metadata}
             for doc in selected_docs
         ]
-        
-        return formatted_docs if not self.debug_mode else (formatted_docs, retrieval_info)
-
-        
-    # Alias for backward compatibility with existing code
-    vector_similarity_search_with_deduplication = vector_similarity_search
 
     def retrieve_pico_chunks(
         self,
         query: str,
         countries: List[str],
+        source_type: Optional[str] = None,
         heading_keywords: Optional[List[str]] = None,
         drug_keywords: Optional[List[str]] = None,
         initial_k: int = 30,
-        final_k: int = 10,
-        debug: bool = False,
-        source_filter: Optional[Dict[str, Any]] = None
+        final_k: int = 10
     ) -> Dict[str, List[Dict[str, Any]]]:
         """
         Retrieve chunks by country using vector similarity search.
-        Enhanced to support source type filtering.
-        
-        Args:
-            query: The search query
-            countries: List of country codes to retrieve for
-            heading_keywords: Keywords to boost if found in headings
-            drug_keywords: Drug keywords to boost in content
-            initial_k: Initial number of chunks to retrieve
-            final_k: Final number of chunks after filtering
-            debug: Whether to return debug information
-            source_filter: Optional filter by source type (e.g., {"source_type": "hta_submission"})
-            
-        Returns:
-            Dictionary mapping countries to retrieved chunks, with optional debug info
         """
-        self.debug_mode = debug
         results_by_country = {}
-        debug_info = {}
 
         for country in countries:
-            # Create combined filter with country and source type
-            if source_filter:
-                filter_meta = {
-                    "$and": [
-                        {"country": country},
-                        source_filter
-                    ]
-                }
-            else:
-                filter_meta = {"country": country}
-            
-            # Use vector similarity search with debugging if enabled
-            if debug:
-                final_hits, country_debug_info = self.vector_similarity_search(
-                    query=query,
-                    filter_meta=filter_meta,
-                    heading_keywords=heading_keywords,
-                    drug_keywords=drug_keywords,
-                    initial_k=initial_k,
-                    final_k=final_k
-                )
-                debug_info[country] = country_debug_info
-            else:
-                final_hits = self.vector_similarity_search(
-                    query=query,
-                    filter_meta=filter_meta,
-                    heading_keywords=heading_keywords,
-                    drug_keywords=drug_keywords,
-                    initial_k=initial_k,
-                    final_k=final_k
-                )
-                
-            results_by_country[country] = final_hits
+            chunks = self.vector_similarity_search(
+                query=query,
+                country=country,
+                source_type=source_type,
+                heading_keywords=heading_keywords,
+                drug_keywords=drug_keywords,
+                initial_k=initial_k,
+                final_k=final_k
+            )
+            results_by_country[country] = chunks
 
-        return results_by_country if not debug else (results_by_country, debug_info)
+        return results_by_country
     
     def test_retrieval(
         self,
         query: str,
         countries: List[str],
+        source_type: Optional[str] = None,
         heading_keywords: Optional[List[str]] = None,
         drug_keywords: Optional[List[str]] = None,
-        initial_k: int = 20,
-        final_k: int = 10,
-        show_tables: bool = False,
-        source_filter: Optional[Dict[str, Any]] = None
-    ):
+        initial_k: int = 30,
+        final_k: int = 10
+    ) -> Dict[str, List[Dict[str, Any]]]:
         """
-        Test the retrieval pipeline and show diagnostic information.
-        Enhanced to support source type filtering.
-        
-        Args:
-            query: The search query
-            countries: List of country codes to test
-            heading_keywords: Keywords to boost in headings
-            drug_keywords: List of drug names to boost
-            initial_k: Initial number of chunks to retrieve
-            final_k: Final number of chunks after filtering
-            show_tables: Whether to display HTML tables (for notebooks)
-            source_filter: Optional filter by source type (e.g., {"source_type": "clinical_guideline"})
-            
-        Returns:
-            Dictionary with retrieval results and diagnostics
+        Test the retrieval pipeline and return results with simple summary.
         """
-        source_type = source_filter.get("source_type", "any") if source_filter else "any"
-        print(f"📋 Testing retrieval pipeline for query: '{query}'")
-        print(f"🔍 Initial retrieval: {initial_k} chunks, Final target: {final_k} chunks")
-        print(f"🌍 Processing countries: {', '.join(countries)}")
-        print(f"📑 Source type filter: {source_type}")
-        print(f"💡 Heading keywords: {heading_keywords}")
-        print(f"💊 Drug keywords: {drug_keywords}")
-        
-        # Retrieve chunks with debug info and source filter
-        results, debug_info = self.retrieve_pico_chunks(
+        results = self.retrieve_pico_chunks(
             query=query,
             countries=countries,
+            source_type=source_type,
             heading_keywords=heading_keywords,
             drug_keywords=drug_keywords,
             initial_k=initial_k,
-            final_k=final_k,
-            debug=True,
-            source_filter=source_filter
+            final_k=final_k
         )
         
-        # Print diagnostics for each country
-        for country in countries:
-            country_debug = debug_info[country]
-            country_results = results[country]
-            
-            print(f"\n{'='*80}\n📍 COUNTRY: {country}\n{'='*80}")
-            
-            # Summary
-            print(f"\n📊 SUMMARY:")
-            print(f"  Initial chunks retrieved: {len(country_debug['initial_docs'])}")
-            print(f"  Chunks removed as duplicates: {len(country_debug['removed_docs'])}")
-            print(f"  Final chunks selected: {len(country_debug['final_docs'])}")
-            
-            # Initial retrieval
-            print(f"\n🔎 INITIAL RETRIEVAL (showing top 5):")
-            for doc in country_debug['initial_docs'][:5]:
-                print(f"  * {doc['heading']}")
-                print(f"    {doc['text_preview'][:100]}...")
-            
-            # Removed duplicates
-            if country_debug['removed_docs']:
-                print(f"\n🗑️ REMOVED DUPLICATES (showing first 3):")
-                for doc in country_debug['removed_docs'][:3]:
-                    print(f"  * {doc['heading']}")
-                    print(f"    Reason: {doc['reason']}")
-                    if doc['similar_to']:
-                        print(f"    Similar to: {doc['similar_to'][:70]}...")
-            
-            # Final selection
-            print(f"\n✅ FINAL SELECTION:")
-            for doc in country_debug['final_docs']:
-                print(f"  * {doc['heading']}")
-                print(f"    {doc['text_preview'][:100]}...")
-            
-            # Top scored chunks (now shown last)
-            print(f"\n⭐ TOP SCORED CHUNKS (showing top 5):")
-            for doc in country_debug['scored_docs'][:5]:
-                print(f"  * {doc['heading']} (Score: {doc['total_score']:.1f})")
-                if doc['heading_boost'] > 0:
-                    print(f"    Heading boost: +{doc['heading_boost']}")
-                if doc['drug_boost'] > 0:
-                    print(f"    Drug boost: +{doc['drug_boost']}")
-            
-            # Display tables if requested
-            if show_tables:
-                try:
-                    print("\nInitial Chunks:")
-                    self._display_table(country_debug, "initial_docs")
-                    
-                    print("\nRemoved Duplicates:")
-                    self._display_table(country_debug, "removed_docs")
-                    
-                    print("\nFinal Selection:")
-                    self._display_table(country_debug, "final_docs")
-                except Exception as e:
-                    print(f"Could not display tables: {e}")
+        # Print simple summary
+        print(f"\n=== RETRIEVAL RESULTS ===")
+        print(f"Query: {query}")
+        print(f"Source type: {source_type or 'All sources'}")
         
-        return {"results": results, "debug_info": debug_info}
-    
-    def _display_table(self, debug_info, section):
-        """Helper method to display a table of results in Jupyter notebooks."""
-        try:
-            if section not in debug_info or not debug_info[section]:
-                print(f"No data available for {section}")
-                return
-                
-            data = []
-            for item in debug_info[section]:
-                row = {}
-                
-                if "position" in item:
-                    row["Pos"] = item["position"]
-                
-                if "heading" in item:
-                    row["Heading"] = item["heading"][:50] + "..." if len(item["heading"]) > 50 else item["heading"]
-                
-                if "text_preview" in item:
-                    row["Preview"] = item["text_preview"][:70] + "..." if len(item["text_preview"]) > 70 else item["text_preview"]
-                
-                if "reason" in item:
-                    row["Reason"] = item["reason"]
-                    
-                if "total_score" in item:
-                    row["Score"] = f"{item['total_score']:.1f}"
-                
-                data.append(row)
-            
-            df = pd.DataFrame(data)
-            display(HTML(df.to_html(index=False)))
-        except Exception as e:
-            print(f"Error displaying table: {e}")
+        total_chunks = 0
+        for country, chunks in results.items():
+            chunk_count = len(chunks)
+            total_chunks += chunk_count
+            print(f"{country}: {chunk_count} chunks")
+        
+        print(f"Total: {total_chunks} chunks")
+        print("=" * 25)
+        
+        return results
 
 
 class ContextManager:
@@ -676,7 +428,7 @@ class ContextManager:
             remaining_chunks.sort(key=sort_key, reverse=True)
             chunk = remaining_chunks.pop(0)
             
-            # Skip if adding would exceed token limit (unless it has unique critical info)
+            # Skip if adding would exceed token limit
             if current_tokens + chunk["tokens"] > self.max_tokens:
                 new_comparators = chunk["comparators"] - covered_comparators
                 # Only include if it has unique comparators and we're not too far over limit
@@ -712,48 +464,11 @@ class PICOExtractor:
         self.llm = ChatOpenAI(model_name=self.model_name, temperature=0)
         self.context_manager = ContextManager()
 
-    def debug_retrieve_chunks(
-        self,
-        countries: List[str],
-        query: str,
-        initial_k: int = 10,
-        final_k: int = 5,
-        heading_keywords: Optional[List[str]] = None
-    ) -> Dict[str, List[Dict[str, Any]]]:
-        """
-        For debugging, retrieve relevant chunks for each country and print them.
-        """
-        retrieval_results = {}
-
-        for country in countries:
-            # Retrieve chunks for this country
-            results_dict = self.chunk_retriever.retrieve_pico_chunks(
-                query=query,
-                countries=[country],
-                heading_keywords=heading_keywords,
-                initial_k=initial_k,
-                final_k=final_k
-            )
-
-            country_chunks = results_dict.get(country, [])
-            retrieval_results[country] = country_chunks
-
-            # Print each chunk for debugging
-            print(f"===== Retrieved Chunks for country: {country} =====")
-            if not country_chunks:
-                print("No chunks retrieved.")
-            else:
-                for idx, chunk_info in enumerate(country_chunks, start=1):
-                    print(f"Chunk {idx}:")
-                    print(f"  {chunk_info}")
-            print("========================================\n")
-
-        return retrieval_results
-
     def extract_picos(
         self,
         countries: List[str],
         query: str,
+        source_type: Optional[str] = None,
         initial_k: int = 10,
         final_k: int = 5,
         heading_keywords: Optional[List[str]] = None,
@@ -780,6 +495,7 @@ class PICOExtractor:
             results_dict = self.chunk_retriever.retrieve_pico_chunks(
                 query=query,
                 countries=[country],
+                source_type=source_type,
                 heading_keywords=heading_keywords,
                 initial_k=initial_k,
                 final_k=final_k
