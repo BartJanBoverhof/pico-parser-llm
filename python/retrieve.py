@@ -190,16 +190,8 @@ class ChunkRetriever:
         Build proper ChromaDB filter combining country and optional source type.
         """
         if source_type:
-            # Use $and operator for combining multiple conditions
-            return {
-                "$and": [
-                    {"country": country},
-                    {"source_type": source_type}
-                ]
-            }
-        else:
-            # Single condition doesn't need operator
-            return {"country": country}
+            return {"$and": [{"country": country}, {"source_type": source_type}]}
+        return {"country": country}
 
     def primary_filter_by_country(
         self, 
@@ -211,15 +203,11 @@ class ChunkRetriever:
         Filter by country with optional source type filter.
         """
         filter_dict = self._build_filter(country, source_type)
-        
         try:
-            result = self.chroma_collection.get(
-                where=filter_dict,
-                limit=limit
-            )
+            result = self.chroma_collection.get(where=filter_dict, limit=limit)
             return [
                 {"text": txt, "metadata": meta}
-                for txt, meta in zip(result["documents"], result["metadatas"])
+                for txt, meta in zip(result.get("documents", []), result.get("metadatas", []))
             ]
         except Exception as e:
             print(f"Error in primary_filter_by_country for {country} with source_type {source_type}: {e}")
@@ -240,11 +228,8 @@ class ChunkRetriever:
         """
         Retrieve documents by vector similarity with keyword boosts.
         """
-        # Build filter
         filter_dict = self._build_filter(country, source_type)
-        
         try:
-            # Get initial chunks via vector similarity
             docs = self.vectorstore.similarity_search(
                 query=query,
                 k=initial_k,
@@ -253,54 +238,40 @@ class ChunkRetriever:
         except Exception as e:
             print(f"Error in vector similarity search for {country}: {e}")
             return []
-        
         if not docs:
             return []
-        
+
         # Deduplicate similar chunks
         unique_docs, _ = self.deduplicator.deduplicate_documents(docs)
-        
         if not unique_docs:
             return []
-        
+
         # Score chunks by heading and drug keyword relevance
-        keyword_set = set(kw.lower() for kw in (heading_keywords or []))
-        drug_set = set(dr.lower() for dr in (drug_keywords or []))
-        
+        keyword_set = set((heading_keywords or []))
+        keyword_set = {k.lower() for k in keyword_set}
+        drug_set = set((drug_keywords or []))
+        drug_set = {d.lower() for d in drug_set}
+
         scored_docs = []
         for i, doc in enumerate(unique_docs):
-            # Base score: higher for earlier docs
-            base_score = (len(unique_docs) - i)
-            
-            # Heading boost
-            heading_lower = doc.metadata.get("heading", "").lower()
+            score = (len(unique_docs) - i)  # slight bias for earlier items
+            heading_lower = (doc.metadata.get("heading") or "").lower()
             if any(k in heading_lower for k in keyword_set):
-                base_score += heading_boost
-                
-            # Drug name boost
-            text_lower = doc.page_content.lower()
-            if any(drug in text_lower for drug in drug_set):
-                base_score += drug_boost
-                
-            scored_docs.append((doc, base_score))
-        
-        # Sort by score (highest first)
+                score += heading_boost
+            text_lower = (doc.page_content or "").lower()
+            if any(d in text_lower for d in drug_set):
+                score += drug_boost
+            scored_docs.append((doc, score))
+
         scored_docs.sort(key=lambda x: x[1], reverse=True)
-        
-        # Take top chunks, prioritizing comparator coverage
-        top_docs = [doc for doc, _ in scored_docs[:final_k*2]]  # Get more than needed initially
-        
-        # Prioritize by comparator coverage
+        top_docs = [doc for doc, _ in scored_docs[:final_k * 2]]
+
+        # Prioritize by comparator coverage to maximize variety of comparators/drugs
         selected_docs, _, _ = self.deduplicator.prioritize_by_comparator_coverage(
-            top_docs, 
-            final_k=final_k
+            top_docs, final_k=final_k
         )
-        
-        # Return the formatted results
-        return [
-            {"text": doc.page_content, "metadata": doc.metadata}
-            for doc in selected_docs
-        ]
+
+        return [{"text": doc.page_content, "metadata": doc.metadata} for doc in selected_docs]
 
     def retrieve_pico_chunks(
         self,
@@ -315,8 +286,7 @@ class ChunkRetriever:
         """
         Retrieve chunks by country using vector similarity search.
         """
-        results_by_country = {}
-
+        results_by_country: Dict[str, List[Dict[str, Any]]] = {}
         for country in countries:
             chunks = self.vector_similarity_search(
                 query=query,
@@ -328,51 +298,39 @@ class ChunkRetriever:
                 final_k=final_k
             )
             results_by_country[country] = chunks
-
         return results_by_country
-    
+
     def diagnose_vectorstore(self, limit: int = 100):
         """
         Diagnose the vectorstore by checking available metadata fields and values.
         """
         try:
-            result = self.chroma_collection.get(
-                limit=limit,
-                include=['metadatas']
-            )
-            
+            result = self.chroma_collection.get(limit=limit, include=['metadatas'])
+            metadatas = result.get('metadatas', []) or []
             print(f"=== VECTORSTORE DIAGNOSTICS ===")
-            print(f"Total documents sampled: {len(result['metadatas'])}")
-            
-            # Analyze metadata fields
+            print(f"Total documents sampled: {len(metadatas)}")
             all_fields = set()
             country_values = set()
             source_type_values = set()
-            
-            for metadata in result['metadatas']:
+            for metadata in metadatas:
                 if metadata:
                     all_fields.update(metadata.keys())
                     if 'country' in metadata:
                         country_values.add(metadata['country'])
                     if 'source_type' in metadata:
                         source_type_values.add(metadata['source_type'])
-            
             print(f"Available metadata fields: {sorted(all_fields)}")
             print(f"Countries found: {sorted(country_values)}")
             print(f"Source types found: {sorted(source_type_values)}")
-            
-            # Show sample metadata
             print(f"\nSample metadata entries:")
-            for i, metadata in enumerate(result['metadatas'][:5]):
+            for i, metadata in enumerate(metadatas[:5]):
                 print(f"  {i+1}: {metadata}")
-                
             return {
-                'total_docs': len(result['metadatas']),
+                'total_docs': len(metadatas),
                 'metadata_fields': sorted(all_fields),
                 'countries': sorted(country_values),
                 'source_types': sorted(source_type_values)
             }
-            
         except Exception as e:
             print(f"Error diagnosing vectorstore: {e}")
             return None
@@ -384,39 +342,19 @@ class ChunkRetriever:
         try:
             print(f"=== TESTING SIMPLE RETRIEVAL ===")
             print(f"Testing basic retrieval for country: {country}")
-            
-            # Test 1: No filters
             result_no_filter = self.chroma_collection.get(limit=limit)
-            print(f"Documents without filter: {len(result_no_filter['documents'])}")
-            
-            # Test 2: Country filter only
-            result_country = self.chroma_collection.get(
-                where={"country": country},
-                limit=limit
-            )
-            print(f"Documents with country={country}: {len(result_country['documents'])}")
-            
-            # Test 3: Try vector similarity without filters
-            docs_no_filter = self.vectorstore.similarity_search(
-                query="treatment",
-                k=limit
-            )
+            print(f"Documents without filter: {len(result_no_filter.get('documents', []))}")
+            result_country = self.chroma_collection.get(where={"country": country}, limit=limit)
+            print(f"Documents with country={country}: {len(result_country.get('documents', []))}")
+            docs_no_filter = self.vectorstore.similarity_search(query="treatment", k=limit)
             print(f"Vector similarity without filter: {len(docs_no_filter)} docs")
-            
-            # Test 4: Try vector similarity with country filter
-            docs_with_filter = self.vectorstore.similarity_search(
-                query="treatment",
-                k=limit,
-                filter={"country": country}
-            )
+            docs_with_filter = self.vectorstore.similarity_search(query="treatment", k=limit, filter={"country": country})
             print(f"Vector similarity with country filter: {len(docs_with_filter)} docs")
-            
             return True
-            
         except Exception as e:
             print(f"Error in simple retrieval test: {e}")
             return False
-    
+
     def test_retrieval(
         self,
         query: str,
@@ -426,11 +364,15 @@ class ChunkRetriever:
         drug_keywords: Optional[List[str]] = None,
         initial_k: int = 30,
         final_k: int = 10
-    ) -> Dict[str, List[Dict[str, Any]]]:
+    ) -> Dict[str, Any]:
         """
-        Test the retrieval pipeline and return results with simple summary.
+        Test the retrieval pipeline.
+
+        Prints a per-country summary, and returns a single object with:
+          - 'summary': {country_code: count, ...}
+          - 'chunks_by_country': {country_code: [ {text, metadata}, ... ], ...}
         """
-        results = self.retrieve_pico_chunks(
+        chunks_by_country = self.retrieve_pico_chunks(
             query=query,
             countries=countries,
             source_type=source_type,
@@ -439,22 +381,28 @@ class ChunkRetriever:
             initial_k=initial_k,
             final_k=final_k
         )
-        
+
         # Print simple summary
         print(f"\n=== RETRIEVAL RESULTS ===")
         print(f"Query: {query}")
         print(f"Source type: {source_type or 'All sources'}")
-        
+
+        summary: Dict[str, int] = {}
         total_chunks = 0
-        for country, chunks in results.items():
-            chunk_count = len(chunks)
-            total_chunks += chunk_count
-            print(f"{country}: {chunk_count} chunks")
-        
+        for country, chunks in chunks_by_country.items():
+            count = len(chunks)
+            summary[country] = count
+            total_chunks += count
+            print(f"{country}: {count} chunks")
+
         print(f"Total: {total_chunks} chunks")
         print("=" * 25)
-        
-        return results
+
+        return {
+            "summary": summary,
+            "chunks_by_country": chunks_by_country
+        }
+
 
 
 class ContextManager:

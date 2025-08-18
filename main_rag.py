@@ -55,21 +55,12 @@ chunker = Chunker(
 chunker.run_pipeline()
 
 # Step 5: Vectorize documents (creates a unified vectorstore)
-# A. BioBert embedding
 vectoriser = Vectoriser(
     chunked_folder_path=CHUNKED_PATH,
     embedding_choice=VECTORSTORE_TYPE,
     db_parent_dir=VECTORSTORE_PATH
 )
 vectorstore = vectoriser.run_pipeline()
-
-# B. OpenAI embedding (if VECTORSTORE_TYPE is "openai" or "both")
-vectoriser_openai = Vectoriser(
-    chunked_folder_path=CHUNKED_PATH,
-    embedding_choice="openai",
-    db_parent_dir=VECTORSTORE_PATH
-)
-vectorstore_openai = vectoriser_openai.run_pipeline()
 
 # Step 6: Initialize enhanced RAG system for retrieval and LLM querying
 # A. Initialize RAG system for HTA submissions
@@ -84,15 +75,6 @@ rag.vectorize_documents(embeddings_type=VECTORSTORE_TYPE)
 # Initialize the retriever with the created vectorstore
 rag.initialize_retriever(vectorstore_type=VECTORSTORE_TYPE)
 
-# Diagnostic tests first
-print("\n=== VECTORSTORE DIAGNOSTICS ===")
-diagnostic_info = rag.diagnose_vectorstore(limit=100)
-
-print("\n=== SIMPLE RETRIEVAL TEST ===")
-simple_test = rag.test_simple_retrieval(country="EN", limit=5)
-
-# Testing retrievers 
-print("\n=== TESTING RETRIEVAL ===")
 
 # Test 1: Test HTA submission retrieval
 print("\n--- Testing HTA Submission Retrieval ---")
