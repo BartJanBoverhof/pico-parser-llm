@@ -3,7 +3,7 @@ from python.utils import FolderTree
 from python.process import PDFProcessor, PostCleaner
 from python.translation import Translator
 from python.vectorise import Chunker, Vectoriser
-from python.run import RagHTASubmission
+from python.run import RagPipeline
 from python.open_ai import validate_api_key
 
 # Define paths
@@ -54,7 +54,9 @@ chunker = Chunker(
 )
 chunker.run_pipeline()
 
+
 # Step 5: Vectorize documents (creates a unified vectorstore)
+# A. BioBert embedding
 vectoriser = Vectoriser(
     chunked_folder_path=CHUNKED_PATH,
     embedding_choice=VECTORSTORE_TYPE,
@@ -63,8 +65,20 @@ vectoriser = Vectoriser(
 vectorstore = vectoriser.run_pipeline()
 
 
+# B. OpenAI embedding (if VECTORSTORE_TYPE is "openai" or "both")
+vectoriser_openai = Vectoriser(
+    chunked_folder_path=CHUNKED_PATH,
+    embedding_choice="openai",
+    db_parent_dir=VECTORSTORE_PATH
+)
+vectorstore_openai = vectoriser_openai.run_pipeline()
+
+
+
+
 # Step 6: Initialize enhanced RAG system for retrieval and LLM querying
-rag = RagHTASubmission(
+# A. Initialize RAG system for HTA submissions
+rag = RagPipeline(
     model=MODEL,
     vectorstore_type=VECTORSTORE_TYPE
 )
@@ -74,6 +88,84 @@ rag.vectorize_documents(embeddings_type=VECTORSTORE_TYPE)
 
 # Initialize the retriever with the created vectorstore
 rag.initialize_retriever(vectorstore_type=VECTORSTORE_TYPE)
+
+
+
+
+# Testing retrievers 
+print("\n=== TESTING RETRIEVAL ===")
+
+# Test 1: Test HTA submission retrieval
+print("\n--- Testing HTA Submission Retrieval ---")
+hta_test_results = rag.test_retrieval(
+    query=rag.default_query_hta,
+    countries=["ALL"],  # Test with specific countries or use COUNTRIES
+    source_type="hta_submission",
+    heading_keywords=["comparator", "alternative", "treatment", "therapy"],
+    drug_keywords=["docetaxel", "nintedanib", "pembrolizumab", "sotorasib", "adagrasib"],
+    initial_k=30,
+    final_k=15
+)
+
+if hta_test_results:
+    print("HTA Retrieval Test Results:")
+    for country, results in hta_test_results.items():
+        print(f"  {country}: {len(results)} chunks retrieved")
+        # Print sample of first chunk if available
+        if results:
+            print(f"    Sample chunk: {results[0]['text'][:200]}...")
+else:
+    print("No HTA retrieval results returned")
+
+# Test 2: Test Clinical Guideline retrieval
+print("\n--- Testing Clinical Guideline Retrieval ---")
+clinical_test_results = rag.test_retrieval(
+    query=rag.default_query_clinical,
+    countries=["EN", "DE", "FR"],  # Test with specific countries or use COUNTRIES
+    source_type="clinical_guideline",
+    heading_keywords=["recommendation", "treatment", "therapy", "algorithm"],
+    drug_keywords=["KRAS", "G12C", "sotorasib", "adagrasib"],
+    initial_k=30,
+    final_k=15
+)
+
+if clinical_test_results:
+    print("Clinical Guideline Retrieval Test Results:")
+    for country, results in clinical_test_results.items():
+        print(f"  {country}: {len(results)} chunks retrieved")
+        # Print sample of first chunk if available
+        if results:
+            print(f"    Sample chunk: {results[0]['text'][:200]}...")
+else:
+    print("No Clinical Guideline retrieval results returned")
+
+# Test 3: Test general retrieval (no source type filter)
+print("\n--- Testing General Retrieval (All Source Types) ---")
+general_test_results = rag.test_retrieval(
+    query="KRAS G12C mutation advanced NSCLC treatment comparators",
+    countries=["EN", "DE"],
+    source_type=None,  # No filter - get from all sources
+    heading_keywords=["treatment", "therapy", "comparator"],
+    drug_keywords=["sotorasib", "docetaxel", "pembrolizumab"],
+    initial_k=20,
+    final_k=10
+)
+
+if general_test_results:
+    print("General Retrieval Test Results:")
+    for country, results in general_test_results.items():
+        print(f"  {country}: {len(results)} chunks retrieved")
+        if results:
+            print(f"    Sample chunk: {results[0]['text'][:200]}...")
+else:
+    print("No General retrieval results returned")
+
+print("\n=== RETRIEVAL TESTING COMPLETE ===\n")
+
+
+
+
+
 
 # Initialize separate PICO extractors for HTA submissions and clinical guidelines
 rag.initialize_pico_extractors()

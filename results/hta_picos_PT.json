@@ -2,10 +2,34 @@
   "Country": "PT",
   "PICOs": [
     {
-      "Population": "Adult patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation who have progressed after at least one prior systemic therapy.",
+      "Population": "Adults with advanced non-small cell lung cancer (NSCLC) with histologically documented KRAS G12C mutation who have progressed after at least one prior systemic therapy, including platinum-based dual chemotherapy and a checkpoint inhibitor, and no other known oncogenic mutation for which an approved target therapy exists.",
       "Intervention": "New medicine under assessment",
       "Comparator": "Docetaxel",
-      "Outcomes": "Overall survival, progression-free survival, objective response rate, quality of life, adverse events"
+      "Outcomes": "Overall survival, progression-free survival, objective response rate, duration of response, disease control rate, time to progression, time to next treatment, adverse events."
+    },
+    {
+      "Population": "Adults with advanced non-small cell lung cancer (NSCLC) with histologically documented KRAS G12C mutation who have progressed after at least one prior systemic therapy.",
+      "Intervention": "New medicine under assessment",
+      "Comparator": "Docetaxel + Nintedanib",
+      "Outcomes": "Overall survival, progression-free survival, objective response rate, duration of response, disease control rate, time to progression, time to next treatment, adverse events."
+    },
+    {
+      "Population": "Adults with advanced non-small cell lung cancer (NSCLC) with histologically documented KRAS G12C mutation who have progressed after at least one prior systemic therapy.",
+      "Intervention": "New medicine under assessment",
+      "Comparator": "Nivolumab",
+      "Outcomes": "Overall survival, progression-free survival, objective response rate, duration of response, disease control rate, time to progression, time to next treatment, adverse events."
+    },
+    {
+      "Population": "Adults with advanced non-small cell lung cancer (NSCLC) with histologically documented KRAS G12C mutation who have progressed after at least one prior systemic therapy.",
+      "Intervention": "New medicine under assessment",
+      "Comparator": "Pembrolizumab",
+      "Outcomes": "Overall survival, progression-free survival, objective response rate, duration of response, disease control rate, time to progression, time to next treatment, adverse events."
+    },
+    {
+      "Population": "Adults with advanced non-small cell lung cancer (NSCLC) with histologically documented KRAS G12C mutation who have progressed after at least one prior systemic therapy.",
+      "Intervention": "New medicine under assessment",
+      "Comparator": "Atezolizumab",
+      "Outcomes": "Overall survival, progression-free survival, objective response rate, duration of response, disease control rate, time to progression, time to next treatment, adverse events."
     }
   ],
   "SourceType": "hta_submission"

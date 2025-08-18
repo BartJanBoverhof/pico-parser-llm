@@ -22,7 +22,7 @@ from openai import OpenAI
 from langchain.schema import SystemMessage, HumanMessage
 
 
-class RagHTASubmission:
+class RagPipeline:
     """
     A class to manage the entire RAG (Retrieval-Augmented Generation) pipeline:
     1. PDF processing

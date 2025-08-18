@@ -2,34 +2,22 @@
   "Country": "PO",
   "PICOs": [
     {
-      "Population": "Adult patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation who have progressed after at least one prior systemic therapy.",
+      "Population": "Adult patients with advanced non-small cell lung cancer (NSCLC) with a KRAS G12C mutation who have experienced disease progression after at least one prior systemic therapy.",
       "Intervention": "New medicine under assessment",
-      "Comparator": "Docetaxel",
-      "Outcomes": "Progression-free survival (PFS), overall survival (OS), overall response rate (ORR), safety, quality of life (EORTC QLQ-C30 and EORTC QLQ-LC13)."
+      "Comparator": "Docetaxel (DOC)",
+      "Outcomes": "Progression-free survival (PFS), overall response rate (ORR), disease control rate (DCR), quality of life (QoL), overall survival (OS), adverse events (AEs), treatment-related adverse events leading to discontinuation."
     },
     {
-      "Population": "Adult patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation who have progressed after at least one prior systemic therapy.",
+      "Population": "Adult patients with advanced non-small cell lung cancer (NSCLC) with a KRAS G12C mutation who have experienced disease progression after at least one prior systemic therapy.",
       "Intervention": "New medicine under assessment",
-      "Comparator": "Nintedanib in combination with Docetaxel",
-      "Outcomes": "Progression-free survival (PFS), overall survival (OS), overall response rate (ORR), safety, quality of life (EORTC QLQ-C30 and EORTC QLQ-LC13)."
+      "Comparator": "Nintedanib in combination with Docetaxel (NIN+DOC)",
+      "Outcomes": "Progression-free survival (PFS), overall response rate (ORR), disease control rate (DCR), quality of life (QoL), overall survival (OS), adverse events (AEs), treatment-related adverse events leading to discontinuation."
     },
     {
-      "Population": "Adult patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation who have progressed after at least one prior systemic therapy.",
+      "Population": "Adult patients with advanced non-small cell lung cancer (NSCLC) with a KRAS G12C mutation who have experienced disease progression after at least one prior systemic therapy.",
       "Intervention": "New medicine under assessment",
-      "Comparator": "Pemetrexed",
-      "Outcomes": "Progression-free survival (PFS), overall survival (OS), overall response rate (ORR), safety, quality of life (EORTC QLQ-C30 and EORTC QLQ-LC13)."
-    },
-    {
-      "Population": "Adult patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation who have progressed after at least one prior systemic therapy.",
-      "Intervention": "New medicine under assessment",
-      "Comparator": "Nivolumab",
-      "Outcomes": "Progression-free survival (PFS), overall survival (OS), overall response rate (ORR), safety, quality of life (EORTC QLQ-C30 and EORTC QLQ-LC13)."
-    },
-    {
-      "Population": "Adult patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation who have progressed after at least one prior systemic therapy.",
-      "Intervention": "New medicine under assessment",
-      "Comparator": "Atezolizumab",
-      "Outcomes": "Progression-free survival (PFS), overall survival (OS), overall response rate (ORR), safety, quality of life (EORTC QLQ-C30 and EORTC QLQ-LC13)."
+      "Comparator": "Pemetrexed (PMX)",
+      "Outcomes": "Progression-free survival (PFS), overall response rate (ORR), disease control rate (DCR), quality of life (QoL), overall survival (OS), adverse events (AEs), treatment-related adverse events leading to discontinuation."
     }
   ],
   "SourceType": "hta_submission"

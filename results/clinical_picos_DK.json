@@ -1,12 +1,5 @@
 {
   "Country": "DK",
-  "PICOs": [
-    {
-      "Population": "Adult patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation, performance status 0-2, who have progressed after at least one prior systemic therapy including platinum-based chemotherapy and immunotherapy (where applicable)",
-      "Intervention": "2nd or 3rd line treatment with targeted therapy options for KRAS G12C mutation",
-      "Comparator": "Standard chemotherapy or other targeted therapies not specific to KRAS G12C",
-      "Outcomes": "Improvement in progression-free survival (PFS) and overall response rate (ORR)"
-    }
-  ],
+  "PICOs": [],
   "SourceType": "clinical_guideline"
 }

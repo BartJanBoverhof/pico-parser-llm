@@ -2,10 +2,10 @@
   "Country": "NL",
   "PICOs": [
     {
-      "Population": "Adult patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation who have progressed after at least one prior systemic therapy.",
+      "Population": "Adult patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation who have progressed after at least one prior systemic therapy, including platinum-based chemotherapy and a PD-1 or PD-L1 inhibitor.",
       "Intervention": "Sotorasib 960 mg orally once daily.",
-      "Comparator": "Docetaxel.",
-      "Outcomes": "May result in little to no difference in overall survival, objective response rate, and adverse events compared to docetaxel; potential increase in progression-free survival."
+      "Comparator": "Docetaxel 75 mg/m² intravenously every 3 weeks.",
+      "Outcomes": "Progression-free survival (PFS), overall survival (OS), overall response rate, safety, and patient-reported outcomes (PROs)."
     }
   ],
   "SourceType": "clinical_guideline"
