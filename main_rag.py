@@ -15,7 +15,7 @@ CHUNKED_PATH = "data/text_chunked"
 VECTORSTORE_PATH = "data/vectorstore"
 VECTORSTORE_TYPE = "biobert"  # Choose between "openai", "biobert", or "both"
 MODEL = "gpt-4o-mini"
-COUNTRIES = ["EN", "DE", "FR", "ES", "IT"]  # Use specific countries instead of "ALL"
+COUNTRIES = ["ALL"]  # Use "ALL" to process all available countries
 
 # Validate OpenAI API key
 validate_api_key()
@@ -84,12 +84,19 @@ rag.vectorize_documents(embeddings_type=VECTORSTORE_TYPE)
 # Initialize the retriever with the created vectorstore
 rag.initialize_retriever(vectorstore_type=VECTORSTORE_TYPE)
 
+# Diagnostic tests first
+print("\n=== VECTORSTORE DIAGNOSTICS ===")
+diagnostic_info = rag.diagnose_vectorstore(limit=100)
+
+print("\n=== SIMPLE RETRIEVAL TEST ===")
+simple_test = rag.test_simple_retrieval(country="EN", limit=5)
+
 # Testing retrievers 
 print("\n=== TESTING RETRIEVAL ===")
 
 # Test 1: Test HTA submission retrieval
 print("\n--- Testing HTA Submission Retrieval ---")
-hta_test_results = rag.chunk_retriever.test_retrieval(
+hta_test_results = rag.test_retrieval(
     query=rag.default_query_hta,
     countries=COUNTRIES,
     source_type="hta_submission",
@@ -101,7 +108,7 @@ hta_test_results = rag.chunk_retriever.test_retrieval(
 
 # Test 2: Test Clinical Guideline retrieval
 print("\n--- Testing Clinical Guideline Retrieval ---")
-clinical_test_results = rag.chunk_retriever.test_retrieval(
+clinical_test_results = rag.test_retrieval(
     query=rag.default_query_clinical,
     countries=COUNTRIES,
     source_type="clinical_guideline",
@@ -113,7 +120,7 @@ clinical_test_results = rag.chunk_retriever.test_retrieval(
 
 # Test 3: Test general retrieval (no source type filter)
 print("\n--- Testing General Retrieval (All Source Types) ---")
-general_test_results = rag.chunk_retriever.test_retrieval(
+general_test_results = rag.test_retrieval(
     query="KRAS G12C mutation advanced NSCLC treatment comparators",
     countries=COUNTRIES,
     source_type=None,  # No filter - get from all sources

@@ -214,38 +214,6 @@ class RagPipeline:
         - Note alternative options
         - Extract expected outcomes
 
-        If KRAS G12C is not explicitly addressed, include recommendations for:
-        - Similar biomarker-driven therapies
-        - General second-line therapy for advanced NSCLC
-
-        Output valid JSON ONLY in this format:
-        {{
-        "Country": "{country}",
-        "PICOs": [
-            {{"Population":"[Specific patient population]", "Intervention":"[Recommended treatment]", "Comparator":"[Alternative options]", "Outcomes":"[Expected benefits]"}},
-            <!-- additional PICOs as needed -->
-        ]
-        }}
-
-        Return ONLY the JSON, no additional text.
-        """
-        
-        self.user_prompt_template_clinical = """
-        Context:
-        {context_block}
-
-        Instructions:
-        Extract all treatment recommendations from this clinical guideline relevant to adult patients with advanced NSCLC with KRAS G12C mutation who have progressed after prior therapy.
-
-        Follow this systematic approach:
-        1. Identify any content specifically addressing KRAS G12C mutation
-        2. Extract recommendations for second-line+ therapy in advanced NSCLC
-        3. For each relevant recommendation:
-        - Precisely describe the applicable patient population
-        - Identify the recommended treatment(s)
-        - Note alternative options
-        - Extract expected outcomes
-
         If KRAS G12C is not explicitly addressed don't include it.
 
         Output valid JSON ONLY in this format:
@@ -260,6 +228,10 @@ class RagPipeline:
         Return ONLY the JSON, no additional text.
         """
 
+    @property
+    def chunk_retriever(self):
+        """Provide access to the retriever for backward compatibility."""
+        return self.retriever
 
     def show_folder_structure(self, root_path: str = ".", show_hidden: bool = False, max_depth: Optional[int] = None):
         """Show the folder structure of the project."""
@@ -461,17 +433,6 @@ class RagPipeline:
         if self.pico_extractor_hta is None or self.pico_extractor_clinical is None:
             self.initialize_pico_extractors()
         
-        # Handle the "ALL" special case - check if any country is "ALL"
-        if any(country == "ALL" for country in countries):
-            all_countries = self.get_all_countries()
-            if not all_countries:
-                print("No countries detected in the vectorstore. Please check your data.")
-                return []
-            
-            # Replace the countries list with the list of all countries
-            countries = all_countries
-            print(f"Processing all available countries: {', '.join(countries)}")
-        
         # Set source-specific defaults
         if source_type == "hta_submission":
             extractor = self.pico_extractor_hta
@@ -493,9 +454,6 @@ class RagPipeline:
         if heading_keywords is None:
             heading_keywords = default_headings
             
-        # Create a filter for the source type
-        source_filter = {"source_type": source_type}
-        
         # Extract PICOs with source type filter
         extracted_picos = []
         
@@ -512,10 +470,10 @@ class RagPipeline:
             results_dict = extractor.chunk_retriever.retrieve_pico_chunks(
                 query=query,
                 countries=[country],
+                source_type=source_type,  # Use source_type parameter correctly
                 heading_keywords=heading_keywords,
                 initial_k=initial_k,
-                final_k=final_k,
-                source_filter=source_filter  # Add source type filtering
+                final_k=final_k
             )
             
             country_chunks = results_dict.get(country, [])
@@ -592,6 +550,15 @@ class RagPipeline:
         heading_keywords: Optional[List[str]] = None
     ):
         """Extract PICOs specifically from HTA submissions."""
+        # Handle the "ALL" special case
+        if any(country == "ALL" for country in countries):
+            all_countries = self.get_all_countries()
+            if not all_countries:
+                print("No countries detected in the vectorstore. Please check your data.")
+                return []
+            countries = all_countries
+            print(f"Extracting HTA PICOs for all available countries: {', '.join(countries)}")
+            
         return self.extract_picos_by_source_type(
             countries=countries,
             source_type="hta_submission",
@@ -610,6 +577,15 @@ class RagPipeline:
         heading_keywords: Optional[List[str]] = None
     ):
         """Extract PICOs specifically from clinical guidelines."""
+        # Handle the "ALL" special case
+        if any(country == "ALL" for country in countries):
+            all_countries = self.get_all_countries()
+            if not all_countries:
+                print("No countries detected in the vectorstore. Please check your data.")
+                return []
+            countries = all_countries
+            print(f"Extracting clinical PICOs for all available countries: {', '.join(countries)}")
+            
         return self.extract_picos_by_source_type(
             countries=countries,
             source_type="clinical_guideline",
@@ -654,6 +630,7 @@ class RagPipeline:
         extracted_picos = self.pico_extractor_hta.extract_picos(
             countries=countries,
             query=query,
+            source_type="hta_submission",  # Add source type
             initial_k=initial_k,
             final_k=final_k,
             heading_keywords=heading_keywords
@@ -677,7 +654,7 @@ class RagPipeline:
         
         Args:
             query: Query for retrieval
-            countries: List of country codes to retrieve from
+            countries: List of country codes to retrieve from, or ["ALL"] for all countries
             source_type: Optional source type filter (hta_submission or clinical_guideline)
             heading_keywords: Keywords to look for in document headings
             drug_keywords: Keywords for drugs to prioritize
@@ -690,6 +667,15 @@ class RagPipeline:
         if self.retriever is None:
             print("Retriever not initialized. Please run initialize_retriever first.")
             return None
+        
+        # Handle the "ALL" special case
+        if any(country == "ALL" for country in countries):
+            all_countries = self.get_all_countries()
+            if not all_countries:
+                print("No countries detected in the vectorstore. Please check your data.")
+                return None
+            countries = all_countries
+            print(f"Testing retrieval for all available countries: {', '.join(countries)}")
             
         if heading_keywords is None:
             heading_keywords = ["comparator", "alternative", "treatment"]
@@ -697,20 +683,37 @@ class RagPipeline:
         if drug_keywords is None:
             drug_keywords = ["docetaxel", "nintedanib"]
             
-        # Create source_filter if source_type is provided
-        source_filter = {"source_type": source_type} if source_type else None
-            
         test_results = self.retriever.test_retrieval(
             query=query,
             countries=countries,
+            source_type=source_type,  # Use source_type parameter correctly
             heading_keywords=heading_keywords,
             drug_keywords=drug_keywords,
             initial_k=initial_k,
-            final_k=final_k,
-            source_filter=source_filter  # Add source filter
+            final_k=final_k
         )
         
         return test_results
+    
+    def diagnose_vectorstore(self, limit: int = 100):
+        """
+        Diagnose the vectorstore contents and metadata structure.
+        """
+        if self.retriever is None:
+            print("Retriever not initialized. Please run initialize_retriever first.")
+            return None
+        
+        return self.retriever.diagnose_vectorstore(limit=limit)
+    
+    def test_simple_retrieval(self, country: str = "EN", limit: int = 5):
+        """
+        Test simple retrieval functionality.
+        """
+        if self.retriever is None:
+            print("Retriever not initialized. Please run initialize_retriever first.")
+            return False
+        
+        return self.retriever.test_simple_retrieval(country=country, limit=limit)
 
     def run_full_pipeline_for_source(
         self,

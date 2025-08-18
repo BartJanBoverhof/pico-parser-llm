@@ -189,10 +189,17 @@ class ChunkRetriever:
         """
         Build proper ChromaDB filter combining country and optional source type.
         """
-        filter_dict = {"country": country}
         if source_type:
-            filter_dict["source_type"] = source_type
-        return filter_dict
+            # Use $and operator for combining multiple conditions
+            return {
+                "$and": [
+                    {"country": country},
+                    {"source_type": source_type}
+                ]
+            }
+        else:
+            # Single condition doesn't need operator
+            return {"country": country}
 
     def primary_filter_by_country(
         self, 
@@ -215,7 +222,7 @@ class ChunkRetriever:
                 for txt, meta in zip(result["documents"], result["metadatas"])
             ]
         except Exception as e:
-            print(f"Error in primary_filter_by_country for {country}: {e}")
+            print(f"Error in primary_filter_by_country for {country} with source_type {source_type}: {e}")
             return []
 
     def vector_similarity_search(
@@ -323,6 +330,92 @@ class ChunkRetriever:
             results_by_country[country] = chunks
 
         return results_by_country
+    
+    def diagnose_vectorstore(self, limit: int = 100):
+        """
+        Diagnose the vectorstore by checking available metadata fields and values.
+        """
+        try:
+            result = self.chroma_collection.get(
+                limit=limit,
+                include=['metadatas']
+            )
+            
+            print(f"=== VECTORSTORE DIAGNOSTICS ===")
+            print(f"Total documents sampled: {len(result['metadatas'])}")
+            
+            # Analyze metadata fields
+            all_fields = set()
+            country_values = set()
+            source_type_values = set()
+            
+            for metadata in result['metadatas']:
+                if metadata:
+                    all_fields.update(metadata.keys())
+                    if 'country' in metadata:
+                        country_values.add(metadata['country'])
+                    if 'source_type' in metadata:
+                        source_type_values.add(metadata['source_type'])
+            
+            print(f"Available metadata fields: {sorted(all_fields)}")
+            print(f"Countries found: {sorted(country_values)}")
+            print(f"Source types found: {sorted(source_type_values)}")
+            
+            # Show sample metadata
+            print(f"\nSample metadata entries:")
+            for i, metadata in enumerate(result['metadatas'][:5]):
+                print(f"  {i+1}: {metadata}")
+                
+            return {
+                'total_docs': len(result['metadatas']),
+                'metadata_fields': sorted(all_fields),
+                'countries': sorted(country_values),
+                'source_types': sorted(source_type_values)
+            }
+            
+        except Exception as e:
+            print(f"Error diagnosing vectorstore: {e}")
+            return None
+
+    def test_simple_retrieval(self, country: str = "EN", limit: int = 5):
+        """
+        Test simple retrieval without any filters to see if basic functionality works.
+        """
+        try:
+            print(f"=== TESTING SIMPLE RETRIEVAL ===")
+            print(f"Testing basic retrieval for country: {country}")
+            
+            # Test 1: No filters
+            result_no_filter = self.chroma_collection.get(limit=limit)
+            print(f"Documents without filter: {len(result_no_filter['documents'])}")
+            
+            # Test 2: Country filter only
+            result_country = self.chroma_collection.get(
+                where={"country": country},
+                limit=limit
+            )
+            print(f"Documents with country={country}: {len(result_country['documents'])}")
+            
+            # Test 3: Try vector similarity without filters
+            docs_no_filter = self.vectorstore.similarity_search(
+                query="treatment",
+                k=limit
+            )
+            print(f"Vector similarity without filter: {len(docs_no_filter)} docs")
+            
+            # Test 4: Try vector similarity with country filter
+            docs_with_filter = self.vectorstore.similarity_search(
+                query="treatment",
+                k=limit,
+                filter={"country": country}
+            )
+            print(f"Vector similarity with country filter: {len(docs_with_filter)} docs")
+            
+            return True
+            
+        except Exception as e:
+            print(f"Error in simple retrieval test: {e}")
+            return False
     
     def test_retrieval(
         self,
@@ -503,6 +596,7 @@ class PICOExtractor:
             
             country_chunks = results_dict.get(country, [])
             if not country_chunks:
+                print(f"No chunks retrieved for {country} with source_type: {source_type}")
                 continue
 
             # Process chunks with context manager
@@ -541,20 +635,23 @@ class PICOExtractor:
                     continue
 
             # Save results
+            source_prefix = source_type.replace("_", "") if source_type else "general"
             if isinstance(parsed_json, dict):
                 parsed_json["Country"] = country  # Ensure correct country
+                parsed_json["SourceType"] = source_type  # Add source type info
                 results.append(parsed_json)
-                outpath = os.path.join("results", f"picos_{country}.json")
+                outpath = os.path.join("results", f"{source_prefix}_picos_{country}.json")
                 with open(outpath, "w", encoding="utf-8") as f:
                     json.dump(parsed_json, f, indent=2, ensure_ascii=False)
             else:
                 # Handle non-dict response
                 wrapped_json = {
                     "Country": country,
+                    "SourceType": source_type,
                     "PICOs": parsed_json if isinstance(parsed_json, list) else []
                 }
                 results.append(wrapped_json)
-                outpath = os.path.join("results", f"picos_{country}.json")
+                outpath = os.path.join("results", f"{source_prefix}_picos_{country}.json")
                 with open(outpath, "w", encoding="utf-8") as f:
                     json.dump(wrapped_json, f, indent=2, ensure_ascii=False)
 
