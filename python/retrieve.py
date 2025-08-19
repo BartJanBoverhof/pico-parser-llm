@@ -6,6 +6,7 @@ from typing import List, Dict, Any, Optional, Union
 from langchain.chat_models import ChatOpenAI
 from langchain.schema import SystemMessage, HumanMessage, BaseMessage
 import pandas as pd
+from datetime import datetime
 
 
 class TextSimilarityUtils:
@@ -178,12 +179,14 @@ class ChunkRetriever:
     Retriever with specialized methods for HTA submissions vs clinical guidelines.
     Enhanced to support source type filtering with distinct retrieval strategies.
     """
-    def __init__(self, vectorstore):
+    def __init__(self, vectorstore, results_output_dir="results"):
         self.vectorstore = vectorstore
         self.chroma_collection = self.vectorstore._collection
         self.deduplicator = DocumentDeduplicator()
         self.similarity_utils = TextSimilarityUtils()
         self.context_manager = ContextManager()
+        self.results_output_dir = results_output_dir
+        os.makedirs(self.results_output_dir, exist_ok=True)
 
     def _build_filter(self, country: str, source_type: Optional[str] = None) -> Dict[str, Any]:
         """
@@ -301,7 +304,7 @@ class ChunkRetriever:
             top_docs, final_k=final_k
         )
 
-        return [{"text": doc.page_content, "metadata": doc.metadata} for doc in selected_docs]
+        return [self._format_chunk_with_metadata(doc) for doc in selected_docs]
 
     def clinical_guideline_retrieval(
         self,
@@ -309,11 +312,11 @@ class ChunkRetriever:
         country: str,
         initial_k: int = 50,
         final_k: int = 10,
-        strict_kras_filtering: bool = True
+        strict_filtering: bool = True,
+        required_terms: Optional[List[str]] = None
     ) -> List[Dict[str, Any]]:
         """
-        Specialized retrieval for clinical guidelines with strict KRAS G12C filtering.
-        Only returns chunks that explicitly mention KRAS G12C mutation and NSCLC.
+        Specialized retrieval for clinical guidelines with configurable filtering.
         """
         filter_dict = self._build_filter(country, "clinical_guideline")
         
@@ -331,47 +334,31 @@ class ChunkRetriever:
         if not docs:
             return []
 
-        # Strict KRAS G12C filtering for clinical guidelines
-        kras_filtered_docs = []
-        if strict_kras_filtering:
+        # Apply filtering if required
+        filtered_docs = []
+        if strict_filtering and required_terms:
             for doc in docs:
                 text_lower = doc.page_content.lower()
                 heading_lower = (doc.metadata.get("heading") or "").lower()
                 combined_text = (text_lower + " " + heading_lower).lower()
                 
-                # Strict requirement: Must contain KRAS G12C mutation reference
-                kras_patterns = [
-                    r'kras\s+g12c',
-                    r'kras\s*g12c',
-                    r'k-ras\s+g12c',
-                    r'k-ras\s*g12c',
-                    r'kras.*g12c',
-                    r'g12c.*mutation',
-                    r'g12c.*kras'
-                ]
+                # Check if all required terms are present
+                has_all_terms = all(
+                    any(re.search(pattern, combined_text) for pattern in term_patterns)
+                    for term_patterns in required_terms
+                )
                 
-                # Must also contain NSCLC reference
-                nsclc_patterns = [
-                    r'nsclc',
-                    r'non.small.cell.lung.cancer',
-                    r'non-small-cell.lung.cancer',
-                    r'lung.cancer'
-                ]
-                
-                has_kras_g12c = any(re.search(pattern, combined_text) for pattern in kras_patterns)
-                has_nsclc = any(re.search(pattern, combined_text) for pattern in nsclc_patterns)
-                
-                if has_kras_g12c and has_nsclc:
-                    kras_filtered_docs.append(doc)
+                if has_all_terms:
+                    filtered_docs.append(doc)
         else:
-            kras_filtered_docs = docs
+            filtered_docs = docs
 
-        if not kras_filtered_docs:
-            print(f"No clinical guideline chunks found for {country} with strict KRAS G12C filtering")
+        if not filtered_docs:
+            print(f"No clinical guideline chunks found for {country} with applied filtering")
             return []
 
         # Deduplicate after filtering
-        unique_docs, _ = self.deduplicator.deduplicate_documents(kras_filtered_docs)
+        unique_docs, _ = self.deduplicator.deduplicate_documents(filtered_docs)
         if not unique_docs:
             return []
 
@@ -383,22 +370,21 @@ class ChunkRetriever:
             text_lower = doc.page_content.lower()
             heading_lower = (doc.metadata.get("heading") or "").lower()
             
-            # Boost for mutation-specific content
-            mutation_boost = 0
-            if 'g12c' in text_lower:
-                mutation_boost += 10.0
-            if 'kras' in text_lower and 'g12c' in text_lower:
-                mutation_boost += 5.0
+            # Boost for specific content based on required terms
+            if required_terms:
+                for term_patterns in required_terms:
+                    if any(re.search(pattern, text_lower) for pattern in term_patterns):
+                        score += 5.0
             
             # Boost for treatment recommendations
             recommendation_terms = ['recommend', 'should', 'guideline', 'treatment', 'therapy', 'algorithm']
             recommendation_boost = sum(2.0 for term in recommendation_terms if term in text_lower)
             
-            # Boost for second-line or progression content
+            # Boost for progression/second-line content
             progression_terms = ['second.line', 'progression', 'refractory', 'resistant', 'subsequent']
             progression_boost = sum(3.0 for term in progression_terms if re.search(term, text_lower))
             
-            total_score = score + mutation_boost + recommendation_boost + progression_boost
+            total_score = score + recommendation_boost + progression_boost
             scored_docs.append((doc, total_score))
 
         scored_docs.sort(key=lambda x: x[1], reverse=True)
@@ -406,7 +392,28 @@ class ChunkRetriever:
         # Take top scored documents up to final_k
         final_docs = [doc for doc, _ in scored_docs[:final_k]]
 
-        return [{"text": doc.page_content, "metadata": doc.metadata} for doc in final_docs]
+        return [self._format_chunk_with_metadata(doc) for doc in final_docs]
+
+    def _format_chunk_with_metadata(self, doc) -> Dict[str, Any]:
+        """
+        Format a document chunk with comprehensive metadata for storage.
+        """
+        return {
+            "text": doc.page_content,
+            "metadata": {
+                "heading": doc.metadata.get("heading", ""),
+                "doc_id": doc.metadata.get("doc_id", ""),
+                "country": doc.metadata.get("country", ""),
+                "source_type": doc.metadata.get("source_type", ""),
+                "start_page": doc.metadata.get("start_page"),
+                "end_page": doc.metadata.get("end_page"),
+                "created_date": doc.metadata.get("created_date", ""),
+                "folder_path": doc.metadata.get("folder_path", ""),
+                "split_index": doc.metadata.get("split_index"),
+                "text_length": len(doc.page_content),
+                "potential_comparators": list(self.similarity_utils.extract_potential_comparators(doc.page_content))
+            }
+        }
 
     def vector_similarity_search(
         self,
@@ -415,6 +422,7 @@ class ChunkRetriever:
         source_type: Optional[str] = None,
         heading_keywords: Optional[List[str]] = None,
         drug_keywords: Optional[List[str]] = None,
+        required_terms: Optional[List[str]] = None,
         initial_k: int = 30,
         final_k: int = 10,
         heading_boost: float = 3.0,
@@ -438,7 +446,8 @@ class ChunkRetriever:
                 query=query,
                 country=country,
                 initial_k=initial_k,
-                final_k=final_k
+                final_k=final_k,
+                required_terms=required_terms
             )
         else:
             # Fallback to general retrieval
@@ -486,7 +495,7 @@ class ChunkRetriever:
                 top_docs, final_k=final_k
             )
 
-            return [{"text": doc.page_content, "metadata": doc.metadata} for doc in selected_docs]
+            return [self._format_chunk_with_metadata(doc) for doc in selected_docs]
 
     def retrieve_pico_chunks(
         self,
@@ -495,6 +504,7 @@ class ChunkRetriever:
         source_type: Optional[str] = None,
         heading_keywords: Optional[List[str]] = None,
         drug_keywords: Optional[List[str]] = None,
+        required_terms: Optional[List[str]] = None,
         initial_k: int = 30,
         final_k: int = 10
     ) -> Dict[str, List[Dict[str, Any]]]:
@@ -509,11 +519,60 @@ class ChunkRetriever:
                 source_type=source_type,
                 heading_keywords=heading_keywords,
                 drug_keywords=drug_keywords,
+                required_terms=required_terms,
                 initial_k=initial_k,
                 final_k=final_k
             )
             results_by_country[country] = chunks
         return results_by_country
+
+    def save_retrieval_results(
+        self,
+        results_by_country: Dict[str, List[Dict[str, Any]]],
+        source_type: str,
+        query: str,
+        timestamp: Optional[str] = None
+    ):
+        """
+        Save retrieval results to JSON file organized by source type and country.
+        """
+        if timestamp is None:
+            timestamp = datetime.now().isoformat()
+        
+        # Prepare structured output
+        output_data = {
+            "retrieval_metadata": {
+                "timestamp": timestamp,
+                "source_type": source_type,
+                "query": query,
+                "total_countries": len(results_by_country),
+                "total_chunks": sum(len(chunks) for chunks in results_by_country.values())
+            },
+            "results_by_country": {}
+        }
+        
+        # Organize results by country
+        for country, chunks in results_by_country.items():
+            output_data["results_by_country"][country] = {
+                "country_metadata": {
+                    "country_code": country,
+                    "chunk_count": len(chunks),
+                    "total_text_length": sum(len(chunk["text"]) for chunk in chunks),
+                    "unique_documents": len(set(chunk["metadata"]["doc_id"] for chunk in chunks)),
+                    "unique_headings": len(set(chunk["metadata"]["heading"] for chunk in chunks if chunk["metadata"]["heading"]))
+                },
+                "chunks": chunks
+            }
+        
+        # Save to file
+        filename = f"{source_type}_retrieval_results.json"
+        filepath = os.path.join(self.results_output_dir, filename)
+        
+        with open(filepath, "w", encoding="utf-8") as f:
+            json.dump(output_data, f, indent=2, ensure_ascii=False)
+        
+        print(f"Saved retrieval results to {filepath}")
+        return filepath
 
     def diagnose_vectorstore(self, limit: int = 100):
         """
@@ -577,15 +636,12 @@ class ChunkRetriever:
         source_type: Optional[str] = None,
         heading_keywords: Optional[List[str]] = None,
         drug_keywords: Optional[List[str]] = None,
+        required_terms: Optional[List[str]] = None,
         initial_k: int = 30,
         final_k: int = 10
     ) -> Dict[str, Any]:
         """
-        Test the retrieval pipeline with specialized methods.
-
-        Prints a per-country summary, and returns a single object with:
-          - 'summary': {country_code: count, ...}
-          - 'chunks_by_country': {country_code: [ {text, metadata}, ... ], ...}
+        Test the retrieval pipeline with specialized methods and save results to JSON.
         """
         chunks_by_country = self.retrieve_pico_chunks(
             query=query,
@@ -593,16 +649,24 @@ class ChunkRetriever:
             source_type=source_type,
             heading_keywords=heading_keywords,
             drug_keywords=drug_keywords,
+            required_terms=required_terms,
             initial_k=initial_k,
             final_k=final_k
+        )
+
+        # Save results to JSON
+        timestamp = datetime.now().isoformat()
+        self.save_retrieval_results(
+            results_by_country=chunks_by_country,
+            source_type=source_type or "general",
+            query=query,
+            timestamp=timestamp
         )
 
         # Print simple summary
         print(f"\n=== RETRIEVAL RESULTS ===")
         print(f"Query: {query}")
         print(f"Source type: {source_type or 'All sources'}")
-        if source_type == "clinical_guideline":
-            print(f"KRAS G12C strict filtering: ENABLED")
 
         summary: Dict[str, int] = {}
         total_chunks = 0
@@ -617,7 +681,8 @@ class ChunkRetriever:
 
         return {
             "summary": summary,
-            "chunks_by_country": chunks_by_country
+            "chunks_by_country": chunks_by_country,
+            "timestamp": timestamp
         }
 
 
@@ -706,13 +771,15 @@ class ContextManager:
 class PICOExtractor:
     """
     PICOExtractor with improved chunk deduplication and adaptive context handling.
+    Enhanced with JSON storage for organized PICO results.
     """
     def __init__(
         self,
         chunk_retriever,
         system_prompt: str,
         user_prompt_template: str,
-        model_name: str = "gpt-4o-mini"
+        model_name: str = "gpt-4o-mini",
+        results_output_dir: str = "results"
     ):
         self.chunk_retriever = chunk_retriever
         self.system_prompt = system_prompt
@@ -720,6 +787,8 @@ class PICOExtractor:
         self.model_name = model_name
         self.llm = ChatOpenAI(model_name=self.model_name, temperature=0)
         self.context_manager = ContextManager()
+        self.results_output_dir = results_output_dir
+        os.makedirs(self.results_output_dir, exist_ok=True)
 
     def extract_picos(
         self,
@@ -729,12 +798,14 @@ class PICOExtractor:
         initial_k: int = 10,
         final_k: int = 5,
         heading_keywords: Optional[List[str]] = None,
+        required_terms: Optional[List[str]] = None,
         model_override: Optional[Union[str, ChatOpenAI]] = None
     ) -> List[Dict[str, Any]]:
         """
-        Extract PICOs using improved context management and LLM.
+        Extract PICOs using improved context management and LLM with JSON storage.
         """
         results = []
+        timestamp = datetime.now().isoformat()
 
         # Optionally override the model
         llm_to_use = self.llm
@@ -744,20 +815,27 @@ class PICOExtractor:
             elif isinstance(model_override, ChatOpenAI):
                 llm_to_use = model_override
 
-        # Ensure the output directory exists
-        os.makedirs("results", exist_ok=True)
+        # Retrieve chunks for all countries
+        results_dict = self.chunk_retriever.retrieve_pico_chunks(
+            query=query,
+            countries=countries,
+            source_type=source_type,
+            heading_keywords=heading_keywords,
+            required_terms=required_terms,
+            initial_k=initial_k,
+            final_k=final_k
+        )
 
+        # Save retrieval results
+        self.chunk_retriever.save_retrieval_results(
+            results_by_country=results_dict,
+            source_type=source_type or "general",
+            query=query,
+            timestamp=timestamp
+        )
+
+        # Process each country
         for country in countries:
-            # Retrieve chunks for the country using specialized methods
-            results_dict = self.chunk_retriever.retrieve_pico_chunks(
-                query=query,
-                countries=[country],
-                source_type=source_type,
-                heading_keywords=heading_keywords,
-                initial_k=initial_k,
-                final_k=final_k
-            )
-            
             country_chunks = results_dict.get(country, [])
             if not country_chunks:
                 print(f"No chunks retrieved for {country} with source_type: {source_type}")
@@ -798,25 +876,66 @@ class PICOExtractor:
                     print(f"Failed to parse JSON for {country}: {parse_err}")
                     continue
 
-            # Save results
-            source_prefix = source_type.replace("_", "") if source_type else "general"
+            # Process and store results
             if isinstance(parsed_json, dict):
-                parsed_json["Country"] = country  # Ensure correct country
-                parsed_json["SourceType"] = source_type  # Add source type info
+                parsed_json["Country"] = country
+                parsed_json["SourceType"] = source_type
+                parsed_json["RetrievalTimestamp"] = timestamp
+                parsed_json["ChunksUsed"] = len(country_chunks)
                 results.append(parsed_json)
-                outpath = os.path.join("results", f"{source_prefix}_picos_{country}.json")
-                with open(outpath, "w", encoding="utf-8") as f:
-                    json.dump(parsed_json, f, indent=2, ensure_ascii=False)
             else:
                 # Handle non-dict response
                 wrapped_json = {
                     "Country": country,
                     "SourceType": source_type,
+                    "RetrievalTimestamp": timestamp,
+                    "ChunksUsed": len(country_chunks),
                     "PICOs": parsed_json if isinstance(parsed_json, list) else []
                 }
                 results.append(wrapped_json)
-                outpath = os.path.join("results", f"{source_prefix}_picos_{country}.json")
-                with open(outpath, "w", encoding="utf-8") as f:
-                    json.dump(wrapped_json, f, indent=2, ensure_ascii=False)
+
+        # Save organized PICO results to JSON
+        if results:
+            self._save_pico_results(results, source_type, timestamp)
 
         return results
+
+    def _save_pico_results(self, results: List[Dict[str, Any]], source_type: str, timestamp: str):
+        """
+        Save PICO extraction results organized by source type and country.
+        """
+        # Organize results by source type and country
+        organized_results = {
+            "extraction_metadata": {
+                "timestamp": timestamp,
+                "source_type": source_type or "general",
+                "total_countries": len(results),
+                "model_used": self.model_name
+            },
+            "picos_by_country": {}
+        }
+        
+        for result in results:
+            country = result.get("Country", "unknown")
+            picos = result.get("PICOs", [])
+            
+            organized_results["picos_by_country"][country] = {
+                "country_metadata": {
+                    "country_code": country,
+                    "total_picos": len(picos),
+                    "chunks_used": result.get("ChunksUsed", 0),
+                    "extraction_timestamp": result.get("RetrievalTimestamp", timestamp)
+                },
+                "extracted_picos": picos
+            }
+        
+        # Save to source-specific file
+        source_prefix = source_type.replace("_", "") if source_type else "general"
+        filename = f"{source_prefix}_picos_organized.json"
+        filepath = os.path.join(self.results_output_dir, filename)
+        
+        with open(filepath, "w", encoding="utf-8") as f:
+            json.dump(organized_results, f, indent=2, ensure_ascii=False)
+        
+        print(f"Saved organized PICO results to {filepath}")
+        return filepath
