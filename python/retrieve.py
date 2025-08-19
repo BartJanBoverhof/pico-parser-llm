@@ -175,8 +175,8 @@ class DocumentDeduplicator:
 
 class ChunkRetriever:
     """
-    Retriever with improved deduplication and adaptive context handling.
-    Enhanced to support source type filtering.
+    Retriever with specialized methods for HTA submissions vs clinical guidelines.
+    Enhanced to support source type filtering with distinct retrieval strategies.
     """
     def __init__(self, vectorstore):
         self.vectorstore = vectorstore
@@ -213,6 +213,201 @@ class ChunkRetriever:
             print(f"Error in primary_filter_by_country for {country} with source_type {source_type}: {e}")
             return []
 
+    def hta_submission_retrieval(
+        self,
+        query: str,
+        country: str,
+        heading_keywords: Optional[List[str]] = None,
+        drug_keywords: Optional[List[str]] = None,
+        initial_k: int = 30,
+        final_k: int = 10,
+        comparator_boost: float = 5.0,
+        pico_boost: float = 4.0,
+        drug_boost: float = 8.0
+    ) -> List[Dict[str, Any]]:
+        """
+        Specialized retrieval for HTA submissions leveraging their structured nature.
+        Focuses on PICO elements, comparators, and treatment information.
+        """
+        filter_dict = self._build_filter(country, "hta_submission")
+        try:
+            docs = self.vectorstore.similarity_search(
+                query=query,
+                k=initial_k,
+                filter=filter_dict,
+            )
+        except Exception as e:
+            print(f"Error in HTA submission retrieval for {country}: {e}")
+            return []
+        
+        if not docs:
+            return []
+
+        # Deduplicate similar chunks
+        unique_docs, _ = self.deduplicator.deduplicate_documents(docs)
+        if not unique_docs:
+            return []
+
+        # HTA-specific scoring with emphasis on structured elements
+        hta_structure_keywords = set([
+            'comparator', 'comparison', 'versus', 'compared to', 'alternative',
+            'population', 'intervention', 'outcome', 'endpoint', 'efficacy',
+            'safety', 'pico', 'treatment', 'therapy', 'medicinal product',
+            'appropriate comparator therapy', 'designation of therapy'
+        ])
+        
+        heading_set = set((heading_keywords or []))
+        heading_set = {k.lower() for k in heading_set}
+        drug_set = set((drug_keywords or []))
+        drug_set = {d.lower() for d in drug_set}
+
+        scored_docs = []
+        for i, doc in enumerate(unique_docs):
+            # Base similarity score
+            score = (len(unique_docs) - i)
+            
+            heading_lower = (doc.metadata.get("heading") or "").lower()
+            text_lower = (doc.page_content or "").lower()
+            
+            # HTA structure boost - prioritize PICO and comparator sections
+            structure_matches = sum(1 for keyword in hta_structure_keywords if keyword in heading_lower)
+            if structure_matches > 0:
+                score += comparator_boost * structure_matches
+            
+            # PICO element boost in content
+            pico_content_matches = sum(1 for keyword in hta_structure_keywords if keyword in text_lower)
+            if pico_content_matches > 0:
+                score += pico_boost * min(pico_content_matches, 3)  # Cap to avoid over-boosting
+            
+            # Heading keyword boost
+            if any(k in heading_lower for k in heading_set):
+                score += 3.0
+            
+            # Drug keyword boost
+            if any(d in text_lower for d in drug_set):
+                score += drug_boost
+            
+            # Additional boost for sections explicitly about comparators
+            if any(term in heading_lower for term in ['comparator', 'comparison', 'versus', 'alternative']):
+                score += 6.0
+            
+            scored_docs.append((doc, score))
+
+        scored_docs.sort(key=lambda x: x[1], reverse=True)
+        top_docs = [doc for doc, _ in scored_docs[:final_k * 2]]
+
+        # Prioritize by comparator coverage for HTA submissions
+        selected_docs, _, _ = self.deduplicator.prioritize_by_comparator_coverage(
+            top_docs, final_k=final_k
+        )
+
+        return [{"text": doc.page_content, "metadata": doc.metadata} for doc in selected_docs]
+
+    def clinical_guideline_retrieval(
+        self,
+        query: str,
+        country: str,
+        initial_k: int = 50,
+        final_k: int = 10,
+        strict_kras_filtering: bool = True
+    ) -> List[Dict[str, Any]]:
+        """
+        Specialized retrieval for clinical guidelines with strict KRAS G12C filtering.
+        Only returns chunks that explicitly mention KRAS G12C mutation and NSCLC.
+        """
+        filter_dict = self._build_filter(country, "clinical_guideline")
+        
+        # Use broader initial retrieval for guidelines since relevant content is sparse
+        try:
+            docs = self.vectorstore.similarity_search(
+                query=query,
+                k=initial_k * 2,  # Cast wider net for guidelines
+                filter=filter_dict,
+            )
+        except Exception as e:
+            print(f"Error in clinical guideline retrieval for {country}: {e}")
+            return []
+        
+        if not docs:
+            return []
+
+        # Strict KRAS G12C filtering for clinical guidelines
+        kras_filtered_docs = []
+        if strict_kras_filtering:
+            for doc in docs:
+                text_lower = doc.page_content.lower()
+                heading_lower = (doc.metadata.get("heading") or "").lower()
+                combined_text = (text_lower + " " + heading_lower).lower()
+                
+                # Strict requirement: Must contain KRAS G12C mutation reference
+                kras_patterns = [
+                    r'kras\s+g12c',
+                    r'kras\s*g12c',
+                    r'k-ras\s+g12c',
+                    r'k-ras\s*g12c',
+                    r'kras.*g12c',
+                    r'g12c.*mutation',
+                    r'g12c.*kras'
+                ]
+                
+                # Must also contain NSCLC reference
+                nsclc_patterns = [
+                    r'nsclc',
+                    r'non.small.cell.lung.cancer',
+                    r'non-small-cell.lung.cancer',
+                    r'lung.cancer'
+                ]
+                
+                has_kras_g12c = any(re.search(pattern, combined_text) for pattern in kras_patterns)
+                has_nsclc = any(re.search(pattern, combined_text) for pattern in nsclc_patterns)
+                
+                if has_kras_g12c and has_nsclc:
+                    kras_filtered_docs.append(doc)
+        else:
+            kras_filtered_docs = docs
+
+        if not kras_filtered_docs:
+            print(f"No clinical guideline chunks found for {country} with strict KRAS G12C filtering")
+            return []
+
+        # Deduplicate after filtering
+        unique_docs, _ = self.deduplicator.deduplicate_documents(kras_filtered_docs)
+        if not unique_docs:
+            return []
+
+        # Clinical guideline specific scoring
+        scored_docs = []
+        for i, doc in enumerate(unique_docs):
+            score = (len(unique_docs) - i)
+            
+            text_lower = doc.page_content.lower()
+            heading_lower = (doc.metadata.get("heading") or "").lower()
+            
+            # Boost for mutation-specific content
+            mutation_boost = 0
+            if 'g12c' in text_lower:
+                mutation_boost += 10.0
+            if 'kras' in text_lower and 'g12c' in text_lower:
+                mutation_boost += 5.0
+            
+            # Boost for treatment recommendations
+            recommendation_terms = ['recommend', 'should', 'guideline', 'treatment', 'therapy', 'algorithm']
+            recommendation_boost = sum(2.0 for term in recommendation_terms if term in text_lower)
+            
+            # Boost for second-line or progression content
+            progression_terms = ['second.line', 'progression', 'refractory', 'resistant', 'subsequent']
+            progression_boost = sum(3.0 for term in progression_terms if re.search(term, text_lower))
+            
+            total_score = score + mutation_boost + recommendation_boost + progression_boost
+            scored_docs.append((doc, total_score))
+
+        scored_docs.sort(key=lambda x: x[1], reverse=True)
+        
+        # Take top scored documents up to final_k
+        final_docs = [doc for doc, _ in scored_docs[:final_k]]
+
+        return [{"text": doc.page_content, "metadata": doc.metadata} for doc in final_docs]
+
     def vector_similarity_search(
         self,
         query: str,
@@ -226,52 +421,72 @@ class ChunkRetriever:
         drug_boost: float = 8.0
     ) -> List[Dict[str, Any]]:
         """
-        Retrieve documents by vector similarity with keyword boosts.
+        General vector similarity search with keyword boosts.
+        Routes to specialized methods based on source_type.
         """
-        filter_dict = self._build_filter(country, source_type)
-        try:
-            docs = self.vectorstore.similarity_search(
+        if source_type == "hta_submission":
+            return self.hta_submission_retrieval(
                 query=query,
-                k=initial_k,
-                filter=filter_dict,
+                country=country,
+                heading_keywords=heading_keywords,
+                drug_keywords=drug_keywords,
+                initial_k=initial_k,
+                final_k=final_k
             )
-        except Exception as e:
-            print(f"Error in vector similarity search for {country}: {e}")
-            return []
-        if not docs:
-            return []
+        elif source_type == "clinical_guideline":
+            return self.clinical_guideline_retrieval(
+                query=query,
+                country=country,
+                initial_k=initial_k,
+                final_k=final_k
+            )
+        else:
+            # Fallback to general retrieval
+            filter_dict = self._build_filter(country, source_type)
+            try:
+                docs = self.vectorstore.similarity_search(
+                    query=query,
+                    k=initial_k,
+                    filter=filter_dict,
+                )
+            except Exception as e:
+                print(f"Error in vector similarity search for {country}: {e}")
+                return []
+            
+            if not docs:
+                return []
 
-        # Deduplicate similar chunks
-        unique_docs, _ = self.deduplicator.deduplicate_documents(docs)
-        if not unique_docs:
-            return []
+            # Deduplicate similar chunks
+            unique_docs, _ = self.deduplicator.deduplicate_documents(docs)
+            if not unique_docs:
+                return []
 
-        # Score chunks by heading and drug keyword relevance
-        keyword_set = set((heading_keywords or []))
-        keyword_set = {k.lower() for k in keyword_set}
-        drug_set = set((drug_keywords or []))
-        drug_set = {d.lower() for d in drug_set}
+            # Score chunks by heading and drug keyword relevance
+            keyword_set = set((heading_keywords or []))
+            keyword_set = {k.lower() for k in keyword_set}
+            drug_set = set((drug_keywords or []))
+            drug_set = {d.lower() for d in drug_set}
 
-        scored_docs = []
-        for i, doc in enumerate(unique_docs):
-            score = (len(unique_docs) - i)  # slight bias for earlier items
-            heading_lower = (doc.metadata.get("heading") or "").lower()
-            if any(k in heading_lower for k in keyword_set):
-                score += heading_boost
-            text_lower = (doc.page_content or "").lower()
-            if any(d in text_lower for d in drug_set):
-                score += drug_boost
-            scored_docs.append((doc, score))
+            scored_docs = []
+            for i, doc in enumerate(unique_docs):
+                score = (len(unique_docs) - i)  # slight bias for earlier items
+                heading_lower = (doc.metadata.get("heading") or "").lower()
+                if any(k in heading_lower for k in keyword_set):
+                    score += heading_boost
+                text_lower = (doc.page_content or "").lower()
+                if any(d in text_lower for d in drug_set):
+                    score += drug_boost
+                scored_docs.append((doc, score))
 
-        scored_docs.sort(key=lambda x: x[1], reverse=True)
-        top_docs = [doc for doc, _ in scored_docs[:final_k * 2]]
+            scored_docs.sort(key=lambda x: x[1], reverse=True)
+            top_docs = [doc for doc, _ in scored_docs[:final_k * 2]]
 
-        # Prioritize by comparator coverage to maximize variety of comparators/drugs
-        selected_docs, _, _ = self.deduplicator.prioritize_by_comparator_coverage(
-            top_docs, final_k=final_k
-        )
+            # Prioritize by comparator coverage to maximize variety of comparators/drugs
+            selected_docs, _, _ = self.deduplicator.prioritize_by_comparator_coverage(
+                top_docs, final_k=final_k
+            )
 
-        return [{"text": doc.page_content, "metadata": doc.metadata} for doc in selected_docs]
+            return [{"text": doc.page_content, "metadata": doc.metadata} for doc in selected_docs]
 
     def retrieve_pico_chunks(
         self,
@@ -284,7 +499,7 @@ class ChunkRetriever:
         final_k: int = 10
     ) -> Dict[str, List[Dict[str, Any]]]:
         """
-        Retrieve chunks by country using vector similarity search.
+        Retrieve chunks by country using specialized retrieval based on source type.
         """
         results_by_country: Dict[str, List[Dict[str, Any]]] = {}
         for country in countries:
@@ -366,7 +581,7 @@ class ChunkRetriever:
         final_k: int = 10
     ) -> Dict[str, Any]:
         """
-        Test the retrieval pipeline.
+        Test the retrieval pipeline with specialized methods.
 
         Prints a per-country summary, and returns a single object with:
           - 'summary': {country_code: count, ...}
@@ -386,6 +601,8 @@ class ChunkRetriever:
         print(f"\n=== RETRIEVAL RESULTS ===")
         print(f"Query: {query}")
         print(f"Source type: {source_type or 'All sources'}")
+        if source_type == "clinical_guideline":
+            print(f"KRAS G12C strict filtering: ENABLED")
 
         summary: Dict[str, int] = {}
         total_chunks = 0
@@ -402,7 +619,6 @@ class ChunkRetriever:
             "summary": summary,
             "chunks_by_country": chunks_by_country
         }
-
 
 
 class ContextManager:
@@ -532,7 +748,7 @@ class PICOExtractor:
         os.makedirs("results", exist_ok=True)
 
         for country in countries:
-            # Retrieve chunks for the country
+            # Retrieve chunks for the country using specialized methods
             results_dict = self.chunk_retriever.retrieve_pico_chunks(
                 query=query,
                 countries=[country],

@@ -32,7 +32,8 @@ class RagPipeline:
     5. Retrieval
     6. PICO extraction
 
-    Enhanced to support different source types (HTA submissions vs clinical guidelines).
+    Enhanced to support different source types (HTA submissions vs clinical guidelines)
+    with specialized retrieval strategies.
     """
 
     def __init__(
@@ -89,20 +90,22 @@ class RagPipeline:
         self.pico_extractor_hta = None
         self.pico_extractor_clinical = None
 
-        # Default queries for different source types
+        # Enhanced default queries for specialized retrieval
         self.default_query_hta = """
-        In the context of this HTA submission, identify all medicines mentioned, including:
-        1. The medicine under evaluation (submission medicine)
-        2. ALL possible comparator treatments (alternative interventions, control arms, standard-of-care options, placebos, or therapies described as being 'compared to' or 'versus' the main medicine)
-        3. For each medicine, identify the specific intended population with details about disease severity, prior therapy requirements, biomarkers, and any relevant inclusion/exclusion criteria.
+        PICO elements for advanced non-small cell lung cancer (NSCLC) treatment assessment:
+        Population: adult patients with advanced NSCLC with KRAS G12C mutation who have progressed after at least one prior systemic therapy
+        Intervention: new medicine under evaluation in this HTA submission
+        Comparators: all alternative treatments, standard-of-care options, control arms, or therapies mentioned as comparisons
+        Outcomes: efficacy endpoints, safety profiles, quality of life measures, economic outcomes
+        Extract all medicines mentioned including submission medicine and ALL possible comparator treatments.
         """
         
         self.default_query_clinical = """
-        1. In this clinical guideline, identify all treatment recommendations SPECIFICALLY for adult patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation who have progressed after at least one prior systemic therapy.
-        2. First-line, second-line, and subsequent treatment options for KRAS G12C mutations in NSCLC patients after at least one prior systemic therapy.
-        3. Specific patient populations for each treatment (by biomarker status, disease stage, prior therapy)
-        4. Treatment algorithms or decision trees for different patient populations
-        5. Comparative information between different treatment options, including efficacy and safety profiles
+        Treatment recommendations for advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation:
+        Specific recommendations for adult patients with advanced NSCLC harboring KRAS G12C mutation who have progressed after at least one prior systemic therapy.
+        Second-line and subsequent treatment options for KRAS G12C mutations in NSCLC.
+        Treatment algorithms and decision pathways for KRAS G12C positive patients.
+        Evidence-based recommendations with mutation-specific guidance.
         """
         
         # Define system prompts for different source types
@@ -145,11 +148,11 @@ class RagPipeline:
         Analyze the provided clinical guideline using this structured approach:
 
         Step 1: Guideline Structure Analysis
-        - Identify sections on advanced non-small cell lung cancer KRAS mutations who have progressed after at least one prior systemic therapy.
+        - Identify sections on advanced non-small cell lung cancer with KRAS G12C mutations who have progressed after at least one prior systemic therapy
         - Locate treatment algorithms based on molecular profiles
 
         Step 2: KRAS G12C-Specific Content
-        - Determine if KRAS G12C mutation is explicitly addressed
+        - Confirm KRAS G12C mutation is explicitly addressed
         - Note any KRAS G12C testing recommendations
 
         Step 3: Treatment Recommendation Identification
@@ -163,9 +166,11 @@ class RagPipeline:
 
         Step 5: PICO Assembly
         - For each relevant recommendation, create a PICO entry
-        - Only involve patietns with KRAS G12C mutation  
+        - Only include patients with KRAS G12C mutation  
         - Include relevant recommendations for post-progression therapy
-        - Ensure population descriptions are as detailed as possible, and include mutation status and prior therapy details
+        - Ensure population descriptions include mutation status and prior therapy details
+
+        IMPORTANT: Only extract information if KRAS G12C mutation is explicitly mentioned. If no KRAS G12C-specific content is found, return an empty PICOs array.
 
         Do NOT include your reasoning process in the final output. Your final output must be valid JSON only, strictly following the requested format.
         """
@@ -206,7 +211,7 @@ class RagPipeline:
         Extract all treatment recommendations from this clinical guideline relevant to adult patients with advanced NSCLC with KRAS G12C mutation who have progressed after prior therapy.
 
         Follow this systematic approach:
-        1. Identify any content specifically addressing KRAS G12C mutation
+        1. Confirm KRAS G12C mutation is explicitly mentioned in the content
         2. Extract recommendations for second-line+ therapy in advanced NSCLC
         3. For each relevant recommendation:
         - Precisely describe the applicable patient population
@@ -214,13 +219,13 @@ class RagPipeline:
         - Note alternative options
         - Extract expected outcomes
 
-        If KRAS G12C is not explicitly addressed don't include it.
+        CRITICAL: Only include recommendations if KRAS G12C is explicitly mentioned. If no KRAS G12C-specific content is found, return empty PICOs array.
 
         Output valid JSON ONLY in this format:
         {{
         "Country": "{country}",
         "PICOs": [
-            {{"Population":"[Specific patient population]", "Intervention":"[Recommended treatment]", "Comparator":"[Alternative options]", "Outcomes":"[Expected benefits]"}},
+            {{"Population":"[Specific patient population with KRAS G12C mutation]", "Intervention":"[Recommended treatment]", "Comparator":"[Alternative options]", "Outcomes":"[Expected benefits]"}},
             <!-- additional PICOs as needed -->
         ]
         }}
@@ -353,7 +358,7 @@ class RagPipeline:
                 print("BioBERT vectorstore not available. Please run vectorize_documents first.")
             return
         
-        print(f"Initialized retriever with {vectorstore_type} vectorstore")
+        print(f"Initialized retriever with {vectorstore_type} vectorstore and specialized retrieval methods")
 
     def initialize_pico_extractors(self):
         """Initialize separate PICO extractors for HTA and clinical guideline sources."""
@@ -377,7 +382,7 @@ class RagPipeline:
             model_name=self.model
         )
         
-        print(f"Initialized PICO extractors for both source types with model {self.model}")
+        print(f"Initialized specialized PICO extractors for both source types with model {self.model}")
 
     def get_all_countries(self):
         """
@@ -415,7 +420,7 @@ class RagPipeline:
         heading_keywords: Optional[List[str]] = None
     ):
         """
-        Extract PICOs from the specified countries and source type.
+        Extract PICOs from the specified countries and source type using specialized retrieval.
         Special case: If 'ALL' is in countries, it will be replaced with all available countries.
         
         Args:
@@ -433,16 +438,25 @@ class RagPipeline:
         if self.pico_extractor_hta is None or self.pico_extractor_clinical is None:
             self.initialize_pico_extractors()
         
-        # Set source-specific defaults
+        # Set source-specific defaults with enhanced keywords
         if source_type == "hta_submission":
             extractor = self.pico_extractor_hta
             default_query = self.default_query_hta
-            default_headings = ["comparator", "alternative", "therapy"]
+            default_headings = [
+                "comparator", "alternative", "therapy", "treatment", "intervention",
+                "population", "outcomes", "efficacy", "safety", "pico",
+                "appropriate comparator therapy", "designation of therapy",
+                "medicinal product", "clinical trial"
+            ]
             output_prefix = "hta"
         elif source_type == "clinical_guideline":
             extractor = self.pico_extractor_clinical
             default_query = self.default_query_clinical
-            default_headings = ["recommendation", "treatment", "therapy", "algorithm"]
+            default_headings = [
+                "recommendation", "treatment", "therapy", "algorithm", "guideline",
+                "kras", "g12c", "mutation", "nsclc", "lung cancer",
+                "second line", "progression", "targeted therapy"
+            ]
             output_prefix = "clinical"
         else:
             raise ValueError(f"Unsupported source_type: {source_type}")
@@ -454,7 +468,7 @@ class RagPipeline:
         if heading_keywords is None:
             heading_keywords = default_headings
             
-        # Extract PICOs with source type filter
+        # Extract PICOs with source type filter using specialized retrieval
         extracted_picos = []
         
         # Ensure the output directory exists
@@ -464,13 +478,13 @@ class RagPipeline:
         from langchain.schema import SystemMessage, HumanMessage
         
         for country in countries:
-            print(f"Processing country: {country}")
+            print(f"Processing {source_type} for country: {country}")
             
-            # Get document chunks for this country and source type
+            # Get document chunks for this country and source type using specialized retrieval
             results_dict = extractor.chunk_retriever.retrieve_pico_chunks(
                 query=query,
                 countries=[country],
-                source_type=source_type,  # Use source_type parameter correctly
+                source_type=source_type,
                 heading_keywords=heading_keywords,
                 initial_k=initial_k,
                 final_k=final_k
@@ -480,6 +494,12 @@ class RagPipeline:
             if not country_chunks:
                 print(f"No {source_type} chunks found for country {country}")
                 continue
+            
+            # Report retrieval strategy used
+            if source_type == "hta_submission":
+                print(f"  Used HTA-specialized retrieval: PICO/comparator focus")
+            elif source_type == "clinical_guideline":
+                print(f"  Used clinical guideline retrieval: strict KRAS G12C filtering")
             
             # Process chunks with context manager
             processed_chunks = extractor.context_manager.process_chunks(country_chunks)
@@ -549,7 +569,7 @@ class RagPipeline:
         final_k: int = 15,
         heading_keywords: Optional[List[str]] = None
     ):
-        """Extract PICOs specifically from HTA submissions."""
+        """Extract PICOs specifically from HTA submissions using specialized retrieval."""
         # Handle the "ALL" special case
         if any(country == "ALL" for country in countries):
             all_countries = self.get_all_countries()
@@ -572,11 +592,11 @@ class RagPipeline:
         self,
         countries: List[str],
         query: Optional[str] = None,
-        initial_k: int = 30,
-        final_k: int = 15,
+        initial_k: int = 50,
+        final_k: int = 10,
         heading_keywords: Optional[List[str]] = None
     ):
-        """Extract PICOs specifically from clinical guidelines."""
+        """Extract PICOs specifically from clinical guidelines using strict KRAS G12C filtering."""
         # Handle the "ALL" special case
         if any(country == "ALL" for country in countries):
             all_countries = self.get_all_countries()
@@ -650,7 +670,7 @@ class RagPipeline:
         final_k: int = 10
     ):
         """
-        Test the retrieval process.
+        Test the specialized retrieval process.
         
         Args:
             query: Query for retrieval
@@ -677,16 +697,21 @@ class RagPipeline:
             countries = all_countries
             print(f"Testing retrieval for all available countries: {', '.join(countries)}")
             
-        if heading_keywords is None:
+        # Set source-specific defaults
+        if source_type == "hta_submission" and heading_keywords is None:
+            heading_keywords = ["comparator", "alternative", "treatment", "therapy", "pico"]
+        elif source_type == "clinical_guideline" and heading_keywords is None:
+            heading_keywords = ["recommendation", "treatment", "therapy", "algorithm", "kras", "g12c"]
+        elif heading_keywords is None:
             heading_keywords = ["comparator", "alternative", "treatment"]
             
         if drug_keywords is None:
-            drug_keywords = ["docetaxel", "nintedanib"]
+            drug_keywords = ["sotorasib", "adagrasib", "docetaxel", "pembrolizumab", "nintedanib"]
             
         test_results = self.retriever.test_retrieval(
             query=query,
             countries=countries,
-            source_type=source_type,  # Use source_type parameter correctly
+            source_type=source_type,
             heading_keywords=heading_keywords,
             drug_keywords=drug_keywords,
             initial_k=initial_k,
@@ -724,7 +749,7 @@ class RagPipeline:
         vectorstore_type: Optional[str] = None
     ):
         """
-        Run the full RAG pipeline for a specific source type.
+        Run the full RAG pipeline for a specific source type with specialized retrieval.
         
         Args:
             source_type: Type of source to process ("hta_submission" or "clinical_guideline")
@@ -764,7 +789,7 @@ class RagPipeline:
         # Initialize PICO extractors
         self.initialize_pico_extractors()
         
-        # Extract PICOs based on source type
+        # Extract PICOs based on source type using specialized retrieval
         if source_type == "hta_submission":
             extracted_picos = self.extract_picos_hta(countries=countries)
         elif source_type == "clinical_guideline":
