@@ -48,7 +48,8 @@ class RagPipeline:
         chunk_size: int = 600,
         chunk_overlap: int = 200,
         chunk_strategy: str = "semantic",
-        vectorstore_type: str = "biobert"
+        vectorstore_type: str = "biobert",
+        source_type_configs: Optional[Dict[str, Any]] = None
     ):
         """
         Initialize the RAG system with customizable parameters.
@@ -65,6 +66,7 @@ class RagPipeline:
             chunk_overlap: Overlap between chunks
             chunk_strategy: Chunking strategy ("semantic" or "recursive")
             vectorstore_type: Type of vectorstore to use ("openai", "biobert", or "both")
+            source_type_configs: Configuration for different source types
         """
         # Store parameters
         self.model = model
@@ -93,156 +95,8 @@ class RagPipeline:
         self.pico_extractor_hta = None
         self.pico_extractor_clinical = None
 
-        # Configuration for different source types
-        self.source_type_configs = {
-            "hta_submission": {
-                "default_query": """
-                PICO elements for advanced non-small cell lung cancer (NSCLC) treatment assessment:
-                Population: adult patients with advanced NSCLC who have progressed after at least one prior systemic therapy
-                Intervention: new medicine under evaluation in this assessment
-                Comparators: all alternative treatments, standard-of-care options, control arms, or therapies mentioned as comparisons
-                Outcomes: efficacy endpoints, safety profiles, quality of life measures, economic outcomes
-                Extract all medicines mentioned including assessment medicine and ALL possible comparator treatments.
-                """,
-                "default_headings": [
-                    "comparator", "alternative", "therapy", "treatment", "intervention",
-                    "population", "outcomes", "efficacy", "safety", "pico",
-                    "appropriate comparator therapy", "designation of therapy",
-                    "medicinal product", "clinical trial"
-                ],
-                "default_drugs": ["docetaxel", "nintedanib", "pembrolizumab", "lenvatinib", "sorafenib"],
-                "system_prompt": """
-                You are a medical specialist in oncology with expertise in health technology assessment for lung cancer treatments. Your task is to extract PICO (Population, Intervention, Comparator, Outcomes) elements from HTA submissions, specifically focusing on treatments for adult patients with advanced non-small cell lung cancer (NSCLC) who have progressed after at least one prior systemic therapy.
-
-                Analyze the provided HTA submission using this structured approach:
-
-                Step 1: Document Organization Assessment
-                - Identify sections containing population details, comparator information, and outcome data
-
-                Step 2: Population Identification
-                - Verify references to advanced/metastatic NSCLC
-                - Identify prior therapy requirements
-                - Note other inclusion/exclusion criteria (ECOG status, age, etc.)
-
-                Step 3: Treatment/Comparator Analysis
-                - Identify the primary medicine being assessed
-                - Note all comparators explicitly mentioned
-                - Identify any standard of care treatments referenced
-                - Record treatments mentioned in clinical trials cited
-
-                Step 4: Outcome Extraction
-                - Extract primary and secondary efficacy endpoints
-                - Identify safety, quality of life, and economic outcomes
-
-                Step 5: PICO Assembly
-                - For each identified comparator, create a separate PICO entry
-                - Always use "New medicine under assessment" as the Intervention
-                - Include the specific comparator in the Comparator field
-                - Use the most detailed population description found
-                - List all relevant outcomes identified
-
-                Do NOT include your reasoning process in the final output. Your final output must be valid JSON only, strictly following the requested format.
-                """,
-                "user_prompt_template": """
-                Context:
-                {context_block}
-
-                Instructions:
-                Extract all PICO elements from this HTA submission specifically for adult patients with advanced NSCLC who have progressed after prior therapy.
-
-                Follow this systematic approach:
-                1. Extract the exact population description with all eligibility criteria
-                2. For each treatment or comparator mentioned:
-                - Create a separate PICO entry 
-                - Always set "New medicine under assessment" as the Intervention (including the medicine under assessment in the submission)
-                - Put the specific treatment as the Comparator
-                3. Include all clinical outcomes evaluated
-
-                Output valid JSON ONLY in this format:
-                {{
-                "Country": "{country}",
-                "PICOs": [
-                    {{"Population":"[Detailed population with prior therapy]", "Intervention":"New medicine under assessment", "Comparator":"[Specific treatment/comparator]", "Outcomes":"[Specific outcomes measured]"}},
-                    <!-- additional PICOs as needed -->
-                ]
-                }}
-
-                Return ONLY the JSON, no additional text.
-                """
-            },
-            "clinical_guideline": {
-                "default_query": """
-                Treatment recommendations for advanced non-small cell lung cancer (NSCLC):
-                Specific recommendations for adult patients with advanced NSCLC who have progressed after at least one prior systemic therapy.
-                Second-line and subsequent treatment options for advanced NSCLC.
-                Treatment algorithms and decision pathways for specific mutations.
-                Evidence-based recommendations with mutation-specific guidance.
-                """,
-                "default_headings": [
-                    "recommendation", "treatment", "therapy", "algorithm", "guideline",
-                    "mutation", "nsclc", "lung cancer", "second line", "progression", "targeted therapy"
-                ],
-                "default_drugs": ["docetaxel", "pembrolizumab", "nintedanib", "lenvatinib", "sorafenib"],
-                "required_terms": [
-                    [r'nsclc', r'non.small.cell.lung.cancer', r'non-small-cell.lung.cancer', r'lung.cancer']
-                ],
-                "system_prompt": """
-                You are a medical specialist in oncology with expertise in clinical practice guidelines for lung cancer. Your task is to extract PICO (Population, Intervention, Comparator, Outcomes) elements from clinical guidelines, specifically focusing on recommendations for adult patients with advanced non-small cell lung cancer (NSCLC) who have progressed after at least one prior systemic therapy.
-
-                Analyze the provided clinical guideline using this structured approach:
-
-                Step 1: Guideline Structure Analysis
-                - Identify sections on advanced non-small cell lung cancer who have progressed after at least one prior systemic therapy
-                - Locate treatment algorithms based on molecular profiles
-
-                Step 2: Mutation-Specific Content
-                - Note any specific mutation testing recommendations
-                - Identify mutation-specific treatment recommendations
-
-                Step 3: Treatment Recommendation Identification
-                - Extract recommendations for post-first-line therapy
-                - Find recommendations for specific patient populations
-
-                Step 4: Recommendation Context Analysis
-                - Note evidence levels assigned to recommendations
-                - Identify expected outcomes from recommended treatments
-                - Extract factors influencing treatment selection
-
-                Step 5: PICO Assembly
-                - For each relevant recommendation, create a PICO entry
-                - Include relevant recommendations for post-progression therapy
-                - Ensure population descriptions include mutation status and prior therapy details when available
-
-                Do NOT include your reasoning process in the final output. Your final output must be valid JSON only, strictly following the requested format.
-                """,
-                "user_prompt_template": """
-                Context:
-                {context_block}
-
-                Instructions:
-                Extract all treatment recommendations from this clinical guideline relevant to adult patients with advanced NSCLC who have progressed after prior therapy.
-
-                Follow this systematic approach:
-                1. Extract recommendations for second-line+ therapy in advanced NSCLC
-                2. For each relevant recommendation:
-                - Precisely describe the applicable patient population
-                - Identify the recommended treatment(s)
-                - Note alternative options
-                - Extract expected outcomes
-
-                Output valid JSON ONLY in this format:
-                {{
-                "Country": "{country}",
-                "PICOs": [
-                    {{"Population":"[Specific patient population]", "Intervention":"[Recommended treatment]", "Comparator":"[Alternative options]", "Outcomes":"[Expected benefits]"}},
-                    <!-- additional PICOs as needed -->
-                ]
-                }}
-
-                Return ONLY the JSON, no additional text.
-                """
-            }
-        }
+        # Store configuration for different source types
+        self.source_type_configs = source_type_configs or {}
 
     @property
     def chunk_retriever(self):
@@ -377,27 +231,33 @@ class RagPipeline:
             print("Retriever not initialized. Please run initialize_retriever first.")
             return
             
+        if not self.source_type_configs:
+            print("Source type configurations not provided. Cannot initialize PICO extractors.")
+            return
+            
         # HTA Submissions extractor
-        hta_config = self.source_type_configs["hta_submission"]
-        self.pico_extractor_hta = PICOExtractor(
-            chunk_retriever=self.retriever,
-            system_prompt=hta_config["system_prompt"],
-            user_prompt_template=hta_config["user_prompt_template"],
-            model_name=self.model,
-            results_output_dir=self.path_results
-        )
+        if "hta_submission" in self.source_type_configs:
+            hta_config = self.source_type_configs["hta_submission"]
+            self.pico_extractor_hta = PICOExtractor(
+                chunk_retriever=self.retriever,
+                system_prompt=hta_config["system_prompt"],
+                user_prompt_template=hta_config["user_prompt_template"],
+                model_name=self.model,
+                results_output_dir=self.path_results
+            )
         
         # Clinical Guidelines extractor
-        clinical_config = self.source_type_configs["clinical_guideline"]
-        self.pico_extractor_clinical = PICOExtractor(
-            chunk_retriever=self.retriever,
-            system_prompt=clinical_config["system_prompt"],
-            user_prompt_template=clinical_config["user_prompt_template"],
-            model_name=self.model,
-            results_output_dir=self.path_results
-        )
+        if "clinical_guideline" in self.source_type_configs:
+            clinical_config = self.source_type_configs["clinical_guideline"]
+            self.pico_extractor_clinical = PICOExtractor(
+                chunk_retriever=self.retriever,
+                system_prompt=clinical_config["system_prompt"],
+                user_prompt_template=clinical_config["user_prompt_template"],
+                model_name=self.model,
+                results_output_dir=self.path_results
+            )
         
-        print(f"Initialized specialized PICO extractors for both source types with model {self.model}")
+        print(f"Initialized specialized PICO extractors for available source types with model {self.model}")
 
     def get_all_countries(self):
         """
@@ -468,7 +328,7 @@ class RagPipeline:
         
         # Get source-specific configuration
         if source_type not in self.source_type_configs:
-            raise ValueError(f"Unsupported source_type: {source_type}")
+            raise ValueError(f"Unsupported source_type: {source_type}. Available types: {list(self.source_type_configs.keys())}")
             
         config = self.source_type_configs[source_type]
         

@@ -5,6 +5,7 @@ from python.translation import Translator
 from python.vectorise import Chunker, Vectoriser
 from python.run import RagPipeline
 from python.open_ai import validate_api_key
+from python.config import SOURCE_TYPE_CONFIGS, TEST_QUERIES
 
 # Define paths
 PDF_PATH = "data/PDF"
@@ -65,7 +66,8 @@ vectorstore = vectoriser.run_pipeline()
 # Step 6: Initialize enhanced RAG system for retrieval and LLM querying
 rag = RagPipeline(
     model=MODEL,
-    vectorstore_type=VECTORSTORE_TYPE
+    vectorstore_type=VECTORSTORE_TYPE,
+    source_type_configs=SOURCE_TYPE_CONFIGS
 )
 
 # Load the vectorstore
@@ -76,36 +78,30 @@ rag.initialize_retriever(vectorstore_type=VECTORSTORE_TYPE)
 
 # Test 1: Test HTA submission retrieval
 print("\n--- Testing HTA Submission Retrieval ---")
+hta_config = SOURCE_TYPE_CONFIGS["hta_submission"]
+
 hta_test_results = rag.test_retrieval(
-    query="PICO elements for advanced treatment assessment: Population, Intervention, Comparators, and Outcomes",
+    query=TEST_QUERIES["hta_submission"],
     countries=COUNTRIES,
     source_type="hta_submission",
-    heading_keywords=[
-        "comparator", "alternative", "treatment", "therapy", "intervention",
-        "population", "outcomes", "efficacy", "safety", "pico",
-        "appropriate comparator therapy", "designation of therapy",
-        "medicinal product", "clinical trial"
-    ],
-    drug_keywords=["docetaxel", "nintedanib", "pembrolizumab", "lenvatinib", "sorafenib"],
+    heading_keywords=hta_config["default_headings"],
+    drug_keywords=hta_config["default_drugs"],
     initial_k=30,
     final_k=15
 )
 
 # Test 2: Test Clinical Guideline retrieval
 print("\n--- Testing Clinical Guideline Retrieval ---")
+clinical_config = SOURCE_TYPE_CONFIGS["clinical_guideline"]
 clinical_test_results = rag.test_retrieval(
-    query="Treatment recommendations for advanced disease: second-line and subsequent treatment options",
+    query=TEST_QUERIES["clinical_guideline"],
     countries=COUNTRIES,
     source_type="clinical_guideline",
-    heading_keywords=[
-        "recommendation", "treatment", "therapy", "algorithm", "guideline",
-        "second line", "progression", "targeted therapy"
-    ],
-    drug_keywords=["docetaxel", "pembrolizumab", "nintedanib", "lenvatinib", "sorafenib"],
+    heading_keywords=clinical_config["default_headings"],
+    drug_keywords=clinical_config["default_drugs"],
     initial_k=50,
     final_k=10
 )
-
 
 # Initialize PICO extractors for both source types
 rag.initialize_pico_extractors()
