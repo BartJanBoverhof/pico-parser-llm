@@ -408,6 +408,101 @@ class RagPipeline:
             required_terms=required_terms
         )
 
+    def extract_picos_hta_with_indication(
+        self,
+        countries: List[str],
+        indication: str,
+        initial_k: int = 30,
+        final_k: int = 15,
+        heading_keywords: Optional[List[str]] = None,
+        drug_keywords: Optional[List[str]] = None
+    ):
+        """Extract PICOs from HTA submissions with parameterized indication."""
+        # Initialize extractors if not already done
+        if self.pico_extractor_hta is None:
+            self.initialize_pico_extractors()
+        
+        # Handle the "ALL" special case
+        if any(country == "ALL" for country in countries):
+            all_countries = self.get_all_countries()
+            if not all_countries:
+                print("No countries detected in the vectorstore. Please check your data.")
+                return []
+            countries = all_countries
+            print(f"Extracting HTA PICOs for all available countries: {', '.join(countries)}")
+        
+        # Get source-specific configuration
+        config = self.source_type_configs["hta_submission"]
+        
+        # Use defaults if not specified
+        if heading_keywords is None:
+            heading_keywords = config["default_headings"]
+            
+        if drug_keywords is None:
+            drug_keywords = config["default_drugs"]
+            
+        # Extract PICOs with indication parameterization
+        extracted_picos = self.pico_extractor_hta.extract_picos_with_indication(
+            countries=countries,
+            indication=indication,
+            source_type="hta_submission",
+            initial_k=initial_k,
+            final_k=final_k,
+            heading_keywords=heading_keywords
+        )
+        
+        return extracted_picos
+
+    def extract_picos_clinical_with_indication(
+        self,
+        countries: List[str],
+        indication: str,
+        initial_k: int = 50,
+        final_k: int = 10,
+        heading_keywords: Optional[List[str]] = None,
+        drug_keywords: Optional[List[str]] = None,
+        required_terms: Optional[List[str]] = None
+    ):
+        """Extract PICOs from clinical guidelines with parameterized indication."""
+        # Initialize extractors if not already done
+        if self.pico_extractor_clinical is None:
+            self.initialize_pico_extractors()
+        
+        # Handle the "ALL" special case
+        if any(country == "ALL" for country in countries):
+            all_countries = self.get_all_countries()
+            if not all_countries:
+                print("No countries detected in the vectorstore. Please check your data.")
+                return []
+            countries = all_countries
+            print(f"Extracting clinical guideline PICOs for all available countries: {', '.join(countries)}")
+        
+        # Get source-specific configuration
+        config = self.source_type_configs["clinical_guideline"]
+        
+        # Use defaults if not specified
+        if heading_keywords is None:
+            heading_keywords = config["default_headings"]
+            
+        if drug_keywords is None:
+            drug_keywords = config["default_drugs"]
+            
+        if required_terms is None and "required_terms" in config:
+            required_terms = config["required_terms"]
+            
+        # Extract PICOs with indication parameterization
+        extracted_picos = self.pico_extractor_clinical.extract_picos_with_indication(
+            countries=countries,
+            indication=indication,
+            source_type="clinical_guideline",
+            initial_k=initial_k,
+            final_k=final_k,
+            heading_keywords=heading_keywords,
+            required_terms=required_terms
+        )
+        
+        return extracted_picos
+
     def extract_picos(
         self,
         countries: List[str],
@@ -654,3 +749,84 @@ class RagPipeline:
         )
         
         return extracted_picos
+
+    def run_case_based_pipeline(
+        self,
+        case_config: Dict[str, Any],
+        countries: List[str],
+        source_types: List[str] = ["hta_submission", "clinical_guideline"],
+        initial_k: int = 30,
+        final_k: int = 15,
+        skip_processing: bool = True,
+        skip_translation: bool = True,
+        vectorstore_type: Optional[str] = None
+    ):
+        """
+        Run pipeline for a specific case configuration with indication parameterization.
+        
+        Args:
+            case_config: Case configuration dictionary with 'indication' key
+            countries: List of country codes or ["ALL"]
+            source_types: List of source types to process
+            initial_k: Initial retrieval count
+            final_k: Final retrieval count
+            skip_processing: Skip PDF processing
+            skip_translation: Skip translation
+            vectorstore_type: Vectorstore type to use
+        
+        Returns:
+            Dictionary with extracted PICOs for each source type
+        """
+        # Use class-level vectorstore_type if vectorstore_type is not specified
+        if vectorstore_type is None:
+            vectorstore_type = self.vectorstore_type
+            
+        indication = case_config.get("indication")
+        if not indication:
+            raise ValueError("Case configuration must contain 'indication' key")
+            
+        # Validate API key
+        self.validate_api_key()
+        
+        # Process pipeline steps
+        if not skip_processing:
+            self.process_pdfs()
+        
+        if not skip_translation:
+            self.translate_documents()
+            
+        # Always chunk and vectorize for fresh runs
+        if not skip_processing or not skip_translation:
+            self.chunk_documents()
+            self.vectorize_documents(embeddings_type=vectorstore_type)
+        
+        # Initialize retriever
+        self.initialize_retriever(vectorstore_type=vectorstore_type if vectorstore_type != "both" else "biobert")
+        
+        # Initialize PICO extractors
+        self.initialize_pico_extractors()
+        
+        # Extract PICOs for each source type with indication parameterization
+        results = {}
+        for source_type in source_types:
+            if source_type == "hta_submission":
+                extracted_picos = self.extract_picos_hta_with_indication(
+                    countries=countries,
+                    indication=indication,
+                    initial_k=initial_k,
+                    final_k=final_k
+                )
+            elif source_type == "clinical_guideline":
+                extracted_picos = self.extract_picos_clinical_with_indication(
+                    countries=countries,
+                    indication=indication,
+                    initial_k=initial_k,
+                    final_k=final_k
+                )
+            else:
+                print(f"Unsupported source type: {source_type}")
+                continue
+                
+            results[source_type] = extracted_picos
+        
+        return results

@@ -116,7 +116,7 @@ SOURCE_TYPE_CONFIGS = {
         2) Capture the Population EXACTLY as stated, including any sub-populations.
         3) For EACH recommended option applicable to the setting:
            - "Intervention" = "Medicine X (under assessment)"
-           - "Comparator"  = the recommended option’s alternatives/SoC or other options named in the guideline
+           - "Comparator"  = the recommended option's alternatives/SoC or other options named in the guideline
         4) Record Outcomes/expected benefits/harms and any evidence rating if present.
         5) Record jurisdiction/country/organization if explicitly stated; else null.
         6) Do NOT include your reasoning. Return valid JSON ONLY, in the requested format.
