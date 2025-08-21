@@ -90,8 +90,8 @@ hta_test_results_case1 = rag.test_retrieval(
     source_type="hta_submission",
     heading_keywords=hta_config["default_headings"],
     drug_keywords=hta_config["default_drugs"],
-    initial_k=30,
-    final_k=30
+    initial_k=24,
+    final_k=12
 )
 
 # Test Clinical Guideline retrieval for Case 1
@@ -104,12 +104,9 @@ clinical_test_results_case1 = rag.test_retrieval(
     source_type="clinical_guideline",
     heading_keywords=clinical_config["default_headings"],
     drug_keywords=clinical_config["default_drugs"],
-    initial_k=30,
-    final_k=30
+    initial_k=60,
+    final_k=12
 )
-
-""""""
-
 
 # Initialize PICO extractors for both source types
 rag.initialize_pico_extractors()
@@ -127,8 +124,6 @@ extracted_picos_clinical_case1 = rag.extract_picos_clinical_with_indication(
     countries=COUNTRIES,
     indication=case1_indication
 )
-
-
 
 # Print extracted PICOs for Case 1
 print("\n=== CASE 1 - NSCLC KRAS G12C HTA SUBMISSION PICOS ===")
