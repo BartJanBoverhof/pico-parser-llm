@@ -1,5 +1,5 @@
 # ============================
-# RAG Pipeline Configuration v1.2
+# RAG Pipeline Configuration v1.3
 # ============================
 # Goals:
 # - Generic, minimally-steering retrieval & prompting
@@ -7,36 +7,33 @@
 # - Intervention is NOT taken from documents; always "Medicine X (under assessment)"
 # - Support extraction of populations and sub-populations (exactly as stated)
 # - Clean separation of generic prompting from case adapters
+# - Enhanced mutation-specific retrieval for clinical guidelines
 
-CONFIG_VERSION = "1.2.0"
+CONFIG_VERSION = "1.3.0"
 
 # --------------------------------
 # Source type configurations (generic)
 # --------------------------------
 SOURCE_TYPE_CONFIGS = {
     "hta_submission": {
-        # More precise retrieval query (parameterized only by {indication})
+        # Lightweight retrieval query (parameterized only by {indication})
         "query_template": """
         Find passages that specify PICO (Population, Intervention, Comparator, Outcomes)
         relevant to: {indication}.
-
-        Prioritize sections that explicitly state:
-        - Population: disease/stage, biomarker/testing, and line of therapy (e.g., post-progression, after ≥1 prior systemic therapy / second-line or later), plus any inclusion/exclusion and sub-populations.
-        - Comparators: specific alternatives/regimens/classes (chemotherapy, immunotherapy, targeted agents), SoC/BSC/placebo, and any ITC/NMA comparators.
-        - Outcomes: numerical clinical endpoints (OS, PFS, ORR, DoR), safety, QoL, and economic/utilities if present.
-
-        Focus strictly on text explicitly tied to the stated indication or clearly defined sub-populations thereof.
-        Prefer passages that include both the disease label and biomarker terminology when applicable.
+        Prefer sections that clearly describe:
+        - Population definitions (disease/stage, prior therapy/line, biomarker/testing, inclusion/exclusion, sub-populations)
+        - Treatments assessed and alternatives considered as comparators (including SoC/BSC/placebo; ITC/NMA if present)
+        - Outcomes reported (clinical efficacy, safety, quality of life, economic/utilities)
+        Focus on text explicitly tied to the indication or clearly defined sub-populations thereof.
         """.strip(),
 
-        # Anchors to boost clearly relevant sections (expanded to catch results/benefit)
+        # Generic anchors to gently boost relevant sections
         "default_headings": [
             "pico", "scope of assessment", "population", "line of therapy",
             "comparator", "comparators considered", "comparator rationale",
             "treatment", "intervention", "therapy", "standard of care", "best supportive care", "placebo",
             "clinical evidence", "indirect treatment comparison", "network meta-analysis",
-            "outcomes", "outcome measures", "results", "effectiveness", "efficacy", "safety",
-            "quality of life", "clinical benefit", "benefit", "claimed benefit", "economic", "utilities"
+            "outcomes", "efficacy", "safety", "quality of life", "economic", "utilities"
         ],
 
         # Keep neutral; no drug steering by default
@@ -101,7 +98,7 @@ SOURCE_TYPE_CONFIGS = {
 
         "default_headings": [
             "recommendation", "treatment", "therapy", "algorithm", "guideline",
-            "biomarker", "molecular testing",
+            "biomarker", "molecular testing", "mutation", "kras", "g12c",
             "line of therapy", "subsequent therapy", "post-progression",
             "targeted therapy", "immunotherapy", "chemotherapy",
             "evidence level", "strength of recommendation", "practice point", "expected outcomes"
@@ -155,30 +152,32 @@ SOURCE_TYPE_CONFIGS = {
 }
 
 # --------------------------------
-# Default retrieval parameters (updated HTA params)
+# Default retrieval parameters with mutation-specific configurations
 # --------------------------------
 DEFAULT_RETRIEVAL_PARAMS = {
     "hta_submission": {
-        # Narrower K and window to reduce noise while keeping recall acceptable
-        "initial_k": 24,
-        "final_k": 12,
+        "initial_k": 40,
+        "final_k": 15,
         "use_section_windows": True,
-        "window_size": 1,
+        "window_size": 2,
         "booster_weights": {
             "heading": 2.0,
             "pico_keywords": 2.0,
-            "comparator_keywords": 2.0
+            "comparator_keywords": 2.0,
+            "mutation_keywords": 3.0
         }
-        # If your pipeline supports it, consider enabling strict filtering with required terms:
-        # "strict_filtering": True,
-        # "required_terms": ["NSCLC", "KRAS", "G12C"]
     },
     "clinical_guideline": {
         "initial_k": 60,
         "final_k": 12,
         "strict_filtering": True,
         "use_section_windows": True,
-        "window_size": 2
+        "window_size": 2,
+        "booster_weights": {
+            "recommendation": 2.0,
+            "mutation_keywords": 4.0,
+            "line_therapy": 3.0
+        }
     }
 }
 
@@ -188,8 +187,7 @@ DEFAULT_RETRIEVAL_PARAMS = {
 TEST_QUERIES = {
     "hta_submission": (
         "Retrieve PICO-relevant passages for: {indication}. "
-        "Focus on explicit populations/sub-populations (incl. line of therapy such as post-progression/second-line), "
-        "alternatives as comparators (SoC/BSC/placebo/ITC/NMA), and reported outcomes (OS, PFS, ORR, DoR, safety, QoL)."
+        "Focus on explicit populations/sub-populations, alternatives as comparators, and reported outcomes."
     ),
     "clinical_guideline": (
         "Guideline recommendations relevant to: {indication}, including sub-populations, "
@@ -198,17 +196,21 @@ TEST_QUERIES = {
 }
 
 # --------------------------------
-# Case adapters (the ONLY runtime adaptation is 'indication')
+# Case adapters with required terms for precision
 # --------------------------------
 CASE_CONFIGS = {
     "case_1_nsclc_krasg12c_monotherapy_progressed": {
-        "indication": (
-            "treatment of adults with advanced non-small cell lung cancer (NSCLC) with a KRAS G12C mutation "
-            "who have progressed after ≥1 prior systemic therapy (second-line), monotherapy context"
-        )
-    },
+        "indication": "treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context",
+        "required_terms_clinical": [
+            [r'\bkras\b', r'\bKRAS\b'],
+            [r'\bg12c\b', r'\bG12C\b']
+        ],
+        "mutation_boost_terms": ["kras", "g12c", "kras-g12c", "krasg12c"]    },
     "case_2_hcc_advanced_unresectable": {
-        "indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma"
+        "indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
+        "required_terms_clinical": None,
+        "mutation_boost_terms": [],
+        "drug_keywords": ["sorafenib", "lenvatinib", "atezolizumab", "bevacizumab", "regorafenib", "cabozantinib"]
     }
 }
 
@@ -216,7 +218,7 @@ CASE_CONFIGS = {
 # General configuration
 # --------------------------------
 GENERAL_CONFIG = {
-
+    "chunk_size": 600,
     "similarity_threshold": 0.7,
     "model": "gpt-4o-mini",
     "language": "auto",

@@ -33,7 +33,7 @@ class RagPipeline:
     6. PICO extraction
 
     Enhanced to support different source types with specialized retrieval strategies
-    and configurable filtering parameters.
+    and configurable filtering parameters including mutation-specific retrieval.
     """
 
     def __init__(
@@ -294,7 +294,8 @@ class RagPipeline:
         final_k: int = 15,
         heading_keywords: Optional[List[str]] = None,
         drug_keywords: Optional[List[str]] = None,
-        required_terms: Optional[List[str]] = None
+        required_terms: Optional[List[List[str]]] = None,
+        mutation_boost_terms: Optional[List[str]] = None
     ):
         """
         Extract PICOs from the specified countries and source type using specialized retrieval.
@@ -309,6 +310,7 @@ class RagPipeline:
             heading_keywords: Keywords to look for in document headings
             drug_keywords: Drug keywords for boosting relevance
             required_terms: Required terms for strict filtering (mainly for clinical guidelines)
+            mutation_boost_terms: Terms to boost for mutation-specific retrieval
         
         Returns:
             List of extracted PICOs
@@ -334,7 +336,7 @@ class RagPipeline:
         
         # Use defaults if not specified
         if query is None:
-            query = config["default_query"]
+            query = config.get("default_query", "")
             
         if heading_keywords is None:
             heading_keywords = config["default_headings"]
@@ -361,7 +363,9 @@ class RagPipeline:
             initial_k=initial_k,
             final_k=final_k,
             heading_keywords=heading_keywords,
-            required_terms=required_terms
+            required_terms=required_terms,
+            mutation_boost_terms=mutation_boost_terms,
+            drug_keywords=drug_keywords
         )
         
         return extracted_picos
@@ -373,7 +377,8 @@ class RagPipeline:
         initial_k: int = 30,
         final_k: int = 15,
         heading_keywords: Optional[List[str]] = None,
-        drug_keywords: Optional[List[str]] = None
+        drug_keywords: Optional[List[str]] = None,
+        mutation_boost_terms: Optional[List[str]] = None
     ):
         """Extract PICOs specifically from HTA submissions using specialized retrieval."""
         return self.extract_picos_by_source_type(
@@ -383,7 +388,8 @@ class RagPipeline:
             initial_k=initial_k,
             final_k=final_k,
             heading_keywords=heading_keywords,
-            drug_keywords=drug_keywords
+            drug_keywords=drug_keywords,
+            mutation_boost_terms=mutation_boost_terms
         )
 
     def extract_picos_clinical(
@@ -394,7 +400,8 @@ class RagPipeline:
         final_k: int = 10,
         heading_keywords: Optional[List[str]] = None,
         drug_keywords: Optional[List[str]] = None,
-        required_terms: Optional[List[str]] = None
+        required_terms: Optional[List[List[str]]] = None,
+        mutation_boost_terms: Optional[List[str]] = None
     ):
         """Extract PICOs specifically from clinical guidelines with configurable filtering."""
         return self.extract_picos_by_source_type(
@@ -405,7 +412,8 @@ class RagPipeline:
             final_k=final_k,
             heading_keywords=heading_keywords,
             drug_keywords=drug_keywords,
-            required_terms=required_terms
+            required_terms=required_terms,
+            mutation_boost_terms=mutation_boost_terms
         )
 
     def extract_picos_hta_with_indication(
@@ -415,7 +423,8 @@ class RagPipeline:
         initial_k: int = 30,
         final_k: int = 15,
         heading_keywords: Optional[List[str]] = None,
-        drug_keywords: Optional[List[str]] = None
+        drug_keywords: Optional[List[str]] = None,
+        mutation_boost_terms: Optional[List[str]] = None
     ):
         """Extract PICOs from HTA submissions with parameterized indication."""
         # Initialize extractors if not already done
@@ -448,7 +457,9 @@ class RagPipeline:
             source_type="hta_submission",
             initial_k=initial_k,
             final_k=final_k,
-            heading_keywords=heading_keywords
+            heading_keywords=heading_keywords,
+            mutation_boost_terms=mutation_boost_terms,
+            drug_keywords=drug_keywords
         )
         
         return extracted_picos
@@ -461,7 +472,8 @@ class RagPipeline:
         final_k: int = 10,
         heading_keywords: Optional[List[str]] = None,
         drug_keywords: Optional[List[str]] = None,
-        required_terms: Optional[List[str]] = None
+        required_terms: Optional[List[List[str]]] = None,
+        mutation_boost_terms: Optional[List[str]] = None
     ):
         """Extract PICOs from clinical guidelines with parameterized indication."""
         # Initialize extractors if not already done
@@ -498,7 +510,9 @@ class RagPipeline:
             initial_k=initial_k,
             final_k=final_k,
             heading_keywords=heading_keywords,
-            required_terms=required_terms
+            required_terms=required_terms,
+            mutation_boost_terms=mutation_boost_terms,
+            drug_keywords=drug_keywords
         )
         
         return extracted_picos
@@ -540,7 +554,8 @@ class RagPipeline:
         source_type: Optional[str] = None,
         heading_keywords: Optional[List[str]] = None,
         drug_keywords: Optional[List[str]] = None,
-        required_terms: Optional[List[str]] = None,
+        required_terms: Optional[List[List[str]]] = None,
+        mutation_boost_terms: Optional[List[str]] = None,
         initial_k: int = 20,
         final_k: int = 10
     ):
@@ -554,6 +569,7 @@ class RagPipeline:
             heading_keywords: Keywords to look for in document headings
             drug_keywords: Keywords for drugs to prioritize
             required_terms: Required terms for strict filtering
+            mutation_boost_terms: Terms to boost for mutation-specific retrieval
             initial_k: Initial number of documents to retrieve
             final_k: Final number of documents to use after filtering
         
@@ -595,6 +611,7 @@ class RagPipeline:
             heading_keywords=heading_keywords,
             drug_keywords=drug_keywords,
             required_terms=required_terms,
+            mutation_boost_terms=mutation_boost_terms,
             initial_k=initial_k,
             final_k=final_k
         )
@@ -685,7 +702,8 @@ class RagPipeline:
         query: Optional[str] = None,
         heading_keywords: Optional[List[str]] = None,
         drug_keywords: Optional[List[str]] = None,
-        required_terms: Optional[List[str]] = None,
+        required_terms: Optional[List[List[str]]] = None,
+        mutation_boost_terms: Optional[List[str]] = None,
         initial_k: int = 30,
         final_k: int = 15,
         skip_processing: bool = True,
@@ -702,6 +720,7 @@ class RagPipeline:
             heading_keywords: Custom heading keywords
             drug_keywords: Custom drug keywords
             required_terms: Custom required terms for filtering
+            mutation_boost_terms: Terms to boost for mutation-specific retrieval
             initial_k: Initial retrieval count
             final_k: Final retrieval count
             skip_processing: Skip PDF processing
@@ -745,7 +764,8 @@ class RagPipeline:
             final_k=final_k,
             heading_keywords=heading_keywords,
             drug_keywords=drug_keywords,
-            required_terms=required_terms
+            required_terms=required_terms,
+            mutation_boost_terms=mutation_boost_terms
         )
         
         return extracted_picos
@@ -785,6 +805,11 @@ class RagPipeline:
         if not indication:
             raise ValueError("Case configuration must contain 'indication' key")
             
+        # Extract case-specific parameters
+        required_terms = case_config.get("required_terms_clinical")
+        mutation_boost_terms = case_config.get("mutation_boost_terms", [])
+        drug_keywords = case_config.get("drug_keywords", [])
+            
         # Validate API key
         self.validate_api_key()
         
@@ -814,14 +839,19 @@ class RagPipeline:
                     countries=countries,
                     indication=indication,
                     initial_k=initial_k,
-                    final_k=final_k
+                    final_k=final_k,
+                    drug_keywords=drug_keywords,
+                    mutation_boost_terms=mutation_boost_terms
                 )
             elif source_type == "clinical_guideline":
                 extracted_picos = self.extract_picos_clinical_with_indication(
                     countries=countries,
                     indication=indication,
                     initial_k=initial_k,
-                    final_k=final_k
+                    final_k=final_k,
+                    required_terms=required_terms,
+                    mutation_boost_terms=mutation_boost_terms,
+                    drug_keywords=drug_keywords
                 )
             else:
                 print(f"Unsupported source type: {source_type}")

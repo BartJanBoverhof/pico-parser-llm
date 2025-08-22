@@ -226,7 +226,8 @@ class ChunkRetriever:
         final_k: int = 10,
         comparator_boost: float = 5.0,
         pico_boost: float = 4.0,
-        drug_boost: float = 8.0
+        drug_boost: float = 8.0,
+        mutation_boost_terms: Optional[List[str]] = None
     ) -> List[Dict[str, Any]]:
         """
         Specialized retrieval for HTA submissions leveraging their structured nature.
@@ -263,6 +264,8 @@ class ChunkRetriever:
         heading_set = {k.lower() for k in heading_set}
         drug_set = set((drug_keywords or []))
         drug_set = {d.lower() for d in drug_set}
+        mutation_set = set((mutation_boost_terms or []))
+        mutation_set = {m.lower() for m in mutation_set}
 
         scored_docs = []
         for i, doc in enumerate(unique_docs):
@@ -290,6 +293,10 @@ class ChunkRetriever:
             if any(d in text_lower for d in drug_set):
                 score += drug_boost
             
+            # Mutation-specific boost
+            if any(m in text_lower for m in mutation_set):
+                score += 6.0
+            
             # Additional boost for sections explicitly about comparators
             if any(term in heading_lower for term in ['comparator', 'comparison', 'versus', 'alternative']):
                 score += 6.0
@@ -313,10 +320,14 @@ class ChunkRetriever:
         initial_k: int = 50,
         final_k: int = 10,
         strict_filtering: bool = True,
-        required_terms: Optional[List[str]] = None
+        required_terms: Optional[List[List[str]]] = None,
+        mutation_boost_terms: Optional[List[str]] = None,
+        drug_keywords: Optional[List[str]] = None,
+        heading_keywords: Optional[List[str]] = None
     ) -> List[Dict[str, Any]]:
         """
         Specialized retrieval for clinical guidelines with configurable filtering.
+        Enhanced with proper required_terms filtering for mutation-specific retrieval.
         """
         filter_dict = self._build_filter(country, "clinical_guideline")
         
@@ -334,33 +345,49 @@ class ChunkRetriever:
         if not docs:
             return []
 
-        # Apply filtering if required
+        # Apply required terms filtering if specified
         filtered_docs = []
         if strict_filtering and required_terms:
             for doc in docs:
                 text_lower = doc.page_content.lower()
                 heading_lower = (doc.metadata.get("heading") or "").lower()
-                combined_text = (text_lower + " " + heading_lower).lower()
+                combined_text = text_lower + " " + heading_lower
                 
-                # Check if all required terms are present
-                has_all_terms = all(
-                    any(re.search(pattern, combined_text) for pattern in term_patterns)
-                    for term_patterns in required_terms
-                )
+                # Check if all required term groups are satisfied
+                # Each group is an OR condition, all groups must be satisfied (AND)
+                has_all_required = True
+                for term_group in required_terms:
+                    # At least one pattern from the group must match
+                    group_matched = False
+                    for pattern in term_group:
+                        if re.search(pattern, combined_text, re.IGNORECASE):
+                            group_matched = True
+                            break
+                    if not group_matched:
+                        has_all_required = False
+                        break
                 
-                if has_all_terms:
+                if has_all_required:
                     filtered_docs.append(doc)
         else:
             filtered_docs = docs
 
         if not filtered_docs:
-            print(f"No clinical guideline chunks found for {country} with applied filtering")
+            print(f"No clinical guideline chunks found for {country} after required terms filtering")
             return []
 
         # Deduplicate after filtering
         unique_docs, _ = self.deduplicator.deduplicate_documents(filtered_docs)
         if not unique_docs:
             return []
+
+        # Prepare boost term sets
+        mutation_set = set((mutation_boost_terms or []))
+        mutation_set = {m.lower() for m in mutation_set}
+        drug_set = set((drug_keywords or []))
+        drug_set = {d.lower() for d in drug_set}
+        heading_set = set((heading_keywords or []))
+        heading_set = {k.lower() for k in heading_set}
 
         # Clinical guideline specific scoring
         scored_docs = []
@@ -370,22 +397,43 @@ class ChunkRetriever:
             text_lower = doc.page_content.lower()
             heading_lower = (doc.metadata.get("heading") or "").lower()
             
-            # Boost for specific content based on required terms
-            if required_terms:
-                for term_patterns in required_terms:
-                    if any(re.search(pattern, text_lower) for pattern in term_patterns):
-                        score += 5.0
+            # Strong boost for mutation-specific content
+            mutation_matches = sum(1 for m in mutation_set if m in text_lower)
+            if mutation_matches > 0:
+                score += 8.0 * mutation_matches
+            
+            # Boost for mutation in heading
+            if any(m in heading_lower for m in mutation_set):
+                score += 10.0
             
             # Boost for treatment recommendations
-            recommendation_terms = ['recommend', 'should', 'guideline', 'treatment', 'therapy', 'algorithm']
+            recommendation_terms = ['recommend', 'should', 'guideline', 'treatment', 'therapy', 'algorithm', 'indication', 'eligible']
             recommendation_boost = sum(2.0 for term in recommendation_terms if term in text_lower)
+            score += recommendation_boost
             
-            # Boost for progression/second-line content
-            progression_terms = ['second.line', 'progression', 'refractory', 'resistant', 'subsequent']
-            progression_boost = sum(3.0 for term in progression_terms if re.search(term, text_lower))
+            # Boost for progression/line therapy content
+            progression_terms = ['second-line', 'second line', 'progression', 'refractory', 'resistant', 'subsequent', 'previously treated', 'after']
+            progression_boost = sum(3.0 for term in progression_terms if term in text_lower)
+            score += progression_boost
             
-            total_score = score + recommendation_boost + progression_boost
-            scored_docs.append((doc, total_score))
+            # Boost for heading keywords
+            if any(k in heading_lower for k in heading_set):
+                score += 4.0
+            
+            # Boost for drug keywords
+            if any(d in text_lower for d in drug_set):
+                score += 5.0
+            
+            # Penalize overly generic content if mutation terms are required
+            if required_terms and mutation_set:
+                # Check if this is generic lung cancer content without mutation specifics
+                generic_indicators = ['general lung cancer', 'all patients', 'tumor board', 'multidisciplinary']
+                has_generic = any(indicator in text_lower for indicator in generic_indicators)
+                has_mutation = any(m in text_lower for m in mutation_set)
+                if has_generic and not has_mutation:
+                    score -= 10.0  # Penalize generic content
+            
+            scored_docs.append((doc, score))
 
         scored_docs.sort(key=lambda x: x[1], reverse=True)
         
@@ -422,7 +470,8 @@ class ChunkRetriever:
         source_type: Optional[str] = None,
         heading_keywords: Optional[List[str]] = None,
         drug_keywords: Optional[List[str]] = None,
-        required_terms: Optional[List[str]] = None,
+        required_terms: Optional[List[List[str]]] = None,
+        mutation_boost_terms: Optional[List[str]] = None,
         initial_k: int = 30,
         final_k: int = 10,
         heading_boost: float = 3.0,
@@ -439,7 +488,8 @@ class ChunkRetriever:
                 heading_keywords=heading_keywords,
                 drug_keywords=drug_keywords,
                 initial_k=initial_k,
-                final_k=final_k
+                final_k=final_k,
+                mutation_boost_terms=mutation_boost_terms
             )
         elif source_type == "clinical_guideline":
             return self.clinical_guideline_retrieval(
@@ -447,7 +497,10 @@ class ChunkRetriever:
                 country=country,
                 initial_k=initial_k,
                 final_k=final_k,
-                required_terms=required_terms
+                required_terms=required_terms,
+                mutation_boost_terms=mutation_boost_terms,
+                drug_keywords=drug_keywords,
+                heading_keywords=heading_keywords
             )
         else:
             # Fallback to general retrieval
@@ -504,7 +557,8 @@ class ChunkRetriever:
         source_type: Optional[str] = None,
         heading_keywords: Optional[List[str]] = None,
         drug_keywords: Optional[List[str]] = None,
-        required_terms: Optional[List[str]] = None,
+        required_terms: Optional[List[List[str]]] = None,
+        mutation_boost_terms: Optional[List[str]] = None,
         initial_k: int = 30,
         final_k: int = 10
     ) -> Dict[str, List[Dict[str, Any]]]:
@@ -520,6 +574,7 @@ class ChunkRetriever:
                 heading_keywords=heading_keywords,
                 drug_keywords=drug_keywords,
                 required_terms=required_terms,
+                mutation_boost_terms=mutation_boost_terms,
                 initial_k=initial_k,
                 final_k=final_k
             )
@@ -636,7 +691,8 @@ class ChunkRetriever:
         source_type: Optional[str] = None,
         heading_keywords: Optional[List[str]] = None,
         drug_keywords: Optional[List[str]] = None,
-        required_terms: Optional[List[str]] = None,
+        required_terms: Optional[List[List[str]]] = None,
+        mutation_boost_terms: Optional[List[str]] = None,
         initial_k: int = 30,
         final_k: int = 10
     ) -> Dict[str, Any]:
@@ -650,6 +706,7 @@ class ChunkRetriever:
             heading_keywords=heading_keywords,
             drug_keywords=drug_keywords,
             required_terms=required_terms,
+            mutation_boost_terms=mutation_boost_terms,
             initial_k=initial_k,
             final_k=final_k
         )
@@ -798,7 +855,9 @@ class PICOExtractor:
         initial_k: int = 10,
         final_k: int = 5,
         heading_keywords: Optional[List[str]] = None,
-        required_terms: Optional[List[str]] = None,
+        required_terms: Optional[List[List[str]]] = None,
+        mutation_boost_terms: Optional[List[str]] = None,
+        drug_keywords: Optional[List[str]] = None,
         model_override: Optional[Union[str, ChatOpenAI]] = None
     ) -> List[Dict[str, Any]]:
         """
@@ -822,6 +881,8 @@ class PICOExtractor:
             source_type=source_type,
             heading_keywords=heading_keywords,
             required_terms=required_terms,
+            mutation_boost_terms=mutation_boost_terms,
+            drug_keywords=drug_keywords,
             initial_k=initial_k,
             final_k=final_k
         )
@@ -908,7 +969,9 @@ class PICOExtractor:
         initial_k: int = 10,
         final_k: int = 5,
         heading_keywords: Optional[List[str]] = None,
-        required_terms: Optional[List[str]] = None,
+        required_terms: Optional[List[List[str]]] = None,
+        mutation_boost_terms: Optional[List[str]] = None,
+        drug_keywords: Optional[List[str]] = None,
         model_override: Optional[Union[str, ChatOpenAI]] = None
     ) -> List[Dict[str, Any]]:
         """
@@ -940,6 +1003,8 @@ class PICOExtractor:
             source_type=source_type,
             heading_keywords=heading_keywords,
             required_terms=required_terms,
+            mutation_boost_terms=mutation_boost_terms,
+            drug_keywords=drug_keywords,
             initial_k=initial_k,
             final_k=final_k
         )

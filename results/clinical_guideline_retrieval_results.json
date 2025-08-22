@@ -1,266 +1,36 @@
 {
   "retrieval_metadata": {
-    "timestamp": "2025-08-21T13:04:00.716022",
+    "timestamp": "2025-08-22T14:07:09.101129",
     "source_type": "clinical_guideline",
-    "query": "Find passages with treatment recommendations relevant to: treatment of adults with advanced non-small cell lung cancer (NSCLC) with a KRAS G12C mutation who have progressed after ≥1 prior systemic therapy (second-line), monotherapy context.\n        Prefer content that states:\n        - Applicable populations and sub-populations (biomarkers/testing, prior therapy/line, inclusion/exclusion)\n        - Recommended options and alternatives/SoC that could serve as comparators\n        - Outcomes/expected benefits/harms and any evidence strength/level if provided",
+    "query": "Find passages with treatment recommendations relevant to: treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context.\n        Prefer content that states:\n        - Applicable populations and sub-populations (biomarkers/testing, prior therapy/line, inclusion/exclusion)\n        - Recommended options and alternatives/SoC that could serve as comparators\n        - Outcomes/expected benefits/harms and any evidence strength/level if provided",
     "total_countries": 9,
-    "total_chunks": 72
+    "total_chunks": 32
   },
   "results_by_country": {
     "DE": {
       "country_metadata": {
         "country_code": "DE",
-        "chunk_count": 12,
-        "total_text_length": 9035,
+        "chunk_count": 1,
+        "total_text_length": 662,
         "unique_documents": 1,
-        "unique_headings": 9
+        "unique_headings": 1
       },
       "chunks": [
         {
-          "text": "**Heading:** 1a **Source Type:** clinical_guideline\n\nConsensus-based recommendation reviewed 2024 Clinical trials and the resulting authorisations often represent only a fraction of the patients to be treated. Therefore, according to the individual treatment situation, therapy modifications should be possible for the benefit of the patient. Strong consensus background In the treatment of lung cancer, there is an increasing degree of individualisation due to new therapeutic options. Thus, each patient with newly diagnosed lung cancer should be presented in a thoracic oncology tumor board. Decisions in the thoracial oncological tumor board should be guided by the current guidelines. However, after careful reasoning and documentation, under certain conditions, different treatment decisions can be made.",
+          "text": "**Heading:** Table 1 on page 333 **Source Type:** clinical_guideline\n\nTable contains the following columns: 8.145, Evidence based recommendation, reviewed 2024 Row 1:\n8.145: Recommendation grade and Evidence-based recommendation: Patients with Stage IV NSCLC with a KRAS-G12C mutation should be treated according to Row 2:\n8.145 A and evidence-based advice: Failure of at least one systemic therapy Targeted therapy Row 3:\nEvidence Based recommendations: Offered - currently approved (02/22) Sotorasib. Row 4:\n8.155: Level of Evidence and Evidance-based Recommendations: [1211], [1212] Row 5:\n8.15: 1b Row 6:\nEvidence base recommendations are: Stronger consensus",
           "metadata": {
-            "heading": "1a",
-            "doc_id": "lung_DE",
-            "country": "DE",
-            "source_type": "clinical_guideline",
-            "start_page": 436,
-            "end_page": 441,
-            "created_date": "2024",
-            "folder_path": "nsclc_kras_g12c/clinical guidelines/DE",
-            "split_index": "5_1_0",
-            "text_length": 810,
-            "potential_comparators": [
-              "Thus",
-              "Strong",
-              "Therefore",
-              "However",
-              "Decisions"
-            ]
-          }
-        },
-        {
-          "text": "**Heading:** 1b **Source Type:** clinical_guideline\n\nin clinical trials or through off-label treatment. Consensus-based recommendation considered by 2024 In view of the dynamics of the development of new personalized therapeutic approaches, it should be sought that each patient with stage IV NLCSC receive comprehensive NGS-based molecular diagnostics prior to first-line therapy decision. For patients with wild-type configuration for EGFR, ALK, ROS1, BRAF V600, NTRK,RET, METex14, comprehensive genotyping for other known driver mutations should be performed in order to enable targeted therapy in the context of marketing authorisation (if applicable for further mutations with authorised medicinal products), a trial or off-label use when such a mutation is detected.",
-          "metadata": {
-            "heading": "1b",
+            "heading": "Table 1 on page 333",
             "doc_id": "lung_DE",
             "country": "DE",
             "source_type": "clinical_guideline",
             "start_page": 333,
-            "end_page": 336,
-            "created_date": "2024",
-            "folder_path": "nsclc_kras_g12c/clinical guidelines/DE",
-            "split_index": 3,
-            "text_length": 772,
-            "potential_comparators": [
-              "Consensus-based"
-            ]
-          }
-        },
-        {
-          "text": "**Heading:** 8.78 Evidence-based recommendation examined 2024 **Source Type:** clinical_guideline\n\nGrade of recommendation In stage IV NSCLC patients with squamous cell carcinoma who do not have A-treatable mutations (e. g., EGFR, EML4-ALK, ROS1) and who have PD-L1 expression in tissue samples of ≥ 50% of tumor cells or > 10% on immune cells, monotherapy with • atezolizumab (≥ 50% of tumour cells or 10% of tumor-infiltrating lymphocytes), • cemiplimab (≤ 50% of tumors) or • pembrolyzumab (50%) should be offered as first-line therapy unless patient or tumour-related reasons warrant combination therapy. Consensus is strong",
-          "metadata": {
-            "heading": "8.78 Evidence-based recommendation examined 2024",
-            "doc_id": "lung_DE",
-            "country": "DE",
-            "source_type": "clinical_guideline",
-            "start_page": 247,
-            "end_page": 247,
+            "end_page": 333,
             "created_date": "2024",
             "folder_path": "nsclc_kras_g12c/clinical guidelines/DE",
             "split_index": 0,
-            "text_length": 628,
+            "text_length": 662,
             "potential_comparators": [
-              "pembrolyzumab",
-              "atezolizumab",
-              "Consensus",
-              "cemiplimab"
-            ]
-          }
-        },
-        {
-          "text": "**Heading:** 1b **Source Type:** clinical_guideline\n\nIn addition, chemotherapeutic agents can often not be dosed as high and/or have to be discontinued due to poorer tolerability or slower metabolism. Many important treatment proposals can already be found in Chapter 8.6.3.2 for patients with squamous cell carcinoma and ECOG2. Recommendations 8.87, 8.88 and 8.89 may also be referred to, which also apply to patients with non-squamous cells. Consensus based recommendation reviewed 2024 In patients with stage IV non-platelet squamous cell carcinoma and ECOG 2 NSCLC, who have PD-L1 expression in tissue samples of ≥ 50% of tumour cells or > 10% on immune cells, monotherapy with • atezolizumab (≥ 50% of tumor cells or 10% of tumor-infiltrating lymphocytes) or • cemiplimab (≤ 50% of tumorous cells), or • pembromelab (< 50% of Tumorous Cells) should be offered as first-line therapy. Strong consensus Consensus-based recommendation new to 2024 NSCLC patients with stage IV non- squamous cell carcinoma and ECOG 2 to 3 or older Patients ≥ 70 years of age may be offered atezolizumab monotherapy in palliative first-line therapy regardless of PD-L1 status.* * Cave: off-label use Stronger consensus background Older patients Older (> 70 years) should not be excluded from a platinum-based combination immuno-checkpoint therapy alone.",
-          "metadata": {
-            "heading": "1b",
-            "doc_id": "lung_DE",
-            "country": "DE",
-            "source_type": "clinical_guideline",
-            "start_page": 284,
-            "end_page": 296,
-            "created_date": "2024",
-            "folder_path": "nsclc_kras_g12c/clinical guidelines/DE",
-            "split_index": 4,
-            "text_length": 1335,
-            "potential_comparators": [
-              "Recommendations",
-              "Many",
-              "atezolizumab",
-              "Strong",
-              "Consensus",
-              "cemiplimab"
-            ]
-          }
-        },
-        {
-          "text": "**Heading:** 8.103 Evidence-based recommendation examined 2024 **Source Type:** clinical_guideline\n\nGrade of recommendation NSCLC patients with stage IV non-platelet carcinoma with PD-LB expression ≥ 50% and ECOG 0-2 without contraindications who have received first-line atezolizumab or cemiplimab or pembrolizumabe should be offered platinum-based chemotherapy for second-line therapy options include: • cis or carboplatin, pemetrexed, gemcitabine or vinorelbin • carboplattin, (sub-) paclitaxel ± Bevacizumab Level of Evidence [1069], [1065] Consensus is strong",
-          "metadata": {
-            "heading": "8.103 Evidence-based recommendation examined 2024",
-            "doc_id": "lung_DE",
-            "country": "DE",
-            "source_type": "clinical_guideline",
-            "start_page": 284,
-            "end_page": 284,
-            "created_date": "2024",
-            "folder_path": "nsclc_kras_g12c/clinical guidelines/DE",
-            "split_index": 0,
-            "text_length": 564,
-            "potential_comparators": [
-              "atezolizumab",
-              "bevacizumab",
-              "cemiplimab"
-            ]
-          }
-        },
-        {
-          "text": "**Heading:** 1a **Source Type:** clinical_guideline\n\n3 Systemic therapy in patients with squamous cell carcinoma without treatable genetic alterations and ECOG 2 or older Patients Consensus-based recommendation considered 2024 In patients with stage IV NSCLC with Squamous Cell Carcinoma and EECG 2 who exhibit PD-L1 expression of ≥ 50% of tumour cells > 10% on immune cells in tissue samples, monotherapy with • atezolizumab (≥ 50% of tumor cells or 10% of tumor-infiltrating lymphocytes) or • cemipb (≤ 50% of tumorous cells) or · pembrolizuma b (≥50% of Tumorous Cells) should be offered as preferred therapy. B. Carboplatin/ paclitaxel may be offered. f Evidence [1012] Strong consensus Consensus-based recommendation reviewed 2024 NSCLC patients with stage IV squamous cell carcinoma and ECOG 2 with comorbidities that do not allow platinum-containing combination therapy can be offered monotherapy Strong consensual consensus- based recommendation reviewed 2024 Immunotherapy and/ or chemotherapy may be provided in addition to Best Supportive Care for patients",
-          "metadata": {
-            "heading": "1a",
-            "doc_id": "lung_DE",
-            "country": "DE",
-            "source_type": "clinical_guideline",
-            "start_page": 261,
-            "end_page": 265,
-            "created_date": "2024",
-            "folder_path": "nsclc_kras_g12c/clinical guidelines/DE",
-            "split_index": "0_0_0",
-            "text_length": 1067,
-            "potential_comparators": [
-              "Carboplatin/",
-              "atezolizumab"
-            ]
-          }
-        },
-        {
-          "text": "**Heading:** 8.84 Evidence-based recommendation examined 2024 **Source Type:** clinical_guideline\n\nGrade of recommendation NSCLC patients with stage IV squamous cell carcinoma in good A overall condition (ECOG 0.1) with disease progression following primary combination chemotherapy with immune checkpoint inhibitor therapy should be offered second-line therapy until progression or onset of toxicities. Consensus is strong",
-          "metadata": {
-            "heading": "8.84 Evidence-based recommendation examined 2024",
-            "doc_id": "lung_DE",
-            "country": "DE",
-            "source_type": "clinical_guideline",
-            "start_page": 257,
-            "end_page": 257,
-            "created_date": "2024",
-            "folder_path": "nsclc_kras_g12c/clinical guidelines/DE",
-            "split_index": 0,
-            "text_length": 423,
-            "potential_comparators": [
-              "Consensus"
-            ]
-          }
-        },
-        {
-          "text": "**Heading:** 22 Directory of literature **Source Type:** clinical_guideline\n\n2019;143(10):1265-1270. URL:\nURL:\nAdvanced, Programmed Death Ligand 1-Expressing NSCLC. J Thorac Oncol. 2019;14(5):793-\nLung 6): analysis of overall survival data from two randomised, phase 3 trials. Lancet Oncol. URL:\n1246. Alemanno G, Bergamini C, Prosperi P, Valeri A. Adrenalectomy: indications and options for\ntreatment. Updates Surg. 2017;69(2):119-125. URL:\n1247. Salah S, Tanvetyanon T, Abbasi S. Metastatectomy for extra-cranial extra-adrenal non-small cell\nlung cancer solitary metastases: systematic review and analysis of reported cases. Lung Cancer. 1259. Cerny T, Blair V, Anderson H, Bramwell V, Thatcher N. Pretreatment prognostic factors and\nscoring system in 407 small-cell lung cancer patients. Int.J.Cancer. 1987;39:146-149. URL:\nInt.J.Radiat.Oncol.Biol.Phys. 2005;62:342-350. URL:\nAvoidance for Small-Cell Lung Cancer (PREMER): A GICOR-GOECP-SEOR Study. J Clin Oncol.",
-          "metadata": {
-            "heading": "22 Directory of literature",
-            "doc_id": "lung_DE",
-            "country": "DE",
-            "source_type": "clinical_guideline",
-            "start_page": 469,
-            "end_page": 590,
-            "created_date": "2024",
-            "folder_path": "nsclc_kras_g12c/clinical guidelines/DE",
-            "split_index": 13,
-            "text_length": 965,
-            "potential_comparators": [
-              "URL",
-              "Updates",
-              "Metastatectomy",
-              "Adrenalectomy",
-              "Alemanno",
-              "Lancet",
-              "Int.J.Cancer",
-              "Cerny",
-              "Salah",
-              "Lung",
-              "Pretreatment"
-            ]
-          }
-        },
-        {
-          "text": "**Heading:** 19.3 Summary of changes in version 3 **Source Type:** clinical_guideline\n\n(In addition, in the marketing authorisation study, Pemetrexed could be continued in maintenance every 4 week if it was used as a combination partner with platinum in the first four cycles. Patients with NSCLC with stage IV non- squamous cell carcinoma and ECOG 2-3 or older ≥ 70 years of age may be offered atezolizumab monotherapy in palliative first-line therapy regardless of PD-L1 status.* ie Lung cancer Long-term aversion 3.0 March 202 newer eu 20 ung 19.3 Review of changes to version 3 version 2.2 A structured, individualized follow-up plan should be developed for each patient upon completion of therapy. 2010: Recommendation Grade D (missing or inconsistent studies, recommendation based on expert opinion) © Guideline Programme Oncology Version 3.0 * Cave: Off-Label Use After completion of a multimodal therapy (Stage I-IIIC, OMD) involving a locally ablative procedure (OP, RTx, CTx/RTx), a structured follow-up plan should be prepared for each patient.",
-          "metadata": {
-            "heading": "19.3 Summary of changes in version 3",
-            "doc_id": "lung_DE",
-            "country": "DE",
-            "source_type": "clinical_guideline",
-            "start_page": 453,
-            "end_page": 466,
-            "created_date": "2024",
-            "folder_path": "nsclc_kras_g12c/clinical guidelines/DE",
-            "split_index": 7,
-            "text_length": 1055,
-            "potential_comparators": [
-              "Patients",
-              "atezolizumab"
-            ]
-          }
-        },
-        {
-          "text": "**Heading:** 2a **Source Type:** clinical_guideline\n\nDetailed information can be found in the S3 Smoking and Tobacco Addiction: Screening, Diagnosis and Treatment. Thus, in a study of 543 patients with locally limited non-small cell lung cancer (NSCLC), the 5-year survival rate was 50% for current smokers, 54% for former smokers for 1-8 years, 59% for ex-smokers for 9-17 years, and 76% for newer smokers [67]. Passive smoking in the workplace is associated with a 22% increase in the risk of developing lung cancer. According to calculations by the German Cancer Research Center, passive Smoking in Germany leads to 263 new cases of lung cancer per year among non-smokers [70]. Current international surveys come to similar results [71], [66], [72] (Evidence 1a).",
-          "metadata": {
-            "heading": "2a",
-            "doc_id": "lung_DE",
-            "country": "DE",
-            "source_type": "clinical_guideline",
-            "start_page": 63,
-            "end_page": 68,
-            "created_date": "2024",
-            "folder_path": "nsclc_kras_g12c/clinical guidelines/DE",
-            "split_index": 1,
-            "text_length": 766,
-            "potential_comparators": [
-              "Thus",
-              "According",
-              "Passive",
-              "Current"
-            ]
-          }
-        },
-        {
-          "text": "**Heading:** 8.150 Consensus-based recommendation examined 2024 **Source Type:** clinical_guideline\n\nEK Systemic therapy should be offered for oligometastatic NSCLC. The indication for systemic therapy and the criteria for selecting systemic treatment should be based on current regulatory approvals and guidelines in metastatic Stage IV N SCLC. Strong consensus",
-          "metadata": {
-            "heading": "8.150 Consensus-based recommendation examined 2024",
-            "doc_id": "lung_DE",
-            "country": "DE",
-            "source_type": "clinical_guideline",
-            "start_page": 336,
-            "end_page": 336,
-            "created_date": "2024",
-            "folder_path": "nsclc_kras_g12c/clinical guidelines/DE",
-            "split_index": 0,
-            "text_length": 362,
-            "potential_comparators": [
-              "Strong"
-            ]
-          }
-        },
-        {
-          "text": "**Heading:** 22 Directory of literature **Source Type:** clinical_guideline\n\n2006;52:257-260. URL:\n1634. Thompson E, Sola I, Subirana M. Non-invasive interventions for improving well-being and\nquality of life in patients with lung cancer--a systematic review of the evidence. Lung Cancer.",
-          "metadata": {
-            "heading": "22 Directory of literature",
-            "doc_id": "lung_DE",
-            "country": "DE",
-            "source_type": "clinical_guideline",
-            "start_page": 469,
-            "end_page": 590,
-            "created_date": "2024",
-            "folder_path": "nsclc_kras_g12c/clinical guidelines/DE",
-            "split_index": 22,
-            "text_length": 288,
-            "potential_comparators": [
-              "URL",
-              "Lung",
-              "Non-invasive",
-              "Thompson"
+              "Row"
             ]
           }
         }
@@ -269,90 +39,51 @@
     "DK": {
       "country_metadata": {
         "country_code": "DK",
-        "chunk_count": 12,
-        "total_text_length": 9402,
+        "chunk_count": 5,
+        "total_text_length": 4881,
         "unique_documents": 1,
-        "unique_headings": 7
+        "unique_headings": 4
       },
       "chunks": [
         {
-          "text": "**Heading:** Table of contents **Source Type:** clinical_guideline\n\nLine 2 oncological treatment of oncogenic-driven non-cellular lung cancer patients with classic activating EGFR mutations and performance status 0-2 and stem cell progression (after re-biopsy) may be offered Line 2 treatment with platinized chemotherapy (A) patients with ALK translocation and performance state 0-2 (((3) and systemic ogression (following re-bioopsy), may be provided Line 2 to 3 treatment with lorlatinib or emotherapy, (A-B) Patients with ROS1 transloction and performance condition 0-2, systemic and ogressive and no option for further ROS1-targeted TKI, may be given Line 2 therapy with platinum-based chemotherapies (A), patients with RET translocations and 0-1 performance status 2. treatment with epermethrin (Acetate) with activated seleniborin (B) and ativanine (BF) + metformin (METC) can be provided line 2 alternative therapy with ativaninib and Virafenib (E) + captofenib in combination with other medicines) Line 3 therapy with active selenivorin with B and BF (B)) Patients receiving prior regional performance status and after re-approval of the METC may be treated line 2 to line 3 + emethyltin (C) + ematinib + methyal treatment with alternative immunotherapy with activation of the previously selected immunother therapies, line 3 to be offered line 2 and regional treatment with excipients with activating platinum (B).",
+          "text": "**Heading:** In the directions for use of the additive and premixtures, the storage conditions shall be indicated. **Source Type:** clinical_guideline\n\n(103) MET amplification For patients with MET-amplification (CNV > 10), MET TKI (103, 104) may be considered. In the Phase 3 study CodeBreaK 200, patients with advanced NSCLC and KRAS G12C mutation previously treated with platinum-based chemotherapy and immunotherapy were randomised to sotorasib or docetaxel (106) [1b]. The most frequent Grade 3 or higher AEs in the sotorasib group were diarrhoea (12%), ALT increase (8%) and AST increase (5%) vs neutropenia (12%) fatigue (6%) and febrile neutropeni (5%) in the docetaxel group. Patients with activating EGFR exon20 ins / ERBB2 (HER2) / NTRK variant and performance status 0-1 may be considered offered 2nd line therapy according to the EMA approved treatment of the matched variant (amivantamab / trastuzumab-deruxtecan / entrectinib or larotrectinib after approval in regional medical councils (A/B/B) Literature and Evidence Review Ad.",
           "metadata": {
-            "heading": "Table of contents",
+            "heading": "In the directions for use of the additive and premixtures, the storage conditions shall be indicated.",
             "doc_id": "dlcg_pal_onkogen_dreven_nsclc_v.1_admgodk_010724",
             "country": "DK",
             "source_type": "clinical_guideline",
-            "start_page": 2,
-            "end_page": 5,
+            "start_page": 28,
+            "end_page": 36,
+            "created_date": "2024",
+            "folder_path": "nsclc_kras_g12c/clinical guidelines/DK",
+            "split_index": 3,
+            "text_length": 1044,
+            "potential_comparators": [
+              "entrectinib",
+              "larotrectinib",
+              "trastuzumab",
+              "Patients",
+              "amivantamab"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** The second part of the introduction **Source Type:** clinical_guideline\n\nPurpose The overall purpose of the guideline is to support an evidence-based cancer effort of high and uniform quality across Denmark. The treatment for oncogene-driven NSCLC is under rapid development and many new drugs are approved annually by the FDA (fast-track) and often subsequently by the EMA. This development should also include Danish patients, which calls for a joint Danish effort and monitoring, in close cooperation with the Medical Council (MR). This guidelines is an attempt to compile and update the new knowledge and approvals within the field, FDA and EMA, within the MR field. Patients with oncogene-driven NSCLC generally have a better prognosis than the other patients with N SCLC. The patient group often has fewer comorbidities and no or sporadic spinal cancers (common for the non-KRAS G12C variant) compared to the other group of patients with the same N ScLC. Oncogene cancers, however, may occur in all patients with spinal adenocarcinoma or should therefore be investigated independently of the broad genomic profile of NSCSCLC. In addition, genomic profiling of tumours from patients with young-age planocellular carcinoma or patients with planucellular cancer combined with sparse or negative smoking history should be considered.",
+          "metadata": {
+            "heading": "The second part of the introduction",
+            "doc_id": "dlcg_pal_onkogen_dreven_nsclc_v.1_admgodk_010724",
+            "country": "DK",
+            "source_type": "clinical_guideline",
+            "start_page": 6,
+            "end_page": 7,
             "created_date": "2024",
             "folder_path": "nsclc_kras_g12c/clinical guidelines/DK",
             "split_index": 1,
-            "text_length": 1424,
+            "text_length": 1348,
             "potential_comparators": [
-              "ematinib",
-              "captofenib",
-              "ativaninib",
-              "virafenib",
-              "lorlatinib"
+              "Patients",
+              "Oncogene"
             ]
-          }
-        },
-        {
-          "text": "**Heading:** Clinical Guidance │Cancer DLCG b. Targeted mechanisms of resistance **Source Type:** clinical_guideline\n\nPatients with acquired resistance variants should be offered inclusion in post-EGFR-TKI protocols, if possible. The vast majority of patients with systemic progression should be provided with platinum-based chemotherapy. If targetable resistance mechanisms are found at rebiopsy, consideration may be given to treating the resistence mechanisms as monotherapy or under continued osimertinib (combination TKI). In view of the limited evidence (see below) for efficacy, this treatment cannot be recommended outside of clinical trials. The mechanisms of resistance under Osimertinib have been summarised in 3 review articles from 2023 (67-69) and further examined in the AURA 3 study (70) [1b]. The most frequent targetable variants associated with resistance development under osimerinib are off-target variants, i.e. genetic changes to EGFR proteins without the IET recommendation.",
-          "metadata": {
-            "heading": "Clinical Guidance │Cancer DLCG b. Targeted mechanisms of resistance",
-            "doc_id": "dlcg_pal_onkogen_dreven_nsclc_v.1_admgodk_010724",
-            "country": "DK",
-            "source_type": "clinical_guideline",
-            "start_page": 23,
-            "end_page": 23,
-            "created_date": "2024",
-            "folder_path": "nsclc_kras_g12c/clinical guidelines/DK",
-            "split_index": 0,
-            "text_length": 998,
-            "potential_comparators": [
-              "Targeted",
-              "osimerinib",
-              "If",
-              "osimertinib"
-            ]
-          }
-        },
-        {
-          "text": "**Heading:** Table of contents **Source Type:** clinical_guideline\n\nG12C and performance status 0-2 and previously treated with platinum-based chemotherapy and immunotherapy (where applicable) may be offered 2 (3). line treatment with sotorasib or adagrasib following approval in regional medical councils (A) Patients with activating EGFR exon20 ins / ERBB2 (HER2) / NTRK variants and erformance status 0-1 may be provided 2nd line treatment according to EMA unknown treatment of the matched variant (amivantamab / trastuzumab-deruxcante / ntrectinib or larotrectinib after approval in Regional Medical Council (A/B/B) patients with other rare active EGFR variants, and 0 performance status and systemic progression (by rebiopsy) can be offered with line 2 therapy +/- immunotherapies (A).",
-          "metadata": {
-            "heading": "Table of contents",
-            "doc_id": "dlcg_pal_onkogen_dreven_nsclc_v.1_admgodk_010724",
-            "country": "DK",
-            "source_type": "clinical_guideline",
-            "start_page": 2,
-            "end_page": 5,
-            "created_date": "2024",
-            "folder_path": "nsclc_kras_g12c/clinical guidelines/DK",
-            "split_index": 2,
-            "text_length": 790,
-            "potential_comparators": [
-              "amivantamab",
-              "ntrectinib",
-              "trastuzumab",
-              "larotrectinib"
-            ]
-          }
-        },
-        {
-          "text": "**Heading:** Last completed **Source Type:** clinical_guideline\n\nBackground Palliative oncology treatment of ALK-driven NSCLC Targeted therapy vs. platinum-based chemotherapy or vs. first generation TKI; is there a difference in efficacy and incidence of adverse reactions Date of publication (period): 2010 to date Inclusion and language: English exclusion criteria Type of publication: Primary literature, including RCTs and cohort studies of interest Word Population1 Intervention1 Comparison Outcomes1 intervention1 English",
-          "metadata": {
-            "heading": "Last completed",
-            "doc_id": "dlcg_pal_onkogen_dreven_nsclc_v.1_admgodk_010724",
-            "country": "DK",
-            "source_type": "clinical_guideline",
-            "start_page": 48,
-            "end_page": 49,
-            "created_date": "2024",
-            "folder_path": "nsclc_kras_g12c/clinical guidelines/DK",
-            "split_index": 0,
-            "text_length": 527,
-            "potential_comparators": []
           }
         },
         {
@@ -374,30 +105,7 @@
           }
         },
         {
-          "text": "**Heading:** Clinical Guideline │Confirm with DLCG departmental management and possibly the Regional Medical Committee. **Source Type:** clinical_guideline\n\nIn a Phase 2 study, the efficacy of dabrafenib plus trametinib was studied in BRAF V600E mutant NSCLC patients who had not previously received treatment (Cohort C) (40) [2b]. In the study, ORR was 64% and median DOR was 10.4 months, mPFS was 10.9 months and mOS was 24.6 months. The efficacy of encorafenib and binimetinib in BRAF V600E mutant NSCLC patients was studied in the Phase 2 study PHAROS (42) [2b]. Both non-previously treated patients and patients who had received first line treatment with platinum-based chemotherapy plus/minus immunotherapy were included. ORR was found to be 75% and median DOR could not be estimated (data immature) for the treatment-naïve group vs ORR of 46% and DOR median 16.7 months for the previously treated group.",
-          "metadata": {
-            "heading": "Clinical Guideline │Confirm with DLCG departmental management and possibly the Regional Medical Committee.",
-            "doc_id": "dlcg_pal_onkogen_dreven_nsclc_v.1_admgodk_010724",
-            "country": "DK",
-            "source_type": "clinical_guideline",
-            "start_page": 18,
-            "end_page": 18,
-            "created_date": "2024",
-            "folder_path": "nsclc_kras_g12c/clinical guidelines/DK",
-            "split_index": 0,
-            "text_length": 910,
-            "potential_comparators": [
-              "dabrafenib",
-              "ORR",
-              "trametinib",
-              "binimetinib",
-              "Both",
-              "encorafenib"
-            ]
-          }
-        },
-        {
-          "text": "**Heading:** The Fundamentals **Source Type:** clinical_guideline\n\nconsultation of pathologists (DaLuPa) with special responsibility for lung cancer, the following consensus has been reached (April 2024): which patients 1) Diagnosed with incurable NSCLC of the pulmonary adenocarcinoma type or NSSCLC NOS (not otherwise specified) (all patients) 2) Diagnosis of incurable planocellular carcinoma and never smoked (< 15 years of age) or age < 50 years 3) Progression During treatment of oncogen-driven NSCCC, select patients (good, reasonable, AT expected survival) with expected treatment outcome (\"loss\" of primary oncogene drivers/ histologic transformation and/ or newly emerging target resistance variants) 4) During treatment for non-oncogen -driven nSCLC progression - select patients in whom (few) primary tumor/ histological transformation variants are suspected. EGFR variants (all in exon 18-21 with variant description) 2.",
+          "text": "**Heading:** The Fundamentals **Source Type:** clinical_guideline\n\nIn line with this study for cAMPLEX DNA and RNA-based platforms (NGS), the immuno-histokemical study of cMET cDNA, cHystokemic cDNA and cFISH should be confirmed in the case of high incidence of lung tumours, such as oncom FISH500 or oncom TSC. According to ESMO guidelines, validated panels may be used to identify targetable mutations in routine clinical practice, provided that the limitations of the assays are taken into account (e.g. false negative results), including testing for EGFR mutations and ALK fusions/mutations [1a]. Testing for other biomarkers has a level of evidence of [1b] (MET exon 14 skipping, KRAS G12C, BRAF V600E, RET), [1c] (NTRAK 1/2/3), [2a] (mET amplification) and EGB [2] (BRBB2 and BFRA non-V600E) (1). Patients with active classical EGFR and 0-3 mutation performance status may be offered in line with the treatment of naturally occurring mutants (Asimginib) and Adrenocarcinoma.",
           "metadata": {
             "heading": "The Fundamentals",
             "doc_id": "dlcg_pal_onkogen_dreven_nsclc_v.1_admgodk_010724",
@@ -407,103 +115,40 @@
             "end_page": 14,
             "created_date": "2024",
             "folder_path": "nsclc_kras_g12c/clinical guidelines/DK",
-            "split_index": "0_1_0",
-            "text_length": 933,
-            "potential_comparators": [
-              "EGFR"
-            ]
-          }
-        },
-        {
-          "text": "**Heading:** The following table summarizes the data: **Source Type:** clinical_guideline\n\nDOLG, NSCLC, Oncog treatment DMCG KE RETNING LINE │ CANCER │ cancer of the lung and the heart for the clinical area) gene-driven, palliative clinical guideline │cancer",
-          "metadata": {
-            "heading": "The following table summarizes the data:",
-            "doc_id": "dlcg_pal_onkogen_dreven_nsclc_v.1_admgodk_010724",
-            "country": "DK",
-            "source_type": "clinical_guideline",
-            "start_page": 1,
-            "end_page": 2,
-            "created_date": "2024",
-            "folder_path": "nsclc_kras_g12c/clinical guidelines/DK",
-            "split_index": 0,
-            "text_length": 258,
-            "potential_comparators": []
-          }
-        },
-        {
-          "text": "**Heading:** The Fundamentals **Source Type:** clinical_guideline\n\nIn general, it is recommended to treat the individual patient for as long as possible with relevant TKIs, also described in the ESMO and NCCN guidelines. The manner in which the progression manifests itself in the patients under TKI treatment has an impact on the choice of treatment. In oligoprogression, consideration may be given to continuing local treatment of the metastatic sites during TKI. In asymptomatic systemic progression, treatment with the TKI \"beyond progression\" profile may be considered under closer monitoring of disease progression. Patients with incurable pulmonary adenocarcinoma and NSCLC NOS, as well as selected patients with curable lung planocellular carcinoma, should be provided with a targeted NGS panel containing the variants described in the guideline. Following a national",
-          "metadata": {
-            "heading": "The Fundamentals",
-            "doc_id": "dlcg_pal_onkogen_dreven_nsclc_v.1_admgodk_010724",
-            "country": "DK",
-            "source_type": "clinical_guideline",
-            "start_page": 8,
-            "end_page": 14,
-            "created_date": "2024",
-            "folder_path": "nsclc_kras_g12c/clinical guidelines/DK",
-            "split_index": "0_0_0",
-            "text_length": 875,
+            "split_index": 3,
+            "text_length": 980,
             "potential_comparators": [
               "Patients",
-              "Following"
+              "Testing",
+              "According",
+              "asimginib"
             ]
           }
         },
         {
-          "text": "**Heading:** Last completed **Source Type:** clinical_guideline\n\nrandomised selection of topic for further intervention' and 'outcome'. DLCG secretariat outlines topic delimitation and oncological treatment of RET-driven NSCLC right treatment vs. platinum-based chemotherapy or vs. first-line TKI; if there is a difference in efficacy and incidence of adverse reactions Date (period): 2010 to date English type of study: Primary literature including RCTs and cohort studies are Intervention1 Comparison Outcomes1 intervention1",
+          "text": "**Heading:** The Fundamentals **Source Type:** clinical_guideline\n\nALK fusions (all variants with fusion partner description) 3. ALK variants other 4. ROS1 fusions, all variations with fusion partners description) 5. BRAF V600E 6. NTRK rearrangements 7. MET exon 14 skipping mutations 8. MET variants, other and amplifications 9. RET fusions , all variances with fusion companions description) 10. KRAS G12C 11. ERBB2 mutations and amplifiers Sufficient material is used and sufficient material is needed to ensure the possibility of full genetic profiling. This can be challenging for the extension departments and patients. Rebioparsing due to sluggish material, i.",
           "metadata": {
-            "heading": "Last completed",
+            "heading": "The Fundamentals",
             "doc_id": "dlcg_pal_onkogen_dreven_nsclc_v.1_admgodk_010724",
             "country": "DK",
             "source_type": "clinical_guideline",
-            "start_page": 52,
-            "end_page": 53,
+            "start_page": 8,
+            "end_page": 14,
             "created_date": "2024",
             "folder_path": "nsclc_kras_g12c/clinical guidelines/DK",
             "split_index": 1,
-            "text_length": 526,
+            "text_length": 667,
             "potential_comparators": [
-              "DLCG"
+              "ALK",
+              "Rebioparsing",
+              "NTRK",
+              "RET",
+              "ROS1",
+              "BRAF",
+              "KRAS",
+              "MET",
+              "ERBB2"
             ]
-          }
-        },
-        {
-          "text": "**Heading:** Last completed **Source Type:** clinical_guideline\n\nDLCG delimitation of topic end oncological treatment of ROS1-driven NSCLC right treatment vs. platinum-based chemotherapy or vs. first-line TKI; there is a difference in efficacy and incidence of adverse reactions Date (period): 2010 to date English type of intervention: Primary literature, including RCTs and cohort studies Intervention1 Comparison Outcomes intervention1 Platinum based Overall response rate Entrectinib OR a Chemotherapy OR Best supportive care outcomes OR Crizotinib OR Duration of Repotrectinib Crizitinib response OR Overall survival OR Lorcaserin OR Ceratinib OR Progression Checkpoint survival inhibitor Pembrolizumab Adverse events and controls Side effects) For each trial, a copy of the \"Adverse events\" e-mail address is included in the database (Search for Serious Adverse Reactions/ Side Effects).",
-          "metadata": {
-            "heading": "Last completed",
-            "doc_id": "dlcg_pal_onkogen_dreven_nsclc_v.1_admgodk_010724",
-            "country": "DK",
-            "source_type": "clinical_guideline",
-            "start_page": 54,
-            "end_page": 55,
-            "created_date": "2024",
-            "folder_path": "nsclc_kras_g12c/clinical guidelines/DK",
-            "split_index": 1,
-            "text_length": 893,
-            "potential_comparators": [
-              "repotrectinib",
-              "crizotinib",
-              "crizitinib",
-              "entrectinib",
-              "ceratinib",
-              "pembrolizumab"
-            ]
-          }
-        },
-        {
-          "text": "**Heading:** Alle tænkelige Thoracic cancer OR OR Chemotherapy OR rate OR **Source Type:** clinical_guideline\n\nTable Title: All conceivable Thoracic cancer OR OR Chemotherapy OR rate OR Row 1 contains: 'Title (according to guideline) ', 'Palliative oncology treatment for EGFR-driven NSCLC' Row 2 includes: 'DMCG', 'DOLG' Row 3 contains: \"Contact with method specialist', 'Guideline secretariat' Row 4:\nMost recently completed",
-          "metadata": {
-            "heading": "Alle tænkelige Thoracic cancer OR OR Chemotherapy OR rate OR",
-            "doc_id": "dlcg_pal_onkogen_dreven_nsclc_v.1_admgodk_010724",
-            "country": "DK",
-            "source_type": "clinical_guideline",
-            "start_page": 50,
-            "end_page": 50,
-            "created_date": "2024",
-            "folder_path": "nsclc_kras_g12c/clinical guidelines/DK",
-            "split_index": 0,
-            "text_length": 426,
-            "potential_comparators": []
           }
         }
       ]
@@ -511,12 +156,74 @@
     "EN": {
       "country_metadata": {
         "country_code": "EN",
-        "chunk_count": 12,
-        "total_text_length": 9601,
+        "chunk_count": 19,
+        "total_text_length": 15146,
         "unique_documents": 2,
-        "unique_headings": 10
+        "unique_headings": 15
       },
       "chunks": [
+        {
+          "text": "**Heading:** Why the committee made these recommendations **Source Type:** clinical_guideline\n\nCurrent treatment for previously treated KRAS G12C mutation-positive, locally advanced or metastatic non-small-cell lung cancer includes docetaxel or docetaxel plus nintedanib. Sotorasib is a targeted treatment for the KRAS G12C mutation. Sotorasib has only been indirectly compared with current treatment. The results suggest\nthat, after platinum-based chemotherapy, sotorasib increases the time before the cancer gets worse and how long people live compared with current treatment. Sotorasib likely meets NICE's criteria to be a life-extending treatment at the end of life. But\nthere is uncertainty in the clinical evidence. Sotorasib has the potential to be cost\neffective, but more evidence is needed to address the uncertainties before it can be recommended for routine use. The evidence on sotorasib is promising. But, more data is being collected from the primary\nclinical trial and from an ongoing randomised controlled trial comparing sotorasib with docetaxel. Collecting additional data through the Cancer Drugs Fund may resolve some\nuncertainty in the clinical evidence. So, sotorasib is recommended for use in the Cancer\nDrugs Fund. © NICE 2024. All rights reserved. Subject to Notice of rights Page 4 of",
+          "metadata": {
+            "heading": "Why the committee made these recommendations",
+            "doc_id": "lung_kras_EN",
+            "country": "EN",
+            "source_type": "clinical_guideline",
+            "start_page": 4,
+            "end_page": 4,
+            "created_date": "20",
+            "folder_path": "nsclc_kras_g12c/clinical guidelines/EN",
+            "split_index": 0,
+            "text_length": 1311,
+            "potential_comparators": [
+              "nintedanib",
+              "Collecting",
+              "Subject",
+              "So",
+              "Sotorasib",
+              "All",
+              "But"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** KRAS G12C positive, PD-L1 50% or higher **Source Type:** clinical_guideline\n\nSystemic anti-cancer therapy: treatment option\nsquamous non-small-cell lung cancer, with PD-\nFully accessible summary of systemic anti-canc\n© NICE 2024. All rights reserved. Subject to Notice of rig\nr\nns for people with RET fusio\n-L1 50% or higher cer therapy: treatment optio\ncell lung cancer, with PD-L1\nns for people with NTRK fus\n-L1 less than 50% cer therapy: treatment optio\nl-cell lung cancer, with PD-L er\nns for people with NTRK fus\n-L1 50% or higher cer therapy: treatment optio\nl-cell lung cancer, with PD-L\nns for people with KRAS G12\n-L1 less than 50% cer therapy: treatment optio\n-cell lung cancer, with PD-L r\nns for people with KRAS G12\n-L1 50% or higher cer therapy: treatment optio\nghts\non positive ons for people\n1 50% or higher sion positive\nons for people\nL1 less than 50% sion positive\nons for people\nL1 50% or higher\n2C positive ons for people\nL1 less than 50%\n2C positive ons for people\nrms-and- Page 22 of 51\nwith KRAS G12C positive squamous non-small-cell lung cancer, with PD-L1 50% or higher",
+          "metadata": {
+            "heading": "KRAS G12C positive, PD-L1 50% or higher",
+            "doc_id": "lung_EN",
+            "country": "EN",
+            "source_type": "clinical_guideline",
+            "start_page": 22,
+            "end_page": 23,
+            "created_date": "20",
+            "folder_path": "nsclc_kras_g12c/clinical guidelines/EN",
+            "split_index": 0,
+            "text_length": 1109,
+            "potential_comparators": [
+              "Subject",
+              "All"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** KRAS G12C positive, PD-L1 50% or higher **Source Type:** clinical_guideline\n\nSystemic anti-cancer therapy: treatment option\nsquamous non-small-cell lung cancer, with PD-\nFully accessible summary of systemic anti-canc with KRAS G12C positive non-squamous non-sm\nhigher\n© NICE 2024. All rights reserved. Subject to Notice of rig\nns for people with NTRK fusion positive non-L1 less than 50% cer therapy: treatment options for people\nsmall-cell lung cancer, with PD-L1 less than er\nns for people with NTRK fusion positive non-L1 50% or higher cer therapy: treatment options for people\nsmall-cell lung cancer, with PD-L1 50% or\nns for people with KRAS G12C positive non-L1 less than 50% cer therapy: treatment options for people\nmall-cell lung cancer, with PD-L1 less than r\nns for people with KRAS G12C positive non-L1 50% or higher cer therapy: treatment options for people\nmall-cell lung cancer, with PD-L1 50% or ghts Page 25\nof 51",
+          "metadata": {
+            "heading": "KRAS G12C positive, PD-L1 50% or higher",
+            "doc_id": "lung_EN",
+            "country": "EN",
+            "source_type": "clinical_guideline",
+            "start_page": 25,
+            "end_page": 25,
+            "created_date": "20",
+            "folder_path": "nsclc_kras_g12c/clinical guidelines/EN",
+            "split_index": 0,
+            "text_length": 943,
+            "potential_comparators": [
+              "Subject",
+              "All"
+            ]
+          }
+        },
         {
           "text": "**Heading:** 1 Recommendations **Source Type:** clinical_guideline\n\n1.1 Sotorasib is recommended for use within the Cancer Drugs Fund as an\noption for treating KRAS G12C mutation-positive locally advanced or metastatic non-small-cell lung cancer in adults whose disease has\nprogressed on, or who cannot tolerate, platinum-based chemotherapy or anti-PD-1/PD-L1 immunotherapy. It is recommended only if the\nconditions in the managed access agreement for sotorasib are followed. 1.2 This recommendation is not intended to affect treatment with sotorasib\nthat was started in the NHS before this guidance was published. People\nhaving treatment outside this recommendation may continue without change to the funding arrangements in place for them before this\nguidance was published, until they and their NHS clinician consider it appropriate to stop.",
           "metadata": {
@@ -537,44 +244,72 @@
           }
         },
         {
-          "text": "**Heading:** Why the committee made these recommendations **Source Type:** clinical_guideline\n\nCurrent treatment for previously treated KRAS G12C mutation-positive, locally advanced or metastatic non-small-cell lung cancer includes docetaxel or docetaxel plus nintedanib. Sotorasib is a targeted treatment for the KRAS G12C mutation. Sotorasib has only been indirectly compared with current treatment. The results suggest\nthat, after platinum-based chemotherapy, sotorasib increases the time before the cancer gets worse and how long people live compared with current treatment. Sotorasib likely meets NICE's criteria to be a life-extending treatment at the end of life. But\nthere is uncertainty in the clinical evidence. Sotorasib has the potential to be cost\neffective, but more evidence is needed to address the uncertainties before it can be recommended for routine use. The evidence on sotorasib is promising. But, more data is being collected from the primary\nclinical trial and from an ongoing randomised controlled trial comparing sotorasib with docetaxel. Collecting additional data through the Cancer Drugs Fund may resolve some\nuncertainty in the clinical evidence. So, sotorasib is recommended for use in the Cancer\nDrugs Fund. © NICE 2024. All rights reserved. Subject to Notice of rights Page 4 of",
+          "text": "**Heading:** Contents **Source Type:** clinical_guideline\n\n1 Recommendations . 2 Information about sotorasib . Anticipated marketing authorisation indication . Dosage in the marketing authorisation . Price . 3 Committee discussion . The condition . Treatment pathway . Clinical evidence . Indirect treatment comparison . Assumptions in the economic model . Health-related quality of life . End of life . Cost-effectiveness estimates . Cancer Drugs Fund . Other factors . Conclusion . 4 Implementation . 5 Appraisal committee members and NICE proje\nAppraisal committee members . NICE project team . © NICE 2024. All rights reserved. Subject to Notice of rig\nutatio\nect te\nghts (h\non-po\neam . https:/\nositive\n//www\ne adv\nw.nice\nvanc\ne.org.u\nced no\nuk/term\non-s\nms-an\nsmall. nd- P\n-cell\nSotorasib for previously treated KRAS G12C mutation-positive advanced non-small-cell lung cancer (TA781)",
           "metadata": {
-            "heading": "Why the committee made these recommendations",
+            "heading": "Contents",
             "doc_id": "lung_kras_EN",
             "country": "EN",
             "source_type": "clinical_guideline",
-            "start_page": 4,
+            "start_page": 3,
             "end_page": 4,
             "created_date": "20",
             "folder_path": "nsclc_kras_g12c/clinical guidelines/EN",
             "split_index": 0,
-            "text_length": 1311,
+            "text_length": 888,
             "potential_comparators": [
-              "But",
-              "Collecting",
-              "nintedanib",
-              "So",
+              "Assumptions",
+              "Clinical",
+              "Cost-effectiveness",
+              "Treatment",
               "All",
-              "Sotorasib",
-              "Subject"
+              "Other",
+              "Subject",
+              "Health-related",
+              "NICE",
+              "End",
+              "Price",
+              "Anticipated",
+              "Conclusion",
+              "Indirect",
+              "Cancer",
+              "Dosage"
             ]
           }
         },
         {
-          "text": "**Heading:** the Royal College of Physicians Lung Cancer Clinical Outcomes publication and the National Lung Cancer Audit. [2019] **Source Type:** clinical_guideline\n\nThese are available to view as individual pathways (linked below), or grouped together in a single interactive PDF of all treatment pathways for squamous and non-squamous\nadvanced non-small-cell lung cancer. We have also produced fully accessible summaries of the treatment pathways.",
+          "text": "**Heading:** 4 Implementation **Source Type:** clinical_guideline\n\n4.1 When NICE recommends a treatment as an option for use within the\nCancer Drugs Fund, NHS England will make it available according to the conditions in the managed access agreement. This means that, if a\npatient has previously treated KRAS G12C mutation-positive advanced\nNSCLC and the doctor responsible for their care thinks that sotorasib is the right treatment, it should be available for use, in line with NICE's\nrecommendations and the Cancer Drugs Fund criteria in the managed access agreement. Further information can be found in NHS England's\nAppraisal and funding of cancer drugs from July 2016 (including the new\nCancer Drugs Fund) – A new deal for patients, taxpayers and industry.",
           "metadata": {
-            "heading": "the Royal College of Physicians Lung Cancer Clinical Outcomes publication and the National Lung Cancer Audit. [2019]",
-            "doc_id": "lung_EN",
+            "heading": "4 Implementation",
+            "doc_id": "lung_kras_EN",
             "country": "EN",
             "source_type": "clinical_guideline",
-            "start_page": 20,
-            "end_page": 21,
+            "start_page": 19,
+            "end_page": 20,
+            "created_date": "20",
+            "folder_path": "nsclc_kras_g12c/clinical guidelines/EN",
+            "split_index": 0,
+            "text_length": 762,
+            "potential_comparators": [
+              "Further"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Conclusion **Source Type:** clinical_guideline\n\nTherefore, sotorasib is\nrecommended for use in the Cancer Drugs Fund for previously treated\nKRAS G12C mutation-positive advanced NSCLC. © NICE 2024. All rights reserved. Subject to Notice of rights P\nt area, e",
+          "metadata": {
+            "heading": "Conclusion",
+            "doc_id": "lung_kras_EN",
+            "country": "EN",
+            "source_type": "clinical_guideline",
+            "start_page": 18,
+            "end_page": 18,
             "created_date": "20",
             "folder_path": "nsclc_kras_g12c/clinical guidelines/EN",
             "split_index": 1,
-            "text_length": 450,
+            "text_length": 270,
             "potential_comparators": [
-              "We"
+              "Subject",
+              "All"
             ]
           }
         },
@@ -595,150 +330,216 @@
           }
         },
         {
-          "text": "**Heading:** the Royal College of Physicians Lung Cancer Clinical Outcomes publication and the National Lung Cancer Audit. [2019] **Source Type:** clinical_guideline\n\nFor a short explanation of why the committee made these recommendations and how they might affect practice, see the rationale and impact section on management of\noperable stage IIIA–N2 non-small-cell lung cancer. Full details of the evidence and the committee's discussion are in evidence review C:\nManagement of NSCLC stage IIIA-N2. 1.8 Systemic anti-cancer therapy (SACT) for\nadvanced non-small-cell lung cancer\nWe have produced treatment pathways bringing together NICE recommended treatment options from this guideline and relevant technology appraisal guidance on advanced non© NICE 2024. All rights reserved. Subject to Notice of rights Page 20\nsmall-cell lung cancer (squamous and non-squamous). The treatment pathways cover the\nrecommended treatment options at each decision point.",
+          "text": "**Heading:** Indirect treatment comparison **Source Type:** clinical_guideline\n\nmutation status would be informative. But, it acknowledged the company's reasoning that overall survival and progression-free survival are similar in the absence of targeted therapies in the overall KRAS and KRAS G12C-specific population. However, it explained that it could have been possible to select KRAS G12C mutation data from SELECT-1 data. The ERG considered that the company's supplementary analysis using a PSWA may be less biased than the MAIC. It explained that the Amgen Flatiron Health real-world evidence data was adjusted to make it more comparable to the CodeBreaK100 population, and that there was little difference in the effective sample size compared with the MAIC. It also noted that the PSWA was adjusted for 13 covariates including brain metastases. However, the ERG highlighted that there remains considerable uncertainty in this approach.",
           "metadata": {
-            "heading": "the Royal College of Physicians Lung Cancer Clinical Outcomes publication and the National Lung Cancer Audit. [2019]",
-            "doc_id": "lung_EN",
+            "heading": "Indirect treatment comparison",
+            "doc_id": "lung_kras_EN",
             "country": "EN",
             "source_type": "clinical_guideline",
-            "start_page": 20,
-            "end_page": 21,
+            "start_page": 8,
+            "end_page": 11,
             "created_date": "20",
             "folder_path": "nsclc_kras_g12c/clinical guidelines/EN",
-            "split_index": 0,
-            "text_length": 956,
+            "split_index": "4_1_0",
+            "text_length": 944,
             "potential_comparators": [
-              "Full",
-              "All",
+              "But",
+              "However",
+              "It"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Indirect treatment comparison **Source Type:** clinical_guideline\n\nAll rights reserved. Subject to Notice of rights\nsmall\nbel\ns;\ng\ne\nd\ny\nm\nno\nease\nect\nus\ns\nus\nand-\nhea\nes\nade 8 of\nSotorasib for previously treated KRAS G12C mutation-positive advanced non-s lung cancer (TA781)\nsecondary analysis of sotorasib versus docetaxel plus nintedanib, the company regarded an MAIC as unfeasible. Therefore, a piecewise\napproach to hazard ratio estimates applied to the docetaxel arm of\nSELECT-1 was done using results from LUME-Lung 1, a randomised controlled trial comparing docetaxel with docetaxel plus nintedanib. A\nsupplementary analysis of sotorasib versus docetaxel was also done using a propensity score weighting analysis (PSWA) approach, using da\nfrom CodeBreaK100 for sotorasib and the chemotherapy arm of the\nAmgen Flatiron Health real-world evidence study.",
+          "metadata": {
+            "heading": "Indirect treatment comparison",
+            "doc_id": "lung_kras_EN",
+            "country": "EN",
+            "source_type": "clinical_guideline",
+            "start_page": 8,
+            "end_page": 11,
+            "created_date": "20",
+            "folder_path": "nsclc_kras_g12c/clinical guidelines/EN",
+            "split_index": 1,
+            "text_length": 872,
+            "potential_comparators": [
+              "Therefore",
+              "nintedanib",
               "Subject"
             ]
           }
         },
         {
-          "text": "**Heading:** Contents **Source Type:** clinical_guideline\n\nOverview . Who is it for? . Access to services and referral . 1.1 The importance of early diagnosis . Communication . 1.2 Helping people understand their condition and the tests and t\nDiagnosis and staging . 1.3 Effectiveness of diagnostic and staging investigations . Treatment . 1.4 Stop smoking interventions and services . 1.5 Assessing people with non-small-cell lung cancer for treatme\n1.6 Surgery and radiotherapy with curative intent for non-small-c\n1.7 Combination treatment for non-small-cell lung cancer . 1.8 Systemic anti-cancer therapy (SACT) for advanced non-smal\n1.9 Assessing people with small-cell lung cancer . 1.10 First-line treatment for limited-stage disease small-cell lung\n1.11 Surgery for small-cell lung cancer . 1.12 First-line treatment for extensive-stage disease small-cell lun\n1.13 Maintenance treatment for small-cell lung cancer . 1.14 Second-line treatment for small-cell lung cancer that has rel\ntreatment . Palliative interventions and supportive and palliative care . 1.15 Providing palliative care . 1.16 Palliative radiotherapy . 1.17 Managing endobronchial obstruction . 1.18 Other palliative treatments . 1.19 Managing brain metastases . © NICE 2024.",
+          "text": "**Heading:** 3.3 The clinical effectiveness evidence for sotorasib is from the **Source Type:** clinical_guideline\n\n© NICE 2024. All rights reserved. Subject to Notice of rights\nsmall\napy,\nmpar\ncer\ned\nn,\nus\nat\ny,\n0, a and-\n, so rators\nSotorasib for previously treated KRAS G12C mutation-positive advanced non-s lung cancer (TA781)\nCodeBreaK100 trial. This is a phase 2, single-arm, multicentre, open lab\ntrial in 250 adults with KRAS G12C mutation-positive advanced tumours\n126 participants had NSCLC. People in the trial previously had 1 (43%),\n(35%) or 3 lines (22%) of anticancer therapy, measurable disease per\nRECIST 1.1 criteria and an Eastern Cooperative Oncology Group (ECOG)\nperformance status of 0 or 1. Most people (90%) had previously had\nplatinum-doublet chemotherapy (see section 3.2). People took 960 mg\nsotorasib (8 tablets of 120 mg) once a day until disease progression, treatment discontinuation or the end of the study. The primary outcome\nof the trial was an objective response rate of 37.1% (95% confidence\ninterval 28.6 to 46.2), with the latest data-cut from March 2021.",
           "metadata": {
-            "heading": "Contents",
-            "doc_id": "lung_EN",
+            "heading": "3.3 The clinical effectiveness evidence for sotorasib is from the",
+            "doc_id": "lung_kras_EN",
             "country": "EN",
             "source_type": "clinical_guideline",
-            "start_page": 3,
-            "end_page": 5,
+            "start_page": 7,
+            "end_page": 8,
             "created_date": "20",
             "folder_path": "nsclc_kras_g12c/clinical guidelines/EN",
             "split_index": 0,
-            "text_length": 1251,
+            "text_length": 1094,
             "potential_comparators": [
-              "Palliative",
-              "Access",
-              "Treatment",
-              "Communication",
-              "Who"
+              "Subject",
+              "of 120 mg",
+              "Most",
+              "All",
+              "People",
+              "took 960 mg"
             ]
           }
         },
         {
-          "text": "**Heading:** METex14 skipping alteration, PD-L1 50% or higher **Source Type:** clinical_guideline\n\nSystemic anti-cancer therapy: treatment options for people with METex14 skipping\nalteration non-squamous non-small-cell lung cancer, with PD-L1 50% or higher\nFully accessible summary of systemic anti-cancer therapy: treatment options for people\nwith METex14 skipping alteration non-squamous non-small-cell lung cancer, with PD-L1\n50% or higher",
+          "text": "**Heading:** The condition **Source Type:** clinical_guideline\n\nThere is a high unmet need for targeted treatments for KRAS\nG12C mutation-positive locally advanced or metastatic NSCL\n3.1 The KRAS oncogene is the most commonly mutated gene in lung cancer. The KRAS G12C mutation is the most common and occurs in 12% of nonsmall-cell lung cancer (NSCLC) tumours in the UK. This mutation is more\ncommon in non-squamous NSCLC and does not usually occur with other known mutations such as EGFR, ALK and ROS-1. These other known\nmutations may have targeted treatments available but there is currently no targeted treatment for the KRAS G12C mutation. People with KRAS\nG12C mutation-positive locally advanced or metastatic NSCLC usually have chemotherapy, a non-targeted treatment associated with adverse\neffects that affect health-related quality of life. The clinical expert\nhighlighted that people with KRAS G12C mutation-positive NSCLC have a poor prognosis. The clinical and patient experts noted that there is an\nunmet need for effective and tolerable treatments in this population.",
           "metadata": {
-            "heading": "METex14 skipping alteration, PD-L1 50% or higher",
-            "doc_id": "lung_EN",
+            "heading": "The condition",
+            "doc_id": "lung_kras_EN",
             "country": "EN",
             "source_type": "clinical_guideline",
-            "start_page": 26,
-            "end_page": 26,
+            "start_page": 6,
+            "end_page": 7,
             "created_date": "20",
             "folder_path": "nsclc_kras_g12c/clinical guidelines/EN",
             "split_index": 0,
-            "text_length": 442,
+            "text_length": 1081,
+            "potential_comparators": [
+              "People",
+              "These"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** The condition **Source Type:** clinical_guideline\n\nAll rights reserved. Subject to Notice of rights\nis\n. See\nS\nLC\nSotorasib for previously treated KRAS G12C mutation-positive advanced non-s lung cancer (TA781)",
+          "metadata": {
+            "heading": "The condition",
+            "doc_id": "lung_kras_EN",
+            "country": "EN",
+            "source_type": "clinical_guideline",
+            "start_page": 6,
+            "end_page": 7,
+            "created_date": "20",
+            "folder_path": "nsclc_kras_g12c/clinical guidelines/EN",
+            "split_index": 2,
+            "text_length": 222,
+            "potential_comparators": [
+              "See",
+              "Subject"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** There are no equality issues **Source Type:** clinical_guideline\n\n3.16 No equality or social value judgement issues were identified. Sotorasib has a novel mechanism of action in this treatment but all benefits are captured in the modelling\n3.17 The patient and clinical experts emphasised the value of sotorasib as the\nfirst targeted treatment option for previously treated KRAS G12C mutation-positive, locally advanced or metastatic NSCLC. The committee\nconsidered the innovative nature of sotorasib (see section 3.1). It agreed\nthat sotorasib could be considered an important treatment option for this population. The committee concluded that it did not think there were any\nadditional benefits associated with sotorasib that had not been captured in the economic analysis.",
+          "metadata": {
+            "heading": "There are no equality issues",
+            "doc_id": "lung_kras_EN",
+            "country": "EN",
+            "source_type": "clinical_guideline",
+            "start_page": 18,
+            "end_page": 18,
+            "created_date": "20",
+            "folder_path": "nsclc_kras_g12c/clinical guidelines/EN",
+            "split_index": 0,
+            "text_length": 788,
+            "potential_comparators": [
+              "It",
+              "Sotorasib"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** uncertainty may be addressed by collecting data on sotorasib through the Cancer Drugs Fund. The company explained that the phase 3 **Source Type:** clinical_guideline\n\nCodeBreaK200 trial, comparing sotorasib with docetaxel in a KRAS G12C mutation-positive population, is currently ongoing. It stated that this trial\nwill measure overall and progression-free survival, and health-related quality of life. It will also collect data from people with previously treated\ndisease. The committee agreed that some uncertainty may be resolved\nwith data from the CodeBreak200 trial. The committee recalled its\nconclusion that the current cost-effectiveness results were highly uncertain. It agreed that, with longer follow-up data from CodeBreaK100\non mean overall and progression-free survival, and direct comparative evidence with docetaxel from CodeBreaK200, sotorasib has the potential\nto be cost effective. Also, that additional evidence may change the\npreferred modelling assumptions outlined in section 3.13. The committee",
+          "metadata": {
+            "heading": "uncertainty may be addressed by collecting data on sotorasib through the Cancer Drugs Fund. The company explained that the phase 3",
+            "doc_id": "lung_kras_EN",
+            "country": "EN",
+            "source_type": "clinical_guideline",
+            "start_page": 17,
+            "end_page": 17,
+            "created_date": "20",
+            "folder_path": "nsclc_kras_g12c/clinical guidelines/EN",
+            "split_index": 0,
+            "text_length": 1032,
+            "potential_comparators": [
+              "It",
+              "Also"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Update information **Source Type:** clinical_guideline\n\nMarch 2024: We have removed the following systemic anti-cancer therapy treatment\npathways for advanced non-small-cell lung cancer after the withdrawal of the NICE technology appraisal guidance on mobocertinib:\n• EGFRex 20 insertion positive, PD-L1 less than 50%, for both squamous and nonsquamous non-small-cell lung cancer\n• EGFRex 20 insertion positive, PD-L1 50% or higher, for both squamous and nonsquamous non-small-cell lung cancer. July 2023: We have made the following changes to the systemic anti-cancer therapy\ntreatment pathways for advanced non-small-cell lung cancer:\n• added the NICE technology appraisal guidance on dabrafenib and trametinib, for\nsquamous and non-squamous non-small-cell lung cancer\n• added the NICE technology appraisal guidance on mobocertinib, for non-squamous\nnon-small-cell lung cancer\n• added the NICE technology appraisal guidance on selpercatinib, for squamous and\nnon-squamous non-small-cell lung cancer\n• updated the treatment options in the pathways for EGFR-TK positive, KRAS G12C\npositive and METex14 skipping alteration non-small-cell lung cancer.",
+          "metadata": {
+            "heading": "Update information",
+            "doc_id": "lung_EN",
+            "country": "EN",
+            "source_type": "clinical_guideline",
+            "start_page": 49,
+            "end_page": 51,
+            "created_date": "20",
+            "folder_path": "nsclc_kras_g12c/clinical guidelines/EN",
+            "split_index": 0,
+            "text_length": 1162,
+            "potential_comparators": [
+              "trametinib",
+              "dabrafenib",
+              "July",
+              "selpercatinib",
+              "mobocertinib"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** The condition **Source Type:** clinical_guideline\n\nThey also highlighted that the lack of targeted treatment options can have a psychological impact. This condition is associated with difficultto-treat symptoms, and the patient expert submission emphasised the\npsychological impact of these on patients and their carers. The clinical\nand patient experts stated that a targeted treatment for the KRAS G12C mutation in NSCLC would be welcomed. The committee concluded that\nthere is an unmet need for targeted treatments for KRAS G12C mutationpositive locally advanced or metastatic NSCLC, and that these would have physical and psychological benefits. © NICE 2024.",
+          "metadata": {
+            "heading": "The condition",
+            "doc_id": "lung_kras_EN",
+            "country": "EN",
+            "source_type": "clinical_guideline",
+            "start_page": 6,
+            "end_page": 7,
+            "created_date": "20",
+            "folder_path": "nsclc_kras_g12c/clinical guidelines/EN",
+            "split_index": 1,
+            "text_length": 675,
             "potential_comparators": []
           }
         },
         {
-          "text": "**Heading:** KRAS G12C positive, PD-L1 50% or higher **Source Type:** clinical_guideline\n\nSystemic anti-cancer therapy: treatment option\nsquamous non-small-cell lung cancer, with PD-\nFully accessible summary of systemic anti-canc with KRAS G12C positive non-squamous non-sm\nhigher\n© NICE 2024. All rights reserved. Subject to Notice of rig\nns for people with NTRK fusion positive non-L1 less than 50% cer therapy: treatment options for people\nsmall-cell lung cancer, with PD-L1 less than er\nns for people with NTRK fusion positive non-L1 50% or higher cer therapy: treatment options for people\nsmall-cell lung cancer, with PD-L1 50% or\nns for people with KRAS G12C positive non-L1 less than 50% cer therapy: treatment options for people\nmall-cell lung cancer, with PD-L1 less than r\nns for people with KRAS G12C positive non-L1 50% or higher cer therapy: treatment options for people\nmall-cell lung cancer, with PD-L1 50% or ghts Page 25\nof 51",
+          "text": "**Heading:** Sotorasib is recommended for use in the Cancer Drugs Fund **Source Type:** clinical_guideline\n\n3.15 Having concluded that sotorasib could not be recommended for routine\nuse, the committee then considered if it could be recommended for treating previously treated KRAS G12C mutation-positive locally",
           "metadata": {
-            "heading": "KRAS G12C positive, PD-L1 50% or higher",
-            "doc_id": "lung_EN",
+            "heading": "Sotorasib is recommended for use in the Cancer Drugs Fund",
+            "doc_id": "lung_kras_EN",
             "country": "EN",
             "source_type": "clinical_guideline",
-            "start_page": 25,
-            "end_page": 25,
+            "start_page": 17,
+            "end_page": 17,
             "created_date": "20",
             "folder_path": "nsclc_kras_g12c/clinical guidelines/EN",
             "split_index": 0,
-            "text_length": 943,
-            "potential_comparators": [
-              "All",
-              "Subject"
-            ]
-          }
-        },
-        {
-          "text": "**Heading:** cancer that has relapsed after first-line treatment **Source Type:** clinical_guideline\n\n1.14.1 Offer people with SCLC that has relapsed after first-line treatment assessment by\na thoracic oncologist. [2011]\n1.14.2 Inform people whose disease has not responded to first-line treatment that there\nis very limited evidence that second-line chemotherapy will be of benefit. [2011]\n1.14.3 Offer people with relapsed SCLC in whom chemotherapy is suitable treatment\nwith an anthracycline-containing regimen or further treatment with a platinumbased regimen to a maximum of 6 cycles. [2011]\n1.14.4 Offer radiotherapy for palliation of local symptoms to people with SCLC that has\nrelapsed after first-line treatment. [2011]",
-          "metadata": {
-            "heading": "cancer that has relapsed after first-line treatment",
-            "doc_id": "lung_EN",
-            "country": "EN",
-            "source_type": "clinical_guideline",
-            "start_page": 30,
-            "end_page": 30,
-            "created_date": "20",
-            "folder_path": "nsclc_kras_g12c/clinical guidelines/EN",
-            "split_index": 0,
-            "text_length": 728,
+            "text_length": 311,
             "potential_comparators": []
           }
         },
         {
-          "text": "**Heading:** BRAF V600 positive, PD-L1 50% or higher **Source Type:** clinical_guideline\n\nSystemic anti-cancer therapy: treatment options for people with BRAF V600 positive nonsquamous non-small-cell lung cancer, with PD-L1 50% or higher\nFully accessible summary of Systemic anti-cancer therapy: treatment options for people\nwith BRAF V600 positive non-squamous non-small-cell lung cancer, with PD-L1 50% or higher\n© NICE 2024. All rights reserved. Subject to Notice of rights Page 26 Fully accessible summary of systemic anti-cancer therapy: treatment options for people Fully accessible summary of systemic anti-cancer therapy: treatment options for people Fully accessible summary of systemic anti-cancer therapy: treatment options for people",
+          "text": "**Heading:** concluded that sotorasib met the criteria to be considered for inclusion in the Cancer Drugs Fund. So, it recommended sotorasib for use within the **Source Type:** clinical_guideline\n\n© NICE 2024. All rights reserved. Subject to Notice of rights P\nd\nCancer Drugs Fund for previously treated KRAS G12C mutation-positive advanced NSCLC.",
           "metadata": {
-            "heading": "BRAF V600 positive, PD-L1 50% or higher",
-            "doc_id": "lung_EN",
+            "heading": "concluded that sotorasib met the criteria to be considered for inclusion in the Cancer Drugs Fund. So, it recommended sotorasib for use within the",
+            "doc_id": "lung_kras_EN",
             "country": "EN",
             "source_type": "clinical_guideline",
-            "start_page": 26,
-            "end_page": 26,
+            "start_page": 17,
+            "end_page": 18,
             "created_date": "20",
             "folder_path": "nsclc_kras_g12c/clinical guidelines/EN",
             "split_index": 0,
-            "text_length": 745,
+            "text_length": 347,
             "potential_comparators": [
               "All",
-              "Subject"
+              "Subject",
+              "So"
             ]
-          }
-        },
-        {
-          "text": "**Heading:** KRAS G12C positive, PD-L1 50% or higher **Source Type:** clinical_guideline\n\nSystemic anti-cancer therapy: treatment option\nsquamous non-small-cell lung cancer, with PD-\nFully accessible summary of systemic anti-canc\n© NICE 2024. All rights reserved. Subject to Notice of rig\nr\nns for people with RET fusio\n-L1 50% or higher cer therapy: treatment optio\ncell lung cancer, with PD-L1\nns for people with NTRK fus\n-L1 less than 50% cer therapy: treatment optio\nl-cell lung cancer, with PD-L er\nns for people with NTRK fus\n-L1 50% or higher cer therapy: treatment optio\nl-cell lung cancer, with PD-L\nns for people with KRAS G12\n-L1 less than 50% cer therapy: treatment optio\n-cell lung cancer, with PD-L r\nns for people with KRAS G12\n-L1 50% or higher cer therapy: treatment optio\nghts\non positive ons for people\n1 50% or higher sion positive\nons for people\nL1 less than 50% sion positive\nons for people\nL1 50% or higher\n2C positive ons for people\nL1 less than 50%\n2C positive ons for people\nrms-and- Page 22 of 51\nwith KRAS G12C positive squamous non-small-cell lung cancer, with PD-L1 50% or higher",
-          "metadata": {
-            "heading": "KRAS G12C positive, PD-L1 50% or higher",
-            "doc_id": "lung_EN",
-            "country": "EN",
-            "source_type": "clinical_guideline",
-            "start_page": 22,
-            "end_page": 23,
-            "created_date": "20",
-            "folder_path": "nsclc_kras_g12c/clinical guidelines/EN",
-            "split_index": 0,
-            "text_length": 1109,
-            "potential_comparators": [
-              "All",
-              "Subject"
-            ]
-          }
-        },
-        {
-          "text": "**Heading:** Organisational factors relevant to diagnosis and staging **Source Type:** clinical_guideline\n\n1.3.29 Provide treatment without undue delay for people who have lung cancer that is\nsuitable for radical treatment or chemotherapy, or who need radiotherapy or ablative treatment for relief of symptoms. [2005, amended 2019]",
-          "metadata": {
-            "heading": "Organisational factors relevant to diagnosis and staging",
-            "doc_id": "lung_EN",
-            "country": "EN",
-            "source_type": "clinical_guideline",
-            "start_page": 13,
-            "end_page": 13,
-            "created_date": "20",
-            "folder_path": "nsclc_kras_g12c/clinical guidelines/EN",
-            "split_index": 0,
-            "text_length": 331,
-            "potential_comparators": []
           }
         }
       ]
@@ -746,91 +547,12 @@
     "FR": {
       "country_metadata": {
         "country_code": "FR",
-        "chunk_count": 12,
-        "total_text_length": 9938,
+        "chunk_count": 5,
+        "total_text_length": 4702,
         "unique_documents": 1,
-        "unique_headings": 9
+        "unique_headings": 5
       },
       "chunks": [
-        {
-          "text": "**Heading:** the following table is inserted: **Source Type:** clinical_guideline\n\nIn patients with active tumours without IBFREG mutations, it is recommended when other treatment options are not considered appropriate. It is indicated as monotherapy in: - adjunctive therapy after complete tumour resection of adult patients with stage IB IIIA CBNPCs with activating EGFR mutations by lexon 19 deletion or lexon 21 replacement (L858R); tinib - first-line treatment of adults with locally advanced or metastatic CBNCCs with active EGF mutations; - treatment of adult adult patients who are locally active CBNCPs with advanced or Metastatic mutations with activated CBNNCs, or for the first treatment of patients with TNF-alpha 7 or EGF-related mutations. REFERENCE OF GOOD PRACTICE for the first-line treatment of adult itinib patients with locally advanced or metastatic CBNPC with EGFR activating mutations: indications of molecular testing for",
-          "metadata": {
-            "heading": "the following table is inserted:",
-            "doc_id": "RECOTESTMOLPOUM25_CBNPC_tests_moléculaires",
-            "country": "FR",
-            "source_type": "clinical_guideline",
-            "start_page": 26,
-            "end_page": 30,
-            "created_date": "2023",
-            "folder_path": "nsclc_kras_g12c/clinical guidelines/FR",
-            "split_index": "2_0_0",
-            "text_length": 946,
-            "potential_comparators": [
-              "tinib",
-              "REFERENCE",
-              "It",
-              "itinib"
-            ]
-          }
-        },
-        {
-          "text": "**Heading:** Merger of TENs **Source Type:** clinical_guideline\n\nAs monotherapy in the treatment of adult patients with advanced non-small cell bronchial cancer (NSCBC) with non-selpercatinib RET gene fusion previously treated with a first-line RET inhibitor only.",
-          "metadata": {
-            "heading": "Merger of TENs",
-            "doc_id": "RECOTESTMOLPOUM25_CBNPC_tests_moléculaires",
-            "country": "FR",
-            "source_type": "clinical_guideline",
-            "start_page": 35,
-            "end_page": 35,
-            "created_date": "2023",
-            "folder_path": "nsclc_kras_g12c/clinical guidelines/FR",
-            "split_index": 0,
-            "text_length": 264,
-            "potential_comparators": [
-              "selpercatinib"
-            ]
-          }
-        },
-        {
-          "text": "**Heading:** Methodology **Source Type:** clinical_guideline\n\ndoi: 10.1016/j.annonc.2020.07.014. Epub 2020 Aug 24, o NICE guideline [NG122] Lung cancer: diagnosis and management Published date: March o Systemic Therapy for Stage IV NonSmall-Cell Lung Cancer: American Society of Clinical Oncology Guideline Update Nasser Hanna et al. 2017 35:30, 3484-3515 • The recommendations of the College of American Pathologists (CAP) regarding the molecular tests that should be performed for patients with CBNPC are as follows: Kalemkerian GP and al. Molecular Testing Guideline for the Selection of Patients With Lung Cancer for Treatment With Targeted Tyrosine Kinase Inhibitors: American Society of Clinical Oncology Endorsement of the College of American Pathologists/International Association for the Study of Lung Cancer/Association for Molecular Pathology clinical practice guideline Update. 2018; • The following national or regional guidelines were also consulted: o Non-small cell bronchial",
-          "metadata": {
-            "heading": "Methodology",
-            "doc_id": "RECOTESTMOLPOUM25_CBNPC_tests_moléculaires",
-            "country": "FR",
-            "source_type": "clinical_guideline",
-            "start_page": 19,
-            "end_page": 20,
-            "created_date": "2023",
-            "folder_path": "nsclc_kras_g12c/clinical guidelines/FR",
-            "split_index": "1_0_0",
-            "text_length": 991,
-            "potential_comparators": [
-              "Molecular",
-              "Epub"
-            ]
-          }
-        },
-        {
-          "text": "**Heading:** Table 1 on page 32 **Source Type:** clinical_guideline\n\nIndicated in combination with carboplatin and paclitaxel or nab-paclitaxel, in Row 2:\nfirst-line treatment of adult patients with metastatic CBNPC Row 3:\nepidermoid Row 4:\nIndicated as monotherapy in the treatment of adults with locally advanced or metastasized CBNCP Row 5:\nwhose tumours express PD-L1 with a TPS31%, Row 6:\nand who have received at least one prior chemotherapy. Row 13:\nIndicated in combination with tremelimumab and platinum-based chemotherapy, Row 14:\nIn the first-line treatment of adult patients with metastatic CBNPC Row 15:\nIn the absence of activating EGFR or ALK mutations Row 16 contains: ' atezolizumab ', ' Indicated, in conjunction with bevacizumab, paclitaxel and carboplatin, in the first line ' Row 17:\nTreatment of adults with non-metastatic epidermoid CBNCP Row 18:\nIn patients with an EGFR mutated CBNPP or targeted ALK rearrangement Row 19:\n(ALK-positive) bevaclitaxel is indicated, only in combination, and only after therapy with carboplate, Row 20:\nPaclitaxel.",
-          "metadata": {
-            "heading": "Table 1 on page 32",
-            "doc_id": "RECOTESTMOLPOUM25_CBNPC_tests_moléculaires",
-            "country": "FR",
-            "source_type": "clinical_guideline",
-            "start_page": 32,
-            "end_page": 32,
-            "created_date": "2023",
-            "folder_path": "nsclc_kras_g12c/clinical guidelines/FR",
-            "split_index": 0,
-            "text_length": 1069,
-            "potential_comparators": [
-              "tremelimumab",
-              "Row",
-              "atezolizumab",
-              "bevacizumab"
-            ]
-          }
-        },
         {
           "text": "**Heading:** G12C mutation of the KRAS **Source Type:** clinical_guideline\n\nIndicated as monotherapy for the treatment of adult patients with advanced non-small cell adagrasib bronchial cancer (ASBC) with KRAS G12C mutation, whose disease has progressed after at least one prior systemic therapy.",
           "metadata": {
@@ -848,138 +570,80 @@
           }
         },
         {
-          "text": "**Heading:** Methodology **Source Type:** clinical_guideline\n\nData considered for the definition of indications This work is an expert opinion based on existing international recommendations, the granting of MAs, AAPs and AACs, as well as on clinical trials initiated in France. o Non-oncogene-addicted metastatic non-small-cell lung cancer: ESMO Clinical Practice Guideline for diagnosis, treatment and follow-up Oncol (2023) volume 34, April 2023, pp. 358-376, o Oncogene - addicted metestatic non - small cell lung cancer, as well as the clinical trials initiated in France. They were based on: • the most recently published clinical practice guidelines by the major international emitters: ESME, NCCN, NICE and ASCO (analysis in Appendix 1) o Recommendations for the use of pre-clinical screening in patients with early and advanced non-Small cell lung cancers: ESMOs for the treatment of patients with advanced oncol (2021). Precision Medicine Working Group Ann Oncol 2020 Nov;31(11):1491-1505.",
+          "text": "**Heading:** Conclusions to be drawn **Source Type:** clinical_guideline\n\nThe NGS panels used must be capable of searching for at least: • mutations in the following genes: o EGFR: search for alterations in exons 18 to 21 (including insertions of exon 20), o KRAS: look for mutations on exon 2 (especially the G12C mutation), o BRAF: search of a V600 mutation of Braf, o HER2/ERRB2: look for Mutations on Exon 20, o MET: search For alterations resulting in a jump from exon 14 • fusions involving the following gene; search for ALK, RTR1, ROS, NETK1/2 • MET amplification. The result of these panels may not exceed 3 weeks in any one or two consecutive calendar periods. Research can be done in one or two panels either in parallel or sequentially. In case of progression: • After targeted therapy: In the event of disease progression, it is recommended to look for molecular resistance mechanisms (NGS DNA and/or RNA). These tests should be performed on a sample of a lesion in progression. In cases where a biopsy is not possible, research can be performed using liquid biopsy. The search for other emerging molecular alterations by large gene panels or sequencing within the framework of the France Médecine Génomique plan can be discussed in RCP and/ or molecular staff, depending on the local/national organization. • From the second line of treatment: For non-advanced/mastastatic CBNPCs in the absence of mutation, it must be looked for by IFR-MET examplification and if this has not been done, then by MET-MHC.",
           "metadata": {
-            "heading": "Methodology",
+            "heading": "Conclusions to be drawn",
             "doc_id": "RECOTESTMOLPOUM25_CBNPC_tests_moléculaires",
             "country": "FR",
             "source_type": "clinical_guideline",
-            "start_page": 19,
-            "end_page": 20,
+            "start_page": 17,
+            "end_page": 18,
             "created_date": "2023",
             "folder_path": "nsclc_kras_g12c/clinical guidelines/FR",
-            "split_index": 0,
-            "text_length": 999,
+            "split_index": 2,
+            "text_length": 1518,
             "potential_comparators": [
-              "They",
-              "Precision"
+              "Research",
+              "These"
             ]
           }
         },
         {
-          "text": "**Heading:** Expression of the PD-L1 (TPS) **Source Type:** clinical_guideline\n\nIt is indicated in combination with nab-paclitaxel and carboplatin for the first-line treatment of adult patients with metastatic non-epidermoid CBNPCs without EGFR mutation or ALK gene rearrangement. It is indicated as monotherapy in the treatment of adult patients with locally advanced or metastatic CBNPCs following prior chemotherapy. is indicated for adjuvant therapy, after complete resection and platinum-based chemotherapy, in adults with CBNPC with a high risk of recurrence, whose tumours have PD-L1 expression on half or more of the tumour cells (PD-L1-≥ 50%), and whose tumour does not have EGFR mutations or ALK+ RENTIEL OF BONES PRATHICS. is indicated in combination with platinum-salt chemotherapy for the first-line treatment of adult patients with PD-L1-expressing non-small cell lung cancer (NSCLC) (in ≥ 1% of tumour cells) without alterations in the EGFR, ALK or ROS1 gene, and who have: It is indicated in combination with chemotherapy based on platinum salts in the neoadjuvant treatment of adult patients with resectable non-small cell bronchial cancer at high risk of recurrence, whose tumours express PD-L1 at the threshold ≥ 1% and whose tumors do not exhibit known EGFR-sensitising mutation or known ALK translocation.",
+          "text": "**Heading:** Mutation KRAS G12C **Source Type:** clinical_guideline\n\nAdvanced or metastatic non-small cell bronchial cancer: in the presence of a KRAS p.G12C mutation, having escaped a second line of treatment by (Caution, there is a potential risk of serious side effects on the skin)",
           "metadata": {
-            "heading": "Expression of the PD-L1 (TPS)",
+            "heading": "Mutation KRAS G12C",
             "doc_id": "RECOTESTMOLPOUM25_CBNPC_tests_moléculaires",
             "country": "FR",
             "source_type": "clinical_guideline",
-            "start_page": 31,
+            "start_page": 35,
             "end_page": 35,
+            "created_date": "2023",
+            "folder_path": "nsclc_kras_g12c/clinical guidelines/FR",
+            "split_index": 0,
+            "text_length": 285,
+            "potential_comparators": []
+          }
+        },
+        {
+          "text": "**Heading:** CONTEXTE **Source Type:** clinical_guideline\n\nIn addition, after decades of disappointing results, promising results obtained with immune system checkpoint inhibitors for the treatment of metastatic melanoma have re-established immunotherapy as a major alternative in treating cancers. In CBNPCs, research on immune control point inhibitors has resulted in AMM being obtained for some patients whose tumour carries the T790M resistance mutagen to first- and second-generation EGFR tyrosine kinase inhibitors (ITKs). In addition, therapies targeting new altered genes are expanding the scope for prescribing targeted therapeutics: • KRAS G12C mutagen allows the prescription of adagrasib as part of a Compassionate Access Authorization (ACA) (reimbursement for sotorasib has been refused); • several treatments exist for patients with muons resulting in a MET exon 14 leak (crizohnib: AAC; tepohnib:: AMM, ongoing reimbursements in France for ahona; tramadol: selmahnib: Positif opinion of the Committee for Medicinal Products for Human Use (CHMPH) [in the European Medicines Agency (EMA) ]; and now allows for a second combination of mutagen in the first and second stages of treatment with adragasib in the framework of the first treatment with metaphenavir (CBN) by means of the CBF VMA in April 2022); The fact that a medicine has an MA does not mean that it is available and reimbursed in France. The High Health Authority (HAS) gives an opinion on the reimbursement and then the National Health Insurance Fund (CNAM) decides on the refund.",
+          "metadata": {
+            "heading": "CONTEXTE",
+            "doc_id": "RECOTESTMOLPOUM25_CBNPC_tests_moléculaires",
+            "country": "FR",
+            "source_type": "clinical_guideline",
+            "start_page": 5,
+            "end_page": 6,
             "created_date": "2023",
             "folder_path": "nsclc_kras_g12c/clinical guidelines/FR",
             "split_index": 1,
-            "text_length": 1326,
+            "text_length": 1557,
             "potential_comparators": [
-              "It"
+              "selmahnib",
+              "crizohnib",
+              "tepohnib"
             ]
           }
         },
         {
-          "text": "**Heading:** Expression of the PD-L1 (TPS) **Source Type:** clinical_guideline\n\nIn combination with carboplatin and pemetrexed in first-line treatment of adult patients with advanced non-small cell bronchial cancer with epidermal growth factor receptor (EGFR) -activated mutant amivantabations by insertion into exon 20, for inoperable patients",
+          "text": "**Heading:** Updated as of August 2024 **Source Type:** clinical_guideline\n\nexon 20: - mobocertinib and poziotinib are not reimbursed for this indication, - Phase III trial PILLAPON positive: amivantamab + adjuvant chemotherapy (AAPP in progress and AAMM application in progress at EMA), § KRAS G12C mutations: - sotorasib is no longer considered, - AAC for ladagrasib, § dHER2/ AMBB2 mutations : new trastuzumab derivatives (can not be reimbursed) (exon) of tectinib, § RACT1 and AMM/ RACK2 or its previously unrecommended fuses. Note: This update did not take into consideration the reimbursement arrangements for tests for the detection of genetic mutations in malignant tumours of the respiratory tract for targeted therapy (companion test) defined in the decision of 24 January 2024 by the CCAM (Common Classification of Medicinal Products) and the NABM (Nomenclature of Biomedical Products) 3 or the analysis by high-throughput sequencing of a targeted panel of genes in the medical management of lung cancer (HAS publication, 23 May 2024).",
           "metadata": {
-            "heading": "Expression of the PD-L1 (TPS)",
+            "heading": "Updated as of August 2024",
             "doc_id": "RECOTESTMOLPOUM25_CBNPC_tests_moléculaires",
             "country": "FR",
             "source_type": "clinical_guideline",
-            "start_page": 31,
-            "end_page": 35,
+            "start_page": 7,
+            "end_page": 10,
             "created_date": "2023",
             "folder_path": "nsclc_kras_g12c/clinical guidelines/FR",
-            "split_index": 3,
-            "text_length": 344,
-            "potential_comparators": []
-          }
-        },
-        {
-          "text": "**Heading:** Expression of the PD-L1 (TPS) **Source Type:** clinical_guideline\n\nIn monotherapy, the indication is for the treatment of adult patients with locally advanced or metastatic NAPC lung cancer following prior treatment with platinum. Patients with NAPC lung cancer with EGFR mutation or ALK+ must also have received targeted therapies before receiving tislelizumab. (CHMP Opinion 23/02/2024, pending publication by EMA) As NTRK1/ 2/3 It is indicated as monotherapy for the treatment of adult and paediatric patients with a solid tumour presenting a fusion of one of the NRTK1/2/ 3 genes. (CBNPC) with a mutation that causes the mesenchymato-epithelial transition factor (METex14) gene to jump to exon 14 and require systemic therapy after prior treatment with immunotherapy and/ or platinum-based chemotherapy. It is indicated as monotherapy for the treatment of adult patients with advanced non-small cell bronchial cancer (NSCBC) with a mutation that causes the epithelial-mesenchymal transition factor (METex14) gene nib to jump, who require systemic therapy after prior treatment with immunotherapy and/ or platinum-based chemotherapy. In combination with platinum salts chemotherapy in the neoadjuvant treatment of adult patients with relapsing non-small cell lung cancer at high risk of recurrence, whose tumours express PD-L1 at the threshold ≥ 1%, and whose tumors do not have a known EGFR-sensitising mutation or a known ALK translocation.",
-          "metadata": {
-            "heading": "Expression of the PD-L1 (TPS)",
-            "doc_id": "RECOTESTMOLPOUM25_CBNPC_tests_moléculaires",
-            "country": "FR",
-            "source_type": "clinical_guideline",
-            "start_page": 31,
-            "end_page": 35,
-            "created_date": "2023",
-            "folder_path": "nsclc_kras_g12c/clinical guidelines/FR",
-            "split_index": 2,
-            "text_length": 1458,
+            "split_index": "0_1_0",
+            "text_length": 1046,
             "potential_comparators": [
-              "It",
-              "CBNPC",
-              "tislelizumab",
-              "CHMP",
-              "Patients"
-            ]
-          }
-        },
-        {
-          "text": "**Heading:** Progression after targeted therapy **Source Type:** clinical_guideline\n\nSearch for resistance abnormalities by NGS Search for other emerging anomalies may be discussed in RCP Possible search on liquid biopsy Clear decision tree Full decision tree Useful document Clear document",
-          "metadata": {
-            "heading": "Progression after targeted therapy",
-            "doc_id": "RECOTESTMOLPOUM25_CBNPC_tests_moléculaires",
-            "country": "FR",
-            "source_type": "clinical_guideline",
-            "start_page": 21,
-            "end_page": 21,
-            "created_date": "2023",
-            "folder_path": "nsclc_kras_g12c/clinical guidelines/FR",
-            "split_index": 0,
-            "text_length": 290,
-            "potential_comparators": []
-          }
-        },
-        {
-          "text": "**Heading:** Summary **Source Type:** clinical_guideline\n\nAbbreviations Biomarkers-guided targeted therapies in small cell breast cancer Molecular tests for evidence-based use of biomarkers Targeted to Autumn 2024 Targeted biomarker tree Treatment of untreated patients and patients with disease-causing bacteria that have been exposed to a third-party treatment (e.g. hepatitis B, hepatitis C, hepatitis B infection). A. In the early stage, cancerous tumours (stages IB to III) 1. For neoadjuvant treatment 2. For adjuvant therapy 3. In the locally advanced stage, tumours which are not cancerous (stage III). 1. Follow-up . D. RECUTE/REFRACTARY 1. Progression after a targeted therapy 2. From the 2nd line of treatment . ELABORATION .",
-          "metadata": {
-            "heading": "Summary",
-            "doc_id": "RECOTESTMOLPOUM25_CBNPC_tests_moléculaires",
-            "country": "FR",
-            "source_type": "clinical_guideline",
-            "start_page": 3,
-            "end_page": 3,
-            "created_date": "2023",
-            "folder_path": "nsclc_kras_g12c/clinical guidelines/FR",
-            "split_index": 0,
-            "text_length": 736,
-            "potential_comparators": [
-              "RECUTE/REFRACTARY",
-              "ELABORATION",
-              "Progression",
-              "Follow-up"
-            ]
-          }
-        },
-        {
-          "text": "**Heading:** In the early stages **Source Type:** clinical_guideline\n\n3. PMID: 36823150\nErlotinib versus gemcitabine plus cisplatin as neoadjuvant treatment of stage IIIA-N2 EGFR-mutant non-small-cell lung cancer: final overall survival analysis of the EMERGING-CTONG 1103 randomised\nphase II trial. Zhong WZ, Yan HH, Chen KN, Chen C, Gu CD, Wang J, Yang XN, Mao WM, Wang Q, Qiao GB, Cheng Y,\nXu L, Wang CL, Chen MW, Kang XZ, Yan WP, Liao RQ, Yang JJ, Zhang XC, Liu SY, Zhou Q, Wu YL. Signal\nTransduct Target Ther. 2023 Feb 24;8(1):76. doi: 10.1038/s41392-022-01286-3. PMID: 36823150 Free\nPMC article. Clinical Trial. 4. PMID: 36369159\nSurgical results of the Lung Cancer Mutation Consortium 3 trial: A phase II multicenter single-arm\nstudy to investigate the efficacy and safety of atezolizumab as neoadjuvant therapy in patients with stages IB-select IIIB resectable non-small cell lung cancer. Rusch VW, Nicholas A, Patterson GA, Waqar SN, Toloza EM, Haura EB, Raz DJ, Reckamp KL, Merritt\nRE, Owen DH, Finley DJ, McNamee CJ, Blasberg JD, Garon EB, Mitchell JD, Doebele RC, Baciewicz F,\nNagasaka M, Pass HI, Schulze K, Johnson A, Bunn PA, Johnson BE, Kris MG, Kwiatkowski DJ, Wistuba\nII, Chaft JE, Carbone DP, Lee JM.",
-          "metadata": {
-            "heading": "In the early stages",
-            "doc_id": "RECOTESTMOLPOUM25_CBNPC_tests_moléculaires",
-            "country": "FR",
-            "source_type": "clinical_guideline",
-            "start_page": 37,
-            "end_page": 45,
-            "created_date": "2023",
-            "folder_path": "nsclc_kras_g12c/clinical guidelines/FR",
-            "split_index": 2,
-            "text_length": 1219,
-            "potential_comparators": [
-              "Rusch",
-              "erlotinib",
-              "Clinical",
-              "atezolizumab",
-              "Zhong",
-              "Signal",
-              "PMID"
+              "trastuzumab",
+              "tectinib",
+              "Note",
+              "amivantamab",
+              "poziotinib",
+              "mobocertinib"
             ]
           }
         }
@@ -998,31 +662,12 @@
     "NL": {
       "country_metadata": {
         "country_code": "NL",
-        "chunk_count": 12,
-        "total_text_length": 10492,
+        "chunk_count": 2,
+        "total_text_length": 1090,
         "unique_documents": 1,
-        "unique_headings": 11
+        "unique_headings": 2
       },
       "chunks": [
-        {
-          "text": "**Heading:** Table 1 on page 268 **Source Type:** clinical_guideline\n\nRow 13:\nNon-Small Cell Lung Carcinomas: Discuss all patients who are eligible for oligometastatic treatment in an MDO. Row 14:\nNon-SMC Lung Carcioma: Discus the pros and cons of adding radical therapy to systemic therapy with the patient. Row 15:\nNon-SMSC Lung Cancer: Considerations Row 16:\nNon-SCLC Lung Carcoma: The following considerations and recommendations apply to the majority of the population covered by the baseline question. Row 17:\nNon-SSC Lungs: Advantages and disadvantages of the intervention and the quality of the evidence Row 18:\nNon-MSC lung cancer: Based on Phase II small RCTs with two follow-up studies, it is not possible to limit the treatment of patients with ALFR (also known as a ' hard drive') to a subgroup of patients in the same trial. However, both RCTs suggest an extension of progression-free survival and possibly an improvement in survival by the addition of radical local therapy (radiotherapy or surgery) after a response to systemic therapy.",
-          "metadata": {
-            "heading": "Table 1 on page 268",
-            "doc_id": "non_small_cell_lung_NL",
-            "country": "NL",
-            "source_type": "clinical_guideline",
-            "start_page": 268,
-            "end_page": 268,
-            "created_date": "2012",
-            "folder_path": "nsclc_kras_g12c/clinical guidelines/NL",
-            "split_index": 1,
-            "text_length": 1052,
-            "potential_comparators": [
-              "Row",
-              "However"
-            ]
-          }
-        },
         {
           "text": "**Heading:** Which (new) treatments are preferred for KRAS G12C mutations? **Source Type:** clinical_guideline\n\nRecommendation The general recommendations that apply to all rare mutations are contained in the main module Treatment of incurable NSCLC with (rare) mutations.",
           "metadata": {
@@ -1040,28 +685,7 @@
           }
         },
         {
-          "text": "**Heading:** Table 1 on page 209 **Source Type:** clinical_guideline\n\nFor the combination of carboplatin-paclitaxel-pembrolizumab in patients with squamous cell NSCLC, a benefit for overall survival has been demonstrated in the subgroups with PD-L1 TPS < 1% and 1-49% and a benefit with respect to progression-free survival for all PD- L1 subgroup, including the sub-group with PD - L1TPS ≥ 50%. Row 10:\nNon-small cell lung carcinoma: When treated in this subgroup with platinum-pemetrexed-pembrolizumab or carboplatin-paclitaxel-bevacizumab-atezolizaumab, treatment related adverse events may be similar and may be increased compared to standard therapy, respectively.",
-          "metadata": {
-            "heading": "Table 1 on page 209",
-            "doc_id": "non_small_cell_lung_NL",
-            "country": "NL",
-            "source_type": "clinical_guideline",
-            "start_page": 209,
-            "end_page": 209,
-            "created_date": "2012",
-            "folder_path": "nsclc_kras_g12c/clinical guidelines/NL",
-            "split_index": 1,
-            "text_length": 669,
-            "potential_comparators": [
-              "pembrolizumab",
-              "atezolizaumab",
-              "Row",
-              "bevacizumab"
-            ]
-          }
-        },
-        {
-          "text": "**Heading:** Table 1 on page 316 **Source Type:** clinical_guideline\n\nThe systematic literature search resulted in 1014 hits. Niet kleincellig longcarcinoom: Studies were selected based on the following criteria: systematic review or randomized controlled trials including patients with non–small-cell lung cancer stage IIIB/IV with one of the selected driver aberrations comparing targeted therapy with chemotherapy or best supportive care or crizotinib (the latter in case of ALK+ NSCLC). Retrospective studies were excluded. Niet kleincellig longcarcinoom: Sixteen systematic reviews were initially selected based on title and abstract. After reading the full text, thirteen studies were excluded (see the table with reasons for exclusion under the tab Methods). Three systematic reviews were included (Peng, 2023; Wu, 2022; Xu, 2022).",
+          "text": "**Heading:** Table 1 on page 316 **Source Type:** clinical_guideline\n\nAfter screening the RCTs based on title and abstract, fourteen studies were selected. After reading the full text two studies concerning patients with a KRAS G12C mutation were included. Niet kleincellig longcarcinoom: In total, three systematic reviews and two trials were included in the literature summary. Important study characteristics and results are depicted in the evidence tables and tables in the description of studies. The assessment of the risk of bias is depicted in the risk of bias tables or adopted from the systematic review. Niet kleincellig longcarcinoom: Verantwoording Niet kleincellig longcarcinoom: Laatst beoordeeld and Column_3: : 01-01-2023 Niet kleincellig longcarcinoom: Laatst geautoriseerd and Column_3: : 24-06-2024",
           "metadata": {
             "heading": "Table 1 on page 316",
             "doc_id": "non_small_cell_lung_NL",
@@ -1071,172 +695,12 @@
             "end_page": 316,
             "created_date": "2012",
             "folder_path": "nsclc_kras_g12c/clinical guidelines/NL",
-            "split_index": "2_0_0",
-            "text_length": 838,
+            "split_index": "2_1_0",
+            "text_length": 818,
             "potential_comparators": [
-              "crizotinib",
-              "Three",
               "Niet",
               "After",
-              "Retrospective"
-            ]
-          }
-        },
-        {
-          "text": "**Heading:** Table 1 on page 188 **Source Type:** clinical_guideline\n\nTable contains the following columns: Non-Small Cell Lung Carcinoma, Column_2 Row 1:\nNon-small cell lung carcinoma: chemotherapy regimen with radiotherapy may be indicated, but cisplatin-containing chemotherapies have been shown to lead to better survival and progression-free survival [Salama 2013(40); Wang 2012(43); Vansteenkiste 2013 ((42) ]. Small cell lung carcinoma: Concomitant chemoradiotherapy should not be waived on the basis of age alone [Salama 2013(40) ]. A Japanese study showed a benefit of adding carboplatin to radiotherapy in a select group of elderly patients with locally advanced NSCLC. A side note of this study is that it was a Japanese population and the relevant data may not be extrapolated to a Western population [Atagi 201235] ]. In a meta-analysis based on individual patient data, the risk factors for symptomatic pneumonitis were investigated.",
-          "metadata": {
-            "heading": "Table 1 on page 188",
-            "doc_id": "non_small_cell_lung_NL",
-            "country": "NL",
-            "source_type": "clinical_guideline",
-            "start_page": 188,
-            "end_page": 188,
-            "created_date": "2012",
-            "folder_path": "nsclc_kras_g12c/clinical guidelines/NL",
-            "split_index": 0,
-            "text_length": 947,
-            "potential_comparators": [
-              "Small"
-            ]
-          }
-        },
-        {
-          "text": "**Heading:** Table 1 on page 354 **Source Type:** clinical_guideline\n\nRow 6:\nColumn _2: Discussion of options in the case of uncertain response to targeted therapy Row 7:\nColumn__2: Discusses tests performed in the context of research and showing results that could potentially affect standard therapy Row 8:\nNon-small cell lung carcinoma: Background Row 9:\nNSCLC: Backgrounds Row 10:\nNCSLC: Either by using multiple (possibly multiple) tumor predictors such as tumour specificity, or by increasing the number of patients currently diagnosed with stage IV adenocarcinoma (< 1%) or by combining these with a growing number of non-specific tumour predictors (< 1%), in which there is an increase in the incidence of rare or genetically modified tumours (especially in patients diagnosed at stage IV). increasingly rare or unknown tumour-specific genetic changes (< 1%) or combinations observed in current molecular diagnostics. In these cases, there is no direct guidance in a guideline and limited literature available. Because the assessment of such findings requires specific expertise, unlike in the usual patient discussions in the MDO (multidisciplinary consultation), so-called Molecular Tumor Row 11:\nNon-small cell lung cancer: PDF created on 23-01-2025 354/428",
-          "metadata": {
-            "heading": "Table 1 on page 354",
-            "doc_id": "non_small_cell_lung_NL",
-            "country": "NL",
-            "source_type": "clinical_guideline",
-            "start_page": 354,
-            "end_page": 354,
-            "created_date": "2012",
-            "folder_path": "nsclc_kras_g12c/clinical guidelines/NL",
-            "split_index": 1,
-            "text_length": 1268,
-            "potential_comparators": [
-              "Because"
-            ]
-          }
-        },
-        {
-          "text": "**Heading:** Molecular tumour board for NSCLC **Source Type:** clinical_guideline\n\nRequests reviewed as of late as 24-01-2020 Refer to the NSC WLC database for any palliative care related evidence, responsibilities and patient complaints. Please refer to the complete table of references for each product. Recommendation In patients in good overall condition with thoracic complaints due to lung cancer, a higher radiation dose (at least 30 Gy in 10 fractions) may be considered (in consultation with the patient), as a higher dose may have a better effect on the overall symptomatology and lead to a better 1-year survival than a dose of < 30 Gy. Considerations Field size and techniques used: Almost all studies used two-dimensional techniques and opposing fields (AP-PA) (e.",
-          "metadata": {
-            "heading": "Molecular tumour board for NSCLC",
-            "doc_id": "non_small_cell_lung_NL",
-            "country": "NL",
-            "source_type": "clinical_guideline",
-            "start_page": 349,
-            "end_page": 411,
-            "created_date": "2012",
-            "folder_path": "nsclc_kras_g12c/clinical guidelines/NL",
-            "split_index": 13,
-            "text_length": 777,
-            "potential_comparators": [
-              "Considerations",
-              "Please",
-              "Recommendation"
-            ]
-          }
-        },
-        {
-          "text": "**Heading:** Home - Non-small cell carcinoma of the lung **Source Type:** clinical_guideline\n\nIn addition, the current (anno 2023) standard for administering adjuvant chemotherapy in patients with stage II-III is to look for molecular changes in advanced or metastatic lung carcinoma because they impact the choice of palliative therapy. The question is to what extent the measurement of such changes is relevant to the adjunctive setting and whether this has treatment consequences. It is important to note that the studies were generally conducted under 5th-7th TNM edition. The 8th TnM editions will be used for the advice. Low GRADE Sources: (Wu, 2020; Herbst, 2023) QoL may not be substantially different with adjuvant osimertinib when compared to placebo. CORIN described a randomized, single-center, open-label, phase II trial, with a median follow-up length of 39.9 months in China. They evaluated the efficacy and safety of adjuvant icotinib versus observation Non-small cell lung carcinoma in patients with EGFR mutation-positive resected stage IB NSCLC (7th TNM classification). A total of",
-          "metadata": {
-            "heading": "Home - Non-small cell carcinoma of the lung",
-            "doc_id": "non_small_cell_lung_NL",
-            "country": "NL",
-            "source_type": "clinical_guideline",
-            "start_page": 5,
-            "end_page": 177,
-            "created_date": "2012",
-            "folder_path": "nsclc_kras_g12c/clinical guidelines/NL",
-            "split_index": "86_0_0",
-            "text_length": 1100,
-            "potential_comparators": [
-              "They",
-              "It",
-              "icotinib",
-              "osimertinib",
-              "CORIN",
-              "Low"
-            ]
-          }
-        },
-        {
-          "text": "**Heading:** Table 1 on page 60 **Source Type:** clinical_guideline\n\nRow 8:\nNon-Small Cell Lung Cancer: Values and preferences of patients (and possibly their caregivers) Row 9:\nNon-SMC Lung cancer: Multiplexing testing is aimed at, and has been able to, produce as complete a result as possible with as little material as possible from a usually measured amount of materials in the biopsy (or in cytology/DNA), and now with available genes and techniques all available treatments can now include a limited number of target mutations or sequences of individual lung carcinoid cells. Row 10:\nPDF: 2328-20/41",
-          "metadata": {
-            "heading": "Table 1 on page 60",
-            "doc_id": "non_small_cell_lung_NL",
-            "country": "NL",
-            "source_type": "clinical_guideline",
-            "start_page": 60,
-            "end_page": 60,
-            "created_date": "2012",
-            "folder_path": "nsclc_kras_g12c/clinical guidelines/NL",
-            "split_index": 3,
-            "text_length": 606,
-            "potential_comparators": [
-              "Row"
-            ]
-          }
-        },
-        {
-          "text": "**Heading:** Table 1 on page 60 **Source Type:** clinical_guideline\n\nTable contains the following columns: Non-small cell lung carcinoma, Column_2, Column _3 Row 1:\nNon-Small Cell Lung Carcinoma: Compared to sequential, uniplex techniques, shows similar sensitivity to the mutations studied. However, it should be noted that different amounts of starting material were tested in the different studies and that information on tumour cell percentage is not available in all studies. Using NGS, however, in addition to the common EGFR and KRAS mutations, additional relevant predictive mutations are found, including BRAF, PIK3CA, ALK, ROSBB, ER2 and uncommon EGFR mutations. Row 2:\nNon-SMC lung carcinooma: Regarding the type and amount of overall tumour material, Row 3:\nThe size of the non-smal cell lung cancer: Predictive material is often reliable after a long (2 cm) surgical treatment and sufficient number of samples (3 cm) are delivered to the patient after surgery; In the case of lymphangitis carcinomatosa, a diagnosis (metastatic adenocarcinoma) may be made, but there is probably insufficient tumor-related DNA to obtain a reliable predictive DNA or RNA-related result.",
-          "metadata": {
-            "heading": "Table 1 on page 60",
-            "doc_id": "non_small_cell_lung_NL",
-            "country": "NL",
-            "source_type": "clinical_guideline",
-            "start_page": 60,
-            "end_page": 60,
-            "created_date": "2012",
-            "folder_path": "nsclc_kras_g12c/clinical guidelines/NL",
-            "split_index": 0,
-            "text_length": 1181,
-            "potential_comparators": [
-              "Row",
-              "Using",
-              "However"
-            ]
-          }
-        },
-        {
-          "text": "**Heading:** Table 1 on page 375 **Source Type:** clinical_guideline\n\nTable contains the following columns: Non-small cell lung carcinoma, Column_2, Column _ 3 Row 1: Non-Small Cell Lung Carcinoma: NSCLC - Information and communication - Treatment Row 2: Non-SMLC: Baseline question Row 3: Non-SCLC: What should be discussed with patients about treatment? Row 4: Non-SSLC: Recommendation Row 5: Non-MSLC: Patients should be adequately informed about treatment and/ or treatment regimen after being informed of the diagnosis, unless the patient indicates that he/ she does not wish to be informed about the nature of the abnormality. The different therapeutic options with the expected results and possible side effects should be explained. The conclusions of the multidisciplinary consultation with the thoracic surgeon, radiotherapist and other specialists should be discussed so that even before starting treatment it is clear to everyone what the next course of treatment is and",
-          "metadata": {
-            "heading": "Table 1 on page 375",
-            "doc_id": "non_small_cell_lung_NL",
-            "country": "NL",
-            "source_type": "clinical_guideline",
-            "start_page": 375,
-            "end_page": 375,
-            "created_date": "2012",
-            "folder_path": "nsclc_kras_g12c/clinical guidelines/NL",
-            "split_index": "0_0_0",
-            "text_length": 981,
-            "potential_comparators": [
-              "Row"
-            ]
-          }
-        },
-        {
-          "text": "**Heading:** RET: **Source Type:** clinical_guideline\n\nTreat patients with a RET translocation in the first line with platinum-double chemotherapy as long as no selective RET-TKI is available in the primary line. Treat these patients in the second line with selpercatinib through the Drug Access Program. Considerations Pros and cons of the intervention and the quality of the evidence The general considerations that apply to all rare mutations are set out in the main module Treatment of incurable NSCLC with (combined) mutations RET In the following considerations, the Working Group follows the considerations of the ESMO guideline (Hendriks, 2023), to the extent that these are applicable in the Netherlands. Both selperkatinib and ORcatinib are registered as pralset for the treatment of R+ NLC.",
-          "metadata": {
-            "heading": "RET:",
-            "doc_id": "non_small_cell_lung_NL",
-            "country": "NL",
-            "source_type": "clinical_guideline",
-            "start_page": 335,
-            "end_page": 336,
-            "created_date": "2012",
-            "folder_path": "nsclc_kras_g12c/clinical guidelines/NL",
-            "split_index": 0,
-            "text_length": 801,
-            "potential_comparators": [
-              "orcatinib",
-              "selpercatinib",
-              "Treat",
-              "Considerations",
-              "Both",
-              "selperkatinib"
+              "Important"
             ]
           }
         }
@@ -1265,245 +729,12 @@
     "SE": {
       "country_metadata": {
         "country_code": "SE",
-        "chunk_count": 12,
-        "total_text_length": 9272,
-        "unique_documents": 1,
-        "unique_headings": 10
+        "chunk_count": 0,
+        "total_text_length": 0,
+        "unique_documents": 0,
+        "unique_headings": 0
       },
-      "chunks": [
-        {
-          "text": "**Heading:** Following are summary recommendations for the treatment of lung cancer, which primarily relate to antitumor therapy. **Source Type:** clinical_guideline\n\nIn neo down NALA CANCERCENTRUM 1 Non-small cell lung cancer (NSCLC) 1.1 Tumor Stage III (local disease) treatment at Stage IIII is administered for curative purposes. patients with current WHO performance status (PS) 02 should be offered radical surgery if the risk of surgery is reasonably assessed taking into account cardiac and pulmonary function and susceptibility. oromies with carcino-lobotomy, metastatic or pulmonar minimally invasive surgery (SVAT) in the deep lymph nodes are considered to constitute a complete alternative therapy for the removal of small tumors without platelets, or where there is insufficient clinical evidence to demonstrate that the medication is adequate for the purpose. In patients with EGFR-positive (activating EGFR mutations) NSC adium IB, II or IIIA (see also below) who have undergone complete surgical sectioning, adjuvant treatment with osimertinib is recommended.",
-          "metadata": {
-            "heading": "Following are summary recommendations for the treatment of lung cancer, which primarily relate to antitumor therapy.",
-            "doc_id": "lung_SE",
-            "country": "SE",
-            "source_type": "clinical_guideline",
-            "start_page": 101,
-            "end_page": 102,
-            "created_date": "2024",
-            "folder_path": "nsclc_kras_g12c/clinical guidelines/SE",
-            "split_index": 0,
-            "text_length": 1075,
-            "potential_comparators": [
-              "osimertinib"
-            ]
-          }
-        },
-        {
-          "text": "**Heading:** 20.4.1 Background and state of evidence **Source Type:** clinical_guideline\n\nThe recommendations in this chapter are based on international guidelines [62, 435] and on a national survey of clinicians treating and following patients with lung cancer. Patients treated with curative intent should be followed to detect treatable relapses, treatment-related complications or a new primary lung cancer; apart from a small under-scale study, there are no prospective comparative studies where the question of what is the most effective follow-up of these patients has been studied [436]. The frequency and methods of follow up are primarily governed by knowledge of relapse patterns, evidence of failure of previously detected recurrence and treatment leading to a better outcome.",
-          "metadata": {
-            "heading": "20.4.1 Background and state of evidence",
-            "doc_id": "lung_SE",
-            "country": "SE",
-            "source_type": "clinical_guideline",
-            "start_page": 247,
-            "end_page": 247,
-            "created_date": "2024",
-            "folder_path": "nsclc_kras_g12c/clinical guidelines/SE",
-            "split_index": 0,
-            "text_length": 788,
-            "potential_comparators": [
-              "Patients"
-            ]
-          }
-        },
-        {
-          "text": "**Heading:** Targeted therapy **Source Type:** clinical_guideline\n\n• In patients with NSCLC, regardless of histological subtype, and PD-L ≥ 50% in tumour cells, monotherapy with pembrolizumab, atelizolam or cemiplimab are treatment options. For atezolizumab, the indication applies to PD-L1 expression ≥ 10% in tumour infiltrating immune cells. • Patients with PS2 or at increased risk of complications on immunotherapy should be offered conventional cytostatic therapy in combination with platinum. • For tumour progression following primary cytotoxic therapy, first-line monotherapy with a PD-1 or PD- L1 inhibitor, i. e. docetaxel or pemetrexed, is recommended.",
-          "metadata": {
-            "heading": "Targeted therapy",
-            "doc_id": "lung_SE",
-            "country": "SE",
-            "source_type": "clinical_guideline",
-            "start_page": 104,
-            "end_page": 106,
-            "created_date": "2024",
-            "folder_path": "nsclc_kras_g12c/clinical guidelines/SE",
-            "split_index": 1,
-            "text_length": 664,
-            "potential_comparators": [
-              "pembrolizumab",
-              "atezolizumab",
-              "cemiplimab"
-            ]
-          }
-        },
-        {
-          "text": "**Source Type:** clinical_guideline\n\nresources 24.3 Authors 24.4 Planning group References Annex 1 Patient information Gist and quality in the course of the year (SV years) lung cancer is a complex subject, where decisions about diagnosis, treatment and care must be based on background knowledge and understanding of the patient's situation. Therefore, the document contains both recommendations on diagnosis and treatment as well as factual review, and sections that are more of a textbook nature of the programme should not be seen as a 'cookbook', but as a framework document on certain points requiring regional or local concretisation, such as what is the rate or method choice where there are several equally valid alternatives, and what are the regulatory aspects of care that may differ between different regions.",
-          "metadata": {
-            "heading": "",
-            "doc_id": "lung_SE",
-            "country": "SE",
-            "source_type": "clinical_guideline",
-            "start_page": 1,
-            "end_page": 12,
-            "created_date": "2024",
-            "folder_path": "nsclc_kras_g12c/clinical guidelines/SE",
-            "split_index": "6_1_0",
-            "text_length": 822,
-            "potential_comparators": [
-              "Therefore"
-            ]
-          }
-        },
-        {
-          "text": "**Heading:** Following are summary recommendations for the treatment of lung cancer, which primarily relate to antitumor therapy. **Source Type:** clinical_guideline\n\nTreatment with atezolizumab is continued after completion of cytostatic therapy and is given for up to 1 year. d tumour stage II-IIIA may in selected cases be considered preoperative non-adjuvant drug therapy followed by surgical resection (see also Dan).",
-          "metadata": {
-            "heading": "Following are summary recommendations for the treatment of lung cancer, which primarily relate to antitumor therapy.",
-            "doc_id": "lung_SE",
-            "country": "SE",
-            "source_type": "clinical_guideline",
-            "start_page": 101,
-            "end_page": 102,
-            "created_date": "2024",
-            "folder_path": "nsclc_kras_g12c/clinical guidelines/SE",
-            "split_index": 1,
-            "text_length": 422,
-            "potential_comparators": [
-              "atezolizumab"
-            ]
-          }
-        },
-        {
-          "text": "**Heading:** 14.1.2.3.4 Other preparations **Source Type:** clinical_guideline\n\nThe indication is based on a randomised study (LUX-Lung 8) of 795 patients with squamosal progestin-type NLC who received chemotherapy, including second-line immunotherapy and the superior efficacy of EGFR TKIs in patients with activating EGFR mutations, and whose survival was statistically significant at 6,29 months and 7,98 months, respectively (median survival of HRT = 7.009 or 0.009), but showed no statistical significance with OSB or HRTINIB. In view of the modest efficacy of both medicinal products and other available options for the treatment of relapsed squamous cell carcinoma, neither erlotinib nor afatinib can be considered as standard therapy in this patient population.",
-          "metadata": {
-            "heading": "14.1.2.3.4 Other preparations",
-            "doc_id": "lung_SE",
-            "country": "SE",
-            "source_type": "clinical_guideline",
-            "start_page": 172,
-            "end_page": 172,
-            "created_date": "2024",
-            "folder_path": "nsclc_kras_g12c/clinical guidelines/SE",
-            "split_index": 1,
-            "text_length": 769,
-            "potential_comparators": [
-              "afatinib",
-              "hrtinib",
-              "erlotinib"
-            ]
-          }
-        },
-        {
-          "text": "**Heading:** Other tumour genetic variants **Source Type:** clinical_guideline\n\nBased on the above, we see both kapmatinib and tepotinib as potential treatment alternatives in patients who are progressing to other systemic therapies with advanced MECLC and METEx14-skipping mutations. In 2023, trastuzumab-deruxtecane was approved in the indication advanced NSCLC with activating HER2 mutation and requiring systemic treatment following platinum-based chemotherapy with or without immunotherapy. The approval is based on the DESTINY-Lung02 [255] study, a randomised phase II study of two dose levels of the preparation vs (5.4 and 6.4 mg/ kg i. v. Q3W), with response rates (ORR) of 49.0% and 56.0% and duration of response of 16.8 months respectively not achieved.",
-          "metadata": {
-            "heading": "Other tumour genetic variants",
-            "doc_id": "lung_SE",
-            "country": "SE",
-            "source_type": "clinical_guideline",
-            "start_page": 158,
-            "end_page": 159,
-            "created_date": "2024",
-            "folder_path": "nsclc_kras_g12c/clinical guidelines/SE",
-            "split_index": 2,
-            "text_length": 765,
-            "potential_comparators": [
-              "trastuzumab",
-              "Q3W",
-              "kapmatinib",
-              "tepotinib"
-            ]
-          }
-        },
-        {
-          "text": "**Heading:** In a study of 272 patients with relapsed or refractory renal cell carcinoma, docetaxel was used in the control arm. **Source Type:** clinical_guideline\n\nIn a study of 582 patients with NSCLC other than squamous cell carcinoma (CheckMate 057), a corresponding survival gain was seen with nivolumab (mOS 12.2 and 9.4 months, HR 0.73 [0.590.89]; p = 0.002) [290]. Pembrolizumab has been studied in a randomised study of 1,034 patients with NSCLC, all histological types (KEYNOTE-010), who relapsed after prior chemotherapy [291]. Only patients with PD-L1 expression in at least 1% of tumour cells were included; the study showed a survival gain with pembrolizumab versus docetaxel (mOS 10.4 months with 2 mg/ kg and 12.7 months with 10 mg/kg and 8.5 months with docetaxil; HR 0.71 [0.580.88], p = 0.0008 and HR 0.61 [0.490.75], p < 0.0001); the survival gains were greatest in patients with a PD- L1 expression of at least 50% of the tumour cell (median OS 14.9 months with two mg/ kilogram and 17.3 months with ten mg/ Kg, HR 0.54 [0.330.77], p= 0.0002 and 0.50 HR [0.360.70], p< 0.0001).",
-          "metadata": {
-            "heading": "In a study of 272 patients with relapsed or refractory renal cell carcinoma, docetaxel was used in the control arm.",
-            "doc_id": "lung_SE",
-            "country": "SE",
-            "source_type": "clinical_guideline",
-            "start_page": 170,
-            "end_page": 171,
-            "created_date": "2024",
-            "folder_path": "nsclc_kras_g12c/clinical guidelines/SE",
-            "split_index": 0,
-            "text_length": 1099,
-            "potential_comparators": [
-              "Pembrolizumab",
-              "with 10 mg",
-              "with 2 mg",
-              "pembrolizumab",
-              "Only",
-              "nivolumab"
-            ]
-          }
-        },
-        {
-          "text": "**Heading:** Recommended use: **Source Type:** clinical_guideline\n\n• In patients with EGFR-positive NSCLC, stage IB-IIIA, who have undergone complete surgical resection, adjuvant therapy with osimertinib is recommended.Treatment is given for up to three years.In patients where conventional adjuvent cytostatic therapy is planned, this clinical practice should be followed prior to initiation of treatment with Osimertinib. • Patients with stage IIIA-NSCLC with elevated PD-L1 (≥ 50% in the EC), preoperative tumour cell mutation or non-surgical tumour resection may be followed by placebo-controlled treatment with 1% or more of the tumour remaining after surgery.",
-          "metadata": {
-            "heading": "Recommended use:",
-            "doc_id": "lung_SE",
-            "country": "SE",
-            "source_type": "clinical_guideline",
-            "start_page": 139,
-            "end_page": 139,
-            "created_date": "2024",
-            "folder_path": "nsclc_kras_g12c/clinical guidelines/SE",
-            "split_index": 0,
-            "text_length": 665,
-            "potential_comparators": [
-              "osimertinib"
-            ]
-          }
-        },
-        {
-          "text": "**Heading:** Recommendations to be followed **Source Type:** clinical_guideline\n\n• All patients with lung cancer, lung carcinoma and thymoma should be registered in the National Lung Cancer Registry (NLCR). • The Individual Patient Overview (IPO) in the NLCR provides a real-time overview of the patient' s treatment and its outcome. • Data from the",
-          "metadata": {
-            "heading": "Recommendations to be followed",
-            "doc_id": "lung_SE",
-            "country": "SE",
-            "source_type": "clinical_guideline",
-            "start_page": 254,
-            "end_page": 254,
-            "created_date": "2024",
-            "folder_path": "nsclc_kras_g12c/clinical guidelines/SE",
-            "split_index": 0,
-            "text_length": 349,
-            "potential_comparators": []
-          }
-        },
-        {
-          "text": "**Heading:** In patients with poor PS, consideration should be given to reducing doses. **Source Type:** clinical_guideline\n\nIn an older analysis of 1,714 patients with widespread SCLC enrolled in 9 consecutive therapeutic trials, the 5-year survival rate was only 2% [301]. However, curative outcomes can be achieved in 10-20% of cases with limited disease. A summary assessment of nine randomised trials examining the duration of SCLC treatment does not support longer primary treatment than four cycles [302]. Longer treatment is likely to provide more evidence of toxicity without gains in survival or quality of life. However, studies have shown that survival after chemotherapy is important and the patient's response to immunotherapy (immunotherapy) has decreased, and no medications are currently recommended to improve the overall outcome in patients with SCLC.",
-          "metadata": {
-            "heading": "In patients with poor PS, consideration should be given to reducing doses.",
-            "doc_id": "lung_SE",
-            "country": "SE",
-            "source_type": "clinical_guideline",
-            "start_page": 174,
-            "end_page": 174,
-            "created_date": "2024",
-            "folder_path": "nsclc_kras_g12c/clinical guidelines/SE",
-            "split_index": 0,
-            "text_length": 870,
-            "potential_comparators": [
-              "Longer",
-              "However"
-            ]
-          }
-        },
-        {
-          "text": "**Heading:** Regional Cancer Centre and PS 0 or 1. **Source Type:** clinical_guideline\n\nwith atezolizumab or bevazizumab; the latter combination may also be administered to patients with EGFR mutations or ALK fusions if they have first received treatment with the EGFR and ALK TKIs, respectively. • Cemiplimab is given in NSCLC as an induction therapy in conjunction with a platinum-based cytostatic agent, selected on histological grounds, followed up by maintenance treatment with cemiplimab, and, where appropriate, also pemetrexed. The indication is limited to patients with ≥ 1% PD-L1 expression in tumour cells. • Iplilimumab + nivolumab is given in combination with a platinum-based cytostatic agent, selected for histological reasons, over two treatment cycles, followed by maintenance therapy with ipilimumabe + nivulumab. • Atezolizumab monotherapy is a treatment option in patients with NSCLC and PD- L1 expression ≥ 50% in tumor cells or ≥ 10% in tumor infiltrating cells.",
-          "metadata": {
-            "heading": "Regional Cancer Centre and PS 0 or 1.",
-            "doc_id": "lung_SE",
-            "country": "SE",
-            "source_type": "clinical_guideline",
-            "start_page": 166,
-            "end_page": 168,
-            "created_date": "2024",
-            "folder_path": "nsclc_kras_g12c/clinical guidelines/SE",
-            "split_index": "1_1_0",
-            "text_length": 984,
-            "potential_comparators": [
-              "iplilimumab",
-              "nivulumab",
-              "bevazizumab",
-              "atezolizumab",
-              "nivolumab",
-              "cemiplimab"
-            ]
-          }
-        }
-      ]
+      "chunks": []
     }
   }
 }

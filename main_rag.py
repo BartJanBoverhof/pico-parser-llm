@@ -78,7 +78,12 @@ rag.initialize_retriever(vectorstore_type=VECTORSTORE_TYPE)
 
 # Test Case 1: NSCLC with KRAS G12C mutation
 print("\n--- Testing Case 1: NSCLC KRAS G12C Retrieval ---")
-case1_indication = CASE_CONFIGS["case_1_nsclc_krasg12c_monotherapy_progressed"]["indication"]
+case1_config = CASE_CONFIGS["case_1_nsclc_krasg12c_monotherapy_progressed"]
+case1_indication = case1_config["indication"]
+
+# Get case-specific parameters
+case1_required_terms = case1_config.get("required_terms_clinical")
+case1_mutation_boost = case1_config.get("mutation_boost_terms", [])
 
 # Test HTA submission retrieval for Case 1
 hta_config = SOURCE_TYPE_CONFIGS["hta_submission"]
@@ -89,12 +94,12 @@ hta_test_results_case1 = rag.test_retrieval(
     countries=COUNTRIES,
     source_type="hta_submission",
     heading_keywords=hta_config["default_headings"],
-    drug_keywords=hta_config["default_drugs"],
-    initial_k=24,
-    final_k=12
+    mutation_boost_terms=case1_mutation_boost,
+    initial_k=30,
+    final_k=30
 )
 
-# Test Clinical Guideline retrieval for Case 1
+# Test Clinical Guideline retrieval for Case 1 with required terms
 clinical_config = SOURCE_TYPE_CONFIGS["clinical_guideline"]
 clinical_query_case1 = clinical_config["query_template"].format(indication=case1_indication)
 
@@ -103,10 +108,14 @@ clinical_test_results_case1 = rag.test_retrieval(
     countries=COUNTRIES,
     source_type="clinical_guideline",
     heading_keywords=clinical_config["default_headings"],
-    drug_keywords=clinical_config["default_drugs"],
+    required_terms=case1_required_terms,
+    mutation_boost_terms=case1_mutation_boost,
     initial_k=60,
-    final_k=12
+    final_k=30
 )
+
+""""""
+
 
 # Initialize PICO extractors for both source types
 rag.initialize_pico_extractors()
@@ -115,15 +124,20 @@ rag.initialize_pico_extractors()
 print("\n--- Extracting Case 1 HTA Submission PICOs ---")
 extracted_picos_hta_case1 = rag.extract_picos_hta_with_indication(
     countries=COUNTRIES,
-    indication=case1_indication
+    indication=case1_indication,
+    mutation_boost_terms=case1_mutation_boost
 )
 
-# Process clinical guidelines for Case 1
+# Process clinical guidelines for Case 1 with required terms
 print("\n--- Extracting Case 1 Clinical Guideline PICOs ---")
 extracted_picos_clinical_case1 = rag.extract_picos_clinical_with_indication(
     countries=COUNTRIES,
-    indication=case1_indication
+    indication=case1_indication,
+    required_terms=case1_required_terms,
+    mutation_boost_terms=case1_mutation_boost
 )
+
+
 
 # Print extracted PICOs for Case 1
 print("\n=== CASE 1 - NSCLC KRAS G12C HTA SUBMISSION PICOS ===")
@@ -159,7 +173,13 @@ for pico in extracted_picos_clinical_case1:
 """
 # Test Case 2: Hepatocellular Carcinoma
 print("\n--- Testing Case 2: HCC Advanced Unresectable Retrieval ---")
-case2_indication = CASE_CONFIGS["case_2_hcc_advanced_unresectable"]["indication"]
+case2_config = CASE_CONFIGS["case_2_hcc_advanced_unresectable"]
+case2_indication = case2_config["indication"]
+
+# Get case-specific parameters
+case2_required_terms = case2_config.get("required_terms_clinical")
+case2_mutation_boost = case2_config.get("mutation_boost_terms", [])
+case2_drug_keywords = case2_config.get("drug_keywords", [])
 
 # Test HTA submission retrieval for Case 2
 hta_query_case2 = hta_config["query_template"].format(indication=case2_indication)
@@ -169,7 +189,8 @@ hta_test_results_case2 = rag.test_retrieval(
     countries=COUNTRIES,
     source_type="hta_submission",
     heading_keywords=hta_config["default_headings"],
-    drug_keywords=hta_config["default_drugs"],
+    drug_keywords=case2_drug_keywords,
+    mutation_boost_terms=case2_mutation_boost,
     initial_k=30,
     final_k=15
 )
@@ -182,7 +203,9 @@ clinical_test_results_case2 = rag.test_retrieval(
     countries=COUNTRIES,
     source_type="clinical_guideline",
     heading_keywords=clinical_config["default_headings"],
-    drug_keywords=clinical_config["default_drugs"],
+    drug_keywords=case2_drug_keywords,
+    required_terms=case2_required_terms,
+    mutation_boost_terms=case2_mutation_boost,
     initial_k=50,
     final_k=10
 )
@@ -192,7 +215,9 @@ clinical_test_results_case2 = rag.test_retrieval(
 print("\n--- Extracting Case 2 HTA Submission PICOs ---")
 extracted_picos_hta_case2 = rag.extract_picos_hta_with_indication(
     countries=COUNTRIES,
-    indication=case2_indication
+    indication=case2_indication,
+    drug_keywords=case2_drug_keywords,
+    mutation_boost_terms=case2_mutation_boost
 )
 
 
@@ -200,7 +225,10 @@ extracted_picos_hta_case2 = rag.extract_picos_hta_with_indication(
 print("\n--- Extracting Case 2 Clinical Guideline PICOs ---")
 extracted_picos_clinical_case2 = rag.extract_picos_clinical_with_indication(
     countries=COUNTRIES,
-    indication=case2_indication
+    indication=case2_indication,
+    required_terms=case2_required_terms,
+    mutation_boost_terms=case2_mutation_boost,
+    drug_keywords=case2_drug_keywords
 )
 
 # Print extracted PICOs for Case 2
@@ -243,8 +271,10 @@ print("✓ PICO extraction completed for both source types and cases")
 print(f"✓ Results saved to JSON files in 'results' directory")
 print(f"✓ Case 1 HTA submissions: {len(extracted_picos_hta_case1)} countries processed")
 print(f"✓ Case 1 Clinical guidelines: {len(extracted_picos_clinical_case1)} countries processed")
+"""
 print(f"✓ Case 2 HTA submissions: {len(extracted_picos_hta_case2)} countries processed")
 print(f"✓ Case 2 Clinical guidelines: {len(extracted_picos_clinical_case2)} countries processed")
+"""
 print(f"✓ Model used: {MODEL}")
 print(f"✓ Vectorstore: {VECTORSTORE_TYPE}")
 
