@@ -176,6 +176,5 @@ print(f"✓ Vectorstore: {VECTORSTORE_TYPE}")
 # Print file locations
 print("\n=== OUTPUT FILES ===")
 print("📁 Chunk retrieval results: results/chunks/*_retrieval_results.json")
-print("📁 Organized PICOs: results/PICO/*_picos_organized.json")
-print("📁 Legacy retrieval results: results/*_retrieval_results.json")
-print("📁 Legacy individual country files: results/*_picos_*.json")
+print("📁 HTA submission PICOs: results/PICO/hta_submission_picos.json")
+print("📁 Clinical guideline PICOs: results/PICO/clinical_guideline_picos.json")

@@ -261,25 +261,12 @@ class PICOExtractor:
             country = country_picos.get("Country", "Unknown")
             organized_data["picos_by_country"][country] = country_picos
         
-        if indication:
-            indication_short = indication.split()[0].lower() if indication else "unknown"
-            filename = f"{source_type}_{indication_short}_picos_organized.json"
-        else:
-            filename = f"{source_type}_picos_organized.json"
-        
+        filename = f"{source_type}_picos.json"
         filepath = os.path.join(self.pico_output_dir, filename)
         
         with open(filepath, "w", encoding="utf-8") as f:
             json.dump(organized_data, f, indent=2, ensure_ascii=False)
         
         print(f"Saved organized PICOs to {filepath}")
-        
-        for country_picos in extracted_picos:
-            country = country_picos.get("Country", "Unknown")
-            individual_filename = f"{source_type}_picos_{country}.json"
-            individual_filepath = os.path.join(self.pico_output_dir, individual_filename)
-            
-            with open(individual_filepath, "w", encoding="utf-8") as f:
-                json.dump(country_picos, f, indent=2, ensure_ascii=False)
         
         return filepath
