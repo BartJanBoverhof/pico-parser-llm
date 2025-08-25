@@ -16,12 +16,14 @@ class PICOExtractor:
         self,
         system_prompt: str,
         user_prompt_template: str,
+        source_type: str,
         model_name: str = "gpt-4o-mini",
         results_output_dir: str = "results",
         max_tokens: int = 12000
     ):
         self.system_prompt = system_prompt
         self.user_prompt_template = user_prompt_template
+        self.source_type = source_type
         self.model_name = model_name
         self.max_tokens = max_tokens
         self.results_output_dir = results_output_dir
@@ -111,10 +113,22 @@ class PICOExtractor:
         
         return "\n\n".join(context_parts)
 
+    def get_example_comparator(self, source_type: str) -> str:
+        """
+        Get an appropriate example comparator based on source type.
+        """
+        if source_type == "hta_submission":
+            return "standard of care therapy"
+        elif source_type == "clinical_guideline":
+            return "recommended alternative therapy"
+        else:
+            return "appropriate comparator"
+
     def extract_picos_from_context(
         self,
         context: str,
         indication: str,
+        source_type: str = "hta_submission",
         model_override: Optional[Union[str, ChatOpenAI]] = None
     ) -> Dict[str, Any]:
         """
@@ -128,8 +142,11 @@ class PICOExtractor:
             }
         
         try:
+            example_comparator = self.get_example_comparator(source_type)
+            
             user_prompt = self.user_prompt_template.format(
                 indication=indication,
+                example_comparator=example_comparator,
                 context_block=context
             )
             
@@ -178,16 +195,18 @@ class PICOExtractor:
 
     def extract_picos(
         self,
-        source_type: str,
+        source_type: Optional[str] = None,
         indication: Optional[str] = None,
         model_override: Optional[Union[str, ChatOpenAI]] = None
     ) -> List[Dict[str, Any]]:
         """
         Extract PICOs from pre-stored chunks for a specific source type.
         """
-        chunk_file_path = self.find_chunk_file(source_type, indication)
+        source_type_to_use = source_type or self.source_type
+        
+        chunk_file_path = self.find_chunk_file(source_type_to_use, indication)
         if not chunk_file_path:
-            print(f"No chunk file found for source_type: {source_type}")
+            print(f"No chunk file found for source_type: {source_type_to_use}")
             return []
         
         print(f"Loading chunks from: {chunk_file_path}")
@@ -219,6 +238,7 @@ class PICOExtractor:
             pico_result = self.extract_picos_from_context(
                 context=context,
                 indication=indication_from_metadata,
+                source_type=source_type_to_use,
                 model_override=model_override
             )
             
@@ -231,7 +251,7 @@ class PICOExtractor:
             print(f"Extracted {len(pico_result.get('PICOs', []))} PICOs for {country}")
         
         if extracted_picos:
-            self.save_extracted_picos(extracted_picos, source_type, indication_from_metadata)
+            self.save_extracted_picos(extracted_picos, source_type_to_use, indication_from_metadata)
         
         return extracted_picos
 

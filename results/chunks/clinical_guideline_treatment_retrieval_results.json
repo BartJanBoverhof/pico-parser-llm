@@ -1,6 +1,6 @@
 {
   "retrieval_metadata": {
-    "timestamp": "2025-08-25T14:13:53.265477",
+    "timestamp": "2025-08-25T16:02:26.382005",
     "source_type": "clinical_guideline",
     "query": "Find passages with treatment recommendations relevant to: treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context.\n        Prefer content that states:\n        - Applicable populations and sub-populations (biomarkers/testing, prior therapy/line, inclusion/exclusion)\n        - Recommended options and alternatives/SoC that could serve as comparators\n        - Outcomes/expected benefits/harms and any evidence strength/level if provided",
     "indication": "treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context",

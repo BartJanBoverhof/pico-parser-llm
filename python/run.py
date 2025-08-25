@@ -223,6 +223,7 @@ class RagPipeline:
             self.pico_extractor_hta = PICOExtractor(
                 system_prompt=hta_config["system_prompt"],
                 user_prompt_template=hta_config["user_prompt_template"],
+                source_type="hta_submission",
                 model_name=self.model,
                 results_output_dir=self.path_results
             )
@@ -232,6 +233,7 @@ class RagPipeline:
             self.pico_extractor_clinical = PICOExtractor(
                 system_prompt=clinical_config["system_prompt"],
                 user_prompt_template=clinical_config["user_prompt_template"],
+                source_type="clinical_guideline",
                 model_name=self.model,
                 results_output_dir=self.path_results
             )
@@ -356,7 +358,6 @@ class RagPipeline:
             raise ValueError(f"Unsupported source_type: {source_type}")
             
         extracted_picos = extractor.extract_picos(
-            source_type=source_type,
             indication=indication,
             model_override=model_override
         )
