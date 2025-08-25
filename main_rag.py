@@ -114,30 +114,51 @@ clinical_test_results_case1 = rag.test_retrieval(
     final_k=30
 )
 
-""""""
+# Step 7: Run retrieval for Case 1 (saves chunks to results/chunks)
+print("\n--- Running Case 1 Retrieval Step ---")
 
-
-# Initialize PICO extractors for both source types
-rag.initialize_pico_extractors()
-
-# Process HTA submissions for Case 1
-print("\n--- Extracting Case 1 HTA Submission PICOs ---")
-extracted_picos_hta_case1 = rag.extract_picos_hta_with_indication(
+# Run HTA retrieval for Case 1
+print("Running HTA retrieval for Case 1...")
+rag.run_retrieval_for_source_type(
+    source_type="hta_submission",
     countries=COUNTRIES,
     indication=case1_indication,
-    mutation_boost_terms=case1_mutation_boost
+    mutation_boost_terms=case1_mutation_boost,
+    initial_k=30,
+    final_k=30
 )
 
-# Process clinical guidelines for Case 1 with required terms
-print("\n--- Extracting Case 1 Clinical Guideline PICOs ---")
-extracted_picos_clinical_case1 = rag.extract_picos_clinical_with_indication(
+# Run Clinical Guideline retrieval for Case 1
+print("Running Clinical Guideline retrieval for Case 1...")
+rag.run_retrieval_for_source_type(
+    source_type="clinical_guideline", 
     countries=COUNTRIES,
     indication=case1_indication,
     required_terms=case1_required_terms,
-    mutation_boost_terms=case1_mutation_boost
+    mutation_boost_terms=case1_mutation_boost,
+    initial_k=60,
+    final_k=30
 )
 
+# Step 8: Initialize PICO extractors
+rag.initialize_pico_extractors()
 
+# Step 9: Run PICO extraction for Case 1 (uses stored chunks from results/chunks)
+print("\n--- Running Case 1 PICO Extraction Step ---")
+
+# Extract PICOs from HTA submissions for Case 1
+print("Extracting Case 1 HTA Submission PICOs...")
+extracted_picos_hta_case1 = rag.run_pico_extraction_for_source_type(
+    source_type="hta_submission",
+    indication=case1_indication
+)
+
+# Extract PICOs from clinical guidelines for Case 1
+print("Extracting Case 1 Clinical Guideline PICOs...")
+extracted_picos_clinical_case1 = rag.run_pico_extraction_for_source_type(
+    source_type="clinical_guideline",
+    indication=case1_indication
+)
 
 # Print extracted PICOs for Case 1
 print("\n=== CASE 1 - NSCLC KRAS G12C HTA SUBMISSION PICOS ===")
@@ -210,25 +231,49 @@ clinical_test_results_case2 = rag.test_retrieval(
     final_k=10
 )
 
+# Run retrieval for Case 2 (saves chunks to results/chunks)
+print("\n--- Running Case 2 Retrieval Step ---")
 
-# Process HTA submissions for Case 2
-print("\n--- Extracting Case 2 HTA Submission PICOs ---")
-extracted_picos_hta_case2 = rag.extract_picos_hta_with_indication(
+# Run HTA retrieval for Case 2
+print("Running HTA retrieval for Case 2...")
+rag.run_retrieval_for_source_type(
+    source_type="hta_submission",
     countries=COUNTRIES,
     indication=case2_indication,
     drug_keywords=case2_drug_keywords,
-    mutation_boost_terms=case2_mutation_boost
+    mutation_boost_terms=case2_mutation_boost,
+    initial_k=30,
+    final_k=15
 )
 
-
-# Process clinical guidelines for Case 2
-print("\n--- Extracting Case 2 Clinical Guideline PICOs ---")
-extracted_picos_clinical_case2 = rag.extract_picos_clinical_with_indication(
+# Run Clinical Guideline retrieval for Case 2
+print("Running Clinical Guideline retrieval for Case 2...")
+rag.run_retrieval_for_source_type(
+    source_type="clinical_guideline",
     countries=COUNTRIES,
     indication=case2_indication,
     required_terms=case2_required_terms,
     mutation_boost_terms=case2_mutation_boost,
-    drug_keywords=case2_drug_keywords
+    drug_keywords=case2_drug_keywords,
+    initial_k=50,
+    final_k=10
+)
+
+# Run PICO extraction for Case 2 (uses stored chunks from results/chunks)
+print("\n--- Running Case 2 PICO Extraction Step ---")
+
+# Extract PICOs from HTA submissions for Case 2
+print("Extracting Case 2 HTA Submission PICOs...")
+extracted_picos_hta_case2 = rag.run_pico_extraction_for_source_type(
+    source_type="hta_submission",
+    indication=case2_indication
+)
+
+# Extract PICOs from clinical guidelines for Case 2
+print("Extracting Case 2 Clinical Guideline PICOs...")
+extracted_picos_clinical_case2 = rag.run_pico_extraction_for_source_type(
+    source_type="clinical_guideline",
+    indication=case2_indication
 )
 
 # Print extracted PICOs for Case 2
@@ -267,8 +312,8 @@ for pico in extracted_picos_clinical_case2:
 print("\n=== PIPELINE EXECUTION SUMMARY ===")
 print("✓ Documents processed and vectorized")
 print("✓ Retrieval system initialized with enhanced capabilities")
-print("✓ PICO extraction completed for both source types and cases")
-print(f"✓ Results saved to JSON files in 'results' directory")
+print("✓ Chunk retrieval completed and saved to results/chunks")
+print("✓ PICO extraction completed and saved to results/PICO")
 print(f"✓ Case 1 HTA submissions: {len(extracted_picos_hta_case1)} countries processed")
 print(f"✓ Case 1 Clinical guidelines: {len(extracted_picos_clinical_case1)} countries processed")
 """
@@ -280,6 +325,7 @@ print(f"✓ Vectorstore: {VECTORSTORE_TYPE}")
 
 # Print file locations
 print("\n=== OUTPUT FILES ===")
-print("📁 Retrieval results: results/*_retrieval_results.json")
-print("📁 Organized PICOs: results/*picos_organized.json")
-print("📁 Individual country files: results/*_picos_*.json")
+print("📁 Chunk retrieval results: results/chunks/*_retrieval_results.json")
+print("📁 Organized PICOs: results/PICO/*_picos_organized.json")
+print("📁 Legacy retrieval results: results/*_retrieval_results.json")
+print("📁 Legacy individual country files: results/*_picos_*.json")

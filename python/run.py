@@ -20,7 +20,7 @@ from python.open_ai import validate_api_key
 from openai import OpenAI
 
 from langchain.schema import SystemMessage, HumanMessage
-
+from langchain_openai import ChatOpenAI
 
 class RagPipeline:
     """
@@ -76,10 +76,17 @@ class RagPipeline:
         self.path_chunked = chunked_path
         self.path_vectorstore = vectorstore_path
         self.path_results = results_path
+        self.path_chunks = os.path.join(results_path, "chunks")
+        self.path_pico = os.path.join(results_path, "PICO")
         self.chunk_size = chunk_size
         self.chunk_overlap = chunk_overlap
         self.chunk_strategy = chunk_strategy
         self.vectorstore_type = vectorstore_type
+
+        # Create directories
+        os.makedirs(self.path_results, exist_ok=True)
+        os.makedirs(self.path_chunks, exist_ok=True)
+        os.makedirs(self.path_pico, exist_ok=True)
 
         # Initialize OpenAI client
         self.openai = OpenAI()
@@ -227,10 +234,6 @@ class RagPipeline:
 
     def initialize_pico_extractors(self):
         """Initialize separate PICO extractors for HTA and clinical guideline sources."""
-        if self.retriever is None:
-            print("Retriever not initialized. Please run initialize_retriever first.")
-            return
-            
         if not self.source_type_configs:
             print("Source type configurations not provided. Cannot initialize PICO extractors.")
             return
@@ -239,7 +242,6 @@ class RagPipeline:
         if "hta_submission" in self.source_type_configs:
             hta_config = self.source_type_configs["hta_submission"]
             self.pico_extractor_hta = PICOExtractor(
-                chunk_retriever=self.retriever,
                 system_prompt=hta_config["system_prompt"],
                 user_prompt_template=hta_config["user_prompt_template"],
                 model_name=self.model,
@@ -250,7 +252,6 @@ class RagPipeline:
         if "clinical_guideline" in self.source_type_configs:
             clinical_config = self.source_type_configs["clinical_guideline"]
             self.pico_extractor_clinical = PICOExtractor(
-                chunk_retriever=self.retriever,
                 system_prompt=clinical_config["system_prompt"],
                 user_prompt_template=clinical_config["user_prompt_template"],
                 model_name=self.model,
@@ -285,48 +286,34 @@ class RagPipeline:
         
         return sorted(list(countries))
 
-    def extract_picos_by_source_type(
+    def run_retrieval_for_source_type(
         self,
+        source_type: str,
         countries: List[str],
-        source_type: str = "hta_submission",
         query: Optional[str] = None,
         initial_k: int = 30,
         final_k: int = 15,
         heading_keywords: Optional[List[str]] = None,
         drug_keywords: Optional[List[str]] = None,
         required_terms: Optional[List[List[str]]] = None,
-        mutation_boost_terms: Optional[List[str]] = None
+        mutation_boost_terms: Optional[List[str]] = None,
+        indication: Optional[str] = None
     ):
         """
-        Extract PICOs from the specified countries and source type using specialized retrieval.
-        Special case: If 'ALL' is in countries, it will be replaced with all available countries.
-        
-        Args:
-            countries: List of country codes to extract PICOs from, or ["ALL"] for all countries
-            source_type: Source type to extract from ("hta_submission" or "clinical_guideline")
-            query: Query to use for retrieval (defaults to source-specific default query)
-            initial_k: Initial number of documents to retrieve
-            final_k: Final number of documents to use after filtering
-            heading_keywords: Keywords to look for in document headings
-            drug_keywords: Drug keywords for boosting relevance
-            required_terms: Required terms for strict filtering (mainly for clinical guidelines)
-            mutation_boost_terms: Terms to boost for mutation-specific retrieval
-        
-        Returns:
-            List of extracted PICOs
+        Run retrieval for a specific source type and save chunks to files.
         """
-        # Initialize extractors if not already done
-        if self.pico_extractor_hta is None or self.pico_extractor_clinical is None:
-            self.initialize_pico_extractors()
+        if self.retriever is None:
+            print("Retriever not initialized. Please run initialize_retriever first.")
+            return None
         
         # Handle the "ALL" special case
         if any(country == "ALL" for country in countries):
             all_countries = self.get_all_countries()
             if not all_countries:
                 print("No countries detected in the vectorstore. Please check your data.")
-                return []
+                return None
             countries = all_countries
-            print(f"Extracting {source_type} PICOs for all available countries: {', '.join(countries)}")
+            print(f"Retrieving {source_type} chunks for all available countries: {', '.join(countries)}")
         
         # Get source-specific configuration
         if source_type not in self.source_type_configs:
@@ -336,7 +323,10 @@ class RagPipeline:
         
         # Use defaults if not specified
         if query is None:
-            query = config.get("default_query", "")
+            if indication:
+                query = config["query_template"].format(indication=indication)
+            else:
+                query = config.get("default_query", "")
             
         if heading_keywords is None:
             heading_keywords = config["default_headings"]
@@ -347,6 +337,35 @@ class RagPipeline:
         if required_terms is None and "required_terms" in config:
             required_terms = config["required_terms"]
             
+        # Run retrieval and save chunks
+        test_results = self.retriever.test_retrieval(
+            query=query,
+            countries=countries,
+            source_type=source_type,
+            heading_keywords=heading_keywords,
+            drug_keywords=drug_keywords,
+            required_terms=required_terms,
+            mutation_boost_terms=mutation_boost_terms,
+            initial_k=initial_k,
+            final_k=final_k,
+            indication=indication
+        )
+        
+        return test_results
+
+    def run_pico_extraction_for_source_type(
+        self,
+        source_type: str,
+        indication: Optional[str] = None,
+        model_override: Optional[Union[str, ChatOpenAI]] = None
+    ):
+        """
+        Run PICO extraction for a specific source type using pre-stored chunks.
+        """
+        # Initialize extractors if not already done
+        if self.pico_extractor_hta is None or self.pico_extractor_clinical is None:
+            self.initialize_pico_extractors()
+        
         # Select appropriate extractor
         if source_type == "hta_submission":
             extractor = self.pico_extractor_hta
@@ -355,17 +374,55 @@ class RagPipeline:
         else:
             raise ValueError(f"Unsupported source_type: {source_type}")
             
-        # Extract PICOs with enhanced parameters
+        # Extract PICOs from stored chunks
         extracted_picos = extractor.extract_picos(
+            source_type=source_type,
+            indication=indication,
+            model_override=model_override
+        )
+        
+        return extracted_picos
+
+    def extract_picos_by_source_type(
+        self,
+        countries: List[str],
+        source_type: str = "hta_submission",
+        query: Optional[str] = None,
+        initial_k: int = 30,
+        final_k: int = 15,
+        heading_keywords: Optional[List[str]] = None,
+        drug_keywords: Optional[List[str]] = None,
+        required_terms: Optional[List[List[str]]] = None,
+        mutation_boost_terms: Optional[List[str]] = None,
+        indication: Optional[str] = None
+    ):
+        """
+        Extract PICOs from the specified countries and source type using two-step process.
+        """
+        # Step 1: Run retrieval
+        print(f"Step 1: Running retrieval for {source_type}")
+        retrieval_results = self.run_retrieval_for_source_type(
+            source_type=source_type,
             countries=countries,
             query=query,
-            source_type=source_type,
             initial_k=initial_k,
             final_k=final_k,
             heading_keywords=heading_keywords,
+            drug_keywords=drug_keywords,
             required_terms=required_terms,
             mutation_boost_terms=mutation_boost_terms,
-            drug_keywords=drug_keywords
+            indication=indication
+        )
+        
+        if retrieval_results is None:
+            print("Retrieval failed, cannot proceed with PICO extraction")
+            return []
+        
+        # Step 2: Run PICO extraction
+        print(f"Step 2: Running PICO extraction for {source_type}")
+        extracted_picos = self.run_pico_extraction_for_source_type(
+            source_type=source_type,
+            indication=indication
         )
         
         return extracted_picos
@@ -380,7 +437,7 @@ class RagPipeline:
         drug_keywords: Optional[List[str]] = None,
         mutation_boost_terms: Optional[List[str]] = None
     ):
-        """Extract PICOs specifically from HTA submissions using specialized retrieval."""
+        """Extract PICOs specifically from HTA submissions using two-step process."""
         return self.extract_picos_by_source_type(
             countries=countries,
             source_type="hta_submission",
@@ -403,7 +460,7 @@ class RagPipeline:
         required_terms: Optional[List[List[str]]] = None,
         mutation_boost_terms: Optional[List[str]] = None
     ):
-        """Extract PICOs specifically from clinical guidelines with configurable filtering."""
+        """Extract PICOs specifically from clinical guidelines using two-step process."""
         return self.extract_picos_by_source_type(
             countries=countries,
             source_type="clinical_guideline",
@@ -426,43 +483,17 @@ class RagPipeline:
         drug_keywords: Optional[List[str]] = None,
         mutation_boost_terms: Optional[List[str]] = None
     ):
-        """Extract PICOs from HTA submissions with parameterized indication."""
-        # Initialize extractors if not already done
-        if self.pico_extractor_hta is None:
-            self.initialize_pico_extractors()
-        
-        # Handle the "ALL" special case
-        if any(country == "ALL" for country in countries):
-            all_countries = self.get_all_countries()
-            if not all_countries:
-                print("No countries detected in the vectorstore. Please check your data.")
-                return []
-            countries = all_countries
-            print(f"Extracting HTA PICOs for all available countries: {', '.join(countries)}")
-        
-        # Get source-specific configuration
-        config = self.source_type_configs["hta_submission"]
-        
-        # Use defaults if not specified
-        if heading_keywords is None:
-            heading_keywords = config["default_headings"]
-            
-        if drug_keywords is None:
-            drug_keywords = config["default_drugs"]
-            
-        # Extract PICOs with indication parameterization
-        extracted_picos = self.pico_extractor_hta.extract_picos_with_indication(
+        """Extract PICOs from HTA submissions with parameterized indication using two-step process."""
+        return self.extract_picos_by_source_type(
             countries=countries,
-            indication=indication,
             source_type="hta_submission",
             initial_k=initial_k,
             final_k=final_k,
             heading_keywords=heading_keywords,
+            drug_keywords=drug_keywords,
             mutation_boost_terms=mutation_boost_terms,
-            drug_keywords=drug_keywords
+            indication=indication
         )
-        
-        return extracted_picos
 
     def extract_picos_clinical_with_indication(
         self,
@@ -475,47 +506,18 @@ class RagPipeline:
         required_terms: Optional[List[List[str]]] = None,
         mutation_boost_terms: Optional[List[str]] = None
     ):
-        """Extract PICOs from clinical guidelines with parameterized indication."""
-        # Initialize extractors if not already done
-        if self.pico_extractor_clinical is None:
-            self.initialize_pico_extractors()
-        
-        # Handle the "ALL" special case
-        if any(country == "ALL" for country in countries):
-            all_countries = self.get_all_countries()
-            if not all_countries:
-                print("No countries detected in the vectorstore. Please check your data.")
-                return []
-            countries = all_countries
-            print(f"Extracting clinical guideline PICOs for all available countries: {', '.join(countries)}")
-        
-        # Get source-specific configuration
-        config = self.source_type_configs["clinical_guideline"]
-        
-        # Use defaults if not specified
-        if heading_keywords is None:
-            heading_keywords = config["default_headings"]
-            
-        if drug_keywords is None:
-            drug_keywords = config["default_drugs"]
-            
-        if required_terms is None and "required_terms" in config:
-            required_terms = config["required_terms"]
-            
-        # Extract PICOs with indication parameterization
-        extracted_picos = self.pico_extractor_clinical.extract_picos_with_indication(
+        """Extract PICOs from clinical guidelines with parameterized indication using two-step process."""
+        return self.extract_picos_by_source_type(
             countries=countries,
-            indication=indication,
             source_type="clinical_guideline",
             initial_k=initial_k,
             final_k=final_k,
             heading_keywords=heading_keywords,
+            drug_keywords=drug_keywords,
             required_terms=required_terms,
             mutation_boost_terms=mutation_boost_terms,
-            drug_keywords=drug_keywords
+            indication=indication
         )
-        
-        return extracted_picos
 
     def extract_picos(
         self,
@@ -647,7 +649,7 @@ class RagPipeline:
         vectorstore_type: Optional[str] = None
     ):
         """
-        Run the full RAG pipeline for a specific source type with specialized retrieval.
+        Run the full RAG pipeline for a specific source type with two-step process.
         
         Args:
             source_type: Type of source to process ("hta_submission" or "clinical_guideline")
@@ -687,7 +689,7 @@ class RagPipeline:
         # Initialize PICO extractors
         self.initialize_pico_extractors()
         
-        # Extract PICOs based on source type using specialized retrieval
+        # Extract PICOs based on source type using two-step process
         extracted_picos = self.extract_picos_by_source_type(
             countries=countries,
             source_type=source_type
@@ -711,7 +713,7 @@ class RagPipeline:
         vectorstore_type: Optional[str] = None
     ):
         """
-        Run a configurable pipeline with custom parameters for any use case.
+        Run a configurable pipeline with custom parameters for any use case using two-step process.
         
         Args:
             source_type: Type of source to process
@@ -755,7 +757,7 @@ class RagPipeline:
         # Initialize PICO extractors
         self.initialize_pico_extractors()
         
-        # Extract PICOs with custom configuration
+        # Extract PICOs with custom configuration using two-step process
         extracted_picos = self.extract_picos_by_source_type(
             countries=countries,
             source_type=source_type,
@@ -782,7 +784,7 @@ class RagPipeline:
         vectorstore_type: Optional[str] = None
     ):
         """
-        Run pipeline for a specific case configuration with indication parameterization.
+        Run pipeline for a specific case configuration with indication parameterization using two-step process.
         
         Args:
             case_config: Case configuration dictionary with 'indication' key
@@ -831,7 +833,7 @@ class RagPipeline:
         # Initialize PICO extractors
         self.initialize_pico_extractors()
         
-        # Extract PICOs for each source type with indication parameterization
+        # Extract PICOs for each source type with indication parameterization using two-step process
         results = {}
         for source_type in source_types:
             if source_type == "hta_submission":

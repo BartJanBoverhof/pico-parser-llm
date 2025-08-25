@@ -186,7 +186,8 @@ class ChunkRetriever:
         self.similarity_utils = TextSimilarityUtils()
         self.context_manager = ContextManager()
         self.results_output_dir = results_output_dir
-        os.makedirs(self.results_output_dir, exist_ok=True)
+        self.chunks_output_dir = os.path.join(results_output_dir, "chunks")
+        os.makedirs(self.chunks_output_dir, exist_ok=True)
 
     def _build_filter(self, country: str, source_type: Optional[str] = None) -> Dict[str, Any]:
         """
@@ -586,7 +587,8 @@ class ChunkRetriever:
         results_by_country: Dict[str, List[Dict[str, Any]]],
         source_type: str,
         query: str,
-        timestamp: Optional[str] = None
+        timestamp: Optional[str] = None,
+        indication: Optional[str] = None
     ):
         """
         Save retrieval results to JSON file organized by source type and country.
@@ -600,6 +602,7 @@ class ChunkRetriever:
                 "timestamp": timestamp,
                 "source_type": source_type,
                 "query": query,
+                "indication": indication,
                 "total_countries": len(results_by_country),
                 "total_chunks": sum(len(chunks) for chunks in results_by_country.values())
             },
@@ -620,8 +623,12 @@ class ChunkRetriever:
             }
         
         # Save to file
-        filename = f"{source_type}_retrieval_results.json"
-        filepath = os.path.join(self.results_output_dir, filename)
+        if indication:
+            indication_short = indication.split()[0].lower() if indication else "unknown"
+            filename = f"{source_type}_{indication_short}_retrieval_results.json"
+        else:
+            filename = f"{source_type}_retrieval_results.json"
+        filepath = os.path.join(self.chunks_output_dir, filename)
         
         with open(filepath, "w", encoding="utf-8") as f:
             json.dump(output_data, f, indent=2, ensure_ascii=False)
@@ -694,7 +701,8 @@ class ChunkRetriever:
         required_terms: Optional[List[List[str]]] = None,
         mutation_boost_terms: Optional[List[str]] = None,
         initial_k: int = 30,
-        final_k: int = 10
+        final_k: int = 10,
+        indication: Optional[str] = None
     ) -> Dict[str, Any]:
         """
         Test the retrieval pipeline with specialized methods and save results to JSON.
@@ -717,7 +725,8 @@ class ChunkRetriever:
             results_by_country=chunks_by_country,
             source_type=source_type or "general",
             query=query,
-            timestamp=timestamp
+            timestamp=timestamp,
+            indication=indication
         )
 
         # Print simple summary
@@ -832,36 +841,54 @@ class PICOExtractor:
     """
     def __init__(
         self,
-        chunk_retriever,
         system_prompt: str,
         user_prompt_template: str,
         model_name: str = "gpt-4o-mini",
         results_output_dir: str = "results"
     ):
-        self.chunk_retriever = chunk_retriever
         self.system_prompt = system_prompt
         self.user_prompt_template = user_prompt_template
         self.model_name = model_name
         self.llm = ChatOpenAI(model_name=self.model_name, temperature=0)
         self.context_manager = ContextManager()
         self.results_output_dir = results_output_dir
-        os.makedirs(self.results_output_dir, exist_ok=True)
+        self.chunks_input_dir = os.path.join(results_output_dir, "chunks")
+        self.pico_output_dir = os.path.join(results_output_dir, "PICO")
+        os.makedirs(self.pico_output_dir, exist_ok=True)
 
-    def extract_picos(
+    def load_chunks_from_file(self, filename: str) -> Dict[str, List[Dict[str, Any]]]:
+        """
+        Load chunks from a saved retrieval results file.
+        """
+        filepath = os.path.join(self.chunks_input_dir, filename)
+        
+        if not os.path.exists(filepath):
+            print(f"Chunks file not found: {filepath}")
+            return {}
+        
+        try:
+            with open(filepath, "r", encoding="utf-8") as f:
+                data = json.load(f)
+            
+            results_by_country = {}
+            if "results_by_country" in data:
+                for country, country_data in data["results_by_country"].items():
+                    results_by_country[country] = country_data.get("chunks", [])
+            
+            return results_by_country
+        except Exception as e:
+            print(f"Error loading chunks from {filepath}: {e}")
+            return {}
+
+    def extract_picos_from_chunks(
         self,
-        countries: List[str],
-        query: str,
+        chunks_by_country: Dict[str, List[Dict[str, Any]]],
         source_type: Optional[str] = None,
-        initial_k: int = 10,
-        final_k: int = 5,
-        heading_keywords: Optional[List[str]] = None,
-        required_terms: Optional[List[List[str]]] = None,
-        mutation_boost_terms: Optional[List[str]] = None,
-        drug_keywords: Optional[List[str]] = None,
+        indication: Optional[str] = None,
         model_override: Optional[Union[str, ChatOpenAI]] = None
     ) -> List[Dict[str, Any]]:
         """
-        Extract PICOs using improved context management and LLM with JSON storage.
+        Extract PICOs from pre-loaded chunks using LLM.
         """
         results = []
         timestamp = datetime.now().isoformat()
@@ -874,154 +901,10 @@ class PICOExtractor:
             elif isinstance(model_override, ChatOpenAI):
                 llm_to_use = model_override
 
-        # Retrieve chunks for all countries
-        results_dict = self.chunk_retriever.retrieve_pico_chunks(
-            query=query,
-            countries=countries,
-            source_type=source_type,
-            heading_keywords=heading_keywords,
-            required_terms=required_terms,
-            mutation_boost_terms=mutation_boost_terms,
-            drug_keywords=drug_keywords,
-            initial_k=initial_k,
-            final_k=final_k
-        )
-
-        # Save retrieval results
-        self.chunk_retriever.save_retrieval_results(
-            results_by_country=results_dict,
-            source_type=source_type or "general",
-            query=query,
-            timestamp=timestamp
-        )
-
         # Process each country
-        for country in countries:
-            country_chunks = results_dict.get(country, [])
+        for country, country_chunks in chunks_by_country.items():
             if not country_chunks:
-                print(f"No chunks retrieved for {country} with source_type: {source_type}")
-                continue
-
-            # Process chunks with context manager
-            processed_chunks = self.context_manager.process_chunks(country_chunks)
-            context_block = self.context_manager.build_optimal_context(processed_chunks)
-
-            # Prepare system and user messages
-            system_msg = SystemMessage(content=self.system_prompt)
-            user_msg_text = self.user_prompt_template.format(
-                context_block=context_block,
-                country=country
-            )
-            user_msg = HumanMessage(content=user_msg_text)
-
-            # LLM call
-            try:
-                llm_response: BaseMessage = llm_to_use([system_msg, user_msg])
-            except Exception as exc:
-                print(f"LLM call failed for {country}: {exc}")
-                continue
-
-            answer_text = getattr(llm_response, 'content', str(llm_response))
-
-            # Parse JSON response
-            try:
-                parsed_json = json.loads(answer_text)
-            except json.JSONDecodeError:
-                # Retry once with explicit instruction to fix JSON
-                fix_msg = HumanMessage(content="Please correct and return valid JSON in the specified format only.")
-                try:
-                    fix_response = llm_to_use([system_msg, user_msg, fix_msg])
-                    fix_text = getattr(fix_response, 'content', str(fix_response))
-                    parsed_json = json.loads(fix_text)
-                except Exception as parse_err:
-                    print(f"Failed to parse JSON for {country}: {parse_err}")
-                    continue
-
-            # Process and store results
-            if isinstance(parsed_json, dict):
-                parsed_json["Country"] = country
-                parsed_json["SourceType"] = source_type
-                parsed_json["RetrievalTimestamp"] = timestamp
-                parsed_json["ChunksUsed"] = len(country_chunks)
-                results.append(parsed_json)
-            else:
-                # Handle non-dict response
-                wrapped_json = {
-                    "Country": country,
-                    "SourceType": source_type,
-                    "RetrievalTimestamp": timestamp,
-                    "ChunksUsed": len(country_chunks),
-                    "PICOs": parsed_json if isinstance(parsed_json, list) else []
-                }
-                results.append(wrapped_json)
-
-        # Save organized PICO results to JSON
-        if results:
-            self._save_pico_results(results, source_type, timestamp)
-
-        return results
-
-    def extract_picos_with_indication(
-        self,
-        countries: List[str],
-        indication: str,
-        source_type: Optional[str] = None,
-        initial_k: int = 10,
-        final_k: int = 5,
-        heading_keywords: Optional[List[str]] = None,
-        required_terms: Optional[List[List[str]]] = None,
-        mutation_boost_terms: Optional[List[str]] = None,
-        drug_keywords: Optional[List[str]] = None,
-        model_override: Optional[Union[str, ChatOpenAI]] = None
-    ) -> List[Dict[str, Any]]:
-        """
-        Extract PICOs with parameterized indication for query and prompting.
-        """
-        results = []
-        timestamp = datetime.now().isoformat()
-
-        # Optionally override the model
-        llm_to_use = self.llm
-        if model_override:
-            if isinstance(model_override, str):
-                llm_to_use = ChatOpenAI(model_name=model_override, temperature=0)
-            elif isinstance(model_override, ChatOpenAI):
-                llm_to_use = model_override
-
-        # Build query based on source type template from config
-        from python.config import SOURCE_TYPE_CONFIGS
-        if source_type and source_type in SOURCE_TYPE_CONFIGS:
-            query_template = SOURCE_TYPE_CONFIGS[source_type]["query_template"]
-            query = query_template.format(indication=indication)
-        else:
-            query = f"Find relevant PICO information for: {indication}"
-
-        # Retrieve chunks for all countries
-        results_dict = self.chunk_retriever.retrieve_pico_chunks(
-            query=query,
-            countries=countries,
-            source_type=source_type,
-            heading_keywords=heading_keywords,
-            required_terms=required_terms,
-            mutation_boost_terms=mutation_boost_terms,
-            drug_keywords=drug_keywords,
-            initial_k=initial_k,
-            final_k=final_k
-        )
-
-        # Save retrieval results
-        self.chunk_retriever.save_retrieval_results(
-            results_by_country=results_dict,
-            source_type=source_type or "general",
-            query=query,
-            timestamp=timestamp
-        )
-
-        # Process each country
-        for country in countries:
-            country_chunks = results_dict.get(country, [])
-            if not country_chunks:
-                print(f"No chunks retrieved for {country} with source_type: {source_type}")
+                print(f"No chunks available for {country}")
                 continue
 
             # Process chunks with context manager
@@ -1030,11 +913,17 @@ class PICOExtractor:
 
             # Prepare system and user messages with indication parameterization
             system_msg = SystemMessage(content=self.system_prompt)
-            user_msg_text = self.user_prompt_template.format(
-                indication=indication,
-                context_block=context_block,
-                country=country
-            )
+            if indication:
+                user_msg_text = self.user_prompt_template.format(
+                    indication=indication,
+                    context_block=context_block,
+                    country=country
+                )
+            else:
+                user_msg_text = self.user_prompt_template.format(
+                    context_block=context_block,
+                    country=country
+                )
             user_msg = HumanMessage(content=user_msg_text)
 
             # LLM call
@@ -1080,53 +969,61 @@ class PICOExtractor:
                 }
                 results.append(wrapped_json)
 
-        # Save organized PICO results to JSON
-        if results:
-            self._save_pico_results_with_indication(results, source_type, indication, timestamp)
-
         return results
 
-    def _save_pico_results(self, results: List[Dict[str, Any]], source_type: str, timestamp: str):
+    def extract_picos(
+        self,
+        source_type: str,
+        indication: Optional[str] = None,
+        model_override: Optional[Union[str, ChatOpenAI]] = None
+    ) -> List[Dict[str, Any]]:
         """
-        Save PICO extraction results organized by source type and country.
+        Extract PICOs by loading chunks from stored retrieval results.
         """
-        # Organize results by source type and country
-        organized_results = {
-            "extraction_metadata": {
-                "timestamp": timestamp,
-                "source_type": source_type or "general",
-                "total_countries": len(results),
-                "model_used": self.model_name
-            },
-            "picos_by_country": {}
-        }
+        # Determine filename based on source_type and indication
+        if indication:
+            indication_short = indication.split()[0].lower() if indication else "unknown"
+            filename = f"{source_type}_{indication_short}_retrieval_results.json"
+        else:
+            filename = f"{source_type}_retrieval_results.json"
         
-        for result in results:
-            country = result.get("Country", "unknown")
-            picos = result.get("PICOs", [])
-            
-            organized_results["picos_by_country"][country] = {
-                "country_metadata": {
-                    "country_code": country,
-                    "total_picos": len(picos),
-                    "chunks_used": result.get("ChunksUsed", 0),
-                    "extraction_timestamp": result.get("RetrievalTimestamp", timestamp)
-                },
-                "extracted_picos": picos
-            }
+        # Load chunks from file
+        chunks_by_country = self.load_chunks_from_file(filename)
         
-        # Save to source-specific file
-        source_prefix = source_type.replace("_", "") if source_type else "general"
-        filename = f"{source_prefix}_picos_organized.json"
-        filepath = os.path.join(self.results_output_dir, filename)
+        if not chunks_by_country:
+            print(f"No chunks loaded for {source_type} with indication {indication}")
+            return []
         
-        with open(filepath, "w", encoding="utf-8") as f:
-            json.dump(organized_results, f, indent=2, ensure_ascii=False)
+        # Extract PICOs from loaded chunks
+        results = self.extract_picos_from_chunks(
+            chunks_by_country=chunks_by_country,
+            source_type=source_type,
+            indication=indication,
+            model_override=model_override
+        )
         
-        print(f"Saved organized PICO results to {filepath}")
-        return filepath
+        # Save organized PICO results to JSON
+        if results:
+            self._save_pico_results_with_indication(results, source_type, indication, datetime.now().isoformat())
+        
+        return results
 
-    def _save_pico_results_with_indication(self, results: List[Dict[str, Any]], source_type: str, indication: str, timestamp: str):
+    def extract_picos_with_indication(
+        self,
+        source_type: str,
+        indication: str,
+        model_override: Optional[Union[str, ChatOpenAI]] = None
+    ) -> List[Dict[str, Any]]:
+        """
+        Extract PICOs with parameterized indication by loading chunks from stored retrieval results.
+        """
+        return self.extract_picos(
+            source_type=source_type,
+            indication=indication,
+            model_override=model_override
+        )
+
+    def _save_pico_results_with_indication(self, results: List[Dict[str, Any]], source_type: str, indication: Optional[str], timestamp: str):
         """
         Save PICO extraction results organized by source type, indication, and country.
         """
@@ -1159,12 +1056,15 @@ class PICOExtractor:
         
         # Save to indication and source-specific file
         source_prefix = source_type.replace("_", "") if source_type else "general"
-        indication_short = indication.split()[0].lower() if indication else "unknown"
-        filename = f"{source_prefix}_{indication_short}_picos_organized.json"
-        filepath = os.path.join(self.results_output_dir, filename)
+        if indication:
+            indication_short = indication.split()[0].lower() if indication else "unknown"
+            filename = f"{source_prefix}_{indication_short}_picos_organized.json"
+        else:
+            filename = f"{source_prefix}_picos_organized.json"
+        filepath = os.path.join(self.pico_output_dir, filename)
         
         with open(filepath, "w", encoding="utf-8") as f:
             json.dump(organized_results, f, indent=2, ensure_ascii=False)
         
-        print(f"Saved organized PICO results with indication to {filepath}")
+        print(f"Saved organized PICO results to {filepath}")
         return filepath
