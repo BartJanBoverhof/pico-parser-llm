@@ -13,7 +13,8 @@ from python.utils import FolderTree, HeadingPrinter
 from python.process import PDFProcessor
 from python.translation import Translator
 from python.vectorise import Chunker, Vectoriser
-from python.retrieve import ChunkRetriever, PICOExtractor
+from python.retrieve import ChunkRetriever
+from python.extract import PICOExtractor
 from python.open_ai import validate_api_key
 
 # LLM related imports
