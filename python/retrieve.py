@@ -3,6 +3,7 @@ import json
 import re
 import tiktoken
 from datetime import datetime
+from typing import List, Dict, Any, Optional
 
 
 class TextSimilarityUtils:
@@ -23,13 +24,11 @@ class TextSimilarityUtils:
     @staticmethod
     def is_subset(text1, text2):
         """Check if text1 is effectively contained within text2."""
-        # Clean and tokenize
         tokens1 = set(text1.lower().split())
         tokens2 = set(text2.lower().split())
         
-        # If most of text1's tokens are in text2, consider it a subset
         overlap_ratio = len(tokens1.intersection(tokens2)) / len(tokens1) if tokens1 else 0
-        return overlap_ratio > 0.9  # 90% of tokens are contained
+        return overlap_ratio > 0.9
 
     @staticmethod
     def extract_potential_comparators(text):
@@ -39,27 +38,20 @@ class TextSimilarityUtils:
         words = text.split()
         capitalized_words = []
         
-        # Find capitalized words that might be drug names
         for i, word in enumerate(words):
-            # Check if this is a potential sentence start or after a space
             if (i > 0 and words[i-1][-1] in '.!?') or i == 0:
-                # Clean the word of punctuation
                 clean_word = word.strip('.,;:()[]{}')
                 if clean_word and clean_word[0].isupper() and len(clean_word) > 1 and clean_word.lower() not in ['the', 'a', 'an', 'in', 'on', 'at', 'for', 'with', 'by', 'to', 'of']:
                     capitalized_words.append(clean_word)
         
-        # Find words followed by dosages (simple pattern)
         dosage_pattern = r'\b\w+\s+\d+\s*(?:mg|mcg|g|ml)\b'
         dosages = re.findall(dosage_pattern, text)
         
-        # Find drug name suffixes
         suffix_pattern = r'\b\w+(?:mab|nib|zumab|tinib|ciclib|parib|vastatin)\b'
         suffix_matches = re.findall(suffix_pattern, text.lower())
         
-        # Combine all matches
         all_matches = capitalized_words + dosages + suffix_matches
         
-        # Filter out common words that aren't likely drug names
         common_words = {'the', 'and', 'for', 'with', 'that', 'this', 'not', 'are', 'from', 'was', 'were'}
         filtered_matches = [m for m in all_matches if m.lower() not in common_words]
         
@@ -83,7 +75,6 @@ class DocumentDeduplicator:
         removed_docs = []
         
         for doc in docs:
-            # Simple deduplication for identical content
             text = doc.page_content.strip()
             if text in seen_texts:
                 removed_docs.append({
@@ -93,12 +84,10 @@ class DocumentDeduplicator:
                 })
                 continue
                 
-            # Check for near-duplicates or subset relationships
             is_duplicate = False
             similar_to = None
             
             for kept_doc in unique_docs:
-                # Skip comparison if preserving country diversity and documents are from different countries
                 if preserve_country_diversity and doc.metadata.get("country") != kept_doc.metadata.get("country"):
                     continue
                     
@@ -127,7 +116,6 @@ class DocumentDeduplicator:
         """
         Score and prioritize documents to maximize comparator coverage.
         """
-        # Extract all potential comparators from documents
         all_comparators = set()
         doc_comparators = []
         
@@ -136,14 +124,11 @@ class DocumentDeduplicator:
             all_comparators.update(comparators)
             doc_comparators.append((doc, comparators))
         
-        # Prioritize documents with unique comparators
         selected_docs = []
         covered_comparators = set()
         skipped_docs = []
         
-        # Sort by number of unique comparators (most unique first)
         while doc_comparators and len(selected_docs) < final_k:
-            # Find document with most uncovered comparators
             best_idx = -1
             best_unique_count = -1
             
@@ -158,12 +143,10 @@ class DocumentDeduplicator:
                 selected_docs.append(doc)
                 covered_comparators.update(comparators)
             else:
-                # If no more unique comparators, just take the next document
                 if doc_comparators:
                     doc, comparators = doc_comparators.pop(0)
                     selected_docs.append(doc)
         
-        # Remaining docs weren't selected
         for doc, comparators in doc_comparators:
             skipped_docs.append((doc, comparators))
             
@@ -244,12 +227,10 @@ class ChunkRetriever:
         if not docs:
             return []
 
-        # Deduplicate similar chunks
         unique_docs, _ = self.deduplicator.deduplicate_documents(docs)
         if not unique_docs:
             return []
 
-        # HTA-specific scoring with emphasis on structured elements
         hta_structure_keywords = set([
             'comparator', 'comparison', 'versus', 'compared to', 'alternative',
             'population', 'intervention', 'outcome', 'endpoint', 'efficacy',
@@ -266,35 +247,28 @@ class ChunkRetriever:
 
         scored_docs = []
         for i, doc in enumerate(unique_docs):
-            # Base similarity score
             score = (len(unique_docs) - i)
             
             heading_lower = (doc.metadata.get("heading") or "").lower()
             text_lower = (doc.page_content or "").lower()
             
-            # HTA structure boost - prioritize PICO and comparator sections
             structure_matches = sum(1 for keyword in hta_structure_keywords if keyword in heading_lower)
             if structure_matches > 0:
                 score += comparator_boost * structure_matches
             
-            # PICO element boost in content
             pico_content_matches = sum(1 for keyword in hta_structure_keywords if keyword in text_lower)
             if pico_content_matches > 0:
-                score += pico_boost * min(pico_content_matches, 3)  # Cap to avoid over-boosting
+                score += pico_boost * min(pico_content_matches, 3)
             
-            # Heading keyword boost
             if any(k in heading_lower for k in heading_set):
                 score += 3.0
             
-            # Drug keyword boost
             if any(d in text_lower for d in drug_set):
                 score += drug_boost
             
-            # Mutation-specific boost
             if any(m in text_lower for m in mutation_set):
                 score += 6.0
             
-            # Additional boost for sections explicitly about comparators
             if any(term in heading_lower for term in ['comparator', 'comparison', 'versus', 'alternative']):
                 score += 6.0
             
@@ -303,7 +277,6 @@ class ChunkRetriever:
         scored_docs.sort(key=lambda x: x[1], reverse=True)
         top_docs = [doc for doc, _ in scored_docs[:final_k * 2]]
 
-        # Prioritize by comparator coverage for HTA submissions
         selected_docs, _, _ = self.deduplicator.prioritize_by_comparator_coverage(
             top_docs, final_k=final_k
         )
@@ -328,11 +301,10 @@ class ChunkRetriever:
         """
         filter_dict = self._build_filter(country, "clinical_guideline")
         
-        # Use broader initial retrieval for guidelines since relevant content is sparse
         try:
             docs = self.vectorstore.similarity_search(
                 query=query,
-                k=initial_k * 2,  # Cast wider net for guidelines
+                k=initial_k * 2,
                 filter=filter_dict,
             )
         except Exception as e:
@@ -342,7 +314,6 @@ class ChunkRetriever:
         if not docs:
             return []
 
-        # Apply required terms filtering if specified
         filtered_docs = []
         if strict_filtering and required_terms:
             for doc in docs:
@@ -350,11 +321,8 @@ class ChunkRetriever:
                 heading_lower = (doc.metadata.get("heading") or "").lower()
                 combined_text = text_lower + " " + heading_lower
                 
-                # Check if all required term groups are satisfied
-                # Each group is an OR condition, all groups must be satisfied (AND)
                 has_all_required = True
                 for term_group in required_terms:
-                    # At least one pattern from the group must match
                     group_matched = False
                     for pattern in term_group:
                         if re.search(pattern, combined_text, re.IGNORECASE):
@@ -373,12 +341,10 @@ class ChunkRetriever:
             print(f"No clinical guideline chunks found for {country} after required terms filtering")
             return []
 
-        # Deduplicate after filtering
         unique_docs, _ = self.deduplicator.deduplicate_documents(filtered_docs)
         if not unique_docs:
             return []
 
-        # Prepare boost term sets
         mutation_set = set((mutation_boost_terms or []))
         mutation_set = {m.lower() for m in mutation_set}
         drug_set = set((drug_keywords or []))
@@ -386,7 +352,6 @@ class ChunkRetriever:
         heading_set = set((heading_keywords or []))
         heading_set = {k.lower() for k in heading_set}
 
-        # Clinical guideline specific scoring
         scored_docs = []
         for i, doc in enumerate(unique_docs):
             score = (len(unique_docs) - i)
@@ -394,47 +359,38 @@ class ChunkRetriever:
             text_lower = doc.page_content.lower()
             heading_lower = (doc.metadata.get("heading") or "").lower()
             
-            # Strong boost for mutation-specific content
             mutation_matches = sum(1 for m in mutation_set if m in text_lower)
             if mutation_matches > 0:
                 score += 8.0 * mutation_matches
             
-            # Boost for mutation in heading
             if any(m in heading_lower for m in mutation_set):
                 score += 10.0
             
-            # Boost for treatment recommendations
             recommendation_terms = ['recommend', 'should', 'guideline', 'treatment', 'therapy', 'algorithm', 'indication', 'eligible']
             recommendation_boost = sum(2.0 for term in recommendation_terms if term in text_lower)
             score += recommendation_boost
             
-            # Boost for progression/line therapy content
             progression_terms = ['second-line', 'second line', 'progression', 'refractory', 'resistant', 'subsequent', 'previously treated', 'after']
             progression_boost = sum(3.0 for term in progression_terms if term in text_lower)
             score += progression_boost
             
-            # Boost for heading keywords
             if any(k in heading_lower for k in heading_set):
                 score += 4.0
             
-            # Boost for drug keywords
             if any(d in text_lower for d in drug_set):
                 score += 5.0
             
-            # Penalize overly generic content if mutation terms are required
             if required_terms and mutation_set:
-                # Check if this is generic lung cancer content without mutation specifics
                 generic_indicators = ['general lung cancer', 'all patients', 'tumor board', 'multidisciplinary']
                 has_generic = any(indicator in text_lower for indicator in generic_indicators)
                 has_mutation = any(m in text_lower for m in mutation_set)
                 if has_generic and not has_mutation:
-                    score -= 10.0  # Penalize generic content
+                    score -= 10.0
             
             scored_docs.append((doc, score))
 
         scored_docs.sort(key=lambda x: x[1], reverse=True)
         
-        # Take top scored documents up to final_k
         final_docs = [doc for doc, _ in scored_docs[:final_k]]
 
         return [self._format_chunk_with_metadata(doc) for doc in final_docs]
@@ -500,7 +456,6 @@ class ChunkRetriever:
                 heading_keywords=heading_keywords
             )
         else:
-            # Fallback to general retrieval
             filter_dict = self._build_filter(country, source_type)
             try:
                 docs = self.vectorstore.similarity_search(
@@ -515,12 +470,10 @@ class ChunkRetriever:
             if not docs:
                 return []
 
-            # Deduplicate similar chunks
             unique_docs, _ = self.deduplicator.deduplicate_documents(docs)
             if not unique_docs:
                 return []
 
-            # Score chunks by heading and drug keyword relevance
             keyword_set = set((heading_keywords or []))
             keyword_set = {k.lower() for k in keyword_set}
             drug_set = set((drug_keywords or []))
@@ -528,7 +481,7 @@ class ChunkRetriever:
 
             scored_docs = []
             for i, doc in enumerate(unique_docs):
-                score = (len(unique_docs) - i)  # slight bias for earlier items
+                score = (len(unique_docs) - i)
                 heading_lower = (doc.metadata.get("heading") or "").lower()
                 if any(k in heading_lower for k in keyword_set):
                     score += heading_boost
@@ -540,7 +493,6 @@ class ChunkRetriever:
             scored_docs.sort(key=lambda x: x[1], reverse=True)
             top_docs = [doc for doc, _ in scored_docs[:final_k * 2]]
 
-            # Prioritize by comparator coverage to maximize variety of comparators/drugs
             selected_docs, _, _ = self.deduplicator.prioritize_by_comparator_coverage(
                 top_docs, final_k=final_k
             )
@@ -592,7 +544,6 @@ class ChunkRetriever:
         if timestamp is None:
             timestamp = datetime.now().isoformat()
         
-        # Prepare structured output
         output_data = {
             "retrieval_metadata": {
                 "timestamp": timestamp,
@@ -605,7 +556,6 @@ class ChunkRetriever:
             "results_by_country": {}
         }
         
-        # Organize results by country
         for country, chunks in results_by_country.items():
             output_data["results_by_country"][country] = {
                 "country_metadata": {
@@ -618,7 +568,6 @@ class ChunkRetriever:
                 "chunks": chunks
             }
         
-        # Save to file
         if indication:
             indication_short = indication.split()[0].lower() if indication else "unknown"
             filename = f"{source_type}_{indication_short}_retrieval_results.json"
@@ -687,66 +636,6 @@ class ChunkRetriever:
             print(f"Error in simple retrieval test: {e}")
             return False
 
-    def test_retrieval(
-        self,
-        query: str,
-        countries: List[str],
-        source_type: Optional[str] = None,
-        heading_keywords: Optional[List[str]] = None,
-        drug_keywords: Optional[List[str]] = None,
-        required_terms: Optional[List[List[str]]] = None,
-        mutation_boost_terms: Optional[List[str]] = None,
-        initial_k: int = 30,
-        final_k: int = 10,
-        indication: Optional[str] = None
-    ) -> Dict[str, Any]:
-        """
-        Test the retrieval pipeline with specialized methods and save results to JSON.
-        """
-        chunks_by_country = self.retrieve_pico_chunks(
-            query=query,
-            countries=countries,
-            source_type=source_type,
-            heading_keywords=heading_keywords,
-            drug_keywords=drug_keywords,
-            required_terms=required_terms,
-            mutation_boost_terms=mutation_boost_terms,
-            initial_k=initial_k,
-            final_k=final_k
-        )
-
-        # Save results to JSON
-        timestamp = datetime.now().isoformat()
-        self.save_retrieval_results(
-            results_by_country=chunks_by_country,
-            source_type=source_type or "general",
-            query=query,
-            timestamp=timestamp,
-            indication=indication
-        )
-
-        # Print simple summary
-        print(f"\n=== RETRIEVAL RESULTS ===")
-        print(f"Query: {query}")
-        print(f"Source type: {source_type or 'All sources'}")
-
-        summary: Dict[str, int] = {}
-        total_chunks = 0
-        for country, chunks in chunks_by_country.items():
-            count = len(chunks)
-            summary[country] = count
-            total_chunks += count
-            print(f"{country}: {count} chunks")
-
-        print(f"Total: {total_chunks} chunks")
-        print("=" * 25)
-
-        return {
-            "summary": summary,
-            "chunks_by_country": chunks_by_country,
-            "timestamp": timestamp
-        }
-
 
 class ContextManager:
     """
@@ -756,11 +645,10 @@ class ContextManager:
         self.max_tokens = max_tokens
         self.similarity_utils = TextSimilarityUtils()
         
-        # Initialize tokenizer
         try:
             self.encoding = tiktoken.encoding_for_model("gpt-4")
         except:
-            self.encoding = tiktoken.encoding_for_model("cl100k_base")  # Fallback
+            self.encoding = tiktoken.encoding_for_model("cl100k_base")
     
     def count_tokens(self, text):
         """Count tokens in text using the current encoding."""
@@ -795,27 +683,21 @@ class ContextManager:
         current_tokens = 0
         covered_comparators = set()
         
-        # Get all potential comparators
         all_comparators = set()
         for chunk in processed_chunks:
             all_comparators.update(chunk["comparators"])
         
-        # Sort by unique comparator coverage
         def sort_key(chunk):
             unique_count = len(chunk["comparators"] - covered_comparators)
             return unique_count
         
-        # First pass: include chunks with unique comparators
         remaining_chunks = list(processed_chunks)
         while remaining_chunks and current_tokens < self.max_tokens:
-            # Resort each time as covered_comparators changes
             remaining_chunks.sort(key=sort_key, reverse=True)
             chunk = remaining_chunks.pop(0)
             
-            # Skip if adding would exceed token limit
             if current_tokens + chunk["tokens"] > self.max_tokens:
                 new_comparators = chunk["comparators"] - covered_comparators
-                # Only include if it has unique comparators and we're not too far over limit
                 if not new_comparators or current_tokens + chunk["tokens"] > self.max_tokens * 1.1:
                     continue
             
@@ -823,10 +705,7 @@ class ContextManager:
             current_tokens += chunk["tokens"]
             covered_comparators.update(chunk["comparators"])
             
-            # If we've covered all comparators, we can stop
             if covered_comparators >= all_comparators:
                 break
         
         return "\n\n".join(context_parts)
-
-

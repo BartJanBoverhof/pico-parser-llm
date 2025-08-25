@@ -1,14 +1,13 @@
 import sys
 import os
 import json
+from datetime import datetime
 from typing import List, Dict, Any, Optional, Union
 
-# Add the project directory to sys.path to ensure function imports
-project_dir = os.getcwd()  # Get the current working directory (project root)
+project_dir = os.getcwd()
 if project_dir not in sys.path:
     sys.path.append(project_dir)
 
-# Import necessary components
 from python.utils import FolderTree, HeadingPrinter
 from python.process import PDFProcessor
 from python.translation import Translator
@@ -17,7 +16,6 @@ from python.retrieve import ChunkRetriever
 from python.extract import PICOExtractor
 from python.open_ai import validate_api_key
 
-# LLM related imports
 from openai import OpenAI
 
 from langchain.schema import SystemMessage, HumanMessage
@@ -69,7 +67,6 @@ class RagPipeline:
             vectorstore_type: Type of vectorstore to use ("openai", "biobert", or "both")
             source_type_configs: Configuration for different source types
         """
-        # Store parameters
         self.model = model
         self.path_pdf = pdf_path
         self.path_clean = clean_path
@@ -84,15 +81,12 @@ class RagPipeline:
         self.chunk_strategy = chunk_strategy
         self.vectorstore_type = vectorstore_type
 
-        # Create directories
         os.makedirs(self.path_results, exist_ok=True)
         os.makedirs(self.path_chunks, exist_ok=True)
         os.makedirs(self.path_pico, exist_ok=True)
 
-        # Initialize OpenAI client
         self.openai = OpenAI()
 
-        # Initialize components to None (will be created as needed)
         self.translator = None
         self.chunker = None
         self.vectoriser_openai = None
@@ -103,7 +97,6 @@ class RagPipeline:
         self.pico_extractor_hta = None
         self.pico_extractor_clinical = None
 
-        # Store configuration for different source types
         self.source_type_configs = source_type_configs or {}
 
     @property
@@ -123,38 +116,31 @@ class RagPipeline:
 
     def validate_api_key(self):
         """Validate the OpenAI API key."""
-        message = validate_api_key()  # Read in, and validate the OpenAI API key.
-        print(message)  # Print the validation message.
+        message = validate_api_key()
+        print(message)
         return message
 
     def process_pdfs(self):
         """Process PDFs to extract cleaned text."""
-        # Ensure directories exist
         os.makedirs(self.path_clean, exist_ok=True)
         
-        # Process PDFs
         PDFProcessor.process_pdfs(self.path_pdf, self.path_clean)
         print(f"Processed PDFs from {self.path_pdf} to {self.path_clean}")
 
     def translate_documents(self):
         """Translate cleaned text to English."""
-        # Ensure directories exist
         os.makedirs(self.path_translated, exist_ok=True)
         
-        # Initialize translator if not already done
         if self.translator is None:
             self.translator = Translator(self.path_clean, self.path_translated)
         
-        # Translate documents
         self.translator.translate_documents()
         print(f"Translated documents from {self.path_clean} to {self.path_translated}")
 
     def chunk_documents(self):
         """Chunk translated documents for vectorization."""
-        # Ensure directories exist
         os.makedirs(self.path_chunked, exist_ok=True)
         
-        # Initialize chunker
         self.chunker = Chunker(
             json_folder_path=self.path_translated,
             output_dir=self.path_chunked,
@@ -164,7 +150,6 @@ class RagPipeline:
             maintain_folder_structure=True
         )
         
-        # Run chunking pipeline
         self.chunker.run_pipeline()
         print(f"Chunked documents from {self.path_translated} to {self.path_chunked}")
 
@@ -176,15 +161,12 @@ class RagPipeline:
             embeddings_type: Type of embeddings to use ("openai", "biobert", or "both")
                            If None, uses the value specified in self.vectorstore_type
         """
-        # Use class-level vectorstore_type if embeddings_type is not specified
         if embeddings_type is None:
             embeddings_type = self.vectorstore_type
             
-        # Ensure directories exist
         os.makedirs(self.path_vectorstore, exist_ok=True)
         
         if embeddings_type.lower() in ["openai", "both"]:
-            # Create OpenAI vectorstore
             self.vectoriser_openai = Vectoriser(
                 chunked_folder_path=self.path_chunked,
                 embedding_choice="openai",
@@ -194,7 +176,6 @@ class RagPipeline:
             print("Created OpenAI vectorstore")
             
         if embeddings_type.lower() in ["biobert", "both"]:
-            # Create BioBERT vectorstore
             self.vectoriser_biobert = Vectoriser(
                 chunked_folder_path=self.path_chunked,
                 embedding_choice="biobert",
@@ -203,7 +184,6 @@ class RagPipeline:
             self.vectorstore_biobert = self.vectoriser_biobert.run_pipeline()
             print("Created BioBERT vectorstore")
             
-        # Visualize vectorstore if both are available
         if embeddings_type.lower() == "both" and self.vectoriser_openai and self.vectoriser_biobert:
             print("Visualizing vectorstore comparison")
             self.vectoriser_openai.visualize_vectorstore(self.vectorstore_biobert)
@@ -216,7 +196,6 @@ class RagPipeline:
             vectorstore_type: Type of vectorstore to use ("openai" or "biobert")
                             If None, uses the value specified in self.vectorstore_type
         """
-        # Use class-level vectorstore_type if vectorstore_type is not specified
         if vectorstore_type is None:
             vectorstore_type = self.vectorstore_type
             
@@ -239,7 +218,6 @@ class RagPipeline:
             print("Source type configurations not provided. Cannot initialize PICO extractors.")
             return
             
-        # HTA Submissions extractor
         if "hta_submission" in self.source_type_configs:
             hta_config = self.source_type_configs["hta_submission"]
             self.pico_extractor_hta = PICOExtractor(
@@ -249,7 +227,6 @@ class RagPipeline:
                 results_output_dir=self.path_results
             )
         
-        # Clinical Guidelines extractor
         if "clinical_guideline" in self.source_type_configs:
             clinical_config = self.source_type_configs["clinical_guideline"]
             self.pico_extractor_clinical = PICOExtractor(
@@ -272,14 +249,11 @@ class RagPipeline:
             print("Retriever not initialized. Please run initialize_retriever first.")
             return []
         
-        # Get all available countries from the vectorstore metadata
-        # Use a high limit without a where filter
         result = self.retriever.chroma_collection.get(
-            limit=10000,  # Use a high limit to get most documents
+            limit=10000,
             include=['metadatas']
         )
         
-        # Extract unique countries from metadata
         countries = set()
         for metadata in result['metadatas']:
             if metadata and 'country' in metadata and metadata['country'] not in ['unknown', None, '']:
@@ -307,7 +281,6 @@ class RagPipeline:
             print("Retriever not initialized. Please run initialize_retriever first.")
             return None
         
-        # Handle the "ALL" special case
         if any(country == "ALL" for country in countries):
             all_countries = self.get_all_countries()
             if not all_countries:
@@ -316,13 +289,11 @@ class RagPipeline:
             countries = all_countries
             print(f"Retrieving {source_type} chunks for all available countries: {', '.join(countries)}")
         
-        # Get source-specific configuration
         if source_type not in self.source_type_configs:
             raise ValueError(f"Unsupported source_type: {source_type}. Available types: {list(self.source_type_configs.keys())}")
             
         config = self.source_type_configs[source_type]
         
-        # Use defaults if not specified
         if query is None:
             if indication:
                 query = config["query_template"].format(indication=indication)
@@ -338,8 +309,7 @@ class RagPipeline:
         if required_terms is None and "required_terms" in config:
             required_terms = config["required_terms"]
             
-        # Run retrieval and save chunks
-        test_results = self.retriever.test_retrieval(
+        chunks_by_country = self.retriever.retrieve_pico_chunks(
             query=query,
             countries=countries,
             source_type=source_type,
@@ -348,11 +318,23 @@ class RagPipeline:
             required_terms=required_terms,
             mutation_boost_terms=mutation_boost_terms,
             initial_k=initial_k,
-            final_k=final_k,
+            final_k=final_k
+        )
+
+        timestamp = datetime.now().isoformat()
+        self.retriever.save_retrieval_results(
+            results_by_country=chunks_by_country,
+            source_type=source_type or "general",
+            query=query,
+            timestamp=timestamp,
             indication=indication
         )
-        
-        return test_results
+
+        return {
+            "summary": {country: len(chunks) for country, chunks in chunks_by_country.items()},
+            "chunks_by_country": chunks_by_country,
+            "timestamp": timestamp
+        }
 
     def run_pico_extraction_for_source_type(
         self,
@@ -363,11 +345,9 @@ class RagPipeline:
         """
         Run PICO extraction for a specific source type using pre-stored chunks.
         """
-        # Initialize extractors if not already done
         if self.pico_extractor_hta is None or self.pico_extractor_clinical is None:
             self.initialize_pico_extractors()
         
-        # Select appropriate extractor
         if source_type == "hta_submission":
             extractor = self.pico_extractor_hta
         elif source_type == "clinical_guideline":
@@ -375,7 +355,6 @@ class RagPipeline:
         else:
             raise ValueError(f"Unsupported source_type: {source_type}")
             
-        # Extract PICOs from stored chunks
         extracted_picos = extractor.extract_picos(
             source_type=source_type,
             indication=indication,
@@ -400,7 +379,6 @@ class RagPipeline:
         """
         Extract PICOs from the specified countries and source type using two-step process.
         """
-        # Step 1: Run retrieval
         print(f"Step 1: Running retrieval for {source_type}")
         retrieval_results = self.run_retrieval_for_source_type(
             source_type=source_type,
@@ -419,7 +397,6 @@ class RagPipeline:
             print("Retrieval failed, cannot proceed with PICO extraction")
             return []
         
-        # Step 2: Run PICO extraction
         print(f"Step 2: Running PICO extraction for {source_type}")
         extracted_picos = self.run_pico_extraction_for_source_type(
             source_type=source_type,
@@ -541,7 +518,6 @@ class RagPipeline:
         Returns:
             List of extracted PICOs
         """
-        # For backward compatibility, use the HTA extractor
         return self.extract_picos_hta(
             countries=countries,
             query=query,
@@ -549,77 +525,6 @@ class RagPipeline:
             final_k=final_k,
             heading_keywords=heading_keywords
         )
-
-    def test_retrieval(
-        self,
-        query: str,
-        countries: List[str],
-        source_type: Optional[str] = None,
-        heading_keywords: Optional[List[str]] = None,
-        drug_keywords: Optional[List[str]] = None,
-        required_terms: Optional[List[List[str]]] = None,
-        mutation_boost_terms: Optional[List[str]] = None,
-        initial_k: int = 20,
-        final_k: int = 10
-    ):
-        """
-        Test the specialized retrieval process with configurable parameters.
-        
-        Args:
-            query: Query for retrieval
-            countries: List of country codes to retrieve from, or ["ALL"] for all countries
-            source_type: Optional source type filter (hta_submission or clinical_guideline)
-            heading_keywords: Keywords to look for in document headings
-            drug_keywords: Keywords for drugs to prioritize
-            required_terms: Required terms for strict filtering
-            mutation_boost_terms: Terms to boost for mutation-specific retrieval
-            initial_k: Initial number of documents to retrieve
-            final_k: Final number of documents to use after filtering
-        
-        Returns:
-            Test results
-        """
-        if self.retriever is None:
-            print("Retriever not initialized. Please run initialize_retriever first.")
-            return None
-        
-        # Handle the "ALL" special case
-        if any(country == "ALL" for country in countries):
-            all_countries = self.get_all_countries()
-            if not all_countries:
-                print("No countries detected in the vectorstore. Please check your data.")
-                return None
-            countries = all_countries
-            print(f"Testing retrieval for all available countries: {', '.join(countries)}")
-            
-        # Set source-specific defaults if not provided
-        if source_type and source_type in self.source_type_configs:
-            config = self.source_type_configs[source_type]
-            if heading_keywords is None:
-                heading_keywords = config["default_headings"]
-            if drug_keywords is None:
-                drug_keywords = config["default_drugs"]
-            if required_terms is None and "required_terms" in config:
-                required_terms = config["required_terms"]
-        elif heading_keywords is None:
-            heading_keywords = ["comparator", "alternative", "treatment"]
-            
-        if drug_keywords is None:
-            drug_keywords = ["docetaxel", "pembrolizumab", "nintedanib", "lenvatinib", "sorafenib"]
-            
-        test_results = self.retriever.test_retrieval(
-            query=query,
-            countries=countries,
-            source_type=source_type,
-            heading_keywords=heading_keywords,
-            drug_keywords=drug_keywords,
-            required_terms=required_terms,
-            mutation_boost_terms=mutation_boost_terms,
-            initial_k=initial_k,
-            final_k=final_k
-        )
-        
-        return test_results
     
     def diagnose_vectorstore(self, limit: int = 100):
         """
@@ -663,34 +568,25 @@ class RagPipeline:
         Returns:
             Extracted PICOs
         """
-        # Use class-level vectorstore_type if vectorstore_type is not specified
         if vectorstore_type is None:
             vectorstore_type = self.vectorstore_type
             
-        # Validate API key
         self.validate_api_key()
         
-        # Process PDFs
         if not skip_processing:
             self.process_pdfs()
         
-        # Translate documents
         if not skip_translation:
             self.translate_documents()
         
-        # Chunk documents
         self.chunk_documents()
         
-        # Vectorize documents
         self.vectorize_documents(embeddings_type=vectorstore_type)
         
-        # Initialize retriever
         self.initialize_retriever(vectorstore_type=vectorstore_type if vectorstore_type != "both" else "biobert")
         
-        # Initialize PICO extractors
         self.initialize_pico_extractors()
         
-        # Extract PICOs based on source type using two-step process
         extracted_picos = self.extract_picos_by_source_type(
             countries=countries,
             source_type=source_type
@@ -733,32 +629,25 @@ class RagPipeline:
         Returns:
             Extracted PICOs with custom configuration
         """
-        # Use class-level vectorstore_type if vectorstore_type is not specified
         if vectorstore_type is None:
             vectorstore_type = self.vectorstore_type
             
-        # Validate API key
         self.validate_api_key()
         
-        # Process pipeline steps
         if not skip_processing:
             self.process_pdfs()
         
         if not skip_translation:
             self.translate_documents()
             
-        # Always chunk and vectorize for fresh runs
         if not skip_processing or not skip_translation:
             self.chunk_documents()
             self.vectorize_documents(embeddings_type=vectorstore_type)
         
-        # Initialize retriever
         self.initialize_retriever(vectorstore_type=vectorstore_type if vectorstore_type != "both" else "biobert")
         
-        # Initialize PICO extractors
         self.initialize_pico_extractors()
         
-        # Extract PICOs with custom configuration using two-step process
         extracted_picos = self.extract_picos_by_source_type(
             countries=countries,
             source_type=source_type,
@@ -800,7 +689,6 @@ class RagPipeline:
         Returns:
             Dictionary with extracted PICOs for each source type
         """
-        # Use class-level vectorstore_type if vectorstore_type is not specified
         if vectorstore_type is None:
             vectorstore_type = self.vectorstore_type
             
@@ -808,33 +696,26 @@ class RagPipeline:
         if not indication:
             raise ValueError("Case configuration must contain 'indication' key")
             
-        # Extract case-specific parameters
         required_terms = case_config.get("required_terms_clinical")
         mutation_boost_terms = case_config.get("mutation_boost_terms", [])
         drug_keywords = case_config.get("drug_keywords", [])
             
-        # Validate API key
         self.validate_api_key()
         
-        # Process pipeline steps
         if not skip_processing:
             self.process_pdfs()
         
         if not skip_translation:
             self.translate_documents()
             
-        # Always chunk and vectorize for fresh runs
         if not skip_processing or not skip_translation:
             self.chunk_documents()
             self.vectorize_documents(embeddings_type=vectorstore_type)
         
-        # Initialize retriever
         self.initialize_retriever(vectorstore_type=vectorstore_type if vectorstore_type != "both" else "biobert")
         
-        # Initialize PICO extractors
         self.initialize_pico_extractors()
         
-        # Extract PICOs for each source type with indication parameterization using two-step process
         results = {}
         for source_type in source_types:
             if source_type == "hta_submission":

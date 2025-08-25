@@ -85,35 +85,6 @@ case1_indication = case1_config["indication"]
 case1_required_terms = case1_config.get("required_terms_clinical")
 case1_mutation_boost = case1_config.get("mutation_boost_terms", [])
 
-# Test HTA submission retrieval for Case 1
-hta_config = SOURCE_TYPE_CONFIGS["hta_submission"]
-hta_query_case1 = hta_config["query_template"].format(indication=case1_indication)
-
-hta_test_results_case1 = rag.test_retrieval(
-    query=hta_query_case1,
-    countries=COUNTRIES,
-    source_type="hta_submission",
-    heading_keywords=hta_config["default_headings"],
-    mutation_boost_terms=case1_mutation_boost,
-    initial_k=30,
-    final_k=30
-)
-
-# Test Clinical Guideline retrieval for Case 1 with required terms
-clinical_config = SOURCE_TYPE_CONFIGS["clinical_guideline"]
-clinical_query_case1 = clinical_config["query_template"].format(indication=case1_indication)
-
-clinical_test_results_case1 = rag.test_retrieval(
-    query=clinical_query_case1,
-    countries=COUNTRIES,
-    source_type="clinical_guideline",
-    heading_keywords=clinical_config["default_headings"],
-    required_terms=case1_required_terms,
-    mutation_boost_terms=case1_mutation_boost,
-    initial_k=60,
-    final_k=30
-)
-
 # Step 7: Run retrieval for Case 1 (saves chunks to results/chunks)
 print("\n--- Running Case 1 Retrieval Step ---")
 
@@ -191,123 +162,6 @@ for pico in extracted_picos_clinical_case1:
         print(f"Sample PICO - Comparator: {first_pico.get('Comparator', 'N/A')[:50]}...")
     print("---")
 
-"""
-# Test Case 2: Hepatocellular Carcinoma
-print("\n--- Testing Case 2: HCC Advanced Unresectable Retrieval ---")
-case2_config = CASE_CONFIGS["case_2_hcc_advanced_unresectable"]
-case2_indication = case2_config["indication"]
-
-# Get case-specific parameters
-case2_required_terms = case2_config.get("required_terms_clinical")
-case2_mutation_boost = case2_config.get("mutation_boost_terms", [])
-case2_drug_keywords = case2_config.get("drug_keywords", [])
-
-# Test HTA submission retrieval for Case 2
-hta_query_case2 = hta_config["query_template"].format(indication=case2_indication)
-
-hta_test_results_case2 = rag.test_retrieval(
-    query=hta_query_case2,
-    countries=COUNTRIES,
-    source_type="hta_submission",
-    heading_keywords=hta_config["default_headings"],
-    drug_keywords=case2_drug_keywords,
-    mutation_boost_terms=case2_mutation_boost,
-    initial_k=30,
-    final_k=15
-)
-
-# Test Clinical Guideline retrieval for Case 2
-clinical_query_case2 = clinical_config["query_template"].format(indication=case2_indication)
-
-clinical_test_results_case2 = rag.test_retrieval(
-    query=clinical_query_case2,
-    countries=COUNTRIES,
-    source_type="clinical_guideline",
-    heading_keywords=clinical_config["default_headings"],
-    drug_keywords=case2_drug_keywords,
-    required_terms=case2_required_terms,
-    mutation_boost_terms=case2_mutation_boost,
-    initial_k=50,
-    final_k=10
-)
-
-# Run retrieval for Case 2 (saves chunks to results/chunks)
-print("\n--- Running Case 2 Retrieval Step ---")
-
-# Run HTA retrieval for Case 2
-print("Running HTA retrieval for Case 2...")
-rag.run_retrieval_for_source_type(
-    source_type="hta_submission",
-    countries=COUNTRIES,
-    indication=case2_indication,
-    drug_keywords=case2_drug_keywords,
-    mutation_boost_terms=case2_mutation_boost,
-    initial_k=30,
-    final_k=15
-)
-
-# Run Clinical Guideline retrieval for Case 2
-print("Running Clinical Guideline retrieval for Case 2...")
-rag.run_retrieval_for_source_type(
-    source_type="clinical_guideline",
-    countries=COUNTRIES,
-    indication=case2_indication,
-    required_terms=case2_required_terms,
-    mutation_boost_terms=case2_mutation_boost,
-    drug_keywords=case2_drug_keywords,
-    initial_k=50,
-    final_k=10
-)
-
-# Run PICO extraction for Case 2 (uses stored chunks from results/chunks)
-print("\n--- Running Case 2 PICO Extraction Step ---")
-
-# Extract PICOs from HTA submissions for Case 2
-print("Extracting Case 2 HTA Submission PICOs...")
-extracted_picos_hta_case2 = rag.run_pico_extraction_for_source_type(
-    source_type="hta_submission",
-    indication=case2_indication
-)
-
-# Extract PICOs from clinical guidelines for Case 2
-print("Extracting Case 2 Clinical Guideline PICOs...")
-extracted_picos_clinical_case2 = rag.run_pico_extraction_for_source_type(
-    source_type="clinical_guideline",
-    indication=case2_indication
-)
-
-# Print extracted PICOs for Case 2
-print("\n=== CASE 2 - HCC ADVANCED UNRESECTABLE HTA SUBMISSION PICOS ===")
-for pico in extracted_picos_hta_case2:
-    country = pico.get('Country', 'Unknown')
-    pico_count = len(pico.get('PICOs', []))
-    chunks_used = pico.get('ChunksUsed', 0)
-    print(f"Country: {country}")
-    print(f"Number of PICOs: {pico_count}")
-    print(f"Chunks used: {chunks_used}")
-    if pico_count > 0:
-        first_pico = pico.get('PICOs', [{}])[0]
-        print(f"Sample PICO - Population: {first_pico.get('Population', 'N/A')[:100]}...")
-        print(f"Sample PICO - Intervention: {first_pico.get('Intervention', 'N/A')[:50]}...")
-        print(f"Sample PICO - Comparator: {first_pico.get('Comparator', 'N/A')[:50]}...")
-    print("---")
-
-print("\n=== CASE 2 - HCC ADVANCED UNRESECTABLE CLINICAL GUIDELINE PICOS ===")
-for pico in extracted_picos_clinical_case2:
-    country = pico.get('Country', 'Unknown')
-    pico_count = len(pico.get('PICOs', []))
-    chunks_used = pico.get('ChunksUsed', 0)
-    print(f"Country: {country}")
-    print(f"Number of PICOs: {pico_count}")
-    print(f"Chunks used: {chunks_used}")
-    if pico_count > 0:
-        first_pico = pico.get('PICOs', [{}])[0]
-        print(f"Sample PICO - Population: {first_pico.get('Population', 'N/A')[:100]}...")
-        print(f"Sample PICO - Intervention: {first_pico.get('Intervention', 'N/A')[:50]}...")
-        print(f"Sample PICO - Comparator: {first_pico.get('Comparator', 'N/A')[:50]}...")
-    print("---")
-"""
-
 # Summary
 print("\n=== PIPELINE EXECUTION SUMMARY ===")
 print("✓ Documents processed and vectorized")
@@ -316,10 +170,6 @@ print("✓ Chunk retrieval completed and saved to results/chunks")
 print("✓ PICO extraction completed and saved to results/PICO")
 print(f"✓ Case 1 HTA submissions: {len(extracted_picos_hta_case1)} countries processed")
 print(f"✓ Case 1 Clinical guidelines: {len(extracted_picos_clinical_case1)} countries processed")
-"""
-print(f"✓ Case 2 HTA submissions: {len(extracted_picos_hta_case2)} countries processed")
-print(f"✓ Case 2 Clinical guidelines: {len(extracted_picos_clinical_case2)} countries processed")
-"""
 print(f"✓ Model used: {MODEL}")
 print(f"✓ Vectorstore: {VECTORSTORE_TYPE}")
 

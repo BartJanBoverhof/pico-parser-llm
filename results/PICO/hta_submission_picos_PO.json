@@ -1,0 +1,32 @@
+{
+  "Indication": "treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context",
+  "Country": "PO",
+  "PICOs": [
+    {
+      "Population": "patients with NDRP with a KRAS G12C mutation who have experienced disease progression after at least one line of previous use",
+      "Intervention": "Medicine X (under assessment)",
+      "Comparator": "sotorasib",
+      "Outcomes": "overall response rate (ORR), progression-free survival (PFS), overall survival (OS), disease control rate (DCR), quality of life"
+    },
+    {
+      "Population": "patients with NDRP with a KRAS G12C mutation who have experienced disease progression after at least one line of previous use",
+      "Intervention": "Medicine X (under assessment)",
+      "Comparator": "docetaxel (DOC)",
+      "Outcomes": "progression-free survival (PFS), overall response rate (ORR), disease control rate (DCR), quality of life"
+    },
+    {
+      "Population": "patients with NDRP with a KRAS G12C mutation who have experienced disease progression after at least one line of previous use",
+      "Intervention": "Medicine X (under assessment)",
+      "Comparator": "nintedanib in combination with docetaxel (NIN+DOC)",
+      "Outcomes": "progression-free survival (PFS), overall response rate (ORR), disease control rate (DCR), quality of life"
+    },
+    {
+      "Population": "patients with NDRP with a KRAS G12C mutation who have experienced disease progression after at least one line of previous use",
+      "Intervention": "Medicine X (under assessment)",
+      "Comparator": "pemetrexed (PMX)",
+      "Outcomes": "progression-free survival (PFS), overall response rate (ORR), disease control rate (DCR), quality of life"
+    }
+  ],
+  "ChunksUsed": 30,
+  "ContextTokens": 6780
+}

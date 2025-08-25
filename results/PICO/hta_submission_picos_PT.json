@@ -1,0 +1,50 @@
+{
+  "Indication": "treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context",
+  "Country": "PT",
+  "PICOs": [
+    {
+      "Population": "Adults with advanced non-small cell lung cancer (NSCLC) with mutated KRAS G12C who have progressed after at least one prior systemic line of therapy",
+      "Intervention": "Medicine X (under assessment)",
+      "Comparator": "docetaxel",
+      "Outcomes": "overall survival, progression-free survival, objective response rate, duration of response, safety, quality of life"
+    },
+    {
+      "Population": "Adults with advanced non-small cell lung cancer (NSCLC) with mutated KRAS G12C who have progressed after at least one prior systemic line of therapy",
+      "Intervention": "Medicine X (under assessment)",
+      "Comparator": "docetaxel + nintedanib",
+      "Outcomes": "overall survival, progression-free survival, objective response rate, duration of response, safety, quality of life"
+    },
+    {
+      "Population": "Adults with advanced non-small cell lung cancer (NSCLC) with mutated KRAS G12C who have progressed after at least one prior systemic line of therapy",
+      "Intervention": "Medicine X (under assessment)",
+      "Comparator": "pemetrexed",
+      "Outcomes": "overall survival, progression-free survival, objective response rate, duration of response, safety, quality of life"
+    },
+    {
+      "Population": "Adults with advanced non-small cell lung cancer (NSCLC) with mutated KRAS G12C who have progressed after at least one prior systemic line of therapy",
+      "Intervention": "Medicine X (under assessment)",
+      "Comparator": "nivolumab",
+      "Outcomes": "overall survival, progression-free survival, objective response rate, duration of response, safety, quality of life"
+    },
+    {
+      "Population": "Adults with advanced non-small cell lung cancer (NSCLC) with mutated KRAS G12C who have progressed after at least one prior systemic line of therapy",
+      "Intervention": "Medicine X (under assessment)",
+      "Comparator": "pembrolizumab",
+      "Outcomes": "overall survival, progression-free survival, objective response rate, duration of response, safety, quality of life"
+    },
+    {
+      "Population": "Adults with advanced non-small cell lung cancer (NSCLC) with mutated KRAS G12C who have progressed after at least one prior systemic line of therapy",
+      "Intervention": "Medicine X (under assessment)",
+      "Comparator": "atezolizumab",
+      "Outcomes": "overall survival, progression-free survival, objective response rate, duration of response, safety, quality of life"
+    },
+    {
+      "Population": "Adults with advanced non-small cell lung cancer (NSCLC) with mutated KRAS G12C who have progressed after at least one prior systemic line of therapy",
+      "Intervention": "Medicine X (under assessment)",
+      "Comparator": "platinum doublet",
+      "Outcomes": "overall survival, progression-free survival, objective response rate, duration of response, safety, quality of life"
+    }
+  ],
+  "ChunksUsed": 30,
+  "ContextTokens": 7430
+}
