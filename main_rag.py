@@ -131,36 +131,7 @@ extracted_picos_clinical_case1 = rag.run_pico_extraction_for_source_type(
     indication=case1_indication
 )
 
-# Print extracted PICOs for Case 1
-print("\n=== CASE 1 - NSCLC KRAS G12C HTA SUBMISSION PICOS ===")
-for pico in extracted_picos_hta_case1:
-    country = pico.get('Country', 'Unknown')
-    pico_count = len(pico.get('PICOs', []))
-    chunks_used = pico.get('ChunksUsed', 0)
-    print(f"Country: {country}")
-    print(f"Number of PICOs: {pico_count}")
-    print(f"Chunks used: {chunks_used}")
-    if pico_count > 0:
-        first_pico = pico.get('PICOs', [{}])[0]
-        print(f"Sample PICO - Population: {first_pico.get('Population', 'N/A')[:100]}...")
-        print(f"Sample PICO - Intervention: {first_pico.get('Intervention', 'N/A')[:50]}...")
-        print(f"Sample PICO - Comparator: {first_pico.get('Comparator', 'N/A')[:50]}...")
-    print("---")
 
-print("\n=== CASE 1 - NSCLC KRAS G12C CLINICAL GUIDELINE PICOS ===")
-for pico in extracted_picos_clinical_case1:
-    country = pico.get('Country', 'Unknown')
-    pico_count = len(pico.get('PICOs', []))
-    chunks_used = pico.get('ChunksUsed', 0)
-    print(f"Country: {country}")
-    print(f"Number of PICOs: {pico_count}")
-    print(f"Chunks used: {chunks_used}")
-    if pico_count > 0:
-        first_pico = pico.get('PICOs', [{}])[0]
-        print(f"Sample PICO - Population: {first_pico.get('Population', 'N/A')[:100]}...")
-        print(f"Sample PICO - Intervention: {first_pico.get('Intervention', 'N/A')[:50]}...")
-        print(f"Sample PICO - Comparator: {first_pico.get('Comparator', 'N/A')[:50]}...")
-    print("---")
 
 # Summary
 print("\n=== PIPELINE EXECUTION SUMMARY ===")

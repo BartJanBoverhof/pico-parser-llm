@@ -1,5 +1,5 @@
 # ============================
-# RAG Pipeline Configuration v1.3
+# RAG Pipeline Configuration v1.3 (updated prompts)
 # ============================
 # Goals:
 # - Generic, minimally-steering retrieval & prompting
@@ -41,46 +41,77 @@ SOURCE_TYPE_CONFIGS = {
 
         "system_prompt": """
         You are an oncology-focused HTA analyst.
-        From the provided context, extract PICO entries for the specified indication.
-        The intervention under evaluation is not defined in the documents; treat it as:
+
+        Task: From the provided context, extract PICO entries for the specified indication.
+        Treat the intervention under evaluation as a constant string:
         "Medicine X (under assessment)".
 
-        Rules:
+        PICO element definitions (use these strictly):
+        - Population (P): EXACT wording from the context describing the applicable group (disease/stage, biomarkers/testing, prior therapy/line, inclusion/exclusion). If a narrower sub-population is specified, capture that exact phrasing.
+        - Intervention (I): Always "Medicine X (under assessment)" (not taken from the documents).
+        - Comparator (C): Specific alternative regimen/class/SoC/BSC/placebo (or ITC/NMA comparator) as NAMED in the context for the same setting/line.
+        - Outcomes (O): Outcomes reported in the context (e.g., OS, PFS, ORR, DoR, safety, QoL, economic/utilities). Do not invent outcomes.
+
+        Extraction rules:
         1) Use ONLY information present in the context; do not infer missing facts.
-        2) Capture the Population EXACTLY as written (disease/stage, biomarker/testing if any,
-           prior therapy/line, inclusion/exclusion). Include sub-populations when a PICO applies
-           to a narrower group; do not assume the population equals the indication.
-        3) For EACH appropriate alternative described in the same setting,
-           create a separate PICO where:
-             - "Intervention" = "Medicine X (under assessment)"
-             - "Comparator" = the specific alternative/regimen/class/SoC/BSC/placebo (or ITC/NMA comparator) as named in the text
-        4) List Outcomes reported (e.g., OS, PFS, ORR, DoR, safety, QoL, economic/utilities if present).
-        5) If a jurisdiction/country/agency is explicitly stated, record it; otherwise use null.
-        6) Do NOT include your reasoning. Return valid JSON ONLY, in the requested format.
+        2) Capture Population verbatim as written (including sub-populations where applicable).
+        3) For EACH appropriate alternative described in the same setting, create a separate PICO with:
+           - "Intervention" = "Medicine X (under assessment)"
+           - "Comparator"  = the specific alternative/regimen/class/SoC/BSC/placebo (or ITC/NMA comparator) as named.
+        4) If a jurisdiction/country/agency is explicitly stated, record it; otherwise use null (unquoted).
+        5) You may reason stepwise INTERNALLY, but DO NOT include your reasoning in the output.
+        6) Return VALID JSON ONLY that adheres to the output contract below. Do not wrap in code fences, do not add comments, and do not include trailing commas.
+
+        JSON output contract:
+        - Top-level object with keys: "Indication" (string), "Country" (string or null), "PICOs" (array).
+        - "PICOs" is an array of objects with keys:
+          - "Population" (string; verbatim from context),
+          - "Intervention" (string; always exactly "Medicine X (under assessment)"),
+          - "Comparator"  (string; verbatim as named in context),
+          - "Outcomes"    (string; concise list/sentence from context; if none are stated, use an empty string "").
+        - Use double quotes for all JSON strings.
+        - Use null (without quotes) when no country/jurisdiction is stated.
         """.strip(),
 
         "user_prompt_template": """
         Indication:
         {indication}
 
-        Context:
-        {context_block}
+        Few-shot example (for format only):
+        Example context snippet:
+        "Eligible patients include {indication}. Appropriate alternatives considered include {example_comparator}."
 
-        Task:
-        Extract all relevant PICO entries for this indication and for any clearly defined sub-populations.
-
-        Output valid JSON ONLY in this exact format:
+        Example JSON output:
         {{
           "Indication": "{indication}",
-          "Country": "[Jurisdiction explicitly stated in the context, or null]",
+          "Country": null,
           "PICOs": [
             {{
-              "Population": "[Exact wording from the context for the applicable (sub-)population]",
+              "Population": "{indication}",
               "Intervention": "Medicine X (under assessment)",
-              "Comparator": "[Specific alternative regimen/class/SoC/BSC/placebo or ITC/NMA comparator]",
-              "Outcomes": "[Outcomes reported in the context; list as stated]"
+              "Comparator": "{example_comparator}",
+              "Outcomes": ""
             }}
-            # additional PICO objects as needed
+          ]
+        }}
+
+        Context for extraction:
+        {context_block}
+
+        Your task:
+        Extract all relevant PICO entries for this indication and for any clearly defined sub-populations.
+
+        Output JSON ONLY in this exact structure:
+        {{
+          "Indication": "{indication}",
+          "Country": null or a jurisdiction string explicitly stated in the context,
+          "PICOs": [
+            {{
+              "Population": "<exact wording from the context for the applicable (sub-)population>",
+              "Intervention": "Medicine X (under assessment)",
+              "Comparator": "<specific alternative/regimen/class/SoC/BSC/placebo or ITC/NMA comparator>",
+              "Outcomes": "<outcomes reported in the context; if none are stated, use an empty string>"
+            }}
           ]
         }}
         """.strip()
@@ -108,43 +139,76 @@ SOURCE_TYPE_CONFIGS = {
 
         "system_prompt": """
         You are an oncology guideline specialist.
-        From the provided context, extract PICO entries for the specified indication.
-        The intervention under evaluation is not defined in the guidelines; treat it as:
+
+        Task: From the provided context, extract PICO entries for the specified indication.
+        Treat the intervention under evaluation as a constant string:
         "Medicine X (under assessment)".
 
-        Rules:
+        PICO element definitions (use these strictly):
+        - Population (P): EXACT wording from the context describing the applicable group (disease/stage, biomarkers/testing, prior therapy/line, inclusion/exclusion). Include narrower sub-populations exactly as written when applicable.
+        - Intervention (I): Always "Medicine X (under assessment)".
+        - Comparator (C): Recommended option(s), alternatives, SoC/BSC/placebo, or other options named in the guideline for the same setting/line.
+        - Outcomes (O): Outcomes/expected benefits/harms (and evidence grading if stated). Do not invent outcomes.
+
+        Extraction rules:
         1) Use ONLY the context; do not infer beyond what is written.
-        2) Capture the Population EXACTLY as stated, including any sub-populations.
-        3) For EACH recommended option applicable to the setting:
+        2) Capture Population verbatim as stated, including sub-populations.
+        3) For EACH applicable alternative/recommended option, create a separate PICO with:
            - "Intervention" = "Medicine X (under assessment)"
-           - "Comparator"  = the recommended option's alternatives/SoC or other options named in the guideline
-        4) Record Outcomes/expected benefits/harms and any evidence rating if present.
-        5) Record jurisdiction/country/organization if explicitly stated; else null.
-        6) Do NOT include your reasoning. Return valid JSON ONLY, in the requested format.
+           - "Comparator"  = the named alternative/recommended option/SoC/BSC/placebo.
+        4) Record jurisdiction/country/organization if explicitly stated; else use null (unquoted).
+        5) You may reason stepwise INTERNALLY, but DO NOT include your reasoning in the output.
+        6) Return VALID JSON ONLY (no code fences, no comments, no trailing commas) per the contract:
+
+        JSON output contract:
+        - Top-level keys: "Indication" (string), "Country" (string or null), "PICOs" (array).
+        - "PICOs" item keys:
+          - "Population" (string; verbatim),
+          - "Intervention" (string; exactly "Medicine X (under assessment)"),
+          - "Comparator"  (string; verbatim name from guideline),
+          - "Outcomes"    (string; concise list/sentence from context; empty string "" if none).
+        - Use double quotes for strings and null (unquoted) when country is absent.
         """.strip(),
 
         "user_prompt_template": """
         Indication:
         {indication}
 
-        Context:
-        {context_block}
+        Few-shot example (for format only):
+        Example context snippet:
+        "For {indication}, alternative options include {example_comparator}."
 
-        Task:
-        Extract guideline-based PICO entries for this indication and any clearly defined sub-populations.
-
-        Output valid JSON ONLY in this exact format:
+        Example JSON output:
         {{
           "Indication": "{indication}",
-          "Country": "[Jurisdiction explicitly stated in the context, or null]",
+          "Country": null,
           "PICOs": [
             {{
-              "Population": "[Exact wording for the applicable (sub-)population]",
+              "Population": "{indication}",
               "Intervention": "Medicine X (under assessment)",
-              "Comparator": "[Alternative(s)/SoC as stated in the guideline]",
-              "Outcomes": "[Outcomes/expected benefits/harms; include evidence rating if present]"
+              "Comparator": "{example_comparator}",
+              "Outcomes": ""
             }}
-            # additional PICO objects as needed
+          ]
+        }}
+
+        Context for extraction:
+        {context_block}
+
+        Your task:
+        Extract guideline-based PICO entries for this indication and any clearly defined sub-populations.
+
+        Output JSON ONLY in this exact structure:
+        {{
+          "Indication": "{indication}",
+          "Country": null or a jurisdiction/organization string explicitly stated in the context,
+          "PICOs": [
+            {{
+              "Population": "<exact wording for the applicable (sub-)population>",
+              "Intervention": "Medicine X (under assessment)",
+              "Comparator": "<alternative(s)/SoC as stated in the guideline>",
+              "Outcomes": "<outcomes/expected benefits/harms; if none are stated, use an empty string>"
+            }}
           ]
         }}
         """.strip()
@@ -202,10 +266,11 @@ CASE_CONFIGS = {
     "case_1_nsclc_krasg12c_monotherapy_progressed": {
         "indication": "treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context",
         "required_terms_clinical": [
-            [r'\bkras\b', r'\bKRAS\b'],
-            [r'\bg12c\b', r'\bG12C\b']
+            [r'\\bkras\\b', r'\\bKRAS\\b'],
+            [r'\\bg12c\\b', r'\\bG12C\\b']
         ],
-        "mutation_boost_terms": ["kras", "g12c", "kras-g12c", "krasg12c"]    },
+        "mutation_boost_terms": ["kras", "g12c", "kras-g12c", "krasg12c"]
+    },
     "case_2_hcc_advanced_unresectable": {
         "indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
         "required_terms_clinical": None,
