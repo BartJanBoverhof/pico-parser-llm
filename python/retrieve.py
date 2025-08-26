@@ -321,18 +321,18 @@ class ChunkRetriever:
                 heading_lower = (doc.metadata.get("heading") or "").lower()
                 combined_text = text_lower + " " + heading_lower
                 
-                has_all_required = True
+                has_any_required = False
                 for term_group in required_terms:
                     group_matched = False
                     for pattern in term_group:
                         if re.search(pattern, combined_text, re.IGNORECASE):
                             group_matched = True
                             break
-                    if not group_matched:
-                        has_all_required = False
+                    if group_matched:
+                        has_any_required = True
                         break
                 
-                if has_all_required:
+                if has_any_required:
                     filtered_docs.append(doc)
         else:
             filtered_docs = docs

@@ -1,0 +1,1149 @@
+{
+  "doc_id": "2013_LG_AIOM_Epatocarcinoma_W11_26.9.13",
+  "created_date": "2013",
+  "country": "IT",
+  "source_type": "clinical_guideline",
+  "chunks": [
+    {
+      "heading": "",
+      "text": "Edi\nizio\non\nne 201\nE\nEP\nPA\nL\nAT\nLi\nTO\nin\nO\nne\nOC\nee\nCA\ne guida\nARCINOMA\nLINEE GUIDA EP\nCoordinatore: Brun\nSegretario Scientifi\nEstensori:\nFrancesco Fiore,\nVincenzo Mazzaferr\nFabio Piscaglia,\nMassimo Roncalli\nPATOCAR\nno Daniel ico: Genn\nro,\nRCINOM\nle\nnaro Dani\nMA\niele\nRefere\nRefere\nee AIOM ee AISF\nM Fran\nMar\nFran\nncesco Perrone, rio Scartozzi\nnco Trevisani",
+      "start_page": 1,
+      "end_page": 2
+    },
+    {
+      "heading": "Indice",
+      "text": "1. Epidemiologia .....................................\n1.1 Generalità ......................................\n1.2 Incidenza .......................................\n1.3 Mortalità ...............................................\n1.4 Sopravvivenza ...............................\n1.5 Prevalenza .....................................\n2. Eziologia e prevenzione ......................\n3. Screening e sorveglianza ....................\n4. Diagnosi ..............................................\n5. Stadiazione ..........................................\n5.1 Generalità ......................................\n5.2 Inquadramento funzionale del paz\n5.3 Sistemi di stadiazione ...................\n6. Trattamento .........................................\n6.1 Premessa .......................................\n6.2 HCC limitato al fegato ..................\n6.2.1 Child-Pugh A ......................\n6.2.2 Child-Pugh B ......................\n6.2.3 Child-Pugh C ......................\n6.2.4 Trattamenti combinati.........\n6.2.5 Terapie adiuvanti ................\n6.2.6 Follow-up ............................\n6.3 HCC avanzato ...............................\n6.3.1. Child-Pugh A .....................\n6.3.2 Child-Pugh B ......................\n6.3.3 Child-Pugh C ......................\n6.3.4. Altri trattamenti sistemici. .\n6.4 Trattamento dell’HCC nel pazient\n7. Algoritmi ..............................................\n8. Raccomandazioni prodotte con metodo\n9. Bibliografia ..........................................\nAllegato: Tabelle GRADE evidence profile\nziente\nte non\nologia\ne\ne epato\nn cirro\na GR\nopatic\notico .\nRADE\nco ....\nE .......",
+      "start_page": 3,
+      "end_page": 3
+    },
+    {
+      "heading": "Come leggere le raccomandazioni *",
+      "text": "Le raccomandazioni vengono presentate in tabelle.",
+      "start_page": 4,
+      "end_page": 4
+    },
+    {
+      "heading": "La riga d’intestazione è verde se sono state prodotte con metodologia SIGN** oppure arancione se sono state prodotte con il metodo GRADE*** (se presenti).",
+      "text": "Grado di Forza della raccomandazione Raccomandazione clinica (2) raccomandazione\nSIGN (1) clinica (3)\nNel paziente oncologico in fase avanzata di malattia, con dolore di diversa etiologia, la somministrazione di",
+      "start_page": 4,
+      "end_page": 4
+    },
+    {
+      "heading": "B FANS e paracetamolo dovrebbe essere effettuata per Positiva debole periodi limitati e con attenzione ai possibili effetti",
+      "text": "collaterali.",
+      "start_page": 4,
+      "end_page": 4
+    },
+    {
+      "heading": "Nell’approccio SIGN,il grado di raccomandazione viene indicato con lettere (A;B;C;D). che sintetizzano i",
+      "text": "livelli di evidenza dei singoli studi****. Ogni lettera indica la “fiducia” nell’intero corpo delle evidenze\nvalutate che sostengono la raccomandazione; NON riflettono sempre l’importanza clinica della\nraccomandazione e NON sono sinonimo della forza della raccomandazione clinica",
+      "start_page": 4,
+      "end_page": 4
+    },
+    {
+      "heading": "A",
+      "text": "Il corpo delle evidenze disponibili consiste principalmente in studi valutati 1+ direttamente applicabili alla popolazione target e con risultati coerenti per direzione e dimensione dell’effetto\nIl corpo delle evidenze include studi valutati 2++ con risultati applicabili direttamente alla popolazione target e con risultati coerenti per direzione e dimensione dell’effetto.",
+      "start_page": 4,
+      "end_page": 4
+    },
+    {
+      "heading": "B",
+      "text": "Evidenze estrapolate da studi valutati 1++ o 1+\nIl corpo delle evidenze include studi valutati 2+ con risultati applicabili direttamente alla popolazione target e con risultati coerenti per direzione e dimensione dell’effetto.",
+      "start_page": 4,
+      "end_page": 4
+    },
+    {
+      "heading": "C",
+      "text": "Evidenze estrapolate da studi valutati 2++\nEvidenze di livello 3 o 4",
+      "start_page": 4,
+      "end_page": 4
+    },
+    {
+      "heading": "D",
+      "text": "Evidenze estrapolate da studi valutati 2+",
+      "start_page": 4,
+      "end_page": 4
+    },
+    {
+      "heading": "Quando possibile, riprende il PICO del quesito (popolazione, intervento, confronto, outcome); in alcuni casi",
+      "text": "può contenere delle specifiche per i sottogruppi indicate con il simbolo √. La raccomandazione clinica\ndeve esprimere l’importanza clinica di un intervento/procedura.",
+      "start_page": 4,
+      "end_page": 4
+    },
+    {
+      "heading": "(3) LA FORZA DELLA RACCOMANDAZIONE",
+      "text": "Viene graduata , in base all’importanza clinica, su 4 livelli:\nForza della raccomandazione Terminologia Significato\nclinica\nAlla maggioranza dei pz. con le caratteristiche definite\nTutti i pazienti devono ricevere\nPositiva Forte nella raccomandazione deve essere offerto l’intervento a l’intervento/procedura in oggetto.\nmeno che vi siano controindicazioni specifiche.\nTrend positivo del risultato ma con possibilità di incertezza nel bilancio tra beneficio e danno. Implica una\nI pazienti dovrebbero ricevere discussione approfondita con il pz. In modo che egli\nPositiva Debole l’intervento/procedura in oggetto. possa scegliere se sottoporsi o meno\nall’intervento/procedura tenendo conto dei propri valori/preferenze.\nI pazienti non dovrebbero ricevere Trend negativo del risultato ma con possibilità di\nNegativa Debole l’intervento/procedura in oggetto. incertezza nel bilancio tra beneficio e danno.\nTutti i pazienti non devono Alla maggioranza dei pz con le caratteristiche definite\nNegativa Forte ricevere l’intervento/procedura in nella raccomandazione NON deve essere offerto oggetto. l’intervento.\nLIVELLI DI EVIDENZA dei singoli studi/opinioni:\nLa qualità delle evidenze tiene conto sia del disegno di studio sia di come lo studio è stato condotto: viene\nriportata nel testo a lato della descrizione degli studi ritenuti rilevanti a sostegno o contro uno specifico intervento. Sono presenti solo per le evidenze che sostengono la raccomandazione clinica, contribuiscono a\ngenerare il grado di raccomandazione SIGN",
+      "start_page": 5,
+      "end_page": 5
+    },
+    {
+      "heading": "1 - > Revisioni sistematiche e meta analisi di RCT o singoli RCT",
+      "text": "1 ++ Rischio di bias molto basso.\n1 + Rischio di bias basso.\n1 - Rischio di Bias elevato -> i risultati dello studio non sono affidabili.\nRevisioni sistematiche e meta-analisi di studi caso/controllo o di coorte o singoli studi\n2 - > caso/controllo o di coorte.\nRischio di bias molto basso, probabilità molto bassa di fattori confondenti, elevata probabilità di\n2 ++ relazione causale tra intervento e effetto.\nRischio di bias basso, bassa probabilità presenza fattori di confondimento, moderata probabilità\n2 + di relazione causale tra intervento e effetto.\nRischio di Bias elevato -> i risultati dello studio non sono affidabili, esiste un elevato rischio che\n2 la relazione intervento/effetto non sia causale.\n3 - > Disegni di studio non analitici come report di casi e serie di casi.\n4 - > Expert opinion.",
+      "start_page": 5,
+      "end_page": 5
+    },
+    {
+      "heading": "Note:",
+      "text": "* La descrizione complete delle metodologie applicate alle LG AIOM è reperibile sul sito\n** SIGN= Scottish Intercollagiate Guidelines Network\n*** GRADE= Grading of Recommendations Assessment, Development and Evaluation\n(Le informazioni complete relative al processo GRADE sono riportate nel capitolo successivo a quello degli algoritmi).",
+      "start_page": 5,
+      "end_page": 5
+    },
+    {
+      "heading": "1.1 Generalità",
+      "text": "Fonte dei dati sono i Registri Tumori disseminati sul territorio Italiano. La percentuale di residenti\nmonitorata da questi registri è maggiore nelle aree del Nord (NO 41%, NE 68% dei residenti monitorati), rispetto al Centro (26%) e al Sud (32%). I dati si riferiscono al totale delle diagnosi di tumori primitivi del\nfegato i cui codici includono:\n- Carcinoma epatocellulare (79% dei tumori primitivi del fegato);\n- Colangiocarcinoma (6%);\n- Carcinoma (5%);\n- Adenocarcinoma (4%);\n- Tumore maligno (2%).",
+      "start_page": 6,
+      "end_page": 6
+    },
+    {
+      "heading": "1.2 Incidenza",
+      "text": "Gli HCC rappresentano circa il 4% di tutti i nuovi casi di tumore, con un rapporto di circa 3:1 tra maschi e\nfemmine. L’andamento nel tempo dell’incidenza del carcinoma epatocellulare (HCC) appare stabile nei due\nsessi dalla metà degli anni ‘90, al netto dell’effetto causato dall’invecchiamento progressivo della popolazione. Il Sud Italia è l’area a più alta incidenza di HCC con un tasso rispetto al Nord di +17% nei\nmaschi e di +65% nelle femmine. Il Centro si caratterizza per un’incidenza più bassa sia rispetto al Nord\n(-39% negli uomini e -19% nelle donne) che al Sud. La differenza tra Nord e Sud può essere spiegata con la\ndifferente incidenza di infezione con virus epatitici ed in particolare con il virus dell’epatite C (HCV).\nSebbene, infatti, il virus dell’epatite B (HBV) sia un noto fattore patogenetico dell’HCC, il suo ruolo in Italia è mitigato dalla disponibilità di un vaccino efficace somministrato a tutti i soggetti nati dal 1978 in poi. Se i\ntassi di incidenza rimanessero invariati, si prevede un aumento dei casi nel prossimo futuro rispetto alle stime\n2012 (+12% nel 2020 e +30% nel 2030), soprattutto legato all’invecchiamento della popolazione.",
+      "start_page": 6,
+      "end_page": 6
+    },
+    {
+      "heading": "1.3 Mortalità",
+      "text": "L’epatocarcinoma (HCC) rientra tra le prime 5 cause di morte per tumore nei maschi di qualsiasi età (7%), ma è al terzo posto (8%) nella fascia di età 50-69 anni. La mortalità nei maschi presenta un decremento a\npartire dai primi anni ’90 (-1,6%/anno); anche nelle femmine si osserva una tendenza alla diminuzione\n(-1,3%/anno) costante. La mortalità per HCC risulta più alta al Sud (20,3 decessi x 100.000 abitanti/anno nei\nmaschi, 8,1 nelle femmine), rispetto al Centro e al Nord.",
+      "start_page": 6,
+      "end_page": 6
+    },
+    {
+      "heading": "1.4 Sopravvivenza",
+      "text": "La sopravvivenza a 5 anni per i pazienti con diagnosi di HCC nella prima metà degli anni 2000 è stata rispettivamente 15% per i maschi e 12% per le femmine. Rispetto ai quinquenni precedenti la speranza di\nvita appare proporzionalmente migliorata, sia pure nel contesto di una malattia comunque a prognosi infausta. Il rischio di decesso tocca la sua punta massima nel primo anno dopo la diagnosi mentre la\nprobabilità di sopravvivere per ulteriori 5 anni aumenta progressivamente nei pazienti vivi a 1, 3 e 5 anni\n(20%, 37% e 48% rispettivamente). Come in altre neoplasie a prognosi severa, non si osservano significative\ndifferenze in ambito nazionale.",
+      "start_page": 6,
+      "end_page": 6
+    },
+    {
+      "heading": "1.5 Prevalenza",
+      "text": "E’ stato stimato che in Italia nel 2011 risiedessero 21.416 persone con pregressa diagnosi di carcinoma\nepatico, l’1% di tutti i pazienti con tumore, con un rapporto tra maschi e femmine di 2,2:1. La maggior parte\ndelle persone si trova temporalmente in prossimità della diagnosi (il 48% entro i 2 anni, il 77% entro i 5 anni) in virtù della prognosi altamente sfavorevole della malattia. Tra gli ultrasettantacinquenni la\nproporzione di persone con tumore è del 25% superiore ai 60-74enni (132/100.000 vs 106) e oltre il\nquintuplo rispetto ai 45-59enni. Non si osserva un gradiente di distribuzione della prevalenza fra le diverse\naree del Paese: 43 e 37/100.000 sono le proporzioni osservate rispettivamente nel NO e nel NE, 27 al centro\ne 38 al Sud.",
+      "start_page": 7,
+      "end_page": 7
+    },
+    {
+      "heading": "2. Eziologia e prevenzione",
+      "text": "L’epatite B e C rappresentano i principali fattori di rischio dell’HCC e sono responsabili di circa l’85% dei casi di HCC nel mondo, con una prevalenza dell’epatite B in Asia ed Africa e dell’epatite C in Giappone e\nnel mondo occidentale. Altre cause sono l’abuso di alcol, alcune malattie metaboliche ereditarie\n(emocromatosi e deficit di alfa-1-antitripsina) e la sindrome metabolica rappresentata da obesità, diabete e steatosi epatica. La cirrosi rappresenta il principale fattore di rischio di HCC, mentre cofattori di rischio di\nsviluppo di HCC su cirrosi sono: la coinfezione dei virus HBV ed HCV, il genotipo C del virus dell’epatite B\ne il genotipo 1b del virus dell’epatite C e valori di transaminasi costantemente e significativamente elevati\n(oltre 5 volte i valori normali). Rispetto alla popolazione generale l’infezione da singolo virus epatitico\ncomporta un rischio relativo di sviluppo di HCC di circa 20 volte, mentre la coinfezione HCV+HBV attivi produce un rischio relativo di circa 80 volte.\nLa prevenzione primaria dell’HCC si effettua attraverso la vaccinazione contro l’infezione da virus dell’epatite B, che è raccomandata in tutti i neonati e nelle popolazioni ad alto rischio1 (Livello di evidenza\n2++). L’effetto della terapia antivirale nei pazienti con epatite cronica B sulla prevenzione dello sviluppo\ndell’HCC è controverso, mentre il rischio di HCC nei pazienti con infezione da HCV trattati con interferone e ribavirina che ottengono una risposta virologica prolungata è ridotto rispetto ai pazienti non trattati o non\nrispondenti. Tuttavia, non è chiaro se questa riduzione si ottenga anche quando si è già in presenza di cirrosi\nepatica.\nGrado di Forza della raccomandazione Raccomandazione clinica raccomandazione\nSIGN clinica\nLa vaccinazione universale dei neonati e delle popolazioni ad alto rischio contro l’infezione dell’epatite\nB Positiva forte\nB è raccomandata per la prevenzione dello sviluppo dell’HCC.",
+      "start_page": 7,
+      "end_page": 7
+    },
+    {
+      "heading": "3. Screening e sorveglianza",
+      "text": "L’HCC è una delle neoplasie le cui cause sono meglio definite e pertanto, almeno teoricamente, prevenibile.\nInoltre i dati epidemiologici mostrano chiaramente come sia ben identificabile una popolazione di soggetti a rischio, cioè i pazienti con cirrosi epatica ed alcune categorie di pazienti con epatite cronica virale. Grazie al\nmiglioramento nella gestione delle complicanze della cirrosi epatica, in particolare di quelle connesse all’ipertensione portale, l’HCC è recentemente diventato la più probabile causa di morte nei pazienti con\ncirrosi epatica in fase compensata.\nE’ stato stimato che, in presenza dei trattamenti attualmente disponibili, una sorveglianza periodica dei pazienti con cirrosi mediante ecografia del fegato per l’identificazione precoce dell’HCC produca un",
+      "start_page": 7,
+      "end_page": 7
+    },
+    {
+      "heading": "LINEE GUIDA EPATOCARCINOMA rapporto costo/beneficio soddisfacente quando l’incidenza di malattia nella popolazione sottoposta a",
+      "text": "sorveglianza superi l’1.5%2. Esiste un solo studio prospettico randomizzato, cinese, di grandi dimensioni,\nche riporta dati a favore di una diagnosi più precoce e di una migliorata sopravvivenza nei soggetti con infezione cronica da virus dell’epatite B (HBV) sottoposti a sorveglianza, anche se il tasso di drop out nello\nstudio è significativo3 (Livello di evidenza 1+). Diversi studi osservazionali, tra cui anche alcuni italiani,\nhanno dato risultati in linea con il dato asiatico, confermando come una sorveglianza con intervallo semestrale4 (Livello di evidenza 2++) fosse efficace nei pazienti cirrotici (considerati a rischio per\nl’incidenza annuale di HCC attorno al 2-4%)5,6 (Livello di evidenza 2++). E’ ragionevole derogare a tale\nraccomandazione solo se la funzione epatica è molto scaduta (cirrosi epatica in classe Child-Pugh C, non eleggibile a trapianto di fegato) o sono molto scadute le condizioni generali (performance status molto\ncompromesso o comorbidità importanti a carico di altri organi) al punto da impedire qualsiasi trattamento radicale o palliativo di un eventuale HCC diagnosticato precocemente. In questo caso si può soprassedere\nalla sorveglianza dopo l’ecografia iniziale, a giudizio del clinico.7 L’età avanzata (oltre 70-75 anni) non è di\nper sé un motivo per non raccomandare la sorveglianza periodica, in quanto essa non preclude successivi trattamenti8 (Livello di evidenza 2++). L’aggiunta del dosaggio periodico dell’alfafetoproteina alla\nsorveglianza ecografica non aumenta in misura sostanziale (circa 6%) il tasso di riconoscimento dell’HCC in stadio precoce e peggiora nettamente il rapporto costo/efficacia della sorveglianza, aumentando il numero\ndei risultati falsi positivi9 (Livello di evidenza 2++). Pertanto, il monitoraggio semestrale dell’alfafetoproteina non può rientrare fra gli strumenti di sorveglianza del paziente a rischio di epatocarcinoma,\nsalvo che in assenza di disponibilità dell’ecografia. Tuttavia essa rimane un indicatore del rischio di sviluppo\ndi HCC e va dosata al momento del riscontro di una lesione focale epatica su cirrosi per contribuire all’inquadramento diagnostico e prognostico.\nGrado di Forza della raccomandazione Raccomandazione clinica raccomandazione\nSIGN clinica\nTutti i pazienti con cirrosi epatica dovrebbero essere\nB sottoposti a sorveglianza semestrale con ecografia Positiva debole dell’addome superiore per la diagnosi precoce di HCC.\nL’alfafetoproteina è un indicatore di rischio di sviluppo di HCC, ma, per la ridotta sensibilità nei tumori di\npiccole dimensioni, non dovrebbe essere utilizzata come\nB test di sorveglianza ed i frequenti risultati positivi che Negativa debole conseguono al suo uso peggiorano il rapporto\ncosto/beneficio della sorveglianza semestrale con la sola ecografia.",
+      "start_page": 8,
+      "end_page": 8
+    },
+    {
+      "heading": "4. Diagnosi",
+      "text": "La cirrosi è caratterizzata istologicamente da bande di tessuto fibroso che delimitano noduli di rigenerazione epatocitaria. La presenza di piccoli noduli nel fegato cirrotico rappresenta pertanto la norma. Tuttavia questi\nnoduli, che hanno generalmente dimensioni comprese tra 1 e 4 mm, non vengono rilevati all’ecografia convenzionale in scala di grigi, che è la tecnica raccomandata nella sorveglianza. Viene pertanto definita\nlesione focale, una lesione che emerga dallo sfondo ecografico in modo più distinto (con le normali sonde ecografiche per addome) o ad altra tecnica di imaging, e che in genere ha dimensioni di almeno 5 mm10. Il\npercorso di cancerogenesi epatica nel 90% dei casi avviene a tappe, con una progressione dal micronodulo rigenerativo (non visibile alle tecniche di imaging) al macronodulo rigenerativo (talora visibile all’imaging,\ncon dimensioni superiori ai 5 mm) sul quale subentrano alterazioni istologiche che portano a displasia dapprima lieve poi progressivamente severa fino all’insorgenza di un microfocolaio di carcinoma che\nprogressivamente interessa tutto il nodulo e quindi si estende. E’ pertanto allo stesso tempo difficile e\nimportante riuscire ad identificare la natura di un nodulo cancerizzato rilevato nel contesto di un fegato cirrotico11. Esistono altri tipi di lesioni maligne che possono insorgere su cirrosi, quali il colangiocarcinoma\ned il linfoma primitivo epatico, ma essi non costituiscono complessivamente più del 2-3% di tutti i nuovi noduli. Le metastasi epatiche da altri tumori sono più rare nel paziente cirrotico rispetto ai soggetti non\ncirrotici.\nDal punto di vista istologico, le trasformazioni che avvengono durante la cancerogenesi sono accompagnate in genere dalla progressiva formazione di vasi arteriosi anomali (neoangiogenesi) e perdita della componente\nportale11. Viene pertanto considerato criterio diagnostico di HCC un incremento del segnale contrastografico\nin fase arteriosa nella lesione rispetto al parenchima circostante (denominato comunemente\n“ipervascolarizzazione arteriosa” o wash-in), seguito da una riduzione in fase venosa/tardiva, tale da rendere la lesione moderatamente meno contrastata del parenchima (aspetto definito di “lavaggio precoce” o washout). Abitualmente, i cambiamenti di vascolarizzazione vanno di pari passo con l’incremento dimensionale e\nsono quindi rilevabili in una minoranza di casi di HCC al di sotto dei 10 mm (che infatti vengono raramente riconosciuti), tra il 20% ed il 50% dei casi nei noduli di HCC tra i 2 ed i 3 cm, in circa il 75% dei noduli di\nHCC di 2-3 cm e in oltre il 90% dei noduli oltre 3 cm.12 (Livello di evidenza 2++)\nSulla base di tali dati e del fatto che l’HCC di piccole dimensioni, singolo, inferiore ai 10 mm, ha quasi sempre una crescita locale espansiva, senza formazione di noduli satelliti alla lesione o invasione micro\nvascolare si raccomanda l’inizio degli accertamenti contrastografici solo quando il nodulo di nuovo riscontro abbia dimensioni di 10 o più mm. Al di sotto di tale soglia viene raccomandato solo l’inizio di uno stretto\nmonitoraggio trimestrale con la tecnica che ha consentito di identificare il nodulo stesso (in genere l’ecografia). Infatti, in considerazione del fatto che la maggior parte dei noduli inferiori a 1 cm in un fegato\ncirrotico non sono HCC e per la difficoltà di eseguire una biopsia su noduli così piccoli, l’eventuale ritardo diagnostico di 3 mesi non sembra avere alcuna ricaduta clinica peggiorativa in lesioni di queste dimensioni\nanche perché la comparsa di lesioni satelliti e di invasione microvascolare, che possono compromettere un trattamento radicale, si osserva a partire da dimensioni > 2 cm13 (Livello di evidenza 3).\nNel complesso, i noduli di nuovo riscontro vanno indagati con RM e/o TC multifasiche con mezzo di contrasto, sia per cercare di identificare un pattern diagnostico di HCC (caratterizzato da\n“ipervascolarizzazione” in fase arteriosa e wash-out in fase venoso/tardiva) sia per effettuare una stadiazione, necessaria qualora si confermasse la malignità. Il ruolo dell’ecografia con contrasto a basso indice meccanico\n(CEUS, contrast enhanced ultrasound) nella diagnosi di HCC è stato recentemente messo in discussione per il potenziale rischio di interpretazione errata di colangiocarcinoma intraepatico per HCC. Tale rischio è\ncomunque stimabile in non più dell’1% dei nuovi noduli su cirrosi. In caso di aspetto tipico alla RM e/o alla\nTC di lesioni superiori ai 10 mm comparse in corso di sorveglianza, si può ritenere stabilita la diagnosi di\nHCC. Nel caso invece di un aspetto atipico (mancanza di ipervascolarizzazione arteriosa e/o del wash-out)\nandrà eseguita la tecnica contrastografica alternativa (RM o TC) oppure la CEUS o si può decidere di procedere direttamente alla biopsia, se tecnicamente non difficoltosa. Una biopsia negativa per malignità,\nspecialmente se l’esame istologico evidenzia displasia, suggerisce comunque di procedere anche con altre tecniche contrastografiche, se non ancora tutte eseguite, per il rischio di falso negativo di HCC ben\ndifferenziato14.\nPoiché il 10-15% dei noduli > 3 cm e il 60-70% dei noduli tra 1 e 2 cm hanno un comportamento radiologico dubbio o non conclusivo, la maggior parte dei noduli di piccole dimensioni che vengono rilevati come\nincidenti nel follow-up dei pazienti cirrotici sono sottoposti a biopsia epatica. In questi casi le lesioni\nmaligne sono per lo più HCC ben differenziati (G1) e talora ipovascolari a causa dell’ancora non completa neovascolarizzazione arteriolare10 (Livello di evidenza 3). La diagnosi differenziale tra queste forme ed i\nnoduli displastici, particolarmente di alto grado, può essere molto impegnativa e raggiungibile soltanto sulla base dello studio accurato della biopsia epatica. La biopsia consente la valutazione sia delle caratteristiche\narchitetturali/organizzative della lesione sia del più specifico dettaglio citologico ed è dunque, in questo specifico ambito, nettamente superiore alla citologia agoaspirativa e come tale raccomandata. Le biopsie di\npiccoli noduli epatocellulari (≤ 2 cm), di aspetto morfologico dubbio (diagnosi differenziale tra displasia di alto grado ed HCC ben differenziato), sono spesso di difficile e complessa interpretazione. Tali lesioni\ndovrebbero essere valutate da patologi esperti nel campo delle lesioni focali epatiche anche mediante l’utilizzo di marcatori immunoistochimici [CD34, CK7, GPC3, HSP70 e GS] per aumentare la accuratezza\ndiagnostica15, 16 (Livello di evidenza 3).\nSi raccomanda di gradare l’HCC usando la classificazione di Edmondson-Steiner e quella dell’Armed Force\nInstitute of Pathology (AFIP) che sono basate su caratteristiche nucleari progressive (grado 1: nuclei\nregolari; grado 2: comparsa di aspetti di ipercromatismo, nucleoli ed aumento del rapporto nucleocitoplasmatico; grado 3: come il grado 2 ma con più pronunciate irregolarità nucleari e nucleoli ancora più\nprominenti; grado 4: marcata anaplasia cellulare con cellule giganti e pleomorfe).\nE’ importante sottolineare di nuovo come l’ecografia da sola non sia adatta alla stadiazione da eseguirsi prima di qualsiasi trattamento per la ricerca di eventuali ulteriori noduli, perchè la sua sensibilità non è\nparticolarmente elevata, essendo solo del 40-70% per lesioni focali piccole, di 0.5-2 cm. Analogamente non\nva impiegata per la stadiazione la CEUS con SonoVue, unico mezzo di contrasto attualmente disponibile in\nItalia.\nVa ricordato che in un contesto di un fegato cirrotico si possono riscontrare anche angiomi. Essi si\npresentano con una prevalenza di circa il 5% su fegati cirrotici espiantati. E’ più facile che la loro presenza\npossa essere rilevata ad una prima diagnosi di epatopatia, mentre è estremamente raro, ma non impossibile, che compaiano in corso di sorveglianza. Tuttavia gli angiomi hanno caratteristiche che perlopiù li rendono\naccuramente caratterizzabili con tecniche contrastografiche, specie la RM, mentre l’aspetto compatibile con angioma su cirrosi alla sola ecografia di base non deve essere considerato conclusivo per tale diagnosi.\nChiaramente la biopsia non trova alcuna indicazione nei noduli con aspetto patognomonico per angiomi alle tecniche di imaging con contrasto, mentre se il quadro presenta aspetti dubbi o contrastanti è bene verificare\nla natura epatocellulare o meno, eseguendo la biopsia in un centro esperto.\nE’ opportuno che l’inquadramento diagnostico dei noduli su cirrosi venga fatto da personale esperto e che il quadro venga gestito in un contesto di collaborazione multidisciplinare dedicata17 (Livello di evidenza 4).\nL’alfafetoproteina è il marcatore sierico dell’HCC più utilizzato in Italia. Esso può contribuire alla diagnosi\ndi HCC, che tuttavia si basa sul riscontro di un quadro di imaging tipico di malignità o sul rilievo istologico.\nPoiché il valore dell’alfafetoproteina tende ad aumentare anche in condizioni di citonecrosi epatica con rigenerazione, alcune linee guida suggerivano come limite diagnostico 200 ng/dl associati all’imaging tipico.\nTuttavia, attualmente l’alfafetoproteina non viene più raccomandata come test diagnostico sia per la bassa sensibilità di tale soglia (circa 20%) soprattutto in caso di noduli di piccole dimensioni, sia per la scarsa\nspecificità se si impiegano limiti più bassi (ad esempio >20 ng/dl). Valori elevati di alfafetoproteina hanno\nun significato prognostico negativo.\nGrado di Forza della raccomandazione Raccomandazione clinica raccomandazione\nSIGN clinica\nI noduli ≥ 10 mm riscontrati all’ecografia (durante sorveglianza o all’esordio della cirrosi) vanno considerati\naltamente sospetti per HCC e dovrebbero essere ulteriormente\nB caratterizzati con RM e/o TC con mezzo di contrasto per Positiva forte cercare di raggiungere una diagnosi non invasiva di HCC. Se\nnon si raggiunge una diagnosi di HCC con RM e/o TC il nodulo deve essere sottoposto a biopsia guidata.\nQualora la biopsia non sia tecnicamente eseguibile o non diagnostica di HCC, il nodulo dovrebbe essere monitorato\ntrimestralmente con l’ecografia e rivalutato periodicamente con\nB Positiva forte\nRM e/o TC ed eventualmente con biopsia in caso di aumento di dimensioni o cambiamento dell’aspetto contrastografico,\ncome in presenza di un nuovo nodulo.\nSe i noduli sono di dimensioni inferiori a 10 mm dovrebbe\nB essere effettuato solo un monitoraggio delle dimensioni ogni Positiva debole tre mesi fino all’eventuale superamento della soglia di 10 mm.\nLa presenza di un nodulo epatico al di fuori del contesto di\nA Positiva forte cirrosi richiede sempre una caratterizzazione istologica.\nLa citologia agoaspirativa non dovrebbe essere impiegata per la caratterizzazione di un nodulo epatico in fegato cirrotico –\nspecialmente in caso di noduli ≤ 3 cm di diametro – perché non\nB consente la valutazione delle caratteristiche Negativa forte architetturali/organizzative fondamentali per la diagnosi di\nHCC ben differenziato.",
+      "start_page": 9,
+      "end_page": 11
+    },
+    {
+      "heading": "5.1 Generalità",
+      "text": "In Italia la maggior parte dei casi di HCC insorge in pazienti affetti da cirrosi epatica, che presentano un grado variabile di insufficienza epatica. Pertanto, la prognosi dei pazienti con HCC è condizionata non solo\ndalla diffusione della neoplasia, ma anche dalla residua funzione epatica. Questo spiega perché i sistemi di\nstadiazione che prendono in considerazione solo la funzione epatica (Child-Pugh) o solo l’estensione della neoplasia (TNM) non permettono di ottenere indicazioni prognostiche soddisfacenti nei pazienti con HCC.",
+      "start_page": 11,
+      "end_page": 11
+    },
+    {
+      "heading": "5.2 Inquadramento funzionale del paziente epatopatico",
+      "text": "Una corretta valutazione della cirrosi e della funzione epatica residua è fondamentale non solo ai fini prognostici, ma anche per evitare che il trattamento del tumore comporti un danno della funzione epatica tale\nda compromettere i potenziali vantaggi dell’azione antineoplastica o finanche ridurre le aspettative di vita rispetto alla storia naturale.\nMolto sommariamente la funzione epatica è costituita da una funzione sintetica e da una di emuntorio e quasi tutti i sistemi di gradazione della severità dell’insufficienza epatica tengono in conto parametri che",
+      "start_page": 11,
+      "end_page": 11
+    },
+    {
+      "heading": "LINEE GUIDA EPATOCARCINOMA esprimono l’una e l’altra funzione. Tra i parametri che esprimono la funzione sintetica i più informativi sono",
+      "text": "i livelli plasmatici di albumina, il tempo di protrombina o INR (in quanto il fegato è la più importante sede di sintesi dei fattori della coagulazione), il colesterolo e le colinesterasi. Il deficit protidosintetico contribuisce\nanche alla condizione di malnutrizione che spesso compare nelle fasi intermedio/avanzate. Tra le variabili\nche esprimono un deficit depurativo e metabolico sono più fortememente informative la bilirubina, in particolare la forma diretta, ed in seconda misura i livelli di ammoniemia. Inoltre il fegato viene a trovarsi tra\nil distretto venoso spleno-mesenterico-portale ed il distretto cavale e pertanto in corso di cirrosi si verifica un aumento della pressione nel sistema a monte, cioè in quello spleno-mesenterico-portale. Tale aumento di\npressione venosa, denominato ipertensione portale, è alla base della splenomegalia con ipersplenismo\n(piastrinopenia, anemia e leucopenia) e determina complicanze severe quali lo scompenso ascitico o l’emorragia da varici esofago-gastriche o da gastropatia congestizia e contribuisce alla genesi\ndell’encefalopatia porto-sistemica. L’ipertensione portale determina anche un disturbo circolatorio\ngeneralizzato, che di solito diviene clinicamente evidente solo nella fase di scompenso ascitico, il cui distretto di maggior rilievo clinico è quello renale, ove si realizza vasocostrizione arteriosa con conseguente\nritenzione idrosalina. Le conseguenze cliniche sono edemi ed ascite, iponatremia e, nelle fase più avanzata,\ninsufficienza renale manifesta (sindrome epato-renale).\nI sistemi di classificazione della gravità dell’insufficienza epatica tengono conto, con scelta e peso variabile, dei diversi parametri elencati sopra. Il sistema più largamente utilizzato ed incluso in pressochè tutti i sistemi\ndi stadiazione è la classificazione di Child-Pugh, che include 5 variabili, ciascuna categorizzata in modo da produrre un punteggio da 1 a 3 punti, per un totale complessivo che può oscillare tra 5 e 15 punti (da meno al\npiù grave, vedi Tabella 1). I punteggi vengono poi categorizzati in tre classi di gravità crescente, A-B-C. In\nparticolare punteggio 5-6 = classe A, 7-8-9 = classe B, 10-15 classe C18 (Livello di evidenza 2++).\nLa classe C definisce pazienti estremamente gravi con prognosi infausta a breve termine per la sola insufficienza epatica, la cui sopravvivenza ad un anno è inferiore al 50% e a due anni poco superiore al 35%.\nPer questi pazienti va considerata immediatamente l’ipotesi trapianto di fegato se rispettano i criteri di eleggibilità per tale opzione. In linea generale questi pazienti non sono eleggibili per nessun trattamento\noncologico, in quanto qualsiasi sofferenza funzionale epatica li metterebbe a rischio di morte per progressione dell’insufficienza epatica senza produrre benefici di sopravvivenza.\nLa classe A definisce i pazienti con buona funzione epatica residua. In genere non vi sono importanti\ncompromissioni del performance status e la storia naturale della cirrosi è quella di una sopravvivenza attorno al 90% a due anni. Per questi pazienti vanno prese in considerazione potenzialmente tutte le terapie\noncologiche disponibili per l’HCC, valutate caso per caso.\nLa classe B definisce una condizione intermedia ed è particolarmente eterogenea. Può quindi comprendere\npazienti già severamente compromessi con importante scompenso ascitico o ittero e pazienti con funzione epatica ancora discretamente conservata. Anche per questi pazienti va considerata comunque subito l’ipotesi\ntrapianto di fegato. Se non trapiantabili, possono essere suscettibili di altre terapie ma la scelta deve essere\nmolto oculata, individualizzata e assolutamente gestita all’interno di un team multidisciplinare, per il rischio di far precipitare una insufficienza epatica irreversibile.\nPoiché i trattamenti oncologici dell’HCC possono determinare variazioni, almeno temporanee, della pressione portale, ogni paziente con HCC su cirrosi dovrebbe essere sottoposto ad\nesofagogastroduodenoscopia (EGDS) per la ricerca di segni di ipertensione portale e per la gradazione del rischio di sanguinamento da varici, prima dell’inizio della terapia oncologica. In caso di varici esofagee a\nrischio di rottura va infatti iniziato un trattamento di profilassi del sanguinamento (mediante betabloccanti o legatura elastica delle varici fino ad eradicazione)19,20 (Livello di evidenza 2+).\nNella gestione del trattamento del paziente con HCC non bisogna considerare solo il livello di funzione epatica ma l’eventuale trattamento della causa dell’HCC. Oggi esistono numerosi farmaci per il trattamento\ndell’infezione da HBV in stadio cirrotico, della categoria degli analoghi nucleot(s)idici. Il paziente con\ncirrosi da virus HBV replicante, complicata da HCC, deve essere trattato da subito con terapia antivirale per\nHBV, specialmente in previsione di trattamenti oncologici21. (Livello di evidenza 1+). Per la gestione di\ntale terapia, per la quale esistono linee guida dedicate, è necessario il supporto di un epatologo. Per\nl’infezione da HCV non vi sono invece indicazioni ad iniziare un trattamento, con interferone e ribavirina,",
+      "start_page": 12,
+      "end_page": 12
+    },
+    {
+      "heading": "LINEE GUIDA EPATOCARCINOMA prima di quello dell’HCC, mentre il trattamento antivirale per l’HCV può essere raccomandato dopo un",
+      "text": "trattamento radicale dell’HCC con l’obiettivo di diminuire il tasso di recidiva nel lungo termine22 (Livello di evidenza 1+). Anche tale terapia richiede il contributo dell’epatologo di riferimento.\nGrado di Forza della raccomandazione Raccomandazione clinica raccomandazione\nSIGN clinica\nIl grado di disfunzione epatica del paziente cirrotico con HCC deve essere definito prima di ogni decisione terapeutica. La\nB Positiva forte stadiazione di Child-Pugh è lo standard di riferimento per la\nvalutazione della cirrosi.\nTutti ipazienti con HCC insorto su cirrosi devono essere sottoposti ad una esofagogastroduodenoscopia (EGDS) prima\ndel trattamento.\n√ L’EGDS dovrebbe essere stata eseguita non oltre 12\nB Positiva forte mesi prima del trattamento dell’HCC e dovrebbe essere\nripetuta se si è verificata, nel frattempo, trombosi portale.\n√Nei casi di varici a rischio è indicata la profilassi del sanguinamento con betabloccanti e/o legatura elastica.\nNei pazienti con infezione HBV viremici (ricerca dell’ HBV-\nDNA positiva) è indicata una terapia con analoghi\nA Positiva forte nucleot(s)idici secondo le indicazioni delle linee guida\nspecifche.\nNei pazienti con infezione da virus dell’epatite C (HCV) viremici (positiva la ricerca dell’HCV-RNA), sottoposti a\nA terapia radicale dell’HCC, vi è indicazione alla terapia Positiva forte antivirale, secondo le raccomandazioni previste nelle\nspecifiche linee guida.\nTabella 1. Classificazione della cirrosi epatica secondo Child-Pugh.\nScore 1 2 3\nBilirubina totale <2 mg/dl 2-3 mg/dl >3 mg/dl\nINR tempo di protrombina INR <1.7 INR 1.7-2.3 INR >2.3\nAlbumina >3.5 gr/dl 3.5-2.8 gr/dl <2.8 gr/dl\nScarsa o ben\nAscite clinica Assente Moderata/severa controllata\nEncefalopatia epatica Assente Lieve Moderata/severa",
+      "start_page": 13,
+      "end_page": 13
+    },
+    {
+      "heading": "5.3 Sistemi di stadiazione",
+      "text": "Prima di procedere alla scelta del trattamento dell’HCC è sempre necessaria un’adeguata stadiazione. Nel\ncaso dell’HCC su cirrosi non esiste un unico sistema universalmente applicato, come al contrario accade con il TNM per la maggior parte dei tumori solidi. Infatti il TNM si basa anche su dati istologici, quali\nl’invasione microscopica nodale, e viene codificato dopo l’asportazione chirurgica del tumore primitivo.\nTali dati non sono quasi mai disponibili per l’HCC su cirrosi in quanto l’approccio chirurgico è percorribile solo in una minoranza dei casi e non prevede la linfoadenectomia per il rischio di scompenso ascitico.\nPertanto la stadiazione morfologica avviene quasi esclusivamente sulla base delle tecniche di imaging.\nInoltre è necessario considerare anche il grado di funzione epatica sottostante sia ai fini prognostici che di scelta del trattamento.\nPer tali motivi sono stati proposti numerosi sistemi di stadiazione. La maggior parte di questi sistemi hanno\nsolo una valenza prognostica e, tra questi, il CLIP (Cancer of the Liver Italian Program) score (Tabelle 2 e\n3)23 è quello maggiormente studiato e validato in diverse popolazioni (Livello di evidenza 2++).\nL’algoritmo BCLC (Barcelona Clinic for Liver Cancer), che fornisce anche delle indicazioni terapeutiche, è il più utilizzato nel mondo occidentale (Tabella 4)24 (Livello di evidenza 2+).\nTabella 2. CLIP score\nPUNTEGGIO\nPARAMETRO\nChild-Pugh A B C\nUninodulare e ≤50% di Multinodulare e ≤50% di Massivo o > 50% di\nMorfologia del tumore fegato coinvolto della fegato coinvolto della fegato coinvolto della neoplasia neoplasia neoplasia\nTrombosi portale Assente Presente\nValore di\n< 400 ng/ml ≥400 ng/ml\nAlfafetoproteina\nTabella 3. Sopravvivenza secondo il CLIP score\nSopravvivenza\nCLIP score mediana (mesi)\nTabella 4. Classificazione BCLC\nInvasione\nClasse Sopravviv\nECOG- vascolare e/o Elementi\nSTADIO TUMORE Child- mediana\nPS metastasi aggiuntivi\nPugh (mesi) extraepatiche\nA = precoce\nSingolo <2 No ipert portale,\nA0 A 0 No cm Bil Tot <1.0mg/dl\nNo ipert portale,\nA1 Singolo A 0 No 43\nBil Tot <1.0mg/dl\nIpert portale, Bil\nA2 Singolo A 0 No 29\nTot <1.0mg/dl\nNo ipert portale,\nA3 Singolo A 0 No 25\nBil Tot >1.0mg/dl\n2-3 tumori\nA4 A-B 0 No 22 tutti <3 cm\nGrande\nB=intermedio 0 No 18 multifocale\nQualsiasi\nC=avanzato numero e A-B 1-2 Si 11 morfologia\nGrado di Forza della raccomandazione Raccomandazione clinica raccomandazione\nSIGN clinica\nPrima di qualsiasi trattamento oncologico, la prognosi del paziente con HCC su cirrosi epatica dovrebbe essere valutata\nB Positiva forte con un sistema che tenga conto della diffusione della neoplasia\ne del grado di compenso della cirrosi (es.: CLIP score, BCLC).",
+      "start_page": 13,
+      "end_page": 15
+    },
+    {
+      "heading": "6.1 Premessa",
+      "text": "In considerazione della varietà delle opzioni terapeutiche, dell’importanza degli aspetti tecnici legati ai singoli trattamenti e della funzione epatica residua, la decisione terapeutica per un paziente cirrotico con\nHCC dovrebbe essere sempre assunta in un ambito multidisciplinare, con il contributo del chirurgo epatico, del radiologo, del radiologo interventista, dell’epatologo, dell’anatomopatologo e dell’oncologo medico24, 25\n(Livello di evidenza 4).",
+      "start_page": 15,
+      "end_page": 15
+    },
+    {
+      "heading": "6.2.1 Child-Pugh A",
+      "text": "Nel paziente cirrotico con HCC limitato al fegato e con buona funzione epatica residua il trattamento deve tendere, laddove possibile, alla eradicazione della neoplasia. In prima istanza occorre valutare se il paziente\nè eleggibile a trapianto di fegato poiché questa procedura rappresenta una cura sia per l’HCC sia per la cirrosi sottostante. Tuttavia, nella pratica il trapianto di fegato è applicabile ad una frazione molto limitata di\npazienti cirrotici con HCC a causa di limitazioni di ordine clinico e oncologico associate a considerazioni di tipo organizzativo e sociale. Pertanto, stante la limitata disponibilità di organi, il ricorso al trapianto deve\nbasarsi sul concetto di “equità” fra le diverse categorie di pazienti e non può prescindere dal calcolo del\n“beneficio” di sopravvivenza fornito al singolo paziente con il trapianto rispetto ai risultati attesi con altri possibili trattamenti antitumorali\nI risultati migliori in termini di sopravvivenza (75-80% a 5 anni) dopo trapianto di fegato per HCC su cirrosi epatica si ottengono nei pazienti che rientrano nei “criteri di Milano”, ovvero nodulo singolo di neoplasia ≤\n5 cm o noduli multipli di numero non superiore a 3 e di diametro ≤ 3 cm26 (Livello di evidenza 2++).\nPertanto, i pazienti che rispettano questi criteri vanno valutati presso un Centro Trapianti di Fegato per l’eventuale inserimento in lista d’attesa. Tuttavia, dopo essere stati inseriti in lista d’attesa, il 20% dei\ncandidati al trapianto ne esce e, di conseguenza, i risultati del trapianto sono meno favorevoli se analizzati secondo il criterio dell’intenzione al trattamento27. In molti Centri vengono impiegati trattamenti\nneoadiuvanti (ablazione percutanea e chemioembolizzazione) nei pazienti in lista d’attesa per trapianto al fine di impedire la progressione tumorale . Mancano tuttavia dati che essi migliorino la prognosi di questi\npazienti. Analisi condotte secondo il modello di Markov suggeriscono che i trattamenti neoadiuvanti possano\nessere utili per pazienti nei quali si prospetti un’attesa in lista maggiore di sei mesi o nei quali si osservi una progressione dell’HCC durante l’attesa28.\nNegli ultimi anni, alcuni Centri hanno proposto un allargamento dei criteri di trapiantabilità29-31 (Livello di evidenza 3). In generale, quanto più ci si allontana dai “criteri di Milano” (aumento delle dimensioni o del\nnumero dei noduli) tanto più si riduce la sopravvivenza dei pazienti30 (Livello di evidenza 3). Pertanto,\nanche in considerazione del pool limitato di organi per il trapianto, le probabilità che un paziente cirrotico con HCC al di fuori dei criteri di Milano venga trapiantato in Italia sono estremamente limitate.\nAnalogamente il “down-staging” dei tumori eccedenti i criteri di Milano al fine di riportarli alla trapiantabilità è stato proposto da diversi gruppi32, 33 (Livello di evidenza 3). Il ruolo del trapianto dopo\n“downstaging”con trattamenti locoregionali del tumore oltre i criteri di Milano (al fine di riportarli nell’ambito della trapiantabilità) non è ancora del tutto definito per la mancanza di studi clinici di buona\nqualità.\nIl trapianto del lobo destro epatico da donatore vivente rappresenta un’indicazione controversa al trapianto di fegato per HCC, soprattutto in considerazione di una percentuale, seppur bassa, di decessi (1 caso ogni 200-\n500 interventi di donazione del lobo destro epatico) e di una significativa incidenza di complicanze gravi e di invalidità permanenti tra i donatori34, 35 (Livello di evidenza 2-). In Europa, a differenza che in Asia e in\nGiappone, il trapianto di fegato da vivente viene eseguito raramente e rappresenta solo lo 0,6% di tutti i trapianti di fegato per HCC36.\nNel caso in cui un paziente cirrotico con HCC che rientri nei “criteri di Milano” non sia eleggibile per inserimento in lista d’attesa per il trapianto di fegato a causa di comorbidità, età avanzata, ecc., occorre\nvalutare approcci terapeutici locoregionali alternativi. La chirurgia resettiva rappresenta un’opzione per\nl’HCC su cirrosi ben compensata. I risultati migliori in termini di sopravvivenza si osservano in pazienti in\nbuon performance status, senza comorbidità e con tumori singoli, con una sopravvivenza a 5 anni dall’intervento chirurgico in caso di nodulo singolo piccolo (2-3 cm) del 60-70% e una mortalità\nperioperatoria non superiore al 2-3%37-40 (Livello di evidenza 3). La presenza di ipertensione portale\nclinicamente manifesta (conta piastrinica < 100.000/ml associata a splenomegalia o varici esofagee) sembra\nassociata ad una prognosi peggiore, ma non preclude la resezione in pazienti adeguatamente selezionati41\n(Livello di Evidenza 2-). La chirurgia resettiva, se possibile, dovrebbe essere anatomica (margine libero di 2\ncm attorno al tumore) per i minori rischi di recidiva rispetto alla resezione non-anatomica, ovvero più limitata.\nLa scelta del trattamento di noduli singoli piccoli (< 3 cm) si basa su studi randomizzati non ottimali per numero di pazienti e qualità del disegno sperimentale, Due studi randomizzati hanno valutato l’ablazione\npercutanea con radiofrequenza rispetto alla resezione chirurgica42, 43. Il primo dei due, che ha randomizzato\n180 pazienti, con tumori ≤ 5 cm, a ricevere la RFA o la resezione chirurgica, ha fallito nel dimostrare una differenza statisticamente significativa tra i due approcci42 (Livello di Evidenza 1-) nel tasso di\nsopravviventi a 1, 2, 3 e 4 anni. Il secondo in cui 230 pazienti erano randomizzati a ricevere uno dei due tipi\ndi approcci ha evidenziato come la resezione fosse significativamente superiore alla RFA in termini di sopravvivenza globale e sopravvivenza libera da ricaduta43 (Livello di Evidenza 1-). In questi casi, la scelta\ntra chirurgia e RFA dipende da considerazioni tecniche e di topografia, dalla buona visibilità del nodulo all’ecografia e dalla vicinanza del nodulo a strutture potenzialmente a rischio (es.: stomaco, flessura epatica\ndel colon, colecisti, vie biliari). La tecnica dell’alcolizzazione percutanea (PEI) produce risultati inferiori a\nquelli della RFA31, 44 (Livello di Evidenza 1-), ma può essere impiegata in un 10-15% dei pazienti con HCC\n≤ 3 cm localizzati in sedi difficili per il trattamento con RFA.\nNel caso di HCC multifocali che rientrino nei “Criteri di Milano”, non esiste un confronto diretto tra la resezione chirurgica e la terapia ablativa percutanea. L’indicazione all’uno o all’altro approccio terapeutico è\nspesso stabilita su base individuale ed è dettata anche dal Centro e dalla disponibilità di un operatore o di un radiologo interventista particolarmente esperto. Tuttavia, particolarmente nel caso di pazienti con\ncaratteristiche favorevoli per la chirurgia resettiva (assenza di comorbidità, assenza di ipertensione portale clinicamente evidente, localizzazione monolobare o monosegmentaria dei noduli) o per noduli di dimensioni\nmaggiori di 3 cm, la resezione chirurgica sembra da preferire alle tecniche ablative percutanee, tenendo però presente che in questi casi il tasso di recidiva o di nuovi tumori è piuttosto alto. Al contrario, nel caso di un\nsingolo nodulo di diametro fino a 2 cm, situato in posizione che non comporti rischio elevato di complicanze o risposta terapeutica incompleta alla termoablazione (noduli superficiali, vicini ai grossi vasi o alla\ncolecisti), la RFA può rappresentare la scelta con migliore rapporto costo-efficacia, essendo in grado di determinare una necrosi completa della lesione nel 98% dei casi ed essendo gravata, rispetto alla resezione,",
+      "start_page": 15,
+      "end_page": 16
+    },
+    {
+      "heading": "LINEE GUIDA EPATOCARCINOMA da costi diretti, tempi di degenza e tassi di morbilità minori, nonché da un rischio di mortalità praticamente",
+      "text": "nullo.\nNel caso di HCC unifocali che non rientrino nei “criteri di Milano” per dimensioni (>5 cm), la resezione chirurgica rappresenta l’indicazione principale, se tecnicamente possibile e se il fegato residuo garantisce\nuna funzione epatica sufficiente. In caso di esclusione della resezione chirurgica, la chemioembolizzazione\n(TACE) rappresenta il trattamento palliativo di scelta.\nNel caso di HCC multifocali che eccedano i “criteri di Milano” per numero di noduli (>3) , il trattamento di scelta è rappresentato dalla TACE. La TACE ha dimostrato in studi randomizzati45, 46 e in una metanalisi47\n(Livello di evidenza 1+) di migliorare la sopravvivenza di questi pazienti rispetto alla migliore terapia di supporto, anche se una recente metanalisi Cochrane ne ha messo in dubbio l’efficacia48. Il razionale della\nTACE è che l’infusione intra-arteriosa di una sostanza citotossica seguita dall’embolizzazione dei vasi arteriosi afferenti all’HCC si traduca in un danno ischemico e citotossico. La TACE convenzionale impiega\nun chemioterapico emulsionato al lipiodol insieme con agenti embolizzanti. I chemioterapici più usati sono\nla doxorubicina e il cisplatino. Recentemente, è stata messa a punto e proposta una nuova tecnica, la TACE\ncon Drug-Eluting Beads (TACE-DEB), nella quale si impiegano microsfere embolizzanti che hanno la capacità di sequestrare al loro interno il chemioterapico e di rilasciarlo in modo controllato nell’arco di una\nsettimana.\nGli studi randomizzati di confronto tra TACE convenzionale e TACE-DEB non hanno dimostrato una superiorità di quest’ultima in termini di attività antitumorale, mentre il profilo di tossicità sembra essere\nmigliore49, 50. Sebbene la TACE-DEB rappresenti una notevole innovazione tecnologica rispetto alla TACE\nconvenzionale, il suo ruolo reale rispetto a quest’ultima nel trattamento dei pazienti è messo in discussione anche dalla scarsità delle evidenze dal punto di vista metodologico. Ad oggi quindi essa viene utilizzata in\nalcuni centri al posto della TACE convenzionale più sulla base della percezione individuale di minore tossicità che sulla robustezza delle evidenze. Infine, la TACE-DEB è una metodica notevolmente più costosa\ndella TACE convenzionale.\nVa ricordato che la TACE può indurre insufficienza epatica in circa il 2% dei casi, se ben selezionati, e che è controindicata in caso di invasione vascolare. I principali fattori che possono condizionareun esito negativo\ndella TACE sono elencati nella Tabella 5.\nTabella 5. Fattori che controindicano la TACE\nCaratteristiche del Paziente Caratteristiche del Tumore Caratteristiche della procedura\nCirrosi in classe Child-Pugh B Tumori di dimensioni ≥ 10 cm Procedure poco selettive (lobari o\nPresenza di ascite Tumori multinodulari con bilobari)\nBilirubinemia > 3 mg/dl coinvolgimento bilobare esteso\nPerformance Status ≥ 1 Tumori infiltranti\nEncefalopatia\nSindrome epato-renale o altra insufficienza renale (creatinina ≥\n2 mg/dl o clearance della creatinina < 30 mg/dl)\nVarici esofagee ad alto rischio di sanguinamento\nTrombosi portale\nQualità Globale Forza della delle evidenze Raccomandazione clinica raccomandazione\nGRADE clinica\nNei pazienti cirrotici (max Child B) affetti da epatocarcinoma M0, multinodulare, non resecabile, in\nassenza di trombosi portale la TACE con “DC Beads” non dovrebbe essere utilizzata\n* La valutazione complessiva della qualità delle\nModerata Negativa debole evidenze ad oggi disponibili circa “l’efficacia della\nTACE con “DC Beads””, la valutazione del rapporto tra i benefici ed i rischi correlati e la formulazione\ndella raccomandazione relativa al quesito posto, sono state analizzate secondo metodologia GRADE (vedere\ncapitolo 7).\nLa TACE può essere ripetuta ad intervalli regolari (di solito ogni 2 mesi fino a risposta completa e comunque per non più di 6 mesi) o “a domanda”, in base alla risposta al precedente trattamento. Quest’ultima modalità\nsembra essere associata a minori complicanze51. La TACE va interrotta in caso di risposta completa, in caso\ndi mancata risposta delle lesioni bersaglio dopo 2-3 procedure, in caso di progressione della lesione trattata e naturalmente in caso di eventi avversi gravi.\nPoiché la TACE può indurre necrosi tumorale non necessariamente associata a riduzione delle dimensioni dell’HCC, per la valutazione della risposta alla TACE si raccomanda di impiegare criteri che tengano conto\ndella necrosi indotta dal trattamento e non solo della variazioni delle dimensioni, quali i criteri RECIST modificati o i criteri EASL.\nIn caso di mancata risposta o di progressione dopo TACE o di controindicazione alla TACE, se la funzione epatica è buona è raccomandata la terapia con sorafenib (Livello di evidenza 1+). I pazienti con questo tipo\ndi HCC trattati con sorafenib nell’ambito dello studio prospettico randomizzato controllato con placebo\n(studio SHARP) dimostrano un significativo miglioramento della sopravvivenza (14,5 vs 10,2 mesi; HR =\n0,52; CI = 0,32-0,85)52.\nAccanto alla TACE convenzionale e alla TACE-DEB recentemente è stata introdotta la radioembolizzazione o SIRT (Selective Internal Radio Therapy) che consiste nell’infusione nell’arteria epatica di lipiodol marcato\ncon 131I o di microsfere contenenti 90Y. Esiste un solo studio randomizzato che ha confrontato la\nradioembolizzazione con lipiodol marcato con 131I e la TACE convenzionale e il risultato ha dimostrato che le due metodiche producono risultati sovrapponibili in termini di risposta tumorale e sopravvivenza globale53\n(Livello di evidenza 1+). Poiché l’effetto embolizzante delle microsfere di 90Y è minimo, la\nradioembolizzazione con 90Y, a differenza della TACE, può essere eseguita anche in pazienti con HCC e trombosi della vena porta, e in alcuni casi produce regressione del trombo neoplastico54. In quest’ultimo\ngruppo di pazienti, tuttavia, non vi è nessuna evidenza che la radioembolizzazione sia superiore o equivalente al trattamento con sorafenib. La radioembolizzazione richiede un elevato livello di\nspecializzazione degli operatori e delle strutture e non può essere eseguita in caso di shunting polmonare\n>20% ed in caso di anomalie vascolari che possano indurre l’irradiazione di organi cavi (stomaco ed intestino) per il rischio di gravi gastriti ed ulcere54-56 (Livello di evidenza 2+).\nGrado di Forza della raccomandazione Raccomandazione clinica raccomandazione\nSIGN clinica\nIn tutti pazienti con cirrosi epatica e HCC che rientra nei\nB “criteri di Milano” dovrebbe essere considerata l’opzione Positiva debole terapeutica del trapianto di fegato.\nNei pazienti con cirrosi epatica Child-Pugh A e HCC che rientra nei “criteri di Milano”, non candidabili al trapianto,\nB Positiva debole dovrebbe essere valutata la resezione chirurgica,\nparticolarmente in assenza di ipertensione portale.\nNel caso di HCC singoli ≤ 5 cm, in particolare se < 3 cm, in pazienti con cirrosi epatica Child-Pugh A per i quali la\nresezione chirurgica è controindicata o rifiutata dal paziente,\nA Positiva forte deve essere considerato il trattamento ablativo percutaneo.\n√ La RFA è la tecnica di scelta\n√ la PEI va riservata ai casi con controindicazione alla RFA.\nNel caso di HCC singolo ≤2 cm, posizionato in una sede che permetta di prevedere un’applicazione sicura della RFA, questa\nB tecnica dovrebbe essere preferità alla resezione, in quanto Positiva debole gravata da minori costi diretti, tempi di ricovero, morbilità e\nmortalità.\nNei pazienti con cirrosi epatica Child-Pugh A la TACE deve essere preferita come trattamento per le forme multinodulari e\nA Positiva forte per i tumori singoli di grandi dimensioni (> 5 cm) in caso di\ncontroindicazione alla chirurgia.\nNei casi di controindicazione o di mancata risposta alla TACE\nB Positiva forte deve essere considerato il trattamento con sorafenib.",
+      "start_page": 17,
+      "end_page": 19
+    },
+    {
+      "heading": "6.2.2 Child-Pugh B",
+      "text": "I pazienti con HCC su cirrosi epatica Child-Pugh B rappresentano un gruppo eterogeneo, in quanto nell’ambito della classe Child-Pugh B sono inclusi pazienti con grado variabile di scompenso epatico. In\ngenerale, in questi pazienti occorre estrema cautela nel trattamento dell’HCC e va attentamente valutato l’impatto prognostico relativo dell’HCC rispetto a quello della cirrosi.\nNei pazienti con HCC che rientrano nei “criteri di Milano” la prima opzione che va considerata è il trapianto di fegato57 (Livello di evidenza 2++). Come per i pazienti in Child-Pugh classe A alcuni centri accettano in\nlista pazienti di poco oltre i criteri di Milano (extended criteria o protocolli downstaging) ed è quindi raccomandabile considerare l’opzione trapianto anche in questi pazienti32, 33 (Livello di evidenza 3). Per i\npazienti non eleggibili al trapianto, la resezione chirurgica può essere un’opzione se si tratta di un nodulo singolo e la resezione prevista è limitata, in particolare nei pazienti senza ipertensione portale clinicamente\nevidente. Nei casi per i quali si considera l’opzione chirurgica, è indispensabile una valutazione preliminare\npiù precisa del grado di compenso epatico, per esempio con la misurazione del tasso di ritenzione del verde indocianina a 15 minuti58. Tuttavia, la maggioranza dei pazienti con HCC nell’ambito dei “criteri di Milano”\ne cirrosi epatica Child-Pugh B non è candidabile alla chirurgia. In questi casi, i trattamenti ablativi percutanei\n(RFA, PEI) rappresentano l’indicazione di scelta in assenza di ascite non controllabile con la terapia diuretica59 (Livello di evidenza 2++).\nNei pazienti con HCC che non rientrano nei “criteri di Milano”, l’opzione terapeutica da considerare è la\nTACE45 (Livello di evidenza 1+). Anche in questi casi è necessario valutare il paziente individualmente\nperché la cirrosi epatica Child-Pugh B è un elemento prognostico sfavorevole e aumenta il rischio di scompenso epatico post-TACE, soprattutto se è presente ascite o altri fattori di rischio (Tabella 5). La\ncateterizzazione superselettiva del vaso arterioso afferente al nodulo di HCC è di fondamentale importanza",
+      "start_page": 19,
+      "end_page": 19
+    },
+    {
+      "heading": "LINEE GUIDA EPATOCARCINOMA per ridurre al minimo il rischio di scompenso. Alcuni Centri preferiscono l’impiego della TACE-DEB sulla",
+      "text": "base di una minore tossicità riportata in alcuni studi clinici rispetto alla TACE convenzionale.\nNel caso di controindicazione alla TACE, il paziente, se non può essere inserito in uno studio clinico, va trattato con la miglior terapia di supporto. Occorre ricordare che il sorafenib ha ricevuto dall’EMA\nl’indicazione al trattamento dell’HCC anche nei pazienti con cirrosi epatica Child-Pugh B. Tuttavia,\nl’estrema scarsità di evidenze di efficacia del sorafenib nei pazienti con HCC e cirrosi epatica Child-Pugh B ha indotto l’AIFA a non concedere la rimborsabilità per questo sottogruppo di pazienti. Al momento attuale,\nalcuni studi osservazionali di fase IV60 suggeriscono che un sottogruppo di pazienti con HCC avanzato e cirrosi epatica Child-Pugh B possa tollerare il trattamento con sorafenib (Livello di evidenza 2++), mentre\ncontinua a mancare una definitiva dimostrazione di efficacia del sorafenib in questa popolazione60\nGrado di Forza della raccomandazione Raccomandazione clinica raccomandazione\nSIGN clinica\nI trattamenti ablativi percutanei rappresentano il trattamento di\nA scelta per i pazienti con cirrosi epatica Child-Pugh B ed HCC Positiva forte che rientra nei “criteri di Milano”, ma non trapiantabili.\nNei pazienti con cirrosi epatica Child-Pugh B la resezione chirurgica può essere considerata in caso di tumori singoli in\npazienti senza ipertensione portale nei quali è prevista una resezione limitata.\nB √ In questi casi la funzione epatica dovrebbe essere Positiva debole preliminarmente quantificata mediante la misurazione del tasso\ndi ritenzione del verde indocianina a 15 minuti o con un altro sistema in uso presso un centro esperto.\nNei pazienti con cirrosi epatica Child-Pugh B e tumori\nB multifocali, la TACE può essere presa in considerazione solo Positiva debole in casi molto ben selezionati.",
+      "start_page": 20,
+      "end_page": 20
+    },
+    {
+      "heading": "6.2.3 Child-Pugh C",
+      "text": "La prognosi dei pazienti con HCC e cirrosi epatica Child-Pugh C è dettata principalmente dallo scompenso epatico causato dalla cirrosi.\nDi conseguenza l’unico trattamento per questi pazienti è rappresentato dal trapianto di fegato. Quando il\ntrapianto non è possibile, i pazienti con HCC e cirrosi epatica Child-Pugh C devono ricevere la migliore terapia di supporto in quanto qualsiasi trattamento locoregionale induce un ulteriore scompenso epatico,\npeggiorando la prognosi di questi pazienti. Per questi pazienti non vi è alcuna evidenza di beneficio derivante\ndall’applicazione di trattamenti sistemici.\nIn assenza di evidenze a supporto dei trattamenti locoregionali non è possibile raccomandarne l’utilizzo in pazienti affetti da HCC limitato al fegato con scompenso epatico severo (Child-Pugh C)",
+      "start_page": 20,
+      "end_page": 20
+    },
+    {
+      "heading": "6.2.4 Trattamenti combinati",
+      "text": "Diversi studi suggeriscono che i trattamenti combinati (TACE + ablazione percutanea) aumentano la risposta tumorale alla terapia locoregionale, ampliando il volume di necrosi tumorale ottenibile. La meta-analisi di\nquattro piccoli studi randomizzati di confronto fra trattamento singolo e combinato ha mostrato un vantaggio di sopravvivenza con l’impiego di trattamenti combinati61 (Livello di evidenza 1+). L’approccio combinato\nconsente la massima duttilità nel trattamento e ritrattamento di ogni singolo nodulo, o nel caso di comparsa di una nuova lesione.",
+      "start_page": 20,
+      "end_page": 20
+    },
+    {
+      "heading": "6.2.5 Terapie adiuvanti",
+      "text": "Poiché nei pazienti con HCC resecato chirurgicamente si osserva un tasso di recidive fino al 70% a 5 anni, sono stati sperimentati numerosi trattamenti adiuvanti, quali chemioterapia, radioterapia intraepatica, terapie\nimmunologiche, interferone e retinoidi. Gli studi condotti sono caratterizzati spesso da una bassa numerosità\ndi pazienti e hanno prodotto risultati contrastanti. Una recente revisione sistematica Cochrane ha concluso\nche per nessun approccio adiuvante esiste una chiara evidenza di efficacia.62 (Livello di evidenza 1+).\nAlcune meta-analisi hanno invece confermato un beneficio sulla sopravvivenza ottenibile con la terapia antivirale nei pazienti viremici, per il suo effetto favorevole sulla progressione di malattia e la mortalità non\ncorrelata all’HCC63 (Livello di evidenza 1+).\nGrado di Forza della raccomandazione Raccomandazione clinica raccomandazione\nSIGN clinica\nNei pazienti sottoposti a resezione chirurgica una terapia\nA Negativa forte antineoplastica adiuvante non deve essere considerata.",
+      "start_page": 21,
+      "end_page": 21
+    },
+    {
+      "heading": "6.2.6 Follow-up",
+      "text": "I dati relativi al follow-up dei pazienti sottoposti a resezione chirurgica dell’HCC o che abbiano mostrato una risposta completa dopo trattamento ablativo percutaneo sono molto limitati.\nGrado di Forza della raccomandazione Raccomandazione clinica raccomandazione\nSIGN clinica\nNei pazienti sottoposti a trattamento chirurgico o ablativo percutaneo che abbiano mostrato una risposta completa si\nD raccomanda di eseguire una metodica di imaging con contrasto Positiva debole ogni tre mesi per i primi due anni ed ogni sei mesi\nsuccessivamente.",
+      "start_page": 21,
+      "end_page": 21
+    },
+    {
+      "heading": "6.3 HCC avanzato",
+      "text": "L’HCC avanzato è caratterizzato dalla presenza di trombosi della vena porta e/o metastasi. In questi casi non\nvi è indicazione a trattamenti locoregionali in quanto si tratta di una malattia sistemica. Alcuni centri\nchirurgici di alta qualificazione specifica hanno proposto ed eseguono la trombectomia portale associata a resezione epatica dell’HCC, soprattutto nei casi in cui l’invasione portale sia limitata ai rami di II e III\nordine. Tuttavia, non vi sono dati che indichino che questa procedura sia superiore o equivalente al\ntrattamento con sorafenib.",
+      "start_page": 21,
+      "end_page": 21
+    },
+    {
+      "heading": "6.3.1. Child-Pugh A",
+      "text": "I pazienti con HCC avanzato necessitano di trattamento sistemico. Prima dei recenti studi randomizzati\ncondotti con il sorafenib, nessun farmaco si era dimostrato efficace in questi pazienti, per i quali la miglior terapia di supporto rimaneva l’unica opzione terapeutica valida.\nL’efficacia di sorafenib, piccola molecola inibitore di chinasi multitarget, nel trattamento dell’HCC in stadio avanzato è stata dimostrata in 2 studi randomizzati di fase III: lo studio SHARP52 e lo studio Asia-Pacific64.\nEntrambi gli studi prevedevano l’arruolamento di pazienti che non risultassero eleggibili per alcun trattamento loco-regionale (già alla diagnosi oppure dopo fallimento di eventuali precedenti trattamenti), con\nuna buona funzionalità epatica (Child-Pugh A). I due studi sono significativamente diversi in termini di\ncaratteristiche dei pazienti, in quanto lo studio SHARP è stato condotto nel mondo occidentale (Europa,\nAmerica, Israele, Australia), mentre l’altro studio in nazioni dell’Asia orientale (Cina, Taiwan e Corea). La\ncasistica asiatica si caratterizza, rispetto alla popolazione dello studio SHARP, per una maggiore proporzione di casi positivi per HBV, un’età media più giovane, una maggiore incidenza di Performance Status scaduto,\nun maggior numero di siti di malattia e una prognosi nel complesso peggiore64.\nIn entrambi gli studi randomizzati, il trattamento con sorafenib (somministrato alla dose di 400 mg 2 volte al giorno, fino a progressione strumentale e clinica o fino a insorgenza di tossicità inaccettabile), ha\ndeterminato un significativo prolungamento della sopravvivenza globale, e un significativo prolungamento del tempo alla progressione di malattia (Livello di Evidenza 1+). In termini assoluti, il prolungamento della\nsopravvivenza mediana è stato pari a circa 3 mesi nello studio SHARP, e a circa 2 mesi nello studio asiatico, caratterizzati però da un sovrapponibile risultato in termini relativi (Hazard Ratio 0.69 e 0.68, 95% CI 0.55-\n0.87 e 0.50-0.93, rispettivamente). Al contrario, nei due studi considerati, il trattamento con sorafenib non ha\ndimostrato, rispetto al placebo, un significativo beneficio in termini di prolungamento del tempo allo scadimento clinico sintomatico.\nSulla base dei risultati ottenuti, nell’Ottobre 2007, il sorafenib è stato approvato dall’EMA per il trattamento dell’HCC. Il trattamento è rimborsabile in Italia, limitatamente ai pazienti in classe A di Child-Pugh, a\npartire dal giugno 2008.\nGrado di Forza della raccomandazione Raccomandazione clinica raccomandazione\nSIGN clinica\nI pz con diagnosi di HCC avanzato, che abbiano fallito o che non siano eleggibili per trattamenti loco-regionali, con buona\nA Positiva forte funzionalità epatica (Child-Pugh A), devono essere sottoposti a\ntrattamento con sorafenib.\nNegli studi randomizzati, il trattamento con sorafenib si è dimostrato, nel complesso, ben tollerato. Gli eventi\navversi più comunemente riportati consistono nella tossicità cutanea (HFSR, hand-foot skin reaction), nella diarrea, nell’astenia. L’ipertensione può verificarsi, ma risulta essere meno frequente nei pazienti con HCC,\nrispetto all’incidenza nei pazienti che ricevono sorafenib per il carcinoma renale. L’astenia può essere\npresente nei pazienti con HCC indipendentemente dal trattamento con sorafenib, essendo potenzialmente legata all’epatopatia di base.\nL’insorgenza di effetti collaterali (in particolare HFSR e diarrea) durante il trattamento con sorafenib può essere gestita con interruzione temporanea del trattamento e/o con riduzioni di dose, in base alla severità\ndella tossicità osservata. Questi provvedimenti, insieme con il tempestivo trattamento degli effetti collaterali,\npossono consentire di evitare l’interruzione definitiva della terapia, peraltro necessaria solo in una minoranza di pazienti, in caso di tossicità severa e inaccettabile.\nLe riduzioni di dose possono basarsi sul dimezzamento della dose quotidianamente assunta (200 mg 2 volte al giorno invece che 400 mg 2 volte al giorno), e la dose può essere ulteriormente ridotta di un livello (200\nmg 2 volte al giorno a giorni alterni):\nDose piena 400 mg bis in die\nPrima riduzione 200 mg bis in die\nSeconda riduzione 200 mg bis in die ogni 2 giorni\nLa Tabella 6 riassume le riduzioni di dose e le interruzioni del trattamento in base alla tossicità registrata in corso di trattamento con sorafenib, adottate nelo studio SHARP.\nLINEE GUIDA EPATOCA\nTabella 6. Riduzioni di dose pe\nTipo di tossicità e grado\nDiarrea\nGrado 1\nGrado 2 - 1° occorrenza\n- 2° occorrenza\n- 3° occorrenza\n- 4° occorrenza\nGrado 3 - 1° occorrenza\n- 2° occorrenza\n- 3° occorrenza\nGrado 4 - 1° occorrenza\nTossicità cutanea\nGrado 1\nGrado 2 - 1° occorrenza\n- 2° occorrenza\n- 3° occorrenza\n- 4° occorrenza\nGrado 3 - 1° occorrenza\n- 2° occorrenza\n- 3° occorrenza\nAltre tossicità non ematolo\nGrado 0-2\nGrado 3\nGrado 4\nTossicità ematologica\nGrado 0-2\nGrado 3\nGrado 4\nARCINOMA\ner tossicità d o Mod\nNessu\nInterru\nraggiu\nInterru\nraggiu\nInterru\nraggiu\nSospe\nInterru\nraggiu\nInterru\nraggiu\nSospe\nSospe\nNessu\nInterru\nraggiu\nInterru\nraggiu\nInterru\nraggiu\nSospe\nInterru\nraggiu\nInterru\nraggiu\nSospe\nogiche\nNessu\nInterru\nraggiu\nSospe\nNessu\nNessu\nInterru\nraggiu\nA\nda sorafenib difica dei tempi di somministra\nuna modifica uzione del trattamento fino al\nungimento del grado 0-1 uzione del trattamento fino al\nungimento del grado 0-1 uzione del trattamento fino al\nungimento del grado 0-1 ensione definitiva del trattamento\nuzione del trattamento fino al ungimento del grado 0-1\nuzione del trattamento fino al ungimento del grado 0-1\nensione definitiva del trattamento ensione definitiva del trattamento\nuna modifica uzione del trattamento fino al\nungimento del grado 0-1 uzione del trattamento fino al\nungimento del grado 0-1 uzione del trattamento fino al\nungimento del grado 0-1 ensione definitiva del trattamento\nuzione del trattamento fino al ungimento del grado 0-1\nuzione del trattamento fino al ungimento del grado 0-1\nensione definitiva del trattamento una modifica\nuzione del trattamento fino al ungimento del grado 0-1\nensione definitiva del trattamento una modifica\nuna modifca uzione del trattamento fino al\nungimento del grado 0-1\nazion\no\no\no\no\no\no\nne Mo\nNessu\nNessu\nRiduz\ndose\nRiduz\ndose\nRiduz\ndose\nRiduz\ndose\nNessu\nNessu\nRiduz\ndose\nRiduz\ndose\nRiduz\ndose\nRiduz\ndose\nNessu\nRiduz\ndose\nNessu\nRiduz\ndose\nRiduz\ndose\nodifiche della dose una modifica\nuna modifica zione di un livello di\nzione di due livelli di zione di un livello di\nzione di due livelli di una modifica\nuna modifica zione di un livello di\nzione di due livelli di zione di un livello di\nzione di due livelli di una modifica\nzione di un livello di una modifica\nzione di un livello di zione di un livello di",
+      "start_page": 21,
+      "end_page": 23
+    },
+    {
+      "heading": "6.3.2 Child-Pugh B",
+      "text": "Come ricordato sopra, i due studi randomizzati che hanno dimostrato l’efficacia di sorafenib prevedevano l’inclusione dei soli pazienti con funzionalità epatica conservata (classe A secondo la classificazione di\nChild-Pugh). L’evidenza relativa all’efficacia del farmaco nei pazienti in classe Child-Pugh B è limitata ai\nrisultati osservati nella minoranza di pazienti inseriti nel precedente studio di fase II (Livello di evidenza\n2++), all’esiguo numero di pazienti inseriti in violazione al protocollo nello studio SHARP52 e in una serie di casistiche non controllate, successivamente pubblicate60, 66, 67 (Livello di evidenza 2-) .\nNel complesso, tale evidenza conferma la prognosi più scadente per i pazienti in classe Child-Pugh B, in quanto condizionata dal più rapido peggioramento della funzionalità epatica, che determina una durata del\ntrattamento con sorafenib inferiore rispetto alla durata media nei pazienti in classe Child-Pugh A. L’assenza\ndi un braccio di confronto, naturalmente, impedisce di attribuire il verificarsi di eventi avversi (legati in massima parte al deterioramento della funzionalità epatica) al trattamento con sorafenib o alla storia naturale\ndell’epatopatia in sé.\nGrado di Forza della raccomandazione Raccomandazione clinica raccomandazione\nSIGN clinica\nNei pz con diagnosi di HCC avanzato, che abbiano fallito o che non siano eleggibili per trattamenti loco-regionali, con una\nB Negativa debole funzionalità epatica compromessa (Child-Pugh B), il\ntrattamento con sorafenib non dovrebbe essere utilizzato.",
+      "start_page": 24,
+      "end_page": 24
+    },
+    {
+      "heading": "6.3.3 Child-Pugh C",
+      "text": "Allo stato attuale non ci sono evidenze che supportino l’impiego di Sorafenib nei pazienti con HCC avanzato e funzionalità epatica gravemente compromessa (Child–Pugh C). Pertanto si ritiene che questo trattamento\nnon debba essere usato in questi pazienti.",
+      "start_page": 24,
+      "end_page": 24
+    },
+    {
+      "heading": "6.3.4. Altri trattamenti sistemici.",
+      "text": "Numerosi studi condotti in vitro e nell’animale avevano suggerito che i trattamenti ormonali (sia antiestrogenici che antiandrogenici) potessero avere un ruolo nel trattamento dell’HCC. Tuttavia, nonostante\nalcuni studi di piccole dimensioni avessero confortato quest’ipotesi, studi randomizzati successivamente condotti non hanno confermato l’efficacia di questi trattamenti. In particolare, nello studio CLIP-1 condotto\ndal Cancer of the Liver Italia Program Group, l’efficacia del tamoxifen (40 mg/die) è stata valutata in 477 pazienti mediante confronto con la sola terapia di supporto; lo studio non ha evidenziato alcuna differenza di\nsopravvivenza tra i due gruppi di pazienti68 (Livello di evidenza 1+). Tale risultato negativo è stato poi\nconfermato da un altro studio randomizzato francese69 (Livello di evidenza 1+), e dalle metanalisi basate sulla revisione sistematica di tutti gli studi condotti47 (Livello di evidenza 1++). Similmente, in uno studio\ndell’EORTC, randomizzato, con disegno fattoriale, cui hanno preso parte 244 pazienti, nessun effetto sulla sopravvivenza è stato identificato a seguito del trattamento con antiandrogeni (nilutamide) o analoghi\ndell’LHRH (goserelin) o entrambi70 (Livello di evidenza 1+).\nGrado di Forza della raccomandazione Raccomandazione clinica raccomandazione\nSIGN clinica\nNei pz affetti da HCC il trattamento con tamoxifene o anti\nA Negativa forte androgeni non deve essere effettuato.\nL’impiego di farmaci chemioterapici nei pazienti con HCC, in elevata percentuale caratterizzati da compromissione più o meno marcata della funzionalità epatica, risulta potenzialmente associato ad elevato\nrischio di tossicità. In aggiunta, l’HCC può essere elencato tra i tumori intrinsecamente caratterizzati da\nminore chemio-sensibilità. Numerosi farmaci chemioterapici, come agenti singoli o in combinazione, sono\nstati sperimentati negli scorsi decenni nei pazienti con HCC, producendo percentuali più o meno deludenti di risposte obiettive, senza mai produrre una solida dimostrazione di efficacia. Tra i vari farmaci citotossici\nsperimentati e variamente impiegati nella pratica clinica, si segnala la doxorubicina, impiegata come agente singolo.\nRecentemente, è stato pubblicato uno studio randomizzato condotto in Asia (in particolare, Cina, Taiwan,\nCorea e Thailandia) che ha documentato un vantaggio statisticamente significativo in termini di sopravvivenza libera da progressione (2.93 vs 1.77 mesi, HR = 0.62, p < 0.001) ma non in termini di\nsopravvivenza globale (6.40 vs 4.97 mesi, HR = 0.80, p = 0.07), per lo schema FOLFOX4 rispetto alla\ndoxorubicina71. Nel dettaglio, lo studio prevedeva la randomizzazione di pazienti con HCC avanzato e/o non\nresecabile, assegnando 184 pazienti a ricevere FOLFOX4, nella classica schedula ogni 2 settimane, e 187 pazienti a ricevere doxorubicina, alla dose di 50 mg/m2 ogni 3 settimane. Va notato che la popolazione dello\nstudio ha caratteristiche diverse dai pazienti occidentali con HCC: oltre il 90% dei pazienti randomizzati\naveva un HCC correlato all’infezione da virus dell’epatite B mentre poco più della metà dei pazienti erano cirrotici e di questi ultimi l’89% aveva una buona funzione epatica (Child-Pugh A). Questi risultati non\npossono essere estrapolati nei pazienti occidentali i quali sono in grande maggioranza affetti da cirrosi epatica e con una funzione epatica generalmente peggiore di quella dei pazienti dello studio.\nOltre a sottolineare la diversità - in termini di caratteristiche di malattia e di prognosi - dei pazienti asiatici rispetto ai pazienti occidentali, va ricordato soprattutto che lo studio in questione ha adottato un braccio di\ncontrollo (doxorubicina) che, attualmente, non è lo standard e non può essere considerato un adeguato controllo per tali pazienti. Pertanto, allo stato attuale, in generale il trattamento con la chemioterapia dei\npazienti cirrotici affetti da HCC avanzato non è supportato da evidenza scientifica solida, anche se lo schema\nFOLFOX4 può essere considerato come trattamento palliativo per pazienti non cirrotici con HCC71 (Livello di evidenza 1-).",
+      "start_page": 24,
+      "end_page": 25
+    },
+    {
+      "heading": "6.4 Trattamento dell’HCC nel paziente non cirrotico",
+      "text": "Il paziente non cirrotico con HCC ha una tolleranza migliore ai trattamenti locoregionali del paziente cirrotico. La resezione chirurgica rappresenta, ovunque possibile, il trattamento migliore dell’HCC insorto\nsu fegato non cirrotico e permette la rimozione di tumori anche di grandi dimensioni, in quanto questi pazienti tollerano estesissime resezioni di parenchima. Una recente analisi del registro europeo dei trapianti\ndi fegato indica che il trapianto può essere proponibile anche per l’HCC comparso su fegato non cirrotico e non resecabile, a condizione che non siano presenti invasione vascolare e linfonodale, ma soprattutto nei\npazienti che presentano una recidiva localizzata al fegato e non resecabile comparsa a distanza di almeno un anno dalla resezione; infatti, in questi casi è possibile ottenere tassi di sopravvivenza a 5 anni intorno\nall’80%. Per analogia a quanto stabilito nel paziente cirrotico, il sorafenib è indicato nei casi avanzati52, 64\n(Livello di evidenza 1+). In caso di mancata risposta o progressione dopo sorafenib, nei pazienti non\ncirrotici con HCC la chemioterapia può svolgere un ruolo palliativo71 (Livello di evidenza 1-).\nLINEE GU",
+      "start_page": 25,
+      "end_page": 26
+    },
+    {
+      "heading": "7. Algor",
+      "text": "UIDA\nritm\nA EPA mi\nCCH\nid",
+      "start_page": 26,
+      "end_page": 26
+    },
+    {
+      "heading": "oihcsir",
+      "text": "a\netneizap\nled",
+      "start_page": 26,
+      "end_page": 26
+    },
+    {
+      "heading": "omtiroglA",
+      "text": "ATO\nOCA\nARC\nCIN\nNOM\nMA",
+      "start_page": 26,
+      "end_page": 26
+    },
+    {
+      "heading": ":ocitorric etneizap",
+      "text": ")acitape",
+      "start_page": 26,
+      "end_page": 26
+    },
+    {
+      "heading": "idev noc eS",
+      "text": "eS",
+      "start_page": 26,
+      "end_page": 26
+    },
+    {
+      "heading": "ocitape",
+      "text": "id\naznedivE",
+      "start_page": 26,
+      "end_page": 26
+    },
+    {
+      "heading": "oludonisem",
+      "text": "acitape",
+      "start_page": 26,
+      "end_page": 26
+    },
+    {
+      "heading": "aifargocE 6 ingo",
+      "text": "B",
+      "start_page": 26,
+      "end_page": 26
+    },
+    {
+      "heading": "acinorc",
+      "text": "3F≥",
+      "start_page": 26,
+      "end_page": 26
+    },
+    {
+      "heading": "noc noc noc",
+      "text": "e\nitneizaP itneizaP C itneizaP\nLIN\nNEE GUI acitape\nisorric\nnoc\netneizap\nni\nisongaiD\nomtiroglA\nIDA EPATOCARCINOMA noc\neriugesorP aifargoce elartsemirt noc\npu-wollof eriugesorP elartsemesisem aifargoce\npu-wollof\nmc\nelled\navisulcnocni 1 isongaiD >\nisongaid isongaiDaispoiBocifargotsartnoc CCH otnemuA inoisnemid artlA inoisnemiD\nrep\nidocipit\nilibats\n21avidratoelatropesafnituo-hsaweasoiretraesafnini-hsaW*\nisongaiDocifargotsartnoc CCH id*ocipit\nnoc\nelartsemirt\npu-wollof\nacidotem nocgnigami ottepsA id otsartnoc ottepsA eriugesorP aifargoceilibats\nozzemocipit isongaiDocifargotsartnoc CCH non\nartlA\nidocifargotsartnoc id mc\nelled\n1 inoisnemiD ottepsA ottepsA *ocipitacitape >\notnemuA inoisnemid non\nnoc\nid §otsartnocmc aifargoce\nMR ozzem pu-wolloF elartsemirtmc o\nCT\nnoc\noludon\nortemaiD\nortemaiD\nid\n1 > ortnocsiR assam 1\no\nerotarepo’lledazneirepse’lladednepidotatlusirlieosrevortnocèotsartnocidozzemnocaifargoce’lledolourlI§\navidratoelatropesafnituo-hsaweasoiretraesafnini-hsaW*\nLI\nINE\nEE GUID\nCCH\nnoc\nocitorric\netneizap\nled\nisongorP\ne\nenoizaidatS\nomtiroglA\nDA\nCCH\nnoc\nocitorric\netneizap\nled\nisongorP\ne\nenoizaidatS\nomtiroglA\nEP\nPATO\nOCARCIN\nelatrop\nhguP-dlihC\nenoisnetrepIisorric\nenoizaidatS\nalled\nNOMA\nCLCB PILCCCH noc\netneizaP id isongaid\n*ecarot\nc.d.m\nCT\nnoc\ne\nivlep .c.d.m\ne eruppOaisalpoen emodda noc\nivlep\n,ecarot e emodda\nCAT\nMR\nenoizaidatS\nalled\noidats\nni\nCCH\nidosaclenaifargoidaralladatiutitsoseresseòupecarot\n.isatsatemelledàtiraramertse’l\nrep\n,ecocerp\nCT\naL\nLIN\nNEE",
+      "start_page": 26,
+      "end_page": 29
+    },
+    {
+      "heading": "E GUIDA EPA isorric",
+      "text": "e",
+      "start_page": 29,
+      "end_page": 29
+    },
+    {
+      "heading": "otatimil",
+      "text": "CCH\nAhguP-dlihC",
+      "start_page": 29,
+      "end_page": 29
+    },
+    {
+      "heading": "etneizap",
+      "text": "led",
+      "start_page": 29,
+      "end_page": 29
+    },
+    {
+      "heading": "omtiroglA",
+      "text": "ATOCARCINOMA",
+      "start_page": 29,
+      "end_page": 29
+    },
+    {
+      "heading": "noc",
+      "text": "id",
+      "start_page": 29,
+      "end_page": 29
+    },
+    {
+      "heading": "o",
+      "text": "mc li )mc iuc",
+      "start_page": 29,
+      "end_page": 29
+    },
+    {
+      "heading": "artneir eroiggam ien .elatropenoisnetrepiaznes",
+      "text": "id",
+      "start_page": 29,
+      "end_page": 29
+    },
+    {
+      "heading": "otatimil enoisavni eolognisoludon",
+      "text": "CCH",
+      "start_page": 29,
+      "end_page": 29
+    },
+    {
+      "heading": "eralocsav",
+      "text": "e",
+      "start_page": 29,
+      "end_page": 29
+    },
+    {
+      "heading": "noc",
+      "text": "I*\nLIN\nNEE\nE GU\nUIDA EPATO la\notatimil\nCCH\nBhguP-dlihC\nnoc\netneizap\nisorric\nled\notnemattarT\ne\notagef",
+      "start_page": 29,
+      "end_page": 30
+    },
+    {
+      "heading": "omtiroglA",
+      "text": "OCA\nBhguP-dlihC\nisorric\ne\notagef\nARCINOMA\nnoc\naenatucrep acitape noc )atatimil\n,itanoizeles",
+      "start_page": 30,
+      "end_page": 30
+    },
+    {
+      "heading": ")IEP e olognis",
+      "text": "id otroppus oidutS ocinilC ,AFR enoizeseR enoizeser aipareT enoizalbABhguP-dlihC\n:.se( itneizap( oludon)mc\nelibiggele id id inoizacidniortnoc aznes )inoizacidniortnoc otnaipart otagef otnaiparT es otagef elibiggele\nnoc\nECAT\nitneizap(\nitneizaP noN la\nalla\nECAT\nonaliM\no\nmc li iuc",
+      "start_page": 30,
+      "end_page": 30
+    },
+    {
+      "heading": "id 5 ≤ id 3 ien onaliM iretirc olognis iludon ≤",
+      "text": "artneir eroiggam ien\nNON id iretirc artneiR oludon( a onif la\notatimil enoisavni acipocsorcam\nCCH\naznes\nacitape\nnoc\neralocsav\ne\netneizaP otagef isorriC\nLI\nINEE\nE G\nGUID\nDA EPATOC la",
+      "start_page": 30,
+      "end_page": 31
+    },
+    {
+      "heading": "otatimil",
+      "text": "CCH\nChguP-dlihC",
+      "start_page": 31,
+      "end_page": 31
+    },
+    {
+      "heading": "noc",
+      "text": "etneizap",
+      "start_page": 31,
+      "end_page": 31
+    },
+    {
+      "heading": "isorric",
+      "text": "led",
+      "start_page": 31,
+      "end_page": 31
+    },
+    {
+      "heading": "otnemattarT",
+      "text": "e",
+      "start_page": 31,
+      "end_page": 31
+    },
+    {
+      "heading": "omtiroglA",
+      "text": "CAR\nRCIN\nNOMA",
+      "start_page": 31,
+      "end_page": 31
+    },
+    {
+      "heading": "otroppus",
+      "text": "id",
+      "start_page": 31,
+      "end_page": 31
+    },
+    {
+      "heading": "aipareTonaliM",
+      "text": "ien\nartneir\nid\nNON iretirc",
+      "start_page": 31,
+      "end_page": 31
+    },
+    {
+      "heading": "otroppus",
+      "text": "id\naipareT",
+      "start_page": 31,
+      "end_page": 31
+    },
+    {
+      "heading": "eroiggam",
+      "text": "ien",
+      "start_page": 31,
+      "end_page": 31
+    },
+    {
+      "heading": "la ChguP-dlihC otatimil enoisavni acipocsorcam",
+      "text": "CCH\naznes\nacitape",
+      "start_page": 31,
+      "end_page": 31
+    },
+    {
+      "heading": "eralocsav",
+      "text": "e",
+      "start_page": 31,
+      "end_page": 31
+    },
+    {
+      "heading": "etneizaP otagef isorriC",
+      "text": "LINEE GU\nUIDA EPA otaznava\nCCH\nnoc\netneizap\nled",
+      "start_page": 32,
+      "end_page": 32
+    },
+    {
+      "heading": "omtiroglA",
+      "text": "ATOC\nCARCINOMA\nid\notroppusChguP-dlihC\naipareT id otroppus oidutS ocinilC aipareT\nacitape acitape BhguP-dlihC isorriC isorriC",
+      "start_page": 32,
+      "end_page": 32
+    },
+    {
+      "heading": "otaznava )isatsatem eralocsav",
+      "text": "CCH\no/e",
+      "start_page": 32,
+      "end_page": 32
+    },
+    {
+      "heading": "noc enoisavni( acipocsorcam etneizaP",
+      "text": "a binefaros aiparet binefaros otroppus a\naenil\nid",
+      "start_page": 32,
+      "end_page": 32
+    },
+    {
+      "heading": "id ocinilc adnoces id id otnemillafbinefaroS otnemillaf",
+      "text": "aipareT\noidutS\nid\nocinilc\noidutS\nacitape AhguP-dlihC isorriC\nL\nLINE\nEE\nE G\nGUI\nIDA E otnemattart\nopod",
+      "start_page": 32,
+      "end_page": 33
+    },
+    {
+      "heading": "pu-wolloF",
+      "text": "omtiroglA\nEPA\notnemattart\nopod",
+      "start_page": 33,
+      "end_page": 33
+    },
+    {
+      "heading": "pu-wolloF",
+      "text": "omtiroglA\nAT\nTOC\nCA\nARC\nCIN\nNO\nOMA\n.inna\nid\nisem\nozzem\neud\nrep ingo noc\nisem\nNMR etnemavisseccuSelanoigerocol\no ingo\nCT\notsartnoc\n,SUEC\n.acigrurihc\nopod\natelpmoc\nenoizeser\notnemattart\natsopsiR\no\notnaiparT",
+      "start_page": 33,
+      "end_page": 33
+    },
+    {
+      "heading": "8. Raccomandazioni prodotte con metodologia GRADE",
+      "text": "QUESITO 1: Nei pazienti con cirrosi epatica (max Child-Pugh B) affetti da HCC M0 multi-nodulare\nnon resecabile, in assenza di trombosi portale è raccomandabile TACE associata a DC beads vs TACE?\nRACCOMANDAZIONE:\nNei pazienti cirrotici (max Child B) affetti da epatocarcinoma M0, multinodulare, non resecabile, in assenza di trombosi portale la TACE con “DC Beads” non dovrebbe essere utilizzata.",
+      "start_page": 34,
+      "end_page": 34
+    },
+    {
+      "heading": "Motivazioni/Commenti al bilancio Beneficio/Danno:",
+      "text": "I dati riguardo gli outcome selezionati non hanno evidenziato nessun vantaggio della TACE con DC Beads rispetto alla TACE convenzionale. Gli outcomes di efficacia selezionati soffrono della grande variabilità legata\nal basso numero di pazienti arruolati negli studi clinici. Tuttavia le stime puntuali delle misure di efficacia sono\na sfavore della TACE con “DC Beads”. Il vantaggio in termini di effetti collaterali per la TACE con “DC\nBeads” non è tale da giustificarne l’impiego a fronte del dubbio vantaggio in termini di efficacia.\nVotazione forza raccomandazione Votazione bilancio Beneficio/Danno\nPositiva Positiva Negativa Negativa\nFavorevole Incerto Sfavorevole forte debole debole forte\nImplicazioni per le ricerche future: Allo stato attuale, le evidenze a supporto di un impiego della TACE con\nDC beads sono limitate dal basso numero di pazienti arruolati negli unici due studi randomizzati finora portati a termine sull’argomento. Pertanto, studi randomizzati con adeguata numerosità sono necessari per fornire una\nrisposta definitiva al quesito se la TACE con DC beads possa avere un vantaggio rispetto alla TACE convenzionale.",
+      "start_page": 34,
+      "end_page": 34
+    },
+    {
+      "heading": "Qualità delle Evidenze",
+      "text": "La qualità delle evidenze è stata giudicata MODERATA per i seguenti motivi:\nSono presenti solo due studi randomizzati a supporto del quesito esplorato. La numerosità campionaria ridotta\nrappresenta il principale limite qualitativo dell’evidenza a supporto di questo quesito. Questo limite impatta\nnegativamente sull’affidabilità delle stime di efficacia delle misure terapeutiche confrontate.",
+      "start_page": 34,
+      "end_page": 34
+    },
+    {
+      "heading": "Qualità globale delle evidenze: MODERATA",
+      "text": "Questa raccomandazione è stata prodotta con metodo GRADE.\nIn appendice online: quesito clinico all’origine della raccomandazione, votazione della criticità degli\noutcome, tabella GRADE completa e caratteristiche del panel.",
+      "start_page": 34,
+      "end_page": 34
+    },
+    {
+      "heading": "9 Bibliografia",
+      "text": "1. Chang MH, You SL, Chen CJ, et al: Decreased incidence of hepatocellular carcinoma in hepatitis B vaccinees: a\n20-year follow-up study. J Natl Cancer Inst 101:1348-55, 2009.\n2. Sarasin FP, Giostra E, Hadengue A: Cost-effectiveness of screening for detection of small hepatocellular\ncarcinoma in western patients with Child-Pugh class A cirrhosis. Am J Med 101:422-34, 1996\n3. Zhang BH, Yang BH, Tang ZY: Randomized controlled trial of screening for hepatocellular carcinoma. J Cancer\nRes Clin Oncol 130:417-22, 2004\n4. Santi V, Trevisani F, Gramenzi A, et al: Semiannual surveillance is superior to annual surveillance for the\ndetection of early hepatocellular carcinoma and patient survival. J Hepatol 53:291-7, 2010\n5. Bolondi L, Sofia S, Siringo S, et al: Surveillance programme of cirrhotic patients for early diagnosis and\ntreatment of hepatocellular carcinoma: a cost effectiveness analysis. Gut 48:251-9, 2001\n6. Sangiovanni A, Del Ninno E, Fasani P, et al: Increased survival of cirrhotic patients with a hepatocellular\ncarcinoma detected during surveillance. Gastroenterology 126:1005-14, 2004\n7. Trevisani F, Santi V, Gramenzi A, et al: Surveillance for early diagnosis of hepatocellular carcinoma: is it\neffective in intermediate/advanced cirrhosis? Am J Gastroenterol 102:2448-57; quiz 2458, 2007\n8. Mirici-Cappa F, Gramenzi A, Santi V, et al: Treatments for hepatocellular carcinoma in elderly patients are as\neffective as in younger patients: a 20-year multicentre experience. Gut 59:387-96, 2010\n9. Daniele B, Bencivenga A, Megna AS, et al: Alpha-fetoprotein and ultrasonography screening for hepatocellular\ncarcinoma. Gastroenterology 127:S108-12, 2004\n10. Roskams T, Kojiro M: Pathology of early hepatocellular carcinoma: conventional and molecular diagnosis.\nSemin Liver Dis 30:17-25, 2010\n11. Bolondi L, Gaiani S, Celli N, et al: Characterization of small nodules in cirrhosis by assessment of vascularity:\nthe problem of hypovascular hepatocellular carcinoma. Hepatology 42:27-34, 2005\n12. Forner A, Vilana R, Ayuso C, et al: Diagnosis of hepatic nodules 20 mm or smaller in cirrhosis: Prospective\nvalidation of the noninvasive diagnostic criteria for hepatocellular carcinoma. Hepatology 47:97-104, 2008\n13. Roskams T. Anatomic pathology of hepatocellular carcinoma: impact on prognosis and resposne to therapy. Clin\nLiver Dis 15:245-59, 2011\n14. International Consensus Group for Hepatocellular NeoplasiaThe International Consensus Group for\nHepatocellular N: Pathologic diagnosis of early hepatocellular carcinoma: a report of the international consensus\ngroup for hepatocellular neoplasia. Hepatology 49:658-64, 2009\n15. Di Tommaso L, Franchi G, Park YN, et al: Diagnostic value of HSP70, glypican 3, and glutamine synthetase in\nhepatocellular nodules in cirrhosis. Hepatology 45:725-34, 2007\n16. Di Tommaso L, Destro A, Seok JY, et al: The application of markers (HSP70 GPC3 and GS) in liver biopsies is\nuseful for detection of hepatocellular carcinoma. J Hepatol 50:746-54, 2009\n17. Guy J, Kelley RK, Roberts J, et al: Multidisciplinary Management of Hepatocellular Carcinoma. Clin\nGastroenterol Hepatol 10:354-62, 2012\n18. Durand F, Valla D: Assessment of the prognosis of cirrhosis: Child-Pugh versul MELD. J Hepatol 42:S110-\nS107, 2005\n19. Ripoli C, Genescà J, Araujo IK, et al: Rebleeding prophylaxis improves outcomes in patients with hepatocellular\ncarcinoma. A multicenter case-control study. Hepatology 2013\n20. Influence of high risk esophageal varices on outcomes in hepatocellular carcinoma patients: benefits of\nprophylactic endoscopic therapies. Hepatogastroenterology 59:2557-63, 2012\n21. Liaw YF, Sung JJ, Chow WC, et al: Lamivudine for patients with chronic hepatitis B and advanced liver disease.\nN Engl J Med 351:1521-31, 2004\n22. Singal AG, Volk ML, Jensen D, et al: A sustained viral response is associated with reduced liver-related\nmorbidity and mortality in patients with hepatitis C virus. Clin Gastroenterol Hepatol 8:280-8, 2010\n23. A new prognostic system for hepatocellular carcinoma: a retrospective study of 435 patients: the Cancer of the\nLiver Italian Program (CLIP) investigators. Hepatology 28:751-5, 1998\n24. Llovet JM, Bru C, Bruix J: Prognosis of hepatocellular carcinoma: the BCLC staging classification. Seminars in\nLiver Disease 19:329–38, 1999\n25. Barone C, Koeberle D, Metselaar H, et al: Multidisciplinary approach for HCC patients: hepatology for the\noncologists. Ann Onc 24(S2):ii15-ii23, 2013\n26. Mazzaferro V, Regalia E, Doci R, et al: Liver transplantation for the treatment of small hepatocellular\ncarcinomas in patients with cirrhosis. N Engl J Med 334:693-9, 1996\n27. Llovet JM, Fuster J, Bruix J: Intention-to-treat analysis of surgical treatment for early hepatocellular carcinoma:\nresection versus transplantation. Hepatology 30:1434-40, 1999\n28. Llovet JM, Mas X, Aponte JJ, et al: Cost effectiveness of adjuvant therapy for hepatocellular carcinoma during\nthe waiting list for liver transplantation. Gut 50:123-8, 2002\n29. Yao FY, Xiao L, Bass NM, et al: Liver transplantation for hepatocellular carcinoma: validation of the UCSFexpanded criteria based on preoperative imaging. Am J Transplant 7:2587-96, 2007\n30. Mazzaferro V, Llovet JM, Miceli R, et al: Predicting survival after liver transplantation in patients with\nhepatocellular carcinoma beyond the Milan criteria: a retrospective, exploratory analysis. Lancet Oncol 10:35-\n31. Germani G, Pleguezuelo M, Gurusamy K, et al: Clinical outcomes of radiofrequency ablation, percutaneous\nalcohol and acetic acid injection for hepatocelullar carcinoma: a meta-analysis. J Hepatol 52:380-8, 2010\n32. Yao FY, Kerlan RK, Jr., Hirose R, et al: Excellent outcome following down-staging of hepatocellular carcinoma\nprior to liver transplantation: an intention-to-treat analysis. Hepatology 48:819-27, 2008\n33. Ravaioli M, Grazi GL, Piscaglia F, et al: Liver transplantation for hepatocellular carcinoma: results of downstaging in patients initially outside the Milan selection criteria. Am J Transplant 8:2547-57, 2008\n34. Siegler M, Simmerling MC, Siegler JH, et al: Recipient deaths during donor surgery: a new ethical problem in\nliving donor liver transplantation (LDLT). Liver Transpl 12:358-60, 2006\n35. Ghobrial RM, Freise CE, Trotter JF, et al: Donor morbidity after living donation for liver transplantation.\nGastroenterology 135:468-76, 2008\n36. Brown RS, Jr.: Live donors in liver transplantation. Gastroenterology 134:1802-13, 2008\n37. Llovet JM, Bruix J: Novel advancements in the management of hepatocellular carcinoma in 2008. J Hepatol 48\nSuppl 1:S20-37, 2008\n38. Mazzaferro V, Romito R, Schiavo M, et al: Prevention of hepatocellular carcinoma recurrence with alphainterferon after liver resection in HCV cirrhosis. Hepatology 44:1543-54, 2006\n39. Poon RT, Fan ST, Lo CM, et al: Extended hepatic resection for hepatocellular carcinoma in patients with\ncirrhosis: is it justified? Ann Surg 236:602-11, 2002\n40. Roayaie S, Blume IN, Thung SN, et al: A system of classifying microvascular invasion to predict outcome after\nresection in patients with hepatocellular carcinoma. Gastroenterology 137:850-5, 2009\n41. Ishizawa T, Hasegawa K, Aoki T, et al: Neither multiple tumors nor portal hypertension are surgical\ncontraindications for hepatocellular carcinoma. Gastroenterology 134:1908-16, 2008\n42. Chen MS, Li JQ, Zheng Y, et al: A prospective randomized trial comparing percutaneous local ablative therapy\nand partial hepatectomy for small hepatocellular carcinoma. Ann Surg 243:321-8, 2006\n43. Huang J, Yan L, Cheng Z, et al: A randomized trial comparing radiofrequency ablation and surgical resection for\nHCC conforming to the Milan criteria. Ann Surg 252:903-12, 2010\n44. Cho YK, Kim JK, Kim MY, et al: Systematic review of randomized trials for hepatocellular carcinoma treated\nwith percutaneous ablation therapies. Hepatology 49:453-9, 2009\n45. Llovet JM, Real MI, Montana X, et al: Arterial embolisation or chemoembolisation versus symptomatic\ntreatment in patients with unresectable hepatocellular carcinoma: a randomised controlled trial. Lancet\n46. Lo CM, Ngan H, Tso WK, et al: Randomized controlled trial of transarterial lipiodol chemoembolization for\nunresectable hepatocellular carcinoma. Hepatology 35:1164-71, 2002\n47. Llovet JM, Bruix J: Systematic review of randomized trials for unresectable hepatocellular carcinoma:\nChemoembolization improves survival. Hepatology 37:429-42, 2003\n48. Oliveri RS, Wetterslev J, Gluud C: Transarterial (chemo)embolisation for unresectable hepatocellular carcinoma.\nCochrane Database Syst Rev:CD004787, 2011\n49. Lammer J, Malagari K, Vogl T, et al: Prospective randomized study of doxorubicin-eluting-bead embolization in\nthe treatment of hepatocellular carcinoma: results of the PRECISION V study. Cardiovasc Intervent Radiol\n50. Sacco R, Bargellini I, Bertini M, et al: Conventional versus doxorubicin-eluting bead transarterial\nchemoembolization for hepatocellular carcinoma. J Vasc Interv Radiol 22:1545-52, 2011\n51. A comparison of lipiodol chemoembolization and conservative treatment for unresectable hepatocellular\ncarcinoma. Groupe d'Etude et de Traitement du Carcinome Hepatocellulaire. N Engl J Med 332:1256-61, 1995\n52. Llovet JM, Ricci S, Mazzaferro V, et al: Sorafenib in advanced hepatocellular carcinoma. N Engl J Med\n53. Raoul JL, Guyader D, Bretagne JF, et al: Prospective randomized trial of chemoembolization versus intra-arterial\ninjection of 131I-labeled-iodized oil in the treatment of hepatocellular carcinoma. Hepatology 26:1156-61, 1997\n54. Kulik LM, Carr BI, Mulcahy MF, et al: Safety and efficacy of 90Y radiotherapy for hepatocellular carcinoma\nwith and without portal vein thrombosis. Hepatology 47:71-81, 2008\n55. Salem R, Lewandowski RJ, Mulcahy MF, et al: Radioembolization for hepatocellular carcinoma using Yttrium-\n90 microspheres: a comprehensive report of long-term outcomes. Gastroenterology 138:52-64, 2010\n56. Hilgard P, Hamami M, Fouly AE, et al: Radioembolization with yttrium-90 glass microspheres in hepatocellular\ncarcinoma: European experience on safety and long-term survival. Hepatology 52:1741-9, 2010\n57. Mazzaferro V, Bhoori S, Sposito C, et al: Milan criteria in liver transplantation for hepatocellular carcinoma: an\nevidence-based analysis of 15 years of experience. Liver Transpl 17 Suppl 2:S44-57, 2011\n58. Makuuchi M, Kosuge T, Takayama T, et al: Surgery for small liver cancers. Semin Surg Oncol 9:298-304, 1993\n59. Hasegawa K, Makuuchi M, Takayama T, et al: Surgical resection vs. percutaneous ablation for hepatocellular\ncarcinoma: a preliminary report fo the Japanese nationwide survey. J Hepatol 49:589-94, 2008\n60. Lencioni R, Kudo M, Ye SL, et al: First interim analysis of the GIDEON (Global Investigation of therapeutic\ndecisions in hepatocellular carcinoma and of its treatment with sorafeNib) non-interventional study. Int J Clin\nPract 66:675-83, 2012\n61. Marelli L, Stigliano R, Triantos C, et al: Treatment outcomes for hepatocellular carcinoma using\nchemoembolization in combination with other therapies. Cancer Treat Rev 32:594-606, 2006\n62. Samuel M, Chow PK, Chan Shih-Yen E, et al: Neoadjuvant and adjuvant therapy for surgical resection of\nhepatocellular carcinoma. Cochrane Database Syst Rev:CD001199, 2009\n63. Miao RY, Zhao HT, Yang HY, et al: Postoperative adjuvant antiviral therapy for hepatitis B/C virus-related\nhepatocellular carcinoma: a meta-analysis. World J Gastroenterol 16:2931-42, 2010\n64. Cheng AL, Kang YK, Chen Z, et al: Efficacy and safety of sorafenib in patients in the Asia-Pacific region with\nadvanced hepatocellular carcinoma: a phase III randomised, double-blind, placebo-controlled trial. Lancet Oncol\n65. Abou-Alfa GK, Schwartz L, Ricci S, et al: Phase II study of sorafenib in patients with advanced hepatocellular\ncarcinoma. J Clin Oncol 24:4293-300, 2006\n66. Pinter M, Sieghart W, Graziadei I, et al: Sorafenib in unresectable hepatocellular carcinoma from mild to\nadvanced stage liver cirrhosis. Oncologist 14:70-6, 2009\n67. Worns MA, Weinmann A, Pfingst K, et al: Safety and efficacy of sorafenib in patients with advanced\nhepatocellular carcinoma in consideration of concomitant stage of liver cirrhosis. J Clin Gastroenterol 43:489-95,\n68. Tamoxifen in treatment of hepatocellular carcinoma: a randomised controlled trial. CLIP Group (Cancer of the\nLiver Italian Programme). Lancet 352:17-20, 1998\n69. Barbare JC, Bouche O, Bonnetain F, et al: Randomized controlled trial of tamoxifen in advanced hepatocellular\ncarcinoma. J Clin Oncol 23:4338-46, 2005\n70. Grimaldi C, Bleiberg H, Gay F, et al: Evaluation of antiandrogen therapy in unresectable hepatocellular\ncarcinoma: results of a European Organization for Research and Treatment of Cancer multicentric double-blind\ntrial. J Clin Oncol 16:411-7, 1998\n71. Qin S, Bai Y, Lim HY, et al: Randomized, multicenter, open-label study of oxaliplatin plus\nfluorouracil/leucovorin versus doxorubicin as palliative chemotherapy in patients with advanced hepatocellular carcinoma. J Clin Oncol, 2013\nAll\nleg\nga\nato\no: Ta\nab\nbel\nlle G\nGR\nRA\nADE\nE ev\nvid\nde\nenc\nce profile\nAuthor(s): VT",
+      "start_page": 35,
+      "end_page": 39
+    },
+    {
+      "heading": "Date: 2012-06-28",
+      "text": "Question: Should Transcatheter arterial chemoembolization (TACE) PLUS a drug-eluting bead (DC Bead) vs TACE be used for treatment of hepatocellular carcinoma (HCC)?\nSettings: M0 Multi-nodular unresectable HCC",
+      "start_page": 39,
+      "end_page": 39
+    },
+    {
+      "heading": "Quality assessment No of patients Effect",
+      "text": "Quality Importance\nTranscatheter arterial\nNo of Risk of Other chemoembolization (TACE) Relative\nDesign Inconsistency Indirectness Imprecision TACE Absolute studies bias considerations PLUS a drug-eluting bead (DC (95% CI)\nBead)",
+      "start_page": 39,
+      "end_page": 39
+    },
+    {
+      "heading": "Overall Survival (Lammer 2010) (follow-up median 6 months; assessed with: observation of death)",
+      "text": "no",
+      "start_page": 39,
+      "end_page": 39
+    },
+    {
+      "heading": "RR 1.30 2 more per 100 ⊕⊕⊕Ο",
+      "text": "1 rand tro iam lsis ed s re isr kio ou fs inn co ns se isri to eu ns inn do rs ee cr ti no eu ss serious1 none (88 ./ 69 %3 (8 7/ .1 40 %8 (0 3. .5 31 )t o (fro 1m 4 f oe rw ee r to CRITICAL",
+      "start_page": 39,
+      "end_page": 39
+    },
+    {
+      "heading": "Overall Survival (Sacco 2011) (follow-up median 28.2 months; assessed with: observation of death)",
+      "text": "no\nRR 1.03 1 more per 100 ⊕⊕⊕Ο",
+      "start_page": 39,
+      "end_page": 39
+    },
+    {
+      "heading": "1 rand tro iam lsis ed s re isr kio ou fs inn co ns se isri to eu ns inn do rs ee cr ti no eu ss serious1 none (27 1/ .3 23 (27 0/ .3 64 ( 20 .. 64 t )o (fr to om 31 m2 f oe rw e)e r CRITICAL",
+      "text": "o c y i s % ) % ) 1 3 MODERATE bias",
+      "start_page": 39,
+      "end_page": 39
+    },
+    {
+      "heading": "Disease Control Rate (Lammer 2010) (assessed with: EASL Criteria)",
+      "text": "no 11 more per",
+      "start_page": 39,
+      "end_page": 39
+    },
+    {
+      "heading": "rand tro iam lsis ed s re isr kio ou fs inn co ns se isri to eu ns inn do rs ee cr ti no eu ss (65 39 ./ 49 %3 (5 56 1/ .1 90 %8 1 fe0 w0 ( rf r to om 92",
+      "text": "18 serious1 none (0 1. .9 56 )t o CRITICAL",
+      "start_page": 39,
+      "end_page": 39
+    },
+    {
+      "heading": "Complication rate (Lammer 2010)2 (follow-up median 6 months; assessed with: Post treatment Complication)",
+      "text": "no\nRR 0.87 3 fewer per 100 ⊕⊕⊕⊕",
+      "start_page": 39,
+      "end_page": 39
+    },
+    {
+      "heading": "1 none (0 1. .5 34 )t o (fr to om 01 m2 f oe rw e)e r IMPORTANT",
+      "text": "o c y i s p n ) ) 9 1 HIGH bias",
+      "start_page": 39,
+      "end_page": 39
+    },
+    {
+      "heading": "Disease Control Rate (Sacco 2011) (assessed with: EASL Criteria)",
+      "text": "no\nRR 0.93 4 fewer per 100 ⊕⊕⊕Ο",
+      "start_page": 39,
+      "end_page": 39
+    },
+    {
+      "heading": "o c y i s ) ) 8 2 MODERATE bias",
+      "text": "Complication rate (Sacco 2011)2 (follow-up median 6 months; assessed with: Post treatment Complication)\nno\nRR 1.14 8 more per 100 ⊕⊕⊕⊕",
+      "start_page": 40,
+      "end_page": 40
+    },
+    {
+      "heading": "o c y i s p n ) ) 9 3 HIGH bias",
+      "text": "Liver function deterioration (Lammer 2010) (follow-up median 6 months; measured with: ALT increase; Better indicated by lower values)\nno\nMD ratio 0.50 ⊕⊕⊕⊕\nrand tro iam lsis ed s re isr kio ou fs inn co ns se isri to eu ns inn do rs ee cr ti no eu ss imno rs ee cr ii so iu os",
+      "start_page": 40,
+      "end_page": 40
+    },
+    {
+      "heading": "1 none 93 108 - lo 0w .6e 5r l( o0 w.3 e9 )t 3o IMPORTANT",
+      "text": "o c y i s p n r HIGH bias\nLiver function deterioration (Sacco 2011) (follow-up median 6 months; measured with: ALT increase; Better indicated by lower values)\nno\nrand tro iam lsis ed s re isr kio ou fs inn co ns se isri to eu ns inn do rs ee cr ti no eu ss imno rs ee cr ii so iu os (m e toa n 0 ih gi hg eh re )r",
+      "start_page": 40,
+      "end_page": 40
+    },
+    {
+      "heading": "1 none 33 34 - IMPORTANT o c y i s p n 0 0 h 4 HIGH",
+      "text": "bias\nSevere toxicity (Lammer 2010) (follow-up median 6; assessed with: NCIC TOX Grade)\nno",
+      "start_page": 40,
+      "end_page": 40
+    },
+    {
+      "heading": "rand tro iam lsis ed s re isr kio ou fs inn co ns se isri to eu ns inn do rs ee cr ti no eu ss imno rs ee cr ii so iu os (22 32 ./ 79 %3 (3 12 6/ .1 29 %8",
+      "text": "1 none ( 10 .. 25 t )o (from m8 f oe rw e)e r to IMPORTANT\no c y i s p n ) ) 7 4 HIGH bias\nSevere toxicity (Sacco 2011) - not reported\nIMPORTANT\n1 Small Sample size",
+      "start_page": 40,
+      "end_page": 40
+    },
+    {
+      "heading": "3 similar results for AST",
+      "text": "4 ALT increase was significantly (P < .007) greater after conventional chemoembolization compared with DEB chemoembolization",
+      "start_page": 40,
+      "end_page": 40
+    },
+    {
+      "heading": "Medical Table 1 on page 8",
+      "text": "Table contains the following columns: Column_1, Grado di, Column_3, Raccomandazione clinica, Column_5, Forza della, Column_7\nRow 1: Grado di: raccomandazione and Forza della: raccomandazione\nRow 2: Grado di: SIGN and Forza della: clinica\nRow 3: Column_1: B, Raccomandazione clinica: Tutti i pazienti con cirrosi epatica dovrebbero essere sottoposti a sorveglianza semestrale con ecografia dell’addome superiore per la diagnosi precoce di HCC., and Column_5: Positiva debole\nRow 4: Column_1: B, Raccomandazione clinica: L’alfafetoproteina è un indicatore di rischio di sviluppo di HCC, ma, per la ridotta sensibilità nei tumori di piccole dimensioni, non dovrebbe essere utilizzata come test di sorveglianza ed i frequenti risultati positivi che conseguono al suo uso peggiorano il rapporto costo/beneficio della sorveglianza semestrale con la sola ecografia., and Column_5: Negativa debole",
+      "start_page": 8,
+      "end_page": 8,
+      "table_type": "multi_pass_validated_table",
+      "table_metadata": {
+        "original_rows": 5,
+        "extraction_method": "pass_3_medical",
+        "has_title": false,
+        "page": 8,
+        "contains_dosage": false,
+        "contains_pricing": true,
+        "contains_medication": false,
+        "table_title": null,
+        "narrative_length": 889,
+        "extraction_hints": {
+          "key_numbers": [
+            "1",
+            "3",
+            "5",
+            "7",
+            "1",
+            "2",
+            "3",
+            "1",
+            "5",
+            "4"
+          ],
+          "key_terms": [
+            "cost"
+          ],
+          "relationships": []
+        }
+      }
+    },
+    {
+      "heading": "Table 1 on page 11",
+      "text": "Table contains the following columns: Column_1, Grado di, Column_3, Raccomandazione clinica, Column_5, Forza della, Column_7\nRow 1: Grado di: raccomandazione and Forza della: raccomandazione\nRow 2: Grado di: SIGN and Forza della: clinica\nRow 3: Column_1: B, Raccomandazione clinica: I noduli ≥ 10 mm riscontrati all’ecografia (durante sorveglianza o all’esordio della cirrosi) vanno considerati altamente sospetti per HCC e dovrebbero essere ulteriormente caratterizzati con RM e/o TC con mezzo di contrasto per cercare di raggiungere una diagnosi non invasiva di HCC. Se non si raggiunge una diagnosi di HCC con RM e/o TC il nodulo deve essere sottoposto a biopsia guidata., and Column_5: Positiva forte\nRow 4: Column_1: B, Raccomandazione clinica: Qualora la biopsia non sia tecnicamente eseguibile o non diagnostica di HCC, il nodulo dovrebbe essere monitorato trimestralmente con l’ecografia e rivalutato periodicamente con RM e/o TC ed eventualmente con biopsia in caso di aumento di dimensioni o cambiamento dell’aspetto contrastografico, come in presenza di un nuovo nodulo., and Column_5: Positiva forte\nRow 5: Column_1: B, Raccomandazione clinica: Se i noduli sono di dimensioni inferiori a 10 mm dovrebbe essere effettuato solo un monitoraggio delle dimensioni ogni tre mesi fino all’eventuale superamento della soglia di 10 mm., and Column_5: Positiva debole\nRow 6: Column_1: A, Raccomandazione clinica: La presenza di un nodulo epatico al di fuori del contesto di cirrosi richiede sempre una caratterizzazione istologica., and Column_5: Positiva forte\nRow 7: Column_1: B, Raccomandazione clinica: La citologia agoaspirativa non dovrebbe essere impiegata per la caratterizzazione di un nodulo epatico in fegato cirrotico – specialmente in caso di noduli ≤ 3 cm di diametro – perché non consente la valutazione delle caratteristiche architetturali/organizzative fondamentali per la diagnosi di HCC ben differenziato., and Column_5: Negativa forte",
+      "start_page": 11,
+      "end_page": 11,
+      "table_type": "multi_pass_validated_table",
+      "table_metadata": {
+        "original_rows": 8,
+        "extraction_method": "pass_1_standard",
+        "has_title": false,
+        "page": 11,
+        "contains_dosage": false,
+        "contains_pricing": false,
+        "contains_medication": false,
+        "table_title": null,
+        "narrative_length": 1956
+      }
+    },
+    {
+      "heading": "Table 1 on page 13",
+      "text": "Table contains the following columns: Column_1, Grado di, Column_3, Raccomandazione clinica, Column_5, Forza della, Column_7\nRow 1: Grado di: raccomandazione and Forza della: raccomandazione\nRow 2: Grado di: SIGN and Forza della: clinica\nRow 3: Column_1: B, Raccomandazione clinica: Il grado di disfunzione epatica del paziente cirrotico con HCC deve essere definito prima di ogni decisione terapeutica. La stadiazione di Child-Pugh è lo standard di riferimento per la valutazione della cirrosi., and Column_5: Positiva forte\nRow 4: Column_1: B, Raccomandazione clinica: Tutti ipazienti con HCC insorto su cirrosi devono essere sottoposti ad una esofagogastroduodenoscopia (EGDS) prima del trattamento. √ L’EGDS dovrebbe essere stata eseguita non oltre 12 mesi prima del trattamento dell’HCC e dovrebbe essere ripetuta se si è verificata, nel frattempo, trombosi portale. √Nei casi di varici a rischio è indicata la profilassi del sanguinamento con betabloccanti e/o legatura elastica., and Column_5: Positiva forte\nRow 5: Column_1: A, Raccomandazione clinica: Nei pazienti con infezione HBV viremici (ricerca dell’ HBV- DNA positiva) è indicata una terapia con analoghi nucleot(s)idici secondo le indicazioni delle linee guida specifche., and Column_5: Positiva forte\nRow 6: Column_1: A, Raccomandazione clinica: Nei pazienti con infezione da virus dell’epatite C (HCV) viremici (positiva la ricerca dell’HCV-RNA), sottoposti a terapia radicale dell’HCC, vi è indicazione alla terapia antivirale, secondo le raccomandazioni previste nelle specifiche linee guida., and Column_5: Positiva forte",
+      "start_page": 13,
+      "end_page": 13,
+      "table_type": "multi_pass_validated_table",
+      "table_metadata": {
+        "original_rows": 7,
+        "extraction_method": "pass_2_relaxed",
+        "has_title": false,
+        "page": 13,
+        "contains_dosage": false,
+        "contains_pricing": false,
+        "contains_medication": false,
+        "table_title": null,
+        "narrative_length": 1593
+      }
+    },
+    {
+      "heading": "Table 1 on page 14",
+      "text": "Table contains the following columns: PARAMETRO, Column_2, PUNTEGGIO, Column_4, Column_5, Column_6, Column_7, Column_8\nRow 1: PUNTEGGIO: 0, Column_4: 1, and Column_7: 2\nRow 2: PARAMETRO: Child-Pugh, Column_2: A, Column_4: B, and Column_6: C\nRow 3: PARAMETRO: Morfologia del tumore, Column_2: Uninodulare e ≤50% di fegato coinvolto della neoplasia, Column_4: Multinodulare e ≤50% di fegato coinvolto della neoplasia, and Column_6: Massivo o > 50% di fegato coinvolto della neoplasia\nRow 4: PARAMETRO: Trombosi portale, Column_2: Assente, and Column_4: Presente\nRow 5: PARAMETRO: Valore di Alfafetoproteina, Column_2: < 400 ng/ml, and Column_4: ≥400 ng/ml",
+      "start_page": 14,
+      "end_page": 14,
+      "table_type": "multi_pass_validated_table",
+      "table_metadata": {
+        "original_rows": 6,
+        "extraction_method": "pass_1_standard",
+        "has_title": false,
+        "page": 14,
+        "contains_dosage": false,
+        "contains_pricing": false,
+        "contains_medication": false,
+        "table_title": null,
+        "narrative_length": 653
+      }
+    },
+    {
+      "heading": "Table 2 on page 14",
+      "text": "Table contains the following columns: CLIP score, Column_2, Sopravvivenza mediana (mesi)\nRow 1: CLIP score: 0 and Column_2: 41,5\nRow 2: CLIP score: 1 and Column_2: 28,7\nRow 3: CLIP score: 2 and Column_2: 15,2\nRow 4: CLIP score: 3 and Column_2: 7,0\nRow 5: CLIP score: 4-6 and Column_2: 3,4",
+      "start_page": 14,
+      "end_page": 14,
+      "table_type": "multi_pass_validated_table",
+      "table_metadata": {
+        "original_rows": 6,
+        "extraction_method": "pass_1_standard",
+        "has_title": false,
+        "page": 14,
+        "contains_dosage": false,
+        "contains_pricing": false,
+        "contains_medication": false,
+        "table_title": null,
+        "narrative_length": 288
+      }
+    },
+    {
+      "heading": "Table 3 on page 14",
+      "text": "Row 1 contains: 'STADIO', 'TUMORE', 'Classe Child- Pugh', 'ECOG- PS', 'Invasione vascolare e/o metastasi extraepatiche', 'Elementi aggiuntivi', 'Sopravviv mediana (mesi)'\nRow 2: A = precoce\nRow 3 contains: 'A0', 'Singolo <2 cm', 'A', '0', 'No', 'No ipert portale, Bil Tot <1.0mg/dl'\nRow 4 contains: 'A1', 'Singolo', 'A', '0', 'No', 'No ipert portale, Bil Tot <1.0mg/dl', '43'\nRow 5 contains: 'A2', 'Singolo', 'A', '0', 'No', 'Ipert portale, Bil Tot <1.0mg/dl', '29'\nRow 6 contains: 'A3', 'Singolo', 'A', '0', 'No', 'No ipert portale, Bil Tot >1.0mg/dl', '25'\nRow 7 contains: 'A4', '2-3 tumori tutti <3 cm', 'A-B', '0', 'No', '22'\nRow 8 contains: 'B=intermedio', 'Grande multifocale', '0', 'No', '18'\nRow 9 contains: 'C=avanzato', 'Qualsiasi numero e morfologia', 'A-B', '1-2', 'Si', '11'",
+      "start_page": 14,
+      "end_page": 14,
+      "table_type": "multi_pass_validated_table",
+      "table_metadata": {
+        "original_rows": 9,
+        "extraction_method": "pass_1_standard",
+        "has_title": false,
+        "page": 14,
+        "contains_dosage": true,
+        "contains_pricing": false,
+        "contains_medication": false,
+        "table_title": null,
+        "narrative_length": 787,
+        "extraction_hints": {
+          "key_numbers": [
+            "1",
+            "2",
+            "3",
+            "0",
+            "2",
+            "0",
+            "1.0",
+            "4",
+            "1",
+            "0"
+          ],
+          "key_terms": [],
+          "relationships": [
+            "dose-frequency"
+          ]
+        }
+      }
+    },
+    {
+      "heading": "Table 1 on page 15",
+      "text": "Table contains the following columns: Column_1, Grado di, Column_3, Raccomandazione clinica, Column_5, Forza della, Column_7\nRow 1: Grado di: raccomandazione and Forza della: raccomandazione\nRow 2: Grado di: SIGN and Forza della: clinica\nRow 3: Column_1: B, Raccomandazione clinica: Prima di qualsiasi trattamento oncologico, la prognosi del paziente con HCC su cirrosi epatica dovrebbe essere valutata con un sistema che tenga conto della diffusione della neoplasia e del grado di compenso della cirrosi (es.: CLIP score, BCLC)., and Column_5: Positiva forte",
+      "start_page": 15,
+      "end_page": 15,
+      "table_type": "multi_pass_validated_table",
+      "table_metadata": {
+        "original_rows": 4,
+        "extraction_method": "pass_2_relaxed",
+        "has_title": false,
+        "page": 15,
+        "contains_dosage": false,
+        "contains_pricing": false,
+        "contains_medication": false,
+        "table_title": null,
+        "narrative_length": 559
+      }
+    },
+    {
+      "heading": "Table 1 on page 18",
+      "text": "Table contains the following columns: Column_1, Qualità Globale, Column_3, Raccomandazione clinica, Column_5, Forza della, Column_7\nRow 1: Qualità Globale: delle evidenze and Forza della: raccomandazione\nRow 2: Qualità Globale: GRADE and Forza della: clinica\nRow 3: Column_1: Moderata, Raccomandazione clinica: Nei pazienti cirrotici (max Child B) affetti da epatocarcinoma M0, multinodulare, non resecabile, in assenza di trombosi portale la TACE con “DC Beads” non dovrebbe essere utilizzata * La valutazione complessiva della qualità delle evidenze ad oggi disponibili circa “l’efficacia della TACE con “DC Beads””, la valutazione del rapporto tra i benefici ed i rischi correlati e la formulazione della raccomandazione relativa al quesito posto, sono state analizzate secondo metodologia GRADE (vedere capitolo 7)., and Column_5: Negativa debole",
+      "start_page": 18,
+      "end_page": 18,
+      "table_type": "multi_pass_validated_table",
+      "table_metadata": {
+        "original_rows": 4,
+        "extraction_method": "pass_2_relaxed",
+        "has_title": false,
+        "page": 18,
+        "contains_dosage": false,
+        "contains_pricing": false,
+        "contains_medication": false,
+        "table_title": null,
+        "narrative_length": 850
+      }
+    },
+    {
+      "heading": "Table 1 on page 19",
+      "text": "Table contains the following columns: Column_1, Grado di, Column_3, Raccomandazione clinica, Column_5, Forza della, Column_7\nRow 1: Grado di: raccomandazione and Forza della: raccomandazione\nRow 2: Grado di: SIGN and Forza della: clinica\nRow 3: Column_1: B, Raccomandazione clinica: In tutti pazienti con cirrosi epatica e HCC che rientra nei “criteri di Milano” dovrebbe essere considerata l’opzione terapeutica del trapianto di fegato., and Column_5: Positiva debole\nRow 4: Column_1: B, Raccomandazione clinica: Nei pazienti con cirrosi epatica Child-Pugh A e HCC che rientra nei “criteri di Milano”, non candidabili al trapianto, dovrebbe essere valutata la resezione chirurgica, particolarmente in assenza di ipertensione portale., and Column_5: Positiva debole\nRow 5: Column_1: A, Raccomandazione clinica: Nel caso di HCC singoli ≤ 5 cm, in particolare se < 3 cm, in pazienti con cirrosi epatica Child-Pugh A per i quali la resezione chirurgica è controindicata o rifiutata dal paziente, deve essere considerato il trattamento ablativo percutaneo. √ La RFA è la tecnica di scelta √ la PEI va riservata ai casi con controindicazione alla RFA., and Column_5: Positiva forte\nRow 6: Column_1: B, Raccomandazione clinica: Nel caso di HCC singolo ≤2 cm, posizionato in una sede che permetta di prevedere un’applicazione sicura della RFA, questa tecnica dovrebbe essere preferità alla resezione, in quanto gravata da minori costi diretti, tempi di ricovero, morbilità e mortalità., and Column_5: Positiva debole\nRow 7: Column_1: A, Raccomandazione clinica: Nei pazienti con cirrosi epatica Child-Pugh A la TACE deve essere preferita come trattamento per le forme multinodulari e per i tumori singoli di grandi dimensioni (> 5 cm) in caso di controindicazione alla chirurgia., and Column_5: Positiva forte\nRow 8: Column_1: B, Raccomandazione clinica: Nei casi di controindicazione o di mancata risposta alla TACE deve essere considerato il trattamento con sorafenib., and Column_5: Positiva forte",
+      "start_page": 19,
+      "end_page": 19,
+      "table_type": "multi_pass_validated_table",
+      "table_metadata": {
+        "original_rows": 9,
+        "extraction_method": "pass_1_standard",
+        "has_title": false,
+        "page": 19,
+        "contains_dosage": false,
+        "contains_pricing": true,
+        "contains_medication": true,
+        "table_title": null,
+        "narrative_length": 1993,
+        "extraction_hints": {
+          "key_numbers": [
+            "1",
+            "3",
+            "5",
+            "7",
+            "1",
+            "2",
+            "3",
+            "1",
+            "5",
+            "4"
+          ],
+          "key_terms": [
+            "sorafenib",
+            "cost"
+          ],
+          "relationships": [
+            "drug-cost"
+          ]
+        }
+      }
+    },
+    {
+      "heading": "Table 1 on page 20",
+      "text": "Table contains the following columns: Column_1, Grado di, Column_3, Raccomandazione clinica, Column_5, Forza della, Column_7\nRow 1: Grado di: raccomandazione and Forza della: raccomandazione\nRow 2: Grado di: SIGN and Forza della: clinica\nRow 3: Column_1: A, Raccomandazione clinica: I trattamenti ablativi percutanei rappresentano il trattamento di scelta per i pazienti con cirrosi epatica Child-Pugh B ed HCC che rientra nei “criteri di Milano”, ma non trapiantabili., and Column_5: Positiva forte\nRow 4: Column_1: B, Raccomandazione clinica: Nei pazienti con cirrosi epatica Child-Pugh B la resezione chirurgica può essere considerata in caso di tumori singoli in pazienti senza ipertensione portale nei quali è prevista una resezione limitata. √ In questi casi la funzione epatica dovrebbe essere preliminarmente quantificata mediante la misurazione del tasso di ritenzione del verde indocianina a 15 minuti o con un altro sistema in uso presso un centro esperto., and Column_5: Positiva debole\nRow 5: Column_1: B, Raccomandazione clinica: Nei pazienti con cirrosi epatica Child-Pugh B e tumori multifocali, la TACE può essere presa in considerazione solo in casi molto ben selezionati., and Column_5: Positiva debole",
+      "start_page": 20,
+      "end_page": 20,
+      "table_type": "multi_pass_validated_table",
+      "table_metadata": {
+        "original_rows": 6,
+        "extraction_method": "pass_2_relaxed",
+        "has_title": false,
+        "page": 20,
+        "contains_dosage": false,
+        "contains_pricing": false,
+        "contains_medication": false,
+        "table_title": null,
+        "narrative_length": 1221
+      }
+    },
+    {
+      "heading": "Table 1 on page 21",
+      "text": "Table contains the following columns: Column_1, Grado di, Column_3, Raccomandazione clinica, Column_5, Forza della, Column_7\nRow 1: Grado di: raccomandazione and Forza della: raccomandazione\nRow 2: Grado di: SIGN and Forza della: clinica\nRow 3: Column_1: A, Raccomandazione clinica: Nei pazienti sottoposti a resezione chirurgica una terapia antineoplastica adiuvante non deve essere considerata., and Column_5: Negativa forte",
+      "start_page": 21,
+      "end_page": 21,
+      "table_type": "multi_pass_validated_table",
+      "table_metadata": {
+        "original_rows": 4,
+        "extraction_method": "pass_2_relaxed",
+        "has_title": false,
+        "page": 21,
+        "contains_dosage": false,
+        "contains_pricing": false,
+        "contains_medication": false,
+        "table_title": null,
+        "narrative_length": 426
+      }
+    },
+    {
+      "heading": "Table 2 on page 21",
+      "text": "Table contains the following columns: Column_1, Grado di, Column_3, Raccomandazione clinica, Column_5, Forza della, Column_7\nRow 1: Grado di: raccomandazione and Forza della: raccomandazione\nRow 2: Grado di: SIGN and Forza della: clinica\nRow 3: Column_1: D, Raccomandazione clinica: Nei pazienti sottoposti a trattamento chirurgico o ablativo percutaneo che abbiano mostrato una risposta completa si raccomanda di eseguire una metodica di imaging con contrasto ogni tre mesi per i primi due anni ed ogni sei mesi successivamente., and Column_5: Positiva debole",
+      "start_page": 21,
+      "end_page": 21,
+      "table_type": "multi_pass_validated_table",
+      "table_metadata": {
+        "original_rows": 4,
+        "extraction_method": "pass_2_relaxed",
+        "has_title": false,
+        "page": 21,
+        "contains_dosage": false,
+        "contains_pricing": false,
+        "contains_medication": false,
+        "table_title": null,
+        "narrative_length": 560
+      }
+    },
+    {
+      "heading": "Table 2 on page 22",
+      "text": "Table contains the following columns: Dose piena, Column_2, 400 mg bis in die, Column_4, Column_5\nRow 1: Dose piena: Prima riduzione and 400 mg bis in die: 200 mg bis in die\nRow 2: Dose piena: Seconda riduzione and Column_4: 200 mg bis in die ogni 2 giorni",
+      "start_page": 22,
+      "end_page": 22,
+      "table_type": "multi_pass_validated_table",
+      "table_metadata": {
+        "original_rows": 3,
+        "extraction_method": "pass_1_standard",
+        "has_title": false,
+        "page": 22,
+        "contains_dosage": true,
+        "contains_pricing": false,
+        "contains_medication": false,
+        "table_title": null,
+        "narrative_length": 256,
+        "extraction_hints": {
+          "key_numbers": [
+            "2",
+            "400",
+            "4",
+            "5",
+            "1",
+            "400",
+            "200",
+            "2",
+            "4",
+            "200"
+          ],
+          "key_terms": [
+            "dose"
+          ],
+          "relationships": [
+            "dose-frequency"
+          ]
+        }
+      }
+    },
+    {
+      "heading": "Table 1 on page 24",
+      "text": "Table contains the following columns: Column_1, Grado di, Column_3, Raccomandazione clinica, Column_5, Forza della, Column_7\nRow 1: Grado di: raccomandazione and Forza della: raccomandazione\nRow 2: Grado di: SIGN and Forza della: clinica\nRow 3: Column_1: B, Raccomandazione clinica: Nei pz con diagnosi di HCC avanzato, che abbiano fallito o che non siano eleggibili per trattamenti loco-regionali, con una funzionalità epatica compromessa (Child-Pugh B), il trattamento con sorafenib non dovrebbe essere utilizzato., and Column_5: Negativa debole",
+      "start_page": 24,
+      "end_page": 24,
+      "table_type": "multi_pass_validated_table",
+      "table_metadata": {
+        "original_rows": 4,
+        "extraction_method": "pass_2_relaxed",
+        "has_title": false,
+        "page": 24,
+        "contains_dosage": false,
+        "contains_pricing": false,
+        "contains_medication": true,
+        "table_title": null,
+        "narrative_length": 547
+      }
+    },
+    {
+      "heading": "Table 2 on page 24",
+      "text": "Table contains the following columns: Column_1, Grado di, Column_3, Raccomandazione clinica, Column_5, Forza della, Column_7\nRow 1: Grado di: raccomandazione and Forza della: raccomandazione\nRow 2: Grado di: SIGN and Forza della: clinica\nRow 3: Column_1: A, Raccomandazione clinica: Nei pz affetti da HCC il trattamento con tamoxifene o anti androgeni non deve essere effettuato., and Column_5: Negativa forte",
+      "start_page": 24,
+      "end_page": 24,
+      "table_type": "multi_pass_validated_table",
+      "table_metadata": {
+        "original_rows": 4,
+        "extraction_method": "pass_2_relaxed",
+        "has_title": false,
+        "page": 24,
+        "contains_dosage": false,
+        "contains_pricing": false,
+        "contains_medication": false,
+        "table_title": null,
+        "narrative_length": 409
+      }
+    }
+  ],
+  "_table_detection_summary": {
+    "total_tables_found": 15,
+    "tables_by_page": {
+      "8": [
+        {
+          "heading": "Medical Table 1 on page 8",
+          "narrative_length": 889,
+          "extraction_method": "pass_3_medical",
+          "original_rows": 5,
+          "primary_content_type": "general",
+          "contains_medical_data": true
+        }
+      ],
+      "11": [
+        {
+          "heading": "Table 1 on page 11",
+          "narrative_length": 1956,
+          "extraction_method": "pass_1_standard",
+          "original_rows": 8,
+          "primary_content_type": "general",
+          "contains_medical_data": false
+        }
+      ],
+      "13": [
+        {
+          "heading": "Table 1 on page 13",
+          "narrative_length": 1593,
+          "extraction_method": "pass_2_relaxed",
+          "original_rows": 7,
+          "primary_content_type": "general",
+          "contains_medical_data": false
+        }
+      ],
+      "14": [
+        {
+          "heading": "Table 1 on page 14",
+          "narrative_length": 653,
+          "extraction_method": "pass_1_standard",
+          "original_rows": 6,
+          "primary_content_type": "general",
+          "contains_medical_data": false
+        },
+        {
+          "heading": "Table 2 on page 14",
+          "narrative_length": 288,
+          "extraction_method": "pass_1_standard",
+          "original_rows": 6,
+          "primary_content_type": "general",
+          "contains_medical_data": false
+        },
+        {
+          "heading": "Table 3 on page 14",
+          "narrative_length": 787,
+          "extraction_method": "pass_1_standard",
+          "original_rows": 9,
+          "primary_content_type": "general",
+          "contains_medical_data": true
+        }
+      ],
+      "15": [
+        {
+          "heading": "Table 1 on page 15",
+          "narrative_length": 559,
+          "extraction_method": "pass_2_relaxed",
+          "original_rows": 4,
+          "primary_content_type": "general",
+          "contains_medical_data": false
+        }
+      ],
+      "18": [
+        {
+          "heading": "Table 1 on page 18",
+          "narrative_length": 850,
+          "extraction_method": "pass_2_relaxed",
+          "original_rows": 4,
+          "primary_content_type": "general",
+          "contains_medical_data": false
+        }
+      ],
+      "19": [
+        {
+          "heading": "Table 1 on page 19",
+          "narrative_length": 1993,
+          "extraction_method": "pass_1_standard",
+          "original_rows": 9,
+          "primary_content_type": "general",
+          "contains_medical_data": true
+        }
+      ],
+      "20": [
+        {
+          "heading": "Table 1 on page 20",
+          "narrative_length": 1221,
+          "extraction_method": "pass_2_relaxed",
+          "original_rows": 6,
+          "primary_content_type": "general",
+          "contains_medical_data": false
+        }
+      ],
+      "21": [
+        {
+          "heading": "Table 1 on page 21",
+          "narrative_length": 426,
+          "extraction_method": "pass_2_relaxed",
+          "original_rows": 4,
+          "primary_content_type": "general",
+          "contains_medical_data": false
+        },
+        {
+          "heading": "Table 2 on page 21",
+          "narrative_length": 560,
+          "extraction_method": "pass_2_relaxed",
+          "original_rows": 4,
+          "primary_content_type": "general",
+          "contains_medical_data": false
+        }
+      ],
+      "22": [
+        {
+          "heading": "Table 2 on page 22",
+          "narrative_length": 256,
+          "extraction_method": "pass_1_standard",
+          "original_rows": 3,
+          "primary_content_type": "general",
+          "contains_medical_data": true
+        }
+      ],
+      "24": [
+        {
+          "heading": "Table 1 on page 24",
+          "narrative_length": 547,
+          "extraction_method": "pass_2_relaxed",
+          "original_rows": 4,
+          "primary_content_type": "general",
+          "contains_medical_data": true
+        },
+        {
+          "heading": "Table 2 on page 24",
+          "narrative_length": 409,
+          "extraction_method": "pass_2_relaxed",
+          "original_rows": 4,
+          "primary_content_type": "general",
+          "contains_medical_data": false
+        }
+      ]
+    },
+    "table_storage_info": "Tables stored as individual chunks with hybrid metadata (narrative + structured)",
+    "medical_table_insights": {
+      "pricing_tables": 2,
+      "dosage_tables": 2,
+      "medication_tables": 2,
+      "multi_pass_detection_summary": {
+        "pass_1_standard": 6,
+        "pass_2_relaxed": 8,
+        "pass_3_medical": 1
+      }
+    }
+  }
+}

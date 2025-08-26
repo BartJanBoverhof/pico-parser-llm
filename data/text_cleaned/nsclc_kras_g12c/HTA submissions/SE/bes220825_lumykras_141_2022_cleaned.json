@@ -1,0 +1,68 @@
+{
+  "doc_id": "bes220825_lumykras_141_2022",
+  "created_date": "2022",
+  "country": "SE",
+  "source_type": "hta_submission",
+  "chunks": [
+    {
+      "heading": "Datum Vår beteckning",
+      "text": "SÖKANDE Amgen AB\nBox 706\n169 27 Solna",
+      "start_page": 1,
+      "end_page": 1
+    },
+    {
+      "heading": "SAKEN",
+      "text": "Ansökan inom läkemedelsförmånerna",
+      "start_page": 1,
+      "end_page": 1
+    },
+    {
+      "heading": "BESLUT",
+      "text": "Tandvårds- och läkemedelsförmånsverket beslutar att nedanstående läkemedel ska ingå i läkemedelsförmånerna från och med den 26 augusti 2022 till i tabellen angivna priser.\nTandvårds- och läkemedelsförmånsverket fastställer det alternativa försäljningspriset till samma belopp som AIP.\nNamn Form Styrka Förp. Varunr. AIP (SEK) AUP (SEK)\nLumykras Filmdragerade 120 mg 240 421007 58 953,75 60 000,00 tabletter tabletter",
+      "start_page": 1,
+      "end_page": 1
+    },
+    {
+      "heading": "Postadress Besöksadress Telefonnummer",
+      "text": "Box 22520, 104 22 STOCKHOLM Fleminggatan 18 08-5684 20 50",
+      "start_page": 1,
+      "end_page": 1
+    },
+    {
+      "heading": "ANSÖKAN",
+      "text": "Amgen AB (företaget) har ansökt om att det läkemedel som anges i tabellen på sidan 1 ska ingå i läkemedelsförmånerna.",
+      "start_page": 2,
+      "end_page": 2
+    },
+    {
+      "heading": "UTREDNING I ÄRENDET",
+      "text": "Lumykras som monoterapi är avsett för behandling av vuxna patienter med avancerad ickesmåcellig lungcancer (NSCLC) med KRAS G12C-mutation, vid progression efter minst en tidigare linje av systemisk behandling. Vid NSCLC finns flera olika molekylära förändringar\nsom driver cancercellernas tillväxt. En av dessa förändringar är KRAS G12C-mutation.\nLumykras innehåller den aktiva substansen sotorasib. Genom inaktivering av KRAS\nG12C hämmas celltillväxten selektivt i tumörer med KRAS G12C.\nMålinriktad behandling för patienter med KRAS-mutation saknas för närvarande. Enligt det\nsvenska Nationella vårdprogrammet för lungcancer (2021-08-25) rekommenderas vid första linjen i första hand en kombination av immunterapi och cytostatika och vid\nsjukdomsprogression efter denna behandlingsregim rekommenderas monoterapi med någo av cytostatikabehandlingarna docetaxel eller pemetrexed.\nFöretaget anför att docetaxel i monoterapi är relevant jämförelsealternativ till Lumykras monoterapi hos vuxna patienter med avancerad NSCLC med KRAS G12C-mutation, vid\nprogression efter minst en tidigare linje av systemisk behandling och motiverar det enligt följande. Enligt klinisk expertis som företaget hänvisar till får majoriteten av patienterna\npemetrexed i första linjen. Eftersom återbehandling med samma läkemedel inte\nrekommenderas är docetaxel det återstående behandlingsalternativet för de flesta patienter vid tumörprogress.\nDet finns för närvarande inga direkta jämförande studier mellan sotorasib och docetaxel.\nFöretaget har därför valt att jämföra den relativa effekten mellan läkemedlen i en matchad justerad indirekt jämförelse (MAIC) baserat på studierna CodeBreaK 100 för sotorasib och\nSELECT-1 för docetaxel. CodeBreaK 100 är en öppen enkelarmad fas II-studie medan\nSELECT-1 är en dubbelblind randomiserad placebokontrollerad fas-III studie. Den indirekta\njämförelsen visar på en längre progressionsfri överlevnad (PFS) och total överlevnad (OS) med sotorasib jämfört med docetaxel.\nLäkemedelskostnaden för Lumykras är 61 000 kronor per månad vid rekommenderad dos\n(960 mg/dag). Motsvarande kostnad för docetaxel är mindre än 1 000 kronor per månad.\nFör docetaxel tillkommer kostnad för intravenös administrering var tredje vecka.\nFöretaget har redovisat en hälsoekonomisk analys där Lumykras jämförs med docetaxel.\nModellen är baserad på tre hälsotillstånd; progressionsfri, progression och död.\nInledningsvis i modellen är patienterna progressionsfria. Resultaten från den matchade\nindirekta jämförelsen avgör i vilken takt patienterna progredierar eller avlider.\nEffektskillnaden mellan behandling med Lumykras och docetaxel mätt i kvalitetsjusterade levnadsår (QALY) vägs samman mot kostnadsskillnaden i måttet kostnad per vunnet QALY.\nAnalysen är genomförd utifrån ett livstidsperspektiv, vilket innebär att PFS och OS extrapoleras bortom respektive studies tidshorisont. Enligt företaget har kliniska experter\nsom företaget tillfrågat bedömt att andelen överlevande i extrapoleringarna för docetaxel är kliniskt rimliga vid år 5 och att en liten andel även kan leva efter 10 år. Enligt företaget\nt\na\non\na\nbedömde samma kliniska experter att de extrapoleringar som ger sämre resultat visade för kort överlevnad. En svensk klinisk expert som företaget har tillfrågat har dock angett att den\nmodellerade överlevnaden för docetaxel vid år 5 och 10 kan vara överdriven i företagets grundscenario.\nFöretaget använder i den hälsoekonomiska analysen en statistisk modell som utifrån data från CodeBreaK 100 estimerar patientens hälsorelaterade livskvalitet vid olika tidsavstånd till\ndöd. Eftersom Lumykras enligt den indirekta jämförelsen förlänger tiden till död leder\nbehandling med Lumykras till högre hälsorelaterad livskvalitet i företagets analys.",
+      "start_page": 2,
+      "end_page": 3
+    },
+    {
+      "heading": "Tillämpliga bestämmelser m.m.",
+      "text": "Enligt 8 § första stycket lagen (2002:160) om läkemedelsförmåner m.m. (nedan\nförmånslagen) får den som marknadsför ett läkemedel eller en vara som avses i 18 § samma lag ansöka om att läkemedlet eller varan ska ingå i läkemedelsförmånerna. Sökanden ska visa\natt villkoren enligt 15 § förmånslagen är uppfyllda och lägga fram den utredning som behövs för att fastställa inköpspris och försäljningspris.\nAv 15 § förmånslagen framgår att ett receptbelagt läkemedel ska omfattas av läkemedelsförmånerna och inköpspris och försäljningspris ska fastställas för läkemedlet\nunder förutsättning att\n1. kostnaderna för användning av läkemedlet, med beaktande av bestämmelserna i 3 kap. 1 §\nhälso- och sjukvårdslagen (2017:30), framstår som rimliga från medicinska, humanitära och\nsamhällsekonomiska synpunkter, och\n2. det inte finns andra tillgängliga läkemedel eller behandlingsmetoder som enligt en sådan\navvägning mellan avsedd effekt och skadeverkningar som avses i 4 kap. 1 § första stycket\nläkemedelslagen (2015:315) är att bedöma som väsentligt mer ändamålsenliga.\nI förarbetena till förmånslagen anges att TLV:s beslutsfattande utgår från tre grundläggande\nprinciper: människovärdesprincipen - att vården ska ges med respekt för alla människors lika\nvärde och för den enskilda människans värdighet, behovs- och solidaritetsprincipen – att den som har det största behovet av hälso- och sjukvården ska ges företräde till vården samt\nkostnadseffektivitetsprincipen – att det bör eftersträvas en rimlig relation mellan kostnader och effekt, mätt i förbättrad hälsa och förhöjd livskvalitet (se prop. 2001/02:63 s. 43 ff., jfr\nprop. 1996/97:60 s. 18 ff.).\nOm det finns särskilda skäl får Tandvårds- och läkemedelsförmånsverket enligt 11 § förmånslagen besluta att ett läkemedel eller annan vara ska ingå i läkemedelsförmånerna\nendast för ett visst användningsområde (förmånsbegränsning).\nMyndighetens beslut får förenas med andra särskilda villkor.\nAv 27 § förmånslagen framgår att TLV:s beslut gäller omedelbart om inte annat beslutas.",
+      "start_page": 3,
+      "end_page": 3
+    },
+    {
+      "heading": "TLV gör följande bedömning",
+      "text": "TLV bedömer svårighetsgraden för sjukdomen som mycket hög då tillståndet är förknippat med fortskridande sjukdomsförlopp, avsaknad av bot och kort förväntad överlevnad.\nTLV bedömer liksom företaget, med stöd av behandlingsrekommendationerna och TLV:s\nkliniska expert, att docetaxel i monoterapi utgör relevant jämförelsealternativ till Lumykras.\nGenerellt sett anser TLV att indirekta jämförelser har ett lägre bevisvärde än direkt jämförande studier eftersom de är förenade med större osäkerheter. Trots osäkerheter\nförknippade med den indirekta jämförelsen bedömer TLV baserat på befintligt underlag att sotorasib har en effektfördel jämfört med docetaxel avseende PFS och OS.\nTLV har gjort två ändringar i företagets hälsoekonomiska analys och därutöver gjort ett anta känslighetsanalyser.\nTLV invänder mot den av företaget antagna effektdurationen. Under hela tidshorisonten\n(>10 år) antar företaget att det finns en behandlingseffekt genom att sannolikheten att avlid i varje cykel antas vara lägre för patienter behandlade med Lumykras än för patienter\nbehandlade med docetaxel. Företaget gör detta antagande trots att medianbehandlingstid\nmed Lumykras endast är ca 7 månader och knappt några patienter behandlas längre än 3 år och att progression på Lumykras är nära korrelerad med behandlingslängd.\nTLV invänder vidare mot företagets metod att mäta hälsorelaterad livskvalitet enligt tid till död. Det innebär att patienterna redan vid behandlingsstart har sämre hälsorelaterad\nlivskvalitet i docetaxel-armen än i Lumykras-armen, eftersom fler i den förstnämnda är modellerade att avlida inom en viss tid. Detta bryter mot en grundläggande\nmodelleringsprincip att i startskedet av modellanalysen ska patienterna vara så lika som möjligt. Den mer beprövade metoden och som TLV tillämpar är att patienternas\nhälsorelaterade livskvalitet är kopplad till deras hälsotillstånd i modellen, det vill säga före eller efter progression.\nMed de två ändringarna av företagets analys som TLV har funnit relevanta att göra estimera kostnad per vunnet QALY till 1 miljon kronor. Med alternativa analyser kan kostnaden både\nvara högre och lägre. Känslighetsanalyserna visar dock inte på stora förändringar i kostnad\nper vunnet QALY. Om osäkerheten framför allt pekar uppåt eller nedåt är svårt att avgöra.\nÄven med beaktande av ovan nämnda osäkerheter i analysen bedömer TLV sammantaget at kostnaden per vunnet QALY för Lumykras jämfört med docetaxel är i nivå med den kostnad\nper QALY som TLV bedömer som rimlig för behandling av tillstånd med mycket hög svårighetsgrad.\nEftersom studier pågår för ytterligare indikationer finner TLV skäl att begränsa subventione till nuvarande godkända indikation.\nSammantaget bedömer TLV att kriterierna i 15 § förmånslagen är uppfyllda till det ansökta priset endast om subventionen förenas med begränsningar och villkor i enlighet med 11 §\nförmånslagen. Ansökan ska därför bifallas med följande begränsningar och villkor.\nal\nda\nas\ntt\nd\nen\nSe nedan hur man överklagar.\nDetta beslut har fattats av Nämnden för läkemedelsförmåner hos TLV. Följande ledamöter\nhar deltagit i beslutet: tidigare överintendenten Staffan Bengtsson (ordförande), överläkaren\nMargareta Berglund Rödén, förbundsordföranden Elisabeth Wallenius, överläkaren Inge\nEriksson, universitetslektorn Martin Henriksson, docenten Gerd Lärfars och läkemedelschefen Maria Landgren. Ärendet har föredragits av medicinska utredaren Helene\nPlank. I den slutliga handläggningen har även den seniora hälsoekonomen Stefan Odeberg\noch juristen Åsa Levin deltagit.\nStaffan Bengtsson\nHelene Plank",
+      "start_page": 3,
+      "end_page": 5
+    },
+    {
+      "heading": "HUR MAN ÖVERKLAGAR",
+      "text": "Beslutet kan överklagas hos Förvaltningsrätten i Stockholm. Överklagandet ska vara skriftlig\noch ställas till förvaltningsrätten, men skickas till TLV som skickar vidare överklagandet till förvaltningsrätten. TLV ska ha fått överklagandet inom tre veckor från den dag klaganden\nfick del av beslutet, annars kan överklagandet inte prövas. I överklagandet ska det anges\nvilket beslut som överklagas och på vilket sätt beslutet ska ändras. Om TLV ändrar det beslu\nsom överklagats, överlämnas även det nya beslutet till förvaltningsrätten. Överklagandet\nomfattar även det nya beslutet.",
+      "start_page": 5,
+      "end_page": 5
+    },
+    {
+      "heading": "5 (5) n",
+      "text": "gt\nut",
+      "start_page": 5,
+      "end_page": 5
+    }
+  ]
+}

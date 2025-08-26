@@ -5,7 +5,7 @@ from python.translation import Translator
 from python.vectorise import Chunker, Vectoriser
 from python.run import RagPipeline
 from python.open_ai import validate_api_key
-from python.config import SOURCE_TYPE_CONFIGS, TEST_QUERIES, CASE_CONFIGS
+from python.config import SOURCE_TYPE_CONFIGS, CASE_CONFIGS
 
 # Define paths
 PDF_PATH = "data/PDF"
@@ -95,8 +95,8 @@ rag.run_retrieval_for_source_type(
     countries=COUNTRIES,
     indication=case1_indication,
     mutation_boost_terms=case1_mutation_boost,
-    initial_k=30,
-    final_k=30
+    initial_k=40,
+    final_k=20
 )
 
 # Run Clinical Guideline retrieval for Case 1

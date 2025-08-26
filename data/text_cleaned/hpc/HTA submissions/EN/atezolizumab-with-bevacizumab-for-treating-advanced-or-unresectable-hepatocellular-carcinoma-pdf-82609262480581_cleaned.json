@@ -1,0 +1,218 @@
+{
+  "doc_id": "atezolizumab-with-bevacizumab-for-treating-advanced-or-unresectable-hepatocellular-carcinoma-pdf-82609262480581",
+  "created_date": "20",
+  "country": "EN",
+  "source_type": "hta_submission",
+  "chunks": [
+    {
+      "heading": "",
+      "text": "At\nbe\nad\nhe\nTec\nPub\nww\n© NI cond\nAte\nev\ndv\nep\nchnol\nblishe\nww.nic\nICE 20 ditions#\nezoliz\nvacizu\nvance\npatoc\nlogy apprai ed: 16 Dece\nce.org.uk/g\n024. All rights res\n#notice-of-right\nzu\num\ned\nce\nisa\nem\nguid\nser\nts).\numa\nma\nd or ellu\nal guida mber 20\ndance/\nrved. Subj\nab with ab for treating\nr unresectable ular carcinoma\nance\n/ta666\nject to Notice of rights",
+      "start_page": 1,
+      "end_page": 1
+    },
+    {
+      "heading": "Your responsibility",
+      "text": "The recommendations in this guidance represent the view of NICE, arrived at after careful consideration of the evidence available. When exercising their judgement, health\nprofessionals are expected to take this guidance fully into account, alongside the individual needs, preferences and values of their patients. The application of the\nrecommendations in this guidance is at the discretion of health professionals and their individual patients and do not override the responsibility of healthcare professionals to\nmake decisions appropriate to the circumstances of the individual patient, in consultation with the patient and/or their carer or guardian.\nAll problems (adverse events) related to a medicine or medical device used for treatment or in a procedure should be reported to the Medicines and Healthcare products Regulatory\nAgency using the Yellow Card Scheme.\nCommissioners and/or providers have a responsibility to provide the funding required to enable the guidance to be applied when individual health professionals and their patients\nwish to use it, in accordance with the NHS Constitution. They should do so in light of their\nduties to have due regard to the need to eliminate unlawful discrimination, to advance equality of opportunity and to reduce health inequalities.\nCommissioners and providers have a responsibility to promote an environmentally sustainable health and care system and should assess and reduce the environmental\nimpact of implementing NICE recommendations wherever possible.\n© NICE 2024. All rights reserved. Subject to Notice of rights  Page 2 of\nAtezolizumab with bevacizumab for treating adv carcinoma (TA666)",
+      "start_page": 2,
+      "end_page": 3
+    },
+    {
+      "heading": "Contents",
+      "text": "1 Recommendations ..............................................\n2 Information about atezolizumab plus bevacizu\nMarketing authorisation .............................................\nDosage in the marketing authorisation ....................\nPrice .............................................................................\n3 Committee discussion .......................................\nTreatment pathway and comparator ........................\nClinical effectiveness evidence ................................\nIndirect treatment comparison ..................................\nModelling overall survival ..........................................\nExploratory analysis ...................................................\nEnd of life ....................................................................\nCost-effectiveness analysis ......................................\nInnovation ....................................................................\nConclusion ..................................................................\n4 Implementation ...................................................\n5 Appraisal committee members and NICE proje\nAppraisal committee members .................................\nNICE project team ......................................................\n© NICE 2024. All rights reserved. Subject to Notice of rig\nvanced or unr\numab ..............\nect team ........\nghts\nresec\nw.nice\nctable\ne.org.u\ne hep\nuk/term\npatoc\nms-an\ncellul\nnd- P\nlar",
+      "start_page": 3,
+      "end_page": 3
+    },
+    {
+      "heading": "1 Recommendations",
+      "text": "1.1 Atezolizumab plus bevacizumab is recommended as an option for\ntreating advanced or unresectable hepatocellular carcinoma (HCC) in adults who have not had previous systemic treatment, only if:\n• they have Child-Pugh grade A liver impairment and an Eastern Cooperative\nOncology Group (ECOG) performance status of 0 or 1 and\n• the company provides it according to the commercial arrangement.\n1.2 This recommendation is not intended to affect treatment with\natezolizumab plus bevacizumab that was started in the NHS before this guidance was published. People having treatment outside this\nrecommendation may continue without change to the funding arrangements in place for them before this guidance was published, until\nthey and their NHS clinician consider it appropriate to stop.",
+      "start_page": 4,
+      "end_page": 4
+    },
+    {
+      "heading": "Why the committee made these recommendations",
+      "text": "Standard care for advanced or unresectable HCC is either sorafenib or lenvatinib for people who have not had previous systemic treatment. Atezolizumab plus bevacizumab is\na potential new treatment option.\nClinical trial evidence shows that people with Child-Pugh grade A liver impairment and an\nECOG performance status of 0 or 1 who have atezolizumab plus bevacizumab live longer and have longer before their disease progresses than people who have sorafenib. Results\nof an indirect comparison suggest that atezolizumab plus bevacizumab is more effective than lenvatinib. But this is uncertain because there is no direct evidence comparing them.\nDespite the uncertainty in the indirect comparison, the most likely cost-effectiveness estimates for atezolizumab plus bevacizumab compared with sorafenib and with lenvatinib\nare within what NICE considers an acceptable use of NHS resources. Therefore,\natezolizumab plus bevacizumab is recommended.\n© NICE 2024. All rights reserved. Subject to Notice of rights  Page 4 of\nAtezolizumab with bevacizumab for treating advanced or unresectable hepatocellu carcinoma (TA666)\n2 Information about atezolizumab plu bevacizumab",
+      "start_page": 4,
+      "end_page": 5
+    },
+    {
+      "heading": "Marketing authorisation",
+      "text": "2.1 Atezolizumab (Tecentriq, Roche) is indicated 'for the treatment of adult\npatients with advanced or unresectable hepatocellular carcinoma who have not received prior systemic therapy'.",
+      "start_page": 5,
+      "end_page": 5
+    },
+    {
+      "heading": "Dosage in the marketing authorisation",
+      "text": "2.2 The dosage schedule is available in the summary of product\ncharacteristics.",
+      "start_page": 5,
+      "end_page": 5
+    },
+    {
+      "heading": "Price",
+      "text": "2.3 The NHS list price of atezolizumab (60 mg/ml) is £3,807.69 per 20-ml\nvial. The NHS list price of bevacizumab (25 mg/ml) is £242.66 per 4-ml\nvial and £924.40 per 16-ml vial (excluding VAT; BNF online, accessed\nOctober 2020).\n2.4 The company has commercial arrangements for atezolizumab and\nbevacizumab. These make atezolizumab plus bevacizumab available to\nthe NHS with a discount. The size of the discount is commercial in\nconfidence. It is the company's responsibility to let relevant NHS\norganisations know details of the discount.\n© NICE 2024. All rights reserved. Subject to Notice of rights\nus",
+      "start_page": 5,
+      "end_page": 5
+    },
+    {
+      "heading": "3 Committee discussion",
+      "text": "The appraisal committee considered evidence submitted by Roche, a review of this submission by the evidence review group (ERG), NICE's technical report, and responses\nfrom stakeholders. See the committee papers for full details of the evidence.\nThe appraisal committee was aware that several issues were resolved during the techni engagement stage, and agreed that:\n• It is appropriate to cap the utility values for people with unresectable hepatocellular\ncarcinoma (HCC) so that they do not exceed the age- and sex-matched level of the general population (issue 4, see technical report page 4).\n• Of the approaches to estimate drug dosing, the most plausible is expected to be\nbetween the company's scenario 2 and the ERG's scenario 2b (issue 5, see technica report page 4).\n• It is appropriate to include the costs of oral chemotherapy wastage in the analysis\n(issue 6, see technical report page 5).\n• It is acceptable to use overall-survival data from the IMbrave150 trial that have not\nbeen adjusted for the effect of subsequent treatments not recommended in Englan as long as the cost of those treatments is included (issues 3 and 7, see technical\nreport pages 3 and 6).\nIt recognised that there were remaining areas of uncertainty associated with the analyses presented, and took these into account in its decision making. It discussed\nthe following issues (issues 1 and 2, see technical report pages 2 and 3) in further detail, which were outstanding after the technical engagement stage.",
+      "start_page": 6,
+      "end_page": 6
+    },
+    {
+      "heading": "People would welcome a new treatment option",
+      "text": "3.1 People with advanced or unresectable HCC have few approved systemic\ntreatment options. Prognosis remains poor with rapid progression and\nshort overall survival. The clinical experts explained that there has been\n© NICE 2024. All rights reserved. Subject to Notice of rights  Page\ns\nical\nr\ne\nal\nnd,\nd\ne 6 of\nAtezolizumab with bevacizumab for treating advanced or unresectable hepato carcinoma (TA666)\nlittle progress in this disease area since the targeted systemic treatmen sorafenib and lenvatinib were introduced, and there is a considerable\nunmet need for people with advanced HCC. They also explained that\natezolizumab plus bevacizumab is an intravenous treatment. But people\nwith advanced HCC would prefer it to oral treatments such as sorafenib and lenvatinib if it is more clinically effective. The committee concluded\nthat atezolizumab plus bevacizumab would be welcomed as a new treatment option for people with advanced or unresectable HCC.\nSorafenib and lenvatinib are relevant comparators for pe with Child-Pugh grade A liver impairment and an ECOG s\n0 or 1\n3.2 The clinical evidence for atezolizumab plus bevacizumab comes from\nIMbrave150, a randomised controlled trial of 501 people with locally advanced, metastatic or unresectable HCC who had not had systemic\ntreatment. Participants in the trial had Child-Pugh grade A liver\nimpairment and an Eastern Cooperative Oncology Group (ECOG) performance status of 0 or 1. In the company's evidence submission\natezolizumab plus bevacizumab was compared with sorafenib and with lenvatinib. The committee noted that NICE guidance recommends\nsorafenib and lenvatinib for people with Child-Pugh grade A liver impairment. Lenvatinib is also recommended for people with an ECOG\nperformance status of 0 or 1. The clinical experts advised that both\ndrugs are first-line treatment options in NHS practice, although there is some regional variation across England in which is preferred. They\nadvised that deciding which treatment to use is usually done with the person with HCC, after discussing potential side effects with them. The\nCancer Drugs Fund clinical lead advised that about 60% of people have sorafenib and about 40% have lenvatinib. The committee concluded tha\nthe company's proposed positioning in the treatment pathway is appropriate, and sorafenib and lenvatinib are both relevant comparators",
+      "start_page": 6,
+      "end_page": 7
+    },
+    {
+      "heading": "Clinical effectiveness evidence",
+      "text": "Atezolizumab plus bevacizumab is more clinically effectiv\n© NICE 2024. All rights reserved. Subject to Notice of rights\nocellu\nnts\ne\nb\nd\neople\nstat\nh\ns\ne\ne\nat\ns.\nve t and-\ne\ntus of than",
+      "start_page": 7,
+      "end_page": 7
+    },
+    {
+      "heading": "sorafenib",
+      "text": "3.3 The IMbrave150 trial excluded people with Child-Pugh grade B or above\nliver impairment and people with an ECOG performance status of\n2 or more. The committee understood the results may not be\ngeneralisable to these groups, but noted that the positioning of atezolizumab plus bevacizumab in people with Child-Pugh grade A liver",
+      "start_page": 8,
+      "end_page": 8
+    },
+    {
+      "heading": "In IMbrave150 atezolizumab plus bevacizumab (n=336) was compared with sorafenib (n=165). The ERG noted that IMbrave150 had a higher",
+      "text": "proportion of people from Asian regions excluding Japan (40%), and more people with hepatitis B compared with the population that would be\neligible for treatment with atezolizumab plus bevacizumab in NHS clinical practice. But otherwise, based on clinical expert advice, it considered the\ntrial population to be representative of people who would be eligible for treatment. The median duration of follow up for survival was 8.6 months\nfor all patients and the results were as follows:\n• Progression-free survival was statistically significantly longer with",
+      "start_page": 8,
+      "end_page": 8
+    },
+    {
+      "heading": "atezolizumab plus bevacizumab compared with sorafenib (stratified hazard ratio [HR] 0.59, 95% confidence interval [CI] 0.47 to 0.76).",
+      "text": "• Median progression-free survival was 6.8 months (95% CI 5.7 to 8.3) with\natezolizumab plus bevacizumab, and 4.3 months (95% CI 4.0 to 5.6) with",
+      "start_page": 8,
+      "end_page": 8
+    },
+    {
+      "heading": "sorafenib.",
+      "text": "• Overall survival was statistically significantly longer with atezolizumab plus",
+      "start_page": 8,
+      "end_page": 8
+    },
+    {
+      "heading": "bevacizumab compared with sorafenib (stratified HR 0.58, 95% CI 0.42 to",
+      "text": "• Median overall survival for atezolizumab plus bevacizumab was not reached,",
+      "start_page": 8,
+      "end_page": 8
+    },
+    {
+      "heading": "but the median for sorafenib was reached (13.2 months, 95% CI 10.4 to not",
+      "text": "reached).\nThe committee agreed that IMbrave150 was generalisable enough to the population expected to be treated in clinical practice for decision making. It",
+      "start_page": 8,
+      "end_page": 8
+    },
+    {
+      "heading": "concluded that atezolizumab plus bevacizumab is clinically effective compared with sorafenib in people with Child-Pugh grade A liver impairment and an",
+      "text": "© NICE 2024. All rights reserved. Subject to Notice of rights  Page 8 of\nECOG performance status of 0 or 1.",
+      "start_page": 8,
+      "end_page": 9
+    },
+    {
+      "heading": "The company's network meta-analysis is uncertain but acceptable for decision making",
+      "text": "3.4 Because there was no direct evidence comparing atezolizumab plus\nbevacizumab with lenvatinib, the company did an indirect treatment comparison to estimate the relative treatment effect. A random effects\nbase-case network meta-analysis (NMA) of log-hazard ratios was done using 3 studies identified from a systematic literature review:\n• IMbrave150 (atezolizumab plus bevacizumab compared with sorafenib)\n• REFLECT (lenvatinib compared with sorafenib)\n• CheckMate 459 (nivolumab compared with sorafenib).\nResponding to a clarification request from the ERG, the company did a fractional polynomial random effects NMA. The ERG advised that the\ncompany's approach was inconsistent because it used direct trial evidence from IMbrave150 to compare with sorafenib and indirect NMA evidence to\ncompare with lenvatinib. The first approach (equivalent to a fixed effects\nmodel) allowed for less uncertainty than the NMA approach. The ERG\nexplained that it would have preferred to have seen relative effects for all\n3 treatments estimated using a single, coherent random effects model allowing for time-varying treatment effects. The committee noted that at technical\nengagement, a stakeholder advised that the company's NMA underestimated lenvatinib's effectiveness. The ERG advised that it did not believe this was a\ncredible criticism, and that taking this into account would not address its other methodological concerns. The committee agreed that these methodological\nconcerns increased the uncertainty of the NMA results. But it concluded that it\nwould consider the company's NMA, including its potential limitations, in its decision making.",
+      "start_page": 9,
+      "end_page": 9
+    },
+    {
+      "heading": "Atezolizumab plus bevacizumab is likely to be more clinically",
+      "text": "© NICE 2024. All rights reserved. Subject to Notice of rights  Page 9 of",
+      "start_page": 9,
+      "end_page": 9
+    },
+    {
+      "heading": "effective than lenvatinib",
+      "text": "3.5 The company's base-case NMA produced the following results for\natezolizumab plus bevacizumab:\n• increased progression-free survival compared with lenvatinib (HR 0.91, 95%\ncredible interval [CrI] 0.23 to 3.65)\n• increased overall survival compared with lenvatinib (HR 0.63, 95% CrI 0.32 to\nThe ERG advised that the fractional polynomial NMA produced similar results, but with greater uncertainty. The committee noted that the wide credible\nintervals showed uncertainty in the point estimate of the hazard ratio. It also\nrecalled the ERG's methodological concerns about the company's approach\n(see section 3.4). The clinical experts advised that sorafenib and lenvatinib are\nbroadly considered to be equally effective in clinical practice. Deciding which\nto use depends on the individual patient. They advised that they would have\nexpected to see similar results from IMbrave150 if the comparator had been lenvatinib, rather than sorafenib. The committee agreed that the NMA results",
+      "start_page": 10,
+      "end_page": 10
+    },
+    {
+      "heading": "suggested atezolizumab plus bevacizumab was more effective than lenvatinib.",
+      "text": "This would be consistent with sorafenib and lenvatinib having similar effectiveness (shown in the non-inferiority REFLECT trial). It concluded that",
+      "start_page": 10,
+      "end_page": 10
+    },
+    {
+      "heading": "Modelling overall survival",
+      "text": "The log-normal function is suitable for modelling overall survival, but the log-logistic and generalised gamma functions should also\nbe considered\n3.6 The company investigated a range of parametric survival distributions\nfitted independently to each treatment arm to model overall survival. In\nits base-case analysis the company used the exponential function to predict overall survival. This was informed by a panel of 6 clinical\nexperts, who advised that the survival projections from the exponential\n© NICE 2024. All rights reserved. Subject to Notice of rights  Page 10\nconditions#notice-of-rights). of 17\nAtezolizumab with bevacizumab for treating advanced or unresectable hepatoc carcinoma (TA666)\nfunction most closely matched survival in NHS practice for sorafenib an lenvatinib. The panel suggested the generalised gamma function may\nalso be plausible. The ERG noted that the exponential function did not\nprovide a good statistical fit to the observed trial data and imposed an unsupported assumption of a constant mortality hazard over time. It\nexplained that comparing survival projections from a closely controlled clinical trial, subject to strict patient selection criteria, with survival in\nNHS clinical practice is a flawed approach. This is because the trial was\nlikely to achieve better outcomes than in NHS practice. It advised that\nthe log-normal function was the best-fitting model, although the loglogistic and generalised gamma functions also fitted the data well. It\nexplained that there was no strong clinical rationale to favour any of these 3 functions over the other. Therefore, its preferred choice would\nbe the best-fitting log-normal function. After technical engagement, the\ncompany agreed that the log-normal distribution was clinically plausible\nThe clinical experts advised that a constant mortality hazard over time was not plausible for people with advanced HCC. The committee agree\nwith the ERG and clinical experts that the exponential function should n be used to model overall survival. It noted that lenvatinib was predicted\nto have higher or lower life expectancy than sorafenib, depending on th choice of overall-survival function. The committee understood that this\nwas an artefact of the company's modelling approach. The choice of\nsurvival function for atezolizumab plus bevacizumab and sorafenib was informed directly by IMbrave150 data. Survival for lenvatinib was\ninformed by applying a hazard ratio from the NMA to the function for atezolizumab plus bevacizumab. The committee agreed that it would\nhave been preferable to apply the hazard ratio from the NMA for lenvatinib compared with sorafenib to the sorafenib survival function,\nbecause the drugs have a similar mechanism of action. However, it wou\nnot expect this to have much effect on cost effectiveness. The\ncommittee concluded that it would consider cost-effectiveness results using the log-normal function to model survival, because this was the\nbest-fitting function. But the log-logistic and generalised gamma\nfunctions were plausible and should also be considered.\n© NICE 2024. All rights reserved. Subject to Notice of rights\ncellu\nnd\ns\ne\ne.\ned\nnot\nd\nhe\ns\ns\nuld\nand-\nPag\no\nge 11 of 17\nAtezolizumab with bevacizumab for treating advanced or unresectable hepatocellu carcinoma (TA666)",
+      "start_page": 10,
+      "end_page": 12
+    },
+    {
+      "heading": "Exploratory analysis",
+      "text": "The ERG's exploratory analyses for bodyweight and region s be considered as a way of exploring uncertainty\n3.7 The company included a large number of sensitivity analyses in its\nsubmission. The ERG did exploratory analyses to test the effect on cost\neffectiveness of bodyweight (less than 60 kg compared with 60 kg or more) and region (all regions compared with excluding Asian regions,\nexcept Japan). The ERG explained that it was important to explore the\npotential effect of bodyweight because the dosing of lenvatinib and bevacizumab depend on bodyweight, so it affects associated drug costs.\nIt explained that region was also potentially important because the underlying cause of HCC varies by region. Hepatitis C is more common in\nEurope, North America and Japan, and hepatitis B is more common in\nAsia (excluding Japan) and Africa. In Europe and North America, HCC is\nincreasingly associated with metabolic dysfunction-associated fatty liver disease, obesity and exposure to toxic substances. The committee noted\nthat IMbrave150 was done in 17 countries, with 40% of patients from Asia\n(excluding Japan). The ERG advised that considering the results for all\ncombinations of the 2 bodyweight and 2 region categories allowed the committee to consider possible upper and lower bounds of the costeffectiveness estimate for a given preferred analysis. The committee\nnoted that the hazard ratio for overall survival was only marginally affected by bodyweight and region. It agreed that it would not be\nappropriate to make different recommendations for atezolizumab plus bevacizumab based on bodyweight or region. However, it felt that the\nERG's exploratory analyses would be useful in considering the uncertainty around the cost-effectiveness estimates. So, it concluded\nthat it would consider the exploratory analyses in its decision making.\n© NICE 2024. All rights reserved. Subject to Notice of rights\nshould\nAtezolizumab with bevacizumab for treating advanced or unresectable hepatocellu carcinoma (TA666)",
+      "start_page": 12,
+      "end_page": 13
+    },
+    {
+      "heading": "Atezolizumab plus bevacizumab meets the criteria to be considered an end of life treatment",
+      "text": "3.8 The committee considered the advice about life-extending treatments\nfor people with a short life expectancy in NICE's guide to the methods of technology appraisal. It reviewed the mean overall-survival estimates\nfrom the model. Life expectancy with sorafenib and lenvatinib was less\nthan 24 months. Also, the undiscounted life-years gained for\natezolizumab plus bevacizumab were much higher than 3 months, regardless of which overall-survival function was used. The committee\ntherefore concluded that the end of life criteria were met.",
+      "start_page": 13,
+      "end_page": 13
+    },
+    {
+      "heading": "The most plausible ICERs are within the range normally considered a cost-effective use of NHS resources",
+      "text": "3.9 All the ERG's base-case incremental cost-effectiveness ratios (ICERs) for\natezolizumab plus bevacizumab, compared with sorafenib and with lenvatinib, were below £50,000 per quality-adjusted life year (QALY)\ngained. The exact ICERs cannot be reported because of confidential\ncommercial arrangements for the drugs. The ERG's base-case analysis\nused the log-normal function to model survival and considered all\n4 combinations of the bodyweight and region categories. The ICERs\nwere below £50,000 per QALY gained in most of the ERG's exploratory analyses. There was only 1 plausible analysis in which the ICERs\nexceeded £50,000 per QALY gained. This was in comparison with\nsorafenib, using the log-logistic distribution to model survival and the least favourable bodyweight and region categories for atezolizumab plus\nbevacizumab (bodyweight of 60 kg or more and excluding Asian regions, except Japan). The committee recalled that the cost-effectiveness\nmodel used indirect NMA evidence to inform the relative effectiveness of lenvatinib, and this evidence was uncertain (see section 3.4). However, it\nnoted that the clinical experts considered lenvatinib and sorafenib to\n© NICE 2024. All rights reserved. Subject to Notice of rights\nAtezolizumab with bevacizumab for treating advanced or unresectable hepatocellu carcinoma (TA666)\nhave similar effectiveness (see section 3.5). It agreed that it was\nreasonable to conclude that atezolizumab plus bevacizumab would be cost effective compared with both lenvatinib and sorafenib. The\ncommittee concluded that the most plausible ICER was highly likely to be less than £50,000 per QALY gained for atezolizumab plus bevacizumab\ncompared with sorafenib and with lenvatinib.",
+      "start_page": 13,
+      "end_page": 14
+    },
+    {
+      "heading": "Innovation",
+      "text": "The model adequately captures the benefits of atezolizumab bevacizumab\n3.10 The company considered atezolizumab plus bevacizumab to be\ninnovative because it is a targeted immunotherapy with efficacy in the first-line treatment of advanced and unresectable HCC. The clinical\nexperts noted that it is expected to replace sorafenib and lenvatinib because it improves progression-free survival and overall survival for this\npopulation. The committee recognised these benefits for people with\nadvanced or unresectable HCC. However, it concluded that it had not\nbeen presented with any additional evidence of benefits that were not captured in the measurement of the QALYs and the resulting costeffectiveness estimates.",
+      "start_page": 14,
+      "end_page": 14
+    },
+    {
+      "heading": "Atezolizumab plus bevacizumab is recommended for routine commissioning",
+      "text": "3.11 The committee acknowledged the need for a better treatment option for\nadults with advanced or unresectable HCC. The most plausible estimates\nof cost effectiveness for atezolizumab plus bevacizumab compared with sorafenib and with lenvatinib were within what NICE considers an\nacceptable use of NHS resources. Therefore, atezolizumab plus\nbevacizumab is recommended as an option for advanced or unresectable\nHCC in adults with Child-Pugh grade A liver impairment and an ECOG performance status of 0 or 1, who have not had previous systemic\n© NICE 2024. All rights reserved. Subject to Notice of rights\nb plus e\nAtezolizumab with bevac carcinoma (TA666)\ntreatment.\n© NICE 2024. All rights reserv\ncizumab for treating advanced or unr ved. Subject to Notice of rights\nresec\nw.nice\nctable he e.org.uk/ter\nepato\nrms-a\nocellular\nand- Page 15 of 17\nAtezolizumab with bevacizumab for treating advanced or unresectable hepato carcinoma (TA666)",
+      "start_page": 14,
+      "end_page": 16
+    },
+    {
+      "heading": "4 Implementation",
+      "text": "4.1 Section 7(6) of the National Institute for Health and Care Excellence\n(Constitution and Functions) and the Health and Social Care Informatio\nCentre (Functions) Regulations 2013 requires clinical commissioning groups, NHS England and, with respect to their public health functions,\nlocal authorities to comply with the recommendations in this appraisal within 3 months of its date of publication.\n4.2 Chapter 2 of Appraisal and funding of cancer drugs from July 2016\n(including the new Cancer Drugs Fund) – A new deal for patients, taxpayers and industry states that for those drugs with a draft\nrecommendation for routine commissioning, interim funding will be available (from the overall Cancer Drugs Fund budget) from the point o\nmarketing authorisation, or from release of positive draft guidance, whichever is later. Interim funding will end 90 days after positive final\nguidance is published (or 30 days in the case of drugs with an Early\nAccess to Medicines Scheme designation or fast track appraisal), at which point funding will switch to routine commissioning budgets. The\nNHS England and NHS Improvement Cancer Drugs Fund list provides up to-date information on all cancer treatments recommended by NICE\nsince 2016. This includes whether they have received a marketing\nauthorisation and been launched in the UK.\n4.3 The Welsh ministers have issued directions to the NHS in Wales on\nimplementing NICE technology appraisal guidance. When a NICE\ntechnology appraisal recommends the use of a drug or treatment, or other technology, the NHS in Wales must usually provide funding and\nresources for it within 2 months of the first publication of the final appraisal document.\n4.4 When NICE recommends a treatment 'as an option', the NHS must make\nsure it is available within the period set out in the paragraphs above. Th\nmeans that, if a patient has advanced or unresectable hepatocellular carcinoma and the doctor responsible for their care thinks that\natezolizumab with bevacizumab is the right treatment, it should be available for use, in line with NICE's recommendations.\n© NICE 2024. All rights reserved. Subject to Notice of rights\nocellu\non\nof\npe\nhis\nand-\nPag\nge 16 of 17\nAtezolizumab with bevacizumab for treating advanced or unresectabl carcinoma (TA666)\n5 Appraisal committee member",
+      "start_page": 16,
+      "end_page": 17
+    },
+    {
+      "heading": "Appraisal committee members",
+      "text": "The 4 technology appraisal committees are standing advisory commit topic was considered by committee C.\nCommittee members are asked to declare any interests in the techno\nIf it is considered there is a conflict of interest, the member is exclude further in that appraisal.\nThe minutes of each appraisal committee meeting, which include the members who attended and their declarations of interests, are posted\nwebsite.",
+      "start_page": 17,
+      "end_page": 17
+    },
+    {
+      "heading": "NICE project team",
+      "text": "Each technology appraisal is assigned to a team consisting of 1 or mo analysts (who act as technical leads for the appraisal), a technical adv\nmanager.",
+      "start_page": 17,
+      "end_page": 17
+    },
+    {
+      "heading": "Luke Cowie",
+      "text": "Technical lead",
+      "start_page": 17,
+      "end_page": 17
+    },
+    {
+      "heading": "Jamie Elvidge",
+      "text": "Technical adviser",
+      "start_page": 17,
+      "end_page": 17
+    },
+    {
+      "heading": "Gavin Kenny",
+      "text": "Project manager",
+      "start_page": 17,
+      "end_page": 17
+    },
+    {
+      "heading": "ISBN: 978-1-4731-3944-2",
+      "text": "© NICE 2024. All rights reserved. Subject to Notice of rights\nle hepatocellu rs and\nttees of NICE.\nology to be app ed from partic\nnames of the d on the NICE\nore health tech viser and a pr\nuk/terms-and-\n. This\nprais\ncipatin\ne\nE\nhnolo\nroject\nPag\ns\nsed.\nng\nogy\nt\nge 17 of 17",
+      "start_page": 17,
+      "end_page": 17
+    }
+  ]
+}

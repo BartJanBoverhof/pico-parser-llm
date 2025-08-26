@@ -1,0 +1,476 @@
+{
+  "doc_id": "dlgcg_hepatocellulart-carcinom_v.3.0_admgodk_181224",
+  "created_date": "2024",
+  "country": "DK",
+  "source_type": "clinical_guideline",
+  "chunks": [
+    {
+      "heading": "",
+      "text": "K\nHe\n– Ud\nKlinis\nep\ndred\nsk Ret pa\ndnin\ntnings\nat\nng o\nslinje │Kræ toce\nog beha\næft\nel\nandl\nllu\nling\nul\ng af\nlæ\nprim\nær\nmæ\nDLGCG",
+      "start_page": 1,
+      "end_page": 1
+    },
+    {
+      "heading": "KLINISKE RETNINGSLINJER | KRÆFT rt Carcinom",
+      "text": "ær levercancer",
+      "start_page": 1,
+      "end_page": 1
+    },
+    {
+      "heading": "Version 3.0",
+      "text": "GODKENDT\nFaglig godkendelse\n28. oktober 2024 (DLGCG)\nAdministrativ godkendelse\n18. december 2024 (Sekretariatet for Kliniske\nRetningslinjer på Kræftområdet)",
+      "start_page": 1,
+      "end_page": 1
+    },
+    {
+      "heading": "REVISION",
+      "text": "Planlagt: 30. april 2026",
+      "start_page": 1,
+      "end_page": 1
+    },
+    {
+      "heading": "INDEKSERING",
+      "text": "DLGCG, Hepatocellulært carcinom, levercancer, udredning og behandling\nKlinisk\nNyt\nNyt sid\nRetnin\nAnbefal\nRetni\nsid\nden v ngslin\nlinger\ningsli\nden\nversio\nnjeaf\ninje │ n si\non 2.\nfsnit\n│Kræft DLGCG idst (ændringslog)\nt Beskrivelse af ændring\nDele af anbefaling 1 ændret fra:\nPatienter med kronisk viral hepatitis B og C, og påvist cirrose anbefales screenet for HCC……\ntil\nPatienter med kronisk viral hepatitis B og C, og påvist cirrose samt patienter der har cirrose og eradikeret for hepatitic C anbefales screenet for HCC….",
+      "start_page": 1,
+      "end_page": 2
+    },
+    {
+      "heading": "Ny anbefaling 13",
+      "text": "Med henblik at klarlægge fremtidigt brug af AFP baserede kriterier for den danske population, anbefales at patienter som enten opfylder Metroticket 2.0 eller 5-\n5-500 kriterierne kan tilbydes transplantation (B)\nAnbefaling 15 (tidligere 14) er ændret fra:\n(ablation, TACE el SIRT) er ændret til (ablation, TACE, SIRT el SBRT)",
+      "start_page": 2,
+      "end_page": 2
+    },
+    {
+      "heading": "Ny anbefaling 25",
+      "text": "Radioembolisering (selektiv intern radioterapi (SIRT)) kan overvejes som downstaging mhp at opnå resektabilitet eller Milano kriterier til transplantation\n(C).",
+      "start_page": 2,
+      "end_page": 2
+    },
+    {
+      "heading": "Anbefaling 28-30 er ændret fra:",
+      "text": "28. Sorafenib anbefales som førstelinje systemisk behandling til patienter med\nbevaret leverfunktion sv.t. Child Pugh A og i god almentilstand, hvor resektion,\ntransplantation, ablation eller TACE ikke kan udføres eller ikke forventes at have effekt. Hos patienter med Child Pugh B7 og PS 0 kan sorafenib i enkelte tilfælde\nanvendes (A)\n29. Regorafenib har dokumenteret effekt i 2.linje hos patienter med bevaret\nleverfunktion sv.t. Child Pugh A, som har tolereret sorafenib og progredieret\nherefter (A)\n30. Lenvatinib kan anvendes som alternativ til sorafinib i første linie (A)\ntil\n29. Atezolizumab og Bevacizumab anbefales som førstelinje systemisk\nKli\nRef\ninisk\nferenc\nRetni\ncer\ningsli\ninje │\n│Kræft DLGCG behandling til patienter med bevaret leverfunktion og i god almentilstand, hvor\nresektion, transplantation, ablation eller TACE/SIRT ikke kan udføres eller ikke forventes at have effekt eller til patienter med ekstra hepatisk sygdom (A)\n30. Sorafenib eller Lenvatinib kan anvendes som alternativ til Atezolizumab og\nBevacizumab i første linie (A)\n31. Sorafenib og Regorafenib kan anvendes 2. og 3. linje hos patienter med\nbevaret leverfunktion (C)\nDer er tilføjet et punkt 24 og punkt 27 er fjernet\nRadioembolisering (selektive intern radioterapi) (SIRT) kan overvejes som downstaging mhp at opnå resektabilitet eller Milanokriterier til transplantation (C)\nI afsnit ’Diagnostik’ er overskriften på afsnit ’Nuklearmedicinsk diagnostik af HCC’ ændret til ’Nuklearmedicinsk udredning’ og afsnittet er omskrevet.\nDer er tilføjet referencer, de er nævnt i ændringsafsnittet\nAfsnit om SIRT er flyttet til afsnit om kurativ behandling\nAfsnittet om HCC hos børn og unge er slettet og erstattet med en henvisning og link til ”Pakkeforløb for Børn med Kræft”\nDer er tilføjet 6 referencer. Er angivet i kommentarfeltet med deres respektive\nPMID numre\n27.10.2024 er der tilføjet yderligere 7 referencer. Er angivet i kommentarfeltet\nmed deres respektive PMID numre\nKlinisk Retningslinje │Kræft\nIndholdsfortegnel\nNyt siden sidst (ændringslog) ..........\n1. Anbefalinger (Quick guide) ..........\nOvervågning ...........................\nDiagnostik ...............................\nLeverresektion ........................\nLevertransplantation ...............\nAblation ..................................\nStrålebehandling.....................\nNon-kurativ behandling ...........\nSystemisk behandling .............\nHCC hos børn og unge ...........\n2. Introduktion .................................\n3. Grundlag .....................................\nOvervågning ...........................\nDiagnostik ...............................\nLeverresektion ........................\nLevertransplantation ...............\nAblation ..................................\nStrålebehandling.....................\nNon-kurativ behandling ...........\nSystemisk behandling .............\nHCC hos børn og unge ...........\n4. Referencer ..................................\n5. Metode ........................................\n6. Monitorering ................................\n7. Bilag ............................................\n8. Om denne kliniske retningslinje ...\nlse\nD\nDLGC\nCG",
+      "start_page": 2,
+      "end_page": 4
+    },
+    {
+      "heading": "Overvågning",
+      "text": "1. Patienter med kronisk viral hepatitis B og C, og påvist cirrose samt patienter der\nhar cirrose og eradikeret for hepatitic C anbefales screenet for HCC. Visse\npatienter med hepatitis B uden cirrose anbefales også screenet. Patienter med\nalkoholisk cirrose anbefales alene screenet som led i kontrolleret undersøgelse (A)",
+      "start_page": 5,
+      "end_page": 5
+    },
+    {
+      "heading": "Diagnostik",
+      "text": "4. Noduli mindre end 1 cm fundet på ultralydsscanning af en cirrotisk lever, bør\nfølges med ultralydsscanning med intervaller fra 4 – 6 måneder. Hvis der ikke er\npåvist nogen vækst over en periode på op til 2 år kan man overgå til rutine overvågning (C)\n5. Noduli større end 1 cm fundet ved billeddiagnostik af en cirrotisk lever bør\nundersøges med enten en 3-faset CT-skanning eller en dynamisk kontrastforstærket MR. Hvis udseendet af læsionerne er typisk for HCC kan\ndiagnosen HCC stilles. Hvis de billeddiagnostiske fund ikke er karakteristiske,\nskal der udføres en anden kontrastforstærket undersøgelse med en anden billeddiagnostisk modalitet (MR/CT/ eller kontrastforstærket ultralyd i ekspertcentre) eller der skal udføres en grovnålsbiopsi fra læsionen se algoritme ovenfor)\n(B)\n6. Biopsier af mindre læsioner skal evalueres af ekspertpatologer. Væv, som ikke er\noplagt HCC kan farves med immunhistokemiske markører inkluderende CD 34, retikulin, glypican 3, HSP-70, og glutaminsyntetase, for at forbedre den\ndiagnostiske nøjagtighed (C)\n7. Hvis biopsien ikke kan bekræfte diagnosen HCC skal læsionen følges med\nbilleddiagnostik med 3-6 måneders intervaller indtil noduli forsvinder, vokser",
+      "start_page": 5,
+      "end_page": 5
+    },
+    {
+      "heading": "Klinisk Retningslinje │Kræft DLGCG eller udviser diagnostiske karakteristika for HCC. Hvis læsionen vokser, men",
+      "text": "forbliver atypisk for HCC må man gentage biopsi. Hvis læsionen vedvarende er\nuændret skal kontrolperioden afstemmes efter patientens grundsygdom og alder\n(C)",
+      "start_page": 6,
+      "end_page": 6
+    },
+    {
+      "heading": "9. Leverresektion er en potentielt kurativ behandling af solitært eller multifokalt",
+      "text": "HCC, hvor der ikke er ekstrahepatisk spredning, leverfunktionen er god og R0resection kan udføres med efterladelse af tilstrækkeligt levervæv til at opretholde en normal leverfunktion (B)\n10. Adjuverende systemisk behandling efter radikal leverresektion er ikke indiceret\n(B)\n11. Der skal udføres kontrol med CT eller MR-undersøgelser 3,6,9,12,18,24, 36, 48 og\n60 mdr. efter behandlingen (C)",
+      "start_page": 6,
+      "end_page": 6
+    },
+    {
+      "heading": "Levertransplantation",
+      "text": "12. Patienter med HCC i cirrotisk lever og leverfunktion forenelig med Child Pugh B\nog C bør vurderes mhp. levertransplantation, hvis Milano-kriterierne er opfyldt\n(B)\n13. Med henblik på at klarlægge fremtidigt brug af AFP-baserede kriterier for den\ndanske population, anbefales at patienter som enten opfylder Metroticket 2.0 eller\n5-5-500 kriterierne tilbydes vurdering mhp. levertransplantation (B)\n14. Milano-kriterierne eller AFP-baseret kriterier anvendes ikke hos ikke-cirrotiske\npatienter med HCC. Er tumorerne ikke resektable og patienten uden\nekstrahepatisk spredning, bør patienten vurderes mhp. levertransplantation (C)\n15. Efter succesfuld downstaging (ablation/TACE/SIRT, SBRT) som har medført at\npatienten opfylder Milano-kriterierne eller AFP-baseret kriterier, bør patienten henvises til vurdering mhp. levertransplantation (C). Ved recidiv efter",
+      "start_page": 6,
+      "end_page": 6
+    },
+    {
+      "heading": "Klinisk Retningslinje │Kræft DLGCG lokalbehandling med resektion eller ablation bør patienten vurderes mhp",
+      "text": "levertransplantation uanset Child Pugh Score (C)\n16. Patienter, der er levertransplanteret kontrolleres for recidiv ved leverspecifik\nthoraco-abdominal CT eller MR-undersøgelser 3, 6, 9, 12, 18, 24, 36, 48 og 60 mdr.\nHver 3. måned måles alfa-føtoprotein (C)\n17. Recidiv af HCC efter levertransplantation behandles efter sædvanlige\nretningslinjer, dog kommer re-transplantation ikke på tale (C)",
+      "start_page": 7,
+      "end_page": 7
+    },
+    {
+      "heading": "Ablation",
+      "text": "19. Perkutan ablation bør tilbydes patienter med tidlig HCC i cirrotisk lever som\nførstelinjebehandling (BCLC-stadie 0 og A, højst tre tumorer < 3 cm) (A)\n20. Laparoskopisk eller åben ablation bør tilbydes ovenstående patienter hvis\nperkutan adgang ikke er mulig (C)\n21. Kombinationsbehandling af RFA og TACE kan tilbydes patienter med tumorer\nmellem 3 og 5 cm (A)\n22. Adjuverende systemisk behandling efter radikal resektion eller ablation er ikke\nindiceret (C)\n23. Der skal udføres kontrol med CT eller MR-undersøgelser 4-6 uger efter\nbehandlingen, og derefter kontrol med CT eller MR-skanning 3, 6, 9, 12, 18, 24, 36,\n48 og 60 mdr. efter behandlingen (C)",
+      "start_page": 7,
+      "end_page": 7
+    },
+    {
+      "heading": "Strålebehandling",
+      "text": "24. Stereotaktisk strålebehandling (SBRT) er en kurativt intenderet behandling med\nbegrænset toksicitet, som aktuelt kan overvejes i situationer hvor man hverken kan behandle med ablation eller resektion (C)\n25. Radioembolisering (selektiv intern radioterapi (SIRT)) kan overvejes som\ndownstaging mhp at opnå resektabilitet eller Milano kriterier til transplantation\n(C)",
+      "start_page": 7,
+      "end_page": 8
+    },
+    {
+      "heading": "Non-kurativ behandling",
+      "text": "26. Kemoembolisering rekommanderes som førstelinje ikke-kurativ terapi for BCLC\nintermediate B klasse patienter (Child Pugh score ≤ 7 med performancescore 0-1.\nTACE kan også anvendes som downstaging (A)",
+      "start_page": 8,
+      "end_page": 8
+    },
+    {
+      "heading": "27. Adjuverende systemisk behandling efter TACE er ikke indiceret (A)",
+      "text": "28. SIRT kan anvendes ved begrænset multifokal sygdom og hvis patienten ikke\ntolererer systemisk behandling (C)",
+      "start_page": 8,
+      "end_page": 8
+    },
+    {
+      "heading": "Systemisk behandling",
+      "text": "29. Atezolizumab og Bevacizumab anbefales som førstelinje systemisk behandling til\npatienter med bevaret leverfunktion og i god almentilstand, hvor resektion, transplantation, ablation eller TACE/SIRT ikke kan udføres eller ikke forventes at\nhave effekt eller til patienter med ekstra hepatisk sygdom (A)\n30. Sorafenib eller Lenvatinib kan anvendes som alternativ til Atezolizumab og\nBevacizumab i første linie (A)\n31. Sorafenib, Regorafenib og Lenvatinib kan anvendes i 2. og 3. linje hos patienter\nmed bevaret leverfunktion (C)",
+      "start_page": 8,
+      "end_page": 8
+    },
+    {
+      "heading": "HCC hos børn og unge",
+      "text": "32. Ved mistanke om HCC i aldersgruppen 0-18 skal der henvises til Rigshospitalets\nafdeling for Børneonkologi eller Børneonkologisk Afdeling, Aarhus\nUniversitetshospital. Der henvises til ”Pakkeforløb for Kræft hos børn”",
+      "start_page": 8,
+      "end_page": 8
+    },
+    {
+      "heading": "2. Introduktion",
+      "text": "I Danmark er incidensen af hepatocellulært carcinom (HCC) ca. 450 per år, med let stigende tendens, mest\nudtalt for mænd >60 år (1, 2). HCC optræder i 70-80% af tilfældene i en cirrotisk lever.\nFormål\nDet overordnede formål med retningslinjen er at understøtte en evidensbaseret kræftindsats af høj og ensartet kvalitet på tværs af Danmark.\nPatientgruppe\nDen hyppigste årsag til cirrose (ca. 65%) i Danmark er alkoholoverforbrug (2) . Incidens og prævalens af\ncirrose er relativt stabil, men de underliggende årsager ændrer sig i disse år, da alkoholbetinget cirrose og Hep\nB + C falder, mens fedtbetinget cirrose har en stigende tendens.\nDiagnostik og behandling af HCC involverer læger fra forskellige specialer, inkluderende intern mediciner med hepatologisk ekspertfunktion (i det følgende kaldt hepatolog), HPB-kirurger/transplantationskirurger,\nonkologer, radiologer, interventionelle radiologer og patologer. Eftersom HCC oftest er ledsaget af en\nunderliggende kronisk leversygdom, vil behandlingen af HCC være mere kompliceret, end man ser ved andre maligne sygdomme, som i de tidlige stadier sjældent kompromitterer vitale livsfunktioner. Hepatologen er\nderfor den centrale figur omkring håndteringen af disse patienter. Til enhver tid skal hepatologen kunne\nbedømme leverfunktion og på baggrund af dette vurdere, hvilket behandlingstiltag patienten bedst vil kunne tåle. Hepatologen skal være ansvarlig for behandlingen af leversygdommen både før, under og efter\ncancerterapien.\nMålgruppe for brug af retningslinjen\nDenne retningslinje skal primært understøtte det kliniske arbejde og udviklingen af den kliniske kvalitet, hvorfor den primære målgruppe er klinisk arbejdende sundhedsprofessionelle i det danske sundhedsvæsen.",
+      "start_page": 9,
+      "end_page": 9
+    },
+    {
+      "heading": "Overvågning",
+      "text": "1. Patienter med kronisk viral hepatitis B og C, og påvist cirrose samt patienter der\nhar cirrose og eradikeret for hepatitic C anbefales screenet for HCC. Visse\npatienter med hepatitis B uden cirrose anbefales også screenet. Patienter med\nalkoholisk cirrose anbefales alene screenet som led i kontrolleret undersøgelse (A)",
+      "start_page": 10,
+      "end_page": 10
+    },
+    {
+      "heading": "3. Risikogrupper for HCC kan overvåges med UL-scanning hver 6. måned (C)",
+      "text": "Litteratur og evidensgennemgang\nScreening for HCC\nScreening for HCC skal tilbydes som led i et program eller proces i hvilken screeningtests og tærskelniveauer er standardiseret og med indbygget kvalitetskontrol. Screening involverer beslutningen om ved hvilket niveau\nrisikoen for HCC er tilstrækkelig høj til at udløse screening, hvilken screeningstest der skal udføres, og hvor ofte den skal udføres. Endelig skal det besluttes, hvilken handling en abnorm screeningtest skal udløse.\nIndtil for ganske nylig har screening for HCC været vidt udbredt, trods manglen på evidens for den gavnlige effekt af screeningsproceduren. Specielt er der ikke data der kan godtgøre screening i den danske population\naf cirrose patienter, hvor alkohol er den væsentligste årsag til udvikling af cirrose\nDer foreligger danske guidelines for screening af HCC hos patienter med kronisk viral hepatitis udarbejdet med deltagelse af repræsentanter fra Dansk Selskab for Gastroenterologi & Hepatologi og Dansk Selskab for\nInfektionsmedicin (3).\nFor patienter med kronisk hepatitis B og C anbefaler disse guidelines ud fra internationale rekommandationer at screene følgende grupper:\nKronisk hepatitis B: Risikoen for udvikling af hepatocellulært carcinom (HCC) hos patienter med kronisk\nhepatitis B og cirrose over en 5 års periode er omkring 7%. Da visse grupper af patienter med kronisk hepatitis\nB har øget forekomst af hepatocellulært carcinom (HCC), også uden at have udviklet cirrose, bør man hos patienter med familiær ophobning af HCC, asiatiske patienter over 40-50 år, og afrikanske patienter over 20-\n25 år udføre screening for HCC.\nKronisk hepatitis C og cirrose: Disse patienter screenes for HCC også efter vellykket behandling for\nhepatitis C:\nFor patienter med alkoholbetinget levercirrose er der ikke evidens for screening for HCC, og samme er gældende for cirrose på baggrund af autoimmune (AIH, PBC, PSC) og metabolisk leversygdom\n(hæmokromatose, alfa-1-antitrypsin, Wilson). Der er ikke evidens for screening af NASH-patienter for\nnuværende (4).",
+      "start_page": 10,
+      "end_page": 11
+    },
+    {
+      "heading": "Screeningsmetode",
+      "text": "Af de tilgængelige undersøgelser der anvendes til at screene for HCC har måling af tumormarkøren\nAlfaføtoprotein (AFP) vist sig utilstrækkelig som screeningsmetode. UL-skanning kan anvendes til screening\nfor HCC med sensitivitet på 78-90% og med 93% specificitet (5-12).",
+      "start_page": 11,
+      "end_page": 11
+    },
+    {
+      "heading": "Screeningsinterval",
+      "text": "De fleste studier har anvendt 6 måneders intervaller mellem kontrollerne, der findes ikke randomiserede studier, der har fastlagt det optimale screeningsinterval.\nPatientværdier og – præferencer\nEj anført.\nRationale\nEj anført.\nBemærkninger og overvejelser\nEj anført.",
+      "start_page": 11,
+      "end_page": 11
+    },
+    {
+      "heading": "Diagnostik",
+      "text": "4. Noduli mindre end 1 cm fundet på ultralydsscanning af en cirrotisk lever, bør\nfølges med ultralydsscanning med intervaller fra 4 – 6 måneder. Hvis der ikke er\npåvist nogen vækst over en periode på op til 2 år kan man overgå til rutine overvågning (C)\n5. Noduli større end 1 cm fundet ved billeddiagnostik af en cirrotisk lever bør\nundersøges med enten en 3-faset CT-skanning eller en dynamisk kontrastforstærket MR. Hvis udseendet af læsionerne er typisk for HCC kan\ndiagnosen HCC stilles. Hvis de billeddiagnostiske fund ikke er karakteristiske,\nskal der udføres en anden kontrastforstærket undersøgelse med en anden billeddiagnostisk modalitet (MR/CT/ eller kontrastforstærket ultralyd i ekspertcentre) eller der skal udføres en grovnålsbiopsi fra læsionen se algoritme ovenfor)\n(B)\n6. Biopsier af mindre læsioner skal evalueres af ekspertpatologer. Væv, som ikke er\noplagt HCC kan farves med immunhistokemiske markører inkluderende CD 34,",
+      "start_page": 11,
+      "end_page": 11
+    },
+    {
+      "heading": "Klinisk Retningslinje │Kræft DLGCG retikulin, glypican 3, HSP-70, og glutaminsyntetase, for at forbedre den",
+      "text": "diagnostiske nøjagtighed (C)\n7. Hvis biopsien ikke kan bekræfte diagnosen HCC skal læsionen følges med\nbilleddiagnostik med 3-6 måneders intervaller indtil noduli forsvinder, vokser eller udviser diagnostiske karakteristika for HCC. Hvis læsionen vokser, men\nforbliver atypisk for HCC må man gentage biopsi. Hvis læsionen vedvarende er\nuændret skal kontrolperioden afstemmes efter patientens grundsygdom og alder\n(C)",
+      "start_page": 12,
+      "end_page": 12
+    },
+    {
+      "heading": "8. Diagnosen HCC stilles altid med biopsi hos patienter uden cirrose (C)",
+      "text": "Litteratur og evidensgennemgang\nDiagnostik af HCC\nUndersøgelser som bruges til at diagnosticere HCC inkluderer billeddiagnostik og evt. biopsi. CT-skanning\neller MR-skanning er altid nødvendig for at afgøre stadiet.\nRadiologisk diagnose af HCC hos patienter med levercirrose\nHCC kan diagnosticeres med MR med ekstracellulær gadoliniumkontrast og/eller CT-skanning uden behov for biopsi, hvis de typiske radiologiske kriterier for HCC er opfyldt, dvs at der ses kontrastopladning i sen arteriel\nkontrastfase og udvaskning (washout) i venefase og/eller sen fase (13-17). Hvis fundet er ukarakteristisk både\nved CT- og MR-skanning, kan suppleres med kontrast UL-skanning i ekspert-centre eller overvejes biopsi eller kontrolforløb (se figur 1). Diagnosen kræver en kontrastforstærket, dynamisk undersøgelse i sen arteriefase,\nportovenøs fase og sen (interstitiel) fase. De mest sensitive kontrastfaser er arteriefase og sen fase (18), men\nden portovenøse fase er nødvendig for vurdering af resektabilitet og evt. venetrombose. Ved CT og i endnu\nhøjere grad ved MR kan findes andre tegn, der understøtter diagnosen HCC: Kapseldannelse, coronaopladning, fedtindhold i tumor, højt T2 signal, diffusionsrestriktion eller manglende optag af leverspecifik\nkontrast. Disse tegn er ikke lige så specifikke som den typiske kontrastprofil og indgår ikke i den diagnostiske\nalgoritme (19-22).\nNår kontrastforstærket ultralyd ikke indgår som primær modalitet i algoritmen skyldes det, at intrahepatisk kolangiocarcinom, som også optræder med større frekvens hos cirrose-patienter, kan fejlvurderes som HCC\npga. ”washout” ved kontrast-ultralyd – i modsætning til CT og MR, hvor kolangiocarcinomer ikke har\n”washout”(23, 24). Et nyt, prospektivt multicenter studie af cirrosepatienter med HCC-noduli på 1 til 3 cm, som\nsammenligner CT, MR og kontrast-ultralyd finder dog en meget høj specificitet, når kontrast-ultralyd anvendes som supplement til inkonklusiv CT eller MR. Den kombination, som giver den højeste diagnostiske sikkerhed\ner MR efterfulgt af kontrast-ultralyd (25).\nDa den radiologiske diagnose er så vigtig, er det essentielt, at undersøgelsen udføres korrekt. De\nundersøgende radiologer skal optimere de anvendte protokoller efter det tilgængelige udstyr (se anbefalede\nCT og MR-protokoller, Appendix 1 og 2).\nDe aktuelle rekommandationer for diagnosen af HCC er angivet i figur 1. For noduli < 1 cm er detaljeret\nundersøgelse ikke nødvendig fordi de fleste af disse vil være cirrotiske regenerations noduli frem for HCC.\nFollow-up med 3-4 måneders intervaller anbefales imidlertid med anvendelse af den samme modalitet som først dokumenterede tilstedeværelsen af noduli. For læsioner > 1 cm i diameter bør multidetektor CT-scanning\neller dynamisk MR udføres.\nFigur 1. Algoritme for undersøgelse af små noduli, fundet ved screening eller anden billeddiagnostik hos\npatienter med risiko for HCC i cirrotisk lever (MDCT = multidetektor CT-scanning).\nDiagnose af HCC hos patienter uden levercirrose\nI en normal lever uden cirrose er sandsynligheden for HCC meget lavere og de anførte guidelines kan ikke anvendes i disse tilfælde. I den normale lever kan hypervaskulære processer med venøst ”washout”\nrepræsentere metastaser fra velvaskulariserede primærtumorer, såsom mammacarcinom, renalcellecarcionom eller neuroendokrine tumorer. Hvis der ikke er en kendt primærtumor med samme\nvaskulære profil, er det nødvendigt med histologisk biopsi for at stille en eksakt diagnose.",
+      "start_page": 12,
+      "end_page": 13
+    },
+    {
+      "heading": "Nuklearmedicinsk udredning ved HCC",
+      "text": "Der er ikke evidens for rutinemæssig udredning med PET/CT hos patienter med verificeret eller mistænkt\nHCC. I mange internationale guidelines vedr. HCC omtales udredning med PET/CT ikke. I ESMO guidelines\nfra 2018 anbefaler man ikke brugen af FDG-PET ved HCC.\n18F-FDG, det mest anvendte PET sporstof i onkologien, har en sensitivitet på ca. 50-65% for intrahepatisk\nHCC, mens nogle studier finder en lidt højere sensitivitet for ekstrahepatisk HCC.\nEn række andre PET sporstoffer, herunder 68Ga-PSMA, 11C/18F-Cholin og 11C-Acetat har i mindre studier vist at have en højere sensitivitet for HCC end 18F-FDG, særligt ved tumorer med lav FDG-optagelse. Nyere\nstudier med 68Ga-FAPI finder tilsvarende en højere sensitivitet både intra- og ekstrahepatisk, men ligesom med 18F-FDG, har man fundet høj FAPI optagelse i såvel andre maligne som benigne tumores. I et forsøg på\nat udvikle et specifikt sporstof til HCC, har man undersøgt den radioaktivt mærkede galaktose-analog, 18F-\nFDGal og bl.a. i et lille studie fundet ekstrahepatiske metastaser, som ikke kunne påvises med\nkontrastforstærket CT eller 18F-FDG PET/CT (26-30).",
+      "start_page": 14,
+      "end_page": 14
+    },
+    {
+      "heading": "Diagnose - Patologi",
+      "text": "De histologiske undersøgelser i forbindelse med diagnostik af hepatocellulært karcinom omfatter resektater og biopsier. Disse håndteres forskelligt, idet den makroskopiske undersøgelse af resektater kræver\nstandardiseret udtagning af væv til histologisk analyse, mens håndtering af biopsien indebærer, at alt væv er indstøbt.",
+      "start_page": 14,
+      "end_page": 14
+    },
+    {
+      "heading": "Makroskopi",
+      "text": "Udtagning af væv ved makroskopisk undersøgelse af leverresektater med hepatocellulært karcinom anbefales at følge nedenstående:\nFigur 2. Skema til udtagning af væv fra leverresektat med tumor\nDer udtages væv i henhold til internationale guidelines (31), se figur 1. Disse adresserer differentieringsgrad,\nmikrovaskulær invasion (MVI), satellitose, dysplastiske foci, resektionsforhold og baggrundslevervæv. Således\nudtages minimum 8 snit: Et centralt tumorsnit (E), flere hvis tumor er heterogen, 4 tumorsnit med overgang til",
+      "start_page": 14,
+      "end_page": 14
+    },
+    {
+      "heading": "Klinisk Retningslinje │Kræft DLGCG ikke-tumorafficeret lever (A-D), og to tumorsnit fra ikke-tumorafficeret levervæv (F-G) henholdsvis 1 cm og > 1",
+      "text": "cm fra tumor. Derudover snit fra resektionsflade vinkelret på tumor, hvis det kan være i et snit eller tangentielt\ntættest på tumor, hvis det ikke kan være i et snit. Hvis tumor ligger kapselnært endvidere snit med relation\nhertil. Endelig snit fra karstrukturer i resektionsfladen. A-D gentages ved flere tumorer.",
+      "start_page": 15,
+      "end_page": 15
+    },
+    {
+      "heading": "Mikroskopi",
+      "text": "En patologirapport ved mikroskopi af resektater med HCC bør indeholde følgende elementer som minimum sammenfattet af internationale guidelines (31-34):\n1. tumortype (samt eventuelt differentieringsgrad i henhold til WHO eller gradering ad modum Steiner)\n2. afstand til resektionsrande herunder galdegange og karstrukturer\n3. kapselinvasion\n4. karinvasion\n5. tumorstørrelse og antal herunder satellitose*\n6. effekt af ablativ eller neoadjuvant behandling, angives som estimeret procentdel af vitalt tumorvæv\n7. lymfeknudeinvolvering, hvis muligt\n8. baggrundslever herunder præmaligne forandringer\n* Satellitose kan defineres som mikroskopiske noduli af hepatocellulært carcinom adskilt fra tumor af et interval\naf ikke-tumor bærende leverparenchym (35) og er en negativ prognostisk markør (36). Det skal dog\nunderstreges, at definitionen af satellitose er meget varierende og mangelfuld i litteraturen selv i de prognostiske studier.",
+      "start_page": 15,
+      "end_page": 15
+    },
+    {
+      "heading": "Tidlig HCC",
+      "text": "Identifikation af stadig mindre HCC og dysplastiske noduli (low grade dysplastisk nodulus (LGDN) og high grade dysplastisk nodulus (HGDN)) i en cirrotisk lever vanskeliggør adskillelse af maligne fra præmaligne\nnoduli både radiologisk og histologisk.",
+      "start_page": 15,
+      "end_page": 15
+    },
+    {
+      "heading": "Man skelner imellem meget tidlig HCC og små fremskredne HCC (37, 38). Tidlig HCC, som defineret af",
+      "text": "japanske patologer, er < 2 cm og generelt hypovaskulære og har dårligt definerede margener (39). Således\nhar tumor en uregelmæssig afgrænsning på ultralyd og kan være hypovaskulær på CT-scanning (24). Der kan\nvære invasion af portalrummene, men karinvasion ses ikke. I Barcelona-klinikkens levercancer stadie\ninddeling kaldes disse læsioner ”very early HCC”. De patologiske HCC-læsioner er blevet definereret i\nresecerede præparater, og derfor er naturhistorien af disse læsioner ukendt. Samtidig tilstedeværelse af små\nfoci af typisk HCC i disse resektater tyder på, at disse læsioner er forstadier til typiske HCC-læsioner (37, 38,\n40). Hyppigheden hvormed disse læsioner udvikler sig til typisk HCC, er ukendt. I kontrast hertil har\n”fremskredne” HCC veldefinerede rande på ultralyd og udviser de typiske karakteristisk for HCC histologisk og billeddiagnostisk (24, 40). Der findes formentlig et kontinuum mellem HGDN og HCC snarere end 2 distinkte\nstadier.\nPatienter med levernoduli, som har en ikke-specifik vaskulær profil og en negativ biopsi, skal fortsætte med tæt follow-up. Der er ingen data, som angiver den optimale follow-up taktik på dette punkt, men at gentage\nbiopsi eller follow-up CT/MR for at påvise yderligere vækst skal overvejes. Der er data som indikerer, at jo\nmindre læsionen er, des mindre sandsynlighed er der for mikroskopisk vaskulær invasion (39). Desuden er",
+      "start_page": 15,
+      "end_page": 15
+    },
+    {
+      "heading": "Klinisk Retningslinje │Kræft DLGCG mindre læsioner mere sandsynligt associeret med behandling, som vil være kurativ (23, 41). Det er derfor",
+      "text": "vigtigt, at stille diagnosen HCC så tidligt som muligt. Det er imidlertid lige så vigtigt ikke at udføre invasiv\nbehandling på læsioner, som ikke har et malignt potentiale, og som kan regrediere. Dette er en fin distinktion,\nsom ikke altid er mulig at lave. En yderligere bekymring omkring finnålsbiopsi er risikoen for blødning og\nseeding. De fleste studier, som påviser seeding efter nålebiopsi, specificerer ikke størrelsen af læsionen, som\nblev biopteret (42, 43).\nMorfologiske karakteristika kan hjælpe i adskillelsen af HGDN fra HCC, men tillæg af specialfarvninger og immunhistokemiske farvninger tilrådes. Specialfarvning for retikulin, hvorved tab af eller ændring af retikulin\nses ved HCC (44) er kendt. Desuden kan man ved noduli i cirrotiske levere applicere et immunhistokemisk\npanel af 3 markører: Glypican3, heat shock protein 70 og glutaminsyntetase (diffus positivitet), som kan hjælpe\ntil adskillelse af maligne tumorer og forstadier. Der kan ifølge DiTommasi et al.(45) ses følgende: alle 3\nnegative i 100% af low grade dysplastiske noduli (LGDN), 73% high grade dysplastiske noduli (HGDN) og 3% af tidlige HCC. Alle 3 positive ses i under halvdelen af tidlig HCC, men ingen LGDN/HGDN. Ved 2 markører\npositive, uanset hvilke, ses ved brug af dette 3-markørpanel sensitivitet og specificitet for detektion of tidlig\nHCC på henholdsvis på 72% og 100% i resektater. Derudover kan suppleres med immunhistokemisk farvning\nfor CD34 til fremstilling af kapillarisering af sinusoiderne, som ses i tiltagende grad i levertumorer og i særdeleshed ved HCC (46).",
+      "start_page": 16,
+      "end_page": 16
+    },
+    {
+      "heading": "TNM klassifikation",
+      "text": "1. november 2018 går man i DLGCG over til klassifikation i henhold til TNM 8, da det følger databaseåret.",
+      "start_page": 16,
+      "end_page": 16
+    },
+    {
+      "heading": "T- primær tumor:",
+      "text": "T1a Solitær tumor 2 cm eller mindre i diameter med eller uden vaskulær invasion\nT1b Solitær tumor > 2 cm i diameter uden vaskulær invasion\nT2 Solitær tumor med vaskulær invasion, som er > 2 cm i diameter eller multiple tumorer, ingen mere end 5 cm i diameter\nT3 Multiple tumorer heraf mindst en > 5 cm i diameter\nT4 Tumor(er) involverer en hovedgren af v. portae eller v. hepatica med direkte invasion af\ntilstødende organer (inklusive diaphragma) andre end galdeblæren eller med perforation af viscerale peritoneum",
+      "start_page": 17,
+      "end_page": 17
+    },
+    {
+      "heading": "N – Regionale lymfeknuder:",
+      "text": "Til regionale lymfeknuder medregnes hilære, hepatiske (langs a. hepatica communis), periportale (langs v.\nportae), subphreniske og langs v. cava.\nNX Regional lymfeknuder kan ikke vurderes\nN0 Ingen regionale lymfeknudemetastaser\nN1 Regionale lymfeknudemetastase(r)",
+      "start_page": 17,
+      "end_page": 17
+    },
+    {
+      "heading": "M – Fjernmetastaser:",
+      "text": "M0 Ingen fjernmetastaser\nM1 Fjernmetastaser",
+      "start_page": 17,
+      "end_page": 17
+    },
+    {
+      "heading": "Alfa-føtoprotein",
+      "text": "Alfaføtoprotein kan ikke anvendes til diagnosticering af HCC, da AFP kan være forhøjet ved tumor af gonadal oprindelse, (f. eks. testikulær, germinal celletumor og non germinalcelletumor (47)), samt ved andre maligne\nsygdomme, hvor ventrikel cancer er den hyppigste (48). AFP kan ligeledes være forhøjet hos patienter med\nkronisk leversygdom, som f.eks. akut og kronisk viral hepatitis (49, 50) samt forhøjet ved intrahepatiske\nkolangiocarcinomer og ved kolorektale levermetastaser (51, 52). Modsat er det ikke alle HCC der producerer\nAFP og serumkoncentrationen af AFP er normal hos op til 40% af patienter med HCC (53).\nPå baggrund af ovenstående vil fundet af en tumor i en lever, samtidig med forhøjet AFP, ikke nødvendigvis betyde at det drejer sig om et HCC. Diagnosen af HCC må derfor hvile på radiologiske og/eller histologiske\nkriterier.\nAFP kan anvendes ved monitorering af behandlingsrespons, hvis der som udgangspunkt er en høj AFP.\nDerudover anvendes AFP som monitorering efter levertransplantation for HCC.\nAFP indgår i flere validerede transplantationskriterier som en faktor ud over størrelse og antal af HCC.\nPatientværdier og – præferencer\nEj anført.\nRationale\nEj anført.\nBemærkninger og overvejelser\nEj anført.",
+      "start_page": 17,
+      "end_page": 18
+    },
+    {
+      "heading": "9. Leverresektion er en potentielt kurativ behandling af solitært eller multifokalt",
+      "text": "HCC, hvor der ikke er ekstrahepatisk spredning, leverfunktionen er god og R0resection kan udføres med efterladelse af tilstrækkeligt levervæv til at opretholde en normal leverfunktion (B)\n10. Adjuverende systemisk behandling efter radikal leverresektion er ikke indiceret\n(B)\n11. Der skal udføres kontrol med CT eller MR-undersøgelser 3,6,9,12,18,24, 36, 48 og\n60 mdr. efter behandlingen (C)\nLitteratur og evidensgennemgang\nStadieinddeling (staging) af HCC hos patienter med kronisk leversygdom\nPrognosen for solide tumorer er generelt relateret til tumorstadiet ved diagnosticering, sværhedsgraden af den evt. underliggende leversygdom og patientens performancestatus.\nDer er ikke nogen international konsensus om hvilket HCC staging system man skal anvende(7, 54-60).\nDen europæiske retningslinje anvender nedenstående algoritme:\nKlinisk Retningslinje │Kræft",
+      "start_page": 18,
+      "end_page": 19
+    },
+    {
+      "heading": "Reference (12)",
+      "text": "Behandling\nMDT\nAlle patienter diagnosticeret med HCC skal vurderes på MultiDisciplinær Tumorkonfere inkluderer interventionsradiologer, hepatologer, onkologer og leverkirurger.\nLokalbehandling af HCC med kurativ intention\nBehandlingsmuligheder:",
+      "start_page": 19,
+      "end_page": 19
+    },
+    {
+      "heading": "• Leverresektion",
+      "text": "• Transplantation\n• Ablation\n• SBRT\n• SIRT\n• Protoner (protokoleret)",
+      "start_page": 19,
+      "end_page": 19
+    },
+    {
+      "heading": "Leverresektion er den gyldne standard for intenderet kurativ behandling af HCC. Tumor",
+      "text": "betragtes af nogle centre som grænsen for resektion, da der er en øget risiko for satelit invasion samt ikke-radikal resektion (52,59). Det har dog vist sig, at patienter med solitæ\nDLGCG\nence (MDT), der rdiameter ≥ 5 cm\nttumorer og vaskulær ære HCC ≥ 5 cm kan",
+      "start_page": 19,
+      "end_page": 19
+    },
+    {
+      "heading": "Klinisk Retningslinje │Kræft DLGCG reseceres radikalt med god langtidsoverlevelse (60). Resektion kan ved behov forudgås af embolisering af",
+      "text": "den estimerede restlever efter resektion (Future liver remnant) (61).\nTilstedeværelsen af multiple tumorer samt tumorinvasion i større portale forgreninger forværrer prognosen, men udelukker ikke radikal resektion og hos udvalgte patienter giver denne behandling den bedste chance for\nlangtidsoverlevelse (62, 63). Bilobær HCC kan også behandles med resektion, evt. kombineret med RFA (64).\nTilstedeværelsen af fjernmetastaser, trombose af vena portae’s hovedstamme eller vena cava, er absolutte kontraindikationer for resektion eller anden lokalbehandling.\nLeverresektion for HCC er ledsaget af en perioperativ mortalitet på mindre end 5% og en morbiditet på 30-\n40% afhængig af patientens leverfunktion. Alvorlige komplikationer som leversvigt, postoperativ blødning og\ngaldelæk udgør dog mindre end 5%. Bemærk at komplikations- og mortalitetsfrekvens er mange gange højere\nend ved ablation. Der bør tages hensyn til dette når behandlingerne er ligeværdige i forhold til overlevelse.\nDet seneste årti har laparoskopisk leverresektion vundet indpas hos selekterede patienter, specielt ved mindre og perifere tumorer. Laparoskopi ser ud til at reducere morbiditeten sammenlignet med åben kirurgi (65). Der\nforeligger endnu ikke randomiserede studier som sammenligner åben og laparoskopisk leverresektion.\n5-årsoverlevelsen efter resektion for HCC ligger på 35-50% i nyere store kohorter (66). Langtidsoverlevelsen\nfor små solitære HCC < 5 cm i diameter nærmer sig 70 % (67, 68). Risikoen for recidiv i løbet af de første 5 år\nefter radikal resektion af HCC er i størrelsesordenen 50-80 % (69).\nDer findes ingen evidens for adjuverende kemoterapi efter leverresektion for HCC (70).\nAggressiv behandling af recidiv med re-resektion, ablation og/eller transarteriel kemoembolisering (TACE) er den mest effektive måde at forlænge overlevelsen på (70).\nPatientværdier og – præferencer\nEj anført.\nRationale\nEj anført.\nBemærkninger og overvejelser\nEj anført.",
+      "start_page": 20,
+      "end_page": 20
+    },
+    {
+      "heading": "Levertransplantation",
+      "text": "12. Patienter med HCC i cirrotisk lever og leverfunktion forenelig med Child Pugh B\nog C bør vurderes mhp. levertransplantation, hvis Milano-kriterierne er opfyldt\n(B)\n13. Med henblik på at klarlægge fremtidigt brug af AFP-baserede kriterier for den\ndanske population, anbefales at patienter som enten opfylder Metroticket 2.0 eller\n5-5-500 kriterierne tilbydes vurdering mhp. levertransplantation (B)\n14. Milano-kriterierne eller AFP-baseret kriterier anvendes ikke hos ikke-cirrotiske\npatienter med HCC. Er tumorerne ikke resektable og patienten uden\nekstrahepatisk spredning, bør patienten vurderes mhp. levertransplantation (C)\n15. Efter succesfuld downstaging (ablation/TACE/SIRT, SBRT) som har medført at\npatienten opfylder Milano-kriterierne eller AFP-baseret kriterier, bør patienten henvises til vurdering mhp. levertransplantation (C). Ved recidiv efter\nlokalbehandling med resektion eller ablation bør patienten vurderes mhp levertransplantation uanset Child Pugh Score (C)\n16. Patienter, der er levertransplanteret kontrolleres for recidiv ved leverspecifik\nthoraco-abdominal CT eller MR-undersøgelser 3, 6, 9, 12, 18, 24, 36, 48 og 60 mdr.\nHver 3. måned måles alfa-føtoprotein (C)\n17. Recidiv af HCC efter levertransplantation behandles efter sædvanlige\nretningslinjer, dog kommer re-transplantation ikke på tale (C)",
+      "start_page": 20,
+      "end_page": 21
+    },
+    {
+      "heading": "18. Adjuverende systemisk behandling efter levertransplantation er ikke indiceret (C)",
+      "text": "Litteratur og evidensgennemgang\nNedenstående er en sammenfatning af ”Recommendations for liver transplantation for hepatocellular carcinoma: an international consensus conference report” (71).\nØvrige nyere nøglereferencer (72, 73).\nLevertransplantation bør forbeholdes patienter med 5-års overlevelse, som er sammenlignelig med 5-års overlevelsen hos non-HCC patienter, dvs. ca. 70%.\nPrognosen bedømmes primært på baggrund af diameter af største tumor og antallet af tumorer i leveren. Der\nmå ikke være ekstrahepatisk tumor. Mikroinvasion er et meget dårligt prognostisk tegn, og der er en vis\nkorrelation til tumorstørrelse og antal samt visse biomarkører; Der findes dog ingen sikre, hverken radiologiske\nmetoder eller biokemiske biomarkører til at påvise mikroinvasion, hvorfor mikroinvasion endnu ikke indgår i selektionen af patienter til levertransplantation. Hvis man er i stand til validt at dokumentere, at der ikke er\nmikroinvasion, vil flere patienter kunne transplanteres med bedre prognose (74).\nAktuelt er de kriterier vi anvender i Danmark de såkaldte Milano-kriterier, dog med mulighed for at bruge AFPbaserede kriterier, hvis der foreligger en AFP-måling inden transplantation (se nedenfor).",
+      "start_page": 21,
+      "end_page": 21
+    },
+    {
+      "heading": "Milanokriterier",
+      "text": "Ved solitær tumor må maksimale diameter højst være 5 cm. Ved flere læsioner må største diameter være 3\ncm, og der må maksimalt være 3 tumorer i leveren.\nHos non-cirrotiske patienter skal man i hvert enkelt tilfælde overveje levertransplantation som alternativ til resektion, såfremt tumor er begrænset til leveren, uanset størrelse og antal.",
+      "start_page": 21,
+      "end_page": 21
+    },
+    {
+      "heading": "AFP-baserede krtiterier",
+      "text": "Flere nyere studier tyder på at inklusion af AFP, sammen med størrelse og antal af HCC, i transplantationskriterier forbedrer selektionen af patienter med god prognose.\nMetroticket 2.0 studiet er baseret på 1018 italienske patienter, hvor resultaterne efterfølgende blev valideret i\n341 patienter fra Shanghai (75). Sammenlignet med Milano-kriterierne og andre kriterier baseret på størrelse\nog antal var Metroticket 2.0 overlegen mhp. at kunne prædiktere overlevelse efter transplantation.\n5-5-500 studiet er baseret på 965 patienter fra Japan transplanteret med levende donorer (76). Med de\nfastsatte kriterier (tumor størrelse ≤5 cm i diameter, tumor antal ≤5, og AFP ≤500 ng/ml) fandt man en 5-års recidivrate på 7,3% og bedre selektion sammenlignet med Milano-kriterierne. Resultaterne er ikke valideret i\nekstern kohorte.\nI et studie baseret på 537 franske patienter, hvor resultaterne blev valideret i yderligere 435 franske patienter fra en anden tidsperiode (77). Ligesom de to andre studier, kunne man vise forbedret selektion sammenlignet\nmed Milano-kriterierne.\nAlle 3 studier anvender AFP sammen med størrelse og antal af HCC, men med forskellig brug af cut-off værdier for AFP, størrelse og antal. Metroticket 2.0 studiet har inkluderet et skema (se figur) som sikrer nem\nog brugervenlig klinisk anvendelse af kriterierne.",
+      "start_page": 22,
+      "end_page": 22
+    },
+    {
+      "heading": "Metroticket 2.0 algoritme",
+      "text": "Patientværdier og – præferencer\nEj anført.\nRationale\nEj anført.\nBemærkninger og overvejelser\nEj anført.",
+      "start_page": 22,
+      "end_page": 22
+    },
+    {
+      "heading": "Ablation",
+      "text": "19. Perkutan ablation bør tilbydes patienter med tidlig HCC i cirrotisk lever som\nførstelinjebehandling (BCLC-stadie 0 og A, højst tre tumorer < 3 cm) (A)\n20. Laparoskopisk eller åben ablation bør tilbydes ovenstående patienter hvis\nperkutan adgang ikke er mulig (C)\n21. Kombinationsbehandling af RFA og TACE kan tilbydes patienter med tumorer\nmellem 3 og 5 cm (A)\n22. Adjuverende systemisk behandling efter radikal resektion eller ablation er ikke\nindiceret (C)\n23. Der skal udføres kontrol med CT eller MR-undersøgelser 4-6 uger efter\nbehandlingen, og derefter kontrol med CT eller MR-skanning 3, 6, 9, 12, 18, 24, 36,\n48 og 60 mdr. efter behandlingen (C)\nLitteratur og evidensgennemgang\nI Danmark foretages invasiv ablationsbehandling aktuelt med radiofrekvens (RFA) eller microwaves/mikrobølger (MW) som energikilder. Der er ingen forskel i terapeutisk effekt mellem de to\nmodaliteter. Perkutan etanol injektion (PEI) kan være en mulighed i udvalgte tilfælde.",
+      "start_page": 23,
+      "end_page": 23
+    },
+    {
+      "heading": "Ablationsbehandlinger kan foregå perkutant (lukket), laparoskopisk, eller ved laparotomi (åben). Åben ablation",
+      "text": "anvendes ofte i kombination med leverresektion.\nIndikationer:",
+      "start_page": 23,
+      "end_page": 23
+    },
+    {
+      "heading": "Ablationsbehandling er indiceret ved patienter med HCC.",
+      "text": "Antallet af tumorer skal ikke anses for en absolut kontraindikation til ablation, hvis behandlingen af alle tumor forandringer kan opnås. Normalt vil man anbefale at BCLC-kriterierne følges, dvs. antallet skal være ≤ 3.\nDe bedste resultater opnås når tumor er under 3 cm. Kombinationen af ablation og kemoembolisering kan\nanvendes ved større tumorers (78).",
+      "start_page": 23,
+      "end_page": 23
+    },
+    {
+      "heading": "Ablation, RF eller MW er en mulig behandlingsmodalitet af HCC op til 3 cm under hensyntagen til størrelsen af en evt. resektion (7).",
+      "text": "Hos patienter med små HCC < 3cm viser RCT at perkutan ablation er ligeværdig med resektion i forhold til lokal tumorkontrol og langtidsoverlevelse men med signifikant lavere komplikationsrate og indlæggelsestid",
+      "start_page": 23,
+      "end_page": 23
+    },
+    {
+      "heading": "Overlevelse",
+      "text": "I nylige opgørelser for overall survival efter RFA finder man ca. 95%, 60% og 25-30% 1-, 5-, og 10-års\noverlevelse, og hvis patienter er inden for Milano kriterier angives overlevelse efter 1 år (87–99%), 3 år (60–\n87%) og efter 5 år (42–74%) (80).",
+      "start_page": 24,
+      "end_page": 24
+    },
+    {
+      "heading": "Kombinationsbehandling",
+      "text": "RFA kan kombineres med kemoembolisering og i en metaanalyse omfattende 1 randomiseret studie og 10 kohortestudier fandt man bedre tumor respons og sygdomsfri overlevelse ved kombinationsbehandlingen (81).\nDer foreligger ligeledes en metaanalyse af kombinations behandling med TACE og RFA sammenlignet med\nRFA alene, og ligeledes her finder man bedre overlevelse ved kombinationsbehandling sammenlignet med\nRFA alene. Det skal dog bemærkes at i de fleste af studierne var tumor >3 cm (82).",
+      "start_page": 24,
+      "end_page": 24
+    },
+    {
+      "heading": "Kombinationsbehandling kan således overvejes hos patienter med tumorer mellem 3 og 5 cm og i øvrigt opfylder kriterierne for RFA og TACE-behandling.",
+      "text": "Follow-up efter ablation\nDer skal udføres kontrol med CT eller MR-undersøgelser 4-6 uger efter behandlingen, og derefter kontrol med\nCT eller MR skanning 3, 6, 9, 12, 18, 24, 36, 48 og 60 mdr. efter behandlingen.",
+      "start_page": 24,
+      "end_page": 24
+    },
+    {
+      "heading": "Strålebehandling",
+      "text": "24. SBRT er en kurativt intenderet behandling med begrænset toksicitet, som aktuelt\nkan overvejes i situationer hvor man hverken kan behandle med ablation eller resektion(C)\n25. Radioembolisering (selektiv intern radioterapi (SIRT)) kan overvejes som\ndownstaging mhp at opnå resektabilitet eller Milano kriterier til transplantation.\nKan også anvendes ved tumortrombe, hvis det er med kurativt sigte (resektion)\n(C)\nLitteratur og evidensgennemgang",
+      "start_page": 24,
+      "end_page": 24
+    },
+    {
+      "heading": "Strålebehandling for HCC",
+      "text": "Ved stereotaktisk strålebehandling (SBRT) gives en præcis stråling mod et nøje defineret target-volumen, oftest med få fraktioner og høj dosis per fraktion.\nFase I og fase II studier om SBRT af HCC viser at strålebehandlingen kan gives med lav risiko og begrænsede bivirkninger til patienter med Child Pugh A, maximal tumordiameter på 5 cm og tilstrækkelig\nlevervolumen (83). Flere publikationer viser at patienter med Child-Pugh B og C udviklede irreversibelt\nleversvigt, hvorfor pt med Child Pugh score >7 ikke anbefales stereotaktisk strålebehandling (84, 85). Der\nfindes en række blandede opgørelser, der indeholder patienter med primær levercancer og levermetastaser.",
+      "start_page": 24,
+      "end_page": 24
+    },
+    {
+      "heading": "To kliniske opgørelser, der beskriver rene patientmaterialer med HCC viser lokal kontrol rater på 67-79% 1 år efter SBRT (86). Overlevelse er 68-93% og 42-59% hhv. 1 og 3 år efter SBRT. Disse tal skal ses i lyset af, at",
+      "text": "patienter, der henvises til SBRT, almindeligvis er uegnede til kirurgisk resektion, RFA eller lignende minimal invasiv ablation.\nSIRT (Selektiv Intern Radio-Terapi) ved HCC\nVed selektiv intern radioterapi (SIRT), også benævnt radioembolisering, anvendes 90 Yttrium mikrosfærer, der via arteria femoralis infunderes gennem kateter i arteria hepatica. Ganske små partikler indeholdende det\nradioaktive stof, Yttrium 90, en beta-emitter med meget kort strålerækkevide (2,5mm maks. 11mm) injiceres\nselektivt i tumor. Da behandlingen kan udføres meget selektivt kan den f.eks. anvendes hos patienter med\nHCC med tumortrombe og god leverfunktion, hvor behandlingsstrategien er med kurativt sigte. I et\nrandomiseret studie med SIRT overfor Sorafenib til lokalavanceret HCC var der ikke nogen forskel i overlevelse mellem SIRT overfor Sorafenib, men det bemærkes at studiet kun inkluderer asiatiske patienter .\nStudiet viste at livkvalitet hos SIRT behandlede var bedre end hos patienter behandlet med sorafenib (87).\nSIRT kan anvendes som en lokal behandlingsmulighed med kurativt sigte, hvor der ved downstaging kan bringe patienten til resektion eller opfyldelse af Milano-kriterierne. SIRT har som sideeffekt at den ikke\nbehandlede del af leveren hypertrofierer, hvilket kan være en fordel, hvor der planlægges resektion.\nForudsætning for behandling med SIRT er god leverfunktionillirubin<34 mmol/l, ingen ascites) og god almen tilstand PS 0-1 (88-90).\nPatientværdier og – præferencer\nEj anført.\nRationale\nEj anført.\nBemærkninger og overvejelser\nEj anført.",
+      "start_page": 24,
+      "end_page": 25
+    },
+    {
+      "heading": "Non-kurativ behandling",
+      "text": "26. Kemoembolisering rekommanderes som førstelinje ikke-kurativ terapi for BCLC\nintermediate B klasse patienter (Child Pugh score ≤ 7 med performancescore 0-1.\nTACE kan også anvendes som downstaging (A)",
+      "start_page": 25,
+      "end_page": 25
+    },
+    {
+      "heading": "27. Adjuverende systemisk behandling efter TACE er ikke indiceret (A)",
+      "text": "28. SIRT kan anvendes ved begrænset multifokal sygdom og hvis patienten ikke\ntolererer systemisk behandling (C)\nLitteratur og evidensgennemgang\nBehandlinger som har vist at kunne forlænge overlevelsen hos patienter i god performance (91, 92) med god leverfunktion er transarteriel kemoembolisering (TACE), immunterapi og tyrosinkinasehæmmerne sorafenib,\nregorafenib og lenvatinib (93-95).",
+      "start_page": 25,
+      "end_page": 25
+    },
+    {
+      "heading": "Transarteriel embolisering og kemoembolisering.",
+      "text": "Ved embolisering lukkes arterieforsyningen til tumor, hvorved man inducerer iskæmisk tumornekrose med en høj grad af objektivt respons. Oftest kombineres denne behandling med injektion af det kemoterapeutiske stof\nDoxorubicin.\nDer er 2 forskellige muligheder for dette:\nVed traditionel TACE injiceres emboliseringsmidlet Lipiodol samtidigt med Doxorubicin.\nVed DEB-TACE(Drug-Eluting Beads) injiceres små partikler, indeholdende Doxorubicin.\nLipoidolen og partiklerne fanges i tumor og afgiver langsomt Doxorubicinen til tumor.\nTACE og DEB-TACE skal overvejes til patienter med HCC op til BCLC intermediær stadie B, og med Child\nPugh <8 point.\nBåde TACE og DEB-TACE inducerer tumornekrose hos mere end 50% af patienterne (96).\nBehandlingsrespons er associeret med en signifikant forbedring i overlevelsen og tumor skal behandles mindst\n2 gange inden evt. yderligere TACE-behandling opgives pga. manglende effekt. Forbedring i overlevelsen hos\nde behandlede patienter varierer mellem 20-60% efter 2 år (97), men det står klart, at relevansen af forbedringen i forhold til ubehandlede patienter er afhængig af patientens base-line karakteristik hvad angår\ntumorstage, leverfunktion og generel helbredstilstand.\nDer er ikke påvist effekt ved adjuverende behandling med Sorafenib i en randomiseret fase III undersøgelse,\nSPACEstudiet efter TACE (98).\nPatientværdier og – præferencer\nEj anført.\nRationale\nEj anført.\nBemærkninger og overvejelser\nEj anført.",
+      "start_page": 26,
+      "end_page": 26
+    },
+    {
+      "heading": "Systemisk behandling",
+      "text": "29. Atezolizumab og Bevacizumab anbefales som førstelinje systemisk behandling til\npatienter med bevaret leverfunktion og i god almentilstand, hvor resektion, transplantation, ablation eller TACE/SIRT ikke kan udføres eller ikke forventes at\nhave effekt eller til patienter med ekstra hepatisk sygdom (A)\n30. Sorafenib eller Lenvatinib kan anvendes som alternativ til Atezolizumab og\nBevacizumab i første linie (A)\n31. Sorafenib, Regorafenib og Lenvatinib kan anvendes i 2. og 3. linje hos patienter\nmed bevaret leverfunktion (C)\nLitteratur og evidensgennemgang",
+      "start_page": 26,
+      "end_page": 27
+    },
+    {
+      "heading": "1. linie behandling",
+      "text": "For patienter med bevaret leverfunktion, som enten ikke har effekt af TACE, eller som præsenterer sig med mere avanceret HCC, kan behandling med Atezolizumab plus Bevacizumab eller sorafenib/lenvatinib forlænge\noverlevelsen.\nAtezolizumab og Bevacizumab anbefales i første linie på baggrund af et randomiseret fase 3 studie(95), hvor behandling med Atezolizumab sammen med Bevacizumab viste signifikant forlænget OS sammenlignet med\nSorafenib i 1. linje (HR 0,66 (95% 0,52-0,85, p<0,001, 19.2 mth vs 13.4 mth\nORR 30% vs 11% p<0.001CR 8% vs <1%).\nBehandlingen er godkendt i første linie af Medicinrådet (99).\nSorafenib er en peroral tyrosinkinase hæmmer med aktivitet mod vækstfaktorer, herunder specielt angiogene vækstfaktorer (100, 101). SHARP studiet publiceret i 2008 inkluderede 602 patienter med avanceret HCC\n(102). Sammenlignet med placebo fandtes en signifikant bedret median overlevelse på 2,8 mdr. (10,7 mdr.\nversus 7,9 mdr.). Responsraten var < 5%. Behandlingen havde ingen eller meget ringe effekt på tid til\nsymptomudvikling eller på livskvalitet målt vha. spørgeskemaer(103).\nLenvantinib, en multi-kinasehæmmer, har i et randomiseret fase III studie vist non-inferiority sammenlignet med Sorafenib i 1. line (93). I dette multicenterstudie deltog 954 patienter. Median OS var 13,6 måneder i\ngruppen, der fik Lenvatinib, 12,3 måneder i gruppen, der fik Sorafenib. HR: 0,92, 95% CI 0.79-1.06. Margen\nfor non-inferioritet var sat til 1,08. Der er forskel i bivirkningsprofilen, og derfor kan der være patientrelaterede\nfaktorer, der gør, at et præparat foretrækkes frem for et andet. Behandling med Lenvatinib er godkendt af\nMedicinrådet.",
+      "start_page": 27,
+      "end_page": 27
+    },
+    {
+      "heading": "2. linje behandling:",
+      "text": "Sorafenib, Lenvatinib eller Regorafenib kan anvendes som 2. og 3. linje hos patienter med bevaret\nleverfunktion.\nI 2016 blev data fra et stort fase III studie; RESORCE publiceret (94). Dette studie inkluderede 573 patienter\nmed bevaret leverfunktion (Child Pugh A), der havde sygdomsprogression og havde tolereret behandling med\nSorafenib ≥400 mg dagligt i ≥20 af de sidste 28 dage af behandling med Sorafenib i 1. linie. Patienterne blev\nrandomiseret 2:1 til enten Regorafinib 160 mg x 1 p.o eller placebo. Studiet demonstrerede en signifikant\noverlevelsesgevinst (HR 0,63, CI 0,50-0,79) på 2,8 mdr fra 7,8 mdr i placebo-armen til 10,6 mdr. i Regorafenib\narmen. Regorafenib er godkendt af Medicinrådet som 2. linie behandling.\nCabozantanib som 2. og 3. linjebehandling har i et randomiseret fase III studie med 707 deltagere vist\nsignifikant forlænget overlevelse sammenlignet med placebo (median OS 10,2 måneder i gruppen, der fik\nCabozantanib og 8.0 i placebogruppen; HR:0,76; 95% CI: 0,63-0,92 (104). Cabozantanib er ikke godkendt af\nMedicinrådet.\nZhu et al publicerede i 2015 et negativt 2. linie studie med Ramucirumab over for placebo. I en\nsubgruppeanalyse af patienter med alfa-føtoprotein > 400 ng/ml, var der signifikant effekt. I et efterfølgende\nrandomiseret fase 3 studie, som undersøgte effekten af Ramucimurab overfor placebo i 2. linie, og hvor alle\npatienter havde alfa-føtoprotein > 400 ng/ml (REACH-2) fandt man signifikant effekt på median OS på 8,5 mdr.\nvs 7,3 måneder; HR:0,71, 95%CI, 0,53-0,95; p=0.0199 (105).\nRamucimurab har ikke været vurderet i Medicinrådet.",
+      "start_page": 27,
+      "end_page": 28
+    },
+    {
+      "heading": "Immunterapi i senere linjer",
+      "text": "Der foreligger 2 fase II studier, der påviser omkring 20% responsrate og uovertruffen overlevelse (12 mdr. OS\npå 54%) efter behandling med en PD1-inhibitor (Nivolumab i Checkmate 040 (95) og Pembrolizumab i\nKeynote 240 (106).\nI det randomiserede fase III studie (Keynote-240) viste Pembrolizumab i 2. linje ikke nogen signifikant forøget\nOS sammenlignet med placebo på trods af en p værdi på 0,0238 da studiet havde en prædefineret p-værdi på\n0,0174 for signifikans. En anden årsag til at studiet faldt negativt ud kan skyldes, at en stor del af de placebobehandlede patienter modtog Regorafenib efterfølgende. Regorafenib var ikke standardbehandling i 2. linje,\nda studiet blev påbegyndt. Keynote-240 opnåede derfor ikke statistisk signifikans. På trods heraf vurderes\neffekten klinisk betydende og der afventes resultater fra igangværende studier med behandling som adjuverende og ved metastaserende sygdom.\nDer er ikke påvist effekt med Sorafenib som adjuverende behandling i to randomiserede fase III undersøgelser, hverken i STORM studiet efter resektion eller ablation (107) eller i SPACE-studiet efter TACE\nI en randomiseret fase 3 undersøgelse HIMALAYA trial blev 1171 patienter randomiseret til 1. linie behandling\nmellem initialt 4 grupper (1. en enkelt dosis af tremelimumab (300 mg) plus durvalumab (1500 mg efterfulgt af\ndurvalumab alene [1500 mg hver 4. uge] STRIDE), 2. durvalumab alene (1500 mg hver 4. uge ), 3. sorafenib\n(400 mg 2 gange dagligt) eller 4. tremelimumab 75 mg hver 4. uge plus durvalumab 1500 mg hver 4. uge,\nsidstnævnte blev stoppet, da interim analyse skønnede sammenlignelige resultater med durvalumab alene.\nMedian overall survival var 16.43 mdr (95% confidence interval [CI], 14.16 to 19.58) for STRIDE, 16.56 mdr\n(95% CI, 14.06 to 19.12) med durvalumab, og 13.77 mdr (95% CI, 12.25 to 16.13) med sorafenib. Overall\nsurvival ved 36 mdr var henholdsvis 30.7%, 24.7%, and 20.2%. Overall survival hazard ratio for STRIDE\nversus sorafenib var 0.78 (96.02% CI, 0.65 to 0.93; P=0.0035). Overall survival med durvalumab monoterapi\nvar noninferior til sorafenib (hazard ratio, 0.86; 95.67% CI, 0.73 to 1.03; noninferior margin, 1.08). Median\nprogression-free survival var ikke significant forskellige mellem de tre grupper.\nBehandlingen er ikke vurderet i medicinrådet (108).\nPatientværdier og – præferencer\nEj anført.\nRationale\nEj anført.\nKlinisk Retningslinje │Kræft\nBemærkninger og overvejelser\nEj anført.",
+      "start_page": 28,
+      "end_page": 29
+    },
+    {
+      "heading": "HCC hos børn og unge",
+      "text": "32. Ved mistanke om HCC i aldersgruppen 0-1\nafdeling for Børneonkologi eller Børneonk\nUniversitetshospital. Der henvises til ”Pak\nDer henvises til ”Pakkeforløb for Kræft hos børn”\nDLGCG\n18 skal der henvises til Rigsho kologisk Afdeling, Aarhus\nkkeforløb for Kræft hos børn”\nG\nospitalets",
+      "start_page": 29,
+      "end_page": 29
+    },
+    {
+      "heading": "4. Referencer",
+      "text": "1. Kræftens Bekæmpelse. Statstik om leverkræft [Available from:\n2. Jepsen P, Kraglund F, West J, Villadsen GE, Sørensen HT, Vilstrup H. Risk of hepatocellular carcinoma\nin Danish outpatients with alcohol-related cirrhosis. J Hepatol. 2020;73(5):1030-6.\n3. Dansk Selskab for Gastroenterologi og Hepatologi. Hepatocellulært carcinom [Available from:\n4. Hepatologi DSfGo. Non-alkoholisk fedtleversygdom (NAFLD): Diagnostik og behandling [Available\nfrom:\n5. Bloomer JR, Waldmann TA, McIntire KR, Klatskin G. alpha-fetoprotein in noneoplastic hepatic\ndisorders. Jama. 1975;233(1):38-41.\n6. Alpert E, Feller ER. Alpha-fetoprotein (AFP) in benign liver disease. Evidence that normal liver\nregeneration does not induce AFP synthesis. Gastroenterology. 1978;74(5 Pt 1):856-8.\n7. EASL Clinical Practice Guidelines: Management of hepatocellular carcinoma. J Hepatol.\n19. Balci NC, Befeler AS, Leiva P, Pilgram TK, Havlioglu N. Imaging of liver disease: Comparison between\nquadruple-phase multidetector computed tomography and magnetic resonance imaging. J Gastroen\nHepatol. 2008;23(10):1520-7.\n73. Samuel D, Colombo M, El-Serag H, Sobesky R, Heaton N. Toward Optimizing the Indications for\nOrthotopic Liver Transplantation in Hepatocellular Carcinoma. Liver Transplant. 2011;17:S6-S13.\nLitteratursøgning\nLitteraturen er fremsøgt ad hoc. Dette afsnit uddybes ved næste opdate\nLitteraturgennemgang\nRapportens videnskabelige evidens er graderet i seks niveauer og anbe",
+      "start_page": 30,
+      "end_page": 37
+    },
+    {
+      "heading": "Videnskabelig evidens:",
+      "text": "la Metaanalyse af randomiserede, kontrollerede undersøgelser\nIb Mindst en randomiseret, kontrolleret undersøgelse lIa Mindst en god, kontrolleret, ikke-randomiseret undersøgelse\nIIb Mindst en anden type, god, lignende, eksperimentel, ikke-randomise\nIII Gode deskriptive undersøgelser\nIV Ekspertkomite eller velestimerede autoriteter",
+      "start_page": 37,
+      "end_page": 37
+    },
+    {
+      "heading": "Styrke af anbefalinger:",
+      "text": "A - Kræver mindst en randomiseret undersøgelse blandt flere gode und grundlæggende for anbefalingen (la, lb)\nB - Kræver gode, kliniske undersøgelser som grundlag for anbefalingen\nC - Kræver ekspertkomite eller autoritet, men siger, at der ikke findes g grundlag (IV)\nFormulering af anbefalinger\nDer er i formulering af anbefalingerne lagt vægt på et aktivt sprog, heru\nGruppen har i fællesskab formuleret anbefalingerne og godkendt disse.\nInteressentinvolvering\nDer er i denne omgang ikke involveret patienter eller øvrige interessent\nHøring\nDenne retningslinje har ikke været i offentlig høring..\nGodkendelse\nFaglig godkendelse:\nAlle relevante parter i DLCGC er hørt og har haft mulighed for at komm\nAdministrativ godkendelse:\n18. december 2024.\nering.\nefalingerne i tre eret undersøgels\ndersøgelser, som n (lIa, IIb, III)\ngode kliniske und under brugen af k\nter foruden DLG mentere på retnin\nDL\nstyrke\nse\nm alle dersøg\nkan, b\nGCG.\nngslinj\nLGCG\ner.\ner\ngelser\nbør og jen.\nG\nr som g skal\nm\nl.\nKlinisk Retningslinje │Kræft\nAnbefalinger, der udløser betydelig meru\nIngen af retningslinjens anbefalinger vurderes at u\nBehov for yderligere forskning\nEj anført.\nForfattere og habilitet\nRetningslinjerne er udarbejdet af:\nRepræsentanter godkendt af Dansk Kirurgisk Sels\n• Peter Nørgaard Larsen, Redaktør, Rigsho\n• Ingen interessekonflikt\n• Allan Rasmussen, Rigshospitalet\n• Ingen interessekonflikt\n• Nicolai Schultz, Rigshospitalet\n• Ingen interessekonflik\n• Hans Christian Pommergaard, Rigshospit\n• Ingen interessekonflikt\n• Frank Viborg Mortensen, Aarhus Universit\n• Ingen interessekonflikt\n• Anders Riegels Knudsen, Aarhus Univers\nover-tilknytning-til-virksomheder/apotekere\nder-modtager-oekonomisk-stoette-eller-ha\n• Mogens Stender, Ålborg Universitetshosp\n• Ingen interessekonflikt\n• Torsten Pless, Odense Universitetshospita\n• Ingen interessekonflikt\nRepræsentanter godkendt af Dansk Selskab for K\n• Kirsten Vistisen, Herlev Universitetshospit\n• Ingen interesse konflikt\n• Finn Ole Larsen, Herlev Universitetshospi\n• Ingen interessekonflikt\n• Marianne Feen Rønjom, Herlev Universite\n• Ingen interessekonflikt\n• Merete Krogh, Odense Universitetshospita\n• Ingen interessekonflikt\n• Britta Weber, Aarhus Universitetshospital\nudgif\nudløse\nskab:\nospital\ntalet\ntetsho\nsitetsh\nndelse\ne,-lae\nar-tilkn\npital\nal\nKlinisk\ntal\nital\netshos\nal\nft\ne bety let\nospita\nhospita\ne/sund\neger,-s\nnytnin\nOnko\nspital\nydelig\nal\nal\ndheds\nsygep\nng-til-v\nologi:\nmeru\nsperso\nplejers\nvirkso\nudgift.\noners\nsker-o\nomhed\ns-tilkny\nog-tan\nder/\nytning\nndlaeg\nDL\ng-til-vi\nger/lis\nLGCG\nirksom\nste-ov\nG\nmhede\nver-pe\ner/listerersoner-\nKlinisk Retningslinje │Kræft\nover-tilknytning-til-virksomhede\nder-modtager-oekonomisk-stoe\n• Hanna Rahbek Mortensen, Aar\n• Ingen interessekonflikt\n• Mohamed Metwally, Aarhus Un\n• Ingen interessekonflikt\n• Morten Ladekarl, Ålborg Univer\n• Ingen interessekonflikt\n• Signe Risum, Rigshospitalet\n• Ingen interesse konflikt\nRepræsentanter godkendt af Dansk Rad\n• Eva Fallentin Rigshospitalet\n• Ingen interessekonflikt\n• Lars Peter Larsen, Aarhus Univ\n• Ingen interessekonflikt\n• Nikolaj Skou, Aarhus Universite\nover-tilknytning-til-virksomhede\nder-modtager-oekonomisk-stoe\nRepræsentanter godkendt af Dansk Pat\n• Gro Willemoe, Rigshospitalet\n• Ingen interessekonflikt\n• Stephen Hamilton, Aarhus Univ\n• Ingen interessekonflikt\n• Mette Bak Nielsen, Aarhus Univ\n• Ingen interessekonflikt\nRepræsentanter godkendt af Dansk Sel\n• Jens Otto Clemmesen, Rigshos\n• Ingen interessekonflikt\n• Henning Grønbæk, Aarhus Univ\n• Annette Dam Fialla, Odense Un\n• Ingen interessekonflikt\n• Claes Pietersen, Odense Unive\n• Ingen interessekonflikt\nRepræsentanter godkendt af Dansk Sel\n• Stine Kramer, Aarhus Universite\n• Ingen interessekonflikt\n/da/godken\ner/apotekere\nette-eller-ha\nrhus Univer niversitetsh\nrsitetshospi\nadiologisk S versitetshos\netshospital\n/da/godken\ner/apotekere\nette-eller-ha\ntologi Selsk versitetshos\nversitetsho\nlskab for G spitalet\nversitetsho\nniversitetsh\nersitetshosp\nlskab for K etshospital\nndelse\ne,-lae\nar-tilkn\nrsitets\nhospita\nital\nSelska\nspital\nndelse\ne,-lae\nar-tilkn\nkab\nspital\nospital\nGastro\nospital\nhospit\npital\nKlinisk\nl\ne/sund\neger,-s\nnytnin\nshosp\nal\nab\ne/sund\neger,-s\nnytnin\nl\noenter\nl\ntal\nFysio\ndheds\nsygep\nng-til-v\npital\ndheds\nsygep\nng-til-v\nrologi\nologi o\nsperso\nplejers\nvirkso\nsperso\nplejers\nvirkso\nog He og Nu\noners\nsker-o\nomhed\noners\nsker-o\nomhed\nepato\nuklearm\ns-tilkny\nog-tan\nder/\ns-tilkny\nog-tan\nder/\nologi\nmedic\nytning\nndlaeg\nytning\nndlaeg\ncin\nDL\ng-til-vi\nger/lis\ng-til-vi\nger/lis\nLGCG\nirksom\nste-ov\nirksom\nste-ov\nG\nmhede\nver-pe\nmhede\nver-pe\ner/listerersoner-\ner/listerersoner-\nKlinisk Retningslinje │Kræft\nDLGCG’s Sekretariat:\n• Lotte Schultz, Rigshospitalet\n• Ingen interessekonflikt\nDen enkelte deltager har deltaget i DLGCG’s seminarer og/eller aktivt bidra og/eller læst korrektur på retningslinjerne og efterfølgende godkendt dem.\nKøbenhavn 17.11.2024\nPeter Nørgaard Larsen, Kirurgisk Klinik C, Rigshospitalet.\nJf. Habilitetspolitikken henvises til deklaration via Lægemiddelstyrelsens hj\nsamarbejdsrelationer:\nvirksomheder/lister-over-tilknytning-til-virksomheder/apotekere,-laeger,-syg\nPlan for opdatering\nDLGCG’s styregruppe samles en gang om året mhp. revision af retningslin\ndiagnostik og behandling vil retningslinjerne ændres oftere.\nVersion af retningslinjeskabelon\nRetningslinjen er udarbejdet i version 9.3 af skabelonen.\nDLGCG\naget med indlæg til retnings jemmeside for detaljerede\nndhedspersoners-tilknytninggeplejersker-og-tandlaeger\nnjerne. Ved afgørende genne\nslinjerne\n-tilembrud i\nKlinisk Retningslinje │Kræft",
+      "start_page": 37,
+      "end_page": 41
+    },
+    {
+      "heading": "6. Monitorering",
+      "text": "Den kliniske kvalitetsdatabases styregruppe har mandatet til at beslutte data hvilke specifikke processer og resultater der monitoreres i databasen.\nabasen\nDLGCG\nns indikatorsæt, herunder",
+      "start_page": 41,
+      "end_page": 41
+    },
+    {
+      "heading": "7. Bilag",
+      "text": "Bilag 1 – (CT-protokol)\n3-faset MDCT-protokol til diagnostik af hepatocellulært carcinom, HCC\nProtokolforslag baseret på anvendelse af mindst 64 slice skanner",
+      "start_page": 42,
+      "end_page": 42
+    },
+    {
+      "heading": "Kontraststof",
+      "text": "Type Iodholdig non-ionisk kontrast 300 - 400 mg I/ml.\nMængde Optimal kontrast mellem hypervaskulært HCC og omgivende leverparenkym kræver en kontrastdosis på minimum 600 mg I pr kg legemsvægt\nOralt kontraststof Evt. vand ½ - 1 liter som oralt kontraststof\nSaltvand Efter kontraststofinjektionen injiceres saltvand, 40 ml, med samme hastighed som kontraststoffet\nFaser Tre faser efter i.v. kontrast. Der kan suppleres med tomskanning for at detektere\njernholdige regenerationsnoduli med høj densitet før kontrast, men tomskanning er ikke obligatorisk",
+      "start_page": 42,
+      "end_page": 42
+    },
+    {
+      "heading": "Kontraststof Injiceres med motorsprøjte, 4 – 5 ml/sek. Varighed af kontrastinjektionen skal være 25-30",
+      "text": "sek.\nDer anvendes bolustracking teknik med placering af ROI i aorta, lige kranielt for trunkus coeliakus\nTærskel for trigger 150 HU\nArteriefase Skanning 18 sekunder efter trigger giver optimal tumor/lever kontrast\nHele leveren dækkes\nVenefase Skanning 45 sekunder efter trigger (ca. 60 sekunder efter start af kontrastindgift)\nSkanningen omfatter thorax og hele abdomen og anvendes til vurdering af wash-out i tumor og relation til portal- og levervener, samt evt. metastaser\nSenfase 180 sekunder efter start af kontrastindgift. Hele leveren dækkes. Anvendes til vurdering af\nKlinisk Retni\n(ekvilibrium)",
+      "start_page": 42,
+      "end_page": 43
+    },
+    {
+      "heading": "Skan-teknik",
+      "text": "Detektor\nkonfiguratio\nKv\nEffektiv mAs\nBilleder\ningslinje │Kræft\n) wash-out i tumor.\n0,5 mm x 64 on\ns 250-300\nRekonstruktion i tre plan\nner med 3 mm snit\nDLGCG\nG\nBilag 2 - (MR protokol)\nVejledende protokol for MR af lever mhp. hepatocellulært carcinom, HCC, 1.5 – 3 Tesla magnet Snittykkelse\nog skantider afhænger af den anvendte skanner og gradientstyrken.\nT2 vægtede sekvenser mhp. hyperintensitet i tumor:\n1. Coronal HASTE/Single Shot FSE T2, 5- 6 mm snit\n2. Transversel FSE T2 (gerne restored/fast recovery/drive), 5-6 mm snit med fedtsuppression\nT1 vægtede sekvenser mhp. fedtindhold/blødning eller jernindhold i tumor\n3. Transversel T1 2D GRE in/opposed phase, 4 - 6 mm snit eller 3D Dixon-sekvens\nFedtsupprimerede T1 vægtede 3D sekvenser mhp. arteriel opladning og udvaskning i tumor:\n4. Transversel T1 3D GRE fatsat (VIBE/LAVA/THRIVE), 2-4 mm snit præ-ZIP\n5. Gentages efter Gadolinium kontrast i enkeltdosis 0,1 mmol pr kg, injektionshastighed 2 ml/sek med\nfast delay, skanning 20,60 og 180 sek. efter start af kontrast-injektionen. Evt. anvendes bolus-tracking\neller test-bolus-teknik.\nLeverspecifik kontrast øger sensitiviteten for HCC,men indgår ikke i den diagnostiske algoritme.\nDer er aktuelt to leverspecifikke kontraststoffer tilgængelige, begge Gadoliniumforbindelser, som ud over den kendte ekstracellulære kontrast-funktion har en leverspecifik effekt. Det ene er Gd-BOPTA (Multihance), hvor\nca. 5 % af kontrasten optages i levercellerne og udskilles i galden. Det andet er Gd-EO-DTPA (Primovist), hvor\n30-50 % af kontrasten optages i leveren, anbefalet dosis er her 0,025 mmol/kg. Primovist er endnu ikke\ngodkendt til markedsføring i Danmark og kræver derfor tilladelse fra Lægemiddelstyrelsen.\nVed anvendelse af leverspecifik kontrast gentages kontrast-serien (serie 5) med optagelser i hepatobiliær fase, dvs. 1 – 1½ time efter kontrastindgift ved Multihance og 20 minutter (forlænges til 30 min ved svær\ncirrose) efter kontrastindgift ved Primovist.\nVed anvendelse af Primovist ses pseudo-washout i den sene fase (180 sek), hvis processen ikke optager den leverspecifikke kontrast. Dynamisk washout må derfor kun beskrives ved Primovist, hvis det ses i venefase (60\nsek)\nDiffusionsvægtet MR øger også sensitiviteten for HCC og den diffusionsvægtede sekvens skannes før eller efter kontrastinjektion, optimalt som free breathing sekvens med navigatorstyring, idet man her kan skanne\nmed flere b-værdier (f.eks.50, 400 og 800) på én gang og få en nøjagtig ADC-map.",
+      "start_page": 43,
+      "end_page": 44
+    },
+    {
+      "heading": "8. Om denne kliniske retningslinje",
+      "text": "Denne kliniske retningslinje er udarbejdet i et samarbejde mellem Danske Multidisciplinære Cancer Grupper\n(DMCG.dk) og Regionernes Kliniske Kvalitetsudviklingsprogram (RKKP). Indsatsen med retningslinjer er\nforstærket i forbindelse med Kræftplan IV og har til formål at understøtte en evidensbaseret kræftindsats af høj og ensartet kvalitet i Danmark. Det faglige indhold er udformet og godkendt af den for sygdommen relevante\nDMCG. Sekretariatet for Kliniske Retningslinjer på Kræftområdet har foretaget en administrativ godkendelse af\nindholdet. Yderligere information om kliniske retningslinjer på kræftområdet kan findes på:\nRetningslinjen er målrettet klinisk arbejdende sundhedsprofessionelle i det danske sundhedsvæsen og indeholder systematisk udarbejdede udsagn, der kan bruges som beslutningsstøtte af fagpersoner og\npatienter, når de skal træffe beslutning om passende og korrekt sundhedsfaglig ydelse i specifikke kliniske situationer.\nDe kliniske retningslinjer på kræftområdet har karakter af faglig rådgivning. Retningslinjerne er ikke juridisk\nbindende, og det vil altid være det faglige skøn i den konkrete kliniske situation, der er afgørende for beslutningen om passende og korrekt sundhedsfaglig ydelse. Der er ingen garanti for et succesfuldt\nbehandlingsresultat, selvom sundhedspersoner følger anbefalingerne. I visse tilfælde kan en\nbehandlingsmetode med lavere evidensstyrke være at foretrække, fordi den passer bedre til patientens situation.\nRetningslinjen indeholder, ud over de centrale anbefalinger (kapitel 1 – quick guide), en beskrivelse af grundlaget for anbefalingerne – herunder den tilgrundliggende evidens (kapitel 3), referencer (kapitel 4) og\nanvendte metoder (kapitel 5).\nAnbefalinger mærket A baserer sig på stærkeste evidens og anbefalinger mærket D baserer sig på svageste evidens. Yderligere information om styrke- og evidensvurderingen, der er udarbejdet efter ”Oxford Centre for\nEvidence-Based Medicine Levels of Evidence and Grades of Recommendations”, findes her:\nGenerelle oplysninger om bl.a. patientpopulationen (kapitel 2) og retningslinjens tilblivelse (kapitel 5) er også\nbeskrevet i retningslinjen. Se indholdsfortegnelsen for sidehenvisning til de ønskede kapitler.\nRetningslinjeskabelonen er udarbejdet på baggrund af internationale kvalitetskrav til udvikling af kliniske retningslinjer som beskrevet af både AGREE II, GRADE og RIGHT.\nFor information om Sundhedsstyrelsens kræftpakker – beskrivelse af hele standardpatientforløbet med angivelse af krav til tidspunkter og indhold – se for det relevante sygdomsområde:\nDenne retningslinje er udarbejdet med økonomisk støtte fra Sundhedsstyrelsen (Kræftplan IV) og RKKP.",
+      "start_page": 45,
+      "end_page": 45
+    }
+  ]
+}

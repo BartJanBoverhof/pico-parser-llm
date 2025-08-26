@@ -246,28 +246,14 @@ DEFAULT_RETRIEVAL_PARAMS = {
 }
 
 # --------------------------------
-# Test queries (generic; only {indication} is injected)
-# --------------------------------
-TEST_QUERIES = {
-    "hta_submission": (
-        "Retrieve PICO-relevant passages for: {indication}. "
-        "Focus on explicit populations/sub-populations, alternatives as comparators, and reported outcomes."
-    ),
-    "clinical_guideline": (
-        "Guideline recommendations relevant to: {indication}, including sub-populations, "
-        "alternative options/SoC as comparators, and outcomes/evidence."
-    )
-}
-
-# --------------------------------
 # Case adapters with required terms for precision
 # --------------------------------
 CASE_CONFIGS = {
     "case_1_nsclc_krasg12c_monotherapy_progressed": {
         "indication": "treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context",
         "required_terms_clinical": [
-            [r'\\bkras\\b', r'\\bKRAS\\b'],
-            [r'\\bg12c\\b', r'\\bG12C\\b']
+            [r'\bkras\b', r'\bKRAS\b', r'\bKras\b'],
+            [r'\bg12c\b', r'\bG12C\b', r'\bG12c\b', r'\bg12C\b']
         ],
         "mutation_boost_terms": ["kras", "g12c", "kras-g12c", "krasg12c"]
     },
