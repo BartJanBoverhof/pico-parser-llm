@@ -166,6 +166,7 @@ clinical_split_results = rag.run_split_retrieval_for_source_type(
     final_k_outcomes=12
 )
 """
+
 # Step 8: Initialize PICO extractors
 rag.initialize_pico_extractors()
 
