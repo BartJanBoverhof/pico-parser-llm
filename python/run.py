@@ -29,11 +29,11 @@ class RagPipeline:
     3. Chunking
     4. Vectorization
     5. Retrieval (now supports split retrieval for Population & Comparator vs Outcomes)
-    6. PICO extraction
+    6. PICO extraction (now supports split extraction for Population & Comparator vs Outcomes)
 
     Enhanced to support different source types with specialized retrieval strategies
     and configurable filtering parameters including mutation-specific retrieval.
-    Now supports separate retrieval pipelines for Population & Comparator vs Outcomes.
+    Now supports separate retrieval and extraction pipelines for Population & Comparator vs Outcomes.
     """
 
     def __init__(
@@ -214,7 +214,7 @@ class RagPipeline:
         print(f"Initialized retriever with {vectorstore_type} vectorstore and specialized retrieval methods")
 
     def initialize_pico_extractors(self):
-        """Initialize separate PICO extractors for HTA and clinical guideline sources."""
+        """Initialize separate PICO extractors for HTA and clinical guideline sources with split extraction support."""
         if not self.source_type_configs:
             print("Source type configurations not provided. Cannot initialize PICO extractors.")
             return
@@ -222,24 +222,26 @@ class RagPipeline:
         if "hta_submission" in self.source_type_configs:
             hta_config = self.source_type_configs["hta_submission"]
             self.pico_extractor_hta = PICOExtractor(
-                system_prompt=hta_config["system_prompt"],
-                user_prompt_template=hta_config["user_prompt_template"],
+                system_prompt=hta_config.get("system_prompt", ""),
+                user_prompt_template=hta_config.get("user_prompt_template", ""),
                 source_type="hta_submission",
                 model_name=self.model,
-                results_output_dir=self.path_results
+                results_output_dir=self.path_results,
+                source_type_config=hta_config
             )
         
         if "clinical_guideline" in self.source_type_configs:
             clinical_config = self.source_type_configs["clinical_guideline"]
             self.pico_extractor_clinical = PICOExtractor(
-                system_prompt=clinical_config["system_prompt"],
-                user_prompt_template=clinical_config["user_prompt_template"],
+                system_prompt=clinical_config.get("system_prompt", ""),
+                user_prompt_template=clinical_config.get("user_prompt_template", ""),
                 source_type="clinical_guideline",
                 model_name=self.model,
-                results_output_dir=self.path_results
+                results_output_dir=self.path_results,
+                source_type_config=clinical_config
             )
         
-        print(f"Initialized specialized PICO extractors for available source types with model {self.model}")
+        print(f"Initialized specialized PICO extractors with split extraction support for available source types with model {self.model}")
 
     def get_all_countries(self):
         """
@@ -420,10 +422,12 @@ class RagPipeline:
         self,
         source_type: str,
         indication: Optional[str] = None,
-        model_override: Optional[Union[str, ChatOpenAI]] = None
+        model_override: Optional[Union[str, ChatOpenAI]] = None,
+        use_split_extraction: bool = True
     ):
         """
         Run PICO extraction for a specific source type using pre-stored chunks.
+        Now uses split extraction by default.
         """
         if self.pico_extractor_hta is None or self.pico_extractor_clinical is None:
             self.initialize_pico_extractors()
@@ -437,7 +441,8 @@ class RagPipeline:
             
         extracted_picos = extractor.extract_picos(
             indication=indication,
-            model_override=model_override
+            model_override=model_override,
+            use_split_extraction=use_split_extraction
         )
         
         return extracted_picos
@@ -527,10 +532,11 @@ class RagPipeline:
             print("Split retrieval failed, cannot proceed with PICO extraction")
             return []
         
-        print(f"Step 2: Running PICO extraction for {source_type}")
+        print(f"Step 2: Running split PICO extraction for {source_type}")
         extracted_picos = self.run_pico_extraction_for_source_type(
             source_type=source_type,
-            indication=indication
+            indication=indication,
+            use_split_extraction=True
         )
         
         return extracted_picos
