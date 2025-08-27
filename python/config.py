@@ -1,7 +1,8 @@
 # ============================
-# RAG Pipeline Configuration v1.3 (updated prompts)
+# RAG Pipeline Configuration v1.4 (split retrieval queries)
 # ============================
 # Goals:
+# - Separate retrieval for Population & Comparator vs Outcomes
 # - Generic, minimally-steering retrieval & prompting
 # - Only external runtime input: {indication}
 # - Intervention is NOT taken from documents; always "Medicine X (under assessment)"
@@ -9,32 +10,56 @@
 # - Clean separation of generic prompting from case adapters
 # - Enhanced mutation-specific retrieval for clinical guidelines
 
-CONFIG_VERSION = "1.3.0"
+CONFIG_VERSION = "1.4.0"
 
 # --------------------------------
-# Source type configurations (generic)
+# Source type configurations with split retrieval
 # --------------------------------
 SOURCE_TYPE_CONFIGS = {
     "hta_submission": {
-        # Lightweight retrieval query (parameterized only by {indication})
-        "query_template": """
-        Find passages that specify PICO (Population, Intervention, Comparator, Outcomes)
-        relevant to: {indication}.
+        # Population & Comparator retrieval query
+        "population_comparator_query_template": """
+        Find passages that specify Population and Comparator elements relevant to: {indication}.
         Prefer sections that clearly describe:
         - Population definitions (disease/stage, prior therapy/line, biomarker/testing, inclusion/exclusion, sub-populations)
         - Treatments assessed and alternatives considered as comparators (including SoC/BSC/placebo; ITC/NMA if present)
-        - Outcomes reported (clinical efficacy, safety, quality of life, economic/utilities)
+        - Treatment lines and patient selection criteria
+        - Biomarker testing requirements and mutation status
         Focus on text explicitly tied to the indication or clearly defined sub-populations thereof.
         """.strip(),
 
-        # Generic anchors to gently boost relevant sections
-        "default_headings": [
-            "pico", "scope of assessment", "population", "line of therapy",
-            "comparator", "comparators considered", "comparator rationale",
-            "treatment", "intervention", "therapy", "standard of care", "best supportive care", "placebo",
+        # Outcomes retrieval query
+        "outcomes_query_template": """
+        Find passages that specify clinical Outcomes and endpoints relevant to: {indication}.
+        Prefer sections that describe:
+        - Primary and secondary efficacy endpoints (OS, PFS, ORR, DoR, etc.)
+        - Safety outcomes and adverse events
+        - Quality of life measures and patient-reported outcomes
+        - Economic outcomes and utilities
+        - Statistical methods and analysis approaches
+        Focus on specific outcome definitions and measurement methodologies.
+        """.strip(),
+
+
+
+        # Generic anchors to gently boost relevant sections for population/comparator
+        "population_comparator_headings": [
+            "pico", "scope of assessment", "population", "line of therapy", "patient selection",
+            "comparator", "comparators considered", "comparator rationale", "treatment comparison",
+            "intervention", "therapy", "standard of care", "best supportive care", "placebo",
             "clinical evidence", "indirect treatment comparison", "network meta-analysis",
-            "outcomes", "efficacy", "safety", "quality of life", "economic", "utilities"
+            "inclusion criteria", "exclusion criteria", "biomarker", "mutation", "testing"
         ],
+
+        # Generic anchors for outcomes
+        "outcomes_headings": [
+            "outcomes", "endpoints", "efficacy", "safety", "quality of life", "economic", "utilities",
+            "overall survival", "progression-free survival", "response rate", "duration of response",
+            "adverse events", "tolerability", "patient reported outcomes", "statistical analysis",
+            "qol", "hrqol", "functional status", "functional assessment", "symptom burden", "proms"
+        ],
+
+
 
         # Keep neutral; no drug steering by default
         "default_drugs": [],
@@ -118,22 +143,48 @@ SOURCE_TYPE_CONFIGS = {
     },
 
     "clinical_guideline": {
-        # General retrieval query (parameterized only by {indication})
-        "query_template": """
-        Find passages with treatment recommendations relevant to: {indication}.
+        # Population & Comparator retrieval query
+        "population_comparator_query_template": """
+        Find treatment recommendations with population and comparator information relevant to: {indication}.
         Prefer content that states:
         - Applicable populations and sub-populations (biomarkers/testing, prior therapy/line, inclusion/exclusion)
-        - Recommended options and alternatives/SoC that could serve as comparators
-        - Outcomes/expected benefits/harms and any evidence strength/level if provided
+        - Recommended treatment options and alternatives/SoC that could serve as comparators
+        - Treatment sequencing and line of therapy considerations
+        - Patient selection criteria and biomarker requirements
+        Focus on guideline recommendations for specific patient populations and treatment alternatives.
         """.strip(),
 
-        "default_headings": [
-            "recommendation", "treatment", "therapy", "algorithm", "guideline",
-            "biomarker", "molecular testing", "mutation", "kras", "g12c",
-            "line of therapy", "subsequent therapy", "post-progression",
-            "targeted therapy", "immunotherapy", "chemotherapy",
-            "evidence level", "strength of recommendation", "practice point", "expected outcomes"
+        # Outcomes retrieval query
+        "outcomes_query_template": """
+        Find treatment recommendations with outcome information relevant to: {indication}.
+        Prefer content that describes:
+        - Expected clinical benefits and efficacy outcomes
+        - Safety considerations and adverse event profiles
+        - Quality of life impacts and patient-reported outcomes
+        - Evidence strength/level and recommendation grades if provided
+        - Response rates and survival outcomes
+        Focus on outcome expectations and evidence quality assessments.
+        """.strip(),
+
+
+
+        # Population/comparator specific headings
+        "population_comparator_headings": [
+            "recommendation", "treatment", "therapy", "algorithm", "guideline", "patient selection",
+            "biomarker", "molecular testing", "mutation", "kras", "g12c", "line of therapy", 
+            "subsequent therapy", "post-progression", "targeted therapy", "immunotherapy", "chemotherapy",
+            "comparator", "alternative", "standard of care", "best supportive care"
         ],
+
+        # Outcomes specific headings
+        "outcomes_headings": [
+            "outcomes", "efficacy", "safety", "response", "survival", "progression-free",
+            "adverse events", "toxicity", "quality of life", "evidence level", 
+            "strength of recommendation", "practice point", "expected outcomes", "benefit", "harm",
+            "qol", "hrqol", "functional status", "functional assessment", "symptom burden", "proms"
+        ],
+
+
 
         "default_drugs": [],
 
@@ -216,31 +267,63 @@ SOURCE_TYPE_CONFIGS = {
 }
 
 # --------------------------------
-# Default retrieval parameters with mutation-specific configurations
+# Default retrieval parameters with mutation-specific configurations and split retrieval
 # --------------------------------
 DEFAULT_RETRIEVAL_PARAMS = {
     "hta_submission": {
-        "initial_k": 40,
-        "final_k": 15,
-        "use_section_windows": True,
-        "window_size": 2,
-        "booster_weights": {
-            "heading": 2.0,
-            "pico_keywords": 2.0,
-            "comparator_keywords": 2.0,
-            "mutation_keywords": 3.0
+        "population_comparator": {
+            "initial_k": 50,
+            "final_k": 20,
+            "use_section_windows": True,
+            "window_size": 2,
+            "booster_weights": {
+                "heading": 2.5,
+                "population_keywords": 3.0,
+                "comparator_keywords": 3.0,
+                "mutation_keywords": 4.0,
+                "biomarker_keywords": 3.5
+            }
+        },
+        "outcomes": {
+            "initial_k": 40,
+            "final_k": 15,
+            "use_section_windows": True,
+            "window_size": 2,
+            "booster_weights": {
+                "heading": 2.0,
+                "outcomes_keywords": 3.5,
+                "efficacy_keywords": 3.0,
+                "safety_keywords": 2.5,
+                "endpoint_keywords": 4.0
+            }
         }
     },
     "clinical_guideline": {
-        "initial_k": 60,
-        "final_k": 12,
-        "strict_filtering": True,
-        "use_section_windows": True,
-        "window_size": 2,
-        "booster_weights": {
-            "recommendation": 2.0,
-            "mutation_keywords": 4.0,
-            "line_therapy": 3.0
+        "population_comparator": {
+            "initial_k": 70,
+            "final_k": 18,
+            "strict_filtering": True,
+            "use_section_windows": True,
+            "window_size": 2,
+            "booster_weights": {
+                "recommendation": 3.0,
+                "mutation_keywords": 5.0,
+                "line_therapy": 4.0,
+                "population_keywords": 3.5
+            }
+        },
+        "outcomes": {
+            "initial_k": 60,
+            "final_k": 12,
+            "strict_filtering": True,
+            "use_section_windows": True,
+            "window_size": 2,
+            "booster_weights": {
+                "recommendation": 2.5,
+                "outcomes_keywords": 4.0,
+                "efficacy_keywords": 3.5,
+                "evidence_keywords": 3.0
+            }
         }
     }
 }

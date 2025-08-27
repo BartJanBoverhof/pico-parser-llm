@@ -157,6 +157,7 @@ class ChunkRetriever:
     """
     Retriever with specialized methods for HTA submissions vs clinical guidelines.
     Enhanced to support source type filtering with distinct retrieval strategies.
+    Now supports split retrieval for Population & Comparator vs Outcomes.
     """
     def __init__(self, vectorstore, results_output_dir="results"):
         self.vectorstore = vectorstore
@@ -196,22 +197,21 @@ class ChunkRetriever:
             print(f"Error in primary_filter_by_country for {country} with source_type {source_type}: {e}")
             return []
 
-    def hta_submission_retrieval(
+    def hta_population_comparator_retrieval(
         self,
         query: str,
         country: str,
         heading_keywords: Optional[List[str]] = None,
         drug_keywords: Optional[List[str]] = None,
-        initial_k: int = 30,
-        final_k: int = 10,
-        comparator_boost: float = 5.0,
-        pico_boost: float = 4.0,
-        drug_boost: float = 8.0,
+        initial_k: int = 50,
+        final_k: int = 20,
+        population_boost: float = 6.0,
+        comparator_boost: float = 6.0,
+        biomarker_boost: float = 5.0,
         mutation_boost_terms: Optional[List[str]] = None
     ) -> List[Dict[str, Any]]:
         """
-        Specialized retrieval for HTA submissions leveraging their structured nature.
-        Focuses on PICO elements, comparators, and treatment information.
+        Specialized retrieval for HTA submissions focusing on Population and Comparator elements.
         """
         filter_dict = self._build_filter(country, "hta_submission")
         try:
@@ -221,7 +221,7 @@ class ChunkRetriever:
                 filter=filter_dict,
             )
         except Exception as e:
-            print(f"Error in HTA submission retrieval for {country}: {e}")
+            print(f"Error in HTA population/comparator retrieval for {country}: {e}")
             return []
         
         if not docs:
@@ -231,11 +231,16 @@ class ChunkRetriever:
         if not unique_docs:
             return []
 
-        hta_structure_keywords = set([
+        population_keywords = set([
+            'population', 'patients', 'eligibility', 'inclusion', 'exclusion',
+            'biomarker', 'mutation', 'testing', 'line of therapy', 'prior treatment',
+            'disease stage', 'histology', 'performance status', 'sub-population'
+        ])
+        
+        comparator_keywords = set([
             'comparator', 'comparison', 'versus', 'compared to', 'alternative',
-            'population', 'intervention', 'outcome', 'endpoint', 'efficacy',
-            'safety', 'pico', 'treatment', 'therapy', 'medicinal product',
-            'appropriate comparator therapy', 'designation of therapy'
+            'standard of care', 'best supportive care', 'placebo', 'control arm',
+            'appropriate comparator therapy', 'treatment comparison', 'indirect comparison'
         ])
         
         heading_set = set((heading_keywords or []))
@@ -252,25 +257,30 @@ class ChunkRetriever:
             heading_lower = (doc.metadata.get("heading") or "").lower()
             text_lower = (doc.page_content or "").lower()
             
-            structure_matches = sum(1 for keyword in hta_structure_keywords if keyword in heading_lower)
-            if structure_matches > 0:
-                score += comparator_boost * structure_matches
+            population_matches = sum(1 for keyword in population_keywords if keyword in text_lower)
+            if population_matches > 0:
+                score += population_boost * min(population_matches, 3)
             
-            pico_content_matches = sum(1 for keyword in hta_structure_keywords if keyword in text_lower)
-            if pico_content_matches > 0:
-                score += pico_boost * min(pico_content_matches, 3)
+            comparator_matches = sum(1 for keyword in comparator_keywords if keyword in text_lower)
+            if comparator_matches > 0:
+                score += comparator_boost * min(comparator_matches, 3)
+            
+            biomarker_terms = ['biomarker', 'mutation', 'testing', 'molecular', 'genetic']
+            biomarker_matches = sum(1 for term in biomarker_terms if term in text_lower)
+            if biomarker_matches > 0:
+                score += biomarker_boost * min(biomarker_matches, 2)
             
             if any(k in heading_lower for k in heading_set):
-                score += 3.0
+                score += 4.0
             
             if any(d in text_lower for d in drug_set):
-                score += drug_boost
+                score += 8.0
             
             if any(m in text_lower for m in mutation_set):
-                score += 6.0
+                score += 7.0
             
-            if any(term in heading_lower for term in ['comparator', 'comparison', 'versus', 'alternative']):
-                score += 6.0
+            if any(term in heading_lower for term in ['population', 'comparator', 'comparison', 'versus']):
+                score += 8.0
             
             scored_docs.append((doc, score))
 
@@ -283,12 +293,107 @@ class ChunkRetriever:
 
         return [self._format_chunk_with_metadata(doc) for doc in selected_docs]
 
-    def clinical_guideline_retrieval(
+    def hta_outcomes_retrieval(
         self,
         query: str,
         country: str,
-        initial_k: int = 50,
-        final_k: int = 10,
+        heading_keywords: Optional[List[str]] = None,
+        drug_keywords: Optional[List[str]] = None,
+        initial_k: int = 40,
+        final_k: int = 15,
+        efficacy_boost: float = 5.0,
+        safety_boost: float = 4.0,
+        endpoint_boost: float = 6.0,
+        mutation_boost_terms: Optional[List[str]] = None
+    ) -> List[Dict[str, Any]]:
+        """
+        Specialized retrieval for HTA submissions focusing on Outcomes elements.
+        """
+        filter_dict = self._build_filter(country, "hta_submission")
+        try:
+            docs = self.vectorstore.similarity_search(
+                query=query,
+                k=initial_k,
+                filter=filter_dict,
+            )
+        except Exception as e:
+            print(f"Error in HTA outcomes retrieval for {country}: {e}")
+            return []
+        
+        if not docs:
+            return []
+
+        unique_docs, _ = self.deduplicator.deduplicate_documents(docs)
+        if not unique_docs:
+            return []
+
+        efficacy_keywords = set([
+            'efficacy', 'overall survival', 'progression-free survival', 'response rate',
+            'duration of response', 'time to progression', 'disease control rate',
+            'objective response', 'complete response', 'partial response',
+            'quality of life', 'qol', 'patient reported outcomes', 'functional status',
+            'health-related quality of life', 'hrqol', 'patient reported outcome measures',
+            'proms', 'functional assessment', 'symptom burden'
+        ])
+        
+        safety_keywords = set([
+            'safety', 'adverse events', 'toxicity', 'tolerability', 'side effects',
+            'serious adverse events', 'treatment-emergent', 'grade 3', 'grade 4'
+        ])
+        
+        endpoint_keywords = set([
+            'primary endpoint', 'secondary endpoint', 'outcomes', 'endpoints',
+            'statistical analysis', 'hazard ratio', 'confidence interval', 'p-value'
+        ])
+        
+        heading_set = set((heading_keywords or []))
+        heading_set = {k.lower() for k in heading_set}
+        drug_set = set((drug_keywords or []))
+        drug_set = {d.lower() for d in drug_set}
+        mutation_set = set((mutation_boost_terms or []))
+        mutation_set = {m.lower() for m in mutation_set}
+
+        scored_docs = []
+        for i, doc in enumerate(unique_docs):
+            score = (len(unique_docs) - i)
+            
+            heading_lower = (doc.metadata.get("heading") or "").lower()
+            text_lower = (doc.page_content or "").lower()
+            
+            efficacy_matches = sum(1 for keyword in efficacy_keywords if keyword in text_lower)
+            if efficacy_matches > 0:
+                score += efficacy_boost * min(efficacy_matches, 4)
+            
+            safety_matches = sum(1 for keyword in safety_keywords if keyword in text_lower)
+            if safety_matches > 0:
+                score += safety_boost * min(safety_matches, 3)
+            
+            endpoint_matches = sum(1 for keyword in endpoint_keywords if keyword in text_lower)
+            if endpoint_matches > 0:
+                score += endpoint_boost * min(endpoint_matches, 3)
+            
+            if any(k in heading_lower for k in heading_set):
+                score += 3.0
+            
+            if any(m in text_lower for m in mutation_set):
+                score += 5.0
+            
+            if any(term in heading_lower for term in ['outcomes', 'efficacy', 'safety', 'endpoints']):
+                score += 7.0
+            
+            scored_docs.append((doc, score))
+
+        scored_docs.sort(key=lambda x: x[1], reverse=True)
+        selected_docs = [doc for doc, _ in scored_docs[:final_k]]
+
+        return [self._format_chunk_with_metadata(doc) for doc in selected_docs]
+
+    def clinical_population_comparator_retrieval(
+        self,
+        query: str,
+        country: str,
+        initial_k: int = 70,
+        final_k: int = 18,
         strict_filtering: bool = True,
         required_terms: Optional[List[List[str]]] = None,
         mutation_boost_terms: Optional[List[str]] = None,
@@ -296,8 +401,7 @@ class ChunkRetriever:
         heading_keywords: Optional[List[str]] = None
     ) -> List[Dict[str, Any]]:
         """
-        Specialized retrieval for clinical guidelines with configurable filtering.
-        Enhanced with proper required_terms filtering for mutation-specific retrieval.
+        Specialized retrieval for clinical guidelines focusing on Population and Comparator elements.
         """
         filter_dict = self._build_filter(country, "clinical_guideline")
         
@@ -308,7 +412,7 @@ class ChunkRetriever:
                 filter=filter_dict,
             )
         except Exception as e:
-            print(f"Error in clinical guideline retrieval for {country}: {e}")
+            print(f"Error in clinical guideline population/comparator retrieval for {country}: {e}")
             return []
         
         if not docs:
@@ -338,7 +442,7 @@ class ChunkRetriever:
             filtered_docs = docs
 
         if not filtered_docs:
-            print(f"No clinical guideline chunks found for {country} after required terms filtering")
+            print(f"No clinical guideline population/comparator chunks found for {country} after filtering")
             return []
 
         unique_docs, _ = self.deduplicator.deduplicate_documents(filtered_docs)
@@ -361,36 +465,139 @@ class ChunkRetriever:
             
             mutation_matches = sum(1 for m in mutation_set if m in text_lower)
             if mutation_matches > 0:
-                score += 8.0 * mutation_matches
+                score += 10.0 * mutation_matches
             
             if any(m in heading_lower for m in mutation_set):
-                score += 10.0
+                score += 12.0
             
-            recommendation_terms = ['recommend', 'should', 'guideline', 'treatment', 'therapy', 'algorithm', 'indication', 'eligible']
-            recommendation_boost = sum(2.0 for term in recommendation_terms if term in text_lower)
+            population_terms = ['patients', 'population', 'eligible', 'biomarker', 'mutation', 'line of therapy']
+            population_boost = sum(3.0 for term in population_terms if term in text_lower)
+            score += population_boost
+            
+            comparator_terms = ['alternative', 'versus', 'compared', 'standard', 'option']
+            comparator_boost = sum(4.0 for term in comparator_terms if term in text_lower)
+            score += comparator_boost
+            
+            recommendation_terms = ['recommend', 'should', 'guideline', 'treatment', 'therapy']
+            recommendation_boost = sum(2.5 for term in recommendation_terms if term in text_lower)
             score += recommendation_boost
             
-            progression_terms = ['second-line', 'second line', 'progression', 'refractory', 'resistant', 'subsequent', 'previously treated', 'after']
-            progression_boost = sum(3.0 for term in progression_terms if term in text_lower)
-            score += progression_boost
-            
             if any(k in heading_lower for k in heading_set):
-                score += 4.0
-            
-            if any(d in text_lower for d in drug_set):
                 score += 5.0
             
-            if required_terms and mutation_set:
-                generic_indicators = ['general lung cancer', 'all patients', 'tumor board', 'multidisciplinary']
-                has_generic = any(indicator in text_lower for indicator in generic_indicators)
-                has_mutation = any(m in text_lower for m in mutation_set)
-                if has_generic and not has_mutation:
-                    score -= 10.0
+            if any(d in text_lower for d in drug_set):
+                score += 6.0
             
             scored_docs.append((doc, score))
 
         scored_docs.sort(key=lambda x: x[1], reverse=True)
+        final_docs = [doc for doc, _ in scored_docs[:final_k]]
+
+        return [self._format_chunk_with_metadata(doc) for doc in final_docs]
+
+    def clinical_outcomes_retrieval(
+        self,
+        query: str,
+        country: str,
+        initial_k: int = 60,
+        final_k: int = 12,
+        strict_filtering: bool = True,
+        required_terms: Optional[List[List[str]]] = None,
+        mutation_boost_terms: Optional[List[str]] = None,
+        drug_keywords: Optional[List[str]] = None,
+        heading_keywords: Optional[List[str]] = None
+    ) -> List[Dict[str, Any]]:
+        """
+        Specialized retrieval for clinical guidelines focusing on Outcomes elements.
+        """
+        filter_dict = self._build_filter(country, "clinical_guideline")
         
+        try:
+            docs = self.vectorstore.similarity_search(
+                query=query,
+                k=initial_k * 2,
+                filter=filter_dict,
+            )
+        except Exception as e:
+            print(f"Error in clinical guideline outcomes retrieval for {country}: {e}")
+            return []
+        
+        if not docs:
+            return []
+
+        filtered_docs = []
+        if strict_filtering and required_terms:
+            for doc in docs:
+                text_lower = doc.page_content.lower()
+                heading_lower = (doc.metadata.get("heading") or "").lower()
+                combined_text = text_lower + " " + heading_lower
+                
+                has_any_required = False
+                for term_group in required_terms:
+                    group_matched = False
+                    for pattern in term_group:
+                        if re.search(pattern, combined_text, re.IGNORECASE):
+                            group_matched = True
+                            break
+                    if group_matched:
+                        has_any_required = True
+                        break
+                
+                if has_any_required:
+                    filtered_docs.append(doc)
+        else:
+            filtered_docs = docs
+
+        if not filtered_docs:
+            print(f"No clinical guideline outcomes chunks found for {country} after filtering")
+            return []
+
+        unique_docs, _ = self.deduplicator.deduplicate_documents(filtered_docs)
+        if not unique_docs:
+            return []
+
+        mutation_set = set((mutation_boost_terms or []))
+        mutation_set = {m.lower() for m in mutation_set}
+        drug_set = set((drug_keywords or []))
+        drug_set = {d.lower() for d in drug_set}
+        heading_set = set((heading_keywords or []))
+        heading_set = {k.lower() for k in heading_set}
+
+        scored_docs = []
+        for i, doc in enumerate(unique_docs):
+            score = (len(unique_docs) - i)
+            
+            text_lower = doc.page_content.lower()
+            heading_lower = (doc.metadata.get("heading") or "").lower()
+            
+            outcomes_terms = ['efficacy', 'response', 'survival', 'outcomes', 'benefit', 'improvement',
+                            'quality of life', 'qol', 'patient reported outcomes', 'functional status',
+                            'health-related quality of life', 'hrqol', 'patient reported outcome measures',
+                            'proms', 'functional assessment', 'symptom burden']
+            outcomes_boost = sum(4.0 for term in outcomes_terms if term in text_lower)
+            score += outcomes_boost
+            
+            safety_terms = ['safety', 'adverse', 'toxicity', 'tolerability', 'side effects']
+            safety_boost = sum(3.0 for term in safety_terms if term in text_lower)
+            score += safety_boost
+            
+            evidence_terms = ['evidence', 'level', 'grade', 'recommendation', 'strength']
+            evidence_boost = sum(3.0 for term in evidence_terms if term in text_lower)
+            score += evidence_boost
+            
+            mutation_matches = sum(1 for m in mutation_set if m in text_lower)
+            if mutation_matches > 0:
+                score += 6.0 * mutation_matches
+            
+            if any(k in heading_lower for k in heading_set):
+                score += 4.0
+            
+            if any(term in heading_lower for term in ['outcomes', 'efficacy', 'safety', 'response']):
+                score += 8.0
+            
+            scored_docs.append((doc, score))
+
+        scored_docs.sort(key=lambda x: x[1], reverse=True)
         final_docs = [doc for doc, _ in scored_docs[:final_k]]
 
         return [self._format_chunk_with_metadata(doc) for doc in final_docs]
@@ -416,90 +623,7 @@ class ChunkRetriever:
             }
         }
 
-    def vector_similarity_search(
-        self,
-        query: str,
-        country: str,
-        source_type: Optional[str] = None,
-        heading_keywords: Optional[List[str]] = None,
-        drug_keywords: Optional[List[str]] = None,
-        required_terms: Optional[List[List[str]]] = None,
-        mutation_boost_terms: Optional[List[str]] = None,
-        initial_k: int = 30,
-        final_k: int = 10,
-        heading_boost: float = 3.0,
-        drug_boost: float = 8.0
-    ) -> List[Dict[str, Any]]:
-        """
-        General vector similarity search with keyword boosts.
-        Routes to specialized methods based on source_type.
-        """
-        if source_type == "hta_submission":
-            return self.hta_submission_retrieval(
-                query=query,
-                country=country,
-                heading_keywords=heading_keywords,
-                drug_keywords=drug_keywords,
-                initial_k=initial_k,
-                final_k=final_k,
-                mutation_boost_terms=mutation_boost_terms
-            )
-        elif source_type == "clinical_guideline":
-            return self.clinical_guideline_retrieval(
-                query=query,
-                country=country,
-                initial_k=initial_k,
-                final_k=final_k,
-                required_terms=required_terms,
-                mutation_boost_terms=mutation_boost_terms,
-                drug_keywords=drug_keywords,
-                heading_keywords=heading_keywords
-            )
-        else:
-            filter_dict = self._build_filter(country, source_type)
-            try:
-                docs = self.vectorstore.similarity_search(
-                    query=query,
-                    k=initial_k,
-                    filter=filter_dict,
-                )
-            except Exception as e:
-                print(f"Error in vector similarity search for {country}: {e}")
-                return []
-            
-            if not docs:
-                return []
-
-            unique_docs, _ = self.deduplicator.deduplicate_documents(docs)
-            if not unique_docs:
-                return []
-
-            keyword_set = set((heading_keywords or []))
-            keyword_set = {k.lower() for k in keyword_set}
-            drug_set = set((drug_keywords or []))
-            drug_set = {d.lower() for d in drug_set}
-
-            scored_docs = []
-            for i, doc in enumerate(unique_docs):
-                score = (len(unique_docs) - i)
-                heading_lower = (doc.metadata.get("heading") or "").lower()
-                if any(k in heading_lower for k in keyword_set):
-                    score += heading_boost
-                text_lower = (doc.page_content or "").lower()
-                if any(d in text_lower for d in drug_set):
-                    score += drug_boost
-                scored_docs.append((doc, score))
-
-            scored_docs.sort(key=lambda x: x[1], reverse=True)
-            top_docs = [doc for doc, _ in scored_docs[:final_k * 2]]
-
-            selected_docs, _, _ = self.deduplicator.prioritize_by_comparator_coverage(
-                top_docs, final_k=final_k
-            )
-
-            return [self._format_chunk_with_metadata(doc) for doc in selected_docs]
-
-    def retrieve_pico_chunks(
+    def retrieve_population_comparator_chunks(
         self,
         query: str,
         countries: List[str],
@@ -508,25 +632,82 @@ class ChunkRetriever:
         drug_keywords: Optional[List[str]] = None,
         required_terms: Optional[List[List[str]]] = None,
         mutation_boost_terms: Optional[List[str]] = None,
-        initial_k: int = 30,
-        final_k: int = 10
+        initial_k: int = 50,
+        final_k: int = 20
     ) -> Dict[str, List[Dict[str, Any]]]:
         """
-        Retrieve chunks by country using specialized retrieval based on source type.
+        Retrieve chunks focused on Population and Comparator elements by country.
         """
         results_by_country: Dict[str, List[Dict[str, Any]]] = {}
         for country in countries:
-            chunks = self.vector_similarity_search(
-                query=query,
-                country=country,
-                source_type=source_type,
-                heading_keywords=heading_keywords,
-                drug_keywords=drug_keywords,
-                required_terms=required_terms,
-                mutation_boost_terms=mutation_boost_terms,
-                initial_k=initial_k,
-                final_k=final_k
-            )
+            if source_type == "hta_submission":
+                chunks = self.hta_population_comparator_retrieval(
+                    query=query,
+                    country=country,
+                    heading_keywords=heading_keywords,
+                    drug_keywords=drug_keywords,
+                    initial_k=initial_k,
+                    final_k=final_k,
+                    mutation_boost_terms=mutation_boost_terms
+                )
+            elif source_type == "clinical_guideline":
+                chunks = self.clinical_population_comparator_retrieval(
+                    query=query,
+                    country=country,
+                    initial_k=initial_k,
+                    final_k=final_k,
+                    required_terms=required_terms,
+                    mutation_boost_terms=mutation_boost_terms,
+                    drug_keywords=drug_keywords,
+                    heading_keywords=heading_keywords
+                )
+            else:
+                chunks = []
+            
+            results_by_country[country] = chunks
+        return results_by_country
+
+    def retrieve_outcomes_chunks(
+        self,
+        query: str,
+        countries: List[str],
+        source_type: Optional[str] = None,
+        heading_keywords: Optional[List[str]] = None,
+        drug_keywords: Optional[List[str]] = None,
+        required_terms: Optional[List[List[str]]] = None,
+        mutation_boost_terms: Optional[List[str]] = None,
+        initial_k: int = 40,
+        final_k: int = 15
+    ) -> Dict[str, List[Dict[str, Any]]]:
+        """
+        Retrieve chunks focused on Outcomes elements by country.
+        """
+        results_by_country: Dict[str, List[Dict[str, Any]]] = {}
+        for country in countries:
+            if source_type == "hta_submission":
+                chunks = self.hta_outcomes_retrieval(
+                    query=query,
+                    country=country,
+                    heading_keywords=heading_keywords,
+                    drug_keywords=drug_keywords,
+                    initial_k=initial_k,
+                    final_k=final_k,
+                    mutation_boost_terms=mutation_boost_terms
+                )
+            elif source_type == "clinical_guideline":
+                chunks = self.clinical_outcomes_retrieval(
+                    query=query,
+                    country=country,
+                    initial_k=initial_k,
+                    final_k=final_k,
+                    required_terms=required_terms,
+                    mutation_boost_terms=mutation_boost_terms,
+                    drug_keywords=drug_keywords,
+                    heading_keywords=heading_keywords
+                )
+            else:
+                chunks = []
+            
             results_by_country[country] = chunks
         return results_by_country
 
@@ -534,12 +715,13 @@ class ChunkRetriever:
         self,
         results_by_country: Dict[str, List[Dict[str, Any]]],
         source_type: str,
-        query: str,
+        retrieval_type: str = "combined",
+        query: str = "",
         timestamp: Optional[str] = None,
         indication: Optional[str] = None
     ):
         """
-        Save retrieval results to JSON file organized by source type and country.
+        Save retrieval results to JSON file organized by source type, retrieval type and country.
         """
         if timestamp is None:
             timestamp = datetime.now().isoformat()
@@ -548,6 +730,7 @@ class ChunkRetriever:
             "retrieval_metadata": {
                 "timestamp": timestamp,
                 "source_type": source_type,
+                "retrieval_type": retrieval_type,
                 "query": query,
                 "indication": indication,
                 "total_countries": len(results_by_country),
@@ -570,15 +753,15 @@ class ChunkRetriever:
         
         if indication:
             indication_short = indication.split()[0].lower() if indication else "unknown"
-            filename = f"{source_type}_{indication_short}_retrieval_results.json"
+            filename = f"{source_type}_{retrieval_type}_{indication_short}_retrieval_results.json"
         else:
-            filename = f"{source_type}_retrieval_results.json"
+            filename = f"{source_type}_{retrieval_type}_retrieval_results.json"
         filepath = os.path.join(self.chunks_output_dir, filename)
         
         with open(filepath, "w", encoding="utf-8") as f:
             json.dump(output_data, f, indent=2, ensure_ascii=False)
         
-        print(f"Saved retrieval results to {filepath}")
+        print(f"Saved {retrieval_type} retrieval results to {filepath}")
         return filepath
 
     def diagnose_vectorstore(self, limit: int = 100):
