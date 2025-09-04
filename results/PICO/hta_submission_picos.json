@@ -1,10 +1,10 @@
 {
   "extraction_metadata": {
-    "timestamp": "2025-08-27T12:50:33.190434",
+    "timestamp": "2025-09-04T11:18:22.264049",
     "source_type": "hta_submission",
     "indication": "treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context",
     "total_countries": 4,
-    "total_picos": 17
+    "total_picos": 18
   },
   "picos_by_country": {
     "DE": {
@@ -15,117 +15,41 @@
           "Population": "Adults with advanced non-small cell lung cancer (NSCLC) with KRAS p.G12C mutation after first-line therapy with cytotoxic chemotherapy",
           "Intervention": "Medicine X (under assessment)",
           "Comparator": "docetaxel",
-          "Outcomes": "overall survival, progression-free survival, symptomatology, health status, health-related quality of life, side effects"
+          "Outcomes": ""
         },
         {
           "Population": "Adults with advanced non-small cell lung cancer (NSCLC) with KRAS p.G12C mutation after first-line therapy with cytotoxic chemotherapy",
           "Intervention": "Medicine X (under assessment)",
           "Comparator": "pemetrexed",
-          "Outcomes": "overall survival, progression-free survival, symptomatology, health status, health-related quality of life, side effects"
+          "Outcomes": ""
         },
         {
           "Population": "Adults with advanced non-small cell lung cancer (NSCLC) with KRAS p.G12C mutation after first-line therapy with cytotoxic chemotherapy",
           "Intervention": "Medicine X (under assessment)",
           "Comparator": "nivolumab",
-          "Outcomes": "overall survival, progression-free survival, symptomatology, health status, health-related quality of life, side effects"
+          "Outcomes": ""
         },
         {
           "Population": "Adults with advanced non-small cell lung cancer (NSCLC) with KRAS p.G12C mutation after first-line therapy with cytotoxic chemotherapy",
           "Intervention": "Medicine X (under assessment)",
           "Comparator": "pembrolizumab",
-          "Outcomes": "overall survival, progression-free survival, symptomatology, health status, health-related quality of life, side effects"
+          "Outcomes": ""
         },
         {
           "Population": "Adults with advanced non-small cell lung cancer (NSCLC) with KRAS p.G12C mutation after first-line therapy with cytotoxic chemotherapy",
           "Intervention": "Medicine X (under assessment)",
           "Comparator": "atezolizumab",
-          "Outcomes": "overall survival, progression-free survival, symptomatology, health status, health-related quality of life, side effects"
+          "Outcomes": ""
         },
         {
           "Population": "Adults with advanced non-small cell lung cancer (NSCLC) with KRAS p.G12C mutation after first-line therapy with cytotoxic chemotherapy",
           "Intervention": "Medicine X (under assessment)",
           "Comparator": "docetaxel in combination with nintedanib",
-          "Outcomes": "overall survival, progression-free survival, symptomatology, health status, health-related quality of life, side effects"
+          "Outcomes": ""
         }
       ],
       "ChunksUsed": 35,
-      "ContextTokens": 8531
-    },
-    "PT": {
-      "Indication": "treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context",
-      "Country": "PT",
-      "PICOs": [
-        {
-          "Population": "Adults with cancer from Sotorasib docetaxel, Used routinely in non-small cell lung clinical practice; Docetaxel + nintedanib * advanced (CPNPC) cells It is validated for their mutated KRAS G12C and Lumykras (Sotorasib) indication/ population that have progressed after at least one prior systemic therapy line.",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "docetaxel",
-          "Outcomes": "overall survival, progression-free survival, objective response rate, duration of response, disease control, time to progression, quality of life, safety"
-        },
-        {
-          "Population": "Adults with cancer from Sotorasib docetaxel, Used routinely in non-small cell lung clinical practice; Docetaxel + nintedanib * advanced (CPNPC) cells It is validated for their mutated KRAS G12C and Lumykras (Sotorasib) indication/ population that have progressed after at least one prior systemic therapy line.",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "docetaxel + nintedanib",
-          "Outcomes": "overall survival, progression-free survival, objective response rate, duration of response, disease control, time to progression, quality of life, safety"
-        },
-        {
-          "Population": "Adults with cancer from Sotorasib docetaxel, Used routinely in non-small cell lung clinical practice; Docetaxel + nintedanib * advanced (CPNPC) cells It is validated for their mutated KRAS G12C and Lumykras (Sotorasib) indication/ population that have progressed after at least one prior systemic therapy line.",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "pemetrexed",
-          "Outcomes": "overall survival, progression-free survival, objective response rate, duration of response, disease control, time to progression, quality of life, safety"
-        },
-        {
-          "Population": "Adults with cancer from Sotorasib docetaxel, Used routinely in non-small cell lung clinical practice; Docetaxel + nintedanib * advanced (CPNPC) cells It is validated for their mutated KRAS G12C and Lumykras (Sotorasib) indication/ population that have progressed after at least one prior systemic therapy line.",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "nivolumab",
-          "Outcomes": "overall survival, progression-free survival, objective response rate, duration of response, disease control, time to progression, quality of life, safety"
-        },
-        {
-          "Population": "Adults with cancer from Sotorasib docetaxel, Used routinely in non-small cell lung clinical practice; Docetaxel + nintedanib * advanced (CPNPC) cells It is validated for their mutated KRAS G12C and Lumykras (Sotorasib) indication/ population that have progressed after at least one prior systemic therapy line.",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "pembrolizumab",
-          "Outcomes": "overall survival, progression-free survival, objective response rate, duration of response, disease control, time to progression, quality of life, safety"
-        },
-        {
-          "Population": "Adults with cancer from Sotorasib docetaxel, Used routinely in non-small cell lung clinical practice; Docetaxel + nintedanib * advanced (CPNPC) cells It is validated for their mutated KRAS G12C and Lumykras (Sotorasib) indication/ population that have progressed after at least one prior systemic therapy line.",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "atezolizumab",
-          "Outcomes": "overall survival, progression-free survival, objective response rate, duration of response, disease control, time to progression, quality of life, safety"
-        },
-        {
-          "Population": "Adults with cancer from Sotorasib docetaxel, Used routinely in non-small cell lung clinical practice; Docetaxel + nintedanib * advanced (CPNPC) cells It is validated for their mutated KRAS G12C and Lumykras (Sotorasib) indication/ population that have progressed after at least one prior systemic therapy line.",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "platinum doublet",
-          "Outcomes": "overall survival, progression-free survival, objective response rate, duration of response, disease control, time to progression, quality of life, safety"
-        }
-      ],
-      "ChunksUsed": 35,
-      "ContextTokens": 8607
-    },
-    "PO": {
-      "Indication": "treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context",
-      "Country": "PO",
-      "PICOs": [
-        {
-          "Population": "patients with NDRP with a KRAS G12C mutation after failure of at least one prior line of treatment",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "docetaxel (DOC)",
-          "Outcomes": "progression-free survival, overall response rate, disease control rate, quality of life, safety"
-        },
-        {
-          "Population": "patients with NDRP with a KRAS G12C mutation after failure of at least one prior line of treatment",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "nintedanib in combination with docetaxel (NIN+DOC)",
-          "Outcomes": "progression-free survival, overall response rate, disease control rate, quality of life, safety"
-        },
-        {
-          "Population": "patients with NDRP with a KRAS G12C mutation after failure of at least one prior line of treatment",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "pemetrexed (PMX)",
-          "Outcomes": "progression-free survival, overall response rate, disease control rate, quality of life, safety"
-        }
-      ],
-      "ChunksUsed": 35,
-      "ContextTokens": 8056
+      "ContextTokens": 8468
     },
     "IT": {
       "Indication": "treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context",
@@ -140,6 +64,88 @@
       ],
       "ChunksUsed": 12,
       "ContextTokens": 3288
+    },
+    "PO": {
+      "Indication": "treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context",
+      "Country": "PO",
+      "PICOs": [
+        {
+          "Population": "patients with NDRP with a KRAS G12C mutation after failure of at least one prior line of treatment",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "sotorasib",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients with NDRP with a KRAS G12C mutation after failure of at least one prior line of treatment",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "docetaxel (DOC)",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients with NDRP with a KRAS G12C mutation after failure of at least one prior line of treatment",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "nintedanib in combination with docetaxel (NIN+DOC)",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients with NDRP with a KRAS G12C mutation after failure of at least one prior line of treatment",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "pemetrexed (PMX)",
+          "Outcomes": ""
+        }
+      ],
+      "ChunksUsed": 35,
+      "ContextTokens": 8035
+    },
+    "PT": {
+      "Indication": "treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context",
+      "Country": "PT",
+      "PICOs": [
+        {
+          "Population": "adult patients with advanced non-small cell lung cancer (NSCLC) with mutated KRAS G12C and who have progressed after at least one prior systemic line of therapy",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "docetaxel",
+          "Outcomes": ""
+        },
+        {
+          "Population": "adult patients with advanced non-small cell lung cancer (NSCLC) with mutated KRAS G12C and who have progressed after at least one prior systemic line of therapy",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "docetaxel + nintedanib",
+          "Outcomes": ""
+        },
+        {
+          "Population": "adult patients with advanced non-small cell lung cancer (NSCLC) with mutated KRAS G12C and who have progressed after at least one prior systemic line of therapy",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "pemetrexed",
+          "Outcomes": ""
+        },
+        {
+          "Population": "adult patients with advanced non-small cell lung cancer (NSCLC) with mutated KRAS G12C and who have progressed after at least one prior systemic line of therapy",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "nivolumab",
+          "Outcomes": ""
+        },
+        {
+          "Population": "adult patients with advanced non-small cell lung cancer (NSCLC) with mutated KRAS G12C and who have progressed after at least one prior systemic line of therapy",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "pembrolizumab",
+          "Outcomes": ""
+        },
+        {
+          "Population": "adult patients with advanced non-small cell lung cancer (NSCLC) with mutated KRAS G12C and who have progressed after at least one prior systemic line of therapy",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "atezolizumab",
+          "Outcomes": ""
+        },
+        {
+          "Population": "adult patients with advanced non-small cell lung cancer (NSCLC) with mutated KRAS G12C and who have progressed after at least one prior systemic line of therapy",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "platinum doublet",
+          "Outcomes": ""
+        }
+      ],
+      "ChunksUsed": 35,
+      "ContextTokens": 8607
     }
   }
 }
