@@ -1,12 +1,56 @@
 {
   "extraction_metadata": {
-    "timestamp": "2025-09-04T14:56:21.440846",
+    "timestamp": "2025-09-04T15:24:53.884951",
     "source_type": "hta_submission",
     "indication": "treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context",
     "total_countries": 4,
-    "total_picos": 17
+    "total_picos": 18
   },
   "picos_by_country": {
+    "DE": {
+      "Indication": "treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context",
+      "Country": "DE",
+      "PICOs": [
+        {
+          "Population": "Adults with advanced non-small cell lung cancer (NSCLC) with KRAS p.G12C mutation after first-line therapy with cytotoxic chemotherapy",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "docetaxel",
+          "Outcomes": "overall survival, progression-free survival, symptomatology, health status, health-related quality of life, side effects"
+        },
+        {
+          "Population": "Adults with advanced non-small cell lung cancer (NSCLC) with KRAS p.G12C mutation after first-line therapy with cytotoxic chemotherapy",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "pemetrexed",
+          "Outcomes": "overall survival, progression-free survival, symptomatology, health status, health-related quality of life, side effects"
+        },
+        {
+          "Population": "Adults with advanced non-small cell lung cancer (NSCLC) with KRAS p.G12C mutation after first-line therapy with cytotoxic chemotherapy",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "nivolumab",
+          "Outcomes": "overall survival, progression-free survival, symptomatology, health status, health-related quality of life, side effects"
+        },
+        {
+          "Population": "Adults with advanced non-small cell lung cancer (NSCLC) with KRAS p.G12C mutation after first-line therapy with cytotoxic chemotherapy",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "pembrolizumab",
+          "Outcomes": "overall survival, progression-free survival, symptomatology, health status, health-related quality of life, side effects"
+        },
+        {
+          "Population": "Adults with advanced non-small cell lung cancer (NSCLC) with KRAS p.G12C mutation after first-line therapy with cytotoxic chemotherapy",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "atezolizumab",
+          "Outcomes": "overall survival, progression-free survival, symptomatology, health status, health-related quality of life, side effects"
+        },
+        {
+          "Population": "Adults with advanced non-small cell lung cancer (NSCLC) with KRAS p.G12C mutation after first-line therapy with cytotoxic chemotherapy",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "docetaxel in combination with nintedanib",
+          "Outcomes": "overall survival, progression-free survival, symptomatology, health status, health-related quality of life, side effects"
+        }
+      ],
+      "ChunksUsed": 35,
+      "ContextTokens": 8531
+    },
     "PT": {
       "Indication": "treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context",
       "Country": "PT",
@@ -57,32 +101,6 @@
       "ChunksUsed": 35,
       "ContextTokens": 8607
     },
-    "PO": {
-      "Indication": "treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context",
-      "Country": "PO",
-      "PICOs": [
-        {
-          "Population": "patients with NDRP with a KRAS G12C mutation after failure of at least one prior line of treatment",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "docetaxel (DOC)",
-          "Outcomes": "progression-free survival, overall response rate, disease control rate, quality of life, safety"
-        },
-        {
-          "Population": "patients with NDRP with a KRAS G12C mutation after failure of at least one prior line of treatment",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "nintedanib in combination with docetaxel (NIN+DOC)",
-          "Outcomes": "progression-free survival, overall response rate, disease control rate, quality of life, safety"
-        },
-        {
-          "Population": "patients with NDRP with a KRAS G12C mutation after failure of at least one prior line of treatment",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "pemetrexed (PMX)",
-          "Outcomes": "progression-free survival, overall response rate, disease control rate, quality of life, safety"
-        }
-      ],
-      "ChunksUsed": 35,
-      "ContextTokens": 8056
-    },
     "IT": {
       "Indication": "treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context",
       "Country": "IT",
@@ -97,49 +115,37 @@
       "ChunksUsed": 12,
       "ContextTokens": 3288
     },
-    "DE": {
+    "PO": {
       "Indication": "treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context",
-      "Country": "DE",
+      "Country": "PO",
       "PICOs": [
         {
-          "Population": "Adults with advanced non-small cell lung cancer (NSCLC) with KRAS p.G12C mutation after first-line therapy with cytotoxic chemotherapy",
+          "Population": "patients with NDRP with a KRAS G12C mutation after failure of at least one prior line of treatment",
           "Intervention": "Medicine X (under assessment)",
-          "Comparator": "docetaxel (only for patients with PD-L1 negative tumours)",
-          "Outcomes": "overall survival, progression-free survival, health status, symptomatology, health-related quality of life, side effects"
+          "Comparator": "docetaxel (DOC)",
+          "Outcomes": "progression-free survival, overall response rate, disease control rate, quality of life, safety, overall survival"
         },
         {
-          "Population": "Adults with advanced non-small cell lung cancer (NSCLC) with KRAS p.G12C mutation after first-line therapy with cytotoxic chemotherapy",
+          "Population": "patients with NDRP with a KRAS G12C mutation after failure of at least one prior line of treatment",
           "Intervention": "Medicine X (under assessment)",
-          "Comparator": "pemetrexed (only for patients with PD-L1 negative tumours and except in cases predominantly squamous histology)",
-          "Outcomes": "overall survival, progression-free survival, health status, symptomatology, health-related quality of life, side effects"
+          "Comparator": "nintedanib in combination with docetaxel (NIN+DOC)",
+          "Outcomes": "progression-free survival, overall response rate, disease control rate, quality of life, safety, overall survival"
         },
         {
-          "Population": "Adults with advanced non-small cell lung cancer (NSCLC) with KRAS p.G12C mutation after first-line therapy with cytotoxic chemotherapy",
+          "Population": "patients with NDRP with a KRAS G12C mutation after failure of at least one prior line of treatment",
           "Intervention": "Medicine X (under assessment)",
-          "Comparator": "nivolumab",
-          "Outcomes": "overall survival, progression-free survival, health status, symptomatology, health-related quality of life, side effects"
+          "Comparator": "pemetrexed (PMX)",
+          "Outcomes": "progression-free survival, overall response rate, disease control rate, quality of life, safety, overall survival"
         },
         {
-          "Population": "Adults with advanced non-small cell lung cancer (NSCLC) with KRAS p.G12C mutation after first-line therapy with cytotoxic chemotherapy",
+          "Population": "patients with NDRP with a KRAS G12C mutation after failure of at least one prior line of treatment",
           "Intervention": "Medicine X (under assessment)",
-          "Comparator": "pembrolizumab (only for patients with PD-L1 expressing tumours (PD-L1 expr ≥ 1% of tumour cells))",
-          "Outcomes": "overall survival, progression-free survival, health status, symptomatology, health-related quality of life, side effects"
-        },
-        {
-          "Population": "Adults with advanced non-small cell lung cancer (NSCLC) with KRAS p.G12C mutation after first-line therapy with cytotoxic chemotherapy",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "atezolizumab",
-          "Outcomes": "overall survival, progression-free survival, health status, symptomatology, health-related quality of life, side effects"
-        },
-        {
-          "Population": "Adults with advanced non-small cell lung cancer (NSCLC) with KRAS p.G12C mutation after first-line therapy with cytotoxic chemotherapy",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "docetaxel in combination with nintedanib (only for patients with PD-L1 negative tumours and adenocarcinoma histology)",
-          "Outcomes": "overall survival, progression-free survival, health status, symptomatology, health-related quality of life, side effects"
+          "Comparator": "two-drug platinum-derived chemotherapy (P-CTH)",
+          "Outcomes": "progression-free survival, overall response rate, disease control rate, quality of life, safety, overall survival"
         }
       ],
       "ChunksUsed": 35,
-      "ContextTokens": 8531
+      "ContextTokens": 8056
     }
   }
 }

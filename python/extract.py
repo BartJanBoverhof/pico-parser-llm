@@ -10,8 +10,8 @@ from langchain.schema import SystemMessage, HumanMessage
 
 class PICOExtractor:
     """
-    Enhanced PICO extractor that supports split extraction pipeline.
-    Can extract Population & Comparator separately from Outcomes, then combine results.
+    PICO extractor that uses split extraction pipeline.
+    Extracts Population & Comparator separately from Outcomes, then combines results.
     """
     def __init__(
         self,
@@ -458,7 +458,7 @@ class PICOExtractor:
         
         return combined_results
 
-    def extract_picos_split(
+    def extract_picos(
         self,
         source_type: Optional[str] = None,
         indication: Optional[str] = None,
@@ -469,7 +469,7 @@ class PICOExtractor:
         """
         source_type_to_use = source_type or self.source_type
         
-        print(f"Starting split PICO extraction for {source_type_to_use}")
+        print(f"Starting PICO extraction for {source_type_to_use}")
         
         print("Step 1: Extracting Population + Comparator")
         pc_results = self.extract_population_comparator(
@@ -485,7 +485,7 @@ class PICOExtractor:
             model_override=model_override
         )
         
-        print("Step 3: Combining split results")
+        print("Step 3: Combining results")
         combined_results = self.combine_split_results(pc_results, outcomes_results)
         
         if combined_results:
@@ -494,145 +494,6 @@ class PICOExtractor:
             self.save_extracted_picos(combined_results, source_type_to_use, indication_for_save)
         
         return combined_results
-
-    def extract_picos_from_context(
-        self,
-        context: str,
-        indication: str,
-        source_type: str = "hta_submission",
-        model_override: Optional[Union[str, ChatOpenAI]] = None
-    ) -> Dict[str, Any]:
-        """
-        Extract PICOs from context using OpenAI API (legacy method for backward compatibility).
-        """
-        if not context.strip():
-            return {
-                "Indication": indication,
-                "Country": None,
-                "PICOs": []
-            }
-        
-        try:
-            example_comparator = self.get_example_comparator(source_type)
-            
-            user_prompt = self.user_prompt_template.format(
-                indication=indication,
-                example_comparator=example_comparator,
-                context_block=context
-            )
-            
-            if model_override and isinstance(model_override, ChatOpenAI):
-                messages = [
-                    SystemMessage(content=self.system_prompt),
-                    HumanMessage(content=user_prompt)
-                ]
-                response = model_override.invoke(messages)
-                result_text = response.content
-            else:
-                model_to_use = model_override if isinstance(model_override, str) else self.model_name
-                
-                response = self.openai.chat.completions.create(
-                    model=model_to_use,
-                    messages=[
-                        {"role": "system", "content": self.system_prompt},
-                        {"role": "user", "content": self.user_prompt_template}
-                    ],
-                    temperature=0.3,
-                    max_tokens=2000
-                )
-                result_text = response.choices[0].message.content
-            
-            try:
-                result = json.loads(result_text)
-                return result
-            except json.JSONDecodeError:
-                print(f"Failed to parse JSON response. Raw response: {result_text[:500]}...")
-                return {
-                    "Indication": indication,
-                    "Country": None,
-                    "PICOs": [],
-                    "Error": "JSON parsing failed",
-                    "RawResponse": result_text
-                }
-                
-        except Exception as e:
-            print(f"Error in PICO extraction: {e}")
-            return {
-                "Indication": indication,
-                "Country": None,
-                "PICOs": [],
-                "Error": str(e)
-            }
-
-    def extract_picos(
-        self,
-        source_type: Optional[str] = None,
-        indication: Optional[str] = None,
-        model_override: Optional[Union[str, ChatOpenAI]] = None,
-        use_split_extraction: bool = True
-    ) -> List[Dict[str, Any]]:
-        """
-        Extract PICOs from pre-stored chunks. Uses split extraction by default.
-        """
-        if use_split_extraction:
-            return self.extract_picos_split(
-                source_type=source_type,
-                indication=indication,
-                model_override=model_override
-            )
-        
-        source_type_to_use = source_type or self.source_type
-        
-        chunk_file_path = self.find_chunk_file(source_type_to_use, None, indication)
-        if not chunk_file_path:
-            print(f"No chunk file found for source_type: {source_type_to_use}")
-            return []
-        
-        print(f"Loading chunks from: {chunk_file_path}")
-        chunk_data = self.load_chunks_from_file(chunk_file_path)
-        
-        if not chunk_data:
-            print("No chunk data loaded")
-            return []
-        
-        results_by_country = chunk_data.get("results_by_country", {})
-        indication_from_metadata = chunk_data.get("retrieval_metadata", {}).get("indication") or indication or "unknown indication"
-        
-        extracted_picos = []
-        
-        for country, country_data in results_by_country.items():
-            chunks = country_data.get("chunks", [])
-            
-            if not chunks:
-                print(f"No chunks found for country: {country}")
-                continue
-            
-            print(f"Processing {len(chunks)} chunks for {country}")
-            
-            context = self.build_context_from_chunks(chunks)
-            if not context:
-                print(f"No context built for country: {country}")
-                continue
-            
-            pico_result = self.extract_picos_from_context(
-                context=context,
-                indication=indication_from_metadata,
-                source_type=source_type_to_use,
-                model_override=model_override
-            )
-            
-            pico_result["Country"] = country
-            pico_result["ChunksUsed"] = len(chunks)
-            pico_result["ContextTokens"] = self.count_tokens(context)
-            
-            extracted_picos.append(pico_result)
-            
-            print(f"Extracted {len(pico_result.get('PICOs', []))} PICOs for {country}")
-        
-        if extracted_picos:
-            self.save_extracted_picos(extracted_picos, source_type_to_use, indication_from_metadata)
-        
-        return extracted_picos
 
     def save_extracted_picos(
         self,

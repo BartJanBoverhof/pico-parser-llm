@@ -77,7 +77,7 @@ rag.vectorize_documents(embeddings_type=VECTORSTORE_TYPE)
 rag.initialize_retriever(vectorstore_type=VECTORSTORE_TYPE)
 
 # Test Case 1: NSCLC with KRAS G12C mutation
-print("\n--- Testing Case 1: NSCLC KRAS G12C Split Retrieval & Split Extraction ---")
+print("\n--- Testing Case 1: NSCLC KRAS G12C Retrieval & Extraction ---")
 case1_config = CASE_CONFIGS["case_1_nsclc_krasg12c_monotherapy_progressed"]
 case1_indication = case1_config["indication"]
 
@@ -85,8 +85,8 @@ case1_indication = case1_config["indication"]
 case1_required_terms = case1_config.get("required_terms_clinical")
 case1_mutation_boost = case1_config.get("mutation_boost_terms", [])
 
-# Step 7: Run SPLIT retrieval for Case 1 (saves chunks to separate files)
-print("\n--- Running Case 1 Split Retrieval Step ---")
+# Step 7: Run retrieval for Case 1 (saves chunks to separate files)
+print("\n--- Running Case 1 Retrieval Step ---")
 
 # Run HTA Population & Comparator retrieval for Case 1
 print("Running HTA Population & Comparator retrieval for Case 1...")
@@ -134,31 +134,29 @@ rag.run_outcomes_retrieval_for_source_type(
     final_k=12
 )
 
-# Step 8: Initialize PICO extractors with split extraction support
+# Step 8: Initialize PICO extractors
 rag.initialize_pico_extractors()
 
-# Step 9: Run SPLIT PICO extraction for Case 1 (uses stored chunks from results/chunks)
-print("\n--- Running Case 1 Split PICO Extraction Step ---")
+# Step 9: Run PICO extraction for Case 1 (uses stored chunks from results/chunks)
+print("\n--- Running Case 1 PICO Extraction Step ---")
 
-# Extract PICOs from HTA submissions for Case 1 using split extraction
-print("Extracting Case 1 HTA Submission PICOs with split extraction...")
+# Extract PICOs from HTA submissions for Case 1
+print("Extracting Case 1 HTA Submission PICOs...")
 extracted_picos_hta_case1 = rag.run_pico_extraction_for_source_type(
     source_type="hta_submission",
-    indication=case1_indication,
-    use_split_extraction=True
+    indication=case1_indication
 )
 
-# Extract PICOs from clinical guidelines for Case 1 using split extraction
-print("Extracting Case 1 Clinical Guideline PICOs with split extraction...")
+# Extract PICOs from clinical guidelines for Case 1
+print("Extracting Case 1 Clinical Guideline PICOs...")
 extracted_picos_clinical_case1 = rag.run_pico_extraction_for_source_type(
     source_type="clinical_guideline",
-    indication=case1_indication,
-    use_split_extraction=True
+    indication=case1_indication
 )
 
-# Demonstration: Run case-based pipeline with complete split retrieval and extraction
-print("\n--- Running Case 1 with Complete Split Pipeline (Retrieval + Extraction) ---")
-case1_complete_split_results = rag.run_case_based_pipeline_with_split_retrieval(
+# Demonstration: Run case-based pipeline with complete retrieval and extraction
+print("\n--- Running Case 1 with Complete Pipeline (Retrieval + Extraction) ---")
+case1_complete_results = rag.run_case_based_pipeline_with_retrieval(
     case_config=case1_config,
     countries=COUNTRIES,
     source_types=["hta_submission", "clinical_guideline"],
@@ -171,12 +169,12 @@ case1_complete_split_results = rag.run_case_based_pipeline_with_split_retrieval(
 )
 
 # Summary
-print("\n=== SPLIT RETRIEVAL & EXTRACTION PIPELINE EXECUTION SUMMARY ===")
+print("\n=== RETRIEVAL & EXTRACTION PIPELINE EXECUTION SUMMARY ===")
 print("✓ Documents processed and vectorized")
-print("✓ Split retrieval system initialized with specialized capabilities")
+print("✓ Retrieval system initialized with specialized capabilities")
 print("✓ Population & Comparator chunk retrieval completed and saved")
 print("✓ Outcomes chunk retrieval completed and saved")
-print("✓ Split PICO extraction completed:")
+print("✓ PICO extraction completed:")
 print("  - Population & Comparator extracted separately")
 print("  - Outcomes extracted separately")
 print("  - Results combined into final PICO format")
@@ -184,10 +182,10 @@ print(f"✓ Case 1 HTA submissions: {len(extracted_picos_hta_case1)} countries p
 print(f"✓ Case 1 Clinical guidelines: {len(extracted_picos_clinical_case1)} countries processed")
 print(f"✓ Model used: {MODEL}")
 print(f"✓ Vectorstore: {VECTORSTORE_TYPE}")
-print("✓ Split retrieval + split extraction approach successfully implemented")
+print("✓ Retrieval + extraction approach successfully implemented")
 
-# Print file locations for split retrieval and extraction
-print("\n=== SPLIT PIPELINE OUTPUT FILES ===")
+# Print file locations for retrieval and extraction
+print("\n=== PIPELINE OUTPUT FILES ===")
 print("📁 Retrieval Results:")
 print("  - HTA Population & Comparator chunks: results/chunks/hta_submission_population_comparator_*_retrieval_results.json")
 print("  - HTA Outcomes chunks: results/chunks/hta_submission_outcomes_*_retrieval_results.json")
@@ -197,8 +195,8 @@ print("📁 Extraction Results:")
 print("  - HTA submission PICOs (combined): results/PICO/hta_submission_picos.json")
 print("  - Clinical guideline PICOs (combined): results/PICO/clinical_guideline_picos.json")
 
-# Print split extraction advantages
-print("\n=== SPLIT EXTRACTION ADVANTAGES ===")
+# Print extraction advantages
+print("\n=== EXTRACTION ADVANTAGES ===")
 print("🔄 Specialized Prompting:")
 print("  - Population & Comparator extraction uses focused prompts")
 print("  - Outcomes extraction uses dedicated prompts")
@@ -214,11 +212,11 @@ print("  - Backward compatible with existing workflows")
 
 print("\n=== EXTRACTION METHODOLOGY ===")
 print("1. Population & Comparator Extraction:")
-print("   - Uses population_comparator chunks from split retrieval")
+print("   - Uses population_comparator chunks from retrieval")
 print("   - Specialized prompts focus on patient definitions and treatment alternatives")
 print("   - Creates PICO entries with empty Outcomes field")
 print("2. Outcomes Extraction:")
-print("   - Uses outcomes chunks from split retrieval")
+print("   - Uses outcomes chunks from retrieval")
 print("   - Specialized prompts focus on clinical endpoints and safety")
 print("   - Extracts consolidated outcomes per country")
 print("3. Results Combination:")
@@ -227,27 +225,17 @@ print("   - Maintains original PICO JSON structure")
 print("   - Each PICO entry gets the country-specific outcomes")
 
 print("\n=== NEXT STEPS ===")
-print("1. Review the split extraction results to validate separation quality")
-print("2. Compare split vs non-split extraction accuracy")
-print("3. Fine-tune split extraction prompts based on results")
-print("4. Adjust retrieval parameters for optimal P&C vs Outcomes separation")
-print("5. Test with additional case configurations")
-print("6. Validate that final JSON structure matches expectations")
-
-# Optional: Show comparison between split and non-split extraction
-print("\n=== OPTIONAL: COMPARISON WITH LEGACY EXTRACTION ===")
-print("To compare with legacy (non-split) extraction, you can run:")
-print("extracted_picos_legacy = rag.run_pico_extraction_for_source_type(")
-print("    source_type='hta_submission',")
-print("    indication=case1_indication,")
-print("    use_split_extraction=False")
-print(")")
+print("1. Review the extraction results to validate separation quality")
+print("2. Fine-tune extraction prompts based on results")
+print("3. Adjust retrieval parameters for optimal P&C vs Outcomes separation")
+print("4. Test with additional case configurations")
+print("5. Validate that final JSON structure matches expectations")
 
 # Final validation
 if extracted_picos_hta_case1:
-    print(f"\n✅ Split extraction successful!")
+    print(f"\n✅ Extraction successful!")
     print(f"📊 HTA Results: {sum(len(country.get('PICOs', [])) for country in extracted_picos_hta_case1)} total PICOs extracted")
     if extracted_picos_clinical_case1:
         print(f"📊 Clinical Results: {sum(len(country.get('PICOs', [])) for country in extracted_picos_clinical_case1)} total PICOs extracted")
 else:
-    print("❌ Split extraction failed - check logs for details")
+    print("❌ Extraction failed - check logs for details")

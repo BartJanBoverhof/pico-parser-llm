@@ -28,12 +28,12 @@ class RagPipeline:
     2. Translation
     3. Chunking
     4. Vectorization
-    5. Retrieval (now supports split retrieval for Population & Comparator vs Outcomes)
-    6. PICO extraction (now supports split extraction for Population & Comparator vs Outcomes)
+    5. Retrieval (separate retrieval for Population & Comparator vs Outcomes)
+    6. PICO extraction (separate extraction for Population & Comparator vs Outcomes)
 
     Enhanced to support different source types with specialized retrieval strategies
     and configurable filtering parameters including mutation-specific retrieval.
-    Now supports separate retrieval and extraction pipelines for Population & Comparator vs Outcomes.
+    Uses separate retrieval and extraction pipelines for Population & Comparator vs Outcomes.
     """
 
     def __init__(
@@ -214,7 +214,7 @@ class RagPipeline:
         print(f"Initialized retriever with {vectorstore_type} vectorstore and specialized retrieval methods")
 
     def initialize_pico_extractors(self):
-        """Initialize separate PICO extractors for HTA and clinical guideline sources with split extraction support."""
+        """Initialize separate PICO extractors for HTA and clinical guideline sources."""
         if not self.source_type_configs:
             print("Source type configurations not provided. Cannot initialize PICO extractors.")
             return
@@ -222,8 +222,8 @@ class RagPipeline:
         if "hta_submission" in self.source_type_configs:
             hta_config = self.source_type_configs["hta_submission"]
             self.pico_extractor_hta = PICOExtractor(
-                system_prompt=hta_config.get("system_prompt", ""),
-                user_prompt_template=hta_config.get("user_prompt_template", ""),
+                system_prompt=hta_config.get("population_comparator_system_prompt", ""),
+                user_prompt_template=hta_config.get("population_comparator_user_prompt_template", ""),
                 source_type="hta_submission",
                 model_name=self.model,
                 results_output_dir=self.path_results,
@@ -233,15 +233,15 @@ class RagPipeline:
         if "clinical_guideline" in self.source_type_configs:
             clinical_config = self.source_type_configs["clinical_guideline"]
             self.pico_extractor_clinical = PICOExtractor(
-                system_prompt=clinical_config.get("system_prompt", ""),
-                user_prompt_template=clinical_config.get("user_prompt_template", ""),
+                system_prompt=clinical_config.get("population_comparator_system_prompt", ""),
+                user_prompt_template=clinical_config.get("population_comparator_user_prompt_template", ""),
                 source_type="clinical_guideline",
                 model_name=self.model,
                 results_output_dir=self.path_results,
                 source_type_config=clinical_config
             )
         
-        print(f"Initialized specialized PICO extractors with split extraction support for available source types with model {self.model}")
+        print(f"Initialized specialized PICO extractors for available source types with model {self.model}")
 
     def get_all_countries(self):
         """
@@ -422,12 +422,10 @@ class RagPipeline:
         self,
         source_type: str,
         indication: Optional[str] = None,
-        model_override: Optional[Union[str, ChatOpenAI]] = None,
-        use_split_extraction: bool = True
+        model_override: Optional[Union[str, ChatOpenAI]] = None
     ):
         """
         Run PICO extraction for a specific source type using pre-stored chunks.
-        Now uses split extraction by default.
         """
         if self.pico_extractor_hta is None or self.pico_extractor_clinical is None:
             self.initialize_pico_extractors()
@@ -441,13 +439,12 @@ class RagPipeline:
             
         extracted_picos = extractor.extract_picos(
             indication=indication,
-            model_override=model_override,
-            use_split_extraction=use_split_extraction
+            model_override=model_override
         )
         
         return extracted_picos
 
-    def run_split_retrieval_for_source_type(
+    def run_retrieval_for_source_type(
         self,
         source_type: str,
         countries: List[str],
@@ -496,7 +493,7 @@ class RagPipeline:
         
         return results
 
-    def extract_picos_with_split_retrieval(
+    def extract_picos_with_retrieval(
         self,
         countries: List[str],
         source_type: str = "hta_submission",
@@ -511,10 +508,10 @@ class RagPipeline:
         indication: Optional[str] = None
     ):
         """
-        Extract PICOs using split retrieval approach (separate Population & Comparator vs Outcomes).
+        Extract PICOs using retrieval approach (separate Population & Comparator vs Outcomes).
         """
-        print(f"Step 1: Running split retrieval for {source_type}")
-        retrieval_results = self.run_split_retrieval_for_source_type(
+        print(f"Step 1: Running retrieval for {source_type}")
+        retrieval_results = self.run_retrieval_for_source_type(
             source_type=source_type,
             countries=countries,
             initial_k_pc=initial_k_pc,
@@ -529,19 +526,18 @@ class RagPipeline:
         )
         
         if not retrieval_results:
-            print("Split retrieval failed, cannot proceed with PICO extraction")
+            print("Retrieval failed, cannot proceed with PICO extraction")
             return []
         
-        print(f"Step 2: Running split PICO extraction for {source_type}")
+        print(f"Step 2: Running PICO extraction for {source_type}")
         extracted_picos = self.run_pico_extraction_for_source_type(
             source_type=source_type,
-            indication=indication,
-            use_split_extraction=True
+            indication=indication
         )
         
         return extracted_picos
 
-    def extract_picos_hta_with_split_retrieval(
+    def extract_picos_hta_with_retrieval(
         self,
         countries: List[str],
         indication: str,
@@ -553,8 +549,8 @@ class RagPipeline:
         drug_keywords: Optional[List[str]] = None,
         mutation_boost_terms: Optional[List[str]] = None
     ):
-        """Extract PICOs from HTA submissions using split retrieval approach."""
-        return self.extract_picos_with_split_retrieval(
+        """Extract PICOs from HTA submissions using retrieval approach."""
+        return self.extract_picos_with_retrieval(
             countries=countries,
             source_type="hta_submission",
             initial_k_pc=initial_k_pc,
@@ -567,7 +563,7 @@ class RagPipeline:
             indication=indication
         )
 
-    def extract_picos_clinical_with_split_retrieval(
+    def extract_picos_clinical_with_retrieval(
         self,
         countries: List[str],
         indication: str,
@@ -580,8 +576,8 @@ class RagPipeline:
         required_terms: Optional[List[List[str]]] = None,
         mutation_boost_terms: Optional[List[str]] = None
     ):
-        """Extract PICOs from clinical guidelines using split retrieval approach."""
-        return self.extract_picos_with_split_retrieval(
+        """Extract PICOs from clinical guidelines using retrieval approach."""
+        return self.extract_picos_with_retrieval(
             countries=countries,
             source_type="clinical_guideline",
             initial_k_pc=initial_k_pc,
@@ -615,7 +611,7 @@ class RagPipeline:
         
         return self.retriever.test_simple_retrieval(country=country, limit=limit)
 
-    def run_case_based_pipeline_with_split_retrieval(
+    def run_case_based_pipeline_with_retrieval(
         self,
         case_config: Dict[str, Any],
         countries: List[str],
@@ -629,7 +625,7 @@ class RagPipeline:
         vectorstore_type: Optional[str] = None
     ):
         """
-        Run pipeline using split retrieval for a specific case configuration.
+        Run pipeline using retrieval for a specific case configuration.
         
         Args:
             case_config: Case configuration dictionary with 'indication' key
@@ -676,7 +672,7 @@ class RagPipeline:
         results = {}
         for source_type in source_types:
             if source_type == "hta_submission":
-                extracted_picos = self.extract_picos_hta_with_split_retrieval(
+                extracted_picos = self.extract_picos_hta_with_retrieval(
                     countries=countries,
                     indication=indication,
                     initial_k_pc=initial_k_pc,
@@ -687,7 +683,7 @@ class RagPipeline:
                     mutation_boost_terms=mutation_boost_terms
                 )
             elif source_type == "clinical_guideline":
-                extracted_picos = self.extract_picos_clinical_with_split_retrieval(
+                extracted_picos = self.extract_picos_clinical_with_retrieval(
                     countries=countries,
                     indication=indication,
                     initial_k_pc=initial_k_pc,
