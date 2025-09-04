@@ -15,7 +15,7 @@ POST_CLEANED_PATH = "data/post_cleaned"
 CHUNKED_PATH = "data/text_chunked"
 VECTORSTORE_PATH = "data/vectorstore"
 VECTORSTORE_TYPE = "biobert"  # Choose between "openai", "biobert", or "both"
-MODEL = "gpt-4o-mini"
+MODEL = "gpt-5-mini-2025-08-07"
 COUNTRIES = ["ALL"]  # Use "ALL" to process all available countries
 
 # Validate OpenAI API key
@@ -194,18 +194,6 @@ case1_split_pipeline_results = rag.run_case_based_pipeline_with_split_retrieval(
     final_k_pc=20,
     initial_k_outcomes=40,
     final_k_outcomes=15,
-    skip_processing=True,
-    skip_translation=True
-)
-
-# For comparison: Run legacy combined retrieval
-print("\n--- Running Case 1 with Legacy Combined Retrieval ---")
-case1_legacy_results = rag.run_case_based_pipeline(
-    case_config=case1_config,
-    countries=COUNTRIES,
-    source_types=["hta_submission", "clinical_guideline"],
-    initial_k=40,
-    final_k=15,
     skip_processing=True,
     skip_translation=True
 )
