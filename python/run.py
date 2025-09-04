@@ -29,11 +29,11 @@ class RagPipeline:
     3. Chunking
     4. Vectorization
     5. Retrieval (now supports split retrieval for Population & Comparator vs Outcomes)
-    6. PICO extraction
+    6. PICO extraction (now supports split extraction for Population & Comparator vs Outcomes)
 
     Enhanced to support different source types with specialized retrieval strategies
     and configurable filtering parameters including mutation-specific retrieval.
-    Now supports separate retrieval pipelines for Population & Comparator vs Outcomes.
+    Now supports separate retrieval and extraction pipelines for Population & Comparator vs Outcomes.
     """
 
     def __init__(
@@ -214,7 +214,7 @@ class RagPipeline:
         print(f"Initialized retriever with {vectorstore_type} vectorstore and specialized retrieval methods")
 
     def initialize_pico_extractors(self):
-        """Initialize separate PICO extractors for HTA and clinical guideline sources."""
+        """Initialize separate PICO extractors for HTA and clinical guideline sources with split extraction support."""
         if not self.source_type_configs:
             print("Source type configurations not provided. Cannot initialize PICO extractors.")
             return
@@ -222,24 +222,26 @@ class RagPipeline:
         if "hta_submission" in self.source_type_configs:
             hta_config = self.source_type_configs["hta_submission"]
             self.pico_extractor_hta = PICOExtractor(
-                system_prompt=hta_config["system_prompt"],
-                user_prompt_template=hta_config["user_prompt_template"],
+                system_prompt=hta_config.get("system_prompt", ""),
+                user_prompt_template=hta_config.get("user_prompt_template", ""),
                 source_type="hta_submission",
                 model_name=self.model,
-                results_output_dir=self.path_results
+                results_output_dir=self.path_results,
+                source_type_config=hta_config
             )
         
         if "clinical_guideline" in self.source_type_configs:
             clinical_config = self.source_type_configs["clinical_guideline"]
             self.pico_extractor_clinical = PICOExtractor(
-                system_prompt=clinical_config["system_prompt"],
-                user_prompt_template=clinical_config["user_prompt_template"],
+                system_prompt=clinical_config.get("system_prompt", ""),
+                user_prompt_template=clinical_config.get("user_prompt_template", ""),
                 source_type="clinical_guideline",
                 model_name=self.model,
-                results_output_dir=self.path_results
+                results_output_dir=self.path_results,
+                source_type_config=clinical_config
             )
         
-        print(f"Initialized specialized PICO extractors for available source types with model {self.model}")
+        print(f"Initialized specialized PICO extractors with split extraction support for available source types with model {self.model}")
 
     def get_all_countries(self):
         """
@@ -416,90 +418,16 @@ class RagPipeline:
             "timestamp": timestamp
         }
 
-    def run_retrieval_for_source_type(
-        self,
-        source_type: str,
-        countries: List[str],
-        query: Optional[str] = None,
-        initial_k: int = 30,
-        final_k: int = 15,
-        heading_keywords: Optional[List[str]] = None,
-        drug_keywords: Optional[List[str]] = None,
-        required_terms: Optional[List[List[str]]] = None,
-        mutation_boost_terms: Optional[List[str]] = None,
-        indication: Optional[str] = None
-    ):
-        """
-        Legacy method for combined retrieval (backward compatibility).
-        """
-        if self.retriever is None:
-            print("Retriever not initialized. Please run initialize_retriever first.")
-            return None
-        
-        if any(country == "ALL" for country in countries):
-            all_countries = self.get_all_countries()
-            if not all_countries:
-                print("No countries detected in the vectorstore. Please check your data.")
-                return None
-            countries = all_countries
-            print(f"Retrieving {source_type} chunks for all available countries: {', '.join(countries)}")
-        
-        if source_type not in self.source_type_configs:
-            raise ValueError(f"Unsupported source_type: {source_type}. Available types: {list(self.source_type_configs.keys())}")
-            
-        config = self.source_type_configs[source_type]
-        
-        if query is None:
-            if indication:
-                query = config["query_template"].format(indication=indication)
-            else:
-                query = config.get("default_query", "")
-            
-        if heading_keywords is None:
-            heading_keywords = config["default_headings"]
-            
-        if drug_keywords is None:
-            drug_keywords = config["default_drugs"]
-            
-        if required_terms is None and "required_terms" in config:
-            required_terms = config["required_terms"]
-            
-        chunks_by_country = self.retriever.retrieve_pico_chunks(
-            query=query,
-            countries=countries,
-            source_type=source_type,
-            heading_keywords=heading_keywords,
-            drug_keywords=drug_keywords,
-            required_terms=required_terms,
-            mutation_boost_terms=mutation_boost_terms,
-            initial_k=initial_k,
-            final_k=final_k
-        )
-
-        timestamp = datetime.now().isoformat()
-        self.retriever.save_retrieval_results(
-            results_by_country=chunks_by_country,
-            source_type=source_type or "general",
-            retrieval_type="combined",
-            query=query,
-            timestamp=timestamp,
-            indication=indication
-        )
-
-        return {
-            "summary": {country: len(chunks) for country, chunks in chunks_by_country.items()},
-            "chunks_by_country": chunks_by_country,
-            "timestamp": timestamp
-        }
-
     def run_pico_extraction_for_source_type(
         self,
         source_type: str,
         indication: Optional[str] = None,
-        model_override: Optional[Union[str, ChatOpenAI]] = None
+        model_override: Optional[Union[str, ChatOpenAI]] = None,
+        use_split_extraction: bool = True
     ):
         """
         Run PICO extraction for a specific source type using pre-stored chunks.
+        Now uses split extraction by default.
         """
         if self.pico_extractor_hta is None or self.pico_extractor_clinical is None:
             self.initialize_pico_extractors()
@@ -513,7 +441,8 @@ class RagPipeline:
             
         extracted_picos = extractor.extract_picos(
             indication=indication,
-            model_override=model_override
+            model_override=model_override,
+            use_split_extraction=use_split_extraction
         )
         
         return extracted_picos
@@ -567,48 +496,6 @@ class RagPipeline:
         
         return results
 
-    def extract_picos_by_source_type(
-        self,
-        countries: List[str],
-        source_type: str = "hta_submission",
-        query: Optional[str] = None,
-        initial_k: int = 30,
-        final_k: int = 15,
-        heading_keywords: Optional[List[str]] = None,
-        drug_keywords: Optional[List[str]] = None,
-        required_terms: Optional[List[List[str]]] = None,
-        mutation_boost_terms: Optional[List[str]] = None,
-        indication: Optional[str] = None
-    ):
-        """
-        Extract PICOs from the specified countries and source type using two-step process.
-        """
-        print(f"Step 1: Running retrieval for {source_type}")
-        retrieval_results = self.run_retrieval_for_source_type(
-            source_type=source_type,
-            countries=countries,
-            query=query,
-            initial_k=initial_k,
-            final_k=final_k,
-            heading_keywords=heading_keywords,
-            drug_keywords=drug_keywords,
-            required_terms=required_terms,
-            mutation_boost_terms=mutation_boost_terms,
-            indication=indication
-        )
-        
-        if retrieval_results is None:
-            print("Retrieval failed, cannot proceed with PICO extraction")
-            return []
-        
-        print(f"Step 2: Running PICO extraction for {source_type}")
-        extracted_picos = self.run_pico_extraction_for_source_type(
-            source_type=source_type,
-            indication=indication
-        )
-        
-        return extracted_picos
-
     def extract_picos_with_split_retrieval(
         self,
         countries: List[str],
@@ -645,105 +532,14 @@ class RagPipeline:
             print("Split retrieval failed, cannot proceed with PICO extraction")
             return []
         
-        print(f"Step 2: Running PICO extraction for {source_type}")
+        print(f"Step 2: Running split PICO extraction for {source_type}")
         extracted_picos = self.run_pico_extraction_for_source_type(
             source_type=source_type,
-            indication=indication
+            indication=indication,
+            use_split_extraction=True
         )
         
         return extracted_picos
-
-    def extract_picos_hta(
-        self,
-        countries: List[str],
-        query: Optional[str] = None,
-        initial_k: int = 30,
-        final_k: int = 15,
-        heading_keywords: Optional[List[str]] = None,
-        drug_keywords: Optional[List[str]] = None,
-        mutation_boost_terms: Optional[List[str]] = None
-    ):
-        """Extract PICOs specifically from HTA submissions using two-step process."""
-        return self.extract_picos_by_source_type(
-            countries=countries,
-            source_type="hta_submission",
-            query=query,
-            initial_k=initial_k,
-            final_k=final_k,
-            heading_keywords=heading_keywords,
-            drug_keywords=drug_keywords,
-            mutation_boost_terms=mutation_boost_terms
-        )
-
-    def extract_picos_clinical(
-        self,
-        countries: List[str],
-        query: Optional[str] = None,
-        initial_k: int = 50,
-        final_k: int = 10,
-        heading_keywords: Optional[List[str]] = None,
-        drug_keywords: Optional[List[str]] = None,
-        required_terms: Optional[List[List[str]]] = None,
-        mutation_boost_terms: Optional[List[str]] = None
-    ):
-        """Extract PICOs specifically from clinical guidelines using two-step process."""
-        return self.extract_picos_by_source_type(
-            countries=countries,
-            source_type="clinical_guideline",
-            query=query,
-            initial_k=initial_k,
-            final_k=final_k,
-            heading_keywords=heading_keywords,
-            drug_keywords=drug_keywords,
-            required_terms=required_terms,
-            mutation_boost_terms=mutation_boost_terms
-        )
-
-    def extract_picos_hta_with_indication(
-        self,
-        countries: List[str],
-        indication: str,
-        initial_k: int = 30,
-        final_k: int = 15,
-        heading_keywords: Optional[List[str]] = None,
-        drug_keywords: Optional[List[str]] = None,
-        mutation_boost_terms: Optional[List[str]] = None
-    ):
-        """Extract PICOs from HTA submissions with parameterized indication using two-step process."""
-        return self.extract_picos_by_source_type(
-            countries=countries,
-            source_type="hta_submission",
-            initial_k=initial_k,
-            final_k=final_k,
-            heading_keywords=heading_keywords,
-            drug_keywords=drug_keywords,
-            mutation_boost_terms=mutation_boost_terms,
-            indication=indication
-        )
-
-    def extract_picos_clinical_with_indication(
-        self,
-        countries: List[str],
-        indication: str,
-        initial_k: int = 50,
-        final_k: int = 10,
-        heading_keywords: Optional[List[str]] = None,
-        drug_keywords: Optional[List[str]] = None,
-        required_terms: Optional[List[List[str]]] = None,
-        mutation_boost_terms: Optional[List[str]] = None
-    ):
-        """Extract PICOs from clinical guidelines with parameterized indication using two-step process."""
-        return self.extract_picos_by_source_type(
-            countries=countries,
-            source_type="clinical_guideline",
-            initial_k=initial_k,
-            final_k=final_k,
-            heading_keywords=heading_keywords,
-            drug_keywords=drug_keywords,
-            required_terms=required_terms,
-            mutation_boost_terms=mutation_boost_terms,
-            indication=indication
-        )
 
     def extract_picos_hta_with_split_retrieval(
         self,
@@ -799,35 +595,6 @@ class RagPipeline:
             indication=indication
         )
 
-    def extract_picos(
-        self,
-        countries: List[str],
-        query: Optional[str] = None,
-        initial_k: int = 30,
-        final_k: int = 15,
-        heading_keywords: Optional[List[str]] = None
-    ):
-        """
-        Extract PICOs from the specified countries (both source types).
-        
-        Args:
-            countries: List of country codes to extract PICOs from
-            query: Query to use for retrieval (defaults to HTA default)
-            initial_k: Initial number of documents to retrieve
-            final_k: Final number of documents to use after filtering
-            heading_keywords: Keywords to look for in document headings
-        
-        Returns:
-            List of extracted PICOs
-        """
-        return self.extract_picos_hta(
-            countries=countries,
-            query=query,
-            initial_k=initial_k,
-            final_k=final_k,
-            heading_keywords=heading_keywords
-        )
-    
     def diagnose_vectorstore(self, limit: int = 100):
         """
         Diagnose the vectorstore contents and metadata structure.
@@ -847,122 +614,6 @@ class RagPipeline:
             return False
         
         return self.retriever.test_simple_retrieval(country=country, limit=limit)
-
-    def run_full_pipeline_for_source(
-        self,
-        source_type: str,
-        countries: List[str] = ["EN", "DE", "FR", "PO"],
-        skip_processing: bool = False,
-        skip_translation: bool = True,
-        vectorstore_type: Optional[str] = None
-    ):
-        """
-        Run the full RAG pipeline for a specific source type with two-step process.
-        
-        Args:
-            source_type: Type of source to process ("hta_submission" or "clinical_guideline")
-            countries: List of country codes to extract PICOs from
-            skip_processing: Skip PDF processing if True
-            skip_translation: Skip translation if True
-            vectorstore_type: Type of vectorstore to use ("openai", "biobert", or "both")
-                            If None, uses the value specified in self.vectorstore_type
-        
-        Returns:
-            Extracted PICOs
-        """
-        if vectorstore_type is None:
-            vectorstore_type = self.vectorstore_type
-            
-        self.validate_api_key()
-        
-        if not skip_processing:
-            self.process_pdfs()
-        
-        if not skip_translation:
-            self.translate_documents()
-        
-        self.chunk_documents()
-        
-        self.vectorize_documents(embeddings_type=vectorstore_type)
-        
-        self.initialize_retriever(vectorstore_type=vectorstore_type if vectorstore_type != "both" else "biobert")
-        
-        self.initialize_pico_extractors()
-        
-        extracted_picos = self.extract_picos_by_source_type(
-            countries=countries,
-            source_type=source_type
-        )
-        
-        return extracted_picos
-
-    def run_configurable_pipeline(
-        self,
-        source_type: str,
-        countries: List[str],
-        query: Optional[str] = None,
-        heading_keywords: Optional[List[str]] = None,
-        drug_keywords: Optional[List[str]] = None,
-        required_terms: Optional[List[List[str]]] = None,
-        mutation_boost_terms: Optional[List[str]] = None,
-        initial_k: int = 30,
-        final_k: int = 15,
-        skip_processing: bool = True,
-        skip_translation: bool = True,
-        vectorstore_type: Optional[str] = None
-    ):
-        """
-        Run a configurable pipeline with custom parameters for any use case using two-step process.
-        
-        Args:
-            source_type: Type of source to process
-            countries: List of country codes or ["ALL"]
-            query: Custom query for retrieval
-            heading_keywords: Custom heading keywords
-            drug_keywords: Custom drug keywords
-            required_terms: Custom required terms for filtering
-            mutation_boost_terms: Terms to boost for mutation-specific retrieval
-            initial_k: Initial retrieval count
-            final_k: Final retrieval count
-            skip_processing: Skip PDF processing
-            skip_translation: Skip translation
-            vectorstore_type: Vectorstore type to use
-        
-        Returns:
-            Extracted PICOs with custom configuration
-        """
-        if vectorstore_type is None:
-            vectorstore_type = self.vectorstore_type
-            
-        self.validate_api_key()
-        
-        if not skip_processing:
-            self.process_pdfs()
-        
-        if not skip_translation:
-            self.translate_documents()
-            
-        if not skip_processing or not skip_translation:
-            self.chunk_documents()
-            self.vectorize_documents(embeddings_type=vectorstore_type)
-        
-        self.initialize_retriever(vectorstore_type=vectorstore_type if vectorstore_type != "both" else "biobert")
-        
-        self.initialize_pico_extractors()
-        
-        extracted_picos = self.extract_picos_by_source_type(
-            countries=countries,
-            source_type=source_type,
-            query=query,
-            initial_k=initial_k,
-            final_k=final_k,
-            heading_keywords=heading_keywords,
-            drug_keywords=drug_keywords,
-            required_terms=required_terms,
-            mutation_boost_terms=mutation_boost_terms
-        )
-        
-        return extracted_picos
 
     def run_case_based_pipeline_with_split_retrieval(
         self,
