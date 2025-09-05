@@ -596,12 +596,12 @@ class RagPipeline:
         
         return extracted_picos
 
-    def combine_picos_with_separate_outcomes(self, pico_data: Dict, outcomes_data: Dict) -> Dict:
+    def combine_picos_with_separate_outcomes(self, pico_data: Union[Dict, List], outcomes_data: Dict) -> Union[Dict, List]:
         """
         Combine PICO extraction results with separate outcome extraction results.
         
         Args:
-            pico_data: PICO extraction results
+            pico_data: PICO extraction results (can be dict or list format)
             outcomes_data: Separate outcomes extraction results
             
         Returns:
@@ -612,17 +612,40 @@ class RagPipeline:
         
         outcomes_by_country = outcomes_data.get("outcomes_by_country", {})
         
-        # Update PICOs with outcomes
-        for country, country_pico_data in pico_data.get("picos_by_country", {}).items():
-            if country in outcomes_by_country:
-                country_outcomes = outcomes_by_country[country].get("Outcomes", "")
-                
-                # Apply outcomes to all PICOs in this country
-                for pico in country_pico_data.get("PICOs", []):
-                    if not pico.get("Outcomes") or pico["Outcomes"].strip() == "":
-                        pico["Outcomes"] = country_outcomes
-                
-                print(f"Applied outcomes to {len(country_pico_data.get('PICOs', []))} PICOs for country {country}")
+        # Handle dictionary format with "picos_by_country" key
+        if isinstance(pico_data, dict) and "picos_by_country" in pico_data:
+            # Update PICOs with outcomes
+            for country, country_pico_data in pico_data["picos_by_country"].items():
+                if country in outcomes_by_country:
+                    country_outcomes = outcomes_by_country[country].get("Outcomes", "")
+                    
+                    # Apply outcomes to all PICOs in this country
+                    for pico in country_pico_data.get("PICOs", []):
+                        if not pico.get("Outcomes") or pico["Outcomes"].strip() == "":
+                            pico["Outcomes"] = country_outcomes
+                    
+                    print(f"Applied outcomes to {len(country_pico_data.get('PICOs', []))} PICOs for country {country}")
+        
+        # Handle list format (legacy format)
+        elif isinstance(pico_data, list):
+            # Group PICOs by country first
+            picos_by_country = {}
+            for pico in pico_data:
+                country = pico.get("Country", "unknown")
+                if country not in picos_by_country:
+                    picos_by_country[country] = []
+                picos_by_country[country].append(pico)
+            
+            # Apply outcomes to each country's PICOs
+            for country, picos_list in picos_by_country.items():
+                if country in outcomes_by_country:
+                    country_outcomes = outcomes_by_country[country].get("Outcomes", "")
+                    
+                    for pico in picos_list:
+                        if not pico.get("Outcomes") or pico["Outcomes"].strip() == "":
+                            pico["Outcomes"] = country_outcomes
+                    
+                    print(f"Applied outcomes to {len(picos_list)} PICOs for country {country}")
         
         return pico_data
 
@@ -792,7 +815,7 @@ class RagPipeline:
             initial_k_pc=initial_k_pc,
             final_k_pc=final_k_pc,
             initial_k_outcomes=initial_k_outcomes,
-            final_k_outcomes=final_k_outcomes,
+            final_k_outcomes=initial_k_outcomes,
             heading_keywords=heading_keywords,
             drug_keywords=drug_keywords,
             required_terms=required_terms,

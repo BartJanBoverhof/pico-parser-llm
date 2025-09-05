@@ -1,0 +1,9 @@
+{
+  "extraction_metadata": {
+    "source_type": "hta_submission",
+    "indication": "treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context",
+    "timestamp": "2025-09-05T13:36:46.079271",
+    "extraction_type": "outcomes"
+  },
+  "outcomes_by_country": {}
+}
