@@ -167,22 +167,6 @@ consolidation_results = rag.run_pico_consolidation(
     source_types=["hta_submission", "clinical_guideline"]
 )
 
-"""
-# Demonstration: Run case-based pipeline with complete retrieval and extraction
-print("\n--- Running Case 1 with Complete Pipeline (Retrieval + Extraction) ---")
-case1_complete_results = rag.run_case_based_pipeline_with_retrieval(
-    case_config=case1_config,
-    countries=COUNTRIES,
-    source_types=["hta_submission", "clinical_guideline"],
-    initial_k_pc=50,
-    final_k_pc=20,
-    initial_k_outcomes=40,
-    final_k_outcomes=15,
-    skip_processing=True,
-    skip_translation=True
-)
-"""
-
 # Summary
 print("\n=== RETRIEVAL, EXTRACTION & CONSOLIDATION PIPELINE EXECUTION SUMMARY ===")
 print("✓ Documents processed and vectorized")
@@ -193,8 +177,8 @@ print("✓ PICO extraction completed:")
 print("  - Population & Comparator extracted separately")
 print("  - Outcomes extracted separately")
 print("  - Results combined into final PICO format")
-print(f"✓ Case 1 HTA submissions: {len(extracted_picos_hta_case1)} countries processed")
-print(f"✓ Case 1 Clinical guidelines: {len(extracted_picos_clinical_case1)} countries processed")
+print(f"✓ Case 1 HTA submissions: {len(extracted_picos_hta_case1) if extracted_picos_hta_case1 else 0} countries processed")
+print(f"✓ Case 1 Clinical guidelines: {len(extracted_picos_clinical_case1) if extracted_picos_clinical_case1 else 0} countries processed")
 
 # Consolidation summary
 if consolidation_results and "summary" in consolidation_results:
@@ -221,7 +205,8 @@ print("  - Clinical Guideline Outcomes chunks: results/chunks/clinical_guideline
 print("📁 Extraction Results:")
 print("  - HTA submission PICOs (combined): results/PICO/hta_submission_picos.json")
 print("  - Clinical guideline PICOs (combined): results/PICO/clinical_guideline_picos.json")
-print("📁 Consolidation Results (NEW):")
+print("  - Separate outcomes extractions: results/chunks/*_outcomes_*_extraction_results.json")
+print("📁 Consolidation Results:")
 print("  - Consolidated PICOs & Outcomes: results/consolidated/*_consolidated_*.json")
 
 # Print extraction advantages
@@ -240,7 +225,7 @@ print("  - Can fine-tune extraction prompts independently")
 print("  - Backward compatible with existing workflows")
 
 # Print consolidation advantages
-print("\n=== CONSOLIDATION ADVANTAGES (NEW) ===")
+print("\n=== CONSOLIDATION ADVANTAGES ===")
 print("🔄 Cross-Country Harmonization:")
 print("  - Merges similar PICOs from different countries")
 print("  - Tracks country and source type origins")
@@ -267,11 +252,11 @@ print("3. Results Combination:")
 print("   - Merges Population & Comparator entries with Outcomes")
 print("   - Maintains original PICO JSON structure")
 print("   - Each PICO entry gets the country-specific outcomes")
-print("4. PICO Consolidation (NEW):")
+print("4. PICO Consolidation:")
 print("   - LLM-based consolidation of similar PICOs across countries")
 print("   - Preserves clinical distinctions while reducing redundancy")
 print("   - Tracks origins and maintains traceability")
-print("5. Outcomes Consolidation (NEW):")
+print("5. Outcomes Consolidation:")
 print("   - Categorizes outcomes into clinical domains")
 print("   - Organizes by relevance and measurement approach")
 print("   - Creates structured outcome reference")
@@ -288,9 +273,16 @@ print("7. Validate that final consolidated structures meet analysis needs")
 # Final validation
 if extracted_picos_hta_case1:
     print(f"\n✅ Extraction successful!")
-    print(f"📊 HTA Results: {sum(len(country.get('PICOs', [])) for country in extracted_picos_hta_case1)} total PICOs extracted")
+    total_hta_picos = 0
+    if isinstance(extracted_picos_hta_case1, dict) and "picos_by_country" in extracted_picos_hta_case1:
+        total_hta_picos = sum(len(country.get('PICOs', [])) for country in extracted_picos_hta_case1["picos_by_country"].values())
+    print(f"📊 HTA Results: {total_hta_picos} total PICOs extracted")
+    
     if extracted_picos_clinical_case1:
-        print(f"📊 Clinical Results: {sum(len(country.get('PICOs', [])) for country in extracted_picos_clinical_case1)} total PICOs extracted")
+        total_clinical_picos = 0
+        if isinstance(extracted_picos_clinical_case1, dict) and "picos_by_country" in extracted_picos_clinical_case1:
+            total_clinical_picos = sum(len(country.get('PICOs', [])) for country in extracted_picos_clinical_case1["picos_by_country"].values())
+        print(f"📊 Clinical Results: {total_clinical_picos} total PICOs extracted")
     
     if consolidation_results and "summary" in consolidation_results:
         summary = consolidation_results["summary"]

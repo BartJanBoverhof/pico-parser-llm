@@ -31,7 +31,7 @@ class RagPipeline:
     4. Vectorization
     5. Retrieval (separate retrieval for Population & Comparator vs Outcomes)
     6. PICO extraction (separate extraction for Population & Comparator vs Outcomes)
-    7. PICO and Outcomes consolidation (NEW)
+    7. PICO and Outcomes consolidation
 
     Enhanced to support different source types with specialized retrieval strategies
     and configurable filtering parameters including mutation-specific retrieval.
@@ -435,6 +435,104 @@ class RagPipeline:
             "timestamp": timestamp
         }
 
+    def extract_outcomes_separately(
+        self,
+        source_type: str,
+        indication: Optional[str] = None,
+        model_override: Optional[Union[str, ChatOpenAI]] = None
+    ):
+        """
+        Extract outcomes separately using outcomes chunks and save results.
+        """
+        if source_type not in self.source_type_configs:
+            raise ValueError(f"Unsupported source_type: {source_type}")
+            
+        config = self.source_type_configs[source_type]
+        
+        # Use model override if provided
+        model = model_override if model_override else ChatOpenAI(model=self.model, temperature=0.1)
+        
+        # Load outcomes chunks
+        outcomes_chunks_files = [f for f in os.listdir(self.path_chunks) 
+                               if f.startswith(f"{source_type}_outcomes") and f.endswith("_retrieval_results.json")]
+        
+        if not outcomes_chunks_files:
+            print(f"No outcomes chunks found for {source_type}")
+            return {}
+        
+        outcomes_chunks_file = os.path.join(self.path_chunks, outcomes_chunks_files[0])
+        
+        with open(outcomes_chunks_file, 'r', encoding='utf-8') as f:
+            outcomes_chunks_data = json.load(f)
+        
+        outcomes_by_country = {}
+        
+        for country, chunks in outcomes_chunks_data.get("chunks_by_country", {}).items():
+            if not chunks:
+                continue
+                
+            # Combine chunks into context
+            context_block = "\n\n".join([chunk.get("text", "") for chunk in chunks])
+            
+            # Prepare prompts
+            system_prompt = config.get("outcomes_system_prompt", "")
+            user_prompt_template = config.get("outcomes_user_prompt_template", "")
+            
+            user_prompt = user_prompt_template.format(
+                indication=indication or "",
+                context_block=context_block
+            )
+            
+            try:
+                # Call LLM
+                messages = [
+                    SystemMessage(content=system_prompt),
+                    HumanMessage(content=user_prompt)
+                ]
+                
+                if isinstance(model, str):
+                    response = self.openai.chat.completions.create(
+                        model=model,
+                        messages=[
+                            {"role": "system", "content": system_prompt},
+                            {"role": "user", "content": user_prompt}
+                        ],
+                        temperature=0.1
+                    )
+                    result_text = response.choices[0].message.content
+                else:
+                    response = model.invoke(messages)
+                    result_text = response.content
+                
+                # Parse result
+                outcome_result = json.loads(result_text)
+                outcomes_by_country[country] = outcome_result
+                
+            except Exception as e:
+                print(f"Error extracting outcomes for {country}: {e}")
+                continue
+        
+        # Save outcomes extraction results
+        timestamp = datetime.now().isoformat()
+        outcomes_result = {
+            "extraction_metadata": {
+                "source_type": source_type,
+                "indication": indication,
+                "timestamp": timestamp,
+                "extraction_type": "outcomes"
+            },
+            "outcomes_by_country": outcomes_by_country
+        }
+        
+        outcomes_filename = f"{source_type}_outcomes_{timestamp}_extraction_results.json"
+        outcomes_filepath = os.path.join(self.path_chunks, outcomes_filename)
+        
+        with open(outcomes_filepath, 'w', encoding='utf-8') as f:
+            json.dump(outcomes_result, f, indent=2, ensure_ascii=False)
+        
+        print(f"Saved outcomes extraction results to: {outcomes_filepath}")
+        return outcomes_result
+
     def run_pico_extraction_for_source_type(
         self,
         source_type: str,
@@ -443,7 +541,9 @@ class RagPipeline:
     ):
         """
         Run PICO extraction for a specific source type using pre-stored chunks.
+        This method first extracts outcomes separately and then combines them with PICOs if needed.
         """
+        # First, run the main PICO extraction
         if self.pico_extractor_hta is None or self.pico_extractor_clinical is None:
             self.initialize_pico_extractors()
         
@@ -454,12 +554,77 @@ class RagPipeline:
         else:
             raise ValueError(f"Unsupported source_type: {source_type}")
             
+        print(f"Running PICO extraction for {source_type}...")
         extracted_picos = extractor.extract_picos(
             indication=indication,
             model_override=model_override
         )
         
+        # Check if the extracted PICOs already have outcomes
+        has_outcomes = False
+        if isinstance(extracted_picos, dict) and "picos_by_country" in extracted_picos:
+            for country_data in extracted_picos["picos_by_country"].values():
+                for pico in country_data.get("PICOs", []):
+                    if pico.get("Outcomes") and pico["Outcomes"].strip():
+                        has_outcomes = True
+                        break
+                if has_outcomes:
+                    break
+        elif isinstance(extracted_picos, list):
+            for pico in extracted_picos:
+                if pico.get("Outcomes") and pico["Outcomes"].strip():
+                    has_outcomes = True
+                    break
+        
+        # Only run separate outcomes extraction if the main extraction doesn't have outcomes
+        if not has_outcomes:
+            print(f"Running separate outcomes extraction for {source_type}...")
+            outcomes_result = self.extract_outcomes_separately(
+                source_type=source_type,
+                indication=indication,
+                model_override=model_override
+            )
+            
+            # Combine PICOs with outcomes if outcomes were extracted
+            if outcomes_result and extracted_picos:
+                print(f"Combining PICOs with separately extracted outcomes for {source_type}...")
+                extracted_picos = self.combine_picos_with_separate_outcomes(
+                    extracted_picos, outcomes_result
+                )
+        else:
+            print(f"Main PICO extraction for {source_type} already includes outcomes, skipping separate extraction")
+        
         return extracted_picos
+
+    def combine_picos_with_separate_outcomes(self, pico_data: Dict, outcomes_data: Dict) -> Dict:
+        """
+        Combine PICO extraction results with separate outcome extraction results.
+        
+        Args:
+            pico_data: PICO extraction results
+            outcomes_data: Separate outcomes extraction results
+            
+        Returns:
+            Combined PICO data with outcomes filled in
+        """
+        if not pico_data or not outcomes_data:
+            return pico_data
+        
+        outcomes_by_country = outcomes_data.get("outcomes_by_country", {})
+        
+        # Update PICOs with outcomes
+        for country, country_pico_data in pico_data.get("picos_by_country", {}).items():
+            if country in outcomes_by_country:
+                country_outcomes = outcomes_by_country[country].get("Outcomes", "")
+                
+                # Apply outcomes to all PICOs in this country
+                for pico in country_pico_data.get("PICOs", []):
+                    if not pico.get("Outcomes") or pico["Outcomes"].strip() == "":
+                        pico["Outcomes"] = country_outcomes
+                
+                print(f"Applied outcomes to {len(country_pico_data.get('PICOs', []))} PICOs for country {country}")
+        
+        return pico_data
 
     def run_pico_consolidation(
         self,

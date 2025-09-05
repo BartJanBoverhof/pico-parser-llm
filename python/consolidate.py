@@ -30,6 +30,7 @@ class PICOConsolidator:
         self.model_name = model_name
         self.results_dir = results_output_dir
         self.pico_dir = os.path.join(results_output_dir, "PICO")
+        self.chunks_dir = os.path.join(results_output_dir, "chunks")
         self.consolidated_dir = os.path.join(results_output_dir, "consolidated")
         self.consolidation_configs = consolidation_configs or {}
 
@@ -75,6 +76,82 @@ class PICOConsolidator:
                 print(f"PICO file not found: {file_path}")
 
         return pico_data
+
+    def load_separate_outcome_extractions(self, source_types: List[str]) -> Dict[str, Dict]:
+        """
+        Load separate outcome extraction results if they exist.
+
+        Args:
+            source_types: List of source types to look for
+
+        Returns:
+            Dictionary with source types as keys and outcome data as values
+        """
+        outcome_data = {}
+        
+        for source_type in source_types:
+            # Look for outcome extraction files in chunks directory
+            outcome_files = []
+            if os.path.exists(self.chunks_dir):
+                for file in os.listdir(self.chunks_dir):
+                    if f"{source_type}_outcomes" in file and file.endswith("_extraction_results.json"):
+                        outcome_files.append(file)
+            
+            if outcome_files:
+                print(f"Found separate outcome extraction files for {source_type}: {outcome_files}")
+                # Load the most recent outcome extraction file
+                outcome_files.sort(reverse=True)
+                outcome_file_path = os.path.join(self.chunks_dir, outcome_files[0])
+                
+                try:
+                    with open(outcome_file_path, 'r', encoding='utf-8') as f:
+                        outcome_data[source_type] = json.load(f)
+                    print(f"Loaded separate outcomes for {source_type}: {outcome_file_path}")
+                except Exception as e:
+                    print(f"Error loading separate outcomes {outcome_file_path}: {e}")
+        
+        return outcome_data
+
+    def combine_picos_with_outcomes(self, pico_data: Dict[str, Dict], outcome_data: Dict[str, Dict]) -> Dict[str, Dict]:
+        """
+        Combine PICO data with separate outcome extractions.
+
+        Args:
+            pico_data: PICO extraction data
+            outcome_data: Separate outcome extraction data
+
+        Returns:
+            Combined PICO data with outcomes filled in
+        """
+        combined_data = {}
+        
+        for source_type, picos in pico_data.items():
+            combined_data[source_type] = picos.copy()
+            
+            # Check if this source type has separate outcome data
+            if source_type in outcome_data:
+                outcomes_by_country = {}
+                
+                # Parse outcome data structure to extract outcomes by country
+                outcome_source_data = outcome_data[source_type]
+                if "outcomes_by_country" in outcome_source_data:
+                    for country, country_outcome_data in outcome_source_data["outcomes_by_country"].items():
+                        if "Outcomes" in country_outcome_data:
+                            outcomes_by_country[country] = country_outcome_data["Outcomes"]
+                
+                # Apply outcomes to PICOs
+                if outcomes_by_country and "picos_by_country" in combined_data[source_type]:
+                    for country, country_pico_data in combined_data[source_type]["picos_by_country"].items():
+                        if country in outcomes_by_country:
+                            country_outcomes = outcomes_by_country[country]
+                            # Apply outcomes to all PICOs in this country
+                            for pico in country_pico_data.get("PICOs", []):
+                                if not pico.get("Outcomes") or pico["Outcomes"].strip() == "":
+                                    pico["Outcomes"] = country_outcomes
+                            
+                            print(f"Applied outcomes to {len(country_pico_data.get('PICOs', []))} PICOs for {source_type} {country}")
+        
+        return combined_data
 
     def extract_all_picos_and_outcomes(self, pico_data: Dict[str, Dict]) -> tuple:
         """
@@ -409,6 +486,16 @@ class PICOConsolidator:
         if not pico_data:
             print("No PICO data found to consolidate")
             return {}
+
+        # Step 1.5: Check for separate outcome extractions and combine if needed
+        print("Step 1.5: Checking for separate outcome extractions...")
+        outcome_data = self.load_separate_outcome_extractions(list(pico_data.keys()))
+        
+        if outcome_data:
+            print("Found separate outcome extractions, combining with PICOs...")
+            pico_data = self.combine_picos_with_outcomes(pico_data, outcome_data)
+        else:
+            print("No separate outcome extractions found, proceeding with existing PICO data")
 
         # Step 2: Extract all PICOs and outcomes
         print("Step 2: Extracting PICOs and outcomes from loaded data...")
