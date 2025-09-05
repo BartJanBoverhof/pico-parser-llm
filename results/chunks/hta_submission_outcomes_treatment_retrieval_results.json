@@ -1,6 +1,6 @@
 {
   "retrieval_metadata": {
-    "timestamp": "2025-09-05T09:32:56.930151",
+    "timestamp": "2025-09-05T10:12:23.120607",
     "source_type": "hta_submission",
     "retrieval_type": "outcomes",
     "query": "Find passages that specify clinical Outcomes and endpoints relevant to: treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context.\n        Prefer sections that describe:\n        - Primary and secondary efficacy endpoints (OS, PFS, ORR, DoR, etc.)\n        - Safety outcomes and adverse events\n        - Quality of life measures and patient-reported outcomes (including any specific instruments like EORTC QLQ, EQ-5D, SF-36)\n        - Economic outcomes and utilities\n        - Exploratory or additional endpoints (e.g. time to next treatment/PFS2, progression of brain metastases, time to deterioration) if reported\n        - Statistical methods and analysis approaches\n        Focus on specific outcome definitions and measurement methodologies.",
@@ -32,9 +32,9 @@
             "split_index": 2,
             "text_length": 877,
             "potential_comparators": [
-              "If",
               "Under",
-              "Other"
+              "Other",
+              "If"
             ]
           }
         },
@@ -53,10 +53,10 @@
             "text_length": 1442,
             "potential_comparators": [
               "nintedanib",
-              "Thus",
               "Within",
-              "Implementation",
-              "ramucirumab"
+              "ramucirumab",
+              "Thus",
+              "Implementation"
             ]
           }
         },
@@ -74,11 +74,11 @@
             "split_index": "0_0_0",
             "text_length": 965,
             "potential_comparators": [
+              "nintedanib",
               "atezolizumab",
               "nivolumab",
-              "nintedanib",
-              "Institute",
-              "pembrolizumab"
+              "pembrolizumab",
+              "Institute"
             ]
           }
         },
@@ -97,9 +97,9 @@
             "text_length": 863,
             "potential_comparators": [
               "afatinib",
+              "ramucirumab",
               "nintedanib",
-              "erlotinib",
-              "ramucirumab"
+              "erlotinib"
             ]
           }
         },
@@ -135,8 +135,8 @@
             "split_index": 15,
             "text_length": 949,
             "potential_comparators": [
-              "Since",
-              "Justification"
+              "Justification",
+              "Since"
             ]
           }
         },
@@ -173,14 +173,14 @@
             "split_index": "5_0_0",
             "text_length": 1006,
             "potential_comparators": [
-              "atezolizumab",
-              "nivolumab",
-              "Therefore",
-              "However",
-              "Nivolumab",
               "Accordingly",
+              "ramucirumab",
+              "Nivolumab",
+              "However",
+              "nivolumab",
               "pembrolizumab",
-              "ramucirumab"
+              "atezolizumab",
+              "Therefore"
             ]
           }
         },
@@ -217,11 +217,11 @@
             "split_index": "4_1_0",
             "text_length": 1105,
             "potential_comparators": [
-              "atezolizumab",
-              "nivolumab",
-              "Based",
               "nintedanib",
-              "pembrolizumab"
+              "Based",
+              "nivolumab",
+              "pembrolizumab",
+              "atezolizumab"
             ]
           }
         },
@@ -278,9 +278,9 @@
             "text_length": 1047,
             "potential_comparators": [
               "nivolumab",
+              "nintedanib",
               "atezolizumab",
-              "pembrolizumab",
-              "nintedanib"
+              "pembrolizumab"
             ]
           }
         },
@@ -298,8 +298,8 @@
             "split_index": 0,
             "text_length": 1267,
             "potential_comparators": [
-              "Therefore",
-              "Justification"
+              "Justification",
+              "Therefore"
             ]
           }
         },
@@ -317,13 +317,13 @@
             "split_index": "0_1_0",
             "text_length": 960,
             "potential_comparators": [
-              "x 40 mg",
-              "afatinib",
-              "x 500 mg",
-              "Designation",
               "nintedanib",
+              "ramucirumab",
+              "afatinib",
               "erlotinib",
-              "ramucirumab"
+              "Designation",
+              "x 40 mg",
+              "x 500 mg"
             ]
           }
         },
@@ -393,8 +393,8 @@
             "split_index": 14,
             "text_length": 1293,
             "potential_comparators": [
-              "However",
-              "Overall"
+              "Overall",
+              "However"
             ]
           }
         },
@@ -412,10 +412,10 @@
             "split_index": 9,
             "text_length": 1338,
             "potential_comparators": [
-              "Other",
               "Specific",
-              "Serious",
               "Liver",
+              "Other",
+              "Serious",
               "Side"
             ]
           }
@@ -434,9 +434,9 @@
             "split_index": 7,
             "text_length": 1005,
             "potential_comparators": [
+              "nintedanib",
               "ramucirumab",
-              "afatinib",
-              "nintedanib"
+              "afatinib"
             ]
           }
         },
@@ -455,9 +455,9 @@
             "text_length": 770,
             "potential_comparators": [
               "afatinib",
+              "ramucirumab",
               "nintedanib",
-              "erlotinib",
-              "ramucirumab"
+              "erlotinib"
             ]
           }
         }
@@ -516,8 +516,8 @@
             "split_index": 3,
             "text_length": 1417,
             "potential_comparators": [
-              "Mandatory",
-              "Contract"
+              "Contract",
+              "Mandatory"
             ]
           }
         },
@@ -551,8 +551,8 @@
             "split_index": "1_0_0",
             "text_length": 1190,
             "potential_comparators": [
-              "Pierluigi",
-              "Having"
+              "Having",
+              "Pierluigi"
             ]
           }
         },
@@ -697,11 +697,11 @@
             "split_index": "0_1_0",
             "text_length": 1131,
             "potential_comparators": [
-              "atezolizumab",
+              "nintedanib",
               "osymertinib",
               "nivolumab",
-              "nintedanib",
-              "According"
+              "According",
+              "atezolizumab"
             ]
           }
         },
@@ -1000,11 +1000,11 @@
             "split_index": 1,
             "text_length": 1333,
             "potential_comparators": [
-              "NHI",
+              "Estimated",
               "nintedanib",
-              "Incremental",
+              "NHI",
               "Sotorasib",
-              "Estimated"
+              "Incremental"
             ]
           }
         },
@@ -1022,9 +1022,9 @@
             "split_index": 6,
             "text_length": 1535,
             "potential_comparators": [
-              "SOT",
               "pembrolizumab",
-              "Analysis"
+              "Analysis",
+              "SOT"
             ]
           }
         }
@@ -1053,8 +1053,8 @@
             "split_index": "0_0_0",
             "text_length": 942,
             "potential_comparators": [
-              "Patients",
               "of 960 mg",
+              "Patients",
               "Secondary",
               "G12C"
             ]
@@ -1093,8 +1093,8 @@
             "text_length": 1509,
             "potential_comparators": [
               "Product",
-              "RSL",
-              "Study"
+              "Study",
+              "RSL"
             ]
           }
         },
@@ -1112,10 +1112,10 @@
             "split_index": 0,
             "text_length": 1351,
             "potential_comparators": [
-              "nivolumab",
+              "to 120 mg",
               "nintedanib",
               "Table",
-              "to 120 mg",
+              "nivolumab",
               "pembrolizumab"
             ]
           }
@@ -1205,10 +1205,10 @@
             "split_index": "0_0_0",
             "text_length": 1019,
             "potential_comparators": [
-              "nitendanib",
-              "atezolizumab",
-              "nivolumab",
               "Thus",
+              "nitendanib",
+              "nivolumab",
+              "atezolizumab",
               "pembrolizumab"
             ]
           }
@@ -1265,9 +1265,9 @@
             "text_length": 1307,
             "potential_comparators": [
               "Tumor",
-              "Eligible",
               "Patients'",
-              "They"
+              "They",
+              "Eligible"
             ]
           }
         },
@@ -1304,9 +1304,9 @@
             "split_index": "5_0_0",
             "text_length": 1315,
             "potential_comparators": [
-              "Each",
               "Chemo-radiation",
               "Adjuvant",
+              "Each",
               "Previous",
               "Adjustments"
             ]
@@ -1342,11 +1342,11 @@
             "split_index": 0,
             "text_length": 1292,
             "potential_comparators": [
-              "INFARMED",
-              "AMGEN",
+              "Versão",
               "Amgen",
+              "INFARMED",
               "Relatório",
-              "Versão"
+              "AMGEN"
             ]
           }
         },
@@ -1446,15 +1446,15 @@
             "split_index": 0,
             "text_length": 1563,
             "potential_comparators": [
-              "nitendanib",
-              "As",
-              "These",
-              "Dosage",
-              "nivolumab",
               "Blocking",
+              "As",
               "It",
-              "pembrozolizumab",
-              "of 960 mg"
+              "nivolumab",
+              "nitendanib",
+              "of 960 mg",
+              "Dosage",
+              "These",
+              "pembrozolizumab"
             ]
           }
         }

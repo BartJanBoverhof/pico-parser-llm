@@ -345,7 +345,7 @@ SOURCE_TYPE_CONFIGS = {
 
         Few-shot example (for format only):
         Example context snippet:
-        "Expected benefits include improved survival and response rates measured by RECIST criteria. Safety considerations include adverse events graded by CTCAE v5.0."
+        "Expected benefits include improved survival and response rates measured by RECIST criteria (ORR 37.1%, 95% CI 28.6-46.2). Safety considerations include adverse events graded by CTCAE v5.0 with diarrhoea occurring in 65% of patients."
 
         Example JSON output:
         {{
@@ -358,13 +358,13 @@ SOURCE_TYPE_CONFIGS = {
         {context_block}
 
         Your task:
-        Extract all relevant clinical outcomes for this indication from guideline context with their specific measurement details when provided.
+        Extract all relevant clinical outcomes for this indication from guideline context with their specific measurement details when provided, but exclude statistical results, percentages, confidence intervals, and numerical study findings.
 
         Output JSON ONLY in this exact structure:
         {{
           "Indication": "{indication}",
           "Country": null or a jurisdiction/organization string explicitly stated in the context,
-          "Outcomes": "<detailed list of outcomes found in the context with specific measurement information when available>"
+          "Outcomes": "<detailed list of outcomes found in the context with specific measurement information when available, excluding statistical results>"
         }}
         """.strip()
     }
