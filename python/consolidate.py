@@ -215,7 +215,7 @@ class PICOConsolidator:
         model_override: Optional[Union[str, ChatOpenAI]] = None
     ) -> Dict:
         """
-        Consolidate PICOs using LLM to merge similar Population-Comparator combinations.
+        Consolidate PICOs using LLM to merge similar Population-Comparator combinations while preserving outcomes.
 
         Args:
             all_picos: List of all PICO dictionaries
@@ -235,10 +235,10 @@ class PICOConsolidator:
         # Prepare system prompt
         system_prompt = self.consolidation_configs.get(
             "pico_consolidation_system_prompt", 
-            "Consolidate the provided PICOs by grouping similar Population and Comparator combinations."
+            "Consolidate the provided PICOs by grouping similar Population and Comparator combinations while preserving outcomes."
         )
 
-        # Prepare the PICO data for the LLM
+        # Prepare the PICO data for the LLM - include all PICO elements including outcomes
         picos_for_llm = []
         for i, pico in enumerate(all_picos):
             pico_entry = {
@@ -246,6 +246,7 @@ class PICOConsolidator:
                 "Population": pico.get("Population", ""),
                 "Intervention": pico.get("Intervention", ""),
                 "Comparator": pico.get("Comparator", ""),
+                "Outcomes": pico.get("Outcomes", ""),
                 "Country": pico.get("Country", ""),
                 "Source_Type": pico.get("Source_Type", "")
             }
@@ -261,7 +262,7 @@ class PICOConsolidator:
         PICOs to consolidate:
         {json.dumps(picos_for_llm, indent=2)}
 
-        Task: Consolidate these PICOs into a non-redundant list where PICOs with substantially similar Population and Comparator combinations are merged. Track the countries and source types for each consolidated PICO.
+        Task: Consolidate these PICOs into a non-redundant list where PICOs with substantially similar Population and Comparator combinations are merged. When consolidating PICOs, combine their outcomes into comprehensive outcome descriptions. Track the countries and source types for each consolidated PICO.
 
         Return the result as valid JSON following the structure specified in the system prompt.
         """
@@ -504,16 +505,16 @@ class PICOConsolidator:
         print(f"Found {len(all_picos)} total PICOs across {len(metadata['countries'])} countries")
         print(f"Found {len(all_outcomes)} total outcomes")
 
-        # Step 3: Consolidate PICOs
-        print("Step 3: Consolidating PICOs...")
+        # Step 3: Consolidate PICOs (including outcomes)
+        print("Step 3: Consolidating PICOs with outcomes...")
         consolidated_picos = self.consolidate_picos(all_picos, metadata, model_override)
         
         if consolidated_picos:
             total_consolidated = consolidated_picos.get("consolidation_metadata", {}).get("total_consolidated_picos", 0)
             print(f"Consolidated {len(all_picos)} original PICOs into {total_consolidated} consolidated PICOs")
 
-        # Step 4: Consolidate outcomes
-        print("Step 4: Consolidating outcomes...")
+        # Step 4: Consolidate outcomes (for separate outcomes categorization)
+        print("Step 4: Consolidating outcomes into categories...")
         consolidated_outcomes = self.consolidate_outcomes(all_outcomes, metadata, model_override)
         
         if consolidated_outcomes:

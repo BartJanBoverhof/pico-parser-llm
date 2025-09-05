@@ -1,12 +1,64 @@
 {
   "extraction_metadata": {
-    "timestamp": "2025-09-05T10:14:47.730638",
+    "timestamp": "2025-09-05T13:52:05.464314",
     "source_type": "clinical_guideline",
     "indication": "treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context",
     "total_countries": 6,
     "total_picos": 11
   },
   "picos_by_country": {
+    "NL": {
+      "Indication": "treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context",
+      "Country": "NL",
+      "PICOs": [
+        {
+          "Population": "patients with non–small-cell lung cancer stage IIIB/IV and a KRAS G12C mutation",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "docetaxel",
+          "Outcomes": "progression free survival, quality of life, overall survival, objective response rate, adverse events"
+        },
+        {
+          "Population": "patients with non–smallcell lung cancer stage IIIB/IV and a KRAS G12C mutation",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "chemotherapy",
+          "Outcomes": "progression free survival, quality of life, overall survival, objective response rate, adverse events"
+        }
+      ],
+      "ChunksUsed": 9,
+      "ContextTokens": 1934
+    },
+    "DK": {
+      "Indication": "treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context",
+      "Country": "DK",
+      "PICOs": [
+        {
+          "Population": "patients with advanced NSCLC and KRAS G12C mutation previously treated with platinum-based chemotherapy and immunotherapy",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "docetaxel",
+          "Outcomes": "overall response rate (ORR), median progression-free survival (mPFS), adverse events (Grade 3 or higher, including diarrhoea, ALT increase, AST increase, neutropenia, fatigue, febrile neutropenia), response to immunotherapy monotherapy, duration of response (DOR, median)"
+        },
+        {
+          "Population": "patients with active KRAS G12C and 0-2 performance status and previously treated with platinum-based chemotherapy and immunotherapy (where applicable)",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "sotorasib",
+          "Outcomes": "overall response rate (ORR), median progression-free survival (mPFS), adverse events (Grade 3 or higher, including diarrhoea, ALT increase, AST increase, neutropenia, fatigue, febrile neutropenia), response to immunotherapy monotherapy, duration of response (DOR, median)"
+        },
+        {
+          "Population": "patients with active KRAS G12C and 0-2 performance status and previously treated with platinum-based chemotherapy and immunotherapy (where applicable)",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "adagrasib",
+          "Outcomes": "overall response rate (ORR), median progression-free survival (mPFS), adverse events (Grade 3 or higher, including diarrhoea, ALT increase, AST increase, neutropenia, fatigue, febrile neutropenia), response to immunotherapy monotherapy, duration of response (DOR, median)"
+        },
+        {
+          "Population": "patients with oncogene-driven NSCLC treated with immunotherapy alone",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "immunotherapy monotherapy",
+          "Outcomes": "overall response rate (ORR), median progression-free survival (mPFS), adverse events (Grade 3 or higher, including diarrhoea, ALT increase, AST increase, neutropenia, fatigue, febrile neutropenia), response to immunotherapy monotherapy, duration of response (DOR, median)"
+        }
+      ],
+      "ChunksUsed": 16,
+      "ContextTokens": 3464
+    },
     "FR": {
       "Indication": "treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context",
       "Country": "FR",
@@ -21,19 +73,25 @@
       "ChunksUsed": 14,
       "ContextTokens": 3364
     },
-    "DE": {
+    "EN": {
       "Indication": "treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context",
-      "Country": "DE",
+      "Country": "EN",
       "PICOs": [
         {
-          "Population": "Patients with Stage IV NSCLC with a KRAS-G12C mutation should be treated according to Failure of at least one systemic therapy",
+          "Population": "KRAS G12C mutation-positive locally advanced or metastatic non-small-cell lung cancer in adults whose disease has progressed on, or who cannot tolerate, platinum-based chemotherapy or anti-PD-1/PD-L1 immunotherapy",
           "Intervention": "Medicine X (under assessment)",
-          "Comparator": "currently approved (02/22) Sotorasib",
-          "Outcomes": "treatment according to evidence-based recommendations, use of targeted therapy (Sotorasib) after failure of at least one systemic therapy"
+          "Comparator": "docetaxel",
+          "Outcomes": "overall survival, progression-free survival, health-related quality of life, objective response rate (measured by RECIST 1.1 criteria), adverse effects"
+        },
+        {
+          "Population": "KRAS G12C mutation-positive locally advanced or metastatic non-small-cell lung cancer in adults whose disease has progressed on, or who cannot tolerate, platinum-based chemotherapy or anti-PD-1/PD-L1 immunotherapy",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "docetaxel plus nintedanib",
+          "Outcomes": "overall survival, progression-free survival, health-related quality of life, objective response rate (measured by RECIST 1.1 criteria), adverse effects"
         }
       ],
-      "ChunksUsed": 4,
-      "ContextTokens": 692
+      "ChunksUsed": 24,
+      "ContextTokens": 4891
     },
     "SE": {
       "Indication": "treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context",
@@ -49,77 +107,19 @@
       "ChunksUsed": 7,
       "ContextTokens": 1539
     },
-    "DK": {
+    "DE": {
       "Indication": "treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context",
-      "Country": "DK",
+      "Country": "DE",
       "PICOs": [
         {
-          "Population": "patients with advanced NSCLC and KRAS G12C mutation previously treated with platinum-based chemotherapy and immunotherapy",
+          "Population": "Patients with Stage IV NSCLC with a KRAS-G12C mutation and failure of at least one systemic therapy",
           "Intervention": "Medicine X (under assessment)",
-          "Comparator": "sotorasib",
-          "Outcomes": "objective response rate (ORR), median progression-free survival (mPFS), adverse events (including Grade 3 or higher diarrhoea, ALT increase, AST increase, neutropenia, fatigue, febrile neutropenia), duration of response (DOR), response to immunotherapy monotherapy"
-        },
-        {
-          "Population": "patients with advanced NSCLC and KRAS G12C mutation previously treated with platinum-based chemotherapy and immunotherapy",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "docetaxel",
-          "Outcomes": "objective response rate (ORR), median progression-free survival (mPFS), adverse events (including Grade 3 or higher diarrhoea, ALT increase, AST increase, neutropenia, fatigue, febrile neutropenia), duration of response (DOR), response to immunotherapy monotherapy"
-        },
-        {
-          "Population": "patients with advanced NSCLC and KRAS G12C mutation previously treated with platinum-based chemotherapy and immunotherapy",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "adagrasib",
-          "Outcomes": "objective response rate (ORR), median progression-free survival (mPFS), adverse events (including Grade 3 or higher diarrhoea, ALT increase, AST increase, neutropenia, fatigue, febrile neutropenia), duration of response (DOR), response to immunotherapy monotherapy"
+          "Comparator": "currently approved (02/22) Sotorasib",
+          "Outcomes": "treatment according to evidence-based recommendations, use of targeted therapy (Sotorasib), consideration of patient overall condition (Karnofsky or ECOG performance status), consensus-based recommendation"
         }
       ],
-      "ChunksUsed": 16,
-      "ContextTokens": 3464
-    },
-    "EN": {
-      "Indication": "treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context",
-      "Country": "EN",
-      "PICOs": [
-        {
-          "Population": "KRAS G12C mutation-positive locally advanced or metastatic non-small-cell lung cancer in adults whose disease has progressed on, or who cannot tolerate, platinum-based chemotherapy or anti-PD-1/PD-L1 immunotherapy",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "docetaxel",
-          "Outcomes": "overall survival, progression-free survival, health-related quality of life, objective response rate (measured by RECIST 1.1 criteria), adverse effects impacting health-related quality of life"
-        },
-        {
-          "Population": "KRAS G12C mutation-positive locally advanced or metastatic non-small-cell lung cancer in adults whose disease has progressed on, or who cannot tolerate, platinum-based chemotherapy or anti-PD-1/PD-L1 immunotherapy",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "docetaxel plus nintedanib",
-          "Outcomes": "overall survival, progression-free survival, health-related quality of life, objective response rate (measured by RECIST 1.1 criteria), adverse effects impacting health-related quality of life"
-        }
-      ],
-      "ChunksUsed": 24,
-      "ContextTokens": 4891
-    },
-    "NL": {
-      "Indication": "treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context",
-      "Country": "NL",
-      "PICOs": [
-        {
-          "Population": "patients with non–small-cell lung cancer stage IIIB/IV and an KRAS G12C mutation",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "docetaxel",
-          "Outcomes": "progression free survival, quality of life, overall survival, objective response rate, adverse events"
-        },
-        {
-          "Population": "patients with non–smallcell lung cancer stage IIIB/IV and a KRAS G12C mutation",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "chemotherapy",
-          "Outcomes": "progression free survival, quality of life, overall survival, objective response rate, adverse events"
-        },
-        {
-          "Population": "metastatic NSCLC harboring a KRAS mutation, who received prior chemotherapy",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "investigator’s choice chemotherapy (gemcitabine 1250mg/m2 days 1 and 8 every 21 days, docetaxel 75 mg/m2 day 1 every 21 days, or pemetrexed 500 mg/m2 day 1 every 21 days)",
-          "Outcomes": "progression free survival, quality of life, overall survival, objective response rate, adverse events"
-        }
-      ],
-      "ChunksUsed": 9,
-      "ContextTokens": 1934
+      "ChunksUsed": 4,
+      "ContextTokens": 692
     }
   }
 }
