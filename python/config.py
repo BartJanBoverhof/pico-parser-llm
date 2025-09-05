@@ -26,8 +26,9 @@ SOURCE_TYPE_CONFIGS = {
         Prefer sections that describe:
         - Primary and secondary efficacy endpoints (OS, PFS, ORR, DoR, etc.)
         - Safety outcomes and adverse events
-        - Quality of life measures and patient-reported outcomes
+        - Quality of life measures and patient-reported outcomes (including any specific instruments like EORTC QLQ, EQ-5D, SF-36)
         - Economic outcomes and utilities
+        - Exploratory or additional endpoints (e.g. time to next treatment/PFS2, progression of brain metastases, time to deterioration) if reported
         - Statistical methods and analysis approaches
         Focus on specific outcome definitions and measurement methodologies.
         """.strip(),
@@ -73,9 +74,10 @@ SOURCE_TYPE_CONFIGS = {
            - "Intervention" = "Medicine X (under assessment)"
            - "Comparator"  = the specific alternative/regimen/class/SoC/BSC/placebo (or ITC/NMA comparator) as named.
            - "Outcomes" = ""
-        4) If a jurisdiction/country/agency is explicitly stated, record it; otherwise use null (unquoted).
-        5) You may reason stepwise INTERNALLY, but DO NOT include your reasoning in the output.
-        6) Return VALID JSON ONLY that adheres to the output contract below. Do not wrap in code fences, do not add comments, and do not include trailing commas.
+        4) If a comparator is indicated only for a subset of the population (e.g. 'only PD-L1 positive patients'), treat that as a distinct Population string for that PICO.
+        5) If a jurisdiction/country/agency is explicitly stated, record it; otherwise use null (unquoted).
+        6) You may reason stepwise INTERNALLY, but DO NOT include your reasoning in the output.
+        7) Return VALID JSON ONLY that adheres to the output contract below. Do not wrap in code fences, do not add comments, and do not include trailing commas.
 
         JSON output contract:
         - Top-level object with keys: "Indication" (string), "Country" (string or null), "PICOs" (array).
@@ -144,14 +146,15 @@ SOURCE_TYPE_CONFIGS = {
         Extraction rules:
         1) Use ONLY information present in the context; do not infer missing facts.
         2) Extract all relevant outcomes mentioned for the indication.
-        3) Consolidate similar outcomes into a concise list.
-        4) If a jurisdiction/country/agency is explicitly stated, record it; otherwise use null (unquoted).
-        5) You may reason stepwise INTERNALLY, but DO NOT include your reasoning in the output.
-        6) Return VALID JSON ONLY that adheres to the output contract below. Do not wrap in code fences, do not add comments, and do not include trailing commas.
+        3) Include all distinct outcomes mentioned (avoid merging different endpoints into one) - if multiple terms refer to the same outcome, you may use a single term, but do not omit any unique outcome.
+        4) If the context specifies how an outcome is measured or defined (e.g. a QoL questionnaire name, a threshold like 15% improvement for responders, or a time-to-deterioration metric), include that detail in the outcome description.
+        5) If a jurisdiction/country/agency is explicitly stated, record it; otherwise use null (unquoted).
+        6) You may reason stepwise INTERNALLY, but DO NOT include your reasoning in the output.
+        7) Return VALID JSON ONLY that adheres to the output contract below. Do not wrap in code fences, do not add comments, and do not include trailing commas.
 
         JSON output contract:
         - Top-level object with keys: "Indication" (string), "Country" (string or null), "Outcomes" (string).
-        - "Outcomes" is a concise string listing all relevant outcomes found in the context.
+        - "Outcomes" is a detailed string listing all relevant outcomes found in the context with their specific details when available.
         - Use double quotes for all JSON strings.
         - Use null (without quotes) when no country/jurisdiction is stated.
         """.strip(),
@@ -163,26 +166,26 @@ SOURCE_TYPE_CONFIGS = {
 
         Few-shot example (for format only):
         Example context snippet:
-        "Primary endpoints include overall survival and progression-free survival. Secondary endpoints include response rate and safety."
+        "Secondary endpoints include quality of life measured by EQ-5D and time to progression on subsequent therapy. Safety outcomes include serious adverse events and discontinuations due to AEs."
 
         Example JSON output:
         {{
           "Indication": "{indication}",
           "Country": null,
-          "Outcomes": "overall survival, progression-free survival, response rate, safety"
+          "Outcomes": "quality of life (EQ-5D), time to progression on subsequent therapy, serious adverse events, discontinuations due to AEs"
         }}
 
         Context for extraction:
         {context_block}
 
         Your task:
-        Extract all relevant clinical outcomes for this indication.
+        Extract all relevant clinical outcomes for this indication with their specific measurement details when provided.
 
         Output JSON ONLY in this exact structure:
         {{
           "Indication": "{indication}",
           "Country": null or a jurisdiction string explicitly stated in the context,
-          "Outcomes": "<concise list of outcomes found in the context>"
+          "Outcomes": "<detailed list of outcomes found in the context with specific measurement information when available>"
         }}
         """.strip()
     },
@@ -205,9 +208,10 @@ SOURCE_TYPE_CONFIGS = {
         Prefer content that describes:
         - Expected clinical benefits and efficacy outcomes
         - Safety considerations and adverse event profiles
-        - Quality of life impacts and patient-reported outcomes
+        - Quality of life impacts and patient-reported outcomes (including any specific instruments like EORTC QLQ, EQ-5D, SF-36)
         - Evidence strength/level and recommendation grades if provided
         - Response rates and survival outcomes
+        - Exploratory or additional endpoints (e.g. time to next treatment/PFS2, progression of brain metastases, time to deterioration) if reported
         Focus on outcome expectations and evidence quality assessments.
         """.strip(),
 
@@ -250,9 +254,10 @@ SOURCE_TYPE_CONFIGS = {
            - "Intervention" = "Medicine X (under assessment)"
            - "Comparator"  = the named alternative/recommended option/SoC/BSC/placebo.
            - "Outcomes" = ""
-        4) Record jurisdiction/country/organization if explicitly stated; else use null (unquoted).
-        5) You may reason stepwise INTERNALLY, but DO NOT include your reasoning in the output.
-        6) Return VALID JSON ONLY (no code fences, no comments, no trailing commas) per the contract:
+        4) If a comparator is indicated only for a subset of the population (e.g. 'only PD-L1 positive patients'), treat that as a distinct Population string for that PICO.
+        5) Record jurisdiction/country/organization if explicitly stated; else use null (unquoted).
+        6) You may reason stepwise INTERNALLY, but DO NOT include your reasoning in the output.
+        7) Return VALID JSON ONLY (no code fences, no comments, no trailing commas) per the contract:
 
         JSON output contract:
         - Top-level keys: "Indication" (string), "Country" (string or null), "PICOs" (array).
@@ -320,14 +325,15 @@ SOURCE_TYPE_CONFIGS = {
         Extraction rules:
         1) Use ONLY the context; do not infer beyond what is written.
         2) Extract all relevant outcomes mentioned for the indication.
-        3) Consolidate similar outcomes into a concise list.
-        4) Record jurisdiction/country/organization if explicitly stated; else use null (unquoted).
-        5) You may reason stepwise INTERNALLY, but DO NOT include your reasoning in the output.
-        6) Return VALID JSON ONLY that adheres to the output contract below. Do not wrap in code fences, do not add comments, and do not include trailing commas.
+        3) Include all distinct outcomes mentioned (avoid merging different endpoints into one) - if multiple terms refer to the same outcome, you may use a single term, but do not omit any unique outcome.
+        4) If the context specifies how an outcome is measured or defined (e.g. a QoL questionnaire name, a threshold like 15% improvement for responders, or a time-to-deterioration metric), include that detail in the outcome description.
+        5) Record jurisdiction/country/organization if explicitly stated; else use null (unquoted).
+        6) You may reason stepwise INTERNALLY, but DO NOT include your reasoning in the output.
+        7) Return VALID JSON ONLY that adheres to the output contract below. Do not wrap in code fences, do not add comments, and do not include trailing commas.
 
         JSON output contract:
         - Top-level object with keys: "Indication" (string), "Country" (string or null), "Outcomes" (string).
-        - "Outcomes" is a concise string listing all relevant outcomes found in the context.
+        - "Outcomes" is a detailed string listing all relevant outcomes found in the context with their specific details when available.
         - Use double quotes for all JSON strings.
         - Use null (without quotes) when no country/jurisdiction is stated.
         """.strip(),
@@ -339,26 +345,26 @@ SOURCE_TYPE_CONFIGS = {
 
         Few-shot example (for format only):
         Example context snippet:
-        "Expected benefits include improved survival and response rates. Safety considerations include adverse events."
+        "Expected benefits include improved survival and response rates measured by RECIST criteria. Safety considerations include adverse events graded by CTCAE v5.0."
 
         Example JSON output:
         {{
           "Indication": "{indication}",
           "Country": null,
-          "Outcomes": "improved survival, response rates, safety"
+          "Outcomes": "improved survival, response rates (RECIST criteria), adverse events (CTCAE v5.0)"
         }}
 
         Context for extraction:
         {context_block}
 
         Your task:
-        Extract all relevant clinical outcomes for this indication from guideline context.
+        Extract all relevant clinical outcomes for this indication from guideline context with their specific measurement details when provided.
 
         Output JSON ONLY in this exact structure:
         {{
           "Indication": "{indication}",
           "Country": null or a jurisdiction/organization string explicitly stated in the context,
-          "Outcomes": "<concise list of outcomes found in the context>"
+          "Outcomes": "<detailed list of outcomes found in the context with specific measurement information when available>"
         }}
         """.strip()
     }
@@ -445,4 +451,3 @@ CASE_CONFIGS = {
         "drug_keywords": ["sorafenib", "lenvatinib", "atezolizumab", "bevacizumab", "regorafenib", "cabozantinib"]
     }
 }
-

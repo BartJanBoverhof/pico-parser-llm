@@ -15,7 +15,7 @@ POST_CLEANED_PATH = "data/post_cleaned"
 CHUNKED_PATH = "data/text_chunked"
 VECTORSTORE_PATH = "data/vectorstore"
 VECTORSTORE_TYPE = "biobert"  # Choose between "openai", "biobert", or "both"
-MODEL = "gpt-5-mini"
+MODEL = "gpt-4.1"
 COUNTRIES = ["ALL"]  # Use "ALL" to process all available countries
 
 # Validate OpenAI API key
@@ -95,8 +95,8 @@ rag.run_population_comparator_retrieval_for_source_type(
     countries=COUNTRIES,
     indication=case1_indication,
     mutation_boost_terms=case1_mutation_boost,
-    initial_k=50,
-    final_k=20
+    initial_k=60,
+    final_k=22
 )
 
 # Run HTA Outcomes retrieval for Case 1
@@ -106,8 +106,8 @@ rag.run_outcomes_retrieval_for_source_type(
     countries=COUNTRIES,
     indication=case1_indication,
     mutation_boost_terms=case1_mutation_boost,
-    initial_k=40,
-    final_k=15
+    initial_k=60,
+    final_k=22
 )
 
 # Run Clinical Guideline Population & Comparator retrieval for Case 1
@@ -118,8 +118,8 @@ rag.run_population_comparator_retrieval_for_source_type(
     indication=case1_indication,
     required_terms=case1_required_terms,
     mutation_boost_terms=case1_mutation_boost,
-    initial_k=70,
-    final_k=18
+    initial_k=60,
+    final_k=12
 )
 
 # Run Clinical Guideline Outcomes retrieval for Case 1
@@ -153,7 +153,7 @@ extracted_picos_clinical_case1 = rag.run_pico_extraction_for_source_type(
     source_type="clinical_guideline",
     indication=case1_indication
 )
-
+"""
 # Demonstration: Run case-based pipeline with complete retrieval and extraction
 print("\n--- Running Case 1 with Complete Pipeline (Retrieval + Extraction) ---")
 case1_complete_results = rag.run_case_based_pipeline_with_retrieval(
@@ -167,7 +167,7 @@ case1_complete_results = rag.run_case_based_pipeline_with_retrieval(
     skip_processing=True,
     skip_translation=True
 )
-
+"""
 # Summary
 print("\n=== RETRIEVAL & EXTRACTION PIPELINE EXECUTION SUMMARY ===")
 print("✓ Documents processed and vectorized")
