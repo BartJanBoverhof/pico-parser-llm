@@ -5,7 +5,7 @@ from python.translation import Translator
 from python.vectorise import Chunker, Vectoriser
 from python.run import RagPipeline
 from python.open_ai import validate_api_key
-from python.config import SOURCE_TYPE_CONFIGS, CASE_CONFIGS
+from python.config import SOURCE_TYPE_CONFIGS, CASE_CONFIGS, CONSOLIDATION_CONFIGS
 
 # Define paths
 PDF_PATH = "data/PDF"
@@ -67,7 +67,8 @@ vectorstore = vectoriser.run_pipeline()
 rag = RagPipeline(
     model=MODEL,
     vectorstore_type=VECTORSTORE_TYPE,
-    source_type_configs=SOURCE_TYPE_CONFIGS
+    source_type_configs=SOURCE_TYPE_CONFIGS,
+    consolidation_configs=CONSOLIDATION_CONFIGS
 )
 
 # Load the vectorstore
@@ -154,6 +155,18 @@ extracted_picos_clinical_case1 = rag.run_pico_extraction_for_source_type(
     indication=case1_indication
 )
 
+# Step 10: Run PICO and Outcomes Consolidation
+print("\n--- Running Case 1 PICO and Outcomes Consolidation ---")
+
+# Initialize the consolidator
+rag.initialize_pico_consolidator()
+
+# Run consolidation for both source types
+print("Consolidating PICOs and Outcomes across all sources...")
+consolidation_results = rag.run_pico_consolidation(
+    source_types=["hta_submission", "clinical_guideline"]
+)
+
 """
 # Demonstration: Run case-based pipeline with complete retrieval and extraction
 print("\n--- Running Case 1 with Complete Pipeline (Retrieval + Extraction) ---")
@@ -169,8 +182,9 @@ case1_complete_results = rag.run_case_based_pipeline_with_retrieval(
     skip_translation=True
 )
 """
+
 # Summary
-print("\n=== RETRIEVAL & EXTRACTION PIPELINE EXECUTION SUMMARY ===")
+print("\n=== RETRIEVAL, EXTRACTION & CONSOLIDATION PIPELINE EXECUTION SUMMARY ===")
 print("✓ Documents processed and vectorized")
 print("✓ Retrieval system initialized with specialized capabilities")
 print("✓ Population & Comparator chunk retrieval completed and saved")
@@ -181,11 +195,23 @@ print("  - Outcomes extracted separately")
 print("  - Results combined into final PICO format")
 print(f"✓ Case 1 HTA submissions: {len(extracted_picos_hta_case1)} countries processed")
 print(f"✓ Case 1 Clinical guidelines: {len(extracted_picos_clinical_case1)} countries processed")
+
+# Consolidation summary
+if consolidation_results and "summary" in consolidation_results:
+    summary = consolidation_results["summary"]
+    print("✓ PICO and Outcomes consolidation completed:")
+    print(f"  - Original PICOs: {summary.get('original_picos', 0)}")
+    print(f"  - Consolidated PICOs: {summary.get('consolidated_picos', 0)}")
+    print(f"  - Original outcomes: {summary.get('original_outcomes', 0)}")
+    print(f"  - Categorized unique outcomes: {summary.get('unique_outcomes', 0)}")
+    print(f"  - Countries included: {', '.join(summary.get('countries', []))}")
+    print(f"  - Source types: {', '.join(summary.get('source_types', []))}")
+
 print(f"✓ Model used: {MODEL}")
 print(f"✓ Vectorstore: {VECTORSTORE_TYPE}")
-print("✓ Retrieval + extraction approach successfully implemented")
+print("✓ Complete pipeline with consolidation successfully implemented")
 
-# Print file locations for retrieval and extraction
+# Print file locations for retrieval, extraction, and consolidation
 print("\n=== PIPELINE OUTPUT FILES ===")
 print("📁 Retrieval Results:")
 print("  - HTA Population & Comparator chunks: results/chunks/hta_submission_population_comparator_*_retrieval_results.json")
@@ -195,6 +221,8 @@ print("  - Clinical Guideline Outcomes chunks: results/chunks/clinical_guideline
 print("📁 Extraction Results:")
 print("  - HTA submission PICOs (combined): results/PICO/hta_submission_picos.json")
 print("  - Clinical guideline PICOs (combined): results/PICO/clinical_guideline_picos.json")
+print("📁 Consolidation Results (NEW):")
+print("  - Consolidated PICOs & Outcomes: results/consolidated/*_consolidated_*.json")
 
 # Print extraction advantages
 print("\n=== EXTRACTION ADVANTAGES ===")
@@ -211,6 +239,21 @@ print("  - Can adjust retrieval parameters separately for P&C vs O")
 print("  - Can fine-tune extraction prompts independently")
 print("  - Backward compatible with existing workflows")
 
+# Print consolidation advantages
+print("\n=== CONSOLIDATION ADVANTAGES (NEW) ===")
+print("🔄 Cross-Country Harmonization:")
+print("  - Merges similar PICOs from different countries")
+print("  - Tracks country and source type origins")
+print("  - Reduces redundancy while preserving important variations")
+print("🔄 Structured Outcomes Organization:")
+print("  - Categorizes outcomes by clinical relevance (Efficacy, Safety, QoL, Economic)")
+print("  - Removes duplicates while preserving measurement details")
+print("  - Creates organized reference for outcome planning")
+print("🔄 Enhanced Analysis Ready:")
+print("  - Consolidated PICOs ready for comparative analysis")
+print("  - Structured outcomes support systematic review")
+print("  - Maintains traceability to original sources")
+
 print("\n=== EXTRACTION METHODOLOGY ===")
 print("1. Population & Comparator Extraction:")
 print("   - Uses population_comparator chunks from retrieval")
@@ -224,13 +267,23 @@ print("3. Results Combination:")
 print("   - Merges Population & Comparator entries with Outcomes")
 print("   - Maintains original PICO JSON structure")
 print("   - Each PICO entry gets the country-specific outcomes")
+print("4. PICO Consolidation (NEW):")
+print("   - LLM-based consolidation of similar PICOs across countries")
+print("   - Preserves clinical distinctions while reducing redundancy")
+print("   - Tracks origins and maintains traceability")
+print("5. Outcomes Consolidation (NEW):")
+print("   - Categorizes outcomes into clinical domains")
+print("   - Organizes by relevance and measurement approach")
+print("   - Creates structured outcome reference")
 
 print("\n=== NEXT STEPS ===")
 print("1. Review the extraction results to validate separation quality")
 print("2. Fine-tune extraction prompts based on results")
 print("3. Adjust retrieval parameters for optimal P&C vs Outcomes separation")
-print("4. Test with additional case configurations")
-print("5. Validate that final JSON structure matches expectations")
+print("4. Review consolidation results for accuracy and completeness")
+print("5. Fine-tune consolidation prompts based on domain expertise")
+print("6. Test with additional case configurations")
+print("7. Validate that final consolidated structures meet analysis needs")
 
 # Final validation
 if extracted_picos_hta_case1:
@@ -238,5 +291,9 @@ if extracted_picos_hta_case1:
     print(f"📊 HTA Results: {sum(len(country.get('PICOs', [])) for country in extracted_picos_hta_case1)} total PICOs extracted")
     if extracted_picos_clinical_case1:
         print(f"📊 Clinical Results: {sum(len(country.get('PICOs', [])) for country in extracted_picos_clinical_case1)} total PICOs extracted")
+    
+    if consolidation_results and "summary" in consolidation_results:
+        summary = consolidation_results["summary"]
+        print(f"🎯 Consolidation Results: {summary.get('consolidated_picos', 0)} consolidated PICOs, {summary.get('unique_outcomes', 0)} categorized outcomes")
 else:
     print("❌ Extraction failed - check logs for details")

@@ -14,6 +14,7 @@ from python.translation import Translator
 from python.vectorise import Chunker, Vectoriser
 from python.retrieve import ChunkRetriever
 from python.extract import PICOExtractor
+from python.consolidate import PICOConsolidator
 from python.open_ai import validate_api_key
 
 from openai import OpenAI
@@ -30,6 +31,7 @@ class RagPipeline:
     4. Vectorization
     5. Retrieval (separate retrieval for Population & Comparator vs Outcomes)
     6. PICO extraction (separate extraction for Population & Comparator vs Outcomes)
+    7. PICO and Outcomes consolidation (NEW)
 
     Enhanced to support different source types with specialized retrieval strategies
     and configurable filtering parameters including mutation-specific retrieval.
@@ -49,7 +51,8 @@ class RagPipeline:
         chunk_overlap: int = 200,
         chunk_strategy: str = "semantic",
         vectorstore_type: str = "biobert",
-        source_type_configs: Optional[Dict[str, Any]] = None
+        source_type_configs: Optional[Dict[str, Any]] = None,
+        consolidation_configs: Optional[Dict[str, Any]] = None
     ):
         """
         Initialize the RAG system with customizable parameters.
@@ -67,6 +70,7 @@ class RagPipeline:
             chunk_strategy: Chunking strategy ("semantic" or "recursive")
             vectorstore_type: Type of vectorstore to use ("openai", "biobert", or "both")
             source_type_configs: Configuration for different source types
+            consolidation_configs: Configuration for PICO and outcomes consolidation
         """
         self.model = model
         self.path_pdf = pdf_path
@@ -77,6 +81,7 @@ class RagPipeline:
         self.path_results = results_path
         self.path_chunks = os.path.join(results_path, "chunks")
         self.path_pico = os.path.join(results_path, "PICO")
+        self.path_consolidated = os.path.join(results_path, "consolidated")
         self.chunk_size = chunk_size
         self.chunk_overlap = chunk_overlap
         self.chunk_strategy = chunk_strategy
@@ -85,6 +90,7 @@ class RagPipeline:
         os.makedirs(self.path_results, exist_ok=True)
         os.makedirs(self.path_chunks, exist_ok=True)
         os.makedirs(self.path_pico, exist_ok=True)
+        os.makedirs(self.path_consolidated, exist_ok=True)
 
         self.openai = OpenAI()
 
@@ -97,8 +103,10 @@ class RagPipeline:
         self.retriever = None
         self.pico_extractor_hta = None
         self.pico_extractor_clinical = None
+        self.pico_consolidator = None
 
         self.source_type_configs = source_type_configs or {}
+        self.consolidation_configs = consolidation_configs or {}
 
     @property
     def chunk_retriever(self):
@@ -242,6 +250,15 @@ class RagPipeline:
             )
         
         print(f"Initialized specialized PICO extractors for available source types with model {self.model}")
+
+    def initialize_pico_consolidator(self):
+        """Initialize the PICO and outcomes consolidator."""
+        self.pico_consolidator = PICOConsolidator(
+            model_name=self.model,
+            results_output_dir=self.path_results,
+            consolidation_configs=self.consolidation_configs
+        )
+        print(f"Initialized PICO consolidator with model {self.model}")
 
     def get_all_countries(self):
         """
@@ -444,6 +461,33 @@ class RagPipeline:
         
         return extracted_picos
 
+    def run_pico_consolidation(
+        self,
+        source_types: Optional[List[str]] = None,
+        model_override: Optional[Union[str, ChatOpenAI]] = None
+    ):
+        """
+        Run PICO and outcomes consolidation for specified source types.
+
+        Args:
+            source_types: List of source types to consolidate. If None, consolidates all available.
+            model_override: Optional model override for consolidation
+
+        Returns:
+            Dictionary with consolidation results
+        """
+        if self.pico_consolidator is None:
+            self.initialize_pico_consolidator()
+
+        print("=== Running PICO and Outcomes Consolidation ===")
+        
+        consolidation_results = self.pico_consolidator.consolidate_all(
+            source_types=source_types,
+            model_override=model_override
+        )
+
+        return consolidation_results
+
     def run_retrieval_for_source_type(
         self,
         source_type: str,
@@ -622,7 +666,8 @@ class RagPipeline:
         final_k_outcomes: int = 15,
         skip_processing: bool = True,
         skip_translation: bool = True,
-        vectorstore_type: Optional[str] = None
+        vectorstore_type: Optional[str] = None,
+        run_consolidation: bool = False
     ):
         """
         Run pipeline using retrieval for a specific case configuration.
@@ -638,9 +683,10 @@ class RagPipeline:
             skip_processing: Skip PDF processing
             skip_translation: Skip translation
             vectorstore_type: Vectorstore type to use
+            run_consolidation: Whether to run PICO and outcomes consolidation
         
         Returns:
-            Dictionary with extracted PICOs for each source type
+            Dictionary with extracted PICOs for each source type and consolidation results
         """
         if vectorstore_type is None:
             vectorstore_type = self.vectorstore_type
@@ -699,5 +745,13 @@ class RagPipeline:
                 continue
                 
             results[source_type] = extracted_picos
+        
+        # Run consolidation if requested
+        if run_consolidation:
+            print("\n=== Running PICO and Outcomes Consolidation ===")
+            consolidation_results = self.run_pico_consolidation(
+                source_types=source_types
+            )
+            results["consolidation"] = consolidation_results
         
         return results
