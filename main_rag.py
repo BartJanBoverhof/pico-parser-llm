@@ -227,8 +227,7 @@ print("  - Backward compatible with existing workflows")
 # Print consolidation advantages
 print("\n=== CONSOLIDATION ADVANTAGES ===")
 print("🔄 Cross-Country Harmonization:")
-print("  - Merges similar PICOs from different countries while preserving outcomes")
-print("  - Combines outcomes from consolidated PICOs into comprehensive descriptions")
+print("  - Merges similar PICOs from different countries")
 print("  - Tracks country and source type origins")
 print("  - Reduces redundancy while preserving important variations")
 print("🔄 Structured Outcomes Organization:")
@@ -236,7 +235,7 @@ print("  - Categorizes outcomes by clinical relevance (Efficacy, Safety, QoL, Ec
 print("  - Removes duplicates while preserving measurement details")
 print("  - Creates organized reference for outcome planning")
 print("🔄 Enhanced Analysis Ready:")
-print("  - Consolidated PICOs include comprehensive outcomes information")
+print("  - Consolidated PICOs ready for comparative analysis")
 print("  - Structured outcomes support systematic review")
 print("  - Maintains traceability to original sources")
 
@@ -255,7 +254,6 @@ print("   - Maintains original PICO JSON structure")
 print("   - Each PICO entry gets the country-specific outcomes")
 print("4. PICO Consolidation:")
 print("   - LLM-based consolidation of similar PICOs across countries")
-print("   - Combines outcomes from consolidated PICOs into comprehensive descriptions")
 print("   - Preserves clinical distinctions while reducing redundancy")
 print("   - Tracks origins and maintains traceability")
 print("5. Outcomes Consolidation:")
@@ -268,10 +266,9 @@ print("1. Review the extraction results to validate separation quality")
 print("2. Fine-tune extraction prompts based on results")
 print("3. Adjust retrieval parameters for optimal P&C vs Outcomes separation")
 print("4. Review consolidation results for accuracy and completeness")
-print("5. Verify that consolidated PICOs include comprehensive outcomes information")
-print("6. Fine-tune consolidation prompts based on domain expertise")
-print("7. Test with additional case configurations")
-print("8. Validate that final consolidated structures meet analysis needs")
+print("5. Fine-tune consolidation prompts based on domain expertise")
+print("6. Test with additional case configurations")
+print("7. Validate that final consolidated structures meet analysis needs")
 
 # Final validation
 if extracted_picos_hta_case1:
@@ -289,6 +286,6 @@ if extracted_picos_hta_case1:
     
     if consolidation_results and "summary" in consolidation_results:
         summary = consolidation_results["summary"]
-        print(f"🎯 Consolidation Results: {summary.get('consolidated_picos', 0)} consolidated PICOs with outcomes, {summary.get('unique_outcomes', 0)} categorized outcomes")
+        print(f"🎯 Consolidation Results: {summary.get('consolidated_picos', 0)} consolidated PICOs, {summary.get('unique_outcomes', 0)} categorized outcomes")
 else:
     print("❌ Extraction failed - check logs for details")
