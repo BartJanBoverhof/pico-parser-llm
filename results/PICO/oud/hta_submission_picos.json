@@ -1,0 +1,205 @@
+{
+  "extraction_metadata": {
+    "timestamp": "2025-09-05T07:31:30.231891",
+    "source_type": "hta_submission",
+    "indication": "treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context",
+    "total_countries": 4,
+    "total_picos": 27
+  },
+  "picos_by_country": {
+    "PO": {
+      "Indication": "treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context",
+      "Country": "PO",
+      "PICOs": [
+        {
+          "Population": "patients with NDRP with a KRAS G12C mutation indicates the possibility of using either sotorasib or adagrasib (following at least one prior therapy targeting the KRAS g12c mutation)",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "adagrasib",
+          "Outcomes": "progression-free survival, overall response rate, disease control rate, overall survival, quality of life, safety, adverse events, treatment discontinuation due to adverse events, dose modification due to adverse events, treatment-related death, economic outcomes (incremental cost-effectiveness ratio, budget impact)"
+        },
+        {
+          "Population": "patients with generalised non-small cell lung cancer depends on the clinico-pathomorphological characteristics, the effects of prior systemic therapy, and the molecular characteristics of the tumour. In this group, consideration may be given to the use of chemotherapy (dosectaxel or pemetrexed), docetaxel in combination with nintedanib, EGFR inhibitors in patients who have not received these medicines in the first line, or osymertinib in patients previously treated with first or second generation EGFR blockers, ALK inhibitors if ALK gene rearrangement, immunity (nivolumab or atezolizumab), palliative radiotherapy or symptomatic progression are observed.",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "chemotherapy (docetaxel or pemetrexed)",
+          "Outcomes": "progression-free survival, overall response rate, disease control rate, overall survival, quality of life, safety, adverse events, treatment discontinuation due to adverse events, dose modification due to adverse events, treatment-related death, economic outcomes (incremental cost-effectiveness ratio, budget impact)"
+        },
+        {
+          "Population": "patients with generalised non-small cell lung cancer depends on the clinico-pathomorphological characteristics, the effects of prior systemic therapy, and the molecular characteristics of the tumour. In this group, consideration may be given to the use of chemotherapy (dosectaxel or pemetrexed), docetaxel in combination with nintedanib, EGFR inhibitors in patients who have not received these medicines in the first line, or osymertinib in patients previously treated with first or second generation EGFR blockers, ALK inhibitors if ALK gene rearrangement, immunity (nivolumab or atezolizumab), palliative radiotherapy or symptomatic progression are observed.",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "docetaxel in combination with nintedanib",
+          "Outcomes": "progression-free survival, overall response rate, disease control rate, overall survival, quality of life, safety, adverse events, treatment discontinuation due to adverse events, dose modification due to adverse events, treatment-related death, economic outcomes (incremental cost-effectiveness ratio, budget impact)"
+        },
+        {
+          "Population": "patients with generalised non-small cell lung cancer depends on the clinico-pathomorphological characteristics, the effects of prior systemic therapy, and the molecular characteristics of the tumour. In this group, consideration may be given to the use of chemotherapy (dosectaxel or pemetrexed), docetaxel in combination with nintedanib, EGFR inhibitors in patients who have not received these medicines in the first line, or osymertinib in patients previously treated with first or second generation EGFR blockers, ALK inhibitors if ALK gene rearrangement, immunity (nivolumab or atezolizumab), palliative radiotherapy or symptomatic progression are observed.",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "EGFR inhibitors in patients who have not received these medicines in the first line",
+          "Outcomes": "progression-free survival, overall response rate, disease control rate, overall survival, quality of life, safety, adverse events, treatment discontinuation due to adverse events, dose modification due to adverse events, treatment-related death, economic outcomes (incremental cost-effectiveness ratio, budget impact)"
+        },
+        {
+          "Population": "patients with generalised non-small cell lung cancer depends on the clinico-pathomorphological characteristics, the effects of prior systemic therapy, and the molecular characteristics of the tumour. In this group, consideration may be given to the use of chemotherapy (dosectaxel or pemetrexed), docetaxel in combination with nintedanib, EGFR inhibitors in patients who have not received these medicines in the first line, or osymertinib in patients previously treated with first or second generation EGFR blockers, ALK inhibitors if ALK gene rearrangement, immunity (nivolumab or atezolizumab), palliative radiotherapy or symptomatic progression are observed.",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "osymertinib in patients previously treated with first or second generation EGFR blockers",
+          "Outcomes": "progression-free survival, overall response rate, disease control rate, overall survival, quality of life, safety, adverse events, treatment discontinuation due to adverse events, dose modification due to adverse events, treatment-related death, economic outcomes (incremental cost-effectiveness ratio, budget impact)"
+        },
+        {
+          "Population": "patients with generalised non-small cell lung cancer depends on the clinico-pathomorphological characteristics, the effects of prior systemic therapy, and the molecular characteristics of the tumour. In this group, consideration may be given to the use of chemotherapy (dosectaxel or pemetrexed), docetaxel in combination with nintedanib, EGFR inhibitors in patients who have not received these medicines in the first line, or osymertinib in patients previously treated with first or second generation EGFR blockers, ALK inhibitors if ALK gene rearrangement, immunity (nivolumab or atezolizumab), palliative radiotherapy or symptomatic progression are observed.",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "ALK inhibitors if ALK gene rearrangement",
+          "Outcomes": "progression-free survival, overall response rate, disease control rate, overall survival, quality of life, safety, adverse events, treatment discontinuation due to adverse events, dose modification due to adverse events, treatment-related death, economic outcomes (incremental cost-effectiveness ratio, budget impact)"
+        },
+        {
+          "Population": "patients with generalised non-small cell lung cancer depends on the clinico-pathomorphological characteristics, the effects of prior systemic therapy, and the molecular characteristics of the tumour. In this group, consideration may be given to the use of chemotherapy (dosectaxel or pemetrexed), docetaxel in combination with nintedanib, EGFR inhibitors in patients who have not received these medicines in the first line, or osymertinib in patients previously treated with first or second generation EGFR blockers, ALK inhibitors if ALK gene rearrangement, immunity (nivolumab or atezolizumab), palliative radiotherapy or symptomatic progression are observed.",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "immunity (nivolumab or atezolizumab)",
+          "Outcomes": "progression-free survival, overall response rate, disease control rate, overall survival, quality of life, safety, adverse events, treatment discontinuation due to adverse events, dose modification due to adverse events, treatment-related death, economic outcomes (incremental cost-effectiveness ratio, budget impact)"
+        },
+        {
+          "Population": "patients with generalised non-small cell lung cancer depends on the clinico-pathomorphological characteristics, the effects of prior systemic therapy, and the molecular characteristics of the tumour. In this group, consideration may be given to the use of chemotherapy (dosectaxel or pemetrexed), docetaxel in combination with nintedanib, EGFR inhibitors in patients who have not received these medicines in the first line, or osymertinib in patients previously treated with first or second generation EGFR blockers, ALK inhibitors if ALK gene rearrangement, immunity (nivolumab or atezolizumab), palliative radiotherapy or symptomatic progression are observed.",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "palliative radiotherapy",
+          "Outcomes": "progression-free survival, overall response rate, disease control rate, overall survival, quality of life, safety, adverse events, treatment discontinuation due to adverse events, dose modification due to adverse events, treatment-related death, economic outcomes (incremental cost-effectiveness ratio, budget impact)"
+        },
+        {
+          "Population": "patients with generalised non-small cell lung cancer depends on the clinico-pathomorphological characteristics, the effects of prior systemic therapy, and the molecular characteristics of the tumour. In this group, consideration may be given to the use of chemotherapy (dosectaxel or pemetrexed), docetaxel in combination with nintedanib, EGFR inhibitors in patients who have not received these medicines in the first line, or osymertinib in patients previously treated with first or second generation EGFR blockers, ALK inhibitors if ALK gene rearrangement, immunity (nivolumab or atezolizumab), palliative radiotherapy or symptomatic progression are observed.",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "symptomatic progression",
+          "Outcomes": "progression-free survival, overall response rate, disease control rate, overall survival, quality of life, safety, adverse events, treatment discontinuation due to adverse events, dose modification due to adverse events, treatment-related death, economic outcomes (incremental cost-effectiveness ratio, budget impact)"
+        },
+        {
+          "Population": "treatment of adult patients with advanced non-small cell lung cancer (NSCLC) with a KRas g12c mutation who have experienced disease progression after at least one line of previous use",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "docetaxel",
+          "Outcomes": "progression-free survival, overall response rate, disease control rate, overall survival, quality of life, safety, adverse events, treatment discontinuation due to adverse events, dose modification due to adverse events, treatment-related death, economic outcomes (incremental cost-effectiveness ratio, budget impact)"
+        },
+        {
+          "Population": "treatment of adult patients with advanced non-small cell lung cancer (NSCLC) with a KRas g12c mutation who have experienced disease progression after at least one line of previous use",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "nintedanib in combination with docetaxel",
+          "Outcomes": "progression-free survival, overall response rate, disease control rate, overall survival, quality of life, safety, adverse events, treatment discontinuation due to adverse events, dose modification due to adverse events, treatment-related death, economic outcomes (incremental cost-effectiveness ratio, budget impact)"
+        },
+        {
+          "Population": "treatment of adult patients with advanced non-small cell lung cancer (NSCLC) with a KRas g12c mutation who have experienced disease progression after at least one line of previous use",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "pemetrexed",
+          "Outcomes": "progression-free survival, overall response rate, disease control rate, overall survival, quality of life, safety, adverse events, treatment discontinuation due to adverse events, dose modification due to adverse events, treatment-related death, economic outcomes (incremental cost-effectiveness ratio, budget impact)"
+        },
+        {
+          "Population": "patients with non-small cell lung cancer (NDRP) with the presence of a p.G12C mutation in the KRAS gene (Kirsten rat viral oncogene homolog) after failure of at least one prior line of treatment",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "docetaxel",
+          "Outcomes": "progression-free survival, overall response rate, disease control rate, overall survival, quality of life, safety, adverse events, treatment discontinuation due to adverse events, dose modification due to adverse events, treatment-related death, economic outcomes (incremental cost-effectiveness ratio, budget impact)"
+        }
+      ],
+      "ChunksUsed": 35,
+      "ContextTokens": 8056
+    },
+    "DE": {
+      "Indication": "treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context",
+      "Country": "DE",
+      "PICOs": [
+        {
+          "Population": "Adults with advanced non-small cell lung cancer (NSCLC) with KRAS p.G12C mutation after first-line therapy with an anti-PD-1/PD-L1 in combination with platinum-containing chemotherapy or after sequential therapy with an anti-PD-1/PD-L1 and platinum-containing chemotherapy",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "docetaxel",
+          "Outcomes": "overall survival, progression-free survival, symptomatology, health status, health-related quality of life, side effects"
+        },
+        {
+          "Population": "Adults with advanced non-small cell lung cancer (NSCLC) with KRAS p.G12C mutation after first-line therapy with an anti-PD-1/PD-L1 in combination with platinum-containing chemotherapy or after sequential therapy with an anti-PD-1/PD-L1 and platinum-containing chemotherapy",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "pemetrexed",
+          "Outcomes": "overall survival, progression-free survival, symptomatology, health status, health-related quality of life, side effects"
+        },
+        {
+          "Population": "Adults with advanced non-small cell lung cancer (NSCLC) with KRAS p.G12C mutation after first-line therapy with an anti-PD-1/PD-L1 in combination with platinum-containing chemotherapy or after sequential therapy with an anti-PD-1/PD-L1 and platinum-containing chemotherapy",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "nivolumab",
+          "Outcomes": "overall survival, progression-free survival, symptomatology, health status, health-related quality of life, side effects"
+        },
+        {
+          "Population": "Adults with advanced non-small cell lung cancer (NSCLC) with KRAS p.G12C mutation after first-line therapy with an anti-PD-1/PD-L1 in combination with platinum-containing chemotherapy or after sequential therapy with an anti-PD-1/PD-L1 and platinum-containing chemotherapy",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "pembrolizumab",
+          "Outcomes": "overall survival, progression-free survival, symptomatology, health status, health-related quality of life, side effects"
+        },
+        {
+          "Population": "Adults with advanced non-small cell lung cancer (NSCLC) with KRAS p.G12C mutation after first-line therapy with an anti-PD-1/PD-L1 in combination with platinum-containing chemotherapy or after sequential therapy with an anti-PD-1/PD-L1 and platinum-containing chemotherapy",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "atezolizumab",
+          "Outcomes": "overall survival, progression-free survival, symptomatology, health status, health-related quality of life, side effects"
+        },
+        {
+          "Population": "Adults with advanced non-small cell lung cancer (NSCLC) with KRAS p.G12C mutation after first-line therapy with an anti-PD-1/PD-L1 in combination with platinum-containing chemotherapy or after sequential therapy with an anti-PD-1/PD-L1 and platinum-containing chemotherapy",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "docetaxel in combination with nintedanib",
+          "Outcomes": "overall survival, progression-free survival, symptomatology, health status, health-related quality of life, side effects"
+        }
+      ],
+      "ChunksUsed": 35,
+      "ContextTokens": 8531
+    },
+    "IT": {
+      "Indication": "treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context",
+      "Country": "IT",
+      "PICOs": [
+        {
+          "Population": "treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "standard of care therapy",
+          "Outcomes": ""
+        }
+      ],
+      "ChunksUsed": 12,
+      "ContextTokens": 3288
+    },
+    "PT": {
+      "Indication": "treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context",
+      "Country": "PT",
+      "PICOs": [
+        {
+          "Population": "adult patients with advanced non-small cell lung cancer (NSCLC) with mutated KRAS G12C and who have progressed after at least one prior systemic line of therapy",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "docetaxel",
+          "Outcomes": "overall survival, progression-free survival, objective response rate, duration of response, disease control rate, time to progression, time to next treatment, event-free survival, safety (adverse events, grade 3-4 adverse events, mortality-related toxicity, dropout rate), quality of life, overall health status, physical functioning"
+        },
+        {
+          "Population": "adult patients with advanced non-small cell lung cancer (NSCLC) with mutated KRAS G12C and who have progressed after at least one prior systemic line of therapy",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "docetaxel + nintedanib",
+          "Outcomes": "overall survival, progression-free survival, objective response rate, duration of response, disease control rate, time to progression, time to next treatment, event-free survival, safety (adverse events, grade 3-4 adverse events, mortality-related toxicity, dropout rate), quality of life, overall health status, physical functioning"
+        },
+        {
+          "Population": "adult patients with advanced non-small cell lung cancer (NSCLC) with mutated KRAS G12C and who have progressed after at least one prior systemic line of therapy",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "pemetrexed",
+          "Outcomes": "overall survival, progression-free survival, objective response rate, duration of response, disease control rate, time to progression, time to next treatment, event-free survival, safety (adverse events, grade 3-4 adverse events, mortality-related toxicity, dropout rate), quality of life, overall health status, physical functioning"
+        },
+        {
+          "Population": "adult patients with advanced non-small cell lung cancer (NSCLC) with mutated KRAS G12C and who have progressed after at least one prior systemic line of therapy",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "nivolumab",
+          "Outcomes": "overall survival, progression-free survival, objective response rate, duration of response, disease control rate, time to progression, time to next treatment, event-free survival, safety (adverse events, grade 3-4 adverse events, mortality-related toxicity, dropout rate), quality of life, overall health status, physical functioning"
+        },
+        {
+          "Population": "adult patients with advanced non-small cell lung cancer (NSCLC) with mutated KRAS G12C and who have progressed after at least one prior systemic line of therapy",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "pembrolizumab",
+          "Outcomes": "overall survival, progression-free survival, objective response rate, duration of response, disease control rate, time to progression, time to next treatment, event-free survival, safety (adverse events, grade 3-4 adverse events, mortality-related toxicity, dropout rate), quality of life, overall health status, physical functioning"
+        },
+        {
+          "Population": "adult patients with advanced non-small cell lung cancer (NSCLC) with mutated KRAS G12C and who have progressed after at least one prior systemic line of therapy",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "atezolizumab",
+          "Outcomes": "overall survival, progression-free survival, objective response rate, duration of response, disease control rate, time to progression, time to next treatment, event-free survival, safety (adverse events, grade 3-4 adverse events, mortality-related toxicity, dropout rate), quality of life, overall health status, physical functioning"
+        },
+        {
+          "Population": "adult patients with advanced non-small cell lung cancer (NSCLC) with mutated KRAS G12C and who have progressed after at least one prior systemic line of therapy",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "platinum doublet",
+          "Outcomes": "overall survival, progression-free survival, objective response rate, duration of response, disease control rate, time to progression, time to next treatment, event-free survival, safety (adverse events, grade 3-4 adverse events, mortality-related toxicity, dropout rate), quality of life, overall health status, physical functioning"
+        }
+      ],
+      "ChunksUsed": 35,
+      "ContextTokens": 8607
+    }
+  }
+}

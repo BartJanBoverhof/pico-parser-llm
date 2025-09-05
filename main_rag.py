@@ -153,6 +153,7 @@ extracted_picos_clinical_case1 = rag.run_pico_extraction_for_source_type(
     source_type="clinical_guideline",
     indication=case1_indication
 )
+
 """
 # Demonstration: Run case-based pipeline with complete retrieval and extraction
 print("\n--- Running Case 1 with Complete Pipeline (Retrieval + Extraction) ---")

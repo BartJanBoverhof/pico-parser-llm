@@ -1,19 +1,19 @@
 {
   "retrieval_metadata": {
-    "timestamp": "2025-09-05T07:29:49.167989",
+    "timestamp": "2025-09-05T09:32:48.841445",
     "source_type": "hta_submission",
     "retrieval_type": "population_comparator",
     "query": "Find passages that specify Population and Comparator elements relevant to: treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context.\n        Prefer sections that clearly describe:\n        - Population definitions (disease/stage, prior therapy/line, biomarker/testing, inclusion/exclusion, sub-populations)\n        - Treatments assessed and alternatives considered as comparators (including SoC/BSC/placebo; ITC/NMA if present)\n        - Treatment lines and patient selection criteria\n        - Biomarker testing requirements and mutation status\n        Focus on text explicitly tied to the indication or clearly defined sub-populations thereof.",
     "indication": "treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context",
     "total_countries": 9,
-    "total_chunks": 66
+    "total_chunks": 72
   },
   "results_by_country": {
     "DE": {
       "country_metadata": {
         "country_code": "DE",
-        "chunk_count": 20,
-        "total_text_length": 20372,
+        "chunk_count": 22,
+        "total_text_length": 22438,
         "unique_documents": 1,
         "unique_headings": 7
       },
@@ -33,15 +33,15 @@
             "text_length": 886,
             "potential_comparators": [
               "atezolizumab",
-              "nivolumab",
-              "pembrolizumab",
-              "erlotinib",
-              "According",
-              "afatinib",
-              "ramucirumab",
-              "nintedanib",
               "Justification",
-              "Medicinal"
+              "nivolumab",
+              "afatinib",
+              "nintedanib",
+              "According",
+              "erlotinib",
+              "Medicinal",
+              "pembrolizumab",
+              "ramucirumab"
             ]
           }
         },
@@ -59,12 +59,12 @@
             "split_index": "0_1_1",
             "text_length": 822,
             "potential_comparators": [
-              "hta_submission\n\n150 mg",
-              "x 500 mg",
               "x 100 mg",
-              "ramucirumab",
+              "x 500 mg",
+              "hta_submission\n\n150 mg",
+              "x 160 mg",
               "x 150 mg",
-              "x 160 mg"
+              "ramucirumab"
             ]
           }
         },
@@ -82,14 +82,14 @@
             "split_index": "5_0_0",
             "text_length": 1006,
             "potential_comparators": [
-              "nivolumab",
-              "pembrolizumab",
               "atezolizumab",
-              "Accordingly",
-              "ramucirumab",
-              "However",
+              "nivolumab",
               "Therefore",
-              "Nivolumab"
+              "However",
+              "Nivolumab",
+              "Accordingly",
+              "pembrolizumab",
+              "ramucirumab"
             ]
           }
         },
@@ -107,13 +107,13 @@
             "split_index": "0_0_0",
             "text_length": 1185,
             "potential_comparators": [
-              "nivolumab",
-              "pembrolizumab",
-              "ramucirumab",
               "Ramucirumab 500 mg",
-              "Pemetrexed 500 mg",
+              "nivolumab",
+              "Pembrolizumab 100 mg",
               "Nivolumab 120 mg",
-              "Pembrolizumab 100 mg"
+              "Pemetrexed 500 mg",
+              "pembrolizumab",
+              "ramucirumab"
             ]
           }
         },
@@ -131,11 +131,11 @@
             "split_index": 3,
             "text_length": 1442,
             "potential_comparators": [
-              "Implementation",
-              "ramucirumab",
-              "Thus",
               "nintedanib",
-              "Within"
+              "Thus",
+              "Within",
+              "Implementation",
+              "ramucirumab"
             ]
           }
         },
@@ -153,9 +153,9 @@
             "split_index": 2,
             "text_length": 877,
             "potential_comparators": [
-              "Other",
+              "If",
               "Under",
-              "If"
+              "Other"
             ]
           }
         },
@@ -173,10 +173,33 @@
             "split_index": "0_1_0",
             "text_length": 1138,
             "potential_comparators": [
-              "ramucirumab",
               "Vinorelbine 50 mg",
+              "Ramucirumab 100 mg",
               "Vinorelbine 10 mg",
-              "Ramucirumab 100 mg"
+              "ramucirumab"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Appropriate comparator therapy **Source Type:** hta_submission\n\ndeduction of statutory rebates: € 2,746.83 Designation of the therapy: Afatinib 40 mg, Packaging size: 28 FCT, Costs (pharmacy sales price): € 2,515.23, Rebate Section 130 SGB V: € 2.00, Rebate Section 130a SGB V: € 240.61, and Costs after deduction of statutory rebates: € 2,272.62 Designation of the therapy: Docetaxel 160 mg, Packaging size: 1 CIS, Costs (pharmacy sales price): € 515.75, Rebate Section 130 SGB V: € 2.00, Rebate Section 130a SGB V: € 23.94, and Costs after deduction of statutory rebates: € 489.81 Designation of the therapy: Erlotinib 150 mg8, Packaging size: 30 FCT, Costs (pharmacy sales price): € 880.24, Rebate Section 130 SGB V: € 2.00, Rebate Section 130a SGB V: € 68.73, and Costs after deduction of statutory rebates: € 809.51 Designation of the therapy: Nintedanib 100 mg, Packaging size: 120 SC, Costs (pharmacy sales price): € 2,761.26, Rebate Section 130 SGB V: € 2.00, Rebate Section 130a SGB V: € 110.29, and Costs after deduction of statutory rebates: € 2,648.97",
+          "metadata": {
+            "heading": "Appropriate comparator therapy",
+            "doc_id": "HTA_submission_sotosorib_DE",
+            "country": "DE",
+            "source_type": "hta_submission",
+            "start_page": 22,
+            "end_page": 22,
+            "created_date": "2023",
+            "folder_path": "nsclc_kras_g12c/HTA submissions/DE",
+            "split_index": "0_1_0",
+            "text_length": 1076,
+            "potential_comparators": [
+              "Afatinib 40 mg",
+              "afatinib",
+              "nintedanib",
+              "Nintedanib 100 mg",
+              "Docetaxel 160 mg",
+              "erlotinib"
             ]
           }
         },
@@ -213,13 +236,13 @@
             "split_index": "0_1_0",
             "text_length": 960,
             "potential_comparators": [
-              "Designation",
-              "x 500 mg",
-              "erlotinib",
-              "afatinib",
-              "ramucirumab",
               "x 40 mg",
-              "nintedanib"
+              "afatinib",
+              "x 500 mg",
+              "Designation",
+              "nintedanib",
+              "erlotinib",
+              "ramucirumab"
             ]
           }
         },
@@ -243,6 +266,26 @@
           }
         },
         {
+          "text": "**Heading:** 2.1.2 Appropriate comparator therapy **Source Type:** hta_submission\n\nAt this time, it is assumed that no other molecularly stratified therapy (directed against ALK, BRAF, EGFR, exon-20, METex14, RET or ROS1) will be considered for patients at the time of therapy with sotorasib. It should be noted that there is no higher quality evidence for the treatment of NSCLC related to the KRAS p.G12C mutation. So far, there are no other approved medicinal treatments besides sotorasib that are explicitly used in the presence of a KRAS p.G12C mutation according to the marketing authorisation. According to the scientific-medical societies involved and the European Public Assessment Report (EPAR), the treatment standards correspond to those of metastatic non-small cell lung cancer without specifically treatable oncogenic driver mutations. For the present therapeutic indication, it is also assumed that the patients are generally eligible for active antineoplastic therapy, which",
+          "metadata": {
+            "heading": "2.1.2 Appropriate comparator therapy",
+            "doc_id": "HTA_submission_sotosorib_DE",
+            "country": "DE",
+            "source_type": "hta_submission",
+            "start_page": 3,
+            "end_page": 8,
+            "created_date": "2023",
+            "folder_path": "nsclc_kras_g12c/HTA submissions/DE",
+            "split_index": "4_0_0",
+            "text_length": 990,
+            "potential_comparators": [
+              "According",
+              "It",
+              "So"
+            ]
+          }
+        },
+        {
           "text": "**Heading:** Appropriate comparator therapy **Source Type:** hta_submission\n\nTable Title: Appropriate comparator therapy Table contains the following columns: Designation of the therapy, Packaging size, Costs (pharmacy sales price), Rebate Section 130 SGB V, Rebate Section 130a SGB V, Costs after deduction of statutory rebates Designation of the therapy: Medicinal product to be assessed Designation of the therapy: Sotorasib 120 mg, Packaging size: 240 FCT, Costs (pharmacy sales price): € 4,820.84, Rebate Section 130 SGB V: € 2.00, Rebate Section 130a SGB V: € 466.34, and Costs after deduction of statutory rebates: € 4,352.50 Designation of the therapy: Appropriate comparator therapy Designation of the therapy: Atezolizumab 1,200 mg, Packaging size: 1 CIS, Costs (pharmacy sales price): € 4,319.46, Rebate Section 130 SGB V: € 2.00, Rebate Section 130a SGB V: € 417.25, and Costs after deduction of statutory rebates: € 3,900.21 Designation of the therapy: Atezolizumab 840 mg, Packaging size: 1 CIS, Costs (pharmacy sales price): € 3,040.90, Rebate Section 130 SGB V: € 2.00, Rebate Section 130a SGB V: € 292.07, and Costs after",
           "metadata": {
             "heading": "Appropriate comparator therapy",
@@ -256,9 +299,9 @@
             "split_index": "0_0_0",
             "text_length": 1138,
             "potential_comparators": [
-              "atezolizumab",
               "Sotorasib 120 mg",
-              "Atezolizumab 840 mg"
+              "Atezolizumab 840 mg",
+              "atezolizumab"
             ]
           }
         },
@@ -276,8 +319,8 @@
             "split_index": 0,
             "text_length": 808,
             "potential_comparators": [
-              "Due",
-              "Here"
+              "Here",
+              "Due"
             ]
           }
         },
@@ -295,14 +338,14 @@
             "split_index": "5_1_0",
             "text_length": 960,
             "potential_comparators": [
-              "nivolumab",
-              "pembrolizumab",
               "atezolizumab",
-              "Likewise",
+              "pembrolizumab",
+              "Taking",
+              "nivolumab",
               "afatinib",
-              "ramucirumab",
               "nintedanib",
-              "Taking"
+              "Likewise",
+              "ramucirumab"
             ]
           }
         },
@@ -320,11 +363,11 @@
             "split_index": "0_0_0",
             "text_length": 965,
             "potential_comparators": [
-              "nivolumab",
-              "pembrolizumab",
               "atezolizumab",
+              "nivolumab",
+              "nintedanib",
               "Institute",
-              "nintedanib"
+              "pembrolizumab"
             ]
           }
         },
@@ -342,8 +385,8 @@
             "split_index": 15,
             "text_length": 949,
             "potential_comparators": [
-              "Justification",
-              "Since"
+              "Since",
+              "Justification"
             ]
           }
         },
@@ -361,11 +404,11 @@
             "split_index": "4_1_0",
             "text_length": 1105,
             "potential_comparators": [
-              "nivolumab",
-              "pembrolizumab",
               "atezolizumab",
+              "nivolumab",
+              "Based",
               "nintedanib",
-              "Based"
+              "pembrolizumab"
             ]
           }
         },
@@ -419,11 +462,11 @@
             "split_index": "0_1_0",
             "text_length": 1020,
             "potential_comparators": [
-              "erlotinib",
               "afatinib",
-              "ramucirumab",
               "nintedanib",
-              "Criteria"
+              "Criteria",
+              "erlotinib",
+              "ramucirumab"
             ]
           }
         },
@@ -441,8 +484,8 @@
             "split_index": 14,
             "text_length": 1293,
             "potential_comparators": [
-              "Overall",
-              "However"
+              "However",
+              "Overall"
             ]
           }
         }
@@ -520,8 +563,8 @@
             "split_index": "1_0_0",
             "text_length": 1190,
             "potential_comparators": [
-              "Having",
-              "Pierluigi"
+              "Pierluigi",
+              "Having"
             ]
           }
         },
@@ -607,10 +650,10 @@
     "PO": {
       "country_metadata": {
         "country_code": "PO",
-        "chunk_count": 20,
-        "total_text_length": 20632,
+        "chunk_count": 22,
+        "total_text_length": 21853,
         "unique_documents": 1,
-        "unique_headings": 5
+        "unique_headings": 6
       },
       "chunks": [
         {
@@ -627,11 +670,11 @@
             "split_index": "0_1_0",
             "text_length": 1131,
             "potential_comparators": [
-              "nivolumab",
               "atezolizumab",
-              "According",
               "osymertinib",
-              "nintedanib"
+              "nivolumab",
+              "nintedanib",
+              "According"
             ]
           }
         },
@@ -649,11 +692,11 @@
             "split_index": 1,
             "text_length": 1333,
             "potential_comparators": [
-              "Sotorasib",
-              "Estimated",
               "NHI",
               "nintedanib",
-              "Incremental"
+              "Incremental",
+              "Sotorasib",
+              "Estimated"
             ]
           }
         },
@@ -671,9 +714,9 @@
             "split_index": 0,
             "text_length": 718,
             "potential_comparators": [
-              "Typical",
+              "Primary",
               "NDRP",
-              "Primary"
+              "Typical"
             ]
           }
         },
@@ -691,9 +734,9 @@
             "split_index": 6,
             "text_length": 1535,
             "potential_comparators": [
-              "Analysis",
+              "SOT",
               "pembrolizumab",
-              "SOT"
+              "Analysis"
             ]
           }
         },
@@ -711,9 +754,9 @@
             "split_index": 0,
             "text_length": 1096,
             "potential_comparators": [
+              "According",
               "Inactivation",
-              "Evaluation",
-              "According"
+              "Evaluation"
             ]
           }
         },
@@ -731,8 +774,8 @@
             "split_index": "4_1_0",
             "text_length": 771,
             "potential_comparators": [
-              "DO",
-              "DOC"
+              "DOC",
+              "DO"
             ]
           }
         },
@@ -769,8 +812,8 @@
             "split_index": "3_0_0",
             "text_length": 1183,
             "potential_comparators": [
-              "Firstly",
-              "Health"
+              "Health",
+              "Firstly"
             ]
           }
         },
@@ -984,8 +1027,43 @@
             "split_index": 1,
             "text_length": 1021,
             "potential_comparators": [
-              "nintedanib",
-              "According"
+              "According",
+              "nintedanib"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Description of the claimed benefit **Source Type:** hta_submission\n\n• Progression-free survival in the general population: median SOT of 5.6 months (95% CI 4.3; 7.8) HR (95%CI) = 0.66 (0.51; 0.86) DOC of 9.5% CI 3.0; 5.7) • Overall response to treatment (ORR): SOT vs. 28% DOC vs. 13% RR (95% IC) = 2.12 (1.35; 3.33) • Heart disease control rate (DOC vs 83% RR) compared to the DOC group (direct comparison) Significant differences (IS) in favour of patients receiving SOT as compared to those receiving DOC were observed in the following areas: • Survival free of progression in the overall population: SOT median 5.6 month (95%IC: 4.3, 7.8) HRC (95%) CI= 0.56 (0.58; 0.66%) DOC median (0.55; 0.85) HRC vs. cough HR (95% CI) = 0.55 (0.38; 0.80) 2 The NICE Quality Assessment for case series consists of 8 questions, scored 1 for yes and 0 for no.",
+          "metadata": {
+            "heading": "Description of the claimed benefit",
+            "doc_id": "HTA_submission_sotosorib_PO",
+            "country": "PO",
+            "source_type": "hta_submission",
+            "start_page": 3,
+            "end_page": 10,
+            "created_date": "2023",
+            "folder_path": "nsclc_kras_g12c/HTA submissions/PO",
+            "split_index": 3,
+            "text_length": 860,
+            "potential_comparators": []
+          }
+        },
+        {
+          "text": "**Heading:** Alternative medical technology **Source Type:** hta_submission\n\nHowever, it should be noted that according to the Drug Plan B.6 Treatment of patients with lung cancer (ICD-10: C34) and interstitial lung disease (ICS-10:C45) , atezolizumab or nivolumab may be used in subsequent treatment lines in patients not previously treated with immunotherapy.",
+          "metadata": {
+            "heading": "Alternative medical technology",
+            "doc_id": "HTA_submission_sotosorib_PO",
+            "country": "PO",
+            "source_type": "hta_submission",
+            "start_page": 3,
+            "end_page": 3,
+            "created_date": "2023",
+            "folder_path": "nsclc_kras_g12c/HTA submissions/PO",
+            "split_index": 0,
+            "text_length": 361,
+            "potential_comparators": [
+              "nivolumab",
+              "atezolizumab"
             ]
           }
         }
@@ -994,8 +1072,8 @@
     "PT": {
       "country_metadata": {
         "country_code": "PT",
-        "chunk_count": 20,
-        "total_text_length": 20722,
+        "chunk_count": 22,
+        "total_text_length": 22937,
         "unique_documents": 1,
         "unique_headings": 8
       },
@@ -1014,23 +1092,23 @@
             "split_index": 1,
             "text_length": 1288,
             "potential_comparators": [
-              "platin 80 mg",
-              "nivolumab",
-              "Pemetrexed 500mg",
-              "or 1200 mg",
-              "pembrolizumab",
-              "atezolizumab",
-              "or 400 mg",
-              "Platinum",
-              "toxicity 840 mg",
-              "or 1680 mg",
-              "Vinorelbina 25mg",
-              "Cisplatin 80mg",
-              "Gemcitabine 1250mg",
-              "Pembrolizumab 200 mg",
-              "See",
               "Pemetrexed",
-              "Vinoreel 25mg"
+              "Pembrolizumab 200 mg",
+              "platin 80 mg",
+              "Pemetrexed 500mg",
+              "atezolizumab",
+              "Gemcitabine 1250mg",
+              "toxicity 840 mg",
+              "nivolumab",
+              "or 400 mg",
+              "or 1200 mg",
+              "See",
+              "Platinum",
+              "or 1680 mg",
+              "Cisplatin 80mg",
+              "Vinorelbina 25mg",
+              "Vinoreel 25mg",
+              "pembrolizumab"
             ]
           }
         },
@@ -1048,15 +1126,15 @@
             "split_index": 0,
             "text_length": 1563,
             "potential_comparators": [
-              "As",
-              "nivolumab",
-              "It",
-              "These",
               "nitendanib",
+              "As",
+              "These",
               "Dosage",
-              "of 960 mg",
+              "nivolumab",
+              "Blocking",
+              "It",
               "pembrozolizumab",
-              "Blocking"
+              "of 960 mg"
             ]
           }
         },
@@ -1074,9 +1152,9 @@
             "split_index": 0,
             "text_length": 1292,
             "potential_comparators": [
+              "INFARMED",
               "AMGEN",
               "Amgen",
-              "INFARMED",
               "Relatório",
               "Versão"
             ]
@@ -1096,9 +1174,9 @@
             "split_index": "5_0_0",
             "text_length": 1315,
             "potential_comparators": [
-              "Adjuvant",
-              "Chemo-radiation",
               "Each",
+              "Chemo-radiation",
+              "Adjuvant",
               "Previous",
               "Adjustments"
             ]
@@ -1118,10 +1196,10 @@
             "split_index": "5_1_0",
             "text_length": 1307,
             "potential_comparators": [
-              "Patients'",
-              "They",
+              "Tumor",
               "Eligible",
-              "Tumor"
+              "Patients'",
+              "They"
             ]
           }
         },
@@ -1139,10 +1217,10 @@
             "split_index": 0,
             "text_length": 680,
             "potential_comparators": [
-              "Quality",
-              "Moderate",
               "Overall",
-              "TAIM"
+              "Quality",
+              "TAIM",
+              "Moderate"
             ]
           }
         },
@@ -1161,10 +1239,10 @@
             "text_length": 1351,
             "potential_comparators": [
               "nivolumab",
-              "pembrolizumab",
+              "nintedanib",
               "Table",
               "to 120 mg",
-              "nintedanib"
+              "pembrolizumab"
             ]
           }
         },
@@ -1182,10 +1260,10 @@
             "split_index": "0_0_0",
             "text_length": 942,
             "potential_comparators": [
-              "Secondary",
               "Patients",
-              "G12C",
-              "of 960 mg"
+              "of 960 mg",
+              "Secondary",
+              "G12C"
             ]
           }
         },
@@ -1203,8 +1281,8 @@
             "split_index": 1,
             "text_length": 1509,
             "potential_comparators": [
-              "RSL",
               "Product",
+              "RSL",
               "Study"
             ]
           }
@@ -1223,9 +1301,9 @@
             "split_index": 3,
             "text_length": 1398,
             "potential_comparators": [
+              "However",
               "These",
-              "Additional",
-              "However"
+              "Additional"
             ]
           }
         },
@@ -1319,10 +1397,10 @@
             "split_index": 1,
             "text_length": 718,
             "potential_comparators": [
+              "Nivolumab",
               "nivolumab",
-              "nintedanib",
               "humab",
-              "Nivolumab"
+              "nintedanib"
             ]
           }
         },
@@ -1340,8 +1418,8 @@
             "split_index": 0,
             "text_length": 723,
             "potential_comparators": [
-              "Most",
-              "Globally"
+              "Globally",
+              "Most"
             ]
           }
         },
@@ -1359,8 +1437,8 @@
             "split_index": "0_1_0",
             "text_length": 950,
             "potential_comparators": [
-              "ramucirumab",
-              "Safety"
+              "Safety",
+              "ramucirumab"
             ]
           }
         },
@@ -1378,11 +1456,11 @@
             "split_index": "0_0_0",
             "text_length": 1019,
             "potential_comparators": [
-              "nivolumab",
-              "atezolizumab",
-              "pembrolizumab",
               "nitendanib",
-              "Thus"
+              "atezolizumab",
+              "nivolumab",
+              "Thus",
+              "pembrolizumab"
             ]
           }
         },
@@ -1420,6 +1498,46 @@
             "potential_comparators": [
               "Considering",
               "However"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** 5.Description of the studies evaluated **Source Type:** hta_submission\n\n8.2 Data extraction sheets Of the 17 unique studies identified, eight do not include a docetaxel as a treatment arm and nine CETD_KR_m_2021_xls_MASCURE studies did not present information of interest to make an indirect comparison, namely by using the MAICS methodology. Therefore, only the SELECT-1 study met the requirements for an indirect comparison between docetaxel and sotorasib in the KRAS-positive patient population; however, none of the studies met the necessary requirements for a direct comparison through non-anchored MAIC of the comparators envisaged in the initial evaluation proposal (docetaxel + nitendanib; pemetrexedo; nivolumab; pembrolizumab, atezolizumab; platinum duplexes) against sotorase (BKCode 100). The main reasons identified were absence of additional comparators of interest (76.5%, n=13); lack of information crucial to the achievement of MAIC in the population of interest (KRAS G12C), or in the enlarged population of mutated KRAS (23.5%; n=4) Thus, the only viable indirect comparison in patients with previously treated advanced CPNPC KRAS or mutated Kras G12c was sotorasib versus docetaxel, based on the results of the CodeBreak 100 (sotarasib) and SELECT-1 (docetaxel) studies.",
+          "metadata": {
+            "heading": "5.Description of the studies evaluated",
+            "doc_id": "Relatório de avaliação de financiamento público  de Lumykras (sotorasib)",
+            "country": "PT",
+            "source_type": "hta_submission",
+            "start_page": 9,
+            "end_page": 22,
+            "created_date": "2015",
+            "folder_path": "nsclc_kras_g12c/HTA submissions/PT",
+            "split_index": 2,
+            "text_length": 1303,
+            "potential_comparators": [
+              "nitendanib",
+              "atezolizumab",
+              "nivolumab",
+              "Therefore",
+              "pembrolizumab"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** 5.Description of the studies evaluated **Source Type:** hta_submission\n\nCI) was 15.24 (14.85; 17.31) months for sotorasib and 6.87 (5.42; 12.52) months for docetaxel. The observed benefit in PFS resulting from the subgroup intervention with sotorashib vs. docetaxil was consistent across all prespecified subgroups, including history of CNS involvement, presence of hepatic metastases, number of prior therapies and level of PD-L5 (expressed in Figure 5.1) (Figure 5.5) for patients treated with docetaxilab versus progressor-free treatment. Analysis of pre-specified subgroups for progression-free survival treated with sotorasib vs. docetaxel Figure Figure 3.3. Analysis Subgroup analysis of subgroup prespecified for survival Progression free survival, progression, and progression of the studied drug is the following: AMG, AMG 510, 510, sotoratib; CI, CI, confidence interval; CNS, CNS; central",
+          "metadata": {
+            "heading": "5.Description of the studies evaluated",
+            "doc_id": "Relatório de avaliação de financiamento público  de Lumykras (sotorasib)",
+            "country": "PT",
+            "source_type": "hta_submission",
+            "start_page": 9,
+            "end_page": 22,
+            "created_date": "2015",
+            "folder_path": "nsclc_kras_g12c/HTA submissions/PT",
+            "split_index": "9_0_1",
+            "text_length": 912,
+            "potential_comparators": [
+              "Analysis"
             ]
           }
         }

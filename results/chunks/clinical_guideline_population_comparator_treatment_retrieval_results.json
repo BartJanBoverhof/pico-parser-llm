@@ -1,12 +1,12 @@
 {
   "retrieval_metadata": {
-    "timestamp": "2025-09-05T07:29:50.230177",
+    "timestamp": "2025-09-05T09:33:01.286218",
     "source_type": "clinical_guideline",
     "retrieval_type": "population_comparator",
     "query": "Find treatment recommendations with population and comparator information relevant to: treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context.\n        Prefer content that states:\n        - Applicable populations and sub-populations (biomarkers/testing, prior therapy/line, inclusion/exclusion)\n        - Recommended treatment options and alternatives/SoC that could serve as comparators\n        - Treatment sequencing and line of therapy considerations\n        - Patient selection criteria and biomarker requirements\n        Focus on guideline recommendations for specific patient populations and treatment alternatives.",
     "indication": "treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context",
     "total_countries": 9,
-    "total_chunks": 44
+    "total_chunks": 37
   },
   "results_by_country": {
     "DE": {
@@ -77,10 +77,10 @@
             "split_index": 3,
             "text_length": 980,
             "potential_comparators": [
-              "asimginib",
-              "Patients",
               "According",
-              "Testing"
+              "Patients",
+              "Testing",
+              "asimginib"
             ]
           }
         },
@@ -99,9 +99,9 @@
             "text_length": 1044,
             "potential_comparators": [
               "amivantamab",
-              "larotrectinib",
-              "trastuzumab",
               "Patients",
+              "trastuzumab",
+              "larotrectinib",
               "entrectinib"
             ]
           }
@@ -157,10 +157,10 @@
             "split_index": 1,
             "text_length": 707,
             "potential_comparators": [
-              "Immunotarget",
               "crizotinib",
-              "IMMUNTERAPI",
-              "Immunotherapy"
+              "Immunotarget",
+              "Immunotherapy",
+              "IMMUNTERAPI"
             ]
           }
         },
@@ -179,14 +179,14 @@
             "text_length": 667,
             "potential_comparators": [
               "RET",
-              "ALK",
               "Rebioparsing",
-              "MET",
-              "KRAS",
-              "NTRK",
+              "ROS1",
+              "ALK",
               "BRAF",
-              "ERBB2",
-              "ROS1"
+              "NTRK",
+              "KRAS",
+              "MET",
+              "ERBB2"
             ]
           }
         },
@@ -204,10 +204,10 @@
             "split_index": 2,
             "text_length": 790,
             "potential_comparators": [
-              "trastuzumab",
-              "amivantamab",
               "larotrectinib",
-              "ntrectinib"
+              "trastuzumab",
+              "ntrectinib",
+              "amivantamab"
             ]
           }
         },
@@ -225,10 +225,10 @@
             "split_index": "1_0_0",
             "text_length": 858,
             "potential_comparators": [
-              "MAPK",
+              "DOLG",
               "Our",
               "Exon",
-              "DOLG"
+              "MAPK"
             ]
           }
         }
@@ -237,10 +237,10 @@
     "EN": {
       "country_metadata": {
         "country_code": "EN",
-        "chunk_count": 18,
-        "total_text_length": 14835,
+        "chunk_count": 12,
+        "total_text_length": 10190,
         "unique_documents": 2,
-        "unique_headings": 14
+        "unique_headings": 9
       },
       "chunks": [
         {
@@ -276,8 +276,8 @@
             "split_index": 0,
             "text_length": 844,
             "potential_comparators": [
-              "People",
-              "It"
+              "It",
+              "People"
             ]
           }
         },
@@ -314,13 +314,13 @@
             "split_index": 0,
             "text_length": 1311,
             "potential_comparators": [
-              "So",
-              "Collecting",
-              "Sotorasib",
               "But",
+              "All",
+              "Collecting",
               "Subject",
               "nintedanib",
-              "All"
+              "Sotorasib",
+              "So"
             ]
           }
         },
@@ -376,9 +376,9 @@
             "split_index": 1,
             "text_length": 872,
             "potential_comparators": [
-              "nintedanib",
               "Subject",
-              "Therefore"
+              "Therefore",
+              "nintedanib"
             ]
           }
         },
@@ -412,22 +412,22 @@
             "split_index": 0,
             "text_length": 888,
             "potential_comparators": [
-              "End",
+              "NICE",
+              "Assumptions",
               "Price",
-              "Anticipated",
-              "Indirect",
-              "Cost-effectiveness",
-              "Dosage",
-              "Subject",
               "Other",
               "Health-related",
+              "End",
+              "Dosage",
               "Treatment",
-              "Conclusion",
-              "Cancer",
-              "Clinical",
+              "Cost-effectiveness",
               "All",
-              "Assumptions",
-              "NICE"
+              "Conclusion",
+              "Subject",
+              "Clinical",
+              "Anticipated",
+              "Indirect",
+              "Cancer"
             ]
           }
         },
@@ -483,128 +483,6 @@
             "split_index": 1,
             "text_length": 675,
             "potential_comparators": []
-          }
-        },
-        {
-          "text": "**Heading:** There are no equality issues **Source Type:** clinical_guideline\n\n3.16 No equality or social value judgement issues were identified. Sotorasib has a novel mechanism of action in this treatment but all benefits are captured in the modelling\n3.17 The patient and clinical experts emphasised the value of sotorasib as the\nfirst targeted treatment option for previously treated KRAS G12C mutation-positive, locally advanced or metastatic NSCLC. The committee\nconsidered the innovative nature of sotorasib (see section 3.1). It agreed\nthat sotorasib could be considered an important treatment option for this population. The committee concluded that it did not think there were any\nadditional benefits associated with sotorasib that had not been captured in the economic analysis.",
-          "metadata": {
-            "heading": "There are no equality issues",
-            "doc_id": "lung_kras_EN",
-            "country": "EN",
-            "source_type": "clinical_guideline",
-            "start_page": 18,
-            "end_page": 18,
-            "created_date": "20",
-            "folder_path": "nsclc_kras_g12c/clinical guidelines/EN",
-            "split_index": 0,
-            "text_length": 788,
-            "potential_comparators": [
-              "Sotorasib",
-              "It"
-            ]
-          }
-        },
-        {
-          "text": "**Heading:** The condition **Source Type:** clinical_guideline\n\nAll rights reserved. Subject to Notice of rights\nis\n. See\nS\nLC\nSotorasib for previously treated KRAS G12C mutation-positive advanced non-s lung cancer (TA781)",
-          "metadata": {
-            "heading": "The condition",
-            "doc_id": "lung_kras_EN",
-            "country": "EN",
-            "source_type": "clinical_guideline",
-            "start_page": 6,
-            "end_page": 7,
-            "created_date": "20",
-            "folder_path": "nsclc_kras_g12c/clinical guidelines/EN",
-            "split_index": 2,
-            "text_length": 222,
-            "potential_comparators": [
-              "Subject",
-              "See"
-            ]
-          }
-        },
-        {
-          "text": "**Heading:** uncertainty may be addressed by collecting data on sotorasib through the Cancer Drugs Fund. The company explained that the phase 3 **Source Type:** clinical_guideline\n\nCodeBreaK200 trial, comparing sotorasib with docetaxel in a KRAS G12C mutation-positive population, is currently ongoing. It stated that this trial\nwill measure overall and progression-free survival, and health-related quality of life. It will also collect data from people with previously treated\ndisease. The committee agreed that some uncertainty may be resolved\nwith data from the CodeBreak200 trial. The committee recalled its\nconclusion that the current cost-effectiveness results were highly uncertain. It agreed that, with longer follow-up data from CodeBreaK100\non mean overall and progression-free survival, and direct comparative evidence with docetaxel from CodeBreaK200, sotorasib has the potential\nto be cost effective. Also, that additional evidence may change the\npreferred modelling assumptions outlined in section 3.13. The committee",
-          "metadata": {
-            "heading": "uncertainty may be addressed by collecting data on sotorasib through the Cancer Drugs Fund. The company explained that the phase 3",
-            "doc_id": "lung_kras_EN",
-            "country": "EN",
-            "source_type": "clinical_guideline",
-            "start_page": 17,
-            "end_page": 17,
-            "created_date": "20",
-            "folder_path": "nsclc_kras_g12c/clinical guidelines/EN",
-            "split_index": 0,
-            "text_length": 1032,
-            "potential_comparators": [
-              "Also",
-              "It"
-            ]
-          }
-        },
-        {
-          "text": "**Heading:** concluded that sotorasib met the criteria to be considered for inclusion in the Cancer Drugs Fund. So, it recommended sotorasib for use within the **Source Type:** clinical_guideline\n\n© NICE 2024. All rights reserved. Subject to Notice of rights P\nd\nCancer Drugs Fund for previously treated KRAS G12C mutation-positive advanced NSCLC.",
-          "metadata": {
-            "heading": "concluded that sotorasib met the criteria to be considered for inclusion in the Cancer Drugs Fund. So, it recommended sotorasib for use within the",
-            "doc_id": "lung_kras_EN",
-            "country": "EN",
-            "source_type": "clinical_guideline",
-            "start_page": 17,
-            "end_page": 18,
-            "created_date": "20",
-            "folder_path": "nsclc_kras_g12c/clinical guidelines/EN",
-            "split_index": 0,
-            "text_length": 347,
-            "potential_comparators": [
-              "So",
-              "All",
-              "Subject"
-            ]
-          }
-        },
-        {
-          "text": "**Heading:** 3.3 The clinical effectiveness evidence for sotorasib is from the **Source Type:** clinical_guideline\n\n© NICE 2024. All rights reserved. Subject to Notice of rights\nsmall\napy,\nmpar\ncer\ned\nn,\nus\nat\ny,\n0, a and-\n, so rators\nSotorasib for previously treated KRAS G12C mutation-positive advanced non-s lung cancer (TA781)\nCodeBreaK100 trial. This is a phase 2, single-arm, multicentre, open lab\ntrial in 250 adults with KRAS G12C mutation-positive advanced tumours\n126 participants had NSCLC. People in the trial previously had 1 (43%),\n(35%) or 3 lines (22%) of anticancer therapy, measurable disease per\nRECIST 1.1 criteria and an Eastern Cooperative Oncology Group (ECOG)\nperformance status of 0 or 1. Most people (90%) had previously had\nplatinum-doublet chemotherapy (see section 3.2). People took 960 mg\nsotorasib (8 tablets of 120 mg) once a day until disease progression, treatment discontinuation or the end of the study. The primary outcome\nof the trial was an objective response rate of 37.1% (95% confidence\ninterval 28.6 to 46.2), with the latest data-cut from March 2021.",
-          "metadata": {
-            "heading": "3.3 The clinical effectiveness evidence for sotorasib is from the",
-            "doc_id": "lung_kras_EN",
-            "country": "EN",
-            "source_type": "clinical_guideline",
-            "start_page": 7,
-            "end_page": 8,
-            "created_date": "20",
-            "folder_path": "nsclc_kras_g12c/clinical guidelines/EN",
-            "split_index": 0,
-            "text_length": 1094,
-            "potential_comparators": [
-              "took 960 mg",
-              "Subject",
-              "of 120 mg",
-              "Most",
-              "People",
-              "All"
-            ]
-          }
-        },
-        {
-          "text": "**Heading:** Update information **Source Type:** clinical_guideline\n\nMarch 2024: We have removed the following systemic anti-cancer therapy treatment\npathways for advanced non-small-cell lung cancer after the withdrawal of the NICE technology appraisal guidance on mobocertinib:\n• EGFRex 20 insertion positive, PD-L1 less than 50%, for both squamous and nonsquamous non-small-cell lung cancer\n• EGFRex 20 insertion positive, PD-L1 50% or higher, for both squamous and nonsquamous non-small-cell lung cancer. July 2023: We have made the following changes to the systemic anti-cancer therapy\ntreatment pathways for advanced non-small-cell lung cancer:\n• added the NICE technology appraisal guidance on dabrafenib and trametinib, for\nsquamous and non-squamous non-small-cell lung cancer\n• added the NICE technology appraisal guidance on mobocertinib, for non-squamous\nnon-small-cell lung cancer\n• added the NICE technology appraisal guidance on selpercatinib, for squamous and\nnon-squamous non-small-cell lung cancer\n• updated the treatment options in the pathways for EGFR-TK positive, KRAS G12C\npositive and METex14 skipping alteration non-small-cell lung cancer.",
-          "metadata": {
-            "heading": "Update information",
-            "doc_id": "lung_EN",
-            "country": "EN",
-            "source_type": "clinical_guideline",
-            "start_page": 49,
-            "end_page": 51,
-            "created_date": "20",
-            "folder_path": "nsclc_kras_g12c/clinical guidelines/EN",
-            "split_index": 0,
-            "text_length": 1162,
-            "potential_comparators": [
-              "dabrafenib",
-              "selpercatinib",
-              "July",
-              "mobocertinib",
-              "trametinib"
-            ]
           }
         }
       ]
@@ -664,8 +542,8 @@
             "split_index": 2,
             "text_length": 1518,
             "potential_comparators": [
-              "These",
-              "Research"
+              "Research",
+              "These"
             ]
           }
         },
@@ -683,9 +561,9 @@
             "split_index": 1,
             "text_length": 1557,
             "potential_comparators": [
-              "selmahnib",
               "tepohnib",
-              "crizohnib"
+              "crizohnib",
+              "selmahnib"
             ]
           }
         },
@@ -703,9 +581,9 @@
             "split_index": "0_0_0",
             "text_length": 1129,
             "potential_comparators": [
+              "Multigenic",
               "Note",
-              "Progress",
-              "Multigenic"
+              "Progress"
             ]
           }
         },
@@ -723,12 +601,12 @@
             "split_index": "0_1_0",
             "text_length": 1046,
             "potential_comparators": [
-              "poziotinib",
+              "mobocertinib",
               "amivantamab",
-              "trastuzumab",
               "tectinib",
+              "trastuzumab",
               "Note",
-              "mobocertinib"
+              "poziotinib"
             ]
           }
         },
@@ -746,9 +624,9 @@
             "split_index": 0,
             "text_length": 1253,
             "potential_comparators": [
-              "amivantamab",
               "Fusions",
-              "Multiplex"
+              "Multiplex",
+              "amivantamab"
             ]
           }
         }
@@ -803,9 +681,9 @@
             "split_index": 1,
             "text_length": 1114,
             "potential_comparators": [
+              "tivantinib",
               "LOW",
-              "erlotinib",
-              "tivantinib"
+              "erlotinib"
             ]
           }
         },
@@ -823,8 +701,8 @@
             "split_index": 0,
             "text_length": 1181,
             "potential_comparators": [
-              "Row",
               "However",
+              "Row",
               "Using"
             ]
           }
@@ -843,10 +721,10 @@
             "split_index": 2,
             "text_length": 1261,
             "potential_comparators": [
-              "Niet",
-              "afatinib",
               "Tumor",
               "Mutations",
+              "afatinib",
+              "Niet",
               "NGS"
             ]
           }
@@ -865,11 +743,11 @@
             "split_index": "2_1_0",
             "text_length": 896,
             "potential_comparators": [
-              "erlotinib",
-              "tivantinib",
-              "pemetrexed 500 mg",
+              "gemcitabine 1250mg",
               "docetaxel 75 mg",
-              "gemcitabine 1250mg"
+              "pemetrexed 500 mg",
+              "tivantinib",
+              "erlotinib"
             ]
           }
         }
@@ -898,10 +776,10 @@
     "SE": {
       "country_metadata": {
         "country_code": "SE",
-        "chunk_count": 4,
-        "total_text_length": 3604,
+        "chunk_count": 3,
+        "total_text_length": 3282,
         "unique_documents": 1,
-        "unique_headings": 4
+        "unique_headings": 3
       },
       "chunks": [
         {
@@ -936,17 +814,17 @@
             "potential_comparators": [
               "selperkatinib",
               "RET",
-              "Selperkatinib",
-              "alektinib",
-              "These",
-              "kabozantinib",
-              "sunitinib",
-              "Pralsetinib",
-              "vandetanib",
-              "Intracranial",
-              "pralsetinib",
               "sorafenib",
-              "Based"
+              "Pralsetinib",
+              "These",
+              "pralsetinib",
+              "Intracranial",
+              "sunitinib",
+              "Based",
+              "alektinib",
+              "kabozantinib",
+              "vandetanib",
+              "Selperkatinib"
             ]
           }
         },
@@ -963,22 +841,6 @@
             "folder_path": "nsclc_kras_g12c/clinical guidelines/SE",
             "split_index": 0,
             "text_length": 941,
-            "potential_comparators": []
-          }
-        },
-        {
-          "text": "**Heading:** 14.1.2.1 Molecular pathology testing **Source Type:** clinical_guideline\n\nIn the primary investigation of patients with NSCLC, molecular pathology analysis of EGFR, ALK, ROS1, BRAF, KRAS, MET, RET-ERBB2 and NTRK status is recommended, as well as immunohistochemical analysis of PD-L1 expression in the tumour.",
-          "metadata": {
-            "heading": "14.1.2.1 Molecular pathology testing",
-            "doc_id": "lung_SE",
-            "country": "SE",
-            "source_type": "clinical_guideline",
-            "start_page": 147,
-            "end_page": 147,
-            "created_date": "2024",
-            "folder_path": "nsclc_kras_g12c/clinical guidelines/SE",
-            "split_index": 0,
-            "text_length": 322,
             "potential_comparators": []
           }
         }
