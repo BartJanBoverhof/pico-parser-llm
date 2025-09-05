@@ -15,7 +15,7 @@ POST_CLEANED_PATH = "data/post_cleaned"
 CHUNKED_PATH = "data/text_chunked"
 VECTORSTORE_PATH = "data/vectorstore"
 VECTORSTORE_TYPE = "biobert"  # Choose between "openai", "biobert", or "both"
-MODEL = "gpt-4o-mini"
+MODEL = "gpt-5-mini"
 COUNTRIES = ["ALL"]  # Use "ALL" to process all available countries
 
 # Validate OpenAI API key
