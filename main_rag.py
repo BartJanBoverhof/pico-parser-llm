@@ -15,7 +15,8 @@ POST_CLEANED_PATH = "data/post_cleaned"
 CHUNKED_PATH = "data/text_chunked"
 VECTORSTORE_PATH = "data/vectorstore"
 VECTORSTORE_TYPE = "biobert"  # Choose between "openai", "biobert", or "both"
-MODEL = "gpt-4.1"
+#MODEL = "gpt-4.1"
+MODEL = "gpt-4o-mini"
 COUNTRIES = ["ALL"]  # Use "ALL" to process all available countries
 
 # Validate OpenAI API key
@@ -207,7 +208,8 @@ print("  - HTA submission PICOs (combined): results/PICO/hta_submission_picos.js
 print("  - Clinical guideline PICOs (combined): results/PICO/clinical_guideline_picos.json")
 print("  - Separate outcomes extractions: results/chunks/*_outcomes_*_extraction_results.json")
 print("📁 Consolidation Results:")
-print("  - Consolidated PICOs & Outcomes: results/consolidated/*_consolidated_*.json")
+print("  - Consolidated PICOs: results/consolidated/*_consolidated_picos_*.json")
+print("  - Consolidated Outcomes: results/consolidated/*_consolidated_outcomes_*.json")
 
 # Print extraction advantages
 print("\n=== EXTRACTION ADVANTAGES ===")
@@ -238,6 +240,10 @@ print("🔄 Enhanced Analysis Ready:")
 print("  - Consolidated PICOs ready for comparative analysis")
 print("  - Structured outcomes support systematic review")
 print("  - Maintains traceability to original sources")
+print("🔄 Separate File Storage:")
+print("  - PICOs and outcomes saved to separate files for focused analysis")
+print("  - Easier to work with specific data types")
+print("  - Cleaner file organization and reduced file sizes")
 
 print("\n=== EXTRACTION METHODOLOGY ===")
 print("1. Population & Comparator Extraction:")
@@ -256,10 +262,12 @@ print("4. PICO Consolidation:")
 print("   - LLM-based consolidation of similar PICOs across countries")
 print("   - Preserves clinical distinctions while reducing redundancy")
 print("   - Tracks origins and maintains traceability")
+print("   - Saves to separate consolidated_picos file")
 print("5. Outcomes Consolidation:")
 print("   - Categorizes outcomes into clinical domains")
 print("   - Organizes by relevance and measurement approach")
 print("   - Creates structured outcome reference")
+print("   - Saves to separate consolidated_outcomes file")
 
 print("\n=== NEXT STEPS ===")
 print("1. Review the extraction results to validate separation quality")
@@ -269,6 +277,7 @@ print("4. Review consolidation results for accuracy and completeness")
 print("5. Fine-tune consolidation prompts based on domain expertise")
 print("6. Test with additional case configurations")
 print("7. Validate that final consolidated structures meet analysis needs")
+print("8. Check separate PICO and outcomes files for proper organization")
 
 # Final validation
 if extracted_picos_hta_case1:
@@ -287,5 +296,13 @@ if extracted_picos_hta_case1:
     if consolidation_results and "summary" in consolidation_results:
         summary = consolidation_results["summary"]
         print(f"🎯 Consolidation Results: {summary.get('consolidated_picos', 0)} consolidated PICOs, {summary.get('unique_outcomes', 0)} categorized outcomes")
+        
+        # Print saved file information
+        if "saved_files" in consolidation_results:
+            saved_files = consolidation_results["saved_files"]
+            if "picos_file" in saved_files:
+                print(f"📁 Consolidated PICOs saved to: {saved_files['picos_file']}")
+            if "outcomes_file" in saved_files:
+                print(f"📁 Consolidated outcomes saved to: {saved_files['outcomes_file']}")
 else:
     print("❌ Extraction failed - check logs for details")
