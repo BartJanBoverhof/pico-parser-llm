@@ -147,6 +147,7 @@ class PICOConsolidator:
     def extract_all_picos_and_outcomes(self, pico_data: Dict[str, Dict]) -> tuple:
         """
         Extract all PICOs and outcomes from the loaded data.
+        For outcomes, extract one outcome list per country/source rather than per PICO.
 
         Args:
             pico_data: Dictionary containing loaded PICO data by source type
@@ -159,6 +160,8 @@ class PICOConsolidator:
         all_countries = set()
         all_source_types = set()
         indication = None
+        
+        country_outcomes_seen = set()
 
         for source_type, data in pico_data.items():
             all_source_types.add(source_type)
@@ -174,14 +177,17 @@ class PICOConsolidator:
                     pico_with_metadata["Country"] = country
                     pico_with_metadata["Source_Type"] = source_type
                     all_picos.append(pico_with_metadata)
+                
+                country_source_key = f"{country}_{source_type}"
+                if country_source_key not in country_outcomes_seen:
+                    country_outcomes_seen.add(country_source_key)
                     
-                    if pico.get("Outcomes") and pico["Outcomes"].strip():
+                    first_pico = country_data.get("PICOs", [{}])[0]
+                    if first_pico.get("Outcomes") and first_pico["Outcomes"].strip():
                         outcome_entry = {
-                            "Outcomes": pico["Outcomes"],
+                            "Outcomes": first_pico["Outcomes"],
                             "Country": country,
-                            "Source_Type": source_type,
-                            "Population": pico.get("Population", ""),
-                            "Comparator": pico.get("Comparator", "")
+                            "Source_Type": source_type
                         }
                         all_outcomes.append(outcome_entry)
 
@@ -194,6 +200,39 @@ class PICOConsolidator:
         }
 
         return all_picos, all_outcomes, metadata
+
+    def clean_llm_response(self, response_text: str) -> str:
+        """
+        Clean LLM response to extract valid JSON.
+        
+        Args:
+            response_text: Raw response from LLM
+            
+        Returns:
+            Cleaned JSON string
+        """
+        if not response_text:
+            return ""
+        
+        response_text = response_text.strip()
+        
+        if response_text.startswith("```json"):
+            response_text = response_text[7:]
+        elif response_text.startswith("```"):
+            response_text = response_text[3:]
+        
+        if response_text.endswith("```"):
+            response_text = response_text[:-3]
+        
+        response_text = response_text.strip()
+        
+        json_start = response_text.find('{')
+        json_end = response_text.rfind('}') + 1
+        
+        if json_start != -1 and json_end > json_start:
+            response_text = response_text[json_start:json_end]
+        
+        return response_text
 
     def consolidate_picos(
         self, 
@@ -262,22 +301,46 @@ class PICOConsolidator:
                         {"role": "system", "content": system_prompt},
                         {"role": "user", "content": user_prompt}
                     ],
-                    temperature=0.1
+                    temperature=0.1,
+                    max_tokens=4000
                 )
                 result_text = response.choices[0].message.content
             else:
                 response = model.invoke(messages)
                 result_text = response.content
 
-            consolidated_result = json.loads(result_text)
+            print(f"PICO consolidation LLM response length: {len(result_text) if result_text else 0}")
+            print(f"PICO consolidation LLM response preview: {result_text[:200] if result_text else 'None'}")
+            
+            if not result_text or result_text.strip() == "":
+                print("Empty response from LLM for PICO consolidation")
+                return {}
+            
+            cleaned_text = self.clean_llm_response(result_text)
+            
+            if not cleaned_text:
+                print("No valid JSON found in PICO consolidation response")
+                return {}
+
+            consolidated_result = json.loads(cleaned_text)
+            
+            if "consolidation_metadata" not in consolidated_result:
+                consolidated_result["consolidation_metadata"] = {}
             
             consolidated_result["consolidation_metadata"]["timestamp"] = datetime.now().isoformat()
             consolidated_result["consolidation_metadata"]["indication"] = metadata.get("indication", "")
             consolidated_result["consolidation_metadata"]["source_countries"] = metadata.get("countries", [])
             consolidated_result["consolidation_metadata"]["source_types"] = metadata.get("source_types", [])
             
+            total_consolidated = len(consolidated_result.get("consolidated_picos", []))
+            print(f"Successfully consolidated {len(all_picos)} original PICOs into {total_consolidated} consolidated PICOs")
+            
             return consolidated_result
 
+        except json.JSONDecodeError as e:
+            print(f"JSON parsing error during PICO consolidation: {e}")
+            print(f"Raw response: {result_text[:500] if result_text else 'None'}...")
+            return {}
         except Exception as e:
             print(f"Error during PICO consolidation: {e}")
             return {}
@@ -290,9 +353,10 @@ class PICOConsolidator:
     ) -> Dict:
         """
         Consolidate outcomes using LLM to organize into structured categories.
+        Outcomes are consolidated from multiple countries into unified categories.
 
         Args:
-            all_outcomes: List of all outcome dictionaries
+            all_outcomes: List of outcome dictionaries (one per country/source)
             metadata: Metadata about the data
             model_override: Optional model override
 
@@ -316,9 +380,7 @@ class PICOConsolidator:
                 "id": i + 1,
                 "Outcomes": outcome.get("Outcomes", ""),
                 "Country": outcome.get("Country", ""),
-                "Source_Type": outcome.get("Source_Type", ""),
-                "Population_Context": outcome.get("Population", ""),
-                "Comparator_Context": outcome.get("Comparator", "")
+                "Source_Type": outcome.get("Source_Type", "")
             }
             outcomes_for_llm.append(outcome_entry)
 
@@ -328,10 +390,10 @@ class PICOConsolidator:
         Source Countries: {', '.join(metadata.get('countries', []))}
         Source Types: {', '.join(metadata.get('source_types', []))}
 
-        Outcomes to consolidate and categorize:
+        Outcomes to consolidate and categorize (one list per country/source):
         {json.dumps(outcomes_for_llm, indent=2)}
 
-        Task: Consolidate these outcomes into organized categories (Efficacy, Safety, Quality of Life, Economic, Other) with appropriate subcategories. Remove duplicates but preserve important measurement details and clinical context.
+        Task: Consolidate these outcome lists into organized categories (Efficacy, Safety, Quality of Life, Economic, Other) with appropriate subcategories. Remove duplicates but preserve important measurement details and clinical context. Each country/source provides one comprehensive outcomes list.
 
         Return the result as valid JSON following the structure specified in the system prompt.
         """
@@ -349,22 +411,46 @@ class PICOConsolidator:
                         {"role": "system", "content": system_prompt},
                         {"role": "user", "content": user_prompt}
                     ],
-                    temperature=0.1
+                    temperature=0.1,
+                    max_tokens=4000
                 )
                 result_text = response.choices[0].message.content
             else:
                 response = model.invoke(messages)
                 result_text = response.content
 
-            consolidated_result = json.loads(result_text)
+            print(f"Outcomes consolidation LLM response length: {len(result_text) if result_text else 0}")
+            print(f"Outcomes consolidation LLM response preview: {result_text[:200] if result_text else 'None'}")
+            
+            if not result_text or result_text.strip() == "":
+                print("Empty response from LLM for outcomes consolidation")
+                return {}
+            
+            cleaned_text = self.clean_llm_response(result_text)
+            
+            if not cleaned_text:
+                print("No valid JSON found in outcomes consolidation response")
+                return {}
+
+            consolidated_result = json.loads(cleaned_text)
+            
+            if "outcomes_metadata" not in consolidated_result:
+                consolidated_result["outcomes_metadata"] = {}
             
             consolidated_result["outcomes_metadata"]["timestamp"] = datetime.now().isoformat()
             consolidated_result["outcomes_metadata"]["indication"] = metadata.get("indication", "")
             consolidated_result["outcomes_metadata"]["source_countries"] = metadata.get("countries", [])
             consolidated_result["outcomes_metadata"]["source_types"] = metadata.get("source_types", [])
             
+            total_unique = consolidated_result.get("outcomes_metadata", {}).get("total_unique_outcomes", 0)
+            print(f"Successfully organized {len(all_outcomes)} original outcome lists into {total_unique} unique categorized outcomes")
+            
             return consolidated_result
 
+        except json.JSONDecodeError as e:
+            print(f"JSON decode error during outcomes consolidation: {e}")
+            print(f"Raw LLM response: {result_text[:1000] if result_text else 'None'}")
+            return {}
         except Exception as e:
             print(f"Error during outcomes consolidation: {e}")
             return {}
@@ -414,7 +500,7 @@ class PICOConsolidator:
             try:
                 with open(picos_filepath, 'w', encoding='utf-8') as f:
                     json.dump(picos_result, f, indent=2, ensure_ascii=False)
-                print(f"Saved consolidated PICOs to: {picos_filepath}")
+                print(f"Saved {len(picos_result['consolidated_picos'])} consolidated PICOs to: {picos_filepath}")
                 saved_files["picos_file"] = picos_filepath
             except Exception as e:
                 print(f"Error saving consolidated PICOs: {e}")
@@ -440,12 +526,20 @@ class PICOConsolidator:
             try:
                 with open(outcomes_filepath, 'w', encoding='utf-8') as f:
                     json.dump(outcomes_result, f, indent=2, ensure_ascii=False)
-                print(f"Saved consolidated outcomes to: {outcomes_filepath}")
+                
+                total_outcomes = 0
+                for category in outcomes_result.get("consolidated_outcomes", {}).values():
+                    if isinstance(category, dict):
+                        for subcategory in category.values():
+                            if isinstance(subcategory, list):
+                                total_outcomes += len(subcategory)
+                
+                print(f"Saved {total_outcomes} consolidated outcomes to: {outcomes_filepath}")
                 saved_files["outcomes_file"] = outcomes_filepath
             except Exception as e:
                 print(f"Error saving consolidated outcomes: {e}")
         else:
-            print("No consolidated outcomes to save (consolidation may have failed)")
+            print("Saved empty/failed outcomes consolidation to: results/consolidated/treatment_of_patients_with_advanced_non-small_cell_consolidated_outcomes_{}.json".format(timestamp))
         
         if not saved_files:
             print("Warning: No consolidated files were saved. Check consolidation process.")
@@ -489,21 +583,13 @@ class PICOConsolidator:
         all_picos, all_outcomes, metadata = self.extract_all_picos_and_outcomes(pico_data)
         
         print(f"Found {len(all_picos)} total PICOs across {len(metadata['countries'])} countries")
-        print(f"Found {len(all_outcomes)} total outcomes")
+        print(f"Found {len(all_outcomes)} total outcome lists (one per country/source)")
 
         print("Step 3: Consolidating PICOs...")
         consolidated_picos = self.consolidate_picos(all_picos, metadata, model_override)
-        
-        if consolidated_picos:
-            total_consolidated = consolidated_picos.get("consolidation_metadata", {}).get("total_consolidated_picos", 0)
-            print(f"Consolidated {len(all_picos)} original PICOs into {total_consolidated} consolidated PICOs")
 
         print("Step 4: Consolidating outcomes...")
         consolidated_outcomes = self.consolidate_outcomes(all_outcomes, metadata, model_override)
-        
-        if consolidated_outcomes:
-            total_unique = consolidated_outcomes.get("outcomes_metadata", {}).get("total_unique_outcomes", 0)
-            print(f"Organized {len(all_outcomes)} original outcomes into {total_unique} unique categorized outcomes")
 
         print("Step 5: Saving consolidated results...")
         saved_files = self.save_consolidated_results(
@@ -521,9 +607,9 @@ class PICOConsolidator:
             "saved_files": saved_files,
             "summary": {
                 "original_picos": len(all_picos),
-                "consolidated_picos": consolidated_picos.get("consolidation_metadata", {}).get("total_consolidated_picos", 0),
+                "consolidated_picos": len(consolidated_picos.get("consolidated_picos", [])) if consolidated_picos else 0,
                 "original_outcomes": len(all_outcomes),
-                "unique_outcomes": consolidated_outcomes.get("outcomes_metadata", {}).get("total_unique_outcomes", 0),
+                "unique_outcomes": consolidated_outcomes.get("outcomes_metadata", {}).get("total_unique_outcomes", 0) if consolidated_outcomes else 0,
                 "countries": metadata.get("countries", []),
                 "source_types": metadata.get("source_types", [])
             }
