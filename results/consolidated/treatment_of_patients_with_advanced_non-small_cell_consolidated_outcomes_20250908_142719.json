@@ -1,0 +1,271 @@
+{
+  "outcomes_metadata": {
+    "timestamp": "2025-09-08T14:27:19.516910",
+    "indication": "treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context",
+    "consolidation_type": "outcomes",
+    "total_unique_outcomes": 28,
+    "source_countries": [
+      "DE",
+      "DK",
+      "EN",
+      "FR",
+      "NL",
+      "PO",
+      "PT",
+      "SE"
+    ],
+    "source_types": [
+      "clinical_guideline",
+      "hta_submission"
+    ]
+  },
+  "consolidated_outcomes": {
+    "efficacy": {
+      "survival_endpoints": [
+        {
+          "name": "Overall survival (OS)",
+          "details": [
+            "Median OS, hazard ratio (HR), 12-month OS rate, indirect comparison HR, median OS extension",
+            "Defined as time from randomisation to death from any cause",
+            "Reported in: PT (hta_submission), PO (hta_submission), DE (hta_submission), NL (clinical_guideline), EN (clinical_guideline), SE (clinical_guideline)"
+          ]
+        },
+        {
+          "name": "Event-free survival",
+          "details": [
+            "Reported in: PT (hta_submission)"
+          ]
+        },
+        {
+          "name": "Prolonged survival",
+          "details": [
+            "Reported in: SE (clinical_guideline)"
+          ]
+        }
+      ],
+      "response_measures": [
+        {
+          "name": "Objective response rate (ORR)",
+          "details": [
+            "Primary endpoint; includes overall response rate; measured by RECIST 1.1 criteria in some sources",
+            "Reported in: PT (hta_submission), PO (hta_submission), DE (hta_submission), NL (clinical_guideline), DK (clinical_guideline), EN (clinical_guideline)"
+          ]
+        },
+        {
+          "name": "Duration of response (DoR)",
+          "details": [
+            "Median DoR",
+            "Reported in: PT (hta_submission), DK (clinical_guideline)"
+          ]
+        },
+        {
+          "name": "Disease control rate (DCR)",
+          "details": [
+            "Reported in: PT (hta_submission), PO (hta_submission)"
+          ]
+        },
+        {
+          "name": "Response to immunotherapy monotherapy",
+          "details": [
+            "Reported in: DK (clinical_guideline)"
+          ]
+        }
+      ],
+      "progression_measures": [
+        {
+          "name": "Progression-free survival (PFS)",
+          "details": [
+            "Median PFS, HR, 12-month PFS rate, subgroup analyses by ECOG status and metastasis location, defined as time from randomisation until disease progression or death from any cause, assessed by blinded independent central review",
+            "Reported in: PT (hta_submission), PO (hta_submission), DE (hta_submission), NL (clinical_guideline), DK (clinical_guideline), EN (clinical_guideline)"
+          ]
+        },
+        {
+          "name": "Time to progression",
+          "details": [
+            "Reported in: PT (hta_submission)"
+          ]
+        },
+        {
+          "name": "Time to next treatment",
+          "details": [
+            "Reported in: PT (hta_submission)"
+          ]
+        },
+        {
+          "name": "Time to progression on subsequent therapy",
+          "details": [
+            "Reported in: PO (hta_submission)"
+          ]
+        },
+        {
+          "name": "Duration of treatment",
+          "details": [
+            "Reported in: PT (hta_submission)"
+          ]
+        }
+      ]
+    },
+    "safety": {
+      "adverse_events": [
+        {
+          "name": "Adverse events (AEs)",
+          "details": [
+            "Measured by CTCAE v5.0 in some sources; includes total AEs, treatment-related AEs, frequency of specific AEs (diarrhoea, increased ALT/AST, fatigue, anaemia, constipation, neutropenia, fever, alopecia, stomatitis, peripheral oedema, peripheral neuropathy, blood and lymphatic system disorders, infections and infestations)",
+            "Reported in: PT (hta_submission), PO (hta_submission), DE (hta_submission), NL (clinical_guideline), DK (clinical_guideline), EN (clinical_guideline)"
+          ]
+        },
+        {
+          "name": "Dose modification-related adverse drug reactions (ADRs)",
+          "details": [
+            "Reported in: PO (hta_submission)"
+          ]
+        }
+      ],
+      "serious_events": [
+        {
+          "name": "Serious adverse events (SAEs)",
+          "details": [
+            "Includes Grade 3-4 AEs, severe AEs, treatment-related AEs resulting in death, interstitial lung disease (severe AE), liver disorders (severe AEs)",
+            "Reported in: PT (hta_submission), PO (hta_submission), DE (hta_submission), DK (clinical_guideline)"
+          ]
+        },
+        {
+          "name": "Potential risk of serious side effects on the skin",
+          "details": [
+            "Reported in: FR (clinical_guideline)"
+          ]
+        },
+        {
+          "name": "Mortality-related toxicity",
+          "details": [
+            "Reported in: PT (hta_submission)"
+          ]
+        }
+      ],
+      "discontinuations": [
+        {
+          "name": "Discontinuation rate due to adverse events",
+          "details": [
+            "Includes treatment discontinuation due to AEs, treatment-related AEs leading to discontinuation",
+            "Reported in: PT (hta_submission), PO (hta_submission), DE (hta_submission)"
+          ]
+        }
+      ]
+    },
+    "quality_of_life": {
+      "patient_reported_outcomes": [
+        {
+          "name": "Quality of life (QoL)",
+          "details": [
+            "Overall health status/quality of life; measured by EORTC QLQ-C30, EORTC QLQ-LC13, EQ-5D VAS, BPI-SF, FACT-G GP5, PGI-C; includes assessment of symptoms (pain, swelling, dyspnea, hair loss, chest bleeding, cough); stable or deterioration reported; change from baseline to week 12; higher functional score = deterioration, higher general health = improvement",
+            "Reported in: PT (hta_submission), PO (hta_submission), DE (hta_submission), NL (clinical_guideline), EN (clinical_guideline), SE (clinical_guideline)"
+          ]
+        },
+        {
+          "name": "Health-related quality of life",
+          "details": [
+            "Reported in: EN (clinical_guideline)"
+          ]
+        },
+        {
+          "name": "Preservation of quality of life",
+          "details": [
+            "Reported in: SE (clinical_guideline)"
+          ]
+        }
+      ],
+      "functional_status": [
+        {
+          "name": "Time to deterioration of overall health status",
+          "details": [
+            "Reported in: PT (hta_submission), PO (hta_submission)"
+          ]
+        },
+        {
+          "name": "Time to deterioration of physical functioning",
+          "details": [
+            "Reported in: PT (hta_submission)"
+          ]
+        },
+        {
+          "name": "Karnofsky or ECOG performance status",
+          "details": [
+            "Consideration of patient overall condition",
+            "Reported in: DE (clinical_guideline)"
+          ]
+        }
+      ],
+      "symptom_measures": [
+        {
+          "name": "Symptom control",
+          "details": [
+            "Reported in: SE (clinical_guideline)"
+          ]
+        },
+        {
+          "name": "Symptomatology and health status",
+          "details": [
+            "Assessed by EORTC QLQ-C30, EORTC QLQ-LC13, BPI-SF, FACT-G GP5, PGI-C",
+            "Reported in: DE (hta_submission)"
+          ]
+        }
+      ]
+    },
+    "economic": {
+      "cost_effectiveness": [
+        {
+          "name": "Incremental cost-utility ratio (ICUR)",
+          "details": [
+            "Reported in: PO (hta_submission)"
+          ]
+        },
+        {
+          "name": "Cost-utility analysis (CUA)",
+          "details": [
+            "Reported in: PO (hta_submission)"
+          ]
+        }
+      ],
+      "utilities": [
+        {
+          "name": "Utilities (as part of cost-utility analysis)",
+          "details": [
+            "Reported in: PO (hta_submission)"
+          ]
+        }
+      ],
+      "resource_utilization": [
+        {
+          "name": "Budget impact analysis (public payer perspective)",
+          "details": [
+            "Reported in: PO (hta_submission)"
+          ]
+        }
+      ]
+    },
+    "other": {
+      "exploratory_endpoints": [
+        {
+          "name": "Treatment according to evidence-based recommendations",
+          "details": [
+            "Reported in: DE (clinical_guideline)"
+          ]
+        },
+        {
+          "name": "Use of targeted therapy (Sotorasib)",
+          "details": [
+            "Reported in: DE (clinical_guideline)"
+          ]
+        },
+        {
+          "name": "Consensus-based recommendation",
+          "details": [
+            "Reported in: DE (clinical_guideline)"
+          ]
+        }
+      ],
+      "biomarkers": [],
+      "pharmacokinetics": []
+    }
+  }
+}
