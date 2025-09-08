@@ -472,11 +472,13 @@ CONSOLIDATION_CONFIGS = {
     8) Omit entries that have no comparator unless they add unique population information
 
     Population Consolidation Guidelines:
-    - Do not drop or dilute subgroup conditions. If some variants include additional criteria (biomarker, histology, etc.) that others lack, retain that criteria in the consolidation. If it cannot be combined without loss of meaning, keep separate entries.
-    - If one PICO mentions a specific subpopulation (e.g. 'only in PD-L1 positive patients' or 'adenocarcinoma only') that another does not, do not merge them into one. Instead, output separate consolidated entries for each distinct subgroup.
-    - Include the most specific population definition that encompasses all variants
-    - Preserve important clinical distinctions (e.g., prior therapy requirements, biomarker status, histology)
-    - When consolidating prior-therapy requirements, if any variant mentions inability to tolerate a prior line, include that (e.g., 'progressed on or could not tolerate prior therapy')
+    - Do not drop or dilute subgroup conditions. If some variants include additional criteria (biomarker, histology, prior therapy type, line of therapy, etc.) that others lack, retain that criteria in the consolidation. If it cannot be combined without loss of meaning, keep separate entries.
+    - If population descriptions imply different prior therapy histories or line of therapy (for example, one mentions specific chemotherapy or indicates two prior lines vs. one), these represent distinct clinical scenarios and should not be merged.
+    - If one PICO mentions a specific subpopulation (e.g. 'only in PD-L1 positive patients' or 'adenocarcinoma only' or 'after first-line cytotoxic chemotherapy') that another does not, do not merge them into one. Instead, output separate consolidated entries for each distinct subgroup.
+    - Use the most inclusive description only if it does not omit specific criteria from any variant
+    - Preserve important clinical distinctions (e.g., prior therapy requirements, biomarker status, histology, line of therapy)
+    - When consolidating prior-therapy requirements, if any variant mentions inability to tolerate a prior line, always include that in the consolidated text (e.g., 'progressed on or could not tolerate prior therapy')
+    - Always combine 'progressed on or could not tolerate' if any variant includes a tolerance issue
 
     Comparator Consolidation Guidelines:
     - Prefer naming the specific drug or regimen if given (e.g., use 'nivolumab' instead of generic 'immunotherapy' if available). If multiple drugs in class are truly interchangeable in context, you may group as one class (but list the drugs in Original_Comparator_Variants).
@@ -487,13 +489,14 @@ CONSOLIDATION_CONFIGS = {
 
     Example:
     Input PICOs:
-    - Population: "advanced NSCLC with KRAS G12C, progressed after chemo", Comparator: "docetaxel"
-    - Population: "advanced NSCLC with KRAS G12C, progressed after platinum and immunotherapy", Comparator: "docetaxel"
-    - Population: "advanced NSCLC with KRAS G12C, PD-L1 ≥1%, progressed after ≥1 therapy", Comparator: "pembrolizumab"
+    - Population: "advanced NSCLC with KRAS G12C, progressed after platinum chemotherapy", Comparator: "docetaxel"
+    - Population: "advanced NSCLC with KRAS G12C, progressed after at least one prior therapy", Comparator: "docetaxel"
+    - Population: "advanced NSCLC with KRAS G12C, progressed on or cannot tolerate platinum-based therapy", Comparator: "docetaxel"
 
-    Consolidated Output:
-    - Population: "Adult patients with advanced NSCLC with KRAS G12C mutation who have progressed after at least one prior therapy" - Comparator: "docetaxel" (Countries: [...], Original_Population_Variants: [both phrases])
-    - Population: "Adult patients with advanced NSCLC with KRAS G12C mutation and tumors expressing PD-L1 ≥1% who have progressed after ≥1 prior therapy" - Comparator: "pembrolizumab" (Countries: [...], ...)
+    Consolidated Output (DO NOT MERGE - these are distinct populations):
+    - Population: "Adult patients with advanced NSCLC with KRAS G12C mutation who have progressed after platinum chemotherapy" - Comparator: "docetaxel" (Countries: [...], Original_Population_Variants: [first variant])
+    - Population: "Adult patients with advanced NSCLC with KRAS G12C mutation who have progressed after at least one prior therapy" - Comparator: "docetaxel" (Countries: [...], Original_Population_Variants: [second variant])
+    - Population: "Adult patients with advanced NSCLC with KRAS G12C mutation who have progressed on or cannot tolerate platinum-based therapy" - Comparator: "docetaxel" (Countries: [...], Original_Population_Variants: [third variant])
 
     Output JSON structure:
     {

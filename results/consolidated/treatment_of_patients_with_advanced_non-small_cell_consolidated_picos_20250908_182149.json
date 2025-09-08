@@ -1,9 +1,9 @@
 {
   "consolidation_metadata": {
-    "timestamp": "2025-09-08T14:26:23.445295",
+    "timestamp": "2025-09-08T18:21:16.381203",
     "indication": "treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context",
     "consolidation_type": "picos",
-    "total_consolidated_picos": 15,
+    "total_consolidated_picos": 17,
     "source_countries": [
       "DE",
       "DK",
@@ -21,14 +21,32 @@
   },
   "consolidated_picos": [
     {
-      "Population": "Adult patients with advanced or metastatic non-small cell lung cancer (NSCLC) with KRAS G12C mutation who have progressed after at least one prior systemic therapy",
+      "Population": "Adult patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation who have progressed after at least one prior systemic line of therapy",
+      "Intervention": "Medicine X (under assessment)",
+      "Comparator": "atezolizumab",
+      "Countries": [
+        "DE",
+        "PT"
+      ],
+      "Source_Types": [
+        "hta_submission"
+      ],
+      "Original_Population_Variants": [
+        "adult patients with advanced non-small cell lung cancer (NSCLC) with mutated KRAS G12C and who have progressed after at least one prior systemic line of therapy",
+        "Adults with advanced non-small cell lung cancer (NSCLC) with KRAS p.G12C mutation after first-line therapy with cytotoxic chemotherapy"
+      ],
+      "Original_Comparator_Variants": [
+        "atezolizumab"
+      ]
+    },
+    {
+      "Population": "Adult patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation who have progressed after at least one prior systemic line of therapy",
       "Intervention": "Medicine X (under assessment)",
       "Comparator": "docetaxel",
       "Countries": [
-        "PT",
         "DE",
         "NL",
-        "DK",
+        "PT",
         "EN"
       ],
       "Source_Types": [
@@ -39,22 +57,19 @@
         "adult patients with advanced non-small cell lung cancer (NSCLC) with mutated KRAS G12C and who have progressed after at least one prior systemic line of therapy",
         "Adults with advanced non-small cell lung cancer (NSCLC) with KRAS p.G12C mutation after first-line therapy with cytotoxic chemotherapy",
         "patients with non–small-cell lung cancer stage IIIB/IV and a KRAS G12C mutation",
-        "patients with advanced NSCLC and KRAS G12C mutation previously treated with platinum-based chemotherapy and immunotherapy",
         "KRAS G12C mutation-positive locally advanced or metastatic non-small-cell lung cancer in adults whose disease has progressed on, or who cannot tolerate, platinum-based chemotherapy or anti-PD-1/PD-L1 immunotherapy"
       ],
       "Original_Comparator_Variants": [
-        "docetaxel",
-        "docetaxel in combination with nintedanib",
-        "docetaxel plus nintedanib"
+        "docetaxel"
       ]
     },
     {
-      "Population": "Adult patients with advanced or metastatic non-small cell lung cancer (NSCLC) with KRAS G12C mutation who have progressed after at least one prior systemic therapy",
+      "Population": "Adult patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation who have progressed after at least one prior systemic line of therapy",
       "Intervention": "Medicine X (under assessment)",
       "Comparator": "docetaxel + nintedanib",
       "Countries": [
-        "PT",
         "DE",
+        "PT",
         "EN"
       ],
       "Source_Types": [
@@ -73,31 +88,12 @@
       ]
     },
     {
-      "Population": "Adult patients with advanced or metastatic non-small cell lung cancer (NSCLC) with KRAS G12C mutation who have progressed after at least one prior systemic therapy",
-      "Intervention": "Medicine X (under assessment)",
-      "Comparator": "pemetrexed",
-      "Countries": [
-        "PT",
-        "DE"
-      ],
-      "Source_Types": [
-        "hta_submission"
-      ],
-      "Original_Population_Variants": [
-        "adult patients with advanced non-small cell lung cancer (NSCLC) with mutated KRAS G12C and who have progressed after at least one prior systemic line of therapy",
-        "Adults with advanced non-small cell lung cancer (NSCLC) with KRAS p.G12C mutation after first-line therapy with cytotoxic chemotherapy"
-      ],
-      "Original_Comparator_Variants": [
-        "pemetrexed"
-      ]
-    },
-    {
-      "Population": "Adult patients with advanced or metastatic non-small cell lung cancer (NSCLC) with KRAS G12C mutation who have progressed after at least one prior systemic therapy",
+      "Population": "Adult patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation who have progressed after at least one prior systemic line of therapy",
       "Intervention": "Medicine X (under assessment)",
       "Comparator": "nivolumab",
       "Countries": [
-        "PT",
-        "DE"
+        "DE",
+        "PT"
       ],
       "Source_Types": [
         "hta_submission"
@@ -111,12 +107,12 @@
       ]
     },
     {
-      "Population": "Adult patients with advanced or metastatic non-small cell lung cancer (NSCLC) with KRAS G12C mutation who have progressed after at least one prior systemic therapy",
+      "Population": "Adult patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation who have progressed after at least one prior systemic line of therapy",
       "Intervention": "Medicine X (under assessment)",
       "Comparator": "pembrolizumab",
       "Countries": [
-        "PT",
-        "DE"
+        "DE",
+        "PT"
       ],
       "Source_Types": [
         "hta_submission"
@@ -130,12 +126,12 @@
       ]
     },
     {
-      "Population": "Adult patients with advanced or metastatic non-small cell lung cancer (NSCLC) with KRAS G12C mutation who have progressed after at least one prior systemic therapy",
+      "Population": "Adult patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation who have progressed after at least one prior systemic line of therapy",
       "Intervention": "Medicine X (under assessment)",
-      "Comparator": "atezolizumab",
+      "Comparator": "pemetrexed",
       "Countries": [
-        "PT",
-        "DE"
+        "DE",
+        "PT"
       ],
       "Source_Types": [
         "hta_submission"
@@ -145,11 +141,11 @@
         "Adults with advanced non-small cell lung cancer (NSCLC) with KRAS p.G12C mutation after first-line therapy with cytotoxic chemotherapy"
       ],
       "Original_Comparator_Variants": [
-        "atezolizumab"
+        "pemetrexed"
       ]
     },
     {
-      "Population": "Adult patients with advanced or metastatic non-small cell lung cancer (NSCLC) with KRAS G12C mutation who have progressed after at least one prior systemic therapy",
+      "Population": "Adult patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation who have progressed after at least one prior systemic line of therapy",
       "Intervention": "Medicine X (under assessment)",
       "Comparator": "platinum doublet",
       "Countries": [
@@ -166,12 +162,12 @@
       ]
     },
     {
-      "Population": "Adult patients with advanced or metastatic non-small cell lung cancer (NSCLC) with KRAS G12C mutation and tumours expressing PD-L1 (TPS ≥1%) who have progressed after at least one prior systemic therapy",
+      "Population": "Adult patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation who have progressed after at least one prior systemic line of therapy and tumours expressing PD-L1 with a TPS ≥1%",
       "Intervention": "Medicine X (under assessment)",
       "Comparator": "pembrolizumab",
       "Countries": [
-        "PT",
-        "DE"
+        "DE",
+        "PT"
       ],
       "Source_Types": [
         "hta_submission"
@@ -185,7 +181,7 @@
       ]
     },
     {
-      "Population": "Adult patients with advanced or metastatic non-small cell lung cancer (NSCLC) with KRAS G12C mutation and PD-L1 negative tumours who have progressed after at least one prior systemic therapy",
+      "Population": "Adult patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation who have progressed after at least one prior systemic line of therapy and PD-L1 negative tumours",
       "Intervention": "Medicine X (under assessment)",
       "Comparator": "docetaxel",
       "Countries": [
@@ -202,7 +198,7 @@
       ]
     },
     {
-      "Population": "Adult patients with advanced or metastatic non-small cell lung cancer (NSCLC) with KRAS G12C mutation and PD-L1 negative tumours who have progressed after at least one prior systemic therapy",
+      "Population": "Adult patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation who have progressed after at least one prior systemic line of therapy and PD-L1 negative tumours",
       "Intervention": "Medicine X (under assessment)",
       "Comparator": "pemetrexed",
       "Countries": [
@@ -219,7 +215,7 @@
       ]
     },
     {
-      "Population": "Adult patients with advanced or metastatic non-small cell lung cancer (NSCLC) with KRAS G12C mutation, PD-L1 negative tumours, and adenocarcinoma histology who have progressed after at least one prior systemic therapy",
+      "Population": "Adult patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation who have progressed after at least one prior systemic line of therapy, PD-L1 negative tumours and adenocarcinoma histology",
       "Intervention": "Medicine X (under assessment)",
       "Comparator": "docetaxel + nintedanib",
       "Countries": [
@@ -236,26 +232,9 @@
       ]
     },
     {
-      "Population": "Adult patients with advanced or metastatic non-small cell lung cancer (NSCLC) with KRAS G12C mutation who have progressed after at least one prior systemic therapy",
+      "Population": "Patients with advanced NSCLC and KRAS G12C mutation previously treated with platinum-based chemotherapy and immunotherapy",
       "Intervention": "Medicine X (under assessment)",
-      "Comparator": "chemotherapy",
-      "Countries": [
-        "NL"
-      ],
-      "Source_Types": [
-        "clinical_guideline"
-      ],
-      "Original_Population_Variants": [
-        "patients with non–smallcell lung cancer stage IIIB/IV and a KRAS G12C mutation"
-      ],
-      "Original_Comparator_Variants": [
-        "chemotherapy"
-      ]
-    },
-    {
-      "Population": "Adult patients with advanced or metastatic non-small cell lung cancer (NSCLC) with KRAS G12C mutation and ECOG performance status 0-2, previously treated with platinum-based chemotherapy and immunotherapy (where applicable)",
-      "Intervention": "Medicine X (under assessment)",
-      "Comparator": "sotorasib",
+      "Comparator": "docetaxel",
       "Countries": [
         "DK"
       ],
@@ -263,14 +242,14 @@
         "clinical_guideline"
       ],
       "Original_Population_Variants": [
-        "patients with active KRAS G12C and 0-2 performance status and previously treated with platinum-based chemotherapy and immunotherapy (where applicable)"
+        "patients with advanced NSCLC and KRAS G12C mutation previously treated with platinum-based chemotherapy and immunotherapy"
       ],
       "Original_Comparator_Variants": [
-        "sotorasib"
+        "docetaxel"
       ]
     },
     {
-      "Population": "Adult patients with advanced or metastatic non-small cell lung cancer (NSCLC) with KRAS G12C mutation and ECOG performance status 0-2, previously treated with platinum-based chemotherapy and immunotherapy (where applicable)",
+      "Population": "Patients with active KRAS G12C mutation and ECOG performance status 0-2, previously treated with platinum-based chemotherapy and immunotherapy (where applicable)",
       "Intervention": "Medicine X (under assessment)",
       "Comparator": "adagrasib",
       "Countries": [
@@ -289,7 +268,41 @@
       ]
     },
     {
-      "Population": "Adult patients with advanced or metastatic non-small cell lung cancer (NSCLC) with KRAS G12C mutation previously treated with immunotherapy alone",
+      "Population": "Patients with active KRAS G12C mutation and ECOG performance status 0-2, previously treated with platinum-based chemotherapy and immunotherapy (where applicable)",
+      "Intervention": "Medicine X (under assessment)",
+      "Comparator": "sotorasib",
+      "Countries": [
+        "DK"
+      ],
+      "Source_Types": [
+        "clinical_guideline"
+      ],
+      "Original_Population_Variants": [
+        "patients with active KRAS G12C and 0-2 performance status and previously treated with platinum-based chemotherapy and immunotherapy (where applicable)"
+      ],
+      "Original_Comparator_Variants": [
+        "sotorasib"
+      ]
+    },
+    {
+      "Population": "Patients with Stage IV NSCLC with a KRAS-G12C mutation and failure of at least one systemic therapy",
+      "Intervention": "Medicine X (under assessment)",
+      "Comparator": "sotorasib",
+      "Countries": [
+        "DE"
+      ],
+      "Source_Types": [
+        "clinical_guideline"
+      ],
+      "Original_Population_Variants": [
+        "Patients with Stage IV NSCLC with a KRAS-G12C mutation and failure of at least one systemic therapy"
+      ],
+      "Original_Comparator_Variants": [
+        "currently approved (02/22) Sotorasib"
+      ]
+    },
+    {
+      "Population": "Patients with oncogene-driven NSCLC treated with immunotherapy alone",
       "Intervention": "Medicine X (under assessment)",
       "Comparator": "immunotherapy monotherapy",
       "Countries": [
@@ -306,20 +319,20 @@
       ]
     },
     {
-      "Population": "Adult patients with advanced or metastatic non-small cell lung cancer (NSCLC) with KRAS G12C mutation who have failed at least one prior systemic therapy",
+      "Population": "KRAS G12C mutation-positive locally advanced or metastatic non-small-cell lung cancer in adults whose disease has progressed on, or who cannot tolerate, platinum-based chemotherapy or anti-PD-1/PD-L1 immunotherapy",
       "Intervention": "Medicine X (under assessment)",
-      "Comparator": "sotorasib",
+      "Comparator": "chemotherapy",
       "Countries": [
-        "DE"
+        "NL"
       ],
       "Source_Types": [
         "clinical_guideline"
       ],
       "Original_Population_Variants": [
-        "Patients with Stage IV NSCLC with a KRAS-G12C mutation and failure of at least one systemic therapy"
+        "patients with non–smallcell lung cancer stage IIIB/IV and a KRAS G12C mutation"
       ],
       "Original_Comparator_Variants": [
-        "currently approved (02/22) Sotorasib"
+        "chemotherapy"
       ]
     }
   ]
