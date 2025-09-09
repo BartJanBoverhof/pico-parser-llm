@@ -23,7 +23,7 @@ import os
 import json
 import glob
 import time
-from typing import List
+from typing import List, Optional
 from langchain.docstore.document import Document
 from langchain_experimental.text_splitter import SemanticChunker
 from langchain.embeddings import HuggingFaceEmbeddings
@@ -258,11 +258,11 @@ class Chunker:
         self.end_timer_and_print()
 
 
-
 class Vectoriser:
     """
     Creates or loads a Chroma vectorstore from chunked JSON documents.
     Supports embeddings from OpenAI or BioBERT.
+    Enhanced to support case-based vectorstores for different medical cases (e.g., NSCLC, HCC).
     """
 
     def __init__(
@@ -270,6 +270,7 @@ class Vectoriser:
         chunked_folder_path: str = "./data/text_chunked",
         embedding_choice: str = "openai",
         db_parent_dir: str = "./data/vectorstore",
+        case: Optional[str] = None,
         include_metadata_in_text: bool = True,
         metadata_fields_to_include: List[str] = None,
         metadata_format: str = "**{field}:** ",
@@ -278,6 +279,7 @@ class Vectoriser:
         self.chunked_folder_path = chunked_folder_path
         self.embedding_choice = embedding_choice.lower()
         self.db_parent_dir = db_parent_dir
+        self.case = case
         self.db_name = self._get_db_path()
         self.include_metadata_in_text = include_metadata_in_text
         self.metadata_fields_to_include = metadata_fields_to_include or ["heading", "source_type"]
@@ -286,13 +288,42 @@ class Vectoriser:
         self.manifest_path = os.path.join(self.db_parent_dir, f"{os.path.basename(self.db_name)}_manifest.json")
 
     def _get_db_path(self) -> str:
+        """
+        Generate vectorstore path based on embedding choice and case.
+        
+        Returns:
+            str: Path to the vectorstore directory
+        """
         store_name = {
             "openai": "open_ai_vectorstore",
             "biobert": "biobert_vectorstore"
         }.get(self.embedding_choice)
+        
         if store_name is None:
             raise ValueError("Unsupported embedding_choice. Use 'openai' or 'biobert'.")
+        
+        # Include case in the path if specified
+        if self.case:
+            store_name = f"{self.case}_{store_name}"
+            
         return os.path.join(self.db_parent_dir, store_name)
+
+    def _get_case_specific_chunked_path(self) -> str:
+        """
+        Get case-specific chunked folder path.
+        If case is specified, look for case subfolder first, otherwise use base path.
+        
+        Returns:
+            str: Path to the chunked documents for this case
+        """
+        if self.case:
+            case_specific_path = os.path.join(self.chunked_folder_path, self.case)
+            if os.path.exists(case_specific_path):
+                return case_specific_path
+            else:
+                print(f"Warning: Case-specific path {case_specific_path} not found, using base path")
+        
+        return self.chunked_folder_path
 
     def _enrich_text_with_metadata(self, text: str, metadata: dict) -> str:
         """
@@ -322,13 +353,14 @@ class Vectoriser:
         if os.path.exists(self.manifest_path):
             with open(self.manifest_path, "r", encoding="utf-8") as f:
                 return json.load(f)
-        return {"processed_files": {}, "total_chunks": 0}
+        return {"processed_files": {}, "total_chunks": 0, "case": self.case}
 
     def _save_manifest(self, manifest: dict):
         """
         Saves the manifest file.
         """
         os.makedirs(os.path.dirname(self.manifest_path), exist_ok=True)
+        manifest["case"] = self.case  # Always include case info in manifest
         with open(self.manifest_path, "w", encoding="utf-8") as f:
             json.dump(manifest, f, indent=2, ensure_ascii=False)
 
@@ -342,6 +374,7 @@ class Vectoriser:
     def load_chunked_documents(self, only_new: bool = False) -> List[Document]:
         """
         Loads chunked JSON files into Document objects.
+        Uses case-specific chunked folder path if available.
         Uses recursive glob to find JSON files in any subdirectory of the chunked_folder_path.
         """
         documents = []
@@ -349,12 +382,18 @@ class Vectoriser:
         processed_files = manifest.get("processed_files", {})
         new_files_count = 0
         
-        json_files = glob.glob(os.path.join(self.chunked_folder_path, "**/*.json"), recursive=True)
-        print(f"Found {len(json_files)} JSON files in {self.chunked_folder_path} (including subdirectories).")
+        # Use case-specific path if available
+        actual_chunked_path = self._get_case_specific_chunked_path()
+        
+        json_files = glob.glob(os.path.join(actual_chunked_path, "**/*.json"), recursive=True)
+        print(f"Found {len(json_files)} JSON files in {actual_chunked_path} (including subdirectories).")
+        
+        if self.case:
+            print(f"Loading documents for case: {self.case}")
 
         for jf in json_files:
             file_signature = self._get_file_signature(jf)
-            rel_file_path = os.path.relpath(jf, self.chunked_folder_path)
+            rel_file_path = os.path.relpath(jf, actual_chunked_path)
             
             if only_new and rel_file_path in processed_files:
                 if processed_files[rel_file_path] == file_signature:
@@ -366,7 +405,7 @@ class Vectoriser:
             with open(jf, "r", encoding="utf-8") as f:
                 data = json.load(f)
 
-            rel_path = os.path.relpath(os.path.dirname(jf), self.chunked_folder_path)
+            rel_path = os.path.relpath(os.path.dirname(jf), actual_chunked_path)
             
             for c in data.get("chunks", []):
                 text_content = c.get("text", "").strip()
@@ -374,6 +413,10 @@ class Vectoriser:
                     continue
                 
                 metadata = c.get("metadata", {})
+                
+                # Add case information to metadata
+                if self.case:
+                    metadata["case"] = self.case
                 
                 if rel_path and rel_path != "." and "folder_path" not in metadata:
                     metadata["folder_path"] = rel_path
@@ -386,7 +429,7 @@ class Vectoriser:
         if only_new:
             print(f"Found {new_files_count} new or modified files.")
             
-        print(f"Loaded {len(documents)} valid document chunks.")
+        print(f"Loaded {len(documents)} valid document chunks for case: {self.case or 'default'}")
         
         if only_new and documents:
             manifest["processed_files"] = processed_files
@@ -441,15 +484,16 @@ class Vectoriser:
 
         manifest = self._load_manifest()
         manifest["total_chunks"] = len(docs)
-        all_docs = self.load_chunked_documents(only_new=False)
-        json_files = glob.glob(os.path.join(self.chunked_folder_path, "**/*.json"), recursive=True)
+        actual_chunked_path = self._get_case_specific_chunked_path()
+        json_files = glob.glob(os.path.join(actual_chunked_path, "**/*.json"), recursive=True)
         for jf in json_files:
-            rel_file_path = os.path.relpath(jf, self.chunked_folder_path)
+            rel_file_path = os.path.relpath(jf, actual_chunked_path)
             manifest["processed_files"][rel_file_path] = self._get_file_signature(jf)
         self._save_manifest(manifest)
         
         elapsed_time = time.time() - start_time
-        print(f"Vectorstore created with {len(docs)} chunks at '{self.db_name}'. Time taken: {elapsed_time:.2f} seconds.")
+        case_info = f" for case '{self.case}'" if self.case else ""
+        print(f"Vectorstore created with {len(docs)} chunks at '{self.db_name}'{case_info}. Time taken: {elapsed_time:.2f} seconds.")
         
         return vectorstore
 
@@ -480,7 +524,8 @@ class Vectoriser:
         vectorstore.persist()
         
         elapsed_time = time.time() - start_time
-        print(f"Added {len(docs)} new chunks to existing vectorstore at '{self.db_name}'. Time taken: {elapsed_time:.2f} seconds.")
+        case_info = f" for case '{self.case}'" if self.case else ""
+        print(f"Added {len(docs)} new chunks to existing vectorstore at '{self.db_name}'{case_info}. Time taken: {elapsed_time:.2f} seconds.")
         return vectorstore
 
     def load_vectorstore(self):
@@ -492,7 +537,8 @@ class Vectoriser:
             persist_directory=self.db_name,
             embedding_function=embeddings
         )
-        print(f"Vectorstore loaded from '{self.db_name}'.")
+        case_info = f" for case '{self.case}'" if self.case else ""
+        print(f"Vectorstore loaded from '{self.db_name}'{case_info}.")
         return vectorstore
 
     def run_pipeline(self):
@@ -500,7 +546,7 @@ class Vectoriser:
         Main pipeline method to either load or create the vectorstore.
         """
         if self.incremental_mode and self.vectorstore_exists():
-            print("Running in incremental mode. Checking for new documents...")
+            print(f"Running in incremental mode for case '{self.case or 'default'}'. Checking for new documents...")
             new_docs = self.load_chunked_documents(only_new=True)
             
             if new_docs:
@@ -511,14 +557,14 @@ class Vectoriser:
                 return self.load_vectorstore()
         
         elif self.vectorstore_exists() and not self.incremental_mode:
-            print("Vectorstore exists. Loading now...")
+            print(f"Vectorstore exists for case '{self.case or 'default'}'. Loading now...")
             return self.load_vectorstore()
         
         else:
-            print("No vectorstore found or incremental mode disabled. Creating new one...")
+            print(f"No vectorstore found or incremental mode disabled for case '{self.case or 'default'}'. Creating new one...")
             docs = self.load_chunked_documents(only_new=False)
             if not docs:
-                raise ValueError("No valid documents found for vectorization.")
+                raise ValueError(f"No valid documents found for vectorization for case '{self.case or 'default'}'.")
             return self.create_vectorstore(docs)
 
     def visualize_vectorstore(self, vectorstore):
@@ -560,8 +606,9 @@ class Vectoriser:
                 hoverinfo='text'
             ))
 
+        case_info = f" - Case: {self.case}" if self.case else ""
         fig.update_layout(
-            title='2D Vectorstore Visualization (t-SNE) grouped by Document',
+            title=f'2D Vectorstore Visualization (t-SNE) grouped by Document{case_info}',
             legend_title="Document ID",
             width=900,
             height=700,
@@ -569,3 +616,28 @@ class Vectoriser:
         )
 
         fig.show()
+
+    @classmethod
+    def get_available_cases(cls, chunked_folder_path: str) -> List[str]:
+        """
+        Get list of available cases based on subdirectories in the chunked folder.
+        
+        Args:
+            chunked_folder_path: Path to the base chunked folder
+            
+        Returns:
+            List of case names (subdirectory names)
+        """
+        if not os.path.exists(chunked_folder_path):
+            return []
+            
+        cases = []
+        for item in os.listdir(chunked_folder_path):
+            item_path = os.path.join(chunked_folder_path, item)
+            if os.path.isdir(item_path):
+                # Check if this directory contains JSON files (directly or in subdirectories)
+                json_files = glob.glob(os.path.join(item_path, "**/*.json"), recursive=True)
+                if json_files:
+                    cases.append(item)
+        
+        return sorted(cases)
