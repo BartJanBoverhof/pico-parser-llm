@@ -1,0 +1,28 @@
+{
+  "doc_id": "SORAFENIB-SANDOZ-ROZHODNUTI-SSET-243488-24_NPM",
+  "created_date": "2024",
+  "country": "CZ",
+  "source_type": "hta_submission",
+  "chunks": [
+    {
+      "heading": "",
+      "text": "PRO KONTROLU LÉČIV 100 41 Praha 10 Fax: +420 271 732 377 Web:",
+      "start_page": 1,
+      "end_page": 1
+    }
+  ],
+  "_translation_metadata": {
+    "processing_timestamp": "2025-08-27T13:01:55.851522",
+    "source_file": "SORAFENIB-SANDOZ-ROZHODNUTI-SSET-243488-24_NPM_cleaned.json",
+    "detected_language": "id",
+    "was_translation_needed": true,
+    "translation_strategy": "nllb_translation",
+    "max_input_tokens": 480,
+    "target_chunk_tokens": 300,
+    "overlap_tokens": 40,
+    "table_content_detected": 1,
+    "model_available": false,
+    "translation_decision": "no_model_available",
+    "total_processing_time_seconds": 0.008739
+  }
+}

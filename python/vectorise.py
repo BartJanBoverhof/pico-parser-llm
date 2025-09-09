@@ -259,12 +259,6 @@ class Chunker:
 
 
 
-
-
-
-
-
-
 class Vectoriser:
     """
     Creates or loads a Chroma vectorstore from chunked JSON documents.

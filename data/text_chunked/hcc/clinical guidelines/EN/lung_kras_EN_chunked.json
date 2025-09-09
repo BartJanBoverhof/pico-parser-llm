@@ -1,0 +1,786 @@
+{
+  "doc_id": "lung_kras_EN",
+  "chunks": [
+    {
+      "text": "So\ntr\nm\nad\nlu\nTec\nPub\nww\n© NI cond\no\nre\nmu\nd\nun\nchn\nblis\nww. ICE\nditio\not\nea\nut\ndv\nn\nnol\nshe\n.nic\nons#\nto\nat\nuta\nva\nng\nlog\ned\nce\n#no\nora\nte\nat\nanc\ng c gy ap\nd: 30\ne.org. . All rig\notice-o\nas\ned\ntio\nc\nca\nppr\nMa\n.uk\nghts\nof-ri\nsi\nd\no\nce\nan\nrai\narc\nk/g\ns res ight\nib\nK\non\ned\nnc\nisa\nch\nguid\nser\nts). b f\nKR\nn-p\nd n ce\nal guid\ndanc\nrved. S\nfo\nRA\np\nno\ner\nda\nce/\nSubj\nor\nAS\npo\no\nr\nanc\n/ta\nject\nr p\nS G osi\nonce\na781\nt to No\npr\nG\nit\n-s\notice\nrev\nG12\ntive\nsm\ne of rig\nv\n2C\nve\nma\nghts\nviously\nC\ne\nall-cell\ns\nSotorasib for previously treated KRAS G12C mutation-positive advanced non-small-cell lung cancer (TA781)",
+      "metadata": {
+        "doc_id": "lung_kras_EN",
+        "heading": "",
+        "start_page": 1,
+        "end_page": 2,
+        "created_date": "20",
+        "country": "EN",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc_kras_g12c/clinical guidelines/EN/lung_kras_EN_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "The recommendations in this guidance represent the view of NICE, arrived at after careful consideration of the evidence available. When exercising their judgement, health\nprofessionals are expected to take this guidance fully into account, alongside the individual needs, preferences and values of their patients. The application of the\nrecommendations in this guidance is at the discretion of health professionals and their individual patients and do not override the responsibility of healthcare professionals to\nmake decisions appropriate to the circumstances of the individual patient, in consultation with the patient and/or their carer or guardian. All problems (adverse events) related to a medicine or medical device used for treatment or in a procedure should be reported to the Medicines and Healthcare products Regulatory\nAgency using the Yellow Card Scheme. Commissioners and/or providers have a responsibility to provide the funding required to enable the guidance to be applied when individual health professionals and their patients\nwish to use it, in accordance with the NHS Constitution.",
+      "metadata": {
+        "doc_id": "lung_kras_EN",
+        "heading": "Your responsibility",
+        "start_page": 2,
+        "end_page": 3,
+        "created_date": "20",
+        "country": "EN",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc_kras_g12c/clinical guidelines/EN/lung_kras_EN_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "They should do so in light of their\nduties to have due regard to the need to eliminate unlawful discrimination, to advance equality of opportunity and to reduce health inequalities. Commissioners and providers have a responsibility to promote an environmentally sustainable health and care system and should assess and reduce the environmental\nimpact of implementing NICE recommendations wherever possible. © NICE 2024. All rights reserved. Subject to Notice of rights Page 2 of\nSotorasib for previously treated KRAS G12C mu lung cancer (TA781)",
+      "metadata": {
+        "doc_id": "lung_kras_EN",
+        "heading": "Your responsibility",
+        "start_page": 2,
+        "end_page": 3,
+        "created_date": "20",
+        "country": "EN",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc_kras_g12c/clinical guidelines/EN/lung_kras_EN_cleaned.json",
+        "split_index": 1
+      }
+    },
+    {
+      "text": "1 Recommendations . 2 Information about sotorasib . Anticipated marketing authorisation indication . Dosage in the marketing authorisation . Price . 3 Committee discussion . The condition . Treatment pathway . Clinical evidence . Indirect treatment comparison . Assumptions in the economic model . Health-related quality of life . End of life . Cost-effectiveness estimates . Cancer Drugs Fund . Other factors . Conclusion . 4 Implementation . 5 Appraisal committee members and NICE proje\nAppraisal committee members . NICE project team . © NICE 2024. All rights reserved. Subject to Notice of rig\nutatio\nect te\nghts (h\non-po\neam . https:/\nositive\n//www\ne adv\nw.nice\nvanc\ne.org.u\nced no\nuk/term\non-s\nms-an\nsmall. nd- P\n-cell\nSotorasib for previously treated KRAS G12C mutation-positive advanced non-small-cell lung cancer (TA781)",
+      "metadata": {
+        "doc_id": "lung_kras_EN",
+        "heading": "Contents",
+        "start_page": 3,
+        "end_page": 4,
+        "created_date": "20",
+        "country": "EN",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc_kras_g12c/clinical guidelines/EN/lung_kras_EN_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "1.1 Sotorasib is recommended for use within the Cancer Drugs Fund as an\noption for treating KRAS G12C mutation-positive locally advanced or metastatic non-small-cell lung cancer in adults whose disease has\nprogressed on, or who cannot tolerate, platinum-based chemotherapy or anti-PD-1/PD-L1 immunotherapy. It is recommended only if the\nconditions in the managed access agreement for sotorasib are followed. 1.2 This recommendation is not intended to affect treatment with sotorasib\nthat was started in the NHS before this guidance was published. People\nhaving treatment outside this recommendation may continue without change to the funding arrangements in place for them before this\nguidance was published, until they and their NHS clinician consider it appropriate to stop.",
+      "metadata": {
+        "doc_id": "lung_kras_EN",
+        "heading": "1 Recommendations",
+        "start_page": 4,
+        "end_page": 4,
+        "created_date": "20",
+        "country": "EN",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc_kras_g12c/clinical guidelines/EN/lung_kras_EN_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "Current treatment for previously treated KRAS G12C mutation-positive, locally advanced or metastatic non-small-cell lung cancer includes docetaxel or docetaxel plus nintedanib. Sotorasib is a targeted treatment for the KRAS G12C mutation. Sotorasib has only been indirectly compared with current treatment. The results suggest\nthat, after platinum-based chemotherapy, sotorasib increases the time before the cancer gets worse and how long people live compared with current treatment. Sotorasib likely meets NICE's criteria to be a life-extending treatment at the end of life. But\nthere is uncertainty in the clinical evidence. Sotorasib has the potential to be cost\neffective, but more evidence is needed to address the uncertainties before it can be recommended for routine use. The evidence on sotorasib is promising. But, more data is being collected from the primary\nclinical trial and from an ongoing randomised controlled trial comparing sotorasib with docetaxel. Collecting additional data through the Cancer Drugs Fund may resolve some\nuncertainty in the clinical evidence. So, sotorasib is recommended for use in the Cancer\nDrugs Fund. © NICE 2024. All rights reserved. Subject to Notice of rights Page 4 of",
+      "metadata": {
+        "doc_id": "lung_kras_EN",
+        "heading": "Why the committee made these recommendations",
+        "start_page": 4,
+        "end_page": 4,
+        "created_date": "20",
+        "country": "EN",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc_kras_g12c/clinical guidelines/EN/lung_kras_EN_cleaned.json",
+        "split_index": 0,
+        "merged": true
+      }
+    },
+    {
+      "text": "2.1 Sotorasib (Lumykras, Amgen) is indicated 'as monotherapy for the\ntreatment of adult patients with KRAS G12C-mutated locally advanced or metastatic non-small-cell lung cancer (NSCLC), who have progressed on,\nor are intolerant to, platinum-based chemotherapy and/or anti-PD-1/\nPD-L1 immunotherapy'. 2.2 The dosage schedule is available in the summary of product\ncharacteristics for sotorasib.",
+      "metadata": {
+        "doc_id": "lung_kras_EN",
+        "heading": "Anticipated marketing authorisation indication",
+        "start_page": 5,
+        "end_page": 5,
+        "created_date": "20",
+        "country": "EN",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc_kras_g12c/clinical guidelines/EN/lung_kras_EN_cleaned.json",
+        "split_index": 0,
+        "merged": true
+      }
+    },
+    {
+      "text": "2.3 The anticipated list price of sotorasib is £6,907.35 for a 30-day supply of\n240 tablets, each containing 120 mg (excluding VAT, company submission). The company has a commercial arrangement (managed\naccess agreement including a commercial access agreement). This\nmakes sotorasib available to the NHS with a discount. The size of the\ndiscount is commercial in confidence. It is the company's responsibility to\nlet relevant NHS organisations know details of the discount. © NICE 2024. All rights reserved. Subject to Notice of rights\nn",
+      "metadata": {
+        "doc_id": "lung_kras_EN",
+        "heading": "Price",
+        "start_page": 5,
+        "end_page": 5,
+        "created_date": "20",
+        "country": "EN",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc_kras_g12c/clinical guidelines/EN/lung_kras_EN_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "The appraisal committee considered evidence submitted by Amgen, a review of thi submission by the evidence review group (ERG), and responses from stakeholders. the committee papers for full details of the evidence.",
+      "metadata": {
+        "doc_id": "lung_kras_EN",
+        "heading": "3 Committee discussion",
+        "start_page": 6,
+        "end_page": 6,
+        "created_date": "20",
+        "country": "EN",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc_kras_g12c/clinical guidelines/EN/lung_kras_EN_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "There is a high unmet need for targeted treatments for KRAS\nG12C mutation-positive locally advanced or metastatic NSCL\n3.1 The KRAS oncogene is the most commonly mutated gene in lung cancer. The KRAS G12C mutation is the most common and occurs in 12% of nonsmall-cell lung cancer (NSCLC) tumours in the UK. This mutation is more\ncommon in non-squamous NSCLC and does not usually occur with other known mutations such as EGFR, ALK and ROS-1. These other known\nmutations may have targeted treatments available but there is currently no targeted treatment for the KRAS G12C mutation. People with KRAS\nG12C mutation-positive locally advanced or metastatic NSCLC usually have chemotherapy, a non-targeted treatment associated with adverse\neffects that affect health-related quality of life. The clinical expert\nhighlighted that people with KRAS G12C mutation-positive NSCLC have a poor prognosis. The clinical and patient experts noted that there is an\nunmet need for effective and tolerable treatments in this population.",
+      "metadata": {
+        "doc_id": "lung_kras_EN",
+        "heading": "The condition",
+        "start_page": 6,
+        "end_page": 7,
+        "created_date": "20",
+        "country": "EN",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc_kras_g12c/clinical guidelines/EN/lung_kras_EN_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "They also highlighted that the lack of targeted treatment options can have a psychological impact. This condition is associated with difficultto-treat symptoms, and the patient expert submission emphasised the\npsychological impact of these on patients and their carers. The clinical\nand patient experts stated that a targeted treatment for the KRAS G12C mutation in NSCLC would be welcomed. The committee concluded that\nthere is an unmet need for targeted treatments for KRAS G12C mutationpositive locally advanced or metastatic NSCLC, and that these would have physical and psychological benefits. © NICE 2024.",
+      "metadata": {
+        "doc_id": "lung_kras_EN",
+        "heading": "The condition",
+        "start_page": 6,
+        "end_page": 7,
+        "created_date": "20",
+        "country": "EN",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc_kras_g12c/clinical guidelines/EN/lung_kras_EN_cleaned.json",
+        "split_index": 1
+      }
+    },
+    {
+      "text": "All rights reserved. Subject to Notice of rights\nis\n. See\nS\nLC\nSotorasib for previously treated KRAS G12C mutation-positive advanced non-s lung cancer (TA781)",
+      "metadata": {
+        "doc_id": "lung_kras_EN",
+        "heading": "The condition",
+        "start_page": 6,
+        "end_page": 7,
+        "created_date": "20",
+        "country": "EN",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc_kras_g12c/clinical guidelines/EN/lung_kras_EN_cleaned.json",
+        "split_index": 2
+      }
+    },
+    {
+      "text": "Sotorasib is positioned after platinum-based chemothera docetaxel and docetaxel plus nintedanib are relevant com\n3.2 The clinical experts explained that most people with untreated locally\nadvanced or metastatic NSCLC would be offered immunotherapy with chemotherapy. Treatment with docetaxel or docetaxel plus nintedanib\nmay be offered if the disease progresses. The clinical lead for the Canc\nDrugs Fund highlighted that of all people with untreated locally advance or metastatic NSCLC who have immunotherapy, about 40% have\nimmunotherapy alone rather than with chemotherapy. In this population\nplatinum-doublet chemotherapy would be offered at disease progression, or through a clinical trial, before docetaxel or docetaxel plu\nnintedanib is considered.",
+      "metadata": {
+        "doc_id": "lung_kras_EN",
+        "heading": "Treatment pathway",
+        "start_page": 7,
+        "end_page": 7,
+        "created_date": "20",
+        "country": "EN",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc_kras_g12c/clinical guidelines/EN/lung_kras_EN_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "In its submission, the company chose to only\ncompare sotorasib with docetaxel and docetaxel plus nintedanib. No\nevidence was provided to compare sotorasib with platinum-doublet chemotherapy. The company explained that 90% of people in the\nCodeBreaK100 trial (see section 3.3) had previously had platinumdoublet chemotherapy. Also, a retrospective UK analysis supported tha\nmost people who recently had docetaxel had likely had previous immunotherapy and platinum-doublet chemotherapy. The company\nstated that sotorasib is positioned in the treatment pathway after platinum-based chemotherapy. The clinical expert explained that\nplatinum-doublet chemotherapy, either with or without immunotherapy is usually the main treatment choice. The committee concluded that\nsotorasib is positioned after platinum-based chemotherapy, therefore docetaxel monotherapy and docetaxel plus nintedanib are the relevant\ncomparators. The clinical evidence for sotorasib is from CodeBreaK100 phase 2, single-arm trial",
+      "metadata": {
+        "doc_id": "lung_kras_EN",
+        "heading": "Treatment pathway",
+        "start_page": 7,
+        "end_page": 7,
+        "created_date": "20",
+        "country": "EN",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc_kras_g12c/clinical guidelines/EN/lung_kras_EN_cleaned.json",
+        "split_index": 1,
+        "merged": true
+      }
+    },
+    {
+      "text": "© NICE 2024. All rights reserved. Subject to Notice of rights\nsmall\napy,\nmpar\ncer\ned\nn,\nus\nat\ny,\n0, a and-\n, so rators\nSotorasib for previously treated KRAS G12C mutation-positive advanced non-s lung cancer (TA781)\nCodeBreaK100 trial. This is a phase 2, single-arm, multicentre, open lab\ntrial in 250 adults with KRAS G12C mutation-positive advanced tumours\n126 participants had NSCLC. People in the trial previously had 1 (43%),\n(35%) or 3 lines (22%) of anticancer therapy, measurable disease per\nRECIST 1.1 criteria and an Eastern Cooperative Oncology Group (ECOG)\nperformance status of 0 or 1. Most people (90%) had previously had\nplatinum-doublet chemotherapy (see section 3.2). People took 960 mg\nsotorasib (8 tablets of 120 mg) once a day until disease progression, treatment discontinuation or the end of the study. The primary outcome\nof the trial was an objective response rate of 37.1% (95% confidence\ninterval 28.6 to 46.2), with the latest data-cut from March 2021.",
+      "metadata": {
+        "doc_id": "lung_kras_EN",
+        "heading": "3.3 The clinical effectiveness evidence for sotorasib is from the",
+        "start_page": 7,
+        "end_page": 8,
+        "created_date": "20",
+        "country": "EN",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc_kras_g12c/clinical guidelines/EN/lung_kras_EN_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "A prespecified clinical significance benchmark of the lower bound of the 95%\nconfidence interval excluding 23% was determined. The objective\nresponse rate was calculated as the sum of complete response (3.2%)\nand partial response (33.9%). This was assessed by a blinded\nindependent central review per RECIST 1.1 criteria. The company noted\nthat CodeBreaK100 was not specifically powered for overall and progression-free survival outcomes, but it was powered for the primary\noutcome. The committee acknowledged that the clinical evidence from\nthe CodeBreaK100 trial is relevant.",
+      "metadata": {
+        "doc_id": "lung_kras_EN",
+        "heading": "3.3 The clinical effectiveness evidence for sotorasib is from the",
+        "start_page": 7,
+        "end_page": 8,
+        "created_date": "20",
+        "country": "EN",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc_kras_g12c/clinical guidelines/EN/lung_kras_EN_cleaned.json",
+        "split_index": 1
+      }
+    },
+    {
+      "text": "An indirect comparison is appropriate because there are to-head trials with comparator treatments, but this incre\nuncertainty\n3.4 There were no direct comparative data and no common trial arms for\nanchored indirect treatment comparisons or network meta-analyses. Therefore, the company used an unanchored indirect treatment comparison (as recommended in the NICE Decision Support Unit\nTechnical Support Document 18) for sotorasib versus docetaxel and sotorasib versus docetaxel plus nintedanib. A matching-adjusted indire\ncomparison (MAIC) was used for the primary analysis of sotorasib versu docetaxel. Results from CodeBreaK100 were used for sotorasib. Results\nfrom SELECT-1, a randomised controlled trial comparing selumetinib plu docetaxel with docetaxel alone, were used for docetaxel. For the\n© NICE 2024.",
+      "metadata": {
+        "doc_id": "lung_kras_EN",
+        "heading": "Indirect treatment comparison",
+        "start_page": 8,
+        "end_page": 11,
+        "created_date": "20",
+        "country": "EN",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc_kras_g12c/clinical guidelines/EN/lung_kras_EN_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "All rights reserved. Subject to Notice of rights\nsmall\nbel\ns;\ng\ne\nd\ny\nm\nno\nease\nect\nus\ns\nus\nand-\nhea\nes\nade 8 of\nSotorasib for previously treated KRAS G12C mutation-positive advanced non-s lung cancer (TA781)\nsecondary analysis of sotorasib versus docetaxel plus nintedanib, the company regarded an MAIC as unfeasible. Therefore, a piecewise\napproach to hazard ratio estimates applied to the docetaxel arm of\nSELECT-1 was done using results from LUME-Lung 1, a randomised controlled trial comparing docetaxel with docetaxel plus nintedanib. A\nsupplementary analysis of sotorasib versus docetaxel was also done using a propensity score weighting analysis (PSWA) approach, using da\nfrom CodeBreaK100 for sotorasib and the chemotherapy arm of the\nAmgen Flatiron Health real-world evidence study.",
+      "metadata": {
+        "doc_id": "lung_kras_EN",
+        "heading": "Indirect treatment comparison",
+        "start_page": 8,
+        "end_page": 11,
+        "created_date": "20",
+        "country": "EN",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc_kras_g12c/clinical guidelines/EN/lung_kras_EN_cleaned.json",
+        "split_index": 1
+      }
+    },
+    {
+      "text": "The committee\nconcluded that an indirect treatment comparison is appropriate becaus there are no head-to-head trials, but noted there were several issues\nwith the comparisons that introduced considerable uncertainty. Sotorasib increases overall and progression-free survival compared with docetaxel and docetaxel plus nintedanib i\nindirect comparison\n3.5 The indirect treatment comparison showed that sotorasib is statistically\nsuperior in overall and progression-free survival compared with docetaxel. This was based on the latest March 2021 data-cut of the\nCodeBreaK100 trial (the exact results are confidential and cannot be reported here).",
+      "metadata": {
+        "doc_id": "lung_kras_EN",
+        "heading": "Indirect treatment comparison",
+        "start_page": 8,
+        "end_page": 11,
+        "created_date": "20",
+        "country": "EN",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc_kras_g12c/clinical guidelines/EN/lung_kras_EN_cleaned.json",
+        "split_index": 2
+      }
+    },
+    {
+      "text": "The supplementary analysis supported these results. Fo\nthe secondary analysis, the estimation of survival was implemented in the model and extrapolated over the time horizon. This showed a mean\ngain in overall and progression-free survival for sotorasib compared wit docetaxel plus nintedanib (the exact results are confidential and cannot\nbe reported here). The committee concluded that the indirect treatmen\ncomparisons show a survival benefit with sotorasib compared with docetaxel and docetaxel plus nintedanib. The unanchored MAIC using SELECT-1 data is appropriat decision-making but has substantial uncertainty\n3.6 The company chose 4 covariates in the primary MAIC analysis for\nmatching: ECOG performance score, mean age, metastatic disease at\nbaseline and smoking status. These covariates were all perfectly\nmatched to SELECT-1 (the exact results are confidential and cannot be\n© NICE 2024.",
+      "metadata": {
+        "doc_id": "lung_kras_EN",
+        "heading": "Indirect treatment comparison",
+        "start_page": 8,
+        "end_page": 11,
+        "created_date": "20",
+        "country": "EN",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc_kras_g12c/clinical guidelines/EN/lung_kras_EN_cleaned.json",
+        "split_index": 3
+      }
+    },
+    {
+      "text": "All rights reserved. Subject to Notice of rights small ata se in th y or n th t nt te fo e and- he or e 9 of reported here). Some covariates identified as 'very important' by clinical experts were excluded from matching by the company because of missing data or trial differences. The ERG noted that excluding brain metastases affected prognosis identified by subgroup analysis. The company mentioned that active brain metastasis was excluded from the trials. The proportion of people with brain metastases was higher in CodeBreaK100 than in LUME-Lung 1. The company stated that if the proportion of inactive brain metastases in SELECT-1 was similar to CodeBreaK100, any bias would favour the docetaxel arm and result in conservative results. The ERG highlighted that an analysis including KRAS",
+      "metadata": {
+        "doc_id": "lung_kras_EN",
+        "heading": "Indirect treatment comparison",
+        "start_page": 8,
+        "end_page": 11,
+        "created_date": "20",
+        "country": "EN",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc_kras_g12c/clinical guidelines/EN/lung_kras_EN_cleaned.json",
+        "split_index": "4_0_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "mutation status would be informative. But, it acknowledged the company's reasoning that overall survival and progression-free survival are similar in the absence of targeted therapies in the overall KRAS and KRAS G12C-specific population. However, it explained that it could have been possible to select KRAS G12C mutation data from SELECT-1 data. The ERG considered that the company's supplementary analysis using a PSWA may be less biased than the MAIC. It explained that the Amgen Flatiron Health real-world evidence data was adjusted to make it more comparable to the CodeBreaK100 population, and that there was little difference in the effective sample size compared with the MAIC. It also noted that the PSWA was adjusted for 13 covariates including brain metastases. However, the ERG highlighted that there remains considerable uncertainty in this approach.",
+      "metadata": {
+        "doc_id": "lung_kras_EN",
+        "heading": "Indirect treatment comparison",
+        "start_page": 8,
+        "end_page": 11,
+        "created_date": "20",
+        "country": "EN",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc_kras_g12c/clinical guidelines/EN/lung_kras_EN_cleaned.json",
+        "split_index": "4_1_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "It noted that a PSWA limited to\ndocetaxel-only data from the Flatiron study would have been informative. The committee agreed that using SELECT-1 instead of LUME-Lung 1 for the unanchored MAIC was appropriate. This is because the trial\npopulation was more comparable to CodeBreaK100, and it is also a more recent trial. The committee recognised that there are substantial\nuncertainties with this approach, but concluded that the primary analysis using SELECT-1 for the MAIC is appropriate for decision-making. Docetaxel plus nintedanib modelling is uncertain, and applyi hazard ratio of 1 between 0 and 6 months is appropriate\n3.7 In the secondary indirect treatment comparison of sotorasib versus\ndocetaxel plus nintedanib, the ERG highlighted uncertainties in the modelling.",
+      "metadata": {
+        "doc_id": "lung_kras_EN",
+        "heading": "Indirect treatment comparison",
+        "start_page": 8,
+        "end_page": 11,
+        "created_date": "20",
+        "country": "EN",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc_kras_g12c/clinical guidelines/EN/lung_kras_EN_cleaned.json",
+        "split_index": 5
+      }
+    },
+    {
+      "text": "The company modelled docetaxel and nintedanib in line with NICE's technology appraisal on nintedanib for previously treated locally © NICE 2024. All rights reserved. Subject to Notice of rights P ing a advanced, metastatic, or locally recurrent non-small-cell lung cancer. This was because a company-sourced UK advisory board confirmed that a MAIC was 'unlikely to be appropriate'. The ERG highlighted the uncertainty with not applying adjustments to ECOG, WHO or smoking status when these differed in SELECT-1 and LUME-Lung 1. It also mentioned that the model's overall survival curve was not in line with the Kaplan–Meier curve in LUME-Lung 1, with an unlikely major increase in mortality in the first 6 months. That is, the modelling implied a worse survival for docetaxel plus nintedanib compared with docetaxel alone. The Kaplan–Meier curve",
+      "metadata": {
+        "doc_id": "lung_kras_EN",
+        "heading": "Indirect treatment comparison",
+        "start_page": 8,
+        "end_page": 11,
+        "created_date": "20",
+        "country": "EN",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc_kras_g12c/clinical guidelines/EN/lung_kras_EN_cleaned.json",
+        "split_index": "6_0_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "showed a slight benefit of docetaxel compared with docetaxel plus nintedanib in the first 4 months, which then transformed into a greater than 1 year survival benefit for docetaxel in the modelled overall survival curves. The clinical expert mentioned that in clinical practice, docetaxel is not expected to be better than docetaxel plus nintedanib in the first 6 months. The clinical expert also highlighted that nintedanib has greater toxicity so more people may stop treatment earlier, but added that this is unlikely to be a major driver. The company suggested a possible explanation of the curve could be that nintedanib is anti-angiogenic, so it prevents the formation of blood vessels that support tumour growth. Therefore, it can take more time to have an effect and possibly explain the delay in survival.",
+      "metadata": {
+        "doc_id": "lung_kras_EN",
+        "heading": "Indirect treatment comparison",
+        "start_page": 8,
+        "end_page": 11,
+        "created_date": "20",
+        "country": "EN",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc_kras_g12c/clinical guidelines/EN/lung_kras_EN_cleaned.json",
+        "split_index": "6_1_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "In addition, the ERG\nsuggested using 1 cut-off point at 6 months rather than 2 at 6 and\n26 months because this did not show a good fit. Therefore, the ERG\npreferred a hazard ratio of 1 between 0 to 6 months. The company\ndisagreed with invalidating LUME-Lung-1, a 2-arm phase 3 trial. The\ncommittee highlighted the importance of face validity and concluded that there are uncertainties in the docetaxel plus nintedanib modelling,\nand that a hazard ratio of 1 between 0 and 6 months is appropriate.",
+      "metadata": {
+        "doc_id": "lung_kras_EN",
+        "heading": "Indirect treatment comparison",
+        "start_page": 8,
+        "end_page": 11,
+        "created_date": "20",
+        "country": "EN",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc_kras_g12c/clinical guidelines/EN/lung_kras_EN_cleaned.json",
+        "split_index": 7
+      }
+    },
+    {
+      "text": "3.8 The company did not apply treatment effect waning because it\nconsidered the impact of discontinuation on overall and progression-free survival to be implemented into the hazard function, and therefore,\n© NICE 2024. All rights reserved. Subject to Notice of rights P\nSotorasib for previously treated KRAS G12C mutation-positive advanced non-s lung cancer (TA781)\nsurvival estimates. From the CodeBreaK100 March 2021 data-cut, 81.7%\nof people had discontinued treatment, about 40% were alive and about\n20% had not yet progressed. The company stated that half the people\nwho were alive will have kept taking sotorasib at that point. Because\nsotorasib is taken until progression or unacceptable toxicity in\nCodeBreaK100, applying treatment effect waning could lead to biased cost-effectiveness estimates. The clinical expert suggested that it was\ndifficult to know how the treatment effect waning should be applied for sotorasib. However, they suggested that sotorasib should be considere\nin a similar way to other oral treatments for NSCLC. The clinical lead for\nthe Cancer Drugs Fund referred to an example of oral tyrosine kinase inhibitors showing high response rates.",
+      "metadata": {
+        "doc_id": "lung_kras_EN",
+        "heading": "Treatment effect waning at 3 and 5 years from the start of treatment are plausible",
+        "start_page": 11,
+        "end_page": 12,
+        "created_date": "20",
+        "country": "EN",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc_kras_g12c/clinical guidelines/EN/lung_kras_EN_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "They noted that the disease ca\nprogress and people remain relatively well for some time before having symptoms. The clinical expert agreed with this. The company highlighte\nthat sotorasib is not a tyrosine kinase inhibitor and that its mechanism o action and response rate would be different. The ERG disagreed with th\ncompany's assumption that sotorasib would have a continued benefit and highlighted that the evidence is still immature. In its base case, the\nERG preferred to apply treatment effect waning at 2 years and graduall decrease the hazard ratio to 1 over 5 years. This was considered\noptimistic by the ERG. In addition, the ERG carried out additional scenar\nanalyses with treatment effect waning at 3 and 5 years after starting treatment with no gradual decrease in the hazard ratio. This is in line w\nsome other NSCLC appraisals. The committee noted that no direct trial\nevidence after the latest follow up at 15 months means that the treatment effect beyond this period is uncertain. The committee\nconcluded that applying treatment effect waning 3 years and 5 years from the start of treatment may be plausible and it would consider thes\nin its decision-making.",
+      "metadata": {
+        "doc_id": "lung_kras_EN",
+        "heading": "Treatment effect waning at 3 and 5 years from the start of treatment are plausible",
+        "start_page": 11,
+        "end_page": 12,
+        "created_date": "20",
+        "country": "EN",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc_kras_g12c/clinical guidelines/EN/lung_kras_EN_cleaned.json",
+        "split_index": 1
+      }
+    },
+    {
+      "text": "Utility value estimates using the time-to-death and healt approaches may be plausible\n3.9 The company used time-to-death utilities in its base case and used\nhealth-state utilities as a sensitivity analysis. Although the ERG was not\n© NICE 2024. All rights reserved. Subject to Notice of rights\nsmall\nt\ns\nr\ned\nr\nan\ned\nhe\ne\nly\nrio\nwith\nse\nth-s\nt\nand- P\nstate\ne\nopposed to using time-to-death utilities, it preferred a health-state approach to utilities. This was because the ERG said that the\ntime-to-death utilities did not seem well informed and they were comprised of a small sample size, especially near death. The committee\nunderstood that the health-related quality of life data was from the\nSeptember 2020 data-cut, therefore it was more immature. The ERG\nnoted that the health-state utility approach means that each health state is populated with more people.",
+      "metadata": {
+        "doc_id": "lung_kras_EN",
+        "heading": "Health-related quality of life",
+        "start_page": 12,
+        "end_page": 15,
+        "created_date": "20",
+        "country": "EN",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc_kras_g12c/clinical guidelines/EN/lung_kras_EN_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "The committee noted that for a healthstate utility approach, the proportion of people in the progressed state\nthat are closer to death are not apparent because averages are taken. The clinical expert highlighted that people need to be well enough to assess quality of life after progression. Therefore, the average is more\nlikely representing people who recently stopped treatment. The\ncommittee considered that if a randomised controlled trial was done, the health-related quality of life in both arms should be the same at the start\nof treatment. Therefore, this may need to be considered in the approach\nto modelling health-related quality of life in the future. The company\nmentioned that it is open to using health-state utilities if there is a difference for sotorasib compared with chemotherapy after progression. The committee concluded that there are uncertainties in using time-todeath and health-state utilities, but because both approaches may be plausible, it would consider these in its decision-making. Sotorasib is an oral treatment with associated benefits, and a disutility for the comparative intravenous treatment may be\nplausible\n3.10 Sotorasib is an oral targeted treatment.",
+      "metadata": {
+        "doc_id": "lung_kras_EN",
+        "heading": "Health-related quality of life",
+        "start_page": 12,
+        "end_page": 15,
+        "created_date": "20",
+        "country": "EN",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc_kras_g12c/clinical guidelines/EN/lung_kras_EN_cleaned.json",
+        "split_index": 1
+      }
+    },
+    {
+      "text": "It is more tolerable and less\nresource intensive than chemotherapy. The clinical expert described the\nissues associated with intravenous treatments, such as adverse events and delays in treatment because of capacity issues in chemotherapy\nunits, particularly during the COVID-19 pandemic. The clinical expert\nhighlighted the benefits of oral treatment from an NHS and patient perspective, and the preference for it. The patient expert described the\nbenefits of having treatment at home and reducing inpatient time at the hospital. The company applied a utility decrement of 0.025 per cycle of\ntreatment to account for the cytotoxicity and intravenous administration of docetaxel and nintedanib. This was based on a study comparing\n© NICE 2024.",
+      "metadata": {
+        "doc_id": "lung_kras_EN",
+        "heading": "Health-related quality of life",
+        "start_page": 12,
+        "end_page": 15,
+        "created_date": "20",
+        "country": "EN",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc_kras_g12c/clinical guidelines/EN/lung_kras_EN_cleaned.json",
+        "split_index": 2
+      }
+    },
+    {
+      "text": "All rights reserved. Subject to Notice of rights P\na\ne\nerlotinib with docetaxel in advanced NSCLC (Lewis et al., 2010). The\nutilities in that study were derived through a visual analogue scale in the progression-free health state. The ERG noted that the utilities (0.451 and\n0.426 for oral and intravenous therapy, respectively) in that study were\nlower than in CodeBreaK100 (0.734). The ERG said it was not opposed to\na treatment-related disutility for intravenous administration but highlighted the lack of justification for the size of disutility. It also\nconsidered the exclusion of any potential disutility associated with sotorasib dosing and frequency as an issue.",
+      "metadata": {
+        "doc_id": "lung_kras_EN",
+        "heading": "Health-related quality of life",
+        "start_page": 12,
+        "end_page": 15,
+        "created_date": "20",
+        "country": "EN",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc_kras_g12c/clinical guidelines/EN/lung_kras_EN_cleaned.json",
+        "split_index": 3
+      }
+    },
+    {
+      "text": "This is because sotorasib is\ntaken as 8 tablets once a day compared with docetaxel that is administered intravenously once every 3 weeks. In its submission, the\ncompany assumed equal on-treatment progression-free survival utilities for a targeted therapy compared with chemotherapy. It acknowledged\nthat a differential is seen in other NICE appraisals. The company\nidentified a progression-free survival utility of 0.687 from LUME-Lung 1,\nresulting in a decrement of 0.047 after applying the progression-free\nsurvival base-case utility. As a result, the company determined that\nscenarios with a health-state utility approach and either 0.025 or 0.04\nprogression-free survival on-treatment utility differential were appropriate to explore.",
+      "metadata": {
+        "doc_id": "lung_kras_EN",
+        "heading": "Health-related quality of life",
+        "start_page": 12,
+        "end_page": 15,
+        "created_date": "20",
+        "country": "EN",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc_kras_g12c/clinical guidelines/EN/lung_kras_EN_cleaned.json",
+        "split_index": 4
+      }
+    },
+    {
+      "text": "The committee concluded that it would consider\nboth a disutility and no disutility associated with intravenous administration in its decision-making. It is appropriate to apply an equalised relative dose intensity sotorasib and its comparators\n3.11 The company applied a relative dose intensity that was lower for\nsotorasib (89.0%) compared with docetaxel (90.3%) and nintedanib\n(92.1%). The company stated that there was no reason to assume that\nthe relative dose intensity is truly lower for sotorasib, and any differences may be from random sampling errors. The ERG suggested it was\nreasonable to apply an average 90.5% relative dose intensity instead. The ERG preferred this conservative approach because of the impact on treatment costs and the immaturity of trial data. The company disagreed\nwith equalised relative dose intensity because it considered the trial data more valid. The clinical expert mentioned that the dose of sotorasib can\nbe modified depending on the level of unacceptable toxicity, whereas for chemotherapy, the maximum dose is normally applied. The committee\n© NICE 2024.",
+      "metadata": {
+        "doc_id": "lung_kras_EN",
+        "heading": "Health-related quality of life",
+        "start_page": 12,
+        "end_page": 15,
+        "created_date": "20",
+        "country": "EN",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc_kras_g12c/clinical guidelines/EN/lung_kras_EN_cleaned.json",
+        "split_index": 5
+      }
+    },
+    {
+      "text": "All rights reserved. Subject to Notice of rights P\ny for\nr\nnoted that the proportion of people needing dose modifications in\nCodeBreaK100 was similar to SELECT-1. The committee concluded that it\nis appropriate to assume equalised relative dose intensities for sotorasib and its comparators.",
+      "metadata": {
+        "doc_id": "lung_kras_EN",
+        "heading": "Health-related quality of life",
+        "start_page": 12,
+        "end_page": 15,
+        "created_date": "20",
+        "country": "EN",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc_kras_g12c/clinical guidelines/EN/lung_kras_EN_cleaned.json",
+        "split_index": 6
+      }
+    },
+    {
+      "text": "3.12 The committee considered the advice about life-extending treatments\nfor people with a short life expectancy in NICE's guide to the methods of technology appraisal. The company stated that for non-targeted\ntherapies, real-world evidence studies suggest less than 10 months overall survival with second-line treatment and less than 7 months\noverall survival with third-line treatment. This was supported with a\nmedian overall survival of 7.9 months in SELECT-1 and median overall\nsurvival of 10.9 months in LUME-Lung 1. The committee accepted that\nsotorasib meets the short life expectancy criterion for end of life. It noted\na median overall survival gain from the indirect treatment comparisons of sotorasib with docetaxel alone (see section 3.5) from the latest\nMarch 2021 data-cut, at around 15 months of follow up (the exact results are confidential and cannot be reported here). In addition, the model\nestimated an undiscounted mean overall survival gain for sotorasib compared with docetaxel and docetaxel plus nintedanib (the exact\nresults are confidential and cannot be reported here).",
+      "metadata": {
+        "doc_id": "lung_kras_EN",
+        "heading": "Sotorasib may meet the end of life criteria but there is uncertainty in the extension of life criterion",
+        "start_page": 15,
+        "end_page": 16,
+        "created_date": "20",
+        "country": "EN",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc_kras_g12c/clinical guidelines/EN/lung_kras_EN_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "The committee\nagreed that sotorasib was likely to extend life by over 3 months and therefore meets the extension to life criterion. However, it noted that\nthere were uncertainties with the unanchored indirect treatment comparison methods (see section 3.4). The committee concluded that\nsotorasib may meet both end of life criteria, but the length of life extension is uncertain. © NICE 2024. All rights reserved. Subject to Notice of rights P\nSotorasib for previously treated KRAS G12C mutation-positive advanced non-small-cell lung cancer (TA781)",
+      "metadata": {
+        "doc_id": "lung_kras_EN",
+        "heading": "Sotorasib may meet the end of life criteria but there is uncertainty in the extension of life criterion",
+        "start_page": 15,
+        "end_page": 16,
+        "created_date": "20",
+        "country": "EN",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc_kras_g12c/clinical guidelines/EN/lung_kras_EN_cleaned.json",
+        "split_index": 1
+      }
+    },
+    {
+      "text": "3.13 NICE's guide to the methods of technology appraisal notes that above a most plausible incremental cost-effectiveness ratio (ICER) of £20,000 per quality-adjusted life year (QALY) gained, judgements about the acceptability of a technology as an effective use of NHS resources will take into account the degree of certainty around the ICER and whether the technology meets the criteria for consideration as a 'life-extending treatment at the end of life'. The committee will be more cautious about recommending a technology if it is less certain about the ICERs presented. The committee noted the high level of uncertainty with an uncontrolled single-arm trial as the primary source of clinical evidence (see section 3.3),",
+      "metadata": {
+        "doc_id": "lung_kras_EN",
+        "heading": "The most likely cost-effectiveness estimates are highly uncertain",
+        "start_page": 16,
+        "end_page": 16,
+        "created_date": "20",
+        "country": "EN",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc_kras_g12c/clinical guidelines/EN/lung_kras_EN_cleaned.json",
+        "split_index": "0_0_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "the unanchored indirect treatment comparisons (see section 3.4), and other unresolvable issues. The committee outlined its preferred modelling assumptions with the current evidence, which should be applied to future cost-effectiveness analyses for sotorasib with docetaxel monotherapy and docetaxel plus nintedanib: • initial hazard ratio of 1 between 0 and 6 months for docetaxel plus nintedanib modelling (see section 3.7) • equalised relative dose intensity between treatment arms (see section 3.11) • consideration of treatment waning effect at 3 and 5 years from the start of treatment (see section 3.8) • consideration of time-to-death and health-state utilities (see section 3.9) • application and non-application of disutility associated with intravenous administration (see section 3.10).",
+      "metadata": {
+        "doc_id": "lung_kras_EN",
+        "heading": "The most likely cost-effectiveness estimates are highly uncertain",
+        "start_page": 16,
+        "end_page": 16,
+        "created_date": "20",
+        "country": "EN",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc_kras_g12c/clinical guidelines/EN/lung_kras_EN_cleaned.json",
+        "split_index": "0_1_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "3.14 The committee noted the uncertainties informing the cost-effectiveness\nestimates, including a single-arm trial as the primary clinical evidence and issues with the unanchored indirect treatment comparison. After\napplying confidential discounts for sotorasib and its comparators, and\n© NICE 2024. All rights reserved. Subject to Notice of rights Page 16 of\nconsidering its preferences, the cost-effectiveness estimates were higher than what NICE normally considers an acceptable use of NHS\nresources. The cost-effectiveness results cannot be reported here\nbecause of the confidential discounts. The committee concluded it could\nnot recommend sotorasib for routine use in the NHS.",
+      "metadata": {
+        "doc_id": "lung_kras_EN",
+        "heading": "Sotorasib is not recommended for routine use in the NHS",
+        "start_page": 16,
+        "end_page": 17,
+        "created_date": "20",
+        "country": "EN",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc_kras_g12c/clinical guidelines/EN/lung_kras_EN_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "3.15 Having concluded that sotorasib could not be recommended for routine\nuse, the committee then considered if it could be recommended for treating previously treated KRAS G12C mutation-positive locally",
+      "metadata": {
+        "doc_id": "lung_kras_EN",
+        "heading": "Sotorasib is recommended for use in the Cancer Drugs Fund",
+        "start_page": 17,
+        "end_page": 17,
+        "created_date": "20",
+        "country": "EN",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc_kras_g12c/clinical guidelines/EN/lung_kras_EN_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "Fund methods guide (addendum). The company has expressed an\ninterest in the technology being considered for funding through the",
+      "metadata": {
+        "doc_id": "lung_kras_EN",
+        "heading": "committee discussed the arrangements for the Cancer Drugs Fund agreed by NICE and NHS England in 2016, noting NICE's Cancer Drugs",
+        "start_page": 17,
+        "end_page": 17,
+        "created_date": "20",
+        "country": "EN",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc_kras_g12c/clinical guidelines/EN/lung_kras_EN_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "mentioned that sotorasib needs to have plausible potential to be cost effective. The committee acknowledged that some of the clinical",
+      "metadata": {
+        "doc_id": "lung_kras_EN",
+        "heading": "Cancer Drugs Fund. The clinical lead for the Cancer Drugs Fund",
+        "start_page": 17,
+        "end_page": 17,
+        "created_date": "20",
+        "country": "EN",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc_kras_g12c/clinical guidelines/EN/lung_kras_EN_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "CodeBreaK200 trial, comparing sotorasib with docetaxel in a KRAS G12C mutation-positive population, is currently ongoing. It stated that this trial\nwill measure overall and progression-free survival, and health-related quality of life. It will also collect data from people with previously treated\ndisease. The committee agreed that some uncertainty may be resolved\nwith data from the CodeBreak200 trial. The committee recalled its\nconclusion that the current cost-effectiveness results were highly uncertain. It agreed that, with longer follow-up data from CodeBreaK100\non mean overall and progression-free survival, and direct comparative evidence with docetaxel from CodeBreaK200, sotorasib has the potential\nto be cost effective. Also, that additional evidence may change the\npreferred modelling assumptions outlined in section 3.13. The committee",
+      "metadata": {
+        "doc_id": "lung_kras_EN",
+        "heading": "uncertainty may be addressed by collecting data on sotorasib through the Cancer Drugs Fund. The company explained that the phase 3",
+        "start_page": 17,
+        "end_page": 17,
+        "created_date": "20",
+        "country": "EN",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc_kras_g12c/clinical guidelines/EN/lung_kras_EN_cleaned.json",
+        "split_index": 0,
+        "merged": true
+      }
+    },
+    {
+      "text": "© NICE 2024. All rights reserved. Subject to Notice of rights P\nd\nCancer Drugs Fund for previously treated KRAS G12C mutation-positive advanced NSCLC.",
+      "metadata": {
+        "doc_id": "lung_kras_EN",
+        "heading": "concluded that sotorasib met the criteria to be considered for inclusion in the Cancer Drugs Fund. So, it recommended sotorasib for use within the",
+        "start_page": 17,
+        "end_page": 18,
+        "created_date": "20",
+        "country": "EN",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc_kras_g12c/clinical guidelines/EN/lung_kras_EN_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "3.16 No equality or social value judgement issues were identified. Sotorasib has a novel mechanism of action in this treatment but all benefits are captured in the modelling\n3.17 The patient and clinical experts emphasised the value of sotorasib as the\nfirst targeted treatment option for previously treated KRAS G12C mutation-positive, locally advanced or metastatic NSCLC. The committee\nconsidered the innovative nature of sotorasib (see section 3.1). It agreed\nthat sotorasib could be considered an important treatment option for this population. The committee concluded that it did not think there were any\nadditional benefits associated with sotorasib that had not been captured in the economic analysis.",
+      "metadata": {
+        "doc_id": "lung_kras_EN",
+        "heading": "There are no equality issues",
+        "start_page": 18,
+        "end_page": 18,
+        "created_date": "20",
+        "country": "EN",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc_kras_g12c/clinical guidelines/EN/lung_kras_EN_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "Further data is needed to reduce uncertainties in the costeffectiveness estimates, so sotorasib is recommended in the\nCancer Drugs Fund\n3.18 The committee considered all the available evidence for sotorasib in this\nappraisal. After considering its preferred modelling assumptions and\nNICE's end of life criteria, the committee concluded that sotorasib could not be recommended for routine use in the NHS. It considered that\nfurther follow-up data from CodeBreaK100 and direct comparative data with docetaxel from CodeBreaK200 may reduce some uncertainty in the\ncost-effectiveness estimates (see section 3.15).",
+      "metadata": {
+        "doc_id": "lung_kras_EN",
+        "heading": "Conclusion",
+        "start_page": 18,
+        "end_page": 18,
+        "created_date": "20",
+        "country": "EN",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc_kras_g12c/clinical guidelines/EN/lung_kras_EN_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "Therefore, sotorasib is\nrecommended for use in the Cancer Drugs Fund for previously treated\nKRAS G12C mutation-positive advanced NSCLC. © NICE 2024. All rights reserved. Subject to Notice of rights P\nt area, e",
+      "metadata": {
+        "doc_id": "lung_kras_EN",
+        "heading": "Conclusion",
+        "start_page": 18,
+        "end_page": 18,
+        "created_date": "20",
+        "country": "EN",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc_kras_g12c/clinical guidelines/EN/lung_kras_EN_cleaned.json",
+        "split_index": 1
+      }
+    },
+    {
+      "text": "4.1 When NICE recommends a treatment as an option for use within the\nCancer Drugs Fund, NHS England will make it available according to the conditions in the managed access agreement. This means that, if a\npatient has previously treated KRAS G12C mutation-positive advanced\nNSCLC and the doctor responsible for their care thinks that sotorasib is the right treatment, it should be available for use, in line with NICE's\nrecommendations and the Cancer Drugs Fund criteria in the managed access agreement. Further information can be found in NHS England's\nAppraisal and funding of cancer drugs from July 2016 (including the new\nCancer Drugs Fund) – A new deal for patients, taxpayers and industry.",
+      "metadata": {
+        "doc_id": "lung_kras_EN",
+        "heading": "4 Implementation",
+        "start_page": 19,
+        "end_page": 20,
+        "created_date": "20",
+        "country": "EN",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc_kras_g12c/clinical guidelines/EN/lung_kras_EN_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "4.2 Chapter 2 of Appraisal and funding of cancer drugs from July 2016\n(including the new Cancer Drugs Fund) – A new deal for patients, taxpayers and industry states that for those drugs with a draft\nrecommendation for use in the Cancer Drugs Fund, interim funding will be available (from the overall Cancer Drugs Fund budget) from the point\nof marketing authorisation, or from release of positive draft guidance, whichever is later. Drugs that are recommended for use in the Cancer\nDrugs Fund will be funded in line with the terms of their managed access agreement, after the period of interim funding.",
+      "metadata": {
+        "doc_id": "lung_kras_EN",
+        "heading": "4 Implementation",
+        "start_page": 19,
+        "end_page": 20,
+        "created_date": "20",
+        "country": "EN",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc_kras_g12c/clinical guidelines/EN/lung_kras_EN_cleaned.json",
+        "split_index": 1
+      }
+    },
+    {
+      "text": "The NHS England and\nNHS Improvement Cancer Drugs Fund list provides up-to-date information on all cancer treatments recommended by NICE since 2016. This includes whether they have received a marketing authorisation and been launched in the UK. 4.3 The Welsh ministers have issued directions to the NHS in Wales on\nimplementing NICE technology appraisal guidance when the drug or treatment, or other technology, is approved for use within the Cancer\nDrugs Fund. When a NICE technology appraisal recommends the use of a\ndrug or treatment, or other technology, for use within the Cancer Drugs\nFund, the NHS in Wales must usually provide funding and resources for it within 2 months of the first publication of the final appraisal document or\nagreement of a managed access agreement by the NHS in Wales, whichever is the later. © NICE 2024.",
+      "metadata": {
+        "doc_id": "lung_kras_EN",
+        "heading": "4 Implementation",
+        "start_page": 19,
+        "end_page": 20,
+        "created_date": "20",
+        "country": "EN",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc_kras_g12c/clinical guidelines/EN/lung_kras_EN_cleaned.json",
+        "split_index": 2
+      }
+    },
+    {
+      "text": "All rights reserved. Subject to Notice of rights P\nSotorasib for previously treated KRAS G12C mutation-positive advanc lung cancer (TA781)\n5 Appraisal committee member",
+      "metadata": {
+        "doc_id": "lung_kras_EN",
+        "heading": "4 Implementation",
+        "start_page": 19,
+        "end_page": 20,
+        "created_date": "20",
+        "country": "EN",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc_kras_g12c/clinical guidelines/EN/lung_kras_EN_cleaned.json",
+        "split_index": 3
+      }
+    },
+    {
+      "text": "The 4 technology appraisal committees are standing advisory commit topic was considered by committee D. Committee members are asked to declare any interests in the technol\nIf it is considered there is a conflict of interest, the member is exclude further in that appraisal. The minutes of each appraisal committee meeting, which include the members who attended and their declarations of interests, are posted\nwebsite.",
+      "metadata": {
+        "doc_id": "lung_kras_EN",
+        "heading": "Appraisal committee members",
+        "start_page": 20,
+        "end_page": 20,
+        "created_date": "20",
+        "country": "EN",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc_kras_g12c/clinical guidelines/EN/lung_kras_EN_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "Each technology appraisal is assigned to a team consisting of 1 or mo analysts (who act as technical leads for the appraisal), a technical adv\nmanager. Technical leads Technical adviser Project manager",
+      "metadata": {
+        "doc_id": "lung_kras_EN",
+        "heading": "NICE project team",
+        "start_page": 20,
+        "end_page": 20,
+        "created_date": "20",
+        "country": "EN",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc_kras_g12c/clinical guidelines/EN/lung_kras_EN_cleaned.json",
+        "split_index": 0,
+        "merged": true
+      }
+    },
+    {
+      "text": "© NICE 2024. All rights reserved. Subject to Notice of rights\nced non-small rs and\nttees of NICE. logy to be app ed from partic\nnames of the d on the NICE\nore health tech viser and a pro\nuk/terms-and- P\n. This\nprais\ncipatin\nE\nhnolo\noject\ns\nsed. ng\nogy\nt",
+      "metadata": {
+        "doc_id": "lung_kras_EN",
+        "heading": "ISBN: 978-1-4731-4501-6",
+        "start_page": 20,
+        "end_page": 20,
+        "created_date": "20",
+        "country": "EN",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc_kras_g12c/clinical guidelines/EN/lung_kras_EN_cleaned.json",
+        "split_index": 0
+      }
+    }
+  ]
+}

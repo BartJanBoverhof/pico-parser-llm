@@ -1,0 +1,477 @@
+{
+  "doc_id": "HTA_submission_sotosorib_PO",
+  "chunks": [
+    {
+      "text": "Recommendation No 41/2023 of 14 April 2023 of the President of the Agency for the Evaluation of Medical Technologies and Pricing on the evaluation of Lumykras (sotorasib) as part of the medicinal product programme Treatment of patients with lung cancer (ICD-10: C34) and interstitial lung disease (IUCN: C45) The President does not recommend the reimbursement of Lumikras in the existing lung cancer treatment programme under the proposed conditions.",
+      "metadata": {
+        "doc_id": "HTA_submission_sotosorib_PO",
+        "heading": "",
+        "start_page": 1,
+        "end_page": 1,
+        "created_date": "2023",
+        "country": "PO",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc_kras_g12c/HTA submissions/PO/HTA_submission_sotosorib_PO_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "The evaluation relates to the reimbursement of sotorasib for the treatment of II and subsequent lines of patients with non-small cell lung cancer (NDRP) with the presence of a p.G12C mutation in the KRAS gene (Kirsten rat viral oncogene homolog) after failure of at least one prior line of treatment in an existing drug regimen B.6 Treatment of patients suffering from lung cancer, ICD-10: C34, and interstitial lung disease, ICD-10: Based on the results of the clinical analysis, the use of sotorasib in patients with NDRP and the KRAS mutation may be more effective compared to DOC in terms of, inter alia, progression-free survival (PFS), overall response rate (ORR), disease control rate (DCR) or quality of life. However, no statistically significant differences between therapies were demonstrated in overall survival (OS).",
+      "metadata": {
+        "doc_id": "HTA_submission_sotosorib_PO",
+        "heading": "Justification for the recommendation",
+        "start_page": 1,
+        "end_page": 2,
+        "created_date": "2023",
+        "country": "PO",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc_kras_g12c/HTA submissions/PO/HTA_submission_sotosorib_PO_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "Clinical analysis does not provide evidence for direct comparison of the evaluated technology with the majority of comparators, i. e. nintedanib in combination with docetaxel (NIN+DOC), two-drug platinum-derived chemotherapy (P-CTH), pemetrexed (PMX), which are currently re-evaluated therapeutic options in this indication. In addition, results for sotorasib are derived from the uncompleted CodeBreaK 200 and 100 studies. According to the estimates of the economic analysis, the incremental cost-effectiveness ratio (ICUR) from the NFZ perspective is at the threshold of profitability It is also noted that according to the budgetary impact analysis estimates, the reimbursement of Lumikras could result in public expenditure in the first and second year of reimbursing respectively. evaluations by other HTAs indicate uncertainty in the efficacy of the drug and cost-effectiveness estimates, therefore final study results are required.",
+      "metadata": {
+        "doc_id": "HTA_submission_sotosorib_PO",
+        "heading": "Justification for the recommendation",
+        "start_page": 1,
+        "end_page": 2,
+        "created_date": "2023",
+        "country": "PO",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc_kras_g12c/HTA submissions/PO/HTA_submission_sotosorib_PO_cleaned.json",
+        "split_index": 1
+      }
+    },
+    {
+      "text": "The guidelines indicate that sotorasib could be used as a second-line treatment for patients with NDRP with KRAS G12C mutation (PTOK 2022, ESMO 2023, NCCN 2023 v2). Taking into account the Opinion of the Board of Auditors and the potential health benefit, the President of the Agency suggests the possible re-introduction of the Lumira treatment product (sotorasib) in the existing nocturnal group treatment programme and its release free of charge.",
+      "metadata": {
+        "doc_id": "HTA_submission_sotosorib_PO",
+        "heading": "Justification for the recommendation",
+        "start_page": 1,
+        "end_page": 2,
+        "created_date": "2023",
+        "country": "PO",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc_kras_g12c/HTA submissions/PO/HTA_submission_sotosorib_PO_cleaned.json",
+        "split_index": 2
+      }
+    },
+    {
+      "text": "The order of the Minister of Health concerns the evaluation of the appropriateness of the public funding of the medicinal product: • Lumykras, Sotorasibum, Coated Tablets, 120 mg, 240, blister table, GTIN code: 08715131024895, net sales price: ; in the drug programme Treatment of patients with lung cancer (ICD-10: C34) and interstitial lung disease (ICC-10:",
+      "metadata": {
+        "doc_id": "HTA_submission_sotosorib_PO",
+        "heading": "Subject matter of the request",
+        "start_page": 2,
+        "end_page": 2,
+        "created_date": "2023",
+        "country": "PO",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc_kras_g12c/HTA submissions/PO/HTA_submission_sotosorib_PO_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "The term lung cancer (code C34 according to the ICD-10) refers to a group of cancers located in the bronchi (respiratory tract) and the lining of the lungs. Typical symptoms include shortness of breath or suffocation, chest pain, bleeding or frequent pneumonia. Primary lung cancer is a tumour originating from epithelial cells. The 4 most commonly recognised histological types are: • glandular cancer (45% - recent increase in incidence); • pancreatic cancer (30%); • small cell carcinoma (15%); • large cell carceroma (10%). NDRP differs from other histological types in that it develops more slowly and is characterized by limited chemical sensitivity.",
+      "metadata": {
+        "doc_id": "HTA_submission_sotosorib_PO",
+        "heading": "Health Problems",
+        "start_page": 2,
+        "end_page": 3,
+        "created_date": "2023",
+        "country": "PO",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc_kras_g12c/HTA submissions/PO/HTA_submission_sotosorib_PO_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "Mutations in the EGFR gene, ALK gene rearrangements and mutations in ROS1 gene are considered to be molecular changes of clinical significance. Lung cancer is the most common malignant cancer and the leading cause of cancer death in Poland. It constitutes approximately 20% and 10% of all cancers (approximately 7,000 and 15,000 deaths per year) in men and women, respectively, and 17% and 30% of all cancer deaths in women and 16,000 and 17,000 deaths annually (in 2018), respectively. in men and women, all cancer deaths (in 2018 - approximately 16,000 and 8,000 deaths respectively). In 2020, 26,000 deaths were reported from 74,500 patients with lung cancer. The overall 5-year survival rate is ~10% of patients diagnosed with non-small cell lung cancer (operated and non-operated combined). The 5-year survivability rate after incipient resection of stage I, II and IIIA non-Small Cell Cancer is 6080%, 4050% and 1525%, respectively, and in stage III patients receiving radiotherapy ~20%.",
+      "metadata": {
+        "doc_id": "HTA_submission_sotosorib_PO",
+        "heading": "Health Problems",
+        "start_page": 2,
+        "end_page": 3,
+        "created_date": "2023",
+        "country": "PO",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc_kras_g12c/HTA submissions/PO/HTA_submission_sotosorib_PO_cleaned.json",
+        "split_index": 1
+      }
+    },
+    {
+      "text": "However, it should be noted that according to the Drug Plan B.6 Treatment of patients with lung cancer (ICD-10: C34) and interstitial lung disease (ICS-10:C45) , atezolizumab or nivolumab may be used in subsequent treatment lines in patients not previously treated with immunotherapy.",
+      "metadata": {
+        "doc_id": "HTA_submission_sotosorib_PO",
+        "heading": "Alternative medical technology",
+        "start_page": 3,
+        "end_page": 3,
+        "created_date": "2023",
+        "country": "PO",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc_kras_g12c/HTA submissions/PO/HTA_submission_sotosorib_PO_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "Sotorasib is a selective inhibitor of KRAS G12C (the homolog of the Kirsten rat meat viral oncogene) which binds covalently and irreversibly to a specific KRAS-G12C cysteine. Inactivation of KRas G12c by sotorasibs blocks cancer cell signalling and survival, inhibits cell growth and selectively induces apoptosis in tumours containing the KRas mutation, a factor that stimulates oncogenesis. According to the Summary of Product Characteristics (SPC), Lumykras monotherapy is indicated for the treatment of adult patients with advanced non-small cell lung cancer (NSCLC) with a KRas g12c mutation who have experienced disease progression after at least one line of previous use. Evaluation of efficacy (clinical and practical) and safety This evaluation consists of collecting data on the health consequences (effectiveness and safety) of the use of a new therapy for a given health problem and of other therapies that are currently publicly funded and are an alternative treatment available for the health problem.",
+      "metadata": {
+        "doc_id": "HTA_submission_sotosorib_PO",
+        "heading": "Description of the claimed benefit",
+        "start_page": 3,
+        "end_page": 10,
+        "created_date": "2023",
+        "country": "PO",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc_kras_g12c/HTA submissions/PO/HTA_submission_sotosorib_PO_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "The evaluation then requires the determination of the reliability of the collected data and the comparison of the results on the efficacy and safety of the new therapy with those already available to treat the health issue. On the basis of the above evaluation of effectiveness or safety, the question of the magnitude of the health effect (in terms of both efficacy as well as safety) that should be considered in comparison with other therapeutic treatments is answered. The efficacy and safety of sotorasib (SOT) for the treatment of adult patients with non-small cell lung cancer (NDRC) with a KRAS G12C mutation were assessed. A randomised open-label Phase III trial was included in the clinical analysis: • CodeBreaK 200 evaluation of the effectiveness and safety for sotorashib (SoT) compared to docetaxel (DOC). Number of patients: 171, DOC SOT 174; Median follow-up: 17.7. • CodeBreaK",
+      "metadata": {
+        "doc_id": "HTA_submission_sotosorib_PO",
+        "heading": "Description of the claimed benefit",
+        "start_page": 3,
+        "end_page": 10,
+        "created_date": "2023",
+        "country": "PO",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc_kras_g12c/HTA submissions/PO/HTA_submission_sotosorib_PO_cleaned.json",
+        "split_index": "1_0_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "100 Phase I/ II, non-randomised, efficacy and safety evaluation of sotorasib (SOT; number of patients: phase I 48, phase II 126; median follow-up: phase II: 15.3 months (1.1 to 18.4); phase I/II: 24.9 months. • LUME-Lung1 randomised phase III, efficality and safety assessment of nintedanib in combination with docetaxel (NIN + C) as compared to docetaxal (DOC). • July 2021 - retrospective study, 89 previously treated patients with metastatic NDPR with the presence of KRAS p.G12C mutation • August 2022 - two prospective trials, patients with locally advanced non-resectable or transurethral NPDR with presence of the KRAS P.G 12C mutations, with ECOG status ≤ 2, brain metastases (treated or untreated), for whom other standard of care options have been exhausted (Based on 436 92 442 452 patients) • Cadran study, 2022 patients with a previously discontinued systemic therapy, 679 patients with KRAS n.G.C. mutation.",
+      "metadata": {
+        "doc_id": "HTA_submission_sotosorib_PO",
+        "heading": "Description of the claimed benefit",
+        "start_page": 3,
+        "end_page": 10,
+        "created_date": "2023",
+        "country": "PO",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc_kras_g12c/HTA submissions/PO/HTA_submission_sotosorib_PO_cleaned.json",
+        "split_index": "1_1_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "In the CodeBreaK 200 study, the overall risk 1 Interquartile range of systematic error was defined as low in most domains, and no risk occurred in the randomisation process. • The LUME-Lung1 study is characterised by a low risk of systemic error. • Code BreaK 100 monotherapy study and the actual efficacy study, 2022, were assessed at 7/8 point in the NICE study, and the 2021 and 2022 Cadence studies at 4/8 points in the Cadence study; • Code KreaBreaB (KORP) were the first to be evaluated at 100 points on the endpoint scale. • Progression from the CodeKreaB 100 single-point study to the 2022 NICE Avranches study was measured at 100/8 point.",
+      "metadata": {
+        "doc_id": "HTA_submission_sotosorib_PO",
+        "heading": "Description of the claimed benefit",
+        "start_page": 3,
+        "end_page": 10,
+        "created_date": "2023",
+        "country": "PO",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc_kras_g12c/HTA submissions/PO/HTA_submission_sotosorib_PO_cleaned.json",
+        "split_index": 2
+      }
+    },
+    {
+      "text": "• Progression-free survival in the general population: median SOT of 5.6 months (95% CI 4.3; 7.8) HR (95%CI) = 0.66 (0.51; 0.86) DOC of 9.5% CI 3.0; 5.7) • Overall response to treatment (ORR): SOT vs. 28% DOC vs. 13% RR (95% IC) = 2.12 (1.35; 3.33) • Heart disease control rate (DOC vs 83% RR) compared to the DOC group (direct comparison) Significant differences (IS) in favour of patients receiving SOT as compared to those receiving DOC were observed in the following areas: • Survival free of progression in the overall population: SOT median 5.6 month (95%IC: 4.3, 7.8) HRC (95%) CI= 0.56 (0.58; 0.66%) DOC median (0.55; 0.85) HRC vs. cough HR (95% CI) = 0.55 (0.38; 0.80) 2 The NICE Quality Assessment for case series consists of 8 questions, scored 1 for yes and 0 for no.",
+      "metadata": {
+        "doc_id": "HTA_submission_sotosorib_PO",
+        "heading": "Description of the claimed benefit",
+        "start_page": 3,
+        "end_page": 10,
+        "created_date": "2023",
+        "country": "PO",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc_kras_g12c/HTA submissions/PO/HTA_submission_sotosorib_PO_cleaned.json",
+        "split_index": 3
+      }
+    },
+    {
+      "text": "Higher scores indicate better quality of the study. 3 European Organization for Research and Treatment of Cancer Quality of Life Questionnaire Cancer quality of life questionnaire. A higher score for functional means deterioration of functioning and for general health improvement in quality of living. 4 European Organisation for research and treatment of cancer Quality of life question module Lung Cancer Module Frequency of observation of symptoms and problems associated with lung cancer (such as pain, swelling of the lung, difficulty breathing, loss of hair, bleeding in the chest, and cough). Recommendation 41/2023 of the President of the AOTMiT dated 14 April No statistically significant differences were observed between groups for e. g.: • overall survival, • other endpoints in the EORTC QLQ-C30 and EORTSQ-QLC13 questionnaires for worsening of",
+      "metadata": {
+        "doc_id": "HTA_submission_sotosorib_PO",
+        "heading": "Description of the claimed benefit",
+        "start_page": 3,
+        "end_page": 10,
+        "created_date": "2023",
+        "country": "PO",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc_kras_g12c/HTA submissions/PO/HTA_submission_sotosorib_PO_cleaned.json",
+        "split_index": "4_0_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "chest pain. • Individual groups using SOT obtained IS outcomes for survival from DOC-free subjects in the subpopulation after two previous treatment lines: 5.7 months of SOT vs 4.8 months of ECOT vs 0.9 months of HRT. • 2.8 vs 0.61 months of CI in the SOG sub-population. 0.61 (0.40; 0.92) • in the functional subpopulation ECOG 1: SOT vs. DOC 4.4 months vs. 2.8 months HR (95% CI) = 0.61 (0,44; 0.84) • with or without metastases to the liver: SOT versus DOC 4.2 months vs 1.9 months HR (CI 95%)= 0.47 (0.26; 0.85 without metestases SOT v. DO C 5.9 months vs 5.6 months HR (> 95% CI) > 0.67 (0.49; 0.90) • in a bone metastasis (start of the study) or DOC-metastases sub Population: SOt vs.",
+      "metadata": {
+        "doc_id": "HTA_submission_sotosorib_PO",
+        "heading": "Description of the claimed benefit",
+        "start_page": 3,
+        "end_page": 10,
+        "created_date": "2023",
+        "country": "PO",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc_kras_g12c/HTA submissions/PO/HTA_submission_sotosorib_PO_cleaned.json",
+        "split_index": "4_1_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "HR (95% CI) = 0.59 (0.40; 0.87) In each SOT group, IS scores were obtained for the overall response to lec • in the sub-population after two previous treatment lines: SOT vs DOC 40% vs 17% OR (95%CI) = 3.10 (1.39; 6.92) • in ECOG 0 functional state subpopulation: SoT vs DoC 34% vs 14% OR (95%, CI)= 4.02 (1.44; 11.17) • in sub-Population at steady-state EcoG 1: SoT DOC 25% vs 13% (95, 95% CI) OR= 2.16 (1.07; 4.34) • in OUN metastatic or non-metastatic subpopulations: with or without SOT metastasis vs 28% (95% IC) OR = 3.33 (1,208) OR = 9.2 (without metastases) DOC 28% vs 15% (95%) OR = 2.30 (1,17%) • in no metastasized sub-groups with or not metastatised at the time of the study: ECOT = 3.11% versus DOC 34%, OR (95%, CI) or 1.15% vs. In the CodeBreaK 100 study for the phase II observation period (15.3 months): • median PFS was 6.8 months (95% CI: 5.1; 8.2), and in 2023 (e.",
+      "metadata": {
+        "doc_id": "HTA_submission_sotosorib_PO",
+        "heading": "Description of the claimed benefit",
+        "start_page": 3,
+        "end_page": 10,
+        "created_date": "2023",
+        "country": "PO",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc_kras_g12c/HTA submissions/PO/HTA_submission_sotosorib_PO_cleaned.json",
+        "split_index": 5
+      }
+    },
+    {
+      "text": "g. time to sink: dry free line Recommendation No. 41/2023 of the President of the AOTMiT dated) the median OS was 12.5 months (95%, CI: 10.0; not achieved). SOT vs NIN + DOC (summary of results) A summary of the results of the Code BreaK 200 and LUME-Lung1 studies is presented. Analysis of the efficacy results: • SOT (CodeBreaK 200 study results for a median of 17.7 months) with progression-free survival: overall population median 5.6 months (4.3; 7.8); treatment line 2 population ?? median 4.2 months; with overall response: overall populace 28%; population 2 treatment line 21%; • NIN + DOC (LUME-Lung1 study for results of median 31.7 months.) with disease progression free survivorship: overall people 4.2 months (2.8; 4.5); treatment-line 2.5%; median 4.8 months (2.5); overall treatment line 2.5% of the population; Based on ESMO guidelines and randomised clinical trials, a reimbursement application was submitted for Keytruda (Presidential Recommendation No 3/2017) that pemetrexed and docetaxel do not differ in terms of progression-free survival and response to treatment. • SOT (CodeBreaK 100 study) with progression-free survival: total population in line 2 median ITT population in ≥ 2 treatment lines mean 6.3 months (5,3; 8,2); overall survivorship: total people in line 2; median population in ITT lines ≥ 2 treatments 12.5 months (10,0; 17,8); and 14 out of 202 patients treated with pembrolizumab in the previous course of therapy.",
+      "metadata": {
+        "doc_id": "HTA_submission_sotosorib_PO",
+        "heading": "Description of the claimed benefit",
+        "start_page": 3,
+        "end_page": 10,
+        "created_date": "2023",
+        "country": "PO",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc_kras_g12c/HTA submissions/PO/HTA_submission_sotosorib_PO_cleaned.json",
+        "split_index": 6
+      }
+    },
+    {
+      "text": "Efficacy studies No median follow-up periods were reported in the trials and patients were characterised by various ECOG fitness states: • EECOG 0-1 (July 2021 72%, Trial 436 ECEOG 0: 13%, ECEGG 1: 61%, Trials 442 ECECG 0: 27%, EECGG 1: 62%, Cadranel 2022 ECEGC 0: 20%, ECCOG 1: 61%), • ECEBG ≥ 2 (June 2021: no data; Trial 436: ECEGT 2: 26%; Trials 440 ECEGL 2: 11%; 2022 Cadranels: 17%; ECECL 2: 2%). In the studies in the general population, the median PFS was as follows: • Julve 2021 - 6.1 months (95% CI: 5.6; not reached), • Study 436 (Awad 2022) - 6.7 months (95%, CI: 4.6; 8.3), with ECOG 0: 6.4 months (95, CI: 2.7; 12.8), with EECOG 1: 7.1 months (95%, CI: 3.6; 9.0), with ECEO 2: 6.5 months (95%.",
+      "metadata": {
+        "doc_id": "HTA_submission_sotosorib_PO",
+        "heading": "Description of the claimed benefit",
+        "start_page": 3,
+        "end_page": 10,
+        "created_date": "2023",
+        "country": "PO",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc_kras_g12c/HTA submissions/PO/HTA_submission_sotosorib_PO_cleaned.json",
+        "split_index": 7
+      }
+    },
+    {
+      "text": "Adverse events of ≥ 3 severity and treatment-related adverse events leading to discontinuation occurred statistically significantly more frequently in the sotorasib group compared to docetaxel [RR (95%Cl) = 1.19 (1.01; 1.40) and RR (95%, CI) = 2.33 (1.52; 3.57) respectively]. • serious adverse events (SAEs) (RR (95% Cl) = 0.47 (0.28; 0.80)) There were no statistically significant differences between treatment-related events leading to discontinuation of therapy, treatment-associated events resulting in death, grade ≥ 3 treatment related events and overall adverse reactions. An analysis of the frequency of treatment-associated adverse events (TEAE) that occurred in ≥ 10% of patients with NDRP with the KRAS p.G12C mutation showed that use of SOT compared to DOC was associated with: • an increased risk of IS: diarrhoea (overall and ≥ 3 degrees), increased ALT and increased AST; • a decreased risk of SI: fatigue, total weight loss, total anaemia, oral cavity blockage, total asthenia, total constipation, total neutropenia and peripheral neuropathy. Among the total adverse events (AEs) reported in",
+      "metadata": {
+        "doc_id": "HTA_submission_sotosorib_PO",
+        "heading": "Description of the claimed benefit",
+        "start_page": 3,
+        "end_page": 10,
+        "created_date": "2023",
+        "country": "PO",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc_kras_g12c/HTA submissions/PO/HTA_submission_sotosorib_PO_cleaned.json",
+        "split_index": "8_0_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "≥ 10% of patients with NDRP with the KRAS p.G12C mutation, the following were observed: • IS increased relative risk: diarrhoea, increased ALT and increased AST; • IS decreased relative risk of fatigue, fever and peripheral oedema. 24%), shortness of breath (19% vs 19%), cough (13% vs 15%), vomiting (13% versus 17%), decreased appetite (23% vs 22%). Patients using SOT were more likely to experience constipation (13% v 5%) and anaemia (17% v 5%), and less commonly: fatigue (16% v 30%), increased asparagine aminotransferase (11% v 26%), increased alanine amintransferase concentrations (11% vs 29%), alopecia (2% v 16%) neutropenia (2% vs 14%) and fever (7% v 13%). In Awad 2022, treatment-related adverse events were reported in 65% of patients, treatment- related adverse reactions ≥ 3rd degree in 23% of patients; treatment- associated adverse experiences leading to discontinuation of therapy in 7% of patients and dose modification-related ADRs in 26% of patients with treatment-associated AEs resulting in death in 1% (1 death due to pneumonia) of patients.",
+      "metadata": {
+        "doc_id": "HTA_submission_sotosorib_PO",
+        "heading": "Description of the claimed benefit",
+        "start_page": 3,
+        "end_page": 10,
+        "created_date": "2023",
+        "country": "PO",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc_kras_g12c/HTA submissions/PO/HTA_submission_sotosorib_PO_cleaned.json",
+        "split_index": "8_1_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "Additional efficacy and safety analysis of ChPL Lumykras Very common (≥ 1/10) undesirable effects include: anaemia, headache, cough, shortness of breath, diarrhoea, nausea, vomiting, constipation, abdominal pain, joint pain, back pain, fatigue, fever, increased asparaginase aminotransferase activity, increased alanine aminotransperase activity. The available data are from open-label studies, and the main study CodeBreaK 200 (SOT vs DOC) and the study Code BreaK 100 are ongoing (expected completion date 2026/2027), so the final results are not available. In addition, the studies have other limitations, e. g. the study codeBrea K 200 allowed cross-over with Sotasetab, which may affect the analytical results obtained.",
+      "metadata": {
+        "doc_id": "HTA_submission_sotosorib_PO",
+        "heading": "Description of the claimed benefit",
+        "start_page": 3,
+        "end_page": 10,
+        "created_date": "2023",
+        "country": "PO",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc_kras_g12c/HTA submissions/PO/HTA_submission_sotosorib_PO_cleaned.json",
+        "split_index": 9
+      }
+    },
+    {
+      "text": "Economic assessment, including cost-benefit estimation Economic assessment is the process of estimating and comparing the costs and health effects that may be associated with the use of a new treatment for an individual patient in place of a treatment already reimbursed. The costs of the treatment are estimated in the currency of your country, and the health effects are most often expressed in years of life gained (LYG) or quality adjusted life years (QALY) as a result of using the treatment. A comparison of the cost and effect values associated with using the new treatment and their comparison with the cost/benefit values of existing treatments is used to answer the question of whether the health benefit achieved by the individual patient with the new therapy is higher than the cost of the reimbursable treatment. The results of the health cost-effects index are compared with the so-called profitability threshold, i.e. a result that signals that, given the resources of our country (expressed in GDP), the maximum cost of a new therapy, which is expected to be associated with obtaining an individual health effect (1 LYG or 1 QALY) compared to existing therapies, should not exceed three times the GDP per capita. Currently, the cost-efficiency level is PLN 175 926/QALY (PLN 3 58 x 642).",
+      "metadata": {
+        "doc_id": "HTA_submission_sotosorib_PO",
+        "heading": "Proposals for risk-sharing instruments",
+        "start_page": 10,
+        "end_page": 13,
+        "created_date": "2023",
+        "country": "PO",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc_kras_g12c/HTA submissions/PO/HTA_submission_sotosorib_PO_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "A lifetime cost-utility analysis (CUA) was performed from the perspective of the public payer, i.e. the National Health Fund (NHI), and from the shared perspective, i .e. NHI and beneficiary (patient). Sotorasib (SOT) was compared with docetaxel (DOC), nintedanib in combination with docetexel (NIN+DOC) and pemetrexed (XPM). For comparison with pharmaceutical-derived chemotherapy (PTH-C), treatment costs were compared with other therapeutic costs. Incremental Cost Utility Ratio (ICUR) from the NFZ perspective was: • with respect to docetaxel (DOC): • with regard to nintedanib in combination with docetacel (NIN+DOC) • with regards to pemetrexed (PMX): According to the Applicant' s estimates, the use of SOT in place of ICUR is within the estimated cost-effectiveness threshold referred to in the Reimbursement Act. Estimated monthly costs were: • from approximately PLN 207.07 (cisplatin + paclitaxel scheme) to approximately PLN 1 857.18 (cis platin + vinorelbine scheme) (cost of medicinal products used in the two-drug chemotherapy based on platinum compounds depending on the cisplatin scheme used); • from about PLN 804.69 (cysplatin plus docetaxel) to about PLN 22 7246 (carboplatin + etoxy) (including the cost of their combinations).",
+      "metadata": {
+        "doc_id": "HTA_submission_sotosorib_PO",
+        "heading": "Proposals for risk-sharing instruments",
+        "start_page": 10,
+        "end_page": 13,
+        "created_date": "2023",
+        "country": "PO",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc_kras_g12c/HTA submissions/PO/HTA_submission_sotosorib_PO_cleaned.json",
+        "split_index": 1
+      }
+    },
+    {
+      "text": "At the ICUR values estimated in the baseline analysis, the net sales price (NPV) threshold is: Results of the unidirectional sensitivity analysis indicate that the probability of cost-effectiveness of sotorasib relative to comparators is Limitations The main limitation of the economic analysis is the need to model health effects, as the time horizon of the analysis was significantly longer than that covered by the studies. If the applicant's clinical analysis does not include randomised clinical trials demonstrating superiority over the medicinal products of the medical technology concerned reimbursed in the amount indicated, the official price of the medicine must be scaled so as to ensure that the reimbursement of the costs of the product under investigation is not lower than the cost of applying the technology for medical treatment.",
+      "metadata": {
+        "doc_id": "HTA_submission_sotosorib_PO",
+        "heading": "Proposals for risk-sharing instruments",
+        "start_page": 10,
+        "end_page": 13,
+        "created_date": "2023",
+        "country": "PO",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc_kras_g12c/HTA submissions/PO/HTA_submission_sotosorib_PO_cleaned.json",
+        "split_index": 2
+      }
+    },
+    {
+      "text": "than the cost of the medical technology with the most favourable ratio of health effects achieved to the costs of obtaining them. In the opinion of the Agency, the circumstances of Article 13 of the Reimbursement Act do not apply. Health system impact assessment, including the impact on the public payer's budget The Health System Impact Assessment consists of two important parts. Firstly, in the analysis of the effect on the payer' s budget, it allows to estimate the potential costs related to the financing of a new therapy from public funds. The estimates of the costs associated with the new therapy (tomorrow scenario) are comparable to what we currently spend on the treatment of a given health problem (today' s scenario). On this basis, it is possible to assess whether the new treatment will be able to cope with the increase in costs, or whether it will be necessary to allocate more funds to the treatment in the budget. The second part of the HIA addresses the question of how the decision to fund a new therapy may affect the organisation of the provision of services (particularly",
+      "metadata": {
+        "doc_id": "HTA_submission_sotosorib_PO",
+        "heading": "Proposals for risk-sharing instruments",
+        "start_page": 10,
+        "end_page": 13,
+        "created_date": "2023",
+        "country": "PO",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc_kras_g12c/HTA submissions/PO/HTA_submission_sotosorib_PO_cleaned.json",
+        "split_index": "3_0_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "in the context of adapting to the requirements of the implementation of a new treatment) and the availability of other healthcare services. The results of the budgetary impact analysis of the applicant are presented in a two-year time horizon with a public payer perspective (PPP) and a joint perspective (PF + patient). The cost analysis takes this into account, taking into account the economic implications of the technological scenario. • Number of patients applying for the new therapy in the year of application: The results of the baseline analysis indicate that reimbursement of Lumykras will involve public payer expenditure of approximately: • in year I, • in the second year of the refund. In the variant, the cost of reimbursing Lumykris is the Cost of sotorasib in the variant amounting to approximately in year 1 and in year 2, respectively, and in the alternative, the Sensitivity Analysis results indicate that Restriction The budget impact analysis did not take into account all indicative comparators for the proposed technology. also indicate the uncertainty regarding the size of the population that would use the proposed therapy and the projected proportions of sotorasib.",
+      "metadata": {
+        "doc_id": "HTA_submission_sotosorib_PO",
+        "heading": "Proposals for risk-sharing instruments",
+        "start_page": 10,
+        "end_page": 13,
+        "created_date": "2023",
+        "country": "PO",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc_kras_g12c/HTA submissions/PO/HTA_submission_sotosorib_PO_cleaned.json",
+        "split_index": "3_1_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "The above values have been based on, inter alia, the opinion of clinical experts. The actual number of patients with the presence of the p.G12C mutation in the KRAS gene is unknown at the current frequency of genetic testing among patients with non-small cell lung cancer (NDRP). The cost of additional genetic testing in case of reimbursement of the drug will also affect the public payer's expenditure. The limited reliability is also affected by the limitations of the clinical and economic analysis. The consideration of the proposed risk-sharing instrument should be considered as an insufficient solution for the assessment of the risk associated with the potential financing of the technology.",
+      "metadata": {
+        "doc_id": "HTA_submission_sotosorib_PO",
+        "heading": "Proposals for risk-sharing instruments",
+        "start_page": 10,
+        "end_page": 13,
+        "created_date": "2023",
+        "country": "PO",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc_kras_g12c/HTA submissions/PO/HTA_submission_sotosorib_PO_cleaned.json",
+        "split_index": 4
+      }
+    },
+    {
+      "text": "It is proposed to add to the program an assessment of the quality of life of patients in order to obtain real data from Polish clinical practice. One of the experts pointed out that the decision not to include a patient in the drug program due to the co-existence of other cancers should belong to the doctor. The provision on the exclusion of co-occurrence of other tumors is one of the eligibility criteria for the analyzed drug program. 3 clinical recommendations related to the proposed indication were found by: • Polish Society of Clinical Oncology (PTOK 2022); • National Comprehensive Cancer Network (NCCN 2023 v2);• European Society for Medical Oncography (ESMO 2023). In accordance with the ESMO 2023 guidelines, in line II treatment of patients with NDRP with the KRASC G12 mutation, sotorasi is recommended for use in patients who have not responded to previous treatment. The NCCN 2023 guideline for",
+      "metadata": {
+        "doc_id": "HTA_submission_sotosorib_PO",
+        "heading": "Notes for the Package Leaflet",
+        "start_page": 13,
+        "end_page": 14,
+        "created_date": "2023",
+        "country": "PO",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc_kras_g12c/HTA submissions/PO/HTA_submission_sotosorib_PO_cleaned.json",
+        "split_index": "0_0_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "the second-line treatment of patients with NDRP with a KRAS G12C mutation indicates the possibility of using either sotorasib or adagrasib (following at least one prior therapy targeting the KRAS g12c mutation). According to the PTOK 2022 guidelines, the course of the second line treatment for patients with generalised non-small cell lung cancer depends on the clinico-pathomorphological characteristics, the effects of prior systemic therapy, and the molecular characteristics of the tumour. In this group, consideration may be given to the use of chemotherapy (dosectaxel or pemetrexed), docetaxel in combination with nintedanib, EGFR inhibitors in patients who have not received these medicines in the first line, or osymertinib in patients previously treated with first or second generation EGFR blockers, ALK inhibitors if ALK gene rearrangement, immunity (nivolumab or atezolizumab), palliative radiotherapy or symptomatic progression are observed. The positive NICE 2022 recommendation restricts the use of Lumykras to the Cancer Drugs Fund only.",
+      "metadata": {
+        "doc_id": "HTA_submission_sotosorib_PO",
+        "heading": "Notes for the Package Leaflet",
+        "start_page": 13,
+        "end_page": 14,
+        "created_date": "2023",
+        "country": "PO",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc_kras_g12c/HTA submissions/PO/HTA_submission_sotosorib_PO_cleaned.json",
+        "split_index": "0_1_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "The provision of data from the CodeBreaK100 and CodeBeaK200 studies may reduce the uncertainty in the cost-effectiveness estimates. The positive recommendations conditionally make a positive opinion on the provision of the final trial results for sotorasib. The negative decision addressed uncertainties in the effectiveness and cost-benefit analysis. According to the information provided by the applicant, the medicine is funded in the EU and EFTA (out of the 30 indicated).",
+      "metadata": {
+        "doc_id": "HTA_submission_sotosorib_PO",
+        "heading": "Notes for the Package Leaflet",
+        "start_page": 13,
+        "end_page": 14,
+        "created_date": "2023",
+        "country": "PO",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc_kras_g12c/HTA submissions/PO/HTA_submission_sotosorib_PO_cleaned.json",
+        "split_index": 1
+      }
+    },
+    {
+      "text": "The recommendation was prepared on the basis of an order of the Minister of Health dated 27.12.2022 (signature:",
+      "metadata": {
+        "doc_id": "HTA_submission_sotosorib_PO",
+        "heading": "Basis for the drafting of the recommendation",
+        "start_page": 15,
+        "end_page": 15,
+        "created_date": "2023",
+        "country": "PO",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc_kras_g12c/HTA submissions/PO/HTA_submission_sotosorib_PO_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "In accordance with Article 35 (1) of the Law of 12 May 2011 on reimbursement of medicines, foodstuffs for special nutritional purposes and medical devices (Journal of Laws of 2022, item 2555 as amended), after obtaining Transparency Council Opinion No 41/2023 of 11 April 2023 on the evaluation of the medicinal product Lumicras (sotorasibum) in the framework of the drug programme Treatment of patients with lung cancer (ICD-10: C34) and interstitial lung disease (Icd-10:C45)",
+      "metadata": {
+        "doc_id": "HTA_submission_sotosorib_PO",
+        "heading": "• Lumicras, sotorasibum, 120 mg film-coated tablets, 240 tablets in a blister pack, GTIN code: 08715131024895, which is the name of the active substance.",
+        "start_page": 15,
+        "end_page": 15,
+        "created_date": "2023",
+        "country": "PO",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc_kras_g12c/HTA submissions/PO/HTA_submission_sotosorib_PO_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "This Regulation shall enter into force on the twentieth day following that of its publication in the Official Journal of the European Union.",
+      "metadata": {
+        "doc_id": "HTA_submission_sotosorib_PO",
+        "heading": "Writing",
+        "start_page": 15,
+        "end_page": 15,
+        "created_date": "2023",
+        "country": "PO",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc_kras_g12c/HTA submissions/PO/HTA_submission_sotosorib_PO_cleaned.json",
+        "split_index": 0
+      }
+    }
+  ]
+}

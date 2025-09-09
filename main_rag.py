@@ -6,6 +6,10 @@ from python.vectorise import Chunker, Vectoriser
 from python.run import RagPipeline
 from python.open_ai import validate_api_key
 from python.config import SOURCE_TYPE_CONFIGS, CASE_CONFIGS, CONSOLIDATION_CONFIGS
+from python.results import run_complete_analysis
+import glob
+import os
+from pathlib import Path
 
 # Define paths
 PDF_PATH = "data/PDF"
@@ -167,3 +171,63 @@ print("Consolidating PICOs and Outcomes across all sources...")
 consolidation_results = rag.run_pico_consolidation(
     source_types=["hta_submission", "clinical_guideline"]
 )
+
+# Step 11: Analysis and Visualization of Results
+print("\n" + "="*80)
+print("STARTING COMPREHENSIVE ANALYSIS AND VISUALIZATION")
+print("="*80)
+
+# Find the most recent consolidated files
+consolidated_dir = Path("results/consolidated")
+if consolidated_dir.exists():
+    # Get the most recent PICO and Outcomes files
+    pico_files = list(consolidated_dir.glob("*consolidated_picos*.json"))
+    outcome_files = list(consolidated_dir.glob("*consolidated_outcomes*.json"))
+    
+    if pico_files and outcome_files:
+        # Sort by modification time and get the most recent
+        pico_file = max(pico_files, key=os.path.getmtime)
+        outcome_file = max(outcome_files, key=os.path.getmtime)
+        
+        print(f"Analyzing PICO data from: {pico_file}")
+        print(f"Analyzing Outcomes data from: {outcome_file}")
+        print()
+        
+        # Run comprehensive analysis
+        pico_analyzer, outcome_analyzer, visualizer = run_complete_analysis(
+            pico_file_path=str(pico_file),
+            outcome_file_path=str(outcome_file)
+        )
+        
+        print("\n" + "="*80)
+        print("ANALYSIS COMPLETE")
+        print("="*80)
+        print("Check the results/visualizations/ directory for:")
+        print("- PNG visualization files")
+        print("- Analysis summary report")
+        print("- Statistical data matrices")
+        
+    else:
+        print("Warning: Could not find consolidated PICO or Outcomes files.")
+        print("Make sure the consolidation step completed successfully.")
+        
+        if not pico_files:
+            print("Missing PICO files in results/consolidated/")
+        if not outcome_files:
+            print("Missing Outcomes files in results/consolidated/")
+            
+else:
+    print("Warning: results/consolidated directory not found.")
+    print("Make sure the consolidation step completed successfully.")
+
+print("\n" + "="*80)
+print("RAG PIPELINE EXECUTION COMPLETE")
+print("="*80)
+
+
+
+
+
+
+
+

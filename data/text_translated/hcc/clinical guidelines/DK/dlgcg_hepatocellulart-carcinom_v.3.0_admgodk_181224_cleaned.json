@@ -1,0 +1,554 @@
+{
+  "doc_id": "dlgcg_hepatocellulart-carcinom_v.3.0_admgodk_181224",
+  "created_date": "2024",
+  "country": "DK",
+  "source_type": "clinical_guideline",
+  "chunks": [
+    {
+      "heading": "",
+      "text": "K He  Clinical experience The right of access to care and the right to be treated by a primary care physician",
+      "start_page": 1,
+      "end_page": 1
+    },
+    {
+      "heading": "KLINISKE RETNINGSLINJER | KRÆFT rt Carcinom",
+      "text": "liver and kidney cancers",
+      "start_page": 1,
+      "end_page": 1
+    },
+    {
+      "heading": "Version 3.0 is available.",
+      "text": "In the absence of such a decision, the Commission may decide to extend the period of validity of the marketing authorisation.",
+      "start_page": 1,
+      "end_page": 1
+    },
+    {
+      "heading": "The Commission shall be empowered to adopt delegated acts in accordance with this Article.",
+      "text": "Scheduled for 30 April 2026",
+      "start_page": 1,
+      "end_page": 1
+    },
+    {
+      "heading": "The following table summarizes the data:",
+      "text": "DLGCG, Hepatocellular carcinoma, liver cancer, diagnosis and treatment Clinical Update Update Retnin Recommended Retni as recommended by the v ngslin linger ingsli the version of injection │ n si on section 2 │Cancer",
+      "start_page": 1,
+      "end_page": 2
+    },
+    {
+      "heading": "New recommendation from the Commission",
+      "text": "In order to clarify future use of AFP-based criteria for the Danish population, it is recommended that patients who meet either Metroticket 2.0 or 5-5-500 criteria may be offered transplantation (B) Recommendation 15 (previously 14) has been changed from: (ablation, TACE el SIRT) has been amended to",
+      "start_page": 2,
+      "end_page": 2
+    },
+    {
+      "heading": "New recommendation from the Commission 25",
+      "text": "Radioembolization (selective internal radiotherapy (SIRT)) may be considered as downstaging to achieve resectability or Milan criteria for transplantation (C).",
+      "start_page": 2,
+      "end_page": 2
+    },
+    {
+      "heading": "Recommendation 28-30 is amended as follows:",
+      "text": "In patients with Child Pugh B7 and PS 0, sorafenib may be used on an occasional basis (A) 29. regorafenib has demonstrated efficacy in patients with child Pugh A liver function who have tolerated and subsequently progressed to second-line therapy (A), 30. lenvatinib may be employed as an alternative to sorafinib in the first line (A). 29. atezolizumab and bevacizumab as recommended for first-line systemic therapy. Sorafenib or Lenvatinib may be used as an alternative to Atezolizumab and Bevacizumab in the first line (A) 31.Sorafenib and Regorafenab may be applied in the second and third lines in patients with preserved hepatic function (C) A section 24 has been added and section 27 has been removed Radioembolization (selective internal radiotherapy) (SIRT) may be considered as downstaging mhp to achieve resectability or Milan criteria for transplantation (C).In section Diagnosis, the heading of section Nuclear medicine diagnosis of HCC has been changed to nuclear medicine prescribing and the section has been rewritten. In the comments field with their respective PMID numbers 27.10.2024 7 additional references have been added. In the comment field with its respective PM ID numbers Clinical Guideline │Cancer Table of Contents New since last (amendment log) .......... 1. Recommendations (Quick guide) ........ Monitoring ........................... Diagnosis ................. Liver resection ................ Liver transplantation ............... Ablation .................. Radiotherapy ..................... Non-curative treatment .................... Systemic treatment in children and adolescents with HCC ......... 2. Introduction ........... .............. 3. Basics ... Monitoring .... Systemic treatment of HCC in children and adolescents 4.References 5.Method 6.Monitoring 7.Annex 8.For the purpose of this clinical guideline see D DLGC CG",
+      "start_page": 2,
+      "end_page": 4
+    },
+    {
+      "heading": "Monitoring and surveillance",
+      "text": "Screening for HCC is recommended in patients with chronic viral hepatitis B and C and demonstrated cirrhosis, as well as in those with cirrhotic hepatitis C eradicated.",
+      "start_page": 5,
+      "end_page": 5
+    },
+    {
+      "heading": "Diagnostic work",
+      "text": "Nodules larger than 1 cm found in imaging of a cirrhotic liver should be examined with either a 3-phase CT scan or a dynamic contrast enhancer. If the MRI appearance of the lesions is typical for HCC, the diagnosis of HCC may be made. If imaging findings are not of diagnostic characteristics, a second contrast enhanced study should be performed with another imaging diagnostic modality (MR/CT/contrast enhanced in expert centres) or a glomerular biopsy should be carried out to detect the disappearance of gray haemoglobin from the patient's visual interval (B) 6.",
+      "start_page": 5,
+      "end_page": 5
+    },
+    {
+      "heading": "Clinical Guidance │ Cancer DLGCG or exhibits diagnostic characteristics of HCC.",
+      "text": "If the lesion remains unchanged, the follow-up period should be adjusted according to the underlying disease and age of the patient (C)",
+      "start_page": 6,
+      "end_page": 6
+    },
+    {
+      "heading": "Liver resection is a potentially curative treatment for solitary or multifocal liver disease.",
+      "text": "HCC in which there is no extrahepatic proliferation, liver function is good and R0resection can be performed with sufficient liver tissue remaining to maintain normal liver function (B) 10.",
+      "start_page": 6,
+      "end_page": 6
+    },
+    {
+      "heading": "Transplantation of the liver",
+      "text": "In order to clarify future use of AFP-based criteria for the Danish population, it is recommended that patients meeting either Metroticket 2.0 or 5-5-500 criteria be offered assessment for liver transplantation (B) 14.",
+      "start_page": 6,
+      "end_page": 6
+    },
+    {
+      "heading": "Clinical Guidance │ Cancer DLGCG topical treatment with resection or ablation should be evaluated",
+      "text": "liver transplantation regardless of Child Pugh Score (C) 16. patients who have received a liver transplant are monitored for recurrence by liver-specific thoraco-abdominal CT or MRI examinations at 3, 6, 9, 12, 18, 24, 36, 48 and 60 months. alpha-fetoprotein is measured every 3 months (C).",
+      "start_page": 7,
+      "end_page": 7
+    },
+    {
+      "heading": "Ablation",
+      "text": "Percutaneous ablation should be offered to patients with early HCC in cirrhotic liver as first-line treatment (stage 0 and A BCLC, no more than three tumours < 3 cm) (A) 20 Laparoscopic or open ablation must be offered for the above patients if percutaneously access is not possible (C) 21 Combination therapy of RFA and TACE may be offered in patients with tumours between 3 and 5 cm (A). 22 Adjuvant systemic therapy after radical resection or ablation is not indicated (C). 23 CT or MRI monitoring should be performed 4-6 weeks after treatment, followed by CT or MR scans at 3, 6, 9, 12, 18, 24, 36, 48 and 60 months after treatment (C),",
+      "start_page": 7,
+      "end_page": 7
+    },
+    {
+      "heading": "Treatment by radiation",
+      "text": "Stereotactic radiotherapy (SBRT) is a curative treatment with limited toxicity that may be considered in situations where neither ablation nor resection is possible (C) 25.",
+      "start_page": 7,
+      "end_page": 8
+    },
+    {
+      "heading": "Non-curative treatment",
+      "text": "Chemoembolization is recommended as first-line non-curative therapy for BCLC intermediate class B patients (Child Pugh score ≤ 7 with performance score 0-1.",
+      "start_page": 8,
+      "end_page": 8
+    },
+    {
+      "heading": "Adjuvant systemic therapy following TACE is not indicated (A)",
+      "text": "SIRT may be used in limited multifocal disease and if the patient does not tolerate systemic therapy (C)",
+      "start_page": 8,
+      "end_page": 8
+    },
+    {
+      "heading": "Systemic treatment",
+      "text": "29 Atezolizumab and bevacizumab are recommended as first-line systemic therapy in patients with preserved hepatic function and in good general condition where resection, transplantation, ablation or TACE/ SIRT cannot be performed or are not expected to have an effect, or for patients with additional hepatic disease (A) 30.",
+      "start_page": 8,
+      "end_page": 8
+    },
+    {
+      "heading": "HCC in children and adolescents",
+      "text": "In the case of suspected HCC in the age group 0-18 years, please refer to the Department of Paediatric Oncology of the National Hospital or the Paediatrics Department, Aarhus University Hospital.",
+      "start_page": 8,
+      "end_page": 8
+    },
+    {
+      "heading": "The second part of the introduction",
+      "text": "In Denmark, the incidence of hepatocellular carcinoma (HCC) is about 450 per year, with a slightly increasing trend, most pronounced in men > 60 years (1, 2). HCC occurs in 70-80% of cases in a cirrhotic liver. Objectives The overall aim of the guideline is to support an evidence-based cancer intervention of high and uniform quality across Denmark. Patient group The most common cause of cirrhosis (about 65%) in Denmark is alcohol consumption (2). The incidence and prevalence of cirrosis is relatively stable, but the underlying causes are changing in these years as alcohol-related cirrhomosis and Hep B+C decline, while fat-related Cirrhomoses have an increasing trend. Diagnosis and treatment of HCC involve physicians from different specialties, including medics with internal hepatological expertise (hereinafter referred to as hepato-implantation surgeons), HP/transplantation surgists, oncologists, radiologists, and interventional pathologists. The hepatologist is therefore the central figure in the management of these patients. At any time, the hepatologist must be able to assess liver function and, on this basis, assess which treatment measures the patient will be able best to tolerate. The hepatologists must be responsible for the treatment of liver disease both before and after cancer therapy. Target group for the use of this guideline This guidelines aims primarily at supporting clinical work and the development of clinical quality, which is why it is the primary target group for clinical health professionals working in the Danish healthcare system.",
+      "start_page": 9,
+      "end_page": 9
+    },
+    {
+      "heading": "Monitoring and surveillance",
+      "text": "Screening for HCC is recommended in patients with chronic viral hepatitis B and C and demonstrated cirrhosis, as well as in those with cirrhotic hepatitis C eradicated.",
+      "start_page": 10,
+      "end_page": 10
+    },
+    {
+      "heading": "Risk groups for HCC may be monitored with UL scanning every 6 months (C)",
+      "text": "Screening for HCC is to be offered as part of a programme or process in which screening tests and threshold levels are standardised and with built-in quality control. The screening involves deciding at what level the risk of HCC should be high enough to trigger screening, what screening test to carry out and how often it should be carried out. Finally, deciding what action an abnormal screen test should trigger. The risk of developing hepatocellular carcinoma (HCC) in patients with chronic hepatitis B and cirrhosis over a period of 5 years is about 7%. Since some groups of patients with Chronic Hepatitis B have an increased incidence of hepatocell carcinomas (hCC) even without having developed cirrhotic disease, screening for HCC should be performed in patients who have a family history of HCC, Asian patients over 40-50 years of age, and African patients over the age of 25 years.",
+      "start_page": 10,
+      "end_page": 11
+    },
+    {
+      "heading": "Screening method",
+      "text": "Of the available studies used to screen for HCC, measurement of the tumor marker Alphafetoprotein (AFP) has been shown to be inadequate as a screening method.",
+      "start_page": 11,
+      "end_page": 11
+    },
+    {
+      "heading": "Screening intervals",
+      "text": "Most studies have used 6-month intervals between controls, there are no randomised trials that have established the optimal screening interval.",
+      "start_page": 11,
+      "end_page": 11
+    },
+    {
+      "heading": "Diagnostic work",
+      "text": "Nodules larger than 1 cm found by imaging of a cirrhotic liver should be examined with either a 3-phase CT scan or a dynamic contrast-enhanced one. If the appearance of the lesions is typical for HCC, the diagnosis of HCC may be made. If diagnostic imaging findings are not characteristic, a second contrast enhanced examination should be performed with another imaging diagnostic modality (MR/CT or contrast enhancement in expert centers) or an ultrasound measurement should be made from a coarse biopsy reading algorithm (see above).",
+      "start_page": 11,
+      "end_page": 11
+    },
+    {
+      "heading": "Clinical Guidance │ Cancer DLGCG reticulin, glypican 3, HSP-70, and glutamate synthetase, to improve the",
+      "text": "Diagnostic accuracy (C) 7.If the biopsy cannot confirm the diagnosis of HCC, the lesion should be monitored with imaging at 3-6 month intervals until nodules disappear, grow, or exhibit diagnostic characteristics for HCC.",
+      "start_page": 12,
+      "end_page": 12
+    },
+    {
+      "heading": "Diagnosis of HCC is always made by biopsy in patients without cirrhosis (C)",
+      "text": "Radiological diagnosis of HCC in patients with cirrhosis of the liver HCC can be diagnosed with MR with extracellular gadolinium contrast and/ or CT without the need for a biopsy if the typical radiological criteria for HCC are met, i.e. contrast charging in the late arterial contrast phase and washout (washout) in the venous phase and/or late phase (13-17). The most sensitive contrast phases are the arterial phase and the late phase (18), but the portal venous phase is necessary for the assessment of resectability and possible vein thrombosis. In CT and even more so in MRI, other signs may be found to support the diagnosis of HCC: capsule formation, coronary charging, fat content in the tumour, high T2 signal, diffusion restriction or lack of uptake of liver-specific contrast. These signs are not as specific as the typical contrast profile and are not included in the diagnostic algorithm (19-22). When contrast-enhanced ultrasound is not included as a primary modality in the algorithm, it is because intrahepatic cholangiocarcinoma, which also occurs with greater frequency in cirrhosis patients, can be misdiagnosed as HCC due to gahout contrast-alert washout as opposed to colonoscopy and MRI, where there is no MR (23,24). However, a new, prospective, multicenter study of cirrhosis patients with HCC nodules of 1 to 3 cm comparing CT, MR and contrast ultrasound finds a very high specificity when contrast ultrasonography is used as a supplement to non-inclusive CT or MR. The combination that provides the highest diagnostic certainty is MR followed by contrast ultra-ultrasound (25). However, follow-up at 3-4 month intervals is recommended using the same modality that first documented the presence of nodules. For lesions > 1 cm in diameter, multi-detector CT scan or dynamic MRI should be performed. Figure 1. Algorithms for the examination of small nodes found by screening or other imaging in patients at risk of HCC in cirrhotic liver (MDCT = Multi-Detector CAT scan). Diagnosis of HCD in patients without liver cirrhosis In a normal liver without cirrosis, the likelihood of developing HCC is much lower and the guidelines given cannot be used in these cases. In the normal liver, hypervascular processes with venous hout wasta represent metastases from primarily vascularized mammary tumors, such as carcinomas, renal cell carcinoma or neuroocrine tumors. If a primary tumor with the same vascular profile is not known, a biopsy is necessary to make a histological diagnosis.",
+      "start_page": 12,
+      "end_page": 13
+    },
+    {
+      "heading": "Nuclear medical examination at the HCC",
+      "text": "18F-FDG, the most widely used PET tracer in oncology, has a sensitivity of approximately 50-65% for intrahepatic HCC, whereas some studies find a slightly higher sensitiveness for extrahepaticHCC. A number of other PET tracers, including 68Ga-PSMA, 11C/18F-choline and 11C-Acetate, have been shown in smaller studies to have a higher sensitisation for HCC than 18Ga-FG, especially in tumors with FDG uptake. More recent studies with 68 Ga-F were able to find a similarly higher intra-pathogenic and intra-hepatogenic HAPI, as well as other studies with both 18F/FG and extra-hepatic T cells, such as a small study with 18 Ga-PCT, found no evidence of developing an extra radioactive HAPI in the bone marrow (26 or 30).",
+      "start_page": 14,
+      "end_page": 14
+    },
+    {
+      "heading": "Diagnosis and pathology",
+      "text": "The histological examinations for the diagnosis of hepatocellular carcinoma comprise resectates and biopsies, which are handled differently, since the macroscopic examination of resects requires standardized removal of tissue for histological analysis, whereas the handling of biopsy involves the intubation of all tissue.",
+      "start_page": 14,
+      "end_page": 14
+    },
+    {
+      "heading": "Macrophotography and spectroscopy",
+      "text": "Tissue sampling for macroscopic examination of hepatocellular carcinoma hepatic resects is recommended to follow the following: Figure 2.",
+      "start_page": 14,
+      "end_page": 14
+    },
+    {
+      "heading": "Clinical Guideline │Cancer DLGCG non-tumour affected liver (A-D) and two tumour sections from non-tumor affected liver tissue (F-G) 1 cm and > 1 cm respectively",
+      "text": "In addition, incisions from the resection surface perpendicular to the tumor if it can be in a cut, or tangentially closest to the tumour if it cannot be in an incision. If the tumor is located near the capsule, also incisions related to this. Finally, cuts from the vascular structures of the dissection surface. A-D is repeated for several tumours.",
+      "start_page": 15,
+      "end_page": 15
+    },
+    {
+      "heading": "Microscopy",
+      "text": "A pathology report for microscopy of resectates with HCC should include the following elements as a minimum summarised by international guidelines (31-34): 1. tumour type (and possible WHO degree of differentiation or gradation ad modum Steiner) 2. distance to resection edges including bile ducts and vascular structures 3. capsule invasion 4. carinvasion 5. tumour size and number including satellites* 6. effect of ablative or neoadjuvant therapy, stated as estimated percentage of vital tumour tissue 7. lymphoid involvement, if possible 8. background liver including pre-malignant changes * Satellites can be defined as microscopic nodes of hepatocellular carcinoma separated from the tumour by an interval of non-tumour-carrying parenchyma (35) and are a negative prognostic marker (36). However, it should be emphasised that the definition of satellites is very varied and the prognosis itself is lacking in the literature.",
+      "start_page": 15,
+      "end_page": 15
+    },
+    {
+      "heading": "Early HCC",
+      "text": "The identification of decreasing HCC and dysplastic nodules (Low Grade Displastic Nodule (LGDN) and High Grade Dysplastic Nodule (HGDn)) in a cirrhotic liver complicates the separation of malignant from pre-malignant noduli both radiologically and histologically.",
+      "start_page": 15,
+      "end_page": 15
+    },
+    {
+      "heading": "A distinction is made between very early HCC and small advanced HCC (37, 38).",
+      "text": "The pathological HCC lesions have been defined in resected preparations and therefore the natural history of these lesions is unknown. At the same time, the presence of small foci of HCC in these resects typically suggests that these lesions are pre-stages to typical HCC (37, 38, 40). The frequency with which such lesions develop into HCC is typically unknown; in contrast, HCC has well-defined stages and exhibits a distinct histological continuum between the ultradiagnostic and typical margins (24, 40). There is likely to be a continuum between HGDN and HCC rather than two distinct stages. Patients with hepatic nodules who have a non-specific vascular profile and a negative biopsy should continue with close follow-up. There are no data indicating the optimal follow up tactic at this point, but repeat biopsy or follow-ups CT/MR to detect further growth should be considered. There is data indicates that the smaller the lesion, the less likely there is to be microscopic vascular invasion (39).",
+      "start_page": 15,
+      "end_page": 15
+    },
+    {
+      "heading": "Clinical Guideline │ Cancer DLGCG less lesions more likely to be associated with treatment that will be curative (23, 41).",
+      "text": "However, it is equally important not to perform invasive treatment on lesions that do not have a malignant potential and that may regress. This is a fine distinction that is not always possible to make. An additional concern about fine needle biopsy is the risk of bleeding and seeding. Most studies that demonstrate seeding after needle biopsy do not specify the size of the lesion that was biopsied (42, 43). Morphological characteristics can help in the separation of HGDN from HCC, but the addition of special dyes and immunohistochemical dyes is advised. Special staining for reticulin, whereby loss or alteration of reticulation is seen in HCC markers (44) is known. Additionally, by applying a panel of immune histological markers of Glycoprotein 703, Glutamicin 703, and Vitamins 70 can assist in the differentiation of tumors (such as heat shock) from the tumor (diffusion). All 3 negatives can be seen in 100% of low grade dysplastic nodules (LGDN), 73% of high grade dysoplastic nudules (HGdN) and 3% of early HCC. All 3 positives are seen in less than half of early hCC, but no LGDN/HG DN. At 2 positive markers, regardless of which, using this 3-marker panel, the sensitivity and specificity for detection of Early HCC is seen at 72% and 100% respectively in resectates. Additionally, immunohistochemical staining for CD34 can be supplemented to produce capillarization of the sinusoids, which is seen in hepatocytes and particularly in HCC (46).",
+      "start_page": 16,
+      "end_page": 16
+    },
+    {
+      "heading": "Classification by TNM",
+      "text": "On 1 November 2018, the DLGCG switches to classification according to TNM 8, as it follows the database year.",
+      "start_page": 16,
+      "end_page": 16
+    },
+    {
+      "heading": "T-primary tumour:",
+      "text": "T1a Solitary tumour of 2 cm or less in diameter with or without vascular invasion T1b Solitaire tumour > 2 cm in diameter without vascularization T2 Solitude tumour with vascular invasions that are > 2cm in diameter or multiple tumours, no more than 5cm in diameter T3 Multiple tumours of which at least one is > 5cm diameter T4 Tumor (s) involving a main branch of the v. portae or v. hepatica with direct invasion of adjacent organs (including the diaphragm) other than the gallbladder or with perforation of the visceral peritoneum",
+      "start_page": 17,
+      "end_page": 17
+    },
+    {
+      "heading": "N  Regional lymph nodes:",
+      "text": "Regional lymph nodes include hilar, hepatic (along a. hepatica communis), periportal (along v. portae), subphrenic and along v. cava.",
+      "start_page": 17,
+      "end_page": 17
+    },
+    {
+      "heading": "M  Distant metastases:",
+      "text": "M0 No distant metastases M1 Distant Metastases",
+      "start_page": 17,
+      "end_page": 17
+    },
+    {
+      "heading": "Alpha-fetoprotein and its derivatives",
+      "text": "Alpha foetoprotein cannot be used for the diagnosis of HCC, as AFP may be elevated in tumours of gonadal origin (e. g. testicular, germ cell and non-germ cell tumours (47)), as well as in other malignancies where ventricular cancer is most common (48). AFP may also be increased in patients with chronic liver disease, such as acute and chronic viral hepatitis (49, 50) and increased in intrahepatic cholangiocarcinomas and in colorectal liver metastases (51, 52). Unlike AFP, not all HCCs produce AFP, and the serum concentration of AFP is normal in up to 40% of patients with HCC (53).",
+      "start_page": 17,
+      "end_page": 18
+    },
+    {
+      "heading": "Liver resection is a potentially curative treatment for solitary or multifocal liver disease.",
+      "text": "HCC in which there is no extrahepatic metastasis, liver function is good and R0resection can be performed with sufficient liver tissue remaining to maintain normal liver function (B) 10.Adjuvant systemic therapy after radical liver resection is not indicated (B).11 Monitoring should be performed by CT or MRI examinations 3,6,9,12,18,24, 36, 48 and 60 months after treatment (C) Literature and evidence review Stage Staging of HCCs in patients with chronic tumour liver disease The prognosis for solid tumours is generally related to the tumour stage at diagnosis, the severity of any underlying liver disease and the patient' s performance status. There is no international consensus on which HCC staging system should be used. 5457 European guideline: Clinical Guideline │",
+      "start_page": 18,
+      "end_page": 19
+    },
+    {
+      "heading": "Reference (12)",
+      "text": "Treatment MDT All patients diagnosed with HCC should be evaluated by a multidisciplinary team of tumour experts including interventional radiologists, hepatologists, oncologists and liver surgeons.",
+      "start_page": 19,
+      "end_page": 19
+    },
+    {
+      "heading": "• Liver resection",
+      "text": "• Transplantation\n• Ablation\n• SBRT\n• SIRT\n• Protoner (protokoleret)",
+      "start_page": 19,
+      "end_page": 19
+    },
+    {
+      "heading": "Liver resection is the gold standard for intentional curative treatment of HCC.",
+      "text": "However, it has been shown that patients with solitary DLGCG ence ence (MDT) with tumours ≥ 5 cm in diameter and vascular glory HCC ≥",
+      "start_page": 19,
+      "end_page": 19
+    },
+    {
+      "heading": "Clinical Guideline │Cancer DLGCG is resected radically with good long-term survival (60).",
+      "text": "The presence of multiple tumours as well as tumour invasion in larger portal branches worsens the prognosis, but does not preclude radical resection and in selected patients this treatment gives the best chance of long-term survival (62, 63). Bilobary HCC can also be treated with resection, possibly in combination with RFA (64). The existence of distant metastases, thrombosis of the venae portae or vena cavae main stem are absolute contraindications to resection or other topical treatment. Liver resection for HCC is accompanied by a perioperative mortality of less than 5% and a morbidity of 30-40%, depending on the patient's liver function. Serious complications such as leukaemia, postoperative softening and gallbladder abscess constitute less than 5%. Note, however, that the incidence of complications and mortality is many times lower at the peripheral end of the tumour than during laparoscopy and should be taken into account, especially in patients who have undergone hepatic ablation in recent years. The 5-year survival after resection for HCC is 35-50% in newer large cohorts (66). The long-term survival for small solitary HCC < 5 cm in diameter is close to 70% (67, 68). The risk of recurrence during the first 5 years after radical resection of HCC, for example, is in the order of 50-80% (69). There is no evidence for adjuvant chemotherapy after liver resection (70). The most effective way of prolonging the survival of patients with re-resection, ablation and/ or transarteriolymbolisation (TACE) is shown to be regressive treatment with regressive re-section and ablation.",
+      "start_page": 20,
+      "end_page": 20
+    },
+    {
+      "heading": "Transplantation of the liver",
+      "text": "In order to clarify future use of the AFP-based criteria for the Danish population, it is recommended that patients meeting either the Metroticket 2.0 or 5-5-500 criteria be offered assessment for liver transplantation (B) 14. The Milan criteria or AFP criteria are not used in non-cirrhotic patients with HCC. If the tumours are not resectable and the patient does not exhibit extrahepatic metastasis, the patient should be assessed for hepato-transplantation (C) 15.",
+      "start_page": 20,
+      "end_page": 21
+    },
+    {
+      "heading": "Adjuvant systemic therapy following liver transplantation is not indicated (C)",
+      "text": "The following is a summary of Recommendations for liver transplantation for hepatocellular carcinoma: an international consensus conference report (71). Other recent key references (72, 73). Liver transplantation should be reserved for patients with 5-year survival comparable to that of non-HCC patients, i.e. approximately 70%. Prognosis is assessed primarily on the basis of the diameter of the largest tumour and the number of tumours in the liver. There must be no extrahepatic tumour. Microinvasion is a very poor prognostic sign and there is some correlation to tumour size and number as well as certain biomarkers; however, there are no reliable, either radiological or biomarker methods to detect microinvision, which is why microbial invasion is not yet included in the selection of liver transplants. However, if one could use multiple criteria to validate the prognosis of patients with micro-transplantation, we will be able to use a better prognosis for those patients with non-AFPs (see below).",
+      "start_page": 21,
+      "end_page": 21
+    },
+    {
+      "heading": "The Milan criteria",
+      "text": "In non-cirrhotic patients, liver transplantation should be considered on a case-by-case basis as an alternative to resection if the tumour is confined to the liver, irrespective of its size and number.",
+      "start_page": 21,
+      "end_page": 21
+    },
+    {
+      "heading": "AFP-based criticizers",
+      "text": "Several recent studies suggest that inclusion of AFP, together with size and number of HCC, in transplantation criteria improves the selection of patients with good prognosis. The Metroticket 2.0 study is based on 1018 Italian patients whose results were subsequently validated in 341 patients from Shanghai (75). Compared to the Milan criteria and other criteria based on size and numbers, Metrotiket 2.0 was superior in predicting survival after transplantation. The 5-5-500 study isbased on 965 patients from Japan transplanted with live donors (76). All the established criteria (tumor size ≤5 cm in diameter, tumor number ≤5, and AFP ≤500 ng/ml) found a 5-year recurrence rate of 7.3% and better selection compared to the Milano criteria. The results have not been validated externally in a cohort. In a study based on 537 French patients, the results were validated for an additional period of time in 435 French patients (77).",
+      "start_page": 22,
+      "end_page": 22
+    },
+    {
+      "heading": "The Metroticket 2.0 algorithm",
+      "text": "Patient values and preferences Not reported.",
+      "start_page": 22,
+      "end_page": 22
+    },
+    {
+      "heading": "Ablation",
+      "text": "Percutaneous ablation should be offered to patients with early HCC in cirrhotic liver as first-line treatment (stage 0 and A BCLC, no more than three tumours < 3 cm) (A) 20 Laparoscopic or open ablation must be offered for the above mentioned patients if percutaneously inaccessible (C) 21 Combination therapy of RFA and TACE may be offered in patients with tumours between 3 and 5 cm (A). 22 Adjuvant systemic treatment after radical resection or ablation is not indicated (C). 23 CT or MRI monitoring should be performed 4-6 weeks after treatment, followed by CT or MR scanning at 3, 6, 9, 12, 18, 24, 36, 48 and 60 months after treatment (C), Litterature and course of evidence In Denmark invasive ablation therapy with topical radio frequency (RFA) or microwave/ microwave (MW) energy sources may be used as there is no difference in therapeutic efficacy between the two treatment modalities.",
+      "start_page": 23,
+      "end_page": 23
+    },
+    {
+      "heading": "Ablation treatments may be percutaneous (closed), laparoscopic, or by laparotomy (open).",
+      "text": "is often used in combination with hepatic resection.",
+      "start_page": 23,
+      "end_page": 23
+    },
+    {
+      "heading": "Ablation therapy is indicated in patients with HCC.",
+      "text": "The number of tumours should not be considered as an absolute contraindication to ablation if treatment of all tumour changes is achievable; normally it would be recommended that the BCLC criteria be followed, i.e. the number should be ≤ 3; best results are obtained when the tumour is less than 3 cm. The combination of ablation and chemoembolization may be used for larger tumours (78).",
+      "start_page": 23,
+      "end_page": 23
+    },
+    {
+      "heading": "Ablation, RF or MW is a possible treatment modality for HCC up to 3 cm taking into account the size of a possible resection (7).",
+      "text": "In patients with small HCC < 3cm, RCTs show that percutaneous ablation is equivalent to resection in terms of local tumour control and long-term survival but with significantly lower complication rate and length of admission",
+      "start_page": 23,
+      "end_page": 23
+    },
+    {
+      "heading": "How to Survive",
+      "text": "In recent estimates of overall survival after RFA, approximately 95%, 60% and 25-30% 1-, 5- and 10-year survival are found, and for patients within the Milan criteria, 1-year (8799%), 3-year (6087%) and 5-year (4274%) survival is indicated (80).",
+      "start_page": 24,
+      "end_page": 24
+    },
+    {
+      "heading": "Combination therapy",
+      "text": "RFA may be combined with chemoembolization and in a meta-analysis of 1 randomised trial and 10 cohort studies, improved tumour response and disease-free survival were found with the combination treatment (81).",
+      "start_page": 24,
+      "end_page": 24
+    },
+    {
+      "heading": "Combination therapy may therefore be considered in patients with tumours between 3 and 5 cm and otherwise meeting the criteria for RFA and TACE therapy.",
+      "text": "Follow-up after ablation CT or MRI scans should be performed 4 to 6 weeks after treatment, followed by CT or MR scans at 3, 6, 9, 12, 18, 24, 36, 48 and 60 months after treatment.",
+      "start_page": 24,
+      "end_page": 24
+    },
+    {
+      "heading": "Treatment by radiation",
+      "text": "24. SBRT is a curative-intended treatment with limited toxicity that may be considered in situations where neither ablation nor resection is possible. (C) 25. Radioembolization (selective internal radiotherapy (SIRT)) may be envisaged as downstaging to achieve resectability or Milan criteria for transplantation.",
+      "start_page": 24,
+      "end_page": 24
+    },
+    {
+      "heading": "Radiotherapy for HCC",
+      "text": "Stereotactic radiation therapy (SBRT) provides precise radiation to a well-defined target volume, usually with few fractions and a high dose per fraction. Phase I and Phase II studies of SBRT of HCC show that radiation treatment can be administered with low risk and limited side effects to patients with Child Pugh A, maximum tumour diameter of 5 cm and adequate liver volume (83). Several publications show that children with Child-Pugh B and C developed irreversible liver failure, which is why those with child Pugh scores > 7 are not recommended for stereotactic irradiation (84, 85). There are a number of mixed lists containing patients with primary liver cancers and liver metastases.",
+      "start_page": 24,
+      "end_page": 24
+    },
+    {
+      "heading": "Two clinical records describing pure HCC patient records show local control rates of 67-79% 1 year after SBRT (86).",
+      "text": "In selective internal radiotherapy (SIRT), also called radioembolization, 90 Yttrium microspheres are injected through catheters into the hepatic artery via the femoral artery. Very small particles containing the radioactive substance, Ytrium 90, a beta emitter with a very short wavelength of radiation (2.5mm to 11mm) are injeted selectively into the tumour. The study showed that quality of life in SIRT-treated patients was better than in patients treated with sorafenib (87). SIRT can be used as a topical treatment option with a curative purpose, where by downstaging it can bring the patient to resection or fulfill the Milan criteria. SIRT has as a side effect that the untreated part of the liver hypertrophies, which may be an advantage where resection is planned. Prerequisite for treatment with SIRT is good hepatic bilirubin function< 34 mmol/ l, no ascites) and general good condition PS 0-1 (88-90). Patient values and  preferences Not specified. Rationale not specified. Comments and considerations Not stated.",
+      "start_page": 24,
+      "end_page": 25
+    },
+    {
+      "heading": "Non-curative treatment",
+      "text": "Chemoembolization is recommended as first-line non-curative therapy for BCLC intermediate class B patients (Child Pugh score ≤ 7 with performance score 0-1.",
+      "start_page": 25,
+      "end_page": 25
+    },
+    {
+      "heading": "Adjuvant systemic therapy following TACE is not indicated (A)",
+      "text": "Treatments that have been shown to prolong survival in patients in good performance (91, 92) with good liver function are transarterial chemoembolization (TACE), immunotherapy and the tyrosine kinase inhibitors sorafenib, regorafenib and lenvatinib (93-95).",
+      "start_page": 25,
+      "end_page": 25
+    },
+    {
+      "heading": "Transarterial embolization and chemoembolization",
+      "text": "In traditional TACE, the embolizing agent Lipiodol is injected concomitantly with Doxorubicin. In DEB-TACE, small particles containing Doxolubicin are injeted. The lipoidol and the particles are trapped in the tumour and slowly deliver Doxotubicin to the tumor. TACE and DEB -TACE should be considered for patients with HCC BC up to intermediate stage B, and with a Child Pugh point < 8. Both Tace and Deb-tace induce tumour necrosis in more than 50% of patients (96). Treatment failure has been associated with a significant improvement in tumour survival and should be treated at least 2 times prior to initiating further treatment with TACE. Improvement in survival in treated patients varies between 20-60% after 2 years (97), but it is clear that the relevance of the improvement relative to untreated patients is dependent on the patient' s baseline characteristics in terms of tumour stage, liver function and general health.",
+      "start_page": 26,
+      "end_page": 26
+    },
+    {
+      "heading": "Systemic treatment",
+      "text": "Sorafenib or Lenvatinib may be used as an alternative to Atezolizumab and Bevacizumab in the first line (A) 31. Sorafenab, Regorafenib and Lenvatnib may be administered in the second and third lines in patients with preserved hepatic function (C) Literature and Evidence Review",
+      "start_page": 26,
+      "end_page": 27
+    },
+    {
+      "heading": "1st line treatment",
+      "text": "Atezolizumab and Bevacizumab are recommended as first-line therapy based on a randomised phase 3 study (95) in which treatment with Atezolizeumab in combination with Bevazizumab showed significantly prolonged OS compared to Sorafenib in the first line (HR 0.66 (95% 0.52-0.85, p< 0.001,2 mth vs 13.4 mth ORR 30% vs 11% p < 0.001 CR 8% vs 1%). The response rate was < 5%. Treatment had no or very little effect on time to symptom development or on quality of life as measured by questionnaires ((103). Lenvantinib, a multi-kinase inhibitor, has shown non-inferiority compared to Sorafenib in line 1 in a randomised phase III study (93). This multicenter study involved 954 patients.",
+      "start_page": 27,
+      "end_page": 27
+    },
+    {
+      "heading": "2nd line treatment:",
+      "text": "Sorafenib, Lenvatinib or Regorafenib can be used as 2nd and 3rd line therapy in patients with preserved liver function. In 2016, data from a large phase III study; RESORCE was published (94). This study included 573 patients with conserved hepatic function (Child Pugh A) who had disease progression and had tolerated treatment with Sorafenab ≥ 400 mg daily for ≥ 20 of the last 28 days of treatment with sorafenib in line 1. Patients were randomised 2:1 to either Regorafinib 160 mg x 1 p. o. or placebo. The study demonstrated a significant survival benefit (CIHR 0.63, CIHR 0.50-0.79) at 2.8 months from 7.8 months in the placebo arm to 10.6 months in Caboferib. Zhu et al published a negative second-line study of ramucirumab versus placebo in 2015. In a subgroup analysis of patients with alpha-fetoprotein > 400 ng/ ml, there was significant efficacy. In a subsequent randomised phase 3 study, which examined the effect of Ramucimurab compared to placebo in the second line, and in which all patients had alpha fetoprotein> 400 ng / ml (REACH-2), there was a significant effect on the median OS at 8.5 months vs. 7.3 months; HR: 0.71, 95% CI, 0.53-0.95; p=0.0199 (105).",
+      "start_page": 27,
+      "end_page": 28
+    },
+    {
+      "heading": "Immunotherapy in later lines",
+      "text": "In the randomised Phase III study (Keynote 240), Pembrolizumab in line 2 did not show any significant increase in OS compared to placebo despite a p value of 0.0238 as the study had a pre-defined p-value of .0174 for significance. In a randomized Phase 3 HIMALAYA trial, 1171 patients were randomised to first-line treatment between initially 4 groups (1. a single dose of trimelimumab (300 mg) plus durvalumab (1500 mg followed by durvalumumab alone [1500 mg every 4 weeks] STRIDE), 2. durvalumuumab on its own (1,500 mg each 4 weeks ), 3. sorafenib (400 mg twice daily) or 4. trimelamumab 75 mg each week plus 1500 mg each four weeks, the latter discontinued when comparing the interim results with the durbalumab-only analysis. Overall survival at 36 months was 30.7%, 24.7%, and 20.2%, respectively. overall survival hazard ratio for STRIDE versus sorafenib was 0.78 (96.02% CI, 0.65 to 0.93; P=0.0035). overall survivorship with durumab monotherapy was noninferior to soraferib (hazard ratio, 0.86; 95.67% CI; 0.73 to 1.03; non-inferiority, 1.08). median progression-free survival was not significant between the three groups of patients and was not included in the RCT (108).",
+      "start_page": 28,
+      "end_page": 29
+    },
+    {
+      "heading": "HCC in children and adolescents",
+      "text": "In case of suspected HCC in the age group 0-1 department of paediatric oncology or Children's University Hospital, please refer to Pak Please refer to the Package curriculum for cancer in children DLGCG 18 please refers to the Rigsho Kölologiska Afdeling, Aarhus kkeforløb for Cancer in children  G of the hospital",
+      "start_page": 29,
+      "end_page": 29
+    },
+    {
+      "heading": "4. Referencer",
+      "text": "Risk of hepatocellular carcinoma in Danish outpatients with alcohol-related cirrhosis. J Hepatol. 2020;735): 1030-6. 3. Danish Society of Gastroenterology and Hepatology. Hepatocellullary carcinom [Available from: 4. Evidence that normal liver regeneration does not induce AFP synthesis. Gastroenterology. 1978;74(5 Pt 1):856-8. 7. EASL Clinical Practice Guidelines: Management of hepatocellular carcinoma. J Hepatol. 19. Balci NC, Befeler AS, Leiva P, Pilgram TK, Havlioglu N. Imaging of liver disease: Comparison between quadruple-phase multidetector computed tomography and magnetic resonance imaging.",
+      "start_page": 30,
+      "end_page": 37
+    },
+    {
+      "heading": "The scientific evidence:",
+      "text": "la Meta-analysis of randomized controlled trials Ib At least one randomized, controlled trial lIa At least a good controlled, non-randomized trial IIb At least another type, good, similar, experimental, not randomised III Good descriptive trials IV Expert committee or well-established authorities",
+      "start_page": 37,
+      "end_page": 37
+    },
+    {
+      "heading": "Strength of recommendations:",
+      "text": "A - Requires at least one randomised trial among several good clinical trials as a basis for the recommendation (la, lb) B - Required good, clinical studies as the basis for recommendation C - Requested expert committee or authority but says there is no basis (IV) Formulation of recommendations Emphasis has been placed on active language in the formulation of the recommendations, whereby the group has jointly formulated and approved these recommendations. Stakeholder involvement No patients or other interested parties have been involved in this round of consultation Consultation This guideline has not been subject to public consultation. Approval Technical approval: All relevant parties in the DLCGC have been consulted and have had the opportunity to communicate Administrative approval: 18 December 2024. Clinical Guideline │Cancer Recommendations triggering significant adverse reactions None of the recommendations in the guideline are considered to require further research Not indicated. Authors and liability The guidelines have been prepared by: Representatives approved by the Danish Surgical Society • Peter Nørgaard Larsen, Editor, Rigsho University • No conflict of interest • Allan Rasmussen, Rigshospitalet • No conflicts of interests • Nicolai Schultz, Rigshopital • No conflicting interests • Frank Viborg Mortensen, Aarhus University • There is no conflict of interests at all • Anders Riegels Knudsen, University of Aarhus over-connection with the companies/pharmacists of the recipients of the economic aid or assistance • Mogens Stender, Ålborg University • If there is a conflict of Interest • Torsten Pliktse, Odense University Hospital • No newly approved representatives of the company • Dansk Kirurgisk Sels • Herlev Klinik, Vistenhospitalet, Universitetssjukehus • Merck University Hospital, Universities Hospital • Oleksanders Klinik, Universitetsspital • The University of Helsinki • The hospital is not affiliated to the University of Ljubljana • The number of patients in the hospital is limited. In the event of a disagreement between the applicant and the undertaking receiving the financial support, the LGCG will take the necessary steps to ensure that the clinical guideline is complied with. There is no conflict of interests. Mohamed Metwally, Aarhus University • No conflict of interest • Morten Ladekarl, Ålborg University • Signe Risum, Rigshospitalet • No conflicts of interest approved by Danish representatives • Radentin Eva Fall, Riga University • Peter Larsen, University of Aarhus • No conflicts of interests • Nikolaj Stouv, University Of Aarhus, Norway • None of the beneficiary undertakings receiving financial support. The Ministry of Health and the Ministry of Social Affairs and Employment are responsible for the administration of healthcare services in hospitals, hospitals for the elderly, hospital for the handicapped, hospices for the disabled, hospicals for the homeless, hospitalisations for the mentally ill, etc. Copenhagen 17.11.2024 Peter Nørgaard Larsen, Surgical Clinic C, Rigshospitalet. Jf. Habilitetspolitik refer to declaration via the Medicines Agency's cooperation relations: companies/list-over-connection-to-companies/pharmacists,lager,patient Plan for updating The DLGCG's steering group meets once a year mhp. revision of guidelines diagnostics and treatment will change the guidelines. Version of the guideline Template The guidelines have been prepared in version 9.3 of the template. By creating the new guidelines, the DLCG has contributed with comments on the details of patient care and on the essential aspects of compliance with the Clinical Guidelines. │",
+      "start_page": 37,
+      "end_page": 41
+    },
+    {
+      "heading": "6 Monitoring and control",
+      "text": "The Clinical Quality Database Steering Group has the mandate to decide which specific processes and outcomes are monitored in the database.",
+      "start_page": 41,
+      "end_page": 41
+    },
+    {
+      "heading": "Annex to this Decision",
+      "text": "Annex 1  (CT protocol) 3-phase MDCT protocol for the diagnosis of hepatocellular carcinoma, HCC Proposed protocol based on the use of at least 64 slice scans",
+      "start_page": 42,
+      "end_page": 42
+    },
+    {
+      "heading": "Contrasting material",
+      "text": "Type Iodine-containing non-ionic contrast 300 - 400 mg I/ml Quantity Optimal contrast between hypervascular HCC and surrounding hepatic parenchyma requires a contrast dose of at least 600 mg I per kg body weight Oral contrast agent Possible 1⁄2 water - 1 litre as oral contrast agent Salt water After contrast injection, salt water, 40 ml, is injected at the same rate as the contrast agent Stage Three Stages after intravenous contrast.",
+      "start_page": 42,
+      "end_page": 42
+    },
+    {
+      "heading": "The duration of the contrast injection should be 25-30 minutes.",
+      "text": "Arterial phase Scanning 18 seconds after trigger provides optimal tumor/liver contrast The entire liver is covered Venous Phase Scanning 45 seconds after the trigger (approximately 60 seconds after start of contrast administration) The scan covers the thorax and the entire abdomen and is used to assess wash-out in the tumour and in relation to the portal and hepatic veins, as well as possible metastases Late phase 180 seconds after starting of contrast injection. The entire Liver is covered. Used to assess Clinical Retinal (equilibrium)",
+      "start_page": 42,
+      "end_page": 43
+    },
+    {
+      "heading": "Scanning technology",
+      "text": "T2 weighted sequences mhp. hyperintensity in tumour: 1. coronal HASTE/ single shot FSE T2, 5 - 6 mm sections 2. transverse TSE T2 (foot restored/ fixed drive/ recovery), 5-6 mm cuts with fat suppression T1 sequences weighted mhp, fat/ iron suppression or tumour in TRE 3. transverse 2D/ G inposed phase, 4 - 6D or 4 - 3D arteries. Transversal T1 3D GRE fatty acid (VIBE/ LAVA/ THRIVE), 2-4 mm incision pre-ZIP 5. Repeat after Gadolinium contrast in a single dose of 0.1 mmol/ kg, injection rate 2 ml/ sec with fixed delay, scanning 20.60 and 180 sec after start of the contrast injection. Primovist is not yet approved for marketing in Denmark and therefore requires authorisation from the Danish Medicines Agency. When using liver-specific contrast, the contrast series (series 5) is repeated with recordings in the hepatobiliary phase, i. e. 1  11⁄2 hours after contrast administration in Multihance and 20 minutes (extended to 30 minutes in severe cirrhosis) after contrast injection in Primovista. The diffusion-weighted MRI also increases the sensitivity for HCC and the diffusion weighted sequence is scanned before or after contrast injection, preferably as a free breathing sequence with navigator control, allowing multiple b-values (e. g. 50, 400 and 800) to be scanned at once and an accurate ADC map to be obtained.",
+      "start_page": 43,
+      "end_page": 44
+    },
+    {
+      "heading": "8. on this clinical guideline",
+      "text": "This clinical guideline has been prepared in collaboration between the Danish Multidisciplinary Cancer Groups (DMCG.dk) and the Regional Clinical Quality Development Programme (RKKP). The guidelines effort has been reinforced in connection with Cancer Plan IV and aims to support an evidence-based cancer intervention of high and uniform quality in Denmark. The professional content has been designed and approved by the DMCG relevant to the disease. The Secretariat for Clinic Guidelines in the field of Cancer has made an administrative approval of the content. The guideline contains, in addition to the key recommendations (Chapter 1  quick guide), a description of the basis for the recommendations  including the underlying evidence (Capt. 3), references (Capit. 4) and methods used (Capita. 5). Recommendations marked A are based on the strongest evidence and recommendations marked D on the weakest evidence. Further information on the strength and re-evaluation of the evidence prepared according to the Oxford Centre for Evidence-Based Guidelines for Levels of Evidence and Grades of Patients  can be found here (see Chapter 2  References) and the information requested is also described in the general content of the Guideline, e.g. patient references. See the table of contents for page references to the desired chapters.The guideline template has been prepared on the basis of international quality requirements for the development of clinical guidelines as described by both AGREE II, GRADE and RIGHT.For information on the National Board of Health's cancer packages  description of the entire standard patient treatment course with indication of timing and content requirements  see for the relevant disease area: This guidelines have been prepared with financial support from the National Agency for Health (Cancer Plan IV) and the NCCP.",
+      "start_page": 45,
+      "end_page": 45
+    }
+  ],
+  "_translation_metadata": {
+    "processing_timestamp": "2025-08-27T07:41:17.815359",
+    "source_file": "dlgcg_hepatocellulart-carcinom_v.3.0_admgodk_181224_cleaned.json",
+    "detected_language": "da",
+    "was_translation_needed": true,
+    "translation_strategy": "nllb_translation",
+    "max_input_tokens": 480,
+    "target_chunk_tokens": 300,
+    "overlap_tokens": 40,
+    "table_content_detected": 4,
+    "model_available": true,
+    "translation_decision": "nllb_processing",
+    "model_used": "facebook/nllb-200-3.3B",
+    "quality_scores": {
+      "overall": 0.8674452935686001,
+      "chunk_count": 78,
+      "linguistic": {
+        "fluency": 0.8951803884944618,
+        "accuracy": 0.5224955227719208,
+        "consistency": 0.7199605465209888,
+        "completeness": 0.8673461231119735,
+        "linguistic_composite": 0.7427641073065072
+      },
+      "domain_specific": {
+        "medical_terminology": 0.9871794871794872,
+        "numerical_integrity": 0.7456421565409495,
+        "statistical_terms": 0.9727564102564102,
+        "unit_preservation": 0.9957264957264957,
+        "domain_composite": 0.9135430743127122
+      },
+      "structural": {
+        "format_preservation": 0.9974358974358974,
+        "document_integrity": 1.0,
+        "information_architecture": 1.0,
+        "structural_composite": 0.9989743589743589
+      },
+      "empty_translations": 0,
+      "missing_content_ratio": 0.0
+    },
+    "translation_metadata": {
+      "model_loaded": true,
+      "model_name": "facebook/nllb-200-3.3B",
+      "processing_time_seconds": 649.067812,
+      "chunks_found": true,
+      "total_chunks": 78,
+      "chunks_translated": 151,
+      "chunks_english": 4,
+      "table_chunks_processed": 4,
+      "quality_scores": {
+        "overall": 0.8674452935686001,
+        "chunk_count": 78,
+        "linguistic": {
+          "fluency": 0.8951803884944618,
+          "accuracy": 0.5224955227719208,
+          "consistency": 0.7199605465209888,
+          "completeness": 0.8673461231119735,
+          "linguistic_composite": 0.7427641073065072
+        },
+        "domain_specific": {
+          "medical_terminology": 0.9871794871794872,
+          "numerical_integrity": 0.7456421565409495,
+          "statistical_terms": 0.9727564102564102,
+          "unit_preservation": 0.9957264957264957,
+          "domain_composite": 0.9135430743127122
+        },
+        "structural": {
+          "format_preservation": 0.9974358974358974,
+          "document_integrity": 1.0,
+          "information_architecture": 1.0,
+          "structural_composite": 0.9989743589743589
+        },
+        "empty_translations": 0,
+        "missing_content_ratio": 0.0
+      }
+    },
+    "total_processing_time_seconds": 652.019106,
+    "processing_completed_timestamp": "2025-08-27T07:52:09.834515"
+  }
+}
