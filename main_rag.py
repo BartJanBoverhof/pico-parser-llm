@@ -126,7 +126,7 @@ print("\n=== Step 8: Running NSCLC Retrieval ===")
 
 # Run HTA Population & Comparator retrieval for NSCLC
 print("\n--- Running HTA Population & Comparator retrieval for NSCLC ---")
-rag_nsclc.run_population_comparator_retrieval_for_source_type(
+result_nsclc_hta_pc = rag_nsclc.run_population_comparator_retrieval_for_source_type(
     source_type="hta_submission",
     countries=COUNTRIES,
     indication=case1_indication,
@@ -137,7 +137,7 @@ rag_nsclc.run_population_comparator_retrieval_for_source_type(
 
 # Run HTA Outcomes retrieval for NSCLC
 print("\n--- Running HTA Outcomes retrieval for NSCLC ---")
-rag_nsclc.run_outcomes_retrieval_for_source_type(
+result_nsclc_hta_outcomes = rag_nsclc.run_outcomes_retrieval_for_source_type(
     source_type="hta_submission",
     countries=COUNTRIES,
     indication=case1_indication,
@@ -148,7 +148,7 @@ rag_nsclc.run_outcomes_retrieval_for_source_type(
 
 # Run Clinical Guideline Population & Comparator retrieval for NSCLC
 print("\n--- Running Clinical Guideline Population & Comparator retrieval for NSCLC ---")
-rag_nsclc.run_population_comparator_retrieval_for_source_type(
+result_nsclc_clinical_pc = rag_nsclc.run_population_comparator_retrieval_for_source_type(
     source_type="clinical_guideline",
     countries=COUNTRIES,
     indication=case1_indication,
@@ -160,7 +160,7 @@ rag_nsclc.run_population_comparator_retrieval_for_source_type(
 
 # Run Clinical Guideline Outcomes retrieval for NSCLC
 print("\n--- Running Clinical Guideline Outcomes retrieval for NSCLC ---")
-rag_nsclc.run_outcomes_retrieval_for_source_type(
+result_nsclc_clinical_outcomes = rag_nsclc.run_outcomes_retrieval_for_source_type(
     source_type="clinical_guideline",
     countries=COUNTRIES,
     indication=case1_indication,
@@ -235,55 +235,66 @@ rag_hcc.initialize_retriever(vectorstore_type=VECTORSTORE_TYPE, case="hcc")
 
 # Step 7: Load HCC case configuration
 print("\n=== Step 7: Loading HCC Case Configuration ===")
+case2_config = CASE_CONFIGS["case_2_hcc_advanced_unresectable"]
+case2_indication = case2_config["indication"]
+case2_required_terms = case2_config.get("required_terms_clinical")
+case2_mutation_boost = case2_config.get("mutation_boost_terms", [])
+case2_drug_keywords = case2_config.get("drug_keywords", [])
+
 print(f"HCC Indication: {case2_indication}")
 print(f"HCC Required Terms: {case2_required_terms}")
 print(f"HCC Mutation Boost Terms: {case2_mutation_boost}")
+print(f"HCC Drug Keywords: {case2_drug_keywords}")
 
 # Step 8: Run retrieval for HCC Case
 print("\n=== Step 8: Running HCC Retrieval ===")
 
 # Run HTA Population & Comparator retrieval for HCC
 print("\n--- Running HTA Population & Comparator retrieval for HCC ---")
-rag_hcc.run_population_comparator_retrieval_for_source_type(
+result_hcc_hta_pc = rag_hcc.run_population_comparator_retrieval_for_source_type(
     source_type="hta_submission",
     countries=COUNTRIES,
     indication=case2_indication,
     mutation_boost_terms=case2_mutation_boost,
+    drug_keywords=case2_drug_keywords,
     initial_k=60,
     final_k=22
 )
 
 # Run HTA Outcomes retrieval for HCC
 print("\n--- Running HTA Outcomes retrieval for HCC ---")
-rag_hcc.run_outcomes_retrieval_for_source_type(
+result_hcc_hta_outcomes = rag_hcc.run_outcomes_retrieval_for_source_type(
     source_type="hta_submission",
     countries=COUNTRIES,
     indication=case2_indication,
     mutation_boost_terms=case2_mutation_boost,
+    drug_keywords=case2_drug_keywords,
     initial_k=60,
     final_k=22
 )
 
 # Run Clinical Guideline Population & Comparator retrieval for HCC
 print("\n--- Running Clinical Guideline Population & Comparator retrieval for HCC ---")
-rag_hcc.run_population_comparator_retrieval_for_source_type(
+result_hcc_clinical_pc = rag_hcc.run_population_comparator_retrieval_for_source_type(
     source_type="clinical_guideline",
     countries=COUNTRIES,
     indication=case2_indication,
     required_terms=case2_required_terms,
     mutation_boost_terms=case2_mutation_boost,
+    drug_keywords=case2_drug_keywords,
     initial_k=60,
     final_k=12
 )
 
 # Run Clinical Guideline Outcomes retrieval for HCC
 print("\n--- Running Clinical Guideline Outcomes retrieval for HCC ---")
-rag_hcc.run_outcomes_retrieval_for_source_type(
+result_hcc_clinical_outcomes = rag_hcc.run_outcomes_retrieval_for_source_type(
     source_type="clinical_guideline",
     countries=COUNTRIES,
     indication=case2_indication,
     required_terms=case2_required_terms,
     mutation_boost_terms=case2_mutation_boost,
+    drug_keywords=case2_drug_keywords,
     initial_k=60,
     final_k=12
 )
@@ -363,88 +374,40 @@ else:
     print("Warning: results/NSCLC/consolidated directory not found.")
     print("Make sure the NSCLC consolidation step completed successfully.")
 
-# HCC Analysis (if HCC processing was completed)
-if 'rag_hcc' in locals():
-    print("\n=== HCC Analysis ===")
-    hcc_consolidated_dir = Path("results/HCC/consolidated")
-    if hcc_consolidated_dir.exists():
-        # Get the most recent PICO and Outcomes files for HCC
-        pico_files = list(hcc_consolidated_dir.glob("*consolidated_picos*.json"))
-        outcome_files = list(hcc_consolidated_dir.glob("*consolidated_outcomes*.json"))
+# HCC Analysis
+print("\n=== HCC Analysis ===")
+hcc_consolidated_dir = Path("results/HCC/consolidated")
+if hcc_consolidated_dir.exists():
+    # Get the most recent PICO and Outcomes files for HCC
+    pico_files = list(hcc_consolidated_dir.glob("*consolidated_picos*.json"))
+    outcome_files = list(hcc_consolidated_dir.glob("*consolidated_outcomes*.json"))
+    
+    if pico_files and outcome_files:
+        # Sort by modification time and get the most recent
+        pico_file = max(pico_files, key=os.path.getmtime)
+        outcome_file = max(outcome_files, key=os.path.getmtime)
         
-        if pico_files and outcome_files:
-            # Sort by modification time and get the most recent
-            pico_file = max(pico_files, key=os.path.getmtime)
-            outcome_file = max(outcome_files, key=os.path.getmtime)
+        print(f"Analyzing HCC PICO data from: {pico_file}")
+        print(f"Analyzing HCC Outcomes data from: {outcome_file}")
+        print()
+        
+        try:
+            # Run comprehensive analysis for HCC
+            pico_analyzer_hcc, outcome_analyzer_hcc, visualizer_hcc = run_complete_analysis(
+                pico_file_path=str(pico_file),
+                outcome_file_path=str(outcome_file)
+            )
+            print("HCC analysis completed successfully!")
+        except Exception as e:
+            print(f"Error in HCC analysis: {e}")
             
-            print(f"Analyzing HCC PICO data from: {pico_file}")
-            print(f"Analyzing HCC Outcomes data from: {outcome_file}")
-            print()
-            
-            try:
-                # Run comprehensive analysis for HCC
-                pico_analyzer_hcc, outcome_analyzer_hcc, visualizer_hcc = run_complete_analysis(
-                    pico_file_path=str(pico_file),
-                    outcome_file_path=str(outcome_file)
-                )
-                print("HCC analysis completed successfully!")
-            except Exception as e:
-                print(f"Error in HCC analysis: {e}")
-                
-        else:
-            print("Warning: Could not find consolidated HCC PICO or Outcomes files.")
-            if not pico_files:
-                print("Missing HCC PICO files in results/HCC/consolidated/")
-            if not outcome_files:
-                print("Missing HCC Outcomes files in results/HCC/consolidated/")
-                
     else:
-        print("Warning: results/HCC/consolidated directory not found.")
-        print("Make sure the HCC consolidation step completed successfully.")
+        print("Warning: Could not find consolidated HCC PICO or Outcomes files.")
+        if not pico_files:
+            print("Missing HCC PICO files in results/HCC/consolidated/")
+        if not outcome_files:
+            print("Missing HCC Outcomes files in results/HCC/consolidated/")
+            
 else:
-    print("\nHCC processing was skipped, so no HCC analysis to perform.")
-
-# ============================================================================
-# SUMMARY
-# ============================================================================
-
-print("\n" + "="*80)
-print("PIPELINE EXECUTION SUMMARY")
-print("="*80)
-
-print("\nProcessed Cases:")
-print(f"✓ NSCLC: Complete pipeline executed")
-if 'rag_hcc' in locals():
-    print(f"✓ HCC: Complete pipeline executed")
-else:
-    print(f"⚠ HCC: Skipped (no chunked data found)")
-
-print(f"\nVectorstore Type: {VECTORSTORE_TYPE}")
-print(f"Model Used: {MODEL}")
-print(f"Countries Processed: {', '.join(COUNTRIES)}")
-
-print(f"\nResults Structure:")
-print(f"├── results/NSCLC/")
-print(f"│   ├── chunks/")
-print(f"│   ├── PICO/")
-print(f"│   └── consolidated/")
-if 'rag_hcc' in locals():
-    print(f"├── results/HCC/")
-    print(f"│   ├── chunks/")
-    print(f"│   ├── PICO/")
-    print(f"│   └── consolidated/")
-
-print(f"\nVectorstores Created:")
-print(f"├── data/vectorstore/NSCLC_{VECTORSTORE_TYPE}_vectorstore/")
-if 'rag_hcc' in locals():
-    print(f"├── data/vectorstore/HCC_{VECTORSTORE_TYPE}_vectorstore/")
-
-print("\nAnalysis Output:")
-print("- Check the results/*/visualizations/ directories for:")
-print("  - PNG visualization files")
-print("  - Analysis summary reports")
-print("  - Statistical data matrices")
-
-print("\n" + "="*80)
-print("RAG PIPELINE EXECUTION COMPLETE")
-print("="*80)
+    print("Warning: results/HCC/consolidated directory not found.")
+    print("Make sure the HCC consolidation step completed successfully.")

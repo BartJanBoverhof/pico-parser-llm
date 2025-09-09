@@ -446,8 +446,10 @@ CASE_CONFIGS = {
     },
     "case_2_hcc_advanced_unresectable": {
         "indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
-        "required_terms_clinical": None,
-        "mutation_boost_terms": [],
+        "required_terms_clinical": [
+            [r'\bhcc\b', r'\bHCC\b', r'\bhepatocellular\b', r'\bhepatocellular carcinoma\b']
+        ],
+        "mutation_boost_terms": ["advanced", "unresectable", "hepatocellular carcinoma", "hcc", "inoperable"],
         "drug_keywords": ["sorafenib", "lenvatinib", "atezolizumab", "bevacizumab", "regorafenib", "cabozantinib"]
     }
 }

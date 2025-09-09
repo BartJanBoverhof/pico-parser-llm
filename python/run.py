@@ -419,20 +419,26 @@ class RagPipeline:
             print("Retriever not initialized. Please run initialize_retriever first.")
             return []
         
-        result = self.retriever.chroma_collection.get(
-            limit=10000,
-            include=['metadatas']
-        )
-        
-        countries = set()
-        for metadata in result['metadatas']:
-            if metadata and 'country' in metadata and metadata['country'] not in ['unknown', None, '']:
-                countries.add(metadata['country'])
-        
-        return sorted(list(countries))
+        try:
+            result = self.retriever.chroma_collection.get(
+                limit=10000,
+                include=['metadatas']
+            )
+            
+            countries = set()
+            for metadata in result['metadatas']:
+                if metadata and 'country' in metadata and metadata['country'] not in ['unknown', None, '']:
+                    countries.add(metadata['country'])
+            
+            country_list = sorted(list(countries))
+            case_info = f" for case '{self.case}'" if self.case else ""
+            print(f"Detected {len(country_list)} countries in vectorstore{case_info}: {', '.join(country_list)}")
+            return country_list
+            
+        except Exception as e:
+            print(f"Error retrieving countries from vectorstore: {e}")
+            return []
 
-    # [Rest of the methods remain the same as in the original class, but now they use the case-aware paths]
-    
     def run_population_comparator_retrieval_for_source_type(
         self,
         source_type: str,
@@ -453,14 +459,13 @@ class RagPipeline:
             print("Retriever not initialized. Please run initialize_retriever first.")
             return None
         
+        # Handle "ALL" countries by automatically detecting available countries
         if any(country == "ALL" for country in countries):
             all_countries = self.get_all_countries()
             if not all_countries:
                 print("No countries detected in the vectorstore. Please check your data.")
                 return None
             countries = all_countries
-            case_info = f" for case '{self.case}'" if self.case else ""
-            print(f"Retrieving {source_type} population/comparator chunks for all available countries: {', '.join(countries)}{case_info}")
         
         if source_type not in self.source_type_configs:
             raise ValueError(f"Unsupported source_type: {source_type}. Available types: {list(self.source_type_configs.keys())}")
@@ -504,8 +509,13 @@ class RagPipeline:
             indication=indication
         )
 
+        summary = {country: len(chunks) for country, chunks in chunks_by_country.items()}
+        total_chunks = sum(summary.values())
+        
+        print(f"Retrieved chunks by country: {summary}")
+        
         return {
-            "summary": {country: len(chunks) for country, chunks in chunks_by_country.items()},
+            "summary": summary,
             "chunks_by_country": chunks_by_country,
             "timestamp": timestamp
         }
@@ -530,14 +540,13 @@ class RagPipeline:
             print("Retriever not initialized. Please run initialize_retriever first.")
             return None
         
+        # Handle "ALL" countries by automatically detecting available countries
         if any(country == "ALL" for country in countries):
             all_countries = self.get_all_countries()
             if not all_countries:
                 print("No countries detected in the vectorstore. Please check your data.")
                 return None
             countries = all_countries
-            case_info = f" for case '{self.case}'" if self.case else ""
-            print(f"Retrieving {source_type} outcomes chunks for all available countries: {', '.join(countries)}{case_info}")
         
         if source_type not in self.source_type_configs:
             raise ValueError(f"Unsupported source_type: {source_type}. Available types: {list(self.source_type_configs.keys())}")
@@ -581,14 +590,134 @@ class RagPipeline:
             indication=indication
         )
 
+        summary = {country: len(chunks) for country, chunks in chunks_by_country.items()}
+        total_chunks = sum(summary.values())
+        
+        print(f"Retrieved chunks by country: {summary}")
+
         return {
-            "summary": {country: len(chunks) for country, chunks in chunks_by_country.items()},
+            "summary": summary,
             "chunks_by_country": chunks_by_country,
             "timestamp": timestamp
         }
 
-    # [Additional methods follow the same pattern - they remain largely unchanged but now use case-aware paths]
-    
+    def run_pico_extraction_for_source_type(
+        self,
+        source_type: str,
+        indication: str,
+        countries: Optional[List[str]] = None
+    ):
+        """
+        Run PICO extraction for a specific source type using the most recent retrieval results.
+        
+        Args:
+            source_type: Source type to extract PICOs for
+            indication: Medical indication
+            countries: List of countries (optional, will use available data if not specified)
+            
+        Returns:
+            Dictionary with extraction results
+        """
+        case_info = f" for case '{self.case}'" if self.case else ""
+        
+        if source_type == "hta_submission":
+            if self.pico_extractor_hta is None:
+                print(f"HTA PICO extractor not initialized{case_info}. Please run initialize_pico_extractors first.")
+                return None
+            extractor = self.pico_extractor_hta
+        elif source_type == "clinical_guideline":
+            if self.pico_extractor_clinical is None:
+                print(f"Clinical guideline PICO extractor not initialized{case_info}. Please run initialize_pico_extractors first.")
+                return None
+            extractor = self.pico_extractor_clinical
+        else:
+            print(f"Unsupported source type: {source_type}")
+            return None
+        
+        # Find the most recent retrieval files for this source type
+        population_comparator_file = None
+        outcomes_file = None
+        
+        # Look for population/comparator retrieval files
+        pattern = f"{source_type}_population_comparator_*_retrieval_results.json"
+        import glob
+        pc_files = glob.glob(os.path.join(self.path_chunks, pattern))
+        if pc_files:
+            population_comparator_file = max(pc_files, key=os.path.getmtime)
+        
+        # Look for outcomes retrieval files
+        pattern = f"{source_type}_outcomes_*_retrieval_results.json"
+        outcomes_files = glob.glob(os.path.join(self.path_chunks, pattern))
+        if outcomes_files:
+            outcomes_file = max(outcomes_files, key=os.path.getmtime)
+        
+        if not population_comparator_file and not outcomes_file:
+            print(f"No retrieval result files found for {source_type}{case_info}. Please run retrieval first.")
+            return None
+            
+        print(f"Extracting PICOs from {source_type}{case_info}...")
+        if population_comparator_file:
+            print(f"Using population/comparator data from: {os.path.basename(population_comparator_file)}")
+        if outcomes_file:
+            print(f"Using outcomes data from: {os.path.basename(outcomes_file)}")
+        
+        # Run the extraction
+        results = extractor.extract_picos_from_retrieval_files(
+            population_comparator_file=population_comparator_file,
+            outcomes_file=outcomes_file,
+            indication=indication,
+            countries=countries
+        )
+        
+        return results
+
+    def run_pico_consolidation(
+        self,
+        source_types: List[str],
+        indication: Optional[str] = None
+    ):
+        """
+        Run PICO and outcomes consolidation across multiple source types.
+        
+        Args:
+            source_types: List of source types to consolidate
+            indication: Medical indication (optional)
+            
+        Returns:
+            Dictionary with consolidation results
+        """
+        if self.pico_consolidator is None:
+            print("PICO consolidator not initialized. Please run initialize_pico_consolidator first.")
+            return None
+        
+        case_info = f" for case '{self.case}'" if self.case else ""
+        print(f"Running PICO and outcomes consolidation across {len(source_types)} source types{case_info}...")
+        
+        # Find the most recent PICO extraction files for each source type
+        pico_files = []
+        for source_type in source_types:
+            pattern = f"{source_type}_*_picos_*.json"
+            import glob
+            files = glob.glob(os.path.join(self.path_pico, pattern))
+            if files:
+                most_recent = max(files, key=os.path.getmtime)
+                pico_files.append(most_recent)
+                print(f"Found PICO file for {source_type}: {os.path.basename(most_recent)}")
+            else:
+                print(f"Warning: No PICO extraction files found for {source_type}")
+        
+        if not pico_files:
+            print(f"No PICO extraction files found for consolidation{case_info}. Please run PICO extraction first.")
+            return None
+        
+        # Run consolidation
+        results = self.pico_consolidator.consolidate_picos_and_outcomes(
+            pico_files=pico_files,
+            indication=indication
+        )
+        
+        return results
+
     def run_case_based_pipeline_with_retrieval(
         self,
         case_config: Dict[str, Any],
@@ -722,5 +851,3 @@ class RagPipeline:
                     self.path_chunks = os.path.join(self.path_results, "chunks")
                     self.path_pico = os.path.join(self.path_results, "PICO")
                     self.path_consolidated = os.path.join(self.path_results, "consolidated")
-
-    # [Include all other methods from the original class - they remain largely unchanged]
