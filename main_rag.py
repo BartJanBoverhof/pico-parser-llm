@@ -24,7 +24,7 @@ MODEL = "gpt-4.1"
 COUNTRIES = ["ALL"]  # Use "ALL" to process all available countries
 
 # Define cases to process
-CASES = ["NSCLC", "HCC"]  # Add your case identifiers here
+CASES = ["nsclc", "hcc"]
 
 # Validate OpenAI API key
 validate_api_key()
@@ -33,23 +33,31 @@ validate_api_key()
 tree = FolderTree(root_path=".")
 tree.generate()
 
-# Step 1: Process PDFs (if needed - usually done once for all cases)
-print("\n=== Step 1: PDF Processing ===")
+# ============================================================================
+# COMMON PREPROCESSING STEPS (Done once for all cases)
+# ============================================================================
+
+print("\n" + "="*80)
+print("COMMON PREPROCESSING STEPS")
+print("="*80)
+
+# Step 1: Process PDFs
+print("\n=== Step 1: Processing PDFs ===")
 PDFProcessor.process_pdfs(
     input_dir=PDF_PATH,
     output_dir=CLEAN_PATH
 )
 
-# Step 2: Translate documents (if needed - usually done once for all cases)
-print("\n=== Step 2: Translation ===")
+# Step 2: Translate documents
+print("\n=== Step 2: Translating Documents ===")
 translator = Translator(
     input_dir=CLEAN_PATH,
     output_dir=TRANSLATED_PATH
 )
 translator.translate_documents()
 
-# Step 3: Clean translated documents (if needed - usually done once for all cases)
-print("\n=== Step 3: Post-Cleaning ===")
+# Step 3: Clean translated documents 
+print("\n=== Step 3: Post-Cleaning Translated Documents ===")
 cleaner = PostCleaner(
     input_dir=TRANSLATED_PATH,
     output_dir=POST_CLEANED_PATH,
@@ -57,8 +65,8 @@ cleaner = PostCleaner(
 )
 cleaner.clean_all_documents()
 
-# Step 4: Chunk documents (if needed - usually done once for all cases)
-print("\n=== Step 4: Chunking ===")
+# Step 4: Chunk documents (use cleaned translations)
+print("\n=== Step 4: Chunking Documents ===")
 chunker = Chunker(
     json_folder_path=POST_CLEANED_PATH,
     output_dir=CHUNKED_PATH,
@@ -67,43 +75,29 @@ chunker = Chunker(
 )
 chunker.run_pipeline()
 
-# Step 5: Create case-based vectorstores
-print("\n=== Step 5: Case-Based Vectorization ===")
+print("\n" + "="*80)
+print("COMMON PREPROCESSING COMPLETED")
+print("="*80)
 
-# Option A: Vectorize all cases automatically (if your chunked data is organized in case subdirectories)
-print("\n--- Option A: Auto-detect and vectorize all cases ---")
-rag_auto = RagPipeline(
-    model=MODEL,
-    vectorstore_type=VECTORSTORE_TYPE,
-    source_type_configs=SOURCE_TYPE_CONFIGS,
-    consolidation_configs=CONSOLIDATION_CONFIGS,
-    chunked_path=CHUNKED_PATH,
-    vectorstore_path=VECTORSTORE_PATH
+# ============================================================================
+# CASE-SPECIFIC PROCESSING: NSCLC
+# ============================================================================
+# Step 5: Vectorize NSCLC documents
+print("\n=== Step 5: Creating NSCLC Vectorstore ===")
+vectoriser_nsclc = Vectoriser(
+    chunked_folder_path=CHUNKED_PATH,
+    embedding_choice=VECTORSTORE_TYPE,
+    db_parent_dir=VECTORSTORE_PATH,
+    case="nsclc"
 )
+vectorstore_nsclc = vectoriser_nsclc.run_pipeline()
 
-# Check what cases are available
-available_cases = rag_auto.get_available_cases()
-print(f"Available cases detected: {available_cases}")
-
-# Vectorize all detected cases
-if available_cases:
-    rag_auto.vectorize_all_cases(embeddings_type=VECTORSTORE_TYPE)
-else:
-    print("No case subdirectories found. Creating default vectorstore...")
-    rag_auto.vectorize_documents(embeddings_type=VECTORSTORE_TYPE)
-
-# Step 6: List all created vectorstores
-print("\n=== Step 6: Available Vectorstores ===")
-rag_auto.list_available_vectorstores()
-
-# Step 7: Example of running pipeline for a specific case (NSCLC)
-print("\n=== Step 7: Running Pipeline for NSCLC Case ===")
-
-# Initialize case-specific RAG pipeline
+# Step 6: Initialize NSCLC RAG system
+print("\n=== Step 6: Initializing NSCLC RAG System ===")
 rag_nsclc = RagPipeline(
     model=MODEL,
     vectorstore_type=VECTORSTORE_TYPE,
-    case="NSCLC",
+    case="nsclc",
     source_type_configs=SOURCE_TYPE_CONFIGS,
     consolidation_configs=CONSOLIDATION_CONFIGS,
     chunked_path=CHUNKED_PATH,
@@ -111,140 +105,231 @@ rag_nsclc = RagPipeline(
 )
 
 # Load the NSCLC vectorstore
-rag_nsclc.initialize_retriever(vectorstore_type=VECTORSTORE_TYPE, case="NSCLC")
+rag_nsclc.vectorize_documents(embeddings_type=VECTORSTORE_TYPE, case="nsclc")
+
+# Initialize the retriever with the NSCLC vectorstore
+rag_nsclc.initialize_retriever(vectorstore_type=VECTORSTORE_TYPE, case="nsclc")
 
 # Get NSCLC case configuration
-nsclc_config = CASE_CONFIGS["case_1_nsclc_krasg12c_monotherapy_progressed"]
-nsclc_indication = nsclc_config["indication"]
-nsclc_required_terms = nsclc_config.get("required_terms_clinical")
-nsclc_mutation_boost = nsclc_config.get("mutation_boost_terms", [])
+print("\n=== Step 7: Loading NSCLC Case Configuration ===")
+case1_config = CASE_CONFIGS["case_1_nsclc_krasg12c_monotherapy_progressed"]
+case1_indication = case1_config["indication"]
+case1_required_terms = case1_config.get("required_terms_clinical")
+case1_mutation_boost = case1_config.get("mutation_boost_terms", [])
 
-# Run retrieval for NSCLC case
-print("\n--- Running NSCLC Retrieval ---")
+print(f"NSCLC Indication: {case1_indication}")
+print(f"NSCLC Required Terms: {case1_required_terms}")
+print(f"NSCLC Mutation Boost Terms: {case1_mutation_boost}")
 
-# Run HTA Population & Comparator retrieval
-print("Running HTA Population & Comparator retrieval for NSCLC...")
+# Step 8: Run retrieval for NSCLC Case
+print("\n=== Step 8: Running NSCLC Retrieval ===")
+
+# Run HTA Population & Comparator retrieval for NSCLC
+print("\n--- Running HTA Population & Comparator retrieval for NSCLC ---")
 rag_nsclc.run_population_comparator_retrieval_for_source_type(
     source_type="hta_submission",
     countries=COUNTRIES,
-    indication=nsclc_indication,
-    mutation_boost_terms=nsclc_mutation_boost,
+    indication=case1_indication,
+    mutation_boost_terms=case1_mutation_boost,
     initial_k=60,
     final_k=22
 )
 
-# Run HTA Outcomes retrieval
-print("Running HTA Outcomes retrieval for NSCLC...")
+# Run HTA Outcomes retrieval for NSCLC
+print("\n--- Running HTA Outcomes retrieval for NSCLC ---")
 rag_nsclc.run_outcomes_retrieval_for_source_type(
     source_type="hta_submission",
     countries=COUNTRIES,
-    indication=nsclc_indication,
-    mutation_boost_terms=nsclc_mutation_boost,
+    indication=case1_indication,
+    mutation_boost_terms=case1_mutation_boost,
     initial_k=60,
     final_k=22
 )
 
-# Run Clinical Guideline retrievals
-print("Running Clinical Guideline retrievals for NSCLC...")
+# Run Clinical Guideline Population & Comparator retrieval for NSCLC
+print("\n--- Running Clinical Guideline Population & Comparator retrieval for NSCLC ---")
 rag_nsclc.run_population_comparator_retrieval_for_source_type(
     source_type="clinical_guideline",
     countries=COUNTRIES,
-    indication=nsclc_indication,
-    required_terms=nsclc_required_terms,
-    mutation_boost_terms=nsclc_mutation_boost,
+    indication=case1_indication,
+    required_terms=case1_required_terms,
+    mutation_boost_terms=case1_mutation_boost,
     initial_k=60,
     final_k=12
 )
 
+# Run Clinical Guideline Outcomes retrieval for NSCLC
+print("\n--- Running Clinical Guideline Outcomes retrieval for NSCLC ---")
 rag_nsclc.run_outcomes_retrieval_for_source_type(
     source_type="clinical_guideline",
     countries=COUNTRIES,
-    indication=nsclc_indication,
-    required_terms=nsclc_required_terms,
-    mutation_boost_terms=nsclc_mutation_boost,
+    indication=case1_indication,
+    required_terms=case1_required_terms,
+    mutation_boost_terms=case1_mutation_boost,
     initial_k=60,
     final_k=12
 )
 
-# Initialize PICO extractors and run extractions
-print("\n--- Running NSCLC PICO Extraction ---")
+# Step 9: Initialize NSCLC PICO extractors
+print("\n=== Step 9: Initializing NSCLC PICO Extractors ===")
 rag_nsclc.initialize_pico_extractors()
 
-# Extract PICOs from HTA submissions
-print("Extracting NSCLC HTA Submission PICOs...")
+# Step 10: Run PICO extraction for NSCLC
+print("\n=== Step 10: Running NSCLC PICO Extraction ===")
+
+# Extract PICOs from HTA submissions for NSCLC
+print("\n--- Extracting NSCLC HTA Submission PICOs ---")
 extracted_picos_hta_nsclc = rag_nsclc.run_pico_extraction_for_source_type(
     source_type="hta_submission",
-    indication=nsclc_indication
+    indication=case1_indication
 )
 
-# Extract PICOs from clinical guidelines
-print("Extracting NSCLC Clinical Guideline PICOs...")
+# Extract PICOs from clinical guidelines for NSCLC
+print("\n--- Extracting NSCLC Clinical Guideline PICOs ---")
 extracted_picos_clinical_nsclc = rag_nsclc.run_pico_extraction_for_source_type(
     source_type="clinical_guideline",
-    indication=nsclc_indication
+    indication=case1_indication
 )
 
-# Run consolidation
-print("\n--- Running NSCLC PICO Consolidation ---")
+# Step 11: Run PICO and Outcomes Consolidation for NSCLC
+print("\n=== Step 11: Running NSCLC PICO and Outcomes Consolidation ===")
+
+# Initialize the NSCLC consolidator
 rag_nsclc.initialize_pico_consolidator()
+
+# Run consolidation for both source types for NSCLC
+print("\n--- Consolidating NSCLC PICOs and Outcomes across all sources ---")
 consolidation_results_nsclc = rag_nsclc.run_pico_consolidation(
     source_types=["hta_submission", "clinical_guideline"]
 )
 
-# Step 8: Example of running pipeline for HCC case (if configured)
-print("\n=== Step 8: Running Pipeline for HCC Case (Example) ===")
+# ============================================================================
+# CASE-SPECIFIC PROCESSING: HCC
+# ============================================================================
+# Step 5: Vectorize HCC documents
+print("\n=== Step 5: Creating HCC Vectorstore ===")
+vectoriser_hcc = Vectoriser(
+    chunked_folder_path=CHUNKED_PATH,
+    embedding_choice=VECTORSTORE_TYPE,
+    db_parent_dir=VECTORSTORE_PATH,
+    case="hcc"
+)
 
-if "HCC" in available_cases:
-    # Initialize HCC-specific RAG pipeline
-    rag_hcc = RagPipeline(
-        model=MODEL,
-        vectorstore_type=VECTORSTORE_TYPE,
-        case="HCC",
-        source_type_configs=SOURCE_TYPE_CONFIGS,
-        consolidation_configs=CONSOLIDATION_CONFIGS,
-        chunked_path=CHUNKED_PATH,
-        vectorstore_path=VECTORSTORE_PATH
-    )
-    
-    # Load the HCC vectorstore
-    rag_hcc.initialize_retriever(vectorstore_type=VECTORSTORE_TYPE, case="HCC")
-    
-    # For HCC, you would define similar case configuration
-    # This is just an example - you'd need to create HCC_CASE_CONFIG
-    hcc_indication = "hepatocellular carcinoma"  # Example indication
-    
-    print("Running HCC retrieval and extraction pipeline...")
-    # [Similar retrieval and extraction steps for HCC]
-    
-else:
-    print("HCC case not found in available cases. Skipping HCC pipeline.")
+# Step 6: Initialize HCC RAG system
+print("\n=== Step 6: Initializing HCC RAG System ===")
+rag_hcc = RagPipeline(
+    model=MODEL,
+    vectorstore_type=VECTORSTORE_TYPE,
+    case="hcc",
+    source_type_configs=SOURCE_TYPE_CONFIGS,
+    consolidation_configs=CONSOLIDATION_CONFIGS,
+    chunked_path=CHUNKED_PATH,
+    vectorstore_path=VECTORSTORE_PATH
+)
 
-# Step 9: Cross-case analysis (optional)
-print("\n=== Step 9: Cross-Case Analysis ===")
+# Load the HCC vectorstore
+rag_hcc.vectorize_documents(embeddings_type=VECTORSTORE_TYPE, case="hcc")
 
-# Example: Compare vectorstores from different cases
-print("Comparing vectorstores across cases...")
+# Initialize the retriever with the HCC vectorstore
+rag_hcc.initialize_retriever(vectorstore_type=VECTORSTORE_TYPE, case="hcc")
 
-for case in available_cases:
-    print(f"\n--- Case: {case} ---")
-    vectorstore = rag_auto.load_vectorstore_for_case(case, VECTORSTORE_TYPE)
-    if vectorstore:
-        # Get some statistics
-        result = vectorstore.get(limit=5, include=['metadatas'])
-        print(f"Sample documents: {len(result['ids'])}")
-        if result['metadatas']:
-            countries = set(md.get('country', 'unknown') for md in result['metadatas'])
-            source_types = set(md.get('source_type', 'unknown') for md in result['metadatas'])
-            print(f"Countries: {countries}")
-            print(f"Source types: {source_types}")
+# Step 7: Load HCC case configuration
+print("\n=== Step 7: Loading HCC Case Configuration ===")
+print(f"HCC Indication: {case2_indication}")
+print(f"HCC Required Terms: {case2_required_terms}")
+print(f"HCC Mutation Boost Terms: {case2_mutation_boost}")
 
-# Step 10: Analysis and Visualization (for NSCLC as example)
-print("\n=== Step 10: Analysis and Visualization ===")
+# Step 8: Run retrieval for HCC Case
+print("\n=== Step 8: Running HCC Retrieval ===")
 
-# Find the most recent consolidated files for NSCLC
+# Run HTA Population & Comparator retrieval for HCC
+print("\n--- Running HTA Population & Comparator retrieval for HCC ---")
+rag_hcc.run_population_comparator_retrieval_for_source_type(
+    source_type="hta_submission",
+    countries=COUNTRIES,
+    indication=case2_indication,
+    mutation_boost_terms=case2_mutation_boost,
+    initial_k=60,
+    final_k=22
+)
+
+# Run HTA Outcomes retrieval for HCC
+print("\n--- Running HTA Outcomes retrieval for HCC ---")
+rag_hcc.run_outcomes_retrieval_for_source_type(
+    source_type="hta_submission",
+    countries=COUNTRIES,
+    indication=case2_indication,
+    mutation_boost_terms=case2_mutation_boost,
+    initial_k=60,
+    final_k=22
+)
+
+# Run Clinical Guideline Population & Comparator retrieval for HCC
+print("\n--- Running Clinical Guideline Population & Comparator retrieval for HCC ---")
+rag_hcc.run_population_comparator_retrieval_for_source_type(
+    source_type="clinical_guideline",
+    countries=COUNTRIES,
+    indication=case2_indication,
+    required_terms=case2_required_terms,
+    mutation_boost_terms=case2_mutation_boost,
+    initial_k=60,
+    final_k=12
+)
+
+# Run Clinical Guideline Outcomes retrieval for HCC
+print("\n--- Running Clinical Guideline Outcomes retrieval for HCC ---")
+rag_hcc.run_outcomes_retrieval_for_source_type(
+    source_type="clinical_guideline",
+    countries=COUNTRIES,
+    indication=case2_indication,
+    required_terms=case2_required_terms,
+    mutation_boost_terms=case2_mutation_boost,
+    initial_k=60,
+    final_k=12
+)
+
+# Step 9: Initialize HCC PICO extractors
+print("\n=== Step 9: Initializing HCC PICO Extractors ===")
+rag_hcc.initialize_pico_extractors()
+
+# Step 10: Run PICO extraction for HCC
+print("\n=== Step 10: Running HCC PICO Extraction ===")
+
+# Extract PICOs from HTA submissions for HCC
+print("\n--- Extracting HCC HTA Submission PICOs ---")
+extracted_picos_hta_hcc = rag_hcc.run_pico_extraction_for_source_type(
+    source_type="hta_submission",
+    indication=case2_indication
+)
+
+# Extract PICOs from clinical guidelines for HCC
+print("\n--- Extracting HCC Clinical Guideline PICOs ---")
+extracted_picos_clinical_hcc = rag_hcc.run_pico_extraction_for_source_type(
+    source_type="clinical_guideline",
+    indication=case2_indication
+)
+
+# Step 11: Run PICO and Outcomes Consolidation for HCC
+print("\n=== Step 11: Running HCC PICO and Outcomes Consolidation ===")
+
+# Initialize the HCC consolidator
+rag_hcc.initialize_pico_consolidator()
+
+# Run consolidation for both source types for HCC
+print("\n--- Consolidating HCC PICOs and Outcomes across all sources ---")
+consolidation_results_hcc = rag_hcc.run_pico_consolidation(
+    source_types=["hta_submission", "clinical_guideline"]
+)
+
+# ============================================================================
+# ANALYSIS AND VISUALIZATION
+# ============================================================================
+
+# NSCLC Analysis
+print("\n=== NSCLC Analysis ===")
 nsclc_consolidated_dir = Path("results/NSCLC/consolidated")
 if nsclc_consolidated_dir.exists():
-    # Get the most recent PICO and Outcomes files
+    # Get the most recent PICO and Outcomes files for NSCLC
     pico_files = list(nsclc_consolidated_dir.glob("*consolidated_picos*.json"))
     outcome_files = list(nsclc_consolidated_dir.glob("*consolidated_outcomes*.json"))
     
@@ -255,27 +340,111 @@ if nsclc_consolidated_dir.exists():
         
         print(f"Analyzing NSCLC PICO data from: {pico_file}")
         print(f"Analyzing NSCLC Outcomes data from: {outcome_file}")
+        print()
         
-        # Run comprehensive analysis for NSCLC
         try:
-            pico_analyzer, outcome_analyzer, visualizer = run_complete_analysis(
+            # Run comprehensive analysis for NSCLC
+            pico_analyzer_nsclc, outcome_analyzer_nsclc, visualizer_nsclc = run_complete_analysis(
                 pico_file_path=str(pico_file),
                 outcome_file_path=str(outcome_file)
             )
             print("NSCLC analysis completed successfully!")
         except Exception as e:
             print(f"Error in NSCLC analysis: {e}")
+            
     else:
-        print("Warning: Could not find NSCLC consolidated files.")
+        print("Warning: Could not find consolidated NSCLC PICO or Outcomes files.")
+        if not pico_files:
+            print("Missing NSCLC PICO files in results/NSCLC/consolidated/")
+        if not outcome_files:
+            print("Missing NSCLC Outcomes files in results/NSCLC/consolidated/")
+            
 else:
-    print("Warning: NSCLC consolidated directory not found.")
+    print("Warning: results/NSCLC/consolidated directory not found.")
+    print("Make sure the NSCLC consolidation step completed successfully.")
+
+# HCC Analysis (if HCC processing was completed)
+if 'rag_hcc' in locals():
+    print("\n=== HCC Analysis ===")
+    hcc_consolidated_dir = Path("results/HCC/consolidated")
+    if hcc_consolidated_dir.exists():
+        # Get the most recent PICO and Outcomes files for HCC
+        pico_files = list(hcc_consolidated_dir.glob("*consolidated_picos*.json"))
+        outcome_files = list(hcc_consolidated_dir.glob("*consolidated_outcomes*.json"))
+        
+        if pico_files and outcome_files:
+            # Sort by modification time and get the most recent
+            pico_file = max(pico_files, key=os.path.getmtime)
+            outcome_file = max(outcome_files, key=os.path.getmtime)
+            
+            print(f"Analyzing HCC PICO data from: {pico_file}")
+            print(f"Analyzing HCC Outcomes data from: {outcome_file}")
+            print()
+            
+            try:
+                # Run comprehensive analysis for HCC
+                pico_analyzer_hcc, outcome_analyzer_hcc, visualizer_hcc = run_complete_analysis(
+                    pico_file_path=str(pico_file),
+                    outcome_file_path=str(outcome_file)
+                )
+                print("HCC analysis completed successfully!")
+            except Exception as e:
+                print(f"Error in HCC analysis: {e}")
+                
+        else:
+            print("Warning: Could not find consolidated HCC PICO or Outcomes files.")
+            if not pico_files:
+                print("Missing HCC PICO files in results/HCC/consolidated/")
+            if not outcome_files:
+                print("Missing HCC Outcomes files in results/HCC/consolidated/")
+                
+    else:
+        print("Warning: results/HCC/consolidated directory not found.")
+        print("Make sure the HCC consolidation step completed successfully.")
+else:
+    print("\nHCC processing was skipped, so no HCC analysis to perform.")
+
+# ============================================================================
+# SUMMARY
+# ============================================================================
 
 print("\n" + "="*80)
-print("CASE-BASED RAG PIPELINE EXECUTION COMPLETE")
+print("PIPELINE EXECUTION SUMMARY")
 print("="*80)
-print("Summary:")
-print(f"- Available cases: {', '.join(available_cases) if available_cases else 'None detected'}")
-print(f"- Vectorstore type: {VECTORSTORE_TYPE}")
-print(f"- Results organized by case in results/ directory")
-print("- Check individual case directories for analysis results")
+
+print("\nProcessed Cases:")
+print(f"✓ NSCLC: Complete pipeline executed")
+if 'rag_hcc' in locals():
+    print(f"✓ HCC: Complete pipeline executed")
+else:
+    print(f"⚠ HCC: Skipped (no chunked data found)")
+
+print(f"\nVectorstore Type: {VECTORSTORE_TYPE}")
+print(f"Model Used: {MODEL}")
+print(f"Countries Processed: {', '.join(COUNTRIES)}")
+
+print(f"\nResults Structure:")
+print(f"├── results/NSCLC/")
+print(f"│   ├── chunks/")
+print(f"│   ├── PICO/")
+print(f"│   └── consolidated/")
+if 'rag_hcc' in locals():
+    print(f"├── results/HCC/")
+    print(f"│   ├── chunks/")
+    print(f"│   ├── PICO/")
+    print(f"│   └── consolidated/")
+
+print(f"\nVectorstores Created:")
+print(f"├── data/vectorstore/NSCLC_{VECTORSTORE_TYPE}_vectorstore/")
+if 'rag_hcc' in locals():
+    print(f"├── data/vectorstore/HCC_{VECTORSTORE_TYPE}_vectorstore/")
+
+print("\nAnalysis Output:")
+print("- Check the results/*/visualizations/ directories for:")
+print("  - PNG visualization files")
+print("  - Analysis summary reports")
+print("  - Statistical data matrices")
+
+print("\n" + "="*80)
+print("RAG PIPELINE EXECUTION COMPLETE")
 print("="*80)
