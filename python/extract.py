@@ -404,7 +404,8 @@ class PICOExtractor:
             
             extracted_results.append(outcomes_result)
             
-            print(f"Extracted outcomes for {country}: {outcomes_result.get('Outcomes', '')[:100]}...")
+            outcomes_text = outcomes_result.get('Outcomes') or ''
+            print(f"Extracted outcomes for {country}: {outcomes_text[:100]}...")
         
         return extracted_results
 
@@ -428,7 +429,7 @@ class PICOExtractor:
             outcomes_result = outcomes_by_country.get(country, {"Outcomes": "", "Country": country, "ChunksUsed": 0, "ContextTokens": 0})
             
             pc_picos = pc_result.get("PICOs", [])
-            country_outcomes = outcomes_result.get("Outcomes", "")
+            country_outcomes = outcomes_result.get("Outcomes") or ""
             
             if not pc_picos and not country_outcomes:
                 continue

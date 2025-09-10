@@ -662,11 +662,9 @@ class RagPipeline:
             print(f"Using outcomes data from: {os.path.basename(outcomes_file)}")
         
         # Run the extraction
-        results = extractor.extract_picos_from_retrieval_files(
-            population_comparator_file=population_comparator_file,
-            outcomes_file=outcomes_file,
-            indication=indication,
-            countries=countries
+        results = extractor.extract_picos(
+            source_type=source_type,
+            indication=indication
         )
         
         return results
