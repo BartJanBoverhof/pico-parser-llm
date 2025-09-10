@@ -481,7 +481,7 @@ class PICOConsolidator:
 
         saved_files = {}
 
-        if consolidated_picos and len(consolidated_picos) > 0:
+        if consolidated_picos and isinstance(consolidated_picos, dict) and consolidated_picos.get("consolidated_picos"):
             picos_result = {
                 "consolidation_metadata": {
                     "timestamp": timestamp,
@@ -507,7 +507,7 @@ class PICOConsolidator:
         else:
             print("No consolidated PICOs to save (consolidation may have failed)")
 
-        if consolidated_outcomes and len(consolidated_outcomes) > 0:
+        if consolidated_outcomes and isinstance(consolidated_outcomes, dict) and consolidated_outcomes.get("outcomes_by_category"):
             outcomes_result = {
                 "outcomes_metadata": {
                     "timestamp": timestamp,
@@ -539,7 +539,7 @@ class PICOConsolidator:
             except Exception as e:
                 print(f"Error saving consolidated outcomes: {e}")
         else:
-            print("Saved empty/failed outcomes consolidation to: results/consolidated/treatment_of_patients_with_advanced_non-small_cell_consolidated_outcomes_{}.json".format(timestamp))
+            print("No consolidated outcomes to save (consolidation may have failed)")
         
         if not saved_files:
             print("Warning: No consolidated files were saved. Check consolidation process.")

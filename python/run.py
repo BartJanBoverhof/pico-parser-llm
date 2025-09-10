@@ -691,27 +691,23 @@ class RagPipeline:
         case_info = f" for case '{self.case}'" if self.case else ""
         print(f"Running PICO and outcomes consolidation across {len(source_types)} source types{case_info}...")
         
-        # Find the most recent PICO extraction files for each source type
-        pico_files = []
+        # Check if PICO files exist for the requested source types
+        existing_source_types = []
         for source_type in source_types:
-            pattern = f"{source_type}_*_picos_*.json"
-            import glob
-            files = glob.glob(os.path.join(self.path_pico, pattern))
-            if files:
-                most_recent = max(files, key=os.path.getmtime)
-                pico_files.append(most_recent)
-                print(f"Found PICO file for {source_type}: {os.path.basename(most_recent)}")
+            pico_file = os.path.join(self.path_pico, f"{source_type}_picos.json")
+            if os.path.exists(pico_file):
+                existing_source_types.append(source_type)
+                print(f"Found PICO file for {source_type}: {os.path.basename(pico_file)}")
             else:
-                print(f"Warning: No PICO extraction files found for {source_type}")
+                print(f"Warning: No PICO extraction file found for {source_type} at {pico_file}")
         
-        if not pico_files:
+        if not existing_source_types:
             print(f"No PICO extraction files found for consolidation{case_info}. Please run PICO extraction first.")
             return None
         
-        # Run consolidation
-        results = self.pico_consolidator.consolidate_picos_and_outcomes(
-            pico_files=pico_files,
-            indication=indication
+        # Run consolidation using the consolidate_all method
+        results = self.pico_consolidator.consolidate_all(
+            source_types=existing_source_types
         )
         
         return results

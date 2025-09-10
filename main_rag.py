@@ -129,7 +129,7 @@ result_nsclc_hta_pc = rag_nsclc.run_population_comparator_retrieval_for_source_t
     indication=case1_indication,
     mutation_boost_terms=case1_mutation_boost,
     initial_k=60,
-    final_k=22
+    final_k=15
 )
 
 # Run HTA Outcomes retrieval for NSCLC
@@ -140,7 +140,7 @@ result_nsclc_hta_outcomes = rag_nsclc.run_outcomes_retrieval_for_source_type(
     indication=case1_indication,
     mutation_boost_terms=case1_mutation_boost,
     initial_k=60,
-    final_k=22
+    final_k=15
 )
 
 # Run Clinical Guideline Population & Comparator retrieval for NSCLC
@@ -237,10 +237,6 @@ case2_indication = case2_config["indication"]
 case2_required_terms = case2_config.get("required_terms_clinical")
 case2_mutation_boost = case2_config.get("mutation_boost_terms", [])
 
-print(f"HCC Indication: {case2_indication}")
-print(f"HCC Required Terms: {case2_required_terms}")
-print(f"HCC Mutation Boost Terms: {case2_mutation_boost}")
-
 # Step 8: Run retrieval for HCC Case
 print("\n=== Step 8: Running HCC Retrieval ===")
 
@@ -252,7 +248,7 @@ result_hcc_hta_pc = rag_hcc.run_population_comparator_retrieval_for_source_type(
     indication=case2_indication,
     mutation_boost_terms=case2_mutation_boost,
     initial_k=60,
-    final_k=22
+    final_k=15
 )
 
 # Run HTA Outcomes retrieval for HCC
@@ -263,7 +259,7 @@ result_hcc_hta_outcomes = rag_hcc.run_outcomes_retrieval_for_source_type(
     indication=case2_indication,
     mutation_boost_terms=case2_mutation_boost,
     initial_k=60,
-    final_k=22
+    final_k=15
 )
 
 # Run Clinical Guideline Population & Comparator retrieval for HCC

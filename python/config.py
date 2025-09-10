@@ -2,7 +2,7 @@
 # RAG Pipeline Configuration v1.4
 # ============================
 
-CONFIG_VERSION = "1.4.1"
+CONFIG_VERSION = "1.4.3"
 
 # --------------------------------
 # Source type configurations with split retrieval and split extraction
@@ -64,7 +64,7 @@ SOURCE_TYPE_CONFIGS = {
         PICO element definitions (use these strictly):
         - Population (P): EXACT wording from the context describing the applicable group (disease/stage, biomarkers/testing, prior therapy/line, inclusion/exclusion). If a narrower sub-population is specified, capture that exact phrasing.
         - Intervention (I): Always "Medicine X (under assessment)" (not taken from the documents).
-        - Comparator (C): Specific alternative regimen/class/SoC/BSC/placebo (or ITC/NMA comparator) as NAMED in the context for the same setting/line.
+        - Comparator (C): A specific alternative regimen or drug/class (or ITC/NMA comparator) named in the context for the same setting/line. Do not use generic labels such as "standard of care"/"SoC", "best supportive care"/"BSC", "supportive care", or "placebo" unless the document explicitly defines these with named regimen(s); if so, use the named regimen(s) and omit the generic label.
         - Outcomes (O): Always use empty string "" (outcomes will be extracted separately).
 
         Extraction rules:
@@ -72,19 +72,20 @@ SOURCE_TYPE_CONFIGS = {
         2) Capture Population verbatim as written (including sub-populations where applicable).
         3) For EACH appropriate alternative described in the same setting, create a separate PICO with:
            - "Intervention" = "Medicine X (under assessment)"
-           - "Comparator"  = the specific alternative/regimen/class/SoC/BSC/placebo (or ITC/NMA comparator) as named.
+           - "Comparator"  = the specific alternative/regimen/class/ITC-NMA comparator as named (not a generic label like SoC/BSC/placebo/supportive care)
            - "Outcomes" = ""
-        4) If a comparator is indicated only for a subset of the population (e.g. 'only PD-L1 positive patients'), treat that as a distinct Population string for that PICO.
-        5) If a jurisdiction/country/agency is explicitly stated, record it; otherwise use null (unquoted).
-        6) You may reason stepwise INTERNALLY, but DO NOT include your reasoning in the output.
-        7) Return VALID JSON ONLY that adheres to the output contract below. Do not wrap in code fences, do not add comments, and do not include trailing commas.
+        4) If a comparator is indicated only for a subset of the population (e.g. "only PD-L1 positive patients"), treat that as a distinct Population string for that PICO.
+        5) If a passage names only a generic comparator label (SoC/BSC/supportive care/placebo) without defining specific regimen(s), SKIP creating a PICO for that comparator.
+        6) If a jurisdiction/country/agency is explicitly stated, record it; otherwise use null (unquoted).
+        7) You may reason stepwise INTERNALLY, but DO NOT include your reasoning in the output.
+        8) Return VALID JSON ONLY that adheres to the output contract below. Do not wrap in code fences, do not add comments, and do not include trailing commas.
 
         JSON output contract:
         - Top-level object with keys: "Indication" (string), "Country" (string or null), "PICOs" (array).
         - "PICOs" is an array of objects with keys:
           - "Population" (string; verbatim from context),
           - "Intervention" (string; always exactly "Medicine X (under assessment)"),
-          - "Comparator"  (string; verbatim as named in context),
+          - "Comparator"  (string; verbatim specific alternative/regimen/class),
           - "Outcomes"    (string; always empty string "").
         - Use double quotes for all JSON strings.
         - Use null (without quotes) when no country/jurisdiction is stated.
@@ -117,7 +118,7 @@ SOURCE_TYPE_CONFIGS = {
         {context_block}
 
         Your task:
-        Extract Population and Comparator information for this indication and for any clearly defined sub-populations.
+        Extract Population and Comparator information for this indication and for any clearly defined sub-populations. Exclude entries where the only comparator is a generic label such as "standard of care"/"SoC", "best supportive care"/"BSC", "supportive care", or "placebo" unless the document defines precisely which regimen(s) these refer to; in that case, use the specific regimen name(s) and omit the generic label.
 
         Output JSON ONLY in this exact structure:
         {{
@@ -127,7 +128,7 @@ SOURCE_TYPE_CONFIGS = {
             {{
               "Population": "<exact wording from the context for the applicable (sub-)population>",
               "Intervention": "Medicine X (under assessment)",
-              "Comparator": "<specific alternative/regimen/class/SoC/BSC/placebo or ITC/NMA comparator>",
+              "Comparator": "<specific alternative/regimen/class or ITC/NMA comparator (not a generic SoC/BSC/placebo/supportive care label)>",
               "Outcomes": ""
             }}
           ]
@@ -148,13 +149,15 @@ SOURCE_TYPE_CONFIGS = {
         2) Extract all relevant outcomes mentioned for the indication.
         3) Include all distinct outcomes mentioned (avoid merging different endpoints into one) - if multiple terms refer to the same outcome, you may use a single term, but do not omit any unique outcome.
         4) If the context specifies how an outcome is measured or defined (e.g. a QoL questionnaire name, a threshold like 15% improvement for responders, or a time-to-deterioration metric), include that detail in the outcome description.
-        5) If a jurisdiction/country/agency is explicitly stated, record it; otherwise use null (unquoted).
-        6) You may reason stepwise INTERNALLY, but DO NOT include your reasoning in the output.
-        7) Return VALID JSON ONLY that adheres to the output contract below. Do not wrap in code fences, do not add comments, and do not include trailing commas.
+        5) EXCLUDE all numerical/statistical results and arm-specific performance (do not reproduce medians, means, rates/percentages, counts, hazard ratios, odds ratios, relative risks, confidence intervals, p-values, ICER/QALY numeric values, Kaplan–Meier point estimates, or text like "with <drug/regimen>"). When such data appears, rewrite to the generic outcome and its measurement method only (e.g., "progression-free survival (RECIST 1.1)").
+        6) Remove medicine or comparator names attached to a specific result; outcomes must be drug-agnostic.
+        7) If a jurisdiction/country/agency is explicitly stated, record it; otherwise use null (unquoted).
+        8) You may reason stepwise INTERNALLY, but DO NOT include your reasoning in the output.
+        9) Return VALID JSON ONLY that adheres to the output contract below. Do not wrap in code fences, do not add comments, and do not include trailing commas.
 
         JSON output contract:
         - Top-level object with keys: "Indication" (string), "Country" (string or null), "Outcomes" (string).
-        - "Outcomes" is a detailed string listing all relevant outcomes found in the context with their specific details when available.
+        - "Outcomes" is a detailed string listing all relevant outcomes found in the context with their specific details when available, limited to outcome names and measurement definitions (no numerical/statistical results).
         - Use double quotes for all JSON strings.
         - Use null (without quotes) when no country/jurisdiction is stated.
         """.strip(),
@@ -166,26 +169,26 @@ SOURCE_TYPE_CONFIGS = {
 
         Few-shot example (for format only):
         Example context snippet:
-        "Secondary endpoints include quality of life measured by EQ-5D and time to progression on subsequent therapy. Safety outcomes include serious adverse events and discontinuations due to AEs."
+        "overall survival, median overall survival (not reached for atezolizumab plus bevacizumab; less than 24 months for sorafenib and lenvatinib), mean gain in overall survival (6.1 months for sorafenib compared to placebo plus best supportive care, dependent on extrapolation method), progression-free survival (median 6.8 months [95% CI 5.7 to 8.3] with atezolizumab plus bevacizumab, 4.3 months [95% CI 4.0 to 5.6] with comparator), time to radiological disease progression, time to symptomatic disease progression (measured by FHSI-8 questionnaire), adverse events (including serious adverse events such as diarrhoea and hand-foot skin reaction), discontinuation of treatment due to adverse events, health-related quality of life, quality-adjusted life years (QALYs), cost-effectiveness (incremental cost-effectiveness ratio, ICER), resource use estimates"
 
         Example JSON output:
         {{
           "Indication": "{indication}",
           "Country": null,
-          "Outcomes": "quality of life (EQ-5D), time to progression on subsequent therapy, serious adverse events, discontinuations due to AEs"
+          "Outcomes": "overall survival (OS), progression-free survival (PFS), time to radiological disease progression, time to symptomatic disease progression (FHSI-8), adverse events (including serious adverse events), discontinuation due to adverse events, health-related quality of life, quality-adjusted life years (QALYs), cost-effectiveness (incremental cost-effectiveness ratio, ICER), resource use estimates"
         }}
 
         Context for extraction:
         {context_block}
 
         Your task:
-        Extract all relevant clinical outcomes for this indication with their specific measurement details when provided.
+        Extract all relevant clinical outcomes for this indication with their specific measurement details when provided. Do NOT include statistical results, numerical values, confidence intervals, p-values, or medicine/arm-specific results. Outcomes must be drug-agnostic and limited to outcome names and how they are measured or defined.
 
         Output JSON ONLY in this exact structure:
         {{
           "Indication": "{indication}",
           "Country": null or a jurisdiction string explicitly stated in the context,
-          "Outcomes": "<detailed list of outcomes found in the context with specific measurement information when available>"
+          "Outcomes": "<detailed list of outcomes found in the context with specific measurement information when available, excluding all numerical/statistical results and arm-specific performance>"
         }}
         """.strip()
     },
@@ -244,7 +247,7 @@ SOURCE_TYPE_CONFIGS = {
         PICO element definitions (use these strictly):
         - Population (P): EXACT wording from the context describing the applicable group (disease/stage, biomarkers/testing, prior therapy/line, inclusion/exclusion). Include narrower sub-populations exactly as written when applicable.
         - Intervention (I): Always "Medicine X (under assessment)".
-        - Comparator (C): Recommended option(s), alternatives, SoC/BSC/placebo, or other options named in the guideline for the same setting/line.
+        - Comparator (C): A specific recommended option or drug/class (or ITC/NMA comparator) named in the guideline for the same setting/line. Do not use generic labels such as "standard of care"/"SoC", "best supportive care"/"BSC", "supportive care", or "placebo" unless the guideline explicitly defines these with named regimen(s); if so, use the named regimen(s) and omit the generic label.
         - Outcomes (O): Always use empty string "" (outcomes will be extracted separately).
 
         Extraction rules:
@@ -252,19 +255,20 @@ SOURCE_TYPE_CONFIGS = {
         2) Capture Population verbatim as stated, including sub-populations.
         3) For EACH applicable alternative/recommended option, create a separate PICO with:
            - "Intervention" = "Medicine X (under assessment)"
-           - "Comparator"  = the named alternative/recommended option/SoC/BSC/placebo.
+           - "Comparator"  = the specific alternative/regimen/class/ITC-NMA comparator as named (not a generic label like SoC/BSC/placebo/supportive care)
            - "Outcomes" = ""
-        4) If a comparator is indicated only for a subset of the population (e.g. 'only PD-L1 positive patients'), treat that as a distinct Population string for that PICO.
-        5) Record jurisdiction/country/organization if explicitly stated; else use null (unquoted).
-        6) You may reason stepwise INTERNALLY, but DO NOT include your reasoning in the output.
-        7) Return VALID JSON ONLY (no code fences, no comments, no trailing commas) per the contract:
+        4) If a comparator is indicated only for a subset of the population (e.g. "only PD-L1 positive patients"), treat that as a distinct Population string for that PICO.
+        5) If the context names only a generic comparator label (SoC/BSC/supportive care/placebo) without defining specific regimen(s), SKIP creating a PICO for that comparator.
+        6) Record jurisdiction/country/organization if explicitly stated; else use null (unquoted).
+        7) You may reason stepwise INTERNALLY, but DO NOT include your reasoning in the output.
+        8) Return VALID JSON ONLY (no code fences, no comments, no trailing commas) per the contract:
 
         JSON output contract:
         - Top-level keys: "Indication" (string), "Country" (string or null), "PICOs" (array).
         - "PICOs" item keys:
           - "Population" (string; verbatim),
           - "Intervention" (string; exactly "Medicine X (under assessment)"),
-          - "Comparator"  (string; verbatim name from guideline),
+          - "Comparator"  (string; verbatim specific alternative/regimen/class),
           - "Outcomes"    (string; always empty string "").
         - Use double quotes for strings and null (unquoted) when country is absent.
         """.strip(),
@@ -296,7 +300,7 @@ SOURCE_TYPE_CONFIGS = {
         {context_block}
 
         Your task:
-        Extract guideline-based Population and Comparator information for this indication and any clearly defined sub-populations.
+        Extract guideline-based Population and Comparator information for this indication and any clearly defined sub-populations. Exclude entries where the only comparator is a generic label such as "standard of care"/"SoC", "best supportive care"/"BSC", "supportive care", or "placebo" unless the guideline defines precisely which regimen(s) these refer to; in that case, use the specific regimen name(s) and omit the generic label.
 
         Output JSON ONLY in this exact structure:
         {{
@@ -306,7 +310,7 @@ SOURCE_TYPE_CONFIGS = {
             {{
               "Population": "<exact wording for the applicable (sub-)population>",
               "Intervention": "Medicine X (under assessment)",
-              "Comparator": "<alternative(s)/SoC as stated in the guideline>",
+              "Comparator": "<specific alternative/regimen/class or ITC/NMA comparator (not a generic SoC/BSC/placebo/supportive care label)>",
               "Outcomes": ""
             }}
           ]
@@ -327,13 +331,15 @@ SOURCE_TYPE_CONFIGS = {
         2) Extract all relevant outcomes mentioned for the indication.
         3) Include all distinct outcomes mentioned (avoid merging different endpoints into one) - if multiple terms refer to the same outcome, you may use a single term, but do not omit any unique outcome.
         4) If the context specifies how an outcome is measured or defined (e.g. a QoL questionnaire name, a threshold like 15% improvement for responders, or a time-to-deterioration metric), include that detail in the outcome description.
-        5) Record jurisdiction/country/organization if explicitly stated; else use null (unquoted).
-        6) You may reason stepwise INTERNALLY, but DO NOT include your reasoning in the output.
-        7) Return VALID JSON ONLY that adheres to the output contract below. Do not wrap in code fences, do not add comments, and do not include trailing commas.
+        5) EXCLUDE all numerical/statistical results and arm-specific performance (do not reproduce medians, means, rates/percentages, counts, hazard ratios, odds ratios, relative risks, confidence intervals, p-values, ICER/QALY numeric values, Kaplan–Meier point estimates, or text like "with <drug/regimen>"). When such data appears, rewrite to the generic outcome and its measurement method only.
+        6) Remove medicine or comparator names attached to a specific result; outcomes must be drug-agnostic.
+        7) Record jurisdiction/country/organization if explicitly stated; else use null (unquoted).
+        8) You may reason stepwise INTERNALLY, but DO NOT include your reasoning in the output.
+        9) Return VALID JSON ONLY that adheres to the output contract below. Do not wrap in code fences, do not add comments, and do not include trailing commas.
 
         JSON output contract:
         - Top-level object with keys: "Indication" (string), "Country" (string or null), "Outcomes" (string).
-        - "Outcomes" is a detailed string listing all relevant outcomes found in the context with their specific details when available.
+        - "Outcomes" is a detailed string listing all relevant outcomes found in the context with their specific details when available, limited to outcome names and measurement definitions (no numerical/statistical results).
         - Use double quotes for all JSON strings.
         - Use null (without quotes) when no country/jurisdiction is stated.
         """.strip(),
@@ -358,13 +364,13 @@ SOURCE_TYPE_CONFIGS = {
         {context_block}
 
         Your task:
-        Extract all relevant clinical outcomes for this indication from guideline context with their specific measurement details when provided, but exclude statistical results, percentages, confidence intervals, and numerical study findings.
+        Extract all relevant clinical outcomes for this indication from guideline context with their specific measurement details when provided, but exclude statistical results, percentages, confidence intervals, and numerical study findings. Outcomes must be drug-agnostic and limited to outcome names and how they are measured or defined.
 
         Output JSON ONLY in this exact structure:
         {{
           "Indication": "{indication}",
           "Country": null or a jurisdiction/organization string explicitly stated in the context,
-          "Outcomes": "<detailed list of outcomes found in the context with specific measurement information when available, excluding statistical results>"
+          "Outcomes": "<detailed list of outcomes found in the context with specific measurement information when available, excluding statistical/numerical results and arm-specific performance>"
         }}
         """.strip()
     }
@@ -447,10 +453,25 @@ CASE_CONFIGS = {
     "case_2_hcc_advanced_unresectable": {
         "indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
         "required_terms_clinical": [
-            [r'\bhcc\b', r'\bHCC\b', r'\bhepatocellular\b', r'\bhepatocellular carcinoma\b']
+            # Group 1: HCC mentions (any one)
+            [r"\bhcc\b", r"\bHCC\b", r"\bhepatocellular carcinoma\b", r"\bhepatocellular(?:[ -])?carcinoma\b"],
+            # Group 2: Unresectability mentions (any one)
+            [
+                r"\bunresectable\b",
+                r"\bnon[- ]?resectable\b",
+                r"\bnot resectable\b",
+                r"\bnot amenable to (?:curative )?(?:surgical )?resection\b",
+                r"\bunsuitable for (?:surgical )?resection\b",
+                r"\bnot a (?:surgical )?candidate\b",
+                r"\binoperable\b",
+                r"\bmedically inoperable\b",
+                r"\bunfit for surgery\b",
+                r"\bsurgery contraindicated\b",
+                r"\bnot eligible for (?:surgery|surgical resection)\b",
+                r"\bresection not feasible\b"
+            ]
         ],
-        "mutation_boost_terms": ["advanced", "unresectable", "hepatocellular carcinoma", "hcc", "inoperable"],
-        "drug_keywords": ["sorafenib", "lenvatinib", "atezolizumab", "bevacizumab", "regorafenib", "cabozantinib"]
+        "mutation_boost_terms": ["advanced", "unresectable", "hepatocellular carcinoma", "hcc", "inoperable"]
     }
 }
 
@@ -472,6 +493,7 @@ CONSOLIDATION_CONFIGS = {
     6) Order PICOs logically: broader populations first, then more specific sub-populations
     7) Within same population groups, order comparators alphabetically
     8) Omit entries that have no comparator unless they add unique population information
+    9) Remove PICOs whose Comparator is a non-informative generic label such as "standard of care"/"SoC", "best supportive care"/"BSC", "supportive care", or "placebo" (including variants like "placebo + BSC"), unless the source explicitly defines the underlying regimen(s). If defined, replace the Comparator with the specific regimen name(s) and drop the generic label.
 
     Population Consolidation Guidelines:
     - Do not drop or dilute subgroup conditions. If some variants include additional criteria (biomarker, histology, prior therapy type, line of therapy, etc.) that others lack, retain that criteria in the consolidation. If it cannot be combined without loss of meaning, keep separate entries.
@@ -488,6 +510,7 @@ CONSOLIDATION_CONFIGS = {
     - Group combination therapies clearly using consistent formatting (e.g., "docetaxel + nintedanib")
     - Maintain distinct entries for single agents vs combinations
     - Preserve important formulation or dosing distinctions
+    - Exclude non-informative comparator labels (SoC, BSC, supportive care, placebo). If a source defines what these labels entail, replace them with the specific regimen name(s) and remove the generic label; otherwise discard the PICO.
 
     Example:
     Input PICOs:
@@ -549,6 +572,7 @@ CONSOLIDATION_CONFIGS = {
     - Preserve measurement details (e.g., "measured by RECIST 1.1", "CTCAE v5.0")
     - Keep distinct outcomes separate even if similar (e.g., PFS vs. time to progression, ORR vs. duration of response)
     - Include specific instruments for QoL (e.g., "EORTC QLQ-C30", "EQ-5D")
+    - Remove arm-specific and numerical/statistical trial results (medians, means, rates/percentages, counts, hazard ratios, odds ratios, relative risks, confidence intervals, p-values, ICER/QALY numeric values). Retain only outcome names and their definitions/measurement methods.
 
     Output JSON structure:
     {

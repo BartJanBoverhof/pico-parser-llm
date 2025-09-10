@@ -1,0 +1,114 @@
+{
+  "outcomes_metadata": {
+    "timestamp": "2025-09-10T11:25:57.246173",
+    "indication": "treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context",
+    "consolidation_type": "outcomes",
+    "total_unique_outcomes": 34,
+    "source_countries": [
+      "AT",
+      "DE",
+      "DK",
+      "EN",
+      "EU",
+      "FR",
+      "IT",
+      "NL",
+      "PO",
+      "PT",
+      "SE"
+    ],
+    "source_types": [
+      "clinical_guideline",
+      "hta_submission"
+    ]
+  },
+  "consolidated_outcomes": {
+    "efficacy": {
+      "survival_endpoints": [
+        "Overall survival (OS) (defined as time from randomization to death from any cause; may be summarized using Kaplan-Meier estimates)",
+        "Progression-free survival (PFS) (defined as time from randomization until disease progression or death from any cause, whichever occurred first; may be assessed by blinded independent central review and/or RECIST 1.1; sensitivity analyses may consider initiation of new anti-cancer therapy as a PFS event)",
+        "Event-free survival",
+        "Time to progression (TTP)",
+        "Time to next treatment (TTNT)",
+        "Progression after next line of therapy (PFS2)",
+        "Prolonged survival"
+      ],
+      "response_measures": [
+        "Objective response rate (ORR) (also called overall response rate; defined as proportion of patients with complete or partial response according to RECIST 1.1, may be evaluated by independent review committee)",
+        "Disease control rate (DCR) (proportion of patients with complete response, partial response, or stable disease for at least 5 weeks)",
+        "Time to response (time from initiation of treatment to first complete or partial response)",
+        "Duration of response (DoR) (time from first partial or complete response to first relapse/progression or death from any cause; may be measured by RECIST 1.1)",
+        "Tumor response and progression evaluated by RECIST v1.1 with independent central confirmation",
+        "Response rate (measured by unspecified criteria or RECIST)",
+        "Response rates (general term, may include RECIST criteria)"
+      ],
+      "progression_measures": [
+        "Survival outcomes summarized using Kaplan-Meier estimates",
+        "Duration of treatment"
+      ]
+    },
+    "safety": {
+      "adverse_events": [
+        "Adverse events (AEs; may be graded by Common Terminology Criteria for Adverse Events [CTCAE] v4.03 or v5.0; includes treatment-related AEs, very common undesirable effects such as anaemia, headache, cough, shortness of breath, diarrhoea, nausea, vomiting, constipation, abdominal pain, joint pain, back pain, fatigue, fever, increased asparaginase aminotransferase activity, increased alanine aminotransferase activity; may include side effects and adverse reactions such as gastrointestinal, hepatic, renal, QTc prolongation)",
+        "Treatment-related adverse events",
+        "Treatment-related adverse reactions of grade 3 or higher",
+        "Dose modification-related adverse drug reactions",
+        "Adverse reactions (gastrointestinal, hepatic, renal, QTc time prolongation)",
+        "Adverse effects (general term)",
+        "Side effects (adverse events)",
+        "Potential risk of serious side effects on the skin"
+      ],
+      "serious_events": [
+        "Serious adverse events (Grade 3-4; may include serious undesirable effects)",
+        "Treatment-associated adverse events resulting in death",
+        "Mortality-related toxicity"
+      ],
+      "discontinuations": [
+        "Discontinuation due to adverse events",
+        "Treatment-associated adverse experiences leading to discontinuation of therapy",
+        "Treatment discontinuation due to AEs"
+      ]
+    },
+    "quality_of_life": {
+      "patient_reported_outcomes": [
+        "Health-related quality of life (HRQoL; may be measured by EORTC QLQ-C30, EORTC QLQ-LC13, BPI-SF, FACT-G GP5, PGI-C questionnaires; may include adjustment for median survival in certain QoL dimensions)",
+        "Patient-reported outcomes (PROs; including EORTC QLQ)",
+        "Quality of life (measured by change from baseline to week 12)",
+        "Preservation of quality of life"
+      ],
+      "functional_status": [
+        "Time to deterioration of overall health status",
+        "Time to deterioration of physical functioning",
+        "Overall condition (Karnofsky or ECOG performance status)"
+      ],
+      "symptom_measures": [
+        "Endpoints on symptomatology and health status",
+        "Symptom control"
+      ]
+    },
+    "economic": {
+      "cost_effectiveness": [
+        "Cost-effectiveness (may include incremental cost-effectiveness ratio [ICER], cost per QALY achieved, cost-effectiveness estimates, budget impact analysis)"
+      ],
+      "utilities": [
+        "Quality-adjusted life years (QALYs)",
+        "Utilities derived through a visual analogue scale in the progression-free health state",
+        "Treatment-related disutility for intravenous administration"
+      ],
+      "resource_utilization": [
+        "Resource use estimates",
+        "Resource use"
+      ]
+    },
+    "other": {
+      "exploratory_endpoints": [
+        "Mutation status determination",
+        "Adequate coverage of mutations in exons 18-21 including resistance-associated mutations",
+        "Tolerance profile"
+      ],
+      "biomarkers": [
+        "None explicitly reported"
+      ]
+    }
+  }
+}
