@@ -17,6 +17,183 @@ except ImportError:
     GEOPANDAS_AVAILABLE = False
     print("Warning: geopandas not available. Install with: pip install geopandas")
 
+
+class ComprehensiveOverview:
+    """Class to generate comprehensive overview summaries for RAG pipeline analysis"""
+    
+    def __init__(self):
+        self.all_cases_data = {}
+    
+    def generate_case_overview(self, pico_analyzer, outcome_analyzer, case_name):
+        """Generate a nice formatted overview summary for PICOs and Outcomes for a specific case"""
+        print("\n" + "="*100)
+        print(f"{case_name.upper()} COMPREHENSIVE ANALYSIS OVERVIEW")
+        print("="*100)
+        
+        # PICO Overview
+        print("\n" + "🔬 PICO EVIDENCE OVERVIEW")
+        print("-" * 50)
+        
+        case_data = {'picos': 0, 'outcomes': 0, 'pico_countries': set(), 'outcome_countries': set(), 'source_types': set()}
+        
+        if not pico_analyzer.picos_df.empty:
+            total_picos = len(pico_analyzer.data.get('consolidated_picos', []))
+            total_records = len(pico_analyzer.picos_df)
+            case_data['picos'] = total_picos
+            
+            print(f"📊 Total Consolidated PICOs: {total_picos}")
+            print(f"📈 Total PICO Records: {total_records}")
+            
+            if 'Country' in pico_analyzer.picos_df.columns:
+                countries = pico_analyzer.picos_df['Country'].value_counts()
+                case_data['pico_countries'] = set(countries.index)
+                print(f"🌍 Countries Covered: {len(countries)}")
+                print("   Top countries by PICOs:")
+                for i, (country, count) in enumerate(countries.head(3).items()):
+                    print(f"   {i+1}. {country}: {count} PICOs")
+            
+            if 'Source_Type' in pico_analyzer.picos_df.columns:
+                sources = pico_analyzer.picos_df['Source_Type'].value_counts()
+                case_data['source_types'].update(sources.index)
+                print(f"📋 Source Types: {', '.join(sources.index)}")
+                for source, count in sources.items():
+                    print(f"   - {source.replace('_', ' ').title()}: {count} records")
+            
+            if 'Comparator' in pico_analyzer.picos_df.columns:
+                comparators = pico_analyzer.picos_df['Comparator'].nunique()
+                top_comparator = pico_analyzer.picos_df['Comparator'].mode().iloc[0] if not pico_analyzer.picos_df['Comparator'].mode().empty else 'N/A'
+                print(f"⚖️  Unique Comparators: {comparators}")
+                print(f"   Most Common: {top_comparator}")
+        else:
+            print("❌ No PICO data available for analysis")
+        
+        # Outcomes Overview
+        print("\n" + "🎯 OUTCOMES EVIDENCE OVERVIEW")
+        print("-" * 50)
+        
+        if not outcome_analyzer.outcomes_df.empty:
+            total_outcome_reports = len(outcome_analyzer.outcomes_df)
+            case_data['outcomes'] = total_outcome_reports
+            
+            print(f"📊 Total Outcome Reports: {total_outcome_reports}")
+            
+            if 'Outcome_Name' in outcome_analyzer.outcomes_df.columns:
+                unique_outcomes = outcome_analyzer.outcomes_df['Outcome_Name'].nunique()
+                top_outcome = outcome_analyzer.outcomes_df['Outcome_Name'].mode().iloc[0] if not outcome_analyzer.outcomes_df['Outcome_Name'].mode().empty else 'N/A'
+                print(f"🔢 Unique Outcomes: {unique_outcomes}")
+                print(f"   Most Reported: {top_outcome}")
+            
+            if 'Country' in outcome_analyzer.outcomes_df.columns:
+                outcome_countries = outcome_analyzer.outcomes_df['Country'].value_counts()
+                case_data['outcome_countries'] = set(outcome_countries.index)
+                print(f"🌍 Countries with Outcomes: {len(outcome_countries)}")
+                print("   Top countries by outcome reports:")
+                for i, (country, count) in enumerate(outcome_countries.head(3).items()):
+                    print(f"   {i+1}. {country}: {count} reports")
+            
+            if 'Category' in outcome_analyzer.outcomes_df.columns:
+                categories = outcome_analyzer.outcomes_df['Category'].value_counts()
+                print(f"📂 Outcome Categories: {len(categories)}")
+                for category, count in categories.items():
+                    print(f"   - {category.replace('_', ' ').title()}: {count} reports")
+            
+            if 'Source_Type' in outcome_analyzer.outcomes_df.columns:
+                outcome_sources = outcome_analyzer.outcomes_df['Source_Type'].value_counts()
+                outcome_sources = outcome_sources[outcome_sources.index != 'Unknown']
+                if len(outcome_sources) > 0:
+                    print(f"📋 Source Types: {', '.join(outcome_sources.index)}")
+                    for source, count in outcome_sources.items():
+                        print(f"   - {source.replace('_', ' ').title()}: {count} reports")
+        else:
+            print("❌ No outcomes data available for analysis")
+        
+        # Coverage Summary
+        print("\n" + "🗺️  COVERAGE SUMMARY")
+        print("-" * 50)
+        
+        pico_countries = set()
+        outcome_countries = set()
+        
+        if not pico_analyzer.picos_df.empty and 'Country' in pico_analyzer.picos_df.columns:
+            pico_countries = set(pico_analyzer.picos_df['Country'].unique())
+        
+        if not outcome_analyzer.outcomes_df.empty and 'Country' in outcome_analyzer.outcomes_df.columns:
+            outcome_countries = set(outcome_analyzer.outcomes_df['Country'].unique())
+        
+        all_countries = pico_countries.union(outcome_countries)
+        common_countries = pico_countries.intersection(outcome_countries)
+        
+        print(f"🌐 Total Countries Covered: {len(all_countries)}")
+        print(f"🤝 Countries with Both PICOs & Outcomes: {len(common_countries)}")
+        print(f"🔬 PICO-Only Countries: {len(pico_countries - outcome_countries)}")
+        print(f"🎯 Outcome-Only Countries: {len(outcome_countries - pico_countries)}")
+        
+        if common_countries:
+            print(f"   Countries with complete coverage: {', '.join(sorted(common_countries))}")
+        
+        print("\n" + "="*100)
+        
+        # Store case data for cross-case analysis
+        self.all_cases_data[case_name] = case_data
+        
+        return case_data
+    
+    def generate_cross_case_overview(self, all_pico_files, all_outcome_files):
+        """Generate overview across all cases"""
+        print("\n" + "🌍 CROSS-CASE ANALYSIS OVERVIEW")
+        print("-" * 60)
+        
+        total_consolidated_picos = 0
+        total_outcome_reports = 0
+        all_countries_pico = set()
+        all_countries_outcome = set()
+        all_source_types = set()
+        
+        for pico_file, case in all_pico_files:
+            try:
+                pico_analyzer = PICOAnalyzer(str(pico_file))
+                if not pico_analyzer.picos_df.empty:
+                    case_picos = len(pico_analyzer.data.get('consolidated_picos', []))
+                    total_consolidated_picos += case_picos
+                    print(f"   {case}: {case_picos} consolidated PICOs")
+                    
+                    if 'Country' in pico_analyzer.picos_df.columns:
+                        all_countries_pico.update(pico_analyzer.picos_df['Country'].unique())
+                    if 'Source_Type' in pico_analyzer.picos_df.columns:
+                        all_source_types.update(pico_analyzer.picos_df['Source_Type'].unique())
+            except Exception as e:
+                print(f"   Error loading {case} PICOs: {e}")
+        
+        for outcome_file, case in all_outcome_files:
+            try:
+                outcome_analyzer = OutcomeAnalyzer(str(outcome_file))
+                if not outcome_analyzer.outcomes_df.empty:
+                    case_outcomes = len(outcome_analyzer.outcomes_df)
+                    total_outcome_reports += case_outcomes
+                    print(f"   {case}: {case_outcomes} outcome reports")
+                    
+                    if 'Country' in outcome_analyzer.outcomes_df.columns:
+                        all_countries_outcome.update(outcome_analyzer.outcomes_df['Country'].unique())
+            except Exception as e:
+                print(f"   Error loading {case} outcomes: {e}")
+        
+        print(f"\n📊 TOTAL ACROSS ALL CASES:")
+        print(f"   🔬 Total Consolidated PICOs: {total_consolidated_picos}")
+        print(f"   🎯 Total Outcome Reports: {total_outcome_reports}")
+        print(f"   🌍 Countries with PICO Evidence: {len(all_countries_pico)}")
+        print(f"   🌍 Countries with Outcome Evidence: {len(all_countries_outcome)}")
+        print(f"   📋 Source Types Used: {', '.join(all_source_types)}")
+        print(f"   🤝 Countries with Both Types: {len(all_countries_pico.intersection(all_countries_outcome))}")
+        
+        if all_countries_pico:
+            print(f"   🔬 PICO Countries: {', '.join(sorted(all_countries_pico))}")
+        if all_countries_outcome:
+            print(f"   🎯 Outcome Countries: {', '.join(sorted(all_countries_outcome))}")
+    
+    def get_case_summary(self, case_name):
+        """Get stored summary data for a specific case"""
+        return self.all_cases_data.get(case_name, {})
+
 class PICOAnalyzer:
     def __init__(self, pico_file_path):
         self.pico_file_path = pico_file_path
@@ -40,69 +217,149 @@ class PICOAnalyzer:
     def prepare_datamatrix(self):
         pico_records = []
         
-        for pico in self.data['consolidated_picos']:
-            for country in pico['Countries']:
-                for source_type in pico['Source_Types']:
-                    record = {
-                        'Population': pico['Population'],
-                        'Intervention': pico['Intervention'],
-                        'Comparator': pico['Comparator'],
-                        'Country': country,
-                        'Source_Type': source_type,
-                        'Population_Variants_Count': len(pico['Original_Population_Variants']),
-                        'Comparator_Variants_Count': len(pico['Original_Comparator_Variants'])
-                    }
-                    pico_records.append(record)
-        
-        self.picos_df = pd.DataFrame(pico_records)
+        try:
+            # Check if data structure is as expected
+            if 'consolidated_picos' not in self.data:
+                print("Warning: 'consolidated_picos' key not found in data")
+                self.picos_df = pd.DataFrame()
+                return
+                
+            consolidated_picos = self.data['consolidated_picos']
+            
+            # Handle case where consolidated_picos might be a string or other type
+            if not isinstance(consolidated_picos, list):
+                print(f"Warning: consolidated_picos is not a list, it's a {type(consolidated_picos)}")
+                self.picos_df = pd.DataFrame()
+                return
+            
+            for i, pico in enumerate(consolidated_picos):
+                try:
+                    # Ensure pico is a dictionary
+                    if not isinstance(pico, dict):
+                        print(f"Warning: PICO item {i} is not a dictionary, it's a {type(pico)}")
+                        continue
+                    
+                    # Extract countries with fallback handling
+                    countries = pico.get('Countries', [])
+                    if isinstance(countries, str):
+                        countries = [countries]
+                    elif not isinstance(countries, list):
+                        countries = []
+                    
+                    # Extract source types with fallback handling
+                    source_types = pico.get('Source_Types', [])
+                    if isinstance(source_types, str):
+                        source_types = [source_types]
+                    elif not isinstance(source_types, list):
+                        source_types = []
+                    
+                    # Extract other fields with safe defaults
+                    population = pico.get('Population', 'Unknown')
+                    intervention = pico.get('Intervention', 'Unknown')
+                    comparator = pico.get('Comparator', 'Unknown')
+                    
+                    # Handle population and comparator variants
+                    pop_variants = pico.get('Original_Population_Variants', [])
+                    comp_variants = pico.get('Original_Comparator_Variants', [])
+                    
+                    if not isinstance(pop_variants, list):
+                        pop_variants = []
+                    if not isinstance(comp_variants, list):
+                        comp_variants = []
+                    
+                    # Create records for each country-source combination
+                    for country in countries:
+                        for source_type in source_types:
+                            record = {
+                                'Population': population,
+                                'Intervention': intervention,
+                                'Comparator': comparator,
+                                'Country': country,
+                                'Source_Type': source_type,
+                                'Population_Variants_Count': len(pop_variants),
+                                'Comparator_Variants_Count': len(comp_variants)
+                            }
+                            pico_records.append(record)
+                
+                except Exception as e:
+                    print(f"Error processing PICO item {i}: {e}")
+                    continue
+            
+            self.picos_df = pd.DataFrame(pico_records)
+            print(f"Successfully processed {len(pico_records)} PICO records")
+            
+        except Exception as e:
+            print(f"Error in prepare_datamatrix: {e}")
+            self.picos_df = pd.DataFrame()
     
     def print_summary_statistics(self):
         print("="*80)
         print("PICO ANALYSIS SUMMARY")
         print("="*80)
         
-        metadata = self.data['consolidation_metadata']
-        print(f"Analysis Date: {metadata['timestamp']}")
-        print(f"Total Consolidated PICOs: {metadata['total_consolidated_picos']}")
-        print(f"Source Countries: {', '.join(metadata['source_countries'])}")
-        print(f"Source Types: {', '.join(metadata['source_types'])}")
-        print()
+        if self.picos_df.empty:
+            print("No PICO data available for analysis")
+            return
         
-        print("POPULATION AND COMPARATOR STATISTICS")
-        print("-" * 50)
-        
-        country_counts = self.picos_df['Country'].value_counts()
-        print("PICOs by Country:")
-        for country, count in country_counts.items():
-            print(f"  {country}: {count}")
-        print()
-        
-        source_counts = self.picos_df['Source_Type'].value_counts()
-        print("PICOs by Source Type:")
-        for source, count in source_counts.items():
-            print(f"  {source}: {count}")
-        print()
-        
-        comparator_counts = self.picos_df['Comparator'].value_counts()
-        print("Most Common Comparators:")
-        for comp, count in comparator_counts.head(10).items():
-            print(f"  {comp}: {count}")
-        print()
-        
-        population_types = self.picos_df['Population'].nunique()
-        print(f"Unique Population Types: {population_types}")
-        print(f"Unique Comparators: {self.picos_df['Comparator'].nunique()}")
-        print()
+        try:
+            metadata = self.data.get('consolidation_metadata', {})
+            print(f"Analysis Date: {metadata.get('timestamp', 'Unknown')}")
+            print(f"Total Consolidated PICOs: {metadata.get('total_consolidated_picos', 'Unknown')}")
+            print(f"Source Countries: {', '.join(metadata.get('source_countries', []))}")
+            print(f"Source Types: {', '.join(metadata.get('source_types', []))}")
+            print()
+            
+            print("POPULATION AND COMPARATOR STATISTICS")
+            print("-" * 50)
+            
+            if 'Country' in self.picos_df.columns:
+                country_counts = self.picos_df['Country'].value_counts()
+                print("PICOs by Country:")
+                for country, count in country_counts.items():
+                    print(f"  {country}: {count}")
+                print()
+            
+            if 'Source_Type' in self.picos_df.columns:
+                source_counts = self.picos_df['Source_Type'].value_counts()
+                print("PICOs by Source Type:")
+                for source, count in source_counts.items():
+                    print(f"  {source}: {count}")
+                print()
+            
+            if 'Comparator' in self.picos_df.columns:
+                comparator_counts = self.picos_df['Comparator'].value_counts()
+                print("Most Common Comparators:")
+                for comp, count in comparator_counts.head(10).items():
+                    print(f"  {comp}: {count}")
+                print()
+            
+            if 'Population' in self.picos_df.columns:
+                population_types = self.picos_df['Population'].nunique()
+                print(f"Unique Population Types: {population_types}")
+            
+            if 'Comparator' in self.picos_df.columns:
+                print(f"Unique Comparators: {self.picos_df['Comparator'].nunique()}")
+            print()
+            
+        except Exception as e:
+            print(f"Error generating summary statistics: {e}")
     
     def get_country_comparator_matrix(self):
-        matrix = self.picos_df.pivot_table(
-            index='Country', 
-            columns='Comparator', 
-            values='Intervention',
-            aggfunc='count',
-            fill_value=0
-        )
-        return matrix
+        if self.picos_df.empty or 'Country' not in self.picos_df.columns or 'Comparator' not in self.picos_df.columns:
+            return pd.DataFrame()
+        
+        try:
+            matrix = self.picos_df.pivot_table(
+                index='Country', 
+                columns='Comparator', 
+                values='Intervention',
+                aggfunc='count',
+                fill_value=0
+            )
+            return matrix
+        except Exception as e:
+            print(f"Error creating country-comparator matrix: {e}")
+            return pd.DataFrame()
 
 
 class OutcomeAnalyzer:
@@ -128,91 +385,171 @@ class OutcomeAnalyzer:
     def prepare_datamatrix(self):
         outcome_records = []
         
-        for category, subcategories in self.data['consolidated_outcomes'].items():
-            for subcategory, outcomes in subcategories.items():
-                for outcome in outcomes:
-                    if 'reported_by' in outcome:
-                        for report in outcome['reported_by']:
-                            record = {
-                                'Category': category,
-                                'Subcategory': subcategory,
-                                'Outcome_Name': outcome['name'],
-                                'Country': report['country'],
-                                'Source_Type': report['source_type'],
-                                'Has_Details': 'details' in outcome and bool(outcome.get('details', []))
-                            }
-                            outcome_records.append(record)
-                    else:
-                        record = {
-                            'Category': category,
-                            'Subcategory': subcategory,
-                            'Outcome_Name': outcome['name'],
-                            'Country': 'Unknown',
-                            'Source_Type': 'Unknown',
-                            'Has_Details': 'details' in outcome and bool(outcome.get('details', []))
-                        }
-                        outcome_records.append(record)
-        
-        self.outcomes_df = pd.DataFrame(outcome_records)
+        try:
+            # Check if data structure is as expected
+            if 'consolidated_outcomes' not in self.data:
+                print("Warning: 'consolidated_outcomes' key not found in data")
+                self.outcomes_df = pd.DataFrame()
+                return
+                
+            consolidated_outcomes = self.data['consolidated_outcomes']
+            
+            # Handle case where consolidated_outcomes might not be a dictionary
+            if not isinstance(consolidated_outcomes, dict):
+                print(f"Warning: consolidated_outcomes is not a dictionary, it's a {type(consolidated_outcomes)}")
+                self.outcomes_df = pd.DataFrame()
+                return
+            
+            for category, subcategories in consolidated_outcomes.items():
+                try:
+                    # Ensure subcategories is a dictionary
+                    if not isinstance(subcategories, dict):
+                        print(f"Warning: subcategories for {category} is not a dictionary, it's a {type(subcategories)}")
+                        continue
+                    
+                    for subcategory, outcomes in subcategories.items():
+                        try:
+                            # Ensure outcomes is a list
+                            if not isinstance(outcomes, list):
+                                print(f"Warning: outcomes for {category}/{subcategory} is not a list, it's a {type(outcomes)}")
+                                continue
+                            
+                            for outcome in outcomes:
+                                try:
+                                    # Ensure outcome is a dictionary
+                                    if not isinstance(outcome, dict):
+                                        print(f"Warning: outcome in {category}/{subcategory} is not a dictionary, it's a {type(outcome)}")
+                                        continue
+                                    
+                                    outcome_name = outcome.get('name', 'Unknown')
+                                    has_details = 'details' in outcome and bool(outcome.get('details', []))
+                                    
+                                    if 'reported_by' in outcome and isinstance(outcome['reported_by'], list):
+                                        for report in outcome['reported_by']:
+                                            if isinstance(report, dict):
+                                                record = {
+                                                    'Category': category,
+                                                    'Subcategory': subcategory,
+                                                    'Outcome_Name': outcome_name,
+                                                    'Country': report.get('country', 'Unknown'),
+                                                    'Source_Type': report.get('source_type', 'Unknown'),
+                                                    'Has_Details': has_details
+                                                }
+                                                outcome_records.append(record)
+                                    else:
+                                        record = {
+                                            'Category': category,
+                                            'Subcategory': subcategory,
+                                            'Outcome_Name': outcome_name,
+                                            'Country': 'Unknown',
+                                            'Source_Type': 'Unknown',
+                                            'Has_Details': has_details
+                                        }
+                                        outcome_records.append(record)
+                                        
+                                except Exception as e:
+                                    print(f"Error processing outcome in {category}/{subcategory}: {e}")
+                                    continue
+                                    
+                        except Exception as e:
+                            print(f"Error processing subcategory {subcategory} in {category}: {e}")
+                            continue
+                            
+                except Exception as e:
+                    print(f"Error processing category {category}: {e}")
+                    continue
+            
+            self.outcomes_df = pd.DataFrame(outcome_records)
+            print(f"Successfully processed {len(outcome_records)} outcome records")
+            
+        except Exception as e:
+            print(f"Error in prepare_datamatrix: {e}")
+            self.outcomes_df = pd.DataFrame()
     
     def print_summary_statistics(self):
         print("="*80)
         print("OUTCOMES ANALYSIS SUMMARY")
         print("="*80)
         
-        metadata = self.data['outcomes_metadata']
-        print(f"Analysis Date: {metadata['timestamp']}")
-        print(f"Total Unique Outcomes: {metadata['total_unique_outcomes']}")
-        print(f"Source Countries: {', '.join(metadata['source_countries'])}")
-        print(f"Source Types: {', '.join(metadata['source_types'])}")
-        print()
+        if self.outcomes_df.empty:
+            print("No outcomes data available for analysis")
+            return
         
-        print("OUTCOMES STATISTICS")
-        print("-" * 50)
-        
-        category_counts = self.outcomes_df['Category'].value_counts()
-        print("Outcomes by Category:")
-        for category, count in category_counts.items():
-            print(f"  {category}: {count}")
-        print()
-        
-        country_outcome_counts = self.outcomes_df['Country'].value_counts()
-        print("Outcome Reports by Country:")
-        for country, count in country_outcome_counts.items():
-            print(f"  {country}: {count}")
-        print()
-        
-        source_outcome_counts = self.outcomes_df['Source_Type'].value_counts()
-        print("Outcome Reports by Source Type:")
-        for source, count in source_outcome_counts.items():
-            print(f"  {source}: {count}")
-        print()
-        
-        print("Most Frequently Reported Outcomes:")
-        outcome_frequency = self.outcomes_df['Outcome_Name'].value_counts()
-        for outcome, count in outcome_frequency.head(10).items():
-            print(f"  {outcome}: {count}")
-        print()
+        try:
+            metadata = self.data.get('outcomes_metadata', {})
+            print(f"Analysis Date: {metadata.get('timestamp', 'Unknown')}")
+            print(f"Total Unique Outcomes: {metadata.get('total_unique_outcomes', 'Unknown')}")
+            print(f"Source Countries: {', '.join(metadata.get('source_countries', []))}")
+            print(f"Source Types: {', '.join(metadata.get('source_types', []))}")
+            print()
+            
+            print("OUTCOMES STATISTICS")
+            print("-" * 50)
+            
+            if 'Category' in self.outcomes_df.columns:
+                category_counts = self.outcomes_df['Category'].value_counts()
+                print("Outcomes by Category:")
+                for category, count in category_counts.items():
+                    print(f"  {category}: {count}")
+                print()
+            
+            if 'Country' in self.outcomes_df.columns:
+                country_outcome_counts = self.outcomes_df['Country'].value_counts()
+                print("Outcome Reports by Country:")
+                for country, count in country_outcome_counts.items():
+                    print(f"  {country}: {count}")
+                print()
+            
+            if 'Source_Type' in self.outcomes_df.columns:
+                source_outcome_counts = self.outcomes_df['Source_Type'].value_counts()
+                print("Outcome Reports by Source Type:")
+                for source, count in source_outcome_counts.items():
+                    print(f"  {source}: {count}")
+                print()
+            
+            if 'Outcome_Name' in self.outcomes_df.columns:
+                print("Most Frequently Reported Outcomes:")
+                outcome_frequency = self.outcomes_df['Outcome_Name'].value_counts()
+                for outcome, count in outcome_frequency.head(10).items():
+                    print(f"  {outcome}: {count}")
+                print()
+                
+        except Exception as e:
+            print(f"Error generating summary statistics: {e}")
     
     def get_category_country_matrix(self):
-        matrix = self.outcomes_df.pivot_table(
-            index='Category', 
-            columns='Country', 
-            values='Outcome_Name',
-            aggfunc='count',
-            fill_value=0
-        )
-        return matrix
+        if self.outcomes_df.empty or 'Category' not in self.outcomes_df.columns or 'Country' not in self.outcomes_df.columns:
+            return pd.DataFrame()
+        
+        try:
+            matrix = self.outcomes_df.pivot_table(
+                index='Category', 
+                columns='Country', 
+                values='Outcome_Name',
+                aggfunc='count',
+                fill_value=0
+            )
+            return matrix
+        except Exception as e:
+            print(f"Error creating category-country matrix: {e}")
+            return pd.DataFrame()
     
     def get_outcome_source_matrix(self):
-        matrix = self.outcomes_df.pivot_table(
-            index='Outcome_Name', 
-            columns='Source_Type', 
-            values='Country',
-            aggfunc='count',
-            fill_value=0
-        )
-        return matrix
+        if self.outcomes_df.empty or 'Outcome_Name' not in self.outcomes_df.columns or 'Source_Type' not in self.outcomes_df.columns:
+            return pd.DataFrame()
+        
+        try:
+            matrix = self.outcomes_df.pivot_table(
+                index='Outcome_Name', 
+                columns='Source_Type', 
+                values='Country',
+                aggfunc='count',
+                fill_value=0
+            )
+            return matrix
+        except Exception as e:
+            print(f"Error creating outcome-source matrix: {e}")
+            return pd.DataFrame()
 
 
 class DataVisualizer:
@@ -253,7 +590,19 @@ class DataVisualizer:
         }
     
     def create_european_heatmap(self):
+        if self.pico_analyzer.picos_df.empty or 'Country' not in self.pico_analyzer.picos_df.columns:
+            print("No country data available for European heatmap")
+            return
+            
         print("Creating European PICO distribution map...")
+        
+        # Print country information before plotting
+        country_counts = self.pico_analyzer.picos_df['Country'].value_counts()
+        print(f"Total countries with PICOs: {len(country_counts)}")
+        print("Countries and their PICO counts:")
+        for country, count in country_counts.items():
+            print(f"  {country}: {count} PICOs")
+        print()
         
         if not GEOPANDAS_AVAILABLE:
             print("Geopandas not available. Creating simplified map...")
@@ -287,7 +636,26 @@ class DataVisualizer:
                 'NL': 'Netherlands',
                 'PO': 'Poland',
                 'PT': 'Portugal',
-                'SE': 'Sweden'
+                'SE': 'Sweden',
+                'AT': 'Austria',       
+                'IT': 'Italy',        
+                'ES': 'Spain',         
+                'BE': 'Belgium',
+                'CH': 'Switzerland',
+                'NO': 'Norway',
+                'FI': 'Finland',
+                'IE': 'Ireland',
+                'CZ': 'Czech Republic',
+                'HU': 'Hungary',
+                'RO': 'Romania',
+                'BG': 'Bulgaria',
+                'GR': 'Greece',
+                'HR': 'Croatia',
+                'SI': 'Slovenia',
+                'SK': 'Slovakia',
+                'LT': 'Lithuania',
+                'LV': 'Latvia',
+                'EE': 'Estonia'         
             }
             
             name_column = 'NAME' if 'NAME' in world.columns else 'name'
@@ -297,7 +665,6 @@ class DataVisualizer:
                         name_column = col
                         break
             
-            country_counts = self.pico_analyzer.picos_df['Country'].value_counts()
             print(f"Countries with PICO data: {dict(country_counts)}")
             
             pico_data = []
@@ -332,13 +699,14 @@ class DataVisualizer:
             
             europe_with_data = europe[europe['pico_count'] > 0]
             if not europe_with_data.empty:
-                vmin = europe_with_data['pico_count'].min()
+                vmin = 1
                 vmax = europe_with_data['pico_count'].max()
                 
+                # Use a better colormap that doesn't include white for data countries
                 europe_with_data.plot(
                     column='pico_count', 
                     ax=ax, 
-                    cmap='Blues',
+                    cmap='YlOrRd',
                     legend=False,
                     edgecolor='white', 
                     linewidth=0.8,
@@ -346,19 +714,30 @@ class DataVisualizer:
                     vmax=vmax
                 )
                 
+                # Annotate all countries with PICOs
                 for idx, row in europe_with_data.iterrows():
-                    centroid = row.geometry.centroid
-                    ax.annotate(
-                        f"{row['code']}\n({int(row['pico_count'])})",
-                        xy=(centroid.x, centroid.y),
-                        ha='center', va='center',
-                        fontsize=10, fontweight='bold',
-                        bbox=dict(boxstyle='round,pad=0.3', facecolor='white', 
-                                alpha=0.8, edgecolor='none'),
-                        zorder=5
-                    )
+                    try:
+                        centroid = row.geometry.centroid
+                        
+                        # Manual positioning for France to fix location issue
+                        if row[name_column] == 'France':
+                            x_pos, y_pos = 2.2, 46.2
+                        else:
+                            x_pos, y_pos = centroid.x, centroid.y
+                        
+                        ax.annotate(
+                            f"{row['code']}\n({int(row['pico_count'])})",
+                            xy=(x_pos, y_pos),
+                            ha='center', va='center',
+                            fontsize=10, fontweight='bold',
+                            bbox=dict(boxstyle='round,pad=0.3', facecolor='white', 
+                                    alpha=0.8, edgecolor='none'),
+                            zorder=5
+                        )
+                    except Exception as e:
+                        print(f"Warning: Could not annotate {row.get(name_column, 'Unknown')}: {e}")
                 
-                sm = plt.cm.ScalarMappable(cmap='Blues', 
+                sm = plt.cm.ScalarMappable(cmap='YlOrRd', 
                                          norm=plt.Normalize(vmin=vmin, vmax=vmax))
                 sm.set_array([])
                 cbar = plt.colorbar(sm, ax=ax, shrink=0.6, aspect=30)
@@ -372,7 +751,7 @@ class DataVisualizer:
             ax.spines['bottom'].set_visible(False)
             ax.spines['left'].set_visible(False)
             
-            ax.set_title('European Distribution of PICO Evidence\nby Country', 
+            ax.set_title(f'European Distribution of PICO Evidence\nby Country ({len(country_counts)} countries)', 
                         fontsize=16, fontweight='bold', pad=20)
             
             no_data_patch = mpatches.Patch(color='#F0F0F0', label='No PICO data')
@@ -391,6 +770,10 @@ class DataVisualizer:
             self._create_simplified_european_map()
     
     def _create_simplified_european_map(self):
+        if self.pico_analyzer.picos_df.empty or 'Country' not in self.pico_analyzer.picos_df.columns:
+            print("No country data available for simplified map")
+            return
+            
         print("Creating simplified European map...")
         
         country_counts = self.pico_analyzer.picos_df['Country'].value_counts()
@@ -403,18 +786,56 @@ class DataVisualizer:
             'NL': 'Netherlands',
             'PO': 'Poland',
             'PT': 'Portugal',
-            'SE': 'Sweden'
+            'SE': 'Sweden',
+            'AT': 'Austria',       
+            'IT': 'Italy',        
+            'ES': 'Spain',         
+            'BE': 'Belgium',
+            'CH': 'Switzerland',
+            'NO': 'Norway',
+            'FI': 'Finland',
+            'IE': 'Ireland',
+            'CZ': 'Czech Republic',
+            'HU': 'Hungary',
+            'RO': 'Romania',
+            'BG': 'Bulgaria',
+            'GR': 'Greece',
+            'HR': 'Croatia',
+            'SI': 'Slovenia',
+            'SK': 'Slovakia',
+            'LT': 'Lithuania',
+            'LV': 'Latvia',
+            'EE': 'Estonia'    
         }
         
         european_positions = {
             'Germany': (10.5, 51.5),
             'Denmark': (10.0, 56.0),
             'United Kingdom': (-2.0, 54.0),
-            'France': (2.5, 46.5),
+            'France': (2.2, 46.2),
             'Netherlands': (5.5, 52.0),
             'Poland': (19.0, 52.0),
             'Portugal': (-8.0, 39.5),
-            'Sweden': (15.0, 62.0)
+            'Sweden': (15.0, 62.0),
+            'Austria': (13.5, 47.5),   
+            'Italy': (12.5, 42.0),     
+            'Spain': (-4.0, 40.0),    
+            'Belgium': (4.5, 50.5),
+            'Switzerland': (8.2, 46.8),
+            'Norway': (8.0, 60.0),
+            'Finland': (25.0, 64.0),
+            'Ireland': (-8.0, 53.0),
+            'Czech Republic': (15.5, 49.8),
+            'Hungary': (19.5, 47.0),
+            'Romania': (24.0, 45.9),
+            'Bulgaria': (25.0, 42.7),
+            'Greece': (22.0, 39.0),
+            'Croatia': (15.5, 45.1),
+            'Slovenia': (14.5, 46.1),
+            'Slovakia': (19.5, 48.7),
+            'Lithuania': (23.9, 55.3),
+            'Latvia': (24.0, 56.9),
+            'Estonia': (25.0, 58.6)     
         }
         
         fig, ax = plt.subplots(figsize=(12, 8))
@@ -432,6 +853,7 @@ class DataVisualizer:
         max_count = country_counts.max()
         min_count = country_counts.min()
         
+        # Use YlOrRd colormap to avoid white for countries with data
         for country_code, count in country_counts.items():
             if country_code in country_mapping:
                 country_name = country_mapping[country_code]
@@ -447,7 +869,7 @@ class DataVisualizer:
                     color_intensity = 0.3 + 0.7 * normalized_size
                     
                     ax.scatter(lon, lat, s=circle_size, 
-                             color=plt.cm.Blues(color_intensity), 
+                             color=plt.cm.YlOrRd(color_intensity), 
                              alpha=0.8, edgecolors='white', linewidth=2,
                              zorder=5)
                     
@@ -461,7 +883,7 @@ class DataVisualizer:
         
         ax.set_xlabel('Longitude', fontweight='bold')
         ax.set_ylabel('Latitude', fontweight='bold')
-        ax.set_title('European Distribution of PICO Evidence\n(Simplified View)', 
+        ax.set_title(f'European Distribution of PICO Evidence\n({len(country_counts)} countries - Simplified View)', 
                     fontsize=14, fontweight='bold', pad=20)
         
         ax.grid(True, alpha=0.3)
@@ -473,80 +895,113 @@ class DataVisualizer:
         plt.show()
     
     def create_pico_visualizations(self):
+        if self.pico_analyzer.picos_df.empty:
+            print("No PICO data available for visualization")
+            return
+            
         print("Creating PICO visualizations...")
         
         fig, axes = plt.subplots(2, 2, figsize=(14, 10))
         fig.suptitle('PICO Analysis Overview', fontsize=16, fontweight='bold', y=0.95)
         
-        country_counts = self.pico_analyzer.picos_df['Country'].value_counts()
-        bars1 = axes[0, 0].bar(range(len(country_counts)), country_counts.values, 
-                              color=self.scientific_colors['primary'], alpha=0.8,
-                              edgecolor='white', linewidth=0.8)
-        axes[0, 0].set_xticks(range(len(country_counts)))
-        axes[0, 0].set_xticklabels(country_counts.index, fontweight='bold')
-        axes[0, 0].set_ylabel('Number of PICOs', fontweight='bold')
-        axes[0, 0].set_xlabel('Country', fontweight='bold')
-        axes[0, 0].set_title('A. PICO Distribution by Country', fontweight='bold', pad=15)
-        axes[0, 0].grid(True, alpha=0.3, axis='y')
+        # Chart 1: Country distribution
+        if 'Country' in self.pico_analyzer.picos_df.columns:
+            country_counts = self.pico_analyzer.picos_df['Country'].value_counts()
+            bars1 = axes[0, 0].bar(range(len(country_counts)), country_counts.values, 
+                                  color=self.scientific_colors['primary'], alpha=0.8,
+                                  edgecolor='white', linewidth=0.8)
+            axes[0, 0].set_xticks(range(len(country_counts)))
+            axes[0, 0].set_xticklabels(country_counts.index, fontweight='bold')
+            axes[0, 0].set_ylabel('Number of PICOs', fontweight='bold')
+            axes[0, 0].set_xlabel('Country', fontweight='bold')
+            axes[0, 0].set_title('A. PICO Distribution by Country', fontweight='bold', pad=15)
+            axes[0, 0].grid(True, alpha=0.3, axis='y')
+            
+            for bar, value in zip(bars1, country_counts.values):
+                axes[0, 0].text(bar.get_x() + bar.get_width()/2, bar.get_height() + 0.1,
+                               str(value), ha='center', va='bottom', fontweight='bold')
+        else:
+            axes[0, 0].text(0.5, 0.5, 'No Country Data Available', 
+                           ha='center', va='center', transform=axes[0, 0].transAxes)
+            axes[0, 0].set_title('A. PICO Distribution by Country', fontweight='bold', pad=15)
         
-        for bar, value in zip(bars1, country_counts.values):
-            axes[0, 0].text(bar.get_x() + bar.get_width()/2, bar.get_height() + 0.1,
-                           str(value), ha='center', va='bottom', fontweight='bold')
+        # Chart 2: Source type distribution
+        if 'Source_Type' in self.pico_analyzer.picos_df.columns:
+            source_counts = self.pico_analyzer.picos_df['Source_Type'].value_counts()
+            colors = [self.scientific_colors['secondary'], self.scientific_colors['tertiary']][:len(source_counts)]
+            wedges, texts, autotexts = axes[0, 1].pie(source_counts.values, 
+                                                     labels=[label.replace('_', ' ').title() for label in source_counts.index],
+                                                     autopct='%1.1f%%', 
+                                                     colors=colors,
+                                                     startangle=90,
+                                                     wedgeprops=dict(edgecolor='white', linewidth=2))
+            axes[0, 1].set_title('B. PICO Distribution by Source Type', fontweight='bold', pad=15)
+            
+            for autotext in autotexts:
+                autotext.set_color('white')
+                autotext.set_fontweight('bold')
+        else:
+            axes[0, 1].text(0.5, 0.5, 'No Source Type Data Available', 
+                           ha='center', va='center', transform=axes[0, 1].transAxes)
+            axes[0, 1].set_title('B. PICO Distribution by Source Type', fontweight='bold', pad=15)
         
-        source_counts = self.pico_analyzer.picos_df['Source_Type'].value_counts()
-        colors = [self.scientific_colors['secondary'], self.scientific_colors['tertiary']]
-        wedges, texts, autotexts = axes[0, 1].pie(source_counts.values, 
-                                                 labels=source_counts.index,
-                                                 autopct='%1.1f%%', 
-                                                 colors=colors,
-                                                 startangle=90,
-                                                 wedgeprops=dict(edgecolor='white', linewidth=2))
-        axes[0, 1].set_title('B. PICO Distribution by Source Type', fontweight='bold', pad=15)
+        # Chart 3: Comparator frequency
+        if 'Comparator' in self.pico_analyzer.picos_df.columns:
+            comp_counts = self.pico_analyzer.picos_df['Comparator'].value_counts().head(8)
+            bars2 = axes[1, 0].barh(range(len(comp_counts)), comp_counts.values, 
+                                   color=self.scientific_colors['quaternary'], alpha=0.8,
+                                   edgecolor='white', linewidth=0.8)
+            axes[1, 0].set_yticks(range(len(comp_counts)))
+            axes[1, 0].set_yticklabels([comp[:25] + '...' if len(comp) > 25 else comp 
+                                       for comp in comp_counts.index], fontweight='bold')
+            axes[1, 0].set_xlabel('Number of PICOs', fontweight='bold')
+            axes[1, 0].set_title('C. Most Frequent Comparators', fontweight='bold', pad=15)
+            axes[1, 0].grid(True, alpha=0.3, axis='x')
+            axes[1, 0].invert_yaxis()
+            
+            for bar, value in zip(bars2, comp_counts.values):
+                axes[1, 0].text(bar.get_width() + 0.05, bar.get_y() + bar.get_height()/2,
+                               str(value), ha='left', va='center', fontweight='bold')
+        else:
+            axes[1, 0].text(0.5, 0.5, 'No Comparator Data Available', 
+                           ha='center', va='center', transform=axes[1, 0].transAxes)
+            axes[1, 0].set_title('C. Most Frequent Comparators', fontweight='bold', pad=15)
         
-        for autotext in autotexts:
-            autotext.set_color('white')
-            autotext.set_fontweight('bold')
-        
-        comp_counts = self.pico_analyzer.picos_df['Comparator'].value_counts().head(8)
-        bars2 = axes[1, 0].barh(range(len(comp_counts)), comp_counts.values, 
-                               color=self.scientific_colors['quaternary'], alpha=0.8,
-                               edgecolor='white', linewidth=0.8)
-        axes[1, 0].set_yticks(range(len(comp_counts)))
-        axes[1, 0].set_yticklabels([comp[:25] + '...' if len(comp) > 25 else comp 
-                                   for comp in comp_counts.index], fontweight='bold')
-        axes[1, 0].set_xlabel('Number of PICOs', fontweight='bold')
-        axes[1, 0].set_title('C. Most Frequent Comparators', fontweight='bold', pad=15)
-        axes[1, 0].grid(True, alpha=0.3, axis='x')
-        axes[1, 0].invert_yaxis()
-        
-        for bar, value in zip(bars2, comp_counts.values):
-            axes[1, 0].text(bar.get_width() + 0.05, bar.get_y() + bar.get_height()/2,
-                           str(value), ha='left', va='center', fontweight='bold')
-        
-        country_source_matrix = self.pico_analyzer.picos_df.pivot_table(
-            index='Country', columns='Source_Type', values='Intervention', 
-            aggfunc='count', fill_value=0
-        )
-        
-        im = axes[1, 1].imshow(country_source_matrix.values, cmap='Blues', aspect='auto',
-                               vmin=0, vmax=country_source_matrix.values.max())
-        
-        axes[1, 1].set_xticks(range(len(country_source_matrix.columns)))
-        axes[1, 1].set_xticklabels([col.replace('_', '\n') for col in country_source_matrix.columns], 
-                                  fontweight='bold')
-        axes[1, 1].set_yticks(range(len(country_source_matrix.index)))
-        axes[1, 1].set_yticklabels(country_source_matrix.index, fontweight='bold')
-        axes[1, 1].set_title('D. Country vs Source Type Matrix', fontweight='bold', pad=15)
-        
-        for i in range(len(country_source_matrix.index)):
-            for j in range(len(country_source_matrix.columns)):
-                value = country_source_matrix.iloc[i, j]
-                axes[1, 1].text(j, i, str(value), ha='center', va='center',
-                               fontweight='bold', 
-                               color='white' if value > country_source_matrix.values.max()/2 else 'black')
-        
-        cbar = plt.colorbar(im, ax=axes[1, 1], shrink=0.8)
-        cbar.set_label('Number of PICOs', fontweight='bold')
+        # Chart 4: Country vs Source Type matrix
+        if 'Country' in self.pico_analyzer.picos_df.columns and 'Source_Type' in self.pico_analyzer.picos_df.columns:
+            country_source_matrix = self.pico_analyzer.picos_df.pivot_table(
+                index='Country', columns='Source_Type', values='Intervention', 
+                aggfunc='count', fill_value=0
+            )
+            
+            if not country_source_matrix.empty:
+                im = axes[1, 1].imshow(country_source_matrix.values, cmap='Blues', aspect='auto',
+                                       vmin=0, vmax=country_source_matrix.values.max())
+                
+                axes[1, 1].set_xticks(range(len(country_source_matrix.columns)))
+                axes[1, 1].set_xticklabels([col.replace('_', '\n') for col in country_source_matrix.columns], 
+                                          fontweight='bold')
+                axes[1, 1].set_yticks(range(len(country_source_matrix.index)))
+                axes[1, 1].set_yticklabels(country_source_matrix.index, fontweight='bold')
+                axes[1, 1].set_title('D. Country vs Source Type Matrix', fontweight='bold', pad=15)
+                
+                for i in range(len(country_source_matrix.index)):
+                    for j in range(len(country_source_matrix.columns)):
+                        value = country_source_matrix.iloc[i, j]
+                        axes[1, 1].text(j, i, str(value), ha='center', va='center',
+                                       fontweight='bold', 
+                                       color='white' if value > country_source_matrix.values.max()/2 else 'black')
+                
+                cbar = plt.colorbar(im, ax=axes[1, 1], shrink=0.8)
+                cbar.set_label('Number of PICOs', fontweight='bold')
+            else:
+                axes[1, 1].text(0.5, 0.5, 'No Matrix Data Available', 
+                               ha='center', va='center', transform=axes[1, 1].transAxes)
+                axes[1, 1].set_title('D. Country vs Source Type Matrix', fontweight='bold', pad=15)
+        else:
+            axes[1, 1].text(0.5, 0.5, 'No Matrix Data Available', 
+                           ha='center', va='center', transform=axes[1, 1].transAxes)
+            axes[1, 1].set_title('D. Country vs Source Type Matrix', fontweight='bold', pad=15)
         
         plt.tight_layout()
         plt.savefig(self.output_dir / 'pico_analysis_dashboard.png', 
@@ -560,13 +1015,16 @@ class DataVisualizer:
     def _create_comparator_heatmap(self):
         matrix = self.pico_analyzer.get_country_comparator_matrix()
         
+        if matrix.empty:
+            print("No data available for comparator heatmap")
+            return
+        
         plt.figure(figsize=(12, 8))
         
-        mask = matrix == 0
         ax = sns.heatmap(matrix, annot=True, fmt='d', cmap='Blues',
                         cbar_kws={'label': 'Number of PICOs'},
                         linewidths=0.5, linecolor='white',
-                        mask=None, square=False)
+                        square=False)
         
         plt.title('Country vs Comparator Distribution Matrix', 
                  fontsize=14, fontweight='bold', pad=20)
@@ -588,77 +1046,118 @@ class DataVisualizer:
         plt.show()
     
     def create_outcome_visualizations(self):
+        if self.outcome_analyzer.outcomes_df.empty:
+            print("No outcomes data available for visualization")
+            return
+            
         print("Creating Outcome visualizations...")
         
         fig, axes = plt.subplots(2, 2, figsize=(14, 10))
         fig.suptitle('Outcomes Analysis Overview', fontsize=16, fontweight='bold', y=0.95)
         
-        category_counts = self.outcome_analyzer.outcomes_df['Category'].value_counts()
-        bars1 = axes[0, 0].bar(range(len(category_counts)), category_counts.values, 
-                              color=self.scientific_colors['primary'], alpha=0.8,
-                              edgecolor='white', linewidth=0.8)
-        axes[0, 0].set_xticks(range(len(category_counts)))
-        axes[0, 0].set_xticklabels([cat.replace('_', ' ').title() for cat in category_counts.index], 
-                                  rotation=45, ha='right', fontweight='bold')
-        axes[0, 0].set_ylabel('Number of Outcome Reports', fontweight='bold')
-        axes[0, 0].set_xlabel('Outcome Category', fontweight='bold')
-        axes[0, 0].set_title('A. Outcomes by Category', fontweight='bold', pad=15)
-        axes[0, 0].grid(True, alpha=0.3, axis='y')
+        # Chart 1: Category distribution
+        if 'Category' in self.outcome_analyzer.outcomes_df.columns:
+            category_counts = self.outcome_analyzer.outcomes_df['Category'].value_counts()
+            bars1 = axes[0, 0].bar(range(len(category_counts)), category_counts.values, 
+                                  color=self.scientific_colors['primary'], alpha=0.8,
+                                  edgecolor='white', linewidth=0.8)
+            axes[0, 0].set_xticks(range(len(category_counts)))
+            axes[0, 0].set_xticklabels([cat.replace('_', ' ').title() for cat in category_counts.index], 
+                                      rotation=45, ha='right', fontweight='bold')
+            axes[0, 0].set_ylabel('Number of Outcome Reports', fontweight='bold')
+            axes[0, 0].set_xlabel('Outcome Category', fontweight='bold')
+            axes[0, 0].set_title('A. Outcomes by Category', fontweight='bold', pad=15)
+            axes[0, 0].grid(True, alpha=0.3, axis='y')
+            
+            for bar, value in zip(bars1, category_counts.values):
+                axes[0, 0].text(bar.get_x() + bar.get_width()/2, bar.get_height() + 0.5,
+                               str(value), ha='center', va='bottom', fontweight='bold')
+        else:
+            axes[0, 0].text(0.5, 0.5, 'No Category Data Available', 
+                           ha='center', va='center', transform=axes[0, 0].transAxes)
+            axes[0, 0].set_title('A. Outcomes by Category', fontweight='bold', pad=15)
         
-        for bar, value in zip(bars1, category_counts.values):
-            axes[0, 0].text(bar.get_x() + bar.get_width()/2, bar.get_height() + 0.5,
-                           str(value), ha='center', va='bottom', fontweight='bold')
+        # Chart 2: Country distribution
+        if 'Country' in self.outcome_analyzer.outcomes_df.columns:
+            country_counts = self.outcome_analyzer.outcomes_df['Country'].value_counts()
+            bars2 = axes[0, 1].bar(range(len(country_counts)), country_counts.values, 
+                                  color=self.scientific_colors['secondary'], alpha=0.8,
+                                  edgecolor='white', linewidth=0.8)
+            axes[0, 1].set_xticks(range(len(country_counts)))
+            axes[0, 1].set_xticklabels(country_counts.index, fontweight='bold')
+            axes[0, 1].set_ylabel('Number of Outcome Reports', fontweight='bold')
+            axes[0, 1].set_xlabel('Country', fontweight='bold')
+            axes[0, 1].set_title('B. Outcome Reports by Country', fontweight='bold', pad=15)
+            axes[0, 1].grid(True, alpha=0.3, axis='y')
+            
+            for bar, value in zip(bars2, country_counts.values):
+                axes[0, 1].text(bar.get_x() + bar.get_width()/2, bar.get_height() + 0.5,
+                               str(value), ha='center', va='bottom', fontweight='bold')
+        else:
+            axes[0, 1].text(0.5, 0.5, 'No Country Data Available', 
+                           ha='center', va='center', transform=axes[0, 1].transAxes)
+            axes[0, 1].set_title('B. Outcome Reports by Country', fontweight='bold', pad=15)
         
-        country_counts = self.outcome_analyzer.outcomes_df['Country'].value_counts()
-        bars2 = axes[0, 1].bar(range(len(country_counts)), country_counts.values, 
-                              color=self.scientific_colors['secondary'], alpha=0.8,
-                              edgecolor='white', linewidth=0.8)
-        axes[0, 1].set_xticks(range(len(country_counts)))
-        axes[0, 1].set_xticklabels(country_counts.index, fontweight='bold')
-        axes[0, 1].set_ylabel('Number of Outcome Reports', fontweight='bold')
-        axes[0, 1].set_xlabel('Country', fontweight='bold')
-        axes[0, 1].set_title('B. Outcome Reports by Country', fontweight='bold', pad=15)
-        axes[0, 1].grid(True, alpha=0.3, axis='y')
+        # Chart 3: Source type distribution
+        if 'Source_Type' in self.outcome_analyzer.outcomes_df.columns:
+            source_counts = self.outcome_analyzer.outcomes_df['Source_Type'].value_counts()
+            # Remove 'Unknown' from source counts if present
+            source_counts = source_counts[source_counts.index != 'Unknown']
+            
+            if len(source_counts) > 0:
+                colors = [self.scientific_colors['tertiary'], self.scientific_colors['quaternary']][:len(source_counts)]
+                wedges, texts, autotexts = axes[1, 0].pie(source_counts.values, 
+                                                         labels=[label.replace('_', ' ').title() for label in source_counts.index],
+                                                         autopct='%1.1f%%', 
+                                                         colors=colors,
+                                                         startangle=90,
+                                                         wedgeprops=dict(edgecolor='white', linewidth=2))
+                axes[1, 0].set_title('C. Outcome Reports by Source Type', fontweight='bold', pad=15)
+                
+                for autotext in autotexts:
+                    autotext.set_color('white')
+                    autotext.set_fontweight('bold')
+            else:
+                axes[1, 0].text(0.5, 0.5, 'No Valid Source Type Data', 
+                               ha='center', va='center', transform=axes[1, 0].transAxes)
+                axes[1, 0].set_title('C. Outcome Reports by Source Type', fontweight='bold', pad=15)
+        else:
+            axes[1, 0].text(0.5, 0.5, 'No Source Type Data Available', 
+                           ha='center', va='center', transform=axes[1, 0].transAxes)
+            axes[1, 0].set_title('C. Outcome Reports by Source Type', fontweight='bold', pad=15)
         
-        for bar, value in zip(bars2, country_counts.values):
-            axes[0, 1].text(bar.get_x() + bar.get_width()/2, bar.get_height() + 0.5,
-                           str(value), ha='center', va='bottom', fontweight='bold')
-        
-        source_counts = self.outcome_analyzer.outcomes_df['Source_Type'].value_counts()
-        colors = [self.scientific_colors['tertiary'], self.scientific_colors['quaternary']]
-        wedges, texts, autotexts = axes[1, 0].pie(source_counts.values, 
-                                                 labels=source_counts.index,
-                                                 autopct='%1.1f%%', 
-                                                 colors=colors,
-                                                 startangle=90,
-                                                 wedgeprops=dict(edgecolor='white', linewidth=2))
-        axes[1, 0].set_title('C. Outcome Reports by Source Type', fontweight='bold', pad=15)
-        
-        for autotext in autotexts:
-            autotext.set_color('white')
-            autotext.set_fontweight('bold')
-        
-        category_country_matrix = self.outcome_analyzer.get_category_country_matrix()
-        
-        im = axes[1, 1].imshow(category_country_matrix.values, cmap='Greens', aspect='auto',
-                               vmin=0, vmax=category_country_matrix.values.max())
-        
-        axes[1, 1].set_xticks(range(len(category_country_matrix.columns)))
-        axes[1, 1].set_xticklabels(category_country_matrix.columns, fontweight='bold', rotation=45, ha='right')
-        axes[1, 1].set_yticks(range(len(category_country_matrix.index)))
-        axes[1, 1].set_yticklabels([idx.replace('_', ' ').title() for idx in category_country_matrix.index], 
-                                  fontweight='bold')
-        axes[1, 1].set_title('D. Category vs Country Matrix', fontweight='bold', pad=15)
-        
-        for i in range(len(category_country_matrix.index)):
-            for j in range(len(category_country_matrix.columns)):
-                value = category_country_matrix.iloc[i, j]
-                axes[1, 1].text(j, i, str(value), ha='center', va='center',
-                               fontweight='bold',
-                               color='white' if value > category_country_matrix.values.max()/2 else 'black')
-        
-        cbar = plt.colorbar(im, ax=axes[1, 1], shrink=0.8)
-        cbar.set_label('Number of Reports', fontweight='bold')
+        # Chart 4: Category vs Country matrix
+        if 'Category' in self.outcome_analyzer.outcomes_df.columns and 'Country' in self.outcome_analyzer.outcomes_df.columns:
+            category_country_matrix = self.outcome_analyzer.get_category_country_matrix()
+            
+            if not category_country_matrix.empty:
+                im = axes[1, 1].imshow(category_country_matrix.values, cmap='Greens', aspect='auto',
+                                       vmin=0, vmax=category_country_matrix.values.max())
+                
+                axes[1, 1].set_xticks(range(len(category_country_matrix.columns)))
+                axes[1, 1].set_xticklabels(category_country_matrix.columns, fontweight='bold', rotation=45, ha='right')
+                axes[1, 1].set_yticks(range(len(category_country_matrix.index)))
+                axes[1, 1].set_yticklabels([idx.replace('_', ' ').title() for idx in category_country_matrix.index], 
+                                          fontweight='bold')
+                axes[1, 1].set_title('D. Category vs Country Matrix', fontweight='bold', pad=15)
+                
+                for i in range(len(category_country_matrix.index)):
+                    for j in range(len(category_country_matrix.columns)):
+                        value = category_country_matrix.iloc[i, j]
+                        axes[1, 1].text(j, i, str(value), ha='center', va='center',
+                                       fontweight='bold',
+                                       color='white' if value > category_country_matrix.values.max()/2 else 'black')
+                
+                cbar = plt.colorbar(im, ax=axes[1, 1], shrink=0.8)
+                cbar.set_label('Number of Reports', fontweight='bold')
+            else:
+                axes[1, 1].text(0.5, 0.5, 'No Matrix Data Available', 
+                               ha='center', va='center', transform=axes[1, 1].transAxes)
+                axes[1, 1].set_title('D. Category vs Country Matrix', fontweight='bold', pad=15)
+        else:
+            axes[1, 1].text(0.5, 0.5, 'No Matrix Data Available', 
+                           ha='center', va='center', transform=axes[1, 1].transAxes)
+            axes[1, 1].set_title('D. Category vs Country Matrix', fontweight='bold', pad=15)
         
         plt.tight_layout()
         plt.savefig(self.output_dir / 'outcomes_analysis_dashboard.png', 
@@ -668,7 +1167,15 @@ class DataVisualizer:
         self._create_outcome_frequency_plot()
     
     def _create_outcome_frequency_plot(self):
+        if self.outcome_analyzer.outcomes_df.empty or 'Outcome_Name' not in self.outcome_analyzer.outcomes_df.columns:
+            print("No outcome name data available for frequency plot")
+            return
+            
         outcome_freq = self.outcome_analyzer.outcomes_df['Outcome_Name'].value_counts().head(15)
+        
+        if outcome_freq.empty:
+            print("No outcome frequency data available")
+            return
         
         plt.figure(figsize=(12, 8))
         bars = plt.barh(range(len(outcome_freq)), outcome_freq.values, 
@@ -697,38 +1204,66 @@ class DataVisualizer:
     def create_combined_analysis(self):
         print("Creating combined analysis visualization...")
         
+        # Check if we have data for both analyzers
+        pico_has_source = not self.pico_analyzer.picos_df.empty and 'Source_Type' in self.pico_analyzer.picos_df.columns
+        outcome_has_source = not self.outcome_analyzer.outcomes_df.empty and 'Source_Type' in self.outcome_analyzer.outcomes_df.columns
+        
+        if not pico_has_source and not outcome_has_source:
+            print("No source type data available for combined analysis")
+            return
+        
         fig, axes = plt.subplots(1, 2, figsize=(14, 6))
         fig.suptitle('Source Type Distribution Comparison', fontsize=16, fontweight='bold', y=0.98)
         
-        pico_sources = self.pico_analyzer.picos_df['Source_Type'].value_counts()
-        colors_pico = [self.scientific_colors['primary'], self.scientific_colors['secondary']]
-        wedges1, texts1, autotexts1 = axes[0].pie(pico_sources.values, 
-                                                  labels=[label.replace('_', ' ').title() 
-                                                         for label in pico_sources.index],
-                                                  autopct='%1.1f%%', 
-                                                  colors=colors_pico,
-                                                  startangle=90,
-                                                  wedgeprops=dict(edgecolor='white', linewidth=2))
-        axes[0].set_title('A. PICOs by Source Type', fontweight='bold', pad=20)
+        # PICO sources pie chart
+        if pico_has_source:
+            pico_sources = self.pico_analyzer.picos_df['Source_Type'].value_counts()
+            colors_pico = [self.scientific_colors['primary'], self.scientific_colors['secondary']][:len(pico_sources)]
+            wedges1, texts1, autotexts1 = axes[0].pie(pico_sources.values, 
+                                                      labels=[label.replace('_', ' ').title() 
+                                                             for label in pico_sources.index],
+                                                      autopct='%1.1f%%', 
+                                                      colors=colors_pico,
+                                                      startangle=90,
+                                                      wedgeprops=dict(edgecolor='white', linewidth=2))
+            axes[0].set_title('A. PICOs by Source Type', fontweight='bold', pad=20)
+            
+            for autotext in autotexts1:
+                autotext.set_color('white')
+                autotext.set_fontweight('bold')
+        else:
+            axes[0].text(0.5, 0.5, 'No PICO Source Type Data', 
+                        ha='center', va='center', transform=axes[0].transAxes)
+            axes[0].set_title('A. PICOs by Source Type', fontweight='bold', pad=20)
         
-        for autotext in autotexts1:
-            autotext.set_color('white')
-            autotext.set_fontweight('bold')
-        
-        outcome_sources = self.outcome_analyzer.outcomes_df['Source_Type'].value_counts()
-        colors_outcome = [self.scientific_colors['tertiary'], self.scientific_colors['quaternary']]
-        wedges2, texts2, autotexts2 = axes[1].pie(outcome_sources.values, 
-                                                  labels=[label.replace('_', ' ').title() 
-                                                         for label in outcome_sources.index],
-                                                  autopct='%1.1f%%', 
-                                                  colors=colors_outcome,
-                                                  startangle=90,
-                                                  wedgeprops=dict(edgecolor='white', linewidth=2))
-        axes[1].set_title('B. Outcomes by Source Type', fontweight='bold', pad=20)
-        
-        for autotext in autotexts2:
-            autotext.set_color('white')
-            autotext.set_fontweight('bold')
+        # Outcome sources pie chart
+        if outcome_has_source:
+            outcome_sources = self.outcome_analyzer.outcomes_df['Source_Type'].value_counts()
+            # Remove 'Unknown' entries for cleaner visualization
+            outcome_sources = outcome_sources[outcome_sources.index != 'Unknown']
+            
+            if len(outcome_sources) > 0:
+                colors_outcome = [self.scientific_colors['tertiary'], self.scientific_colors['quaternary']][:len(outcome_sources)]
+                wedges2, texts2, autotexts2 = axes[1].pie(outcome_sources.values, 
+                                                          labels=[label.replace('_', ' ').title() 
+                                                                 for label in outcome_sources.index],
+                                                          autopct='%1.1f%%', 
+                                                          colors=colors_outcome,
+                                                          startangle=90,
+                                                          wedgeprops=dict(edgecolor='white', linewidth=2))
+                axes[1].set_title('B. Outcomes by Source Type', fontweight='bold', pad=20)
+                
+                for autotext in autotexts2:
+                    autotext.set_color('white')
+                    autotext.set_fontweight('bold')
+            else:
+                axes[1].text(0.5, 0.5, 'No Valid Outcome Source Type Data', 
+                            ha='center', va='center', transform=axes[1].transAxes)
+                axes[1].set_title('B. Outcomes by Source Type', fontweight='bold', pad=20)
+        else:
+            axes[1].text(0.5, 0.5, 'No Outcome Source Type Data', 
+                        ha='center', va='center', transform=axes[1].transAxes)
+            axes[1].set_title('B. Outcomes by Source Type', fontweight='bold', pad=20)
         
         plt.tight_layout()
         plt.savefig(self.output_dir / 'source_type_comparison.png', 
@@ -738,10 +1273,34 @@ class DataVisualizer:
         self._create_country_coverage_comparison()
     
     def _create_country_coverage_comparison(self):
-        pico_countries = set(self.pico_analyzer.picos_df['Country'].unique())
-        outcome_countries = set(self.outcome_analyzer.outcomes_df['Country'].unique())
+        # Get countries from both analyzers - only those that actually have data
+        pico_countries = set()
+        outcome_countries = set()
+        
+        if not self.pico_analyzer.picos_df.empty and 'Country' in self.pico_analyzer.picos_df.columns:
+            # Only include countries that have actual PICO data
+            pico_data = self.pico_analyzer.picos_df[
+                (self.pico_analyzer.picos_df['Country'] != 'Unknown') & 
+                (self.pico_analyzer.picos_df['Country'].notna())
+            ]
+            pico_countries = set(pico_data['Country'].unique())
+            
+        if not self.outcome_analyzer.outcomes_df.empty and 'Country' in self.outcome_analyzer.outcomes_df.columns:
+            # Only include countries that have actual outcome data
+            outcome_data = self.outcome_analyzer.outcomes_df[
+                (self.outcome_analyzer.outcomes_df['Country'] != 'Unknown') & 
+                (self.outcome_analyzer.outcomes_df['Country'].notna())
+            ]
+            outcome_countries = set(outcome_data['Country'].unique())
         
         all_countries = sorted(pico_countries.union(outcome_countries))
+        
+        if not all_countries:
+            print("No country data available for coverage comparison")
+            return
+        
+        print(f"PICO countries: {pico_countries}")
+        print(f"Outcome countries: {outcome_countries}")
         
         pico_coverage = [1 if country in pico_countries else 0 for country in all_countries]
         outcome_coverage = [1 if country in outcome_countries else 0 for country in all_countries]
@@ -785,24 +1344,46 @@ class DataVisualizer:
         
         report_content.append("PICO ANALYSIS SUMMARY:")
         report_content.append("-" * 25)
-        report_content.append(f"Total consolidated PICOs: {len(self.pico_analyzer.data['consolidated_picos'])}")
-        report_content.append(f"Unique countries: {self.pico_analyzer.picos_df['Country'].nunique()}")
-        report_content.append(f"Unique comparators: {self.pico_analyzer.picos_df['Comparator'].nunique()}")
-        report_content.append(f"Most common country: {self.pico_analyzer.picos_df['Country'].mode()[0]}")
-        report_content.append(f"Most common comparator: {self.pico_analyzer.picos_df['Comparator'].mode()[0]}")
+        
+        if not self.pico_analyzer.picos_df.empty:
+            if 'consolidated_picos' in self.pico_analyzer.data:
+                report_content.append(f"Total consolidated PICOs: {len(self.pico_analyzer.data['consolidated_picos'])}")
+            if 'Country' in self.pico_analyzer.picos_df.columns:
+                report_content.append(f"Unique countries: {self.pico_analyzer.picos_df['Country'].nunique()}")
+                report_content.append(f"Most common country: {self.pico_analyzer.picos_df['Country'].mode().iloc[0] if not self.pico_analyzer.picos_df['Country'].mode().empty else 'N/A'}")
+            if 'Comparator' in self.pico_analyzer.picos_df.columns:
+                report_content.append(f"Unique comparators: {self.pico_analyzer.picos_df['Comparator'].nunique()}")
+                report_content.append(f"Most common comparator: {self.pico_analyzer.picos_df['Comparator'].mode().iloc[0] if not self.pico_analyzer.picos_df['Comparator'].mode().empty else 'N/A'}")
+        else:
+            report_content.append("No PICO data available for analysis")
         report_content.append("")
         
         report_content.append("OUTCOMES ANALYSIS SUMMARY:")
         report_content.append("-" * 27)
-        report_content.append(f"Total outcome reports: {len(self.outcome_analyzer.outcomes_df)}")
-        report_content.append(f"Unique outcomes: {self.outcome_analyzer.outcomes_df['Outcome_Name'].nunique()}")
-        report_content.append(f"Outcome categories: {self.outcome_analyzer.outcomes_df['Category'].nunique()}")
-        report_content.append(f"Most reported outcome: {self.outcome_analyzer.outcomes_df['Outcome_Name'].mode()[0]}")
-        report_content.append(f"Most active country: {self.outcome_analyzer.outcomes_df['Country'].mode()[0]}")
+        
+        if not self.outcome_analyzer.outcomes_df.empty:
+            report_content.append(f"Total outcome reports: {len(self.outcome_analyzer.outcomes_df)}")
+            if 'Outcome_Name' in self.outcome_analyzer.outcomes_df.columns:
+                report_content.append(f"Unique outcomes: {self.outcome_analyzer.outcomes_df['Outcome_Name'].nunique()}")
+                report_content.append(f"Most reported outcome: {self.outcome_analyzer.outcomes_df['Outcome_Name'].mode().iloc[0] if not self.outcome_analyzer.outcomes_df['Outcome_Name'].mode().empty else 'N/A'}")
+            if 'Category' in self.outcome_analyzer.outcomes_df.columns:
+                report_content.append(f"Outcome categories: {self.outcome_analyzer.outcomes_df['Category'].nunique()}")
+            if 'Country' in self.outcome_analyzer.outcomes_df.columns:
+                report_content.append(f"Most active country: {self.outcome_analyzer.outcomes_df['Country'].mode().iloc[0] if not self.outcome_analyzer.outcomes_df['Country'].mode().empty else 'N/A'}")
+        else:
+            report_content.append("No outcomes data available for analysis")
         report_content.append("")
         
-        pico_countries = set(self.pico_analyzer.picos_df['Country'].unique())
-        outcome_countries = set(self.outcome_analyzer.outcomes_df['Country'].unique())
+        # Coverage analysis
+        pico_countries = set()
+        outcome_countries = set()
+        
+        if not self.pico_analyzer.picos_df.empty and 'Country' in self.pico_analyzer.picos_df.columns:
+            pico_countries = set(self.pico_analyzer.picos_df['Country'].unique())
+            
+        if not self.outcome_analyzer.outcomes_df.empty and 'Country' in self.outcome_analyzer.outcomes_df.columns:
+            outcome_countries = set(self.outcome_analyzer.outcomes_df['Country'].unique())
+        
         common_countries = pico_countries.intersection(outcome_countries)
         
         report_content.append("COVERAGE ANALYSIS:")
@@ -818,24 +1399,145 @@ class DataVisualizer:
         print('\n'.join(report_content))
 
 
+def generate_overview_summary(pico_analyzer, outcome_analyzer, case_name):
+    """Generate a nice formatted overview summary for PICOs and Outcomes"""
+    print("\n" + "="*100)
+    print(f"{case_name.upper()} COMPREHENSIVE ANALYSIS OVERVIEW")
+    print("="*100)
+    
+    # PICO Overview
+    print("\n" + "🔬 PICO EVIDENCE OVERVIEW")
+    print("-" * 50)
+    
+    if not pico_analyzer.picos_df.empty:
+        total_picos = len(pico_analyzer.data.get('consolidated_picos', []))
+        total_records = len(pico_analyzer.picos_df)
+        
+        print(f"📊 Total Consolidated PICOs: {total_picos}")
+        print(f"📈 Total PICO Records: {total_records}")
+        
+        if 'Country' in pico_analyzer.picos_df.columns:
+            countries = pico_analyzer.picos_df['Country'].value_counts()
+            print(f"🌍 Countries Covered: {len(countries)}")
+            print("   Top countries by PICOs:")
+            for i, (country, count) in enumerate(countries.head(3).items()):
+                print(f"   {i+1}. {country}: {count} PICOs")
+        
+        if 'Source_Type' in pico_analyzer.picos_df.columns:
+            sources = pico_analyzer.picos_df['Source_Type'].value_counts()
+            print(f"📋 Source Types: {', '.join(sources.index)}")
+            for source, count in sources.items():
+                print(f"   - {source.replace('_', ' ').title()}: {count} records")
+        
+        if 'Comparator' in pico_analyzer.picos_df.columns:
+            comparators = pico_analyzer.picos_df['Comparator'].nunique()
+            top_comparator = pico_analyzer.picos_df['Comparator'].mode().iloc[0] if not pico_analyzer.picos_df['Comparator'].mode().empty else 'N/A'
+            print(f"⚖️  Unique Comparators: {comparators}")
+            print(f"   Most Common: {top_comparator}")
+    else:
+        print("❌ No PICO data available for analysis")
+    
+    # Outcomes Overview
+    print("\n" + "🎯 OUTCOMES EVIDENCE OVERVIEW")
+    print("-" * 50)
+    
+    if not outcome_analyzer.outcomes_df.empty:
+        total_outcome_reports = len(outcome_analyzer.outcomes_df)
+        
+        print(f"📊 Total Outcome Reports: {total_outcome_reports}")
+        
+        if 'Outcome_Name' in outcome_analyzer.outcomes_df.columns:
+            unique_outcomes = outcome_analyzer.outcomes_df['Outcome_Name'].nunique()
+            top_outcome = outcome_analyzer.outcomes_df['Outcome_Name'].mode().iloc[0] if not outcome_analyzer.outcomes_df['Outcome_Name'].mode().empty else 'N/A'
+            print(f"🔢 Unique Outcomes: {unique_outcomes}")
+            print(f"   Most Reported: {top_outcome}")
+        
+        if 'Country' in outcome_analyzer.outcomes_df.columns:
+            outcome_countries = outcome_analyzer.outcomes_df['Country'].value_counts()
+            print(f"🌍 Countries with Outcomes: {len(outcome_countries)}")
+            print("   Top countries by outcome reports:")
+            for i, (country, count) in enumerate(outcome_countries.head(3).items()):
+                print(f"   {i+1}. {country}: {count} reports")
+        
+        if 'Category' in outcome_analyzer.outcomes_df.columns:
+            categories = outcome_analyzer.outcomes_df['Category'].value_counts()
+            print(f"📂 Outcome Categories: {len(categories)}")
+            for category, count in categories.items():
+                print(f"   - {category.replace('_', ' ').title()}: {count} reports")
+        
+        if 'Source_Type' in outcome_analyzer.outcomes_df.columns:
+            outcome_sources = outcome_analyzer.outcomes_df['Source_Type'].value_counts()
+            outcome_sources = outcome_sources[outcome_sources.index != 'Unknown']
+            if len(outcome_sources) > 0:
+                print(f"📋 Source Types: {', '.join(outcome_sources.index)}")
+                for source, count in outcome_sources.items():
+                    print(f"   - {source.replace('_', ' ').title()}: {count} reports")
+    else:
+        print("❌ No outcomes data available for analysis")
+    
+    # Coverage Summary
+    print("\n" + "🗺️  COVERAGE SUMMARY")
+    print("-" * 50)
+    
+    pico_countries = set()
+    outcome_countries = set()
+    
+    if not pico_analyzer.picos_df.empty and 'Country' in pico_analyzer.picos_df.columns:
+        pico_countries = set(pico_analyzer.picos_df['Country'].unique())
+    
+    if not outcome_analyzer.outcomes_df.empty and 'Country' in outcome_analyzer.outcomes_df.columns:
+        outcome_countries = set(outcome_analyzer.outcomes_df['Country'].unique())
+    
+    all_countries = pico_countries.union(outcome_countries)
+    common_countries = pico_countries.intersection(outcome_countries)
+    
+    print(f"🌐 Total Countries Covered: {len(all_countries)}")
+    print(f"🤝 Countries with Both PICOs & Outcomes: {len(common_countries)}")
+    print(f"🔬 PICO-Only Countries: {len(pico_countries - outcome_countries)}")
+    print(f"🎯 Outcome-Only Countries: {len(outcome_countries - pico_countries)}")
+    
+    if common_countries:
+        print(f"   Countries with complete coverage: {', '.join(sorted(common_countries))}")
+    
+    print("\n" + "="*100)
+
+
 def run_complete_analysis(pico_file_path, outcome_file_path):
     print("Starting comprehensive RAG pipeline analysis...")
     print()
     
-    pico_analyzer = PICOAnalyzer(pico_file_path)
-    outcome_analyzer = OutcomeAnalyzer(outcome_file_path)
-    
-    pico_analyzer.print_summary_statistics()
-    outcome_analyzer.print_summary_statistics()
-    
-    visualizer = DataVisualizer(pico_analyzer, outcome_analyzer)
-    
-    visualizer.create_pico_visualizations()
-    visualizer.create_outcome_visualizations()
-    visualizer.create_combined_analysis()
-    
-    visualizer.generate_summary_report()
-    
-    print("Analysis complete! All visualizations and reports saved to results/visualizations/")
-    
-    return pico_analyzer, outcome_analyzer, visualizer
+    try:
+        pico_analyzer = PICOAnalyzer(pico_file_path)
+        outcome_analyzer = OutcomeAnalyzer(outcome_file_path)
+        
+        # Extract case name from file path for overview
+        case_name = "Analysis"
+        if "/NSCLC/" in pico_file_path or "/nsclc/" in pico_file_path:
+            case_name = "NSCLC"
+        elif "/HCC/" in pico_file_path or "/hcc/" in pico_file_path:
+            case_name = "HCC"
+        
+        # Generate overview summary using the new class
+        overview = ComprehensiveOverview()
+        overview.generate_case_overview(pico_analyzer, outcome_analyzer, case_name)
+        
+        pico_analyzer.print_summary_statistics()
+        outcome_analyzer.print_summary_statistics()
+        
+        visualizer = DataVisualizer(pico_analyzer, outcome_analyzer)
+        
+        visualizer.create_pico_visualizations()
+        visualizer.create_outcome_visualizations()
+        visualizer.create_combined_analysis()
+        
+        visualizer.generate_summary_report()
+        
+        print("Analysis complete! All visualizations and reports saved to results/visualizations/")
+        
+        return pico_analyzer, outcome_analyzer, visualizer
+        
+    except Exception as e:
+        print(f"Error in complete analysis: {e}")
+        import traceback
+        traceback.print_exc()
+        return None, None, None

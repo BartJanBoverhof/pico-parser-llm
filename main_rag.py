@@ -6,7 +6,7 @@ from python.vectorise import Chunker, Vectoriser
 from python.run import RagPipeline
 from python.open_ai import validate_api_key
 from python.config import SOURCE_TYPE_CONFIGS, CASE_CONFIGS, CONSOLIDATION_CONFIGS
-from python.results import run_complete_analysis
+from python.results import run_complete_analysis, ComprehensiveOverview, PICOAnalyzer, OutcomeAnalyzer
 import glob
 import os
 from pathlib import Path
@@ -323,8 +323,37 @@ consolidation_results_hcc = rag_hcc.run_pico_consolidation(
 # ANALYSIS AND VISUALIZATION
 # ============================================================================
 
+print("\n" + "="*100)
+print("COMPREHENSIVE RESULTS ANALYSIS")
+print("="*100)
+
+# First, create comprehensive overview for all cases
+print("\n" + "📋 GENERATING COMPREHENSIVE OVERVIEW FOR ALL CASES")
+print("="*80)
+
+# Initialize comprehensive overview class
+comprehensive_overview = ComprehensiveOverview()
+
+all_pico_files = []
+all_outcome_files = []
+
+# Collect all PICO and Outcome files
+for case in ["NSCLC", "HCC"]:
+    case_dir = Path(f"results/{case}/consolidated")
+    if case_dir.exists():
+        pico_files = list(case_dir.glob("*consolidated_picos*.json"))
+        outcome_files = list(case_dir.glob("*consolidated_outcomes*.json"))
+        
+        if pico_files and outcome_files:
+            all_pico_files.extend([(max(pico_files, key=os.path.getmtime), case)])
+            all_outcome_files.extend([(max(outcome_files, key=os.path.getmtime), case)])
+
+# Generate cross-case overview
+if all_pico_files and all_outcome_files:
+    comprehensive_overview.generate_cross_case_overview(all_pico_files, all_outcome_files)
+
 # NSCLC Analysis
-print("\n=== NSCLC Analysis ===")
+print("\n=== NSCLC DETAILED ANALYSIS ===")
 nsclc_consolidated_dir = Path("results/NSCLC/consolidated")
 if nsclc_consolidated_dir.exists():
     # Get the most recent PICO and Outcomes files for NSCLC
@@ -349,6 +378,8 @@ if nsclc_consolidated_dir.exists():
             print("NSCLC analysis completed successfully!")
         except Exception as e:
             print(f"Error in NSCLC analysis: {e}")
+            import traceback
+            traceback.print_exc()
             
     else:
         print("Warning: Could not find consolidated NSCLC PICO or Outcomes files.")
@@ -362,7 +393,7 @@ else:
     print("Make sure the NSCLC consolidation step completed successfully.")
 
 # HCC Analysis
-print("\n=== HCC Analysis ===")
+print("\n=== HCC DETAILED ANALYSIS ===")
 hcc_consolidated_dir = Path("results/HCC/consolidated")
 if hcc_consolidated_dir.exists():
     # Get the most recent PICO and Outcomes files for HCC
@@ -387,6 +418,8 @@ if hcc_consolidated_dir.exists():
             print("HCC analysis completed successfully!")
         except Exception as e:
             print(f"Error in HCC analysis: {e}")
+            import traceback
+            traceback.print_exc()
             
     else:
         print("Warning: Could not find consolidated HCC PICO or Outcomes files.")
@@ -398,3 +431,12 @@ if hcc_consolidated_dir.exists():
 else:
     print("Warning: results/HCC/consolidated directory not found.")
     print("Make sure the HCC consolidation step completed successfully.")
+
+print("\n" + "="*100)
+print("ANALYSIS PIPELINE COMPLETED SUCCESSFULLY")
+print("="*100)
+print("📁 All results, visualizations, and reports have been saved to:")
+print("   - results/NSCLC/ (NSCLC-specific results)")
+print("   - results/HCC/ (HCC-specific results)")
+print("   - results/visualizations/ (Analysis plots and reports)")
+print("="*100)
