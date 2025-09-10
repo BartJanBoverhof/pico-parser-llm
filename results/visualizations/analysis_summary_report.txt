@@ -1,22 +1,25 @@
 RAG PIPELINE ANALYSIS SUMMARY REPORT
 ==================================================
-Generated on: 2025-09-10 12:45:42
+Generated on: 2025-09-10 15:36:51
 
 PICO ANALYSIS SUMMARY:
 -------------------------
-Total consolidated PICOs: 26
-Unique countries: 12
-Most common country: SE
-Unique comparators: 15
-Most common comparator: sorafenib
+Total consolidated PICOs: 27
+Unique countries: 10
+Most common country: PO
+Unique comparators: 26
+Most common comparator: docetaxel
 
 OUTCOMES ANALYSIS SUMMARY:
 ---------------------------
-No outcomes data available for analysis
+Total outcome measures: 34
+Countries with outcomes: 11
+Countries: AT, DE, DK, EN, EU, FR, IT, NL, PO, PT, SE
+Source types: clinical_guideline, hta_submission
 
 COVERAGE ANALYSIS:
 ------------------
-Countries with both PICOs and outcomes: 0
-PICO-only countries: 12
-Outcome-only countries: 0
-Total country coverage: 12
+Countries with both PICOs and outcomes: 10
+PICO-only countries: 0
+Outcome-only countries: 1
+Total country coverage: 11

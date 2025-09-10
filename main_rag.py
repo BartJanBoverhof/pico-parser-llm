@@ -322,7 +322,6 @@ consolidation_results_hcc = rag_hcc.run_pico_consolidation(
 # ============================================================================
 # ANALYSIS AND VISUALIZATION
 # ============================================================================
-
 print("\n" + "="*100)
 print("COMPREHENSIVE RESULTS ANALYSIS")
 print("="*100)
@@ -432,11 +431,3 @@ else:
     print("Warning: results/HCC/consolidated directory not found.")
     print("Make sure the HCC consolidation step completed successfully.")
 
-print("\n" + "="*100)
-print("ANALYSIS PIPELINE COMPLETED SUCCESSFULLY")
-print("="*100)
-print("📁 All results, visualizations, and reports have been saved to:")
-print("   - results/NSCLC/ (NSCLC-specific results)")
-print("   - results/HCC/ (HCC-specific results)")
-print("   - results/visualizations/ (Analysis plots and reports)")
-print("="*100)

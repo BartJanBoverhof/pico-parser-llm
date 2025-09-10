@@ -71,39 +71,27 @@ class ComprehensiveOverview:
         print("\n" + "🎯 OUTCOMES EVIDENCE OVERVIEW")
         print("-" * 50)
         
-        if not outcome_analyzer.outcomes_df.empty:
-            total_outcome_reports = len(outcome_analyzer.outcomes_df)
-            case_data['outcomes'] = total_outcome_reports
+        if outcome_analyzer.total_outcomes > 0:
+            case_data['outcomes'] = outcome_analyzer.total_outcomes
             
-            print(f"📊 Total Outcome Reports: {total_outcome_reports}")
+            print(f"📊 Total Outcome Measures: {outcome_analyzer.total_outcomes}")
+            print(f"📂 Outcome Categories: {len(outcome_analyzer.data.get('consolidated_outcomes', {}))}")
             
-            if 'Outcome_Name' in outcome_analyzer.outcomes_df.columns:
-                unique_outcomes = outcome_analyzer.outcomes_df['Outcome_Name'].nunique()
-                top_outcome = outcome_analyzer.outcomes_df['Outcome_Name'].mode().iloc[0] if not outcome_analyzer.outcomes_df['Outcome_Name'].mode().empty else 'N/A'
-                print(f"🔢 Unique Outcomes: {unique_outcomes}")
-                print(f"   Most Reported: {top_outcome}")
+            # Get countries from metadata instead of processed DataFrame
+            metadata = outcome_analyzer.data.get('outcomes_metadata', {})
+            source_countries = metadata.get('source_countries', [])
+            source_types = metadata.get('source_types', [])
             
-            if 'Country' in outcome_analyzer.outcomes_df.columns:
-                outcome_countries = outcome_analyzer.outcomes_df['Country'].value_counts()
-                case_data['outcome_countries'] = set(outcome_countries.index)
-                print(f"🌍 Countries with Outcomes: {len(outcome_countries)}")
-                print("   Top countries by outcome reports:")
-                for i, (country, count) in enumerate(outcome_countries.head(3).items()):
-                    print(f"   {i+1}. {country}: {count} reports")
+            if source_countries:
+                case_data['outcome_countries'] = set(source_countries)
+                print(f"🌍 Countries with Outcomes: {len(source_countries)}")
+                print(f"   Countries: {', '.join(source_countries)}")
             
-            if 'Category' in outcome_analyzer.outcomes_df.columns:
-                categories = outcome_analyzer.outcomes_df['Category'].value_counts()
-                print(f"📂 Outcome Categories: {len(categories)}")
-                for category, count in categories.items():
-                    print(f"   - {category.replace('_', ' ').title()}: {count} reports")
-            
-            if 'Source_Type' in outcome_analyzer.outcomes_df.columns:
-                outcome_sources = outcome_analyzer.outcomes_df['Source_Type'].value_counts()
-                outcome_sources = outcome_sources[outcome_sources.index != 'Unknown']
-                if len(outcome_sources) > 0:
-                    print(f"📋 Source Types: {', '.join(outcome_sources.index)}")
-                    for source, count in outcome_sources.items():
-                        print(f"   - {source.replace('_', ' ').title()}: {count} reports")
+            if source_types:
+                case_data['source_types'].update(source_types)
+                print(f"📋 Source Types: {', '.join(source_types)}")
+                for source in source_types:
+                    print(f"   - {source.replace('_', ' ').title()}")
         else:
             print("❌ No outcomes data available for analysis")
         
@@ -117,8 +105,10 @@ class ComprehensiveOverview:
         if not pico_analyzer.picos_df.empty and 'Country' in pico_analyzer.picos_df.columns:
             pico_countries = set(pico_analyzer.picos_df['Country'].unique())
         
-        if not outcome_analyzer.outcomes_df.empty and 'Country' in outcome_analyzer.outcomes_df.columns:
-            outcome_countries = set(outcome_analyzer.outcomes_df['Country'].unique())
+        # Get outcome countries from metadata
+        metadata = outcome_analyzer.data.get('outcomes_metadata', {})
+        if metadata.get('source_countries'):
+            outcome_countries = set(metadata['source_countries'])
         
         all_countries = pico_countries.union(outcome_countries)
         common_countries = pico_countries.intersection(outcome_countries)
@@ -167,19 +157,20 @@ class ComprehensiveOverview:
         for outcome_file, case in all_outcome_files:
             try:
                 outcome_analyzer = OutcomeAnalyzer(str(outcome_file))
-                if not outcome_analyzer.outcomes_df.empty:
-                    case_outcomes = len(outcome_analyzer.outcomes_df)
+                if outcome_analyzer.total_outcomes > 0:
+                    case_outcomes = outcome_analyzer.total_outcomes
                     total_outcome_reports += case_outcomes
-                    print(f"   {case}: {case_outcomes} outcome reports")
+                    print(f"   {case}: {case_outcomes} outcome measures")
                     
-                    if 'Country' in outcome_analyzer.outcomes_df.columns:
-                        all_countries_outcome.update(outcome_analyzer.outcomes_df['Country'].unique())
+                    metadata = outcome_analyzer.data.get('outcomes_metadata', {})
+                    if metadata.get('source_countries'):
+                        all_countries_outcome.update(metadata['source_countries'])
             except Exception as e:
                 print(f"   Error loading {case} outcomes: {e}")
         
         print(f"\n📊 TOTAL ACROSS ALL CASES:")
         print(f"   🔬 Total Consolidated PICOs: {total_consolidated_picos}")
-        print(f"   🎯 Total Outcome Reports: {total_outcome_reports}")
+        print(f"   🎯 Total Outcome Measures: {total_outcome_reports}")
         print(f"   🌍 Countries with PICO Evidence: {len(all_countries_pico)}")
         print(f"   🌍 Countries with Outcome Evidence: {len(all_countries_outcome)}")
         print(f"   📋 Source Types Used: {', '.join(all_source_types)}")
@@ -292,6 +283,57 @@ class PICOAnalyzer:
             print(f"Error in prepare_datamatrix: {e}")
             self.picos_df = pd.DataFrame()
     
+    def print_unique_picos_overview(self):
+        """Print detailed overview of all unique PICOs found"""
+        print("\n" + "🔬 DETAILED PICO EVIDENCE LISTING")
+        print("=" * 80)
+        
+        if 'consolidated_picos' not in self.data or not self.data['consolidated_picos']:
+            print("❌ No consolidated PICOs available for detailed listing")
+            return
+            
+        consolidated_picos = self.data['consolidated_picos']
+        
+        print(f"📋 Found {len(consolidated_picos)} unique PICO combinations:\n")
+        
+        for i, pico in enumerate(consolidated_picos, 1):
+            try:
+                population = pico.get('Population', 'Not specified')
+                intervention = pico.get('Intervention', 'Not specified')
+                comparator = pico.get('Comparator', 'Not specified')
+                countries = pico.get('Countries', [])
+                source_types = pico.get('Source_Types', [])
+                
+                # Ensure countries and source_types are lists
+                if isinstance(countries, str):
+                    countries = [countries]
+                if isinstance(source_types, str):
+                    source_types = [source_types]
+                
+                print(f"PICO #{i:02d}")
+                print(f"├─ 👥 Population: {population}")
+                print(f"├─ 💊 Intervention: {intervention}")
+                print(f"├─ ⚖️  Comparator: {comparator}")
+                print(f"├─ 🌍 Countries: {', '.join(countries) if countries else 'Not specified'}")
+                print(f"└─ 📋 Sources: {', '.join([s.replace('_', ' ').title() for s in source_types]) if source_types else 'Not specified'}")
+                
+                # Show population and comparator variants if available
+                pop_variants = pico.get('Original_Population_Variants', [])
+                comp_variants = pico.get('Original_Comparator_Variants', [])
+                
+                if pop_variants and len(pop_variants) > 1:
+                    print(f"   📝 Population variants: {len(pop_variants)} found")
+                if comp_variants and len(comp_variants) > 1:
+                    print(f"   📝 Comparator variants: {len(comp_variants)} found")
+                
+                print()
+                
+            except Exception as e:
+                print(f"   ❌ Error displaying PICO #{i}: {e}")
+                print()
+        
+        print("=" * 80)
+    
     def print_summary_statistics(self):
         print("="*80)
         print("PICO ANALYSIS SUMMARY")
@@ -367,8 +409,17 @@ class OutcomeAnalyzer:
         self.outcome_file_path = outcome_file_path
         self.data = None
         self.outcomes_df = None
+        self.total_outcomes = 0
         self.load_data()
         self.prepare_datamatrix()
+        
+        # Use metadata value if available as it might be deduplicated
+        metadata = self.data.get('outcomes_metadata', {})
+        if 'total_unique_outcomes' in metadata:
+            self.total_outcomes = metadata['total_unique_outcomes']
+            print(f"Using metadata total_unique_outcomes: {self.total_outcomes}")
+        else:
+            print(f"Using calculated total_outcomes: {self.total_outcomes}")
     
     def load_data(self):
         try:
@@ -384,6 +435,7 @@ class OutcomeAnalyzer:
     
     def prepare_datamatrix(self):
         outcome_records = []
+        total_outcomes = 0
         
         try:
             # Check if data structure is as expected
@@ -400,6 +452,11 @@ class OutcomeAnalyzer:
                 self.outcomes_df = pd.DataFrame()
                 return
             
+            # Get metadata for country and source information
+            metadata = self.data.get('outcomes_metadata', {})
+            source_countries = metadata.get('source_countries', [])
+            source_types = metadata.get('source_types', [])
+            
             for category, subcategories in consolidated_outcomes.items():
                 try:
                     # Ensure subcategories is a dictionary
@@ -414,38 +471,56 @@ class OutcomeAnalyzer:
                                 print(f"Warning: outcomes for {category}/{subcategory} is not a list, it's a {type(outcomes)}")
                                 continue
                             
+                            total_outcomes += len(outcomes)
+                            
                             for outcome in outcomes:
                                 try:
-                                    # Ensure outcome is a dictionary
-                                    if not isinstance(outcome, dict):
-                                        print(f"Warning: outcome in {category}/{subcategory} is not a dictionary, it's a {type(outcome)}")
-                                        continue
-                                    
-                                    outcome_name = outcome.get('name', 'Unknown')
-                                    has_details = 'details' in outcome and bool(outcome.get('details', []))
-                                    
-                                    if 'reported_by' in outcome and isinstance(outcome['reported_by'], list):
-                                        for report in outcome['reported_by']:
-                                            if isinstance(report, dict):
+                                    # Handle both string and dictionary outcomes
+                                    if isinstance(outcome, str):
+                                        outcome_name = outcome
+                                        
+                                        # Create records for each country-source combination from metadata
+                                        for country in source_countries:
+                                            for source_type in source_types:
                                                 record = {
                                                     'Category': category,
                                                     'Subcategory': subcategory,
                                                     'Outcome_Name': outcome_name,
-                                                    'Country': report.get('country', 'Unknown'),
-                                                    'Source_Type': report.get('source_type', 'Unknown'),
-                                                    'Has_Details': has_details
+                                                    'Country': country,
+                                                    'Source_Type': source_type,
+                                                    'Has_Details': False
                                                 }
                                                 outcome_records.append(record)
-                                    else:
-                                        record = {
-                                            'Category': category,
-                                            'Subcategory': subcategory,
-                                            'Outcome_Name': outcome_name,
-                                            'Country': 'Unknown',
-                                            'Source_Type': 'Unknown',
-                                            'Has_Details': has_details
-                                        }
-                                        outcome_records.append(record)
+                                                
+                                    elif isinstance(outcome, dict):
+                                        outcome_name = outcome.get('name', 'Unknown')
+                                        has_details = 'details' in outcome and bool(outcome.get('details', []))
+                                        
+                                        if 'reported_by' in outcome and isinstance(outcome['reported_by'], list):
+                                            for report in outcome['reported_by']:
+                                                if isinstance(report, dict):
+                                                    record = {
+                                                        'Category': category,
+                                                        'Subcategory': subcategory,
+                                                        'Outcome_Name': outcome_name,
+                                                        'Country': report.get('country', 'Unknown'),
+                                                        'Source_Type': report.get('source_type', 'Unknown'),
+                                                        'Has_Details': has_details
+                                                    }
+                                                    outcome_records.append(record)
+                                        else:
+                                            # Use metadata for countries and sources
+                                            for country in source_countries:
+                                                for source_type in source_types:
+                                                    record = {
+                                                        'Category': category,
+                                                        'Subcategory': subcategory,
+                                                        'Outcome_Name': outcome_name,
+                                                        'Country': country,
+                                                        'Source_Type': source_type,
+                                                        'Has_Details': has_details
+                                                    }
+                                                    outcome_records.append(record)
                                         
                                 except Exception as e:
                                     print(f"Error processing outcome in {category}/{subcategory}: {e}")
@@ -459,26 +534,119 @@ class OutcomeAnalyzer:
                     print(f"Error processing category {category}: {e}")
                     continue
             
+            self.total_outcomes = total_outcomes
             self.outcomes_df = pd.DataFrame(outcome_records)
-            print(f"Successfully processed {len(outcome_records)} outcome records")
+            print(f"Successfully processed {len(outcome_records)} outcome records from {total_outcomes} unique outcomes")
             
         except Exception as e:
             print(f"Error in prepare_datamatrix: {e}")
             self.outcomes_df = pd.DataFrame()
+    
+    def print_unique_outcomes_overview(self):
+        """Print detailed overview of all unique outcomes found"""
+        print("\n" + "🎯 DETAILED OUTCOMES EVIDENCE LISTING")
+        print("=" * 80)
+        
+        if 'consolidated_outcomes' not in self.data or not self.data['consolidated_outcomes']:
+            print("❌ No consolidated outcomes available for detailed listing")
+            return
+            
+        consolidated_outcomes = self.data['consolidated_outcomes']
+        metadata = self.data.get('outcomes_metadata', {})
+        source_countries = metadata.get('source_countries', [])
+        source_types = metadata.get('source_types', [])
+        
+        total_outcomes = 0
+        for category, subcategories in consolidated_outcomes.items():
+            if isinstance(subcategories, dict):
+                for subcategory, outcomes in subcategories.items():
+                    if isinstance(outcomes, list):
+                        total_outcomes += len(outcomes)
+        
+        print(f"📋 Found {total_outcomes} unique outcomes across {len(consolidated_outcomes)} categories:\n")
+        
+        # Show metadata information
+        print("🌍 Coverage Information:")
+        if source_countries:
+            print(f"├─ Countries: {', '.join(source_countries)}")
+        if source_types:
+            print(f"└─ Source Types: {', '.join([s.replace('_', ' ').title() for s in source_types])}")
+        print()
+        
+        for category, subcategories in consolidated_outcomes.items():
+            try:
+                if not isinstance(subcategories, dict):
+                    continue
+                    
+                print(f"📂 {category.replace('_', ' ').upper()}")
+                print("─" * 60)
+                
+                for subcategory, outcomes in subcategories.items():
+                    try:
+                        if not isinstance(outcomes, list):
+                            continue
+                            
+                        print(f"\n📋 {subcategory.replace('_', ' ').title()} ({len(outcomes)} outcomes):")
+                        
+                        for i, outcome in enumerate(outcomes, 1):
+                            try:
+                                if isinstance(outcome, str):
+                                    # Simple string outcome
+                                    outcome_name = outcome
+                                    print(f"  {i:2d}. {outcome_name}")
+                                    
+                                elif isinstance(outcome, dict):
+                                    # Complex outcome object
+                                    outcome_name = outcome.get('name', 'Unnamed outcome')
+                                    has_details = 'details' in outcome and bool(outcome.get('details', []))
+                                    reported_by = outcome.get('reported_by', [])
+                                    
+                                    # Count unique countries and source types
+                                    countries = set()
+                                    source_types_reported = set()
+                                    if isinstance(reported_by, list):
+                                        for report in reported_by:
+                                            if isinstance(report, dict):
+                                                if 'country' in report:
+                                                    countries.add(report['country'])
+                                                if 'source_type' in report:
+                                                    source_types_reported.add(report['source_type'])
+                                    
+                                    print(f"  {i:2d}. {outcome_name}")
+                                    if countries:
+                                        print(f"      🌍 Countries: {', '.join(sorted(countries))}")
+                                    if source_types_reported:
+                                        print(f"      📋 Sources: {', '.join([s.replace('_', ' ').title() for s in sorted(source_types_reported)])}")
+                                    if has_details:
+                                        print(f"      📝 Additional details available")
+                                        
+                            except Exception as e:
+                                print(f"     ❌ Error displaying outcome {i}: {e}")
+                        
+                    except Exception as e:
+                        print(f"   ❌ Error processing subcategory {subcategory}: {e}")
+                        
+                print("\n")
+                
+            except Exception as e:
+                print(f"❌ Error processing category {category}: {e}")
+                print()
+        
+        print("=" * 80)
     
     def print_summary_statistics(self):
         print("="*80)
         print("OUTCOMES ANALYSIS SUMMARY")
         print("="*80)
         
-        if self.outcomes_df.empty:
+        if self.total_outcomes == 0:
             print("No outcomes data available for analysis")
             return
         
         try:
             metadata = self.data.get('outcomes_metadata', {})
             print(f"Analysis Date: {metadata.get('timestamp', 'Unknown')}")
-            print(f"Total Unique Outcomes: {metadata.get('total_unique_outcomes', 'Unknown')}")
+            print(f"Total Unique Outcomes: {metadata.get('total_unique_outcomes', self.total_outcomes)}")
             print(f"Source Countries: {', '.join(metadata.get('source_countries', []))}")
             print(f"Source Types: {', '.join(metadata.get('source_types', []))}")
             print()
@@ -486,32 +654,36 @@ class OutcomeAnalyzer:
             print("OUTCOMES STATISTICS")
             print("-" * 50)
             
-            if 'Category' in self.outcomes_df.columns:
-                category_counts = self.outcomes_df['Category'].value_counts()
-                print("Outcomes by Category:")
-                for category, count in category_counts.items():
-                    print(f"  {category}: {count}")
-                print()
-            
-            if 'Country' in self.outcomes_df.columns:
-                country_outcome_counts = self.outcomes_df['Country'].value_counts()
-                print("Outcome Reports by Country:")
-                for country, count in country_outcome_counts.items():
-                    print(f"  {country}: {count}")
-                print()
-            
-            if 'Source_Type' in self.outcomes_df.columns:
-                source_outcome_counts = self.outcomes_df['Source_Type'].value_counts()
-                print("Outcome Reports by Source Type:")
-                for source, count in source_outcome_counts.items():
-                    print(f"  {source}: {count}")
-                print()
-            
-            if 'Outcome_Name' in self.outcomes_df.columns:
-                print("Most Frequently Reported Outcomes:")
-                outcome_frequency = self.outcomes_df['Outcome_Name'].value_counts()
-                for outcome, count in outcome_frequency.head(10).items():
-                    print(f"  {outcome}: {count}")
+            if not self.outcomes_df.empty:
+                if 'Category' in self.outcomes_df.columns:
+                    category_counts = self.outcomes_df['Category'].value_counts()
+                    print("Outcomes by Category:")
+                    for category, count in category_counts.items():
+                        print(f"  {category}: {count}")
+                    print()
+                
+                if 'Country' in self.outcomes_df.columns:
+                    country_outcome_counts = self.outcomes_df['Country'].value_counts()
+                    print("Outcome Reports by Country:")
+                    for country, count in country_outcome_counts.items():
+                        print(f"  {country}: {count}")
+                    print()
+                
+                if 'Source_Type' in self.outcomes_df.columns:
+                    source_outcome_counts = self.outcomes_df['Source_Type'].value_counts()
+                    print("Outcome Reports by Source Type:")
+                    for source, count in source_outcome_counts.items():
+                        print(f"  {source}: {count}")
+                    print()
+                
+            else:
+                # Show category breakdown from the raw data
+                consolidated_outcomes = self.data.get('consolidated_outcomes', {})
+                for category, subcategories in consolidated_outcomes.items():
+                    if isinstance(subcategories, dict):
+                        category_total = sum(len(outcomes) for outcomes in subcategories.values() 
+                                           if isinstance(outcomes, list))
+                        print(f"  {category}: {category_total} outcomes")
                 print()
                 
         except Exception as e:
@@ -1046,7 +1218,7 @@ class DataVisualizer:
         plt.show()
     
     def create_outcome_visualizations(self):
-        if self.outcome_analyzer.outcomes_df.empty:
+        if self.outcome_analyzer.total_outcomes == 0:
             print("No outcomes data available for visualization")
             return
             
@@ -1055,21 +1227,31 @@ class DataVisualizer:
         fig, axes = plt.subplots(2, 2, figsize=(14, 10))
         fig.suptitle('Outcomes Analysis Overview', fontsize=16, fontweight='bold', y=0.95)
         
+        # For visualizations, we'll use the consolidated outcomes structure directly
+        consolidated_outcomes = self.outcome_analyzer.data.get('consolidated_outcomes', {})
+        metadata = self.outcome_analyzer.data.get('outcomes_metadata', {})
+        
         # Chart 1: Category distribution
-        if 'Category' in self.outcome_analyzer.outcomes_df.columns:
-            category_counts = self.outcome_analyzer.outcomes_df['Category'].value_counts()
-            bars1 = axes[0, 0].bar(range(len(category_counts)), category_counts.values, 
+        category_counts = {}
+        for category, subcategories in consolidated_outcomes.items():
+            if isinstance(subcategories, dict):
+                total_outcomes = sum(len(outcomes) for outcomes in subcategories.values() 
+                                   if isinstance(outcomes, list))
+                category_counts[category] = total_outcomes
+        
+        if category_counts:
+            bars1 = axes[0, 0].bar(range(len(category_counts)), list(category_counts.values()), 
                                   color=self.scientific_colors['primary'], alpha=0.8,
                                   edgecolor='white', linewidth=0.8)
             axes[0, 0].set_xticks(range(len(category_counts)))
-            axes[0, 0].set_xticklabels([cat.replace('_', ' ').title() for cat in category_counts.index], 
+            axes[0, 0].set_xticklabels([cat.replace('_', ' ').title() for cat in category_counts.keys()], 
                                       rotation=45, ha='right', fontweight='bold')
-            axes[0, 0].set_ylabel('Number of Outcome Reports', fontweight='bold')
+            axes[0, 0].set_ylabel('Number of Outcome Measures', fontweight='bold')
             axes[0, 0].set_xlabel('Outcome Category', fontweight='bold')
             axes[0, 0].set_title('A. Outcomes by Category', fontweight='bold', pad=15)
             axes[0, 0].grid(True, alpha=0.3, axis='y')
             
-            for bar, value in zip(bars1, category_counts.values):
+            for bar, value in zip(bars1, category_counts.values()):
                 axes[0, 0].text(bar.get_x() + bar.get_width()/2, bar.get_height() + 0.5,
                                str(value), ha='center', va='bottom', fontweight='bold')
         else:
@@ -1077,136 +1259,80 @@ class DataVisualizer:
                            ha='center', va='center', transform=axes[0, 0].transAxes)
             axes[0, 0].set_title('A. Outcomes by Category', fontweight='bold', pad=15)
         
-        # Chart 2: Country distribution
-        if 'Country' in self.outcome_analyzer.outcomes_df.columns:
-            country_counts = self.outcome_analyzer.outcomes_df['Country'].value_counts()
-            bars2 = axes[0, 1].bar(range(len(country_counts)), country_counts.values, 
-                                  color=self.scientific_colors['secondary'], alpha=0.8,
-                                  edgecolor='white', linewidth=0.8)
-            axes[0, 1].set_xticks(range(len(country_counts)))
-            axes[0, 1].set_xticklabels(country_counts.index, fontweight='bold')
-            axes[0, 1].set_ylabel('Number of Outcome Reports', fontweight='bold')
-            axes[0, 1].set_xlabel('Country', fontweight='bold')
-            axes[0, 1].set_title('B. Outcome Reports by Country', fontweight='bold', pad=15)
-            axes[0, 1].grid(True, alpha=0.3, axis='y')
-            
-            for bar, value in zip(bars2, country_counts.values):
-                axes[0, 1].text(bar.get_x() + bar.get_width()/2, bar.get_height() + 0.5,
-                               str(value), ha='center', va='bottom', fontweight='bold')
-        else:
-            axes[0, 1].text(0.5, 0.5, 'No Country Data Available', 
-                           ha='center', va='center', transform=axes[0, 1].transAxes)
-            axes[0, 1].set_title('B. Outcome Reports by Country', fontweight='bold', pad=15)
+
         
-        # Chart 3: Source type distribution
-        if 'Source_Type' in self.outcome_analyzer.outcomes_df.columns:
-            source_counts = self.outcome_analyzer.outcomes_df['Source_Type'].value_counts()
-            # Remove 'Unknown' from source counts if present
-            source_counts = source_counts[source_counts.index != 'Unknown']
+        # Chart 3: Source type distribution - show actual representation
+        # Since outcomes aren't source-specific in this structure, we can show the coverage
+        # by using the PICO data which shows which source types contributed to the evidence
+        if not self.pico_analyzer.picos_df.empty and 'Source_Type' in self.pico_analyzer.picos_df.columns:
+            pico_source_counts = self.pico_analyzer.picos_df['Source_Type'].value_counts()
+            # For outcomes visualization, show how many outcome measures are available from each source type
+            source_outcome_counts = {source: self.outcome_analyzer.total_outcomes for source in pico_source_counts.index}
             
-            if len(source_counts) > 0:
-                colors = [self.scientific_colors['tertiary'], self.scientific_colors['quaternary']][:len(source_counts)]
-                wedges, texts, autotexts = axes[1, 0].pie(source_counts.values, 
-                                                         labels=[label.replace('_', ' ').title() for label in source_counts.index],
+            if source_outcome_counts:
+                colors = [self.scientific_colors['tertiary'], self.scientific_colors['quaternary']][:len(source_outcome_counts)]
+                wedges, texts, autotexts = axes[1, 0].pie(list(source_outcome_counts.values()),
+                                                         labels=[label.replace('_', ' ').title() for label in source_outcome_counts.keys()],
                                                          autopct='%1.1f%%', 
                                                          colors=colors,
                                                          startangle=90,
                                                          wedgeprops=dict(edgecolor='white', linewidth=2))
-                axes[1, 0].set_title('C. Outcome Reports by Source Type', fontweight='bold', pad=15)
+                axes[1, 0].set_title('C. Source Type Coverage for Outcomes', fontweight='bold', pad=15)
                 
                 for autotext in autotexts:
                     autotext.set_color('white')
                     autotext.set_fontweight('bold')
             else:
-                axes[1, 0].text(0.5, 0.5, 'No Valid Source Type Data', 
+                axes[1, 0].text(0.5, 0.5, 'No Source Type Data Available', 
                                ha='center', va='center', transform=axes[1, 0].transAxes)
-                axes[1, 0].set_title('C. Outcome Reports by Source Type', fontweight='bold', pad=15)
+                axes[1, 0].set_title('C. Source Type Coverage for Outcomes', fontweight='bold', pad=15)
         else:
             axes[1, 0].text(0.5, 0.5, 'No Source Type Data Available', 
                            ha='center', va='center', transform=axes[1, 0].transAxes)
-            axes[1, 0].set_title('C. Outcome Reports by Source Type', fontweight='bold', pad=15)
+            axes[1, 0].set_title('C. Source Type Coverage for Outcomes', fontweight='bold', pad=15)
         
-        # Chart 4: Category vs Country matrix
-        if 'Category' in self.outcome_analyzer.outcomes_df.columns and 'Country' in self.outcome_analyzer.outcomes_df.columns:
-            category_country_matrix = self.outcome_analyzer.get_category_country_matrix()
+        # Chart 4: Subcategory breakdown
+        subcategory_counts = {}
+        for category, subcategories in consolidated_outcomes.items():
+            if isinstance(subcategories, dict):
+                for subcategory, outcomes in subcategories.items():
+                    if isinstance(outcomes, list):
+                        subcategory_counts[f"{category}_{subcategory}"] = len(outcomes)
+        
+        if subcategory_counts:
+            # Show top 10 subcategories
+            top_subcategories = sorted(subcategory_counts.items(), key=lambda x: x[1], reverse=True)[:10]
+            bars4 = axes[1, 1].barh(range(len(top_subcategories)), [count for _, count in top_subcategories], 
+                                   color=self.scientific_colors['quaternary'], alpha=0.8,
+                                   edgecolor='white', linewidth=0.8)
+            axes[1, 1].set_yticks(range(len(top_subcategories)))
+            axes[1, 1].set_yticklabels([name.replace('_', ' ').title() for name, _ in top_subcategories], 
+                                      fontweight='bold')
+            axes[1, 1].set_xlabel('Number of Outcomes', fontweight='bold')
+            axes[1, 1].set_title('D. Top Outcome Subcategories', fontweight='bold', pad=15)
+            axes[1, 1].grid(True, alpha=0.3, axis='x')
+            axes[1, 1].invert_yaxis()
             
-            if not category_country_matrix.empty:
-                im = axes[1, 1].imshow(category_country_matrix.values, cmap='Greens', aspect='auto',
-                                       vmin=0, vmax=category_country_matrix.values.max())
-                
-                axes[1, 1].set_xticks(range(len(category_country_matrix.columns)))
-                axes[1, 1].set_xticklabels(category_country_matrix.columns, fontweight='bold', rotation=45, ha='right')
-                axes[1, 1].set_yticks(range(len(category_country_matrix.index)))
-                axes[1, 1].set_yticklabels([idx.replace('_', ' ').title() for idx in category_country_matrix.index], 
-                                          fontweight='bold')
-                axes[1, 1].set_title('D. Category vs Country Matrix', fontweight='bold', pad=15)
-                
-                for i in range(len(category_country_matrix.index)):
-                    for j in range(len(category_country_matrix.columns)):
-                        value = category_country_matrix.iloc[i, j]
-                        axes[1, 1].text(j, i, str(value), ha='center', va='center',
-                                       fontweight='bold',
-                                       color='white' if value > category_country_matrix.values.max()/2 else 'black')
-                
-                cbar = plt.colorbar(im, ax=axes[1, 1], shrink=0.8)
-                cbar.set_label('Number of Reports', fontweight='bold')
-            else:
-                axes[1, 1].text(0.5, 0.5, 'No Matrix Data Available', 
-                               ha='center', va='center', transform=axes[1, 1].transAxes)
-                axes[1, 1].set_title('D. Category vs Country Matrix', fontweight='bold', pad=15)
+            for bar, (_, value) in zip(bars4, top_subcategories):
+                axes[1, 1].text(bar.get_width() + 0.1, bar.get_y() + bar.get_height()/2,
+                               str(value), ha='left', va='center', fontweight='bold')
         else:
-            axes[1, 1].text(0.5, 0.5, 'No Matrix Data Available', 
+            axes[1, 1].text(0.5, 0.5, 'No Subcategory Data Available', 
                            ha='center', va='center', transform=axes[1, 1].transAxes)
-            axes[1, 1].set_title('D. Category vs Country Matrix', fontweight='bold', pad=15)
+            axes[1, 1].set_title('D. Top Outcome Subcategories', fontweight='bold', pad=15)
         
         plt.tight_layout()
         plt.savefig(self.output_dir / 'outcomes_analysis_dashboard.png', 
                    dpi=300, bbox_inches='tight', facecolor='white')
         plt.show()
         
-        self._create_outcome_frequency_plot()
-    
-    def _create_outcome_frequency_plot(self):
-        if self.outcome_analyzer.outcomes_df.empty or 'Outcome_Name' not in self.outcome_analyzer.outcomes_df.columns:
-            print("No outcome name data available for frequency plot")
-            return
-            
-        outcome_freq = self.outcome_analyzer.outcomes_df['Outcome_Name'].value_counts().head(15)
-        
-        if outcome_freq.empty:
-            print("No outcome frequency data available")
-            return
-        
-        plt.figure(figsize=(12, 8))
-        bars = plt.barh(range(len(outcome_freq)), outcome_freq.values, 
-                       color=self.scientific_colors['primary'], alpha=0.8,
-                       edgecolor='white', linewidth=0.8)
-        
-        plt.yticks(range(len(outcome_freq)), 
-                  [outcome[:40] + '...' if len(outcome) > 40 else outcome 
-                   for outcome in outcome_freq.index], fontweight='bold')
-        plt.xlabel('Number of Reports', fontweight='bold')
-        plt.ylabel('Outcome Measure', fontweight='bold')
-        plt.title('Most Frequently Reported Outcome Measures', 
-                 fontsize=14, fontweight='bold', pad=20)
-        plt.gca().invert_yaxis()
-        plt.grid(True, alpha=0.3, axis='x')
-        
-        for i, (bar, value) in enumerate(zip(bars, outcome_freq.values)):
-            plt.text(bar.get_width() + 0.1, bar.get_y() + bar.get_height()/2, 
-                    f'{int(value)}', ha='left', va='center', fontweight='bold')
-        
-        plt.tight_layout()
-        plt.savefig(self.output_dir / 'outcome_frequency_plot.png', 
-                   dpi=300, bbox_inches='tight', facecolor='white')
-        plt.show()
     
     def create_combined_analysis(self):
         print("Creating combined analysis visualization...")
         
         # Check if we have data for both analyzers
         pico_has_source = not self.pico_analyzer.picos_df.empty and 'Source_Type' in self.pico_analyzer.picos_df.columns
-        outcome_has_source = not self.outcome_analyzer.outcomes_df.empty and 'Source_Type' in self.outcome_analyzer.outcomes_df.columns
+        outcome_has_source = self.outcome_analyzer.total_outcomes > 0
         
         if not pico_has_source and not outcome_has_source:
             print("No source type data available for combined analysis")
@@ -1238,15 +1364,13 @@ class DataVisualizer:
         
         # Outcome sources pie chart
         if outcome_has_source:
-            outcome_sources = self.outcome_analyzer.outcomes_df['Source_Type'].value_counts()
-            # Remove 'Unknown' entries for cleaner visualization
-            outcome_sources = outcome_sources[outcome_sources.index != 'Unknown']
+            metadata = self.outcome_analyzer.data.get('outcomes_metadata', {})
+            source_types = metadata.get('source_types', [])
             
-            if len(outcome_sources) > 0:
-                colors_outcome = [self.scientific_colors['tertiary'], self.scientific_colors['quaternary']][:len(outcome_sources)]
-                wedges2, texts2, autotexts2 = axes[1].pie(outcome_sources.values, 
-                                                          labels=[label.replace('_', ' ').title() 
-                                                                 for label in outcome_sources.index],
+            if source_types:
+                colors_outcome = [self.scientific_colors['tertiary'], self.scientific_colors['quaternary']][:len(source_types)]
+                wedges2, texts2, autotexts2 = axes[1].pie([1]*len(source_types),  # Equal weight for visualization
+                                                          labels=[label.replace('_', ' ').title() for label in source_types],
                                                           autopct='%1.1f%%', 
                                                           colors=colors_outcome,
                                                           startangle=90,
@@ -1257,7 +1381,7 @@ class DataVisualizer:
                     autotext.set_color('white')
                     autotext.set_fontweight('bold')
             else:
-                axes[1].text(0.5, 0.5, 'No Valid Outcome Source Type Data', 
+                axes[1].text(0.5, 0.5, 'No Outcome Source Type Data', 
                             ha='center', va='center', transform=axes[1].transAxes)
                 axes[1].set_title('B. Outcomes by Source Type', fontweight='bold', pad=20)
         else:
@@ -1270,68 +1394,7 @@ class DataVisualizer:
                    dpi=300, bbox_inches='tight', facecolor='white')
         plt.show()
         
-        self._create_country_coverage_comparison()
-    
-    def _create_country_coverage_comparison(self):
-        # Get countries from both analyzers - only those that actually have data
-        pico_countries = set()
-        outcome_countries = set()
-        
-        if not self.pico_analyzer.picos_df.empty and 'Country' in self.pico_analyzer.picos_df.columns:
-            # Only include countries that have actual PICO data
-            pico_data = self.pico_analyzer.picos_df[
-                (self.pico_analyzer.picos_df['Country'] != 'Unknown') & 
-                (self.pico_analyzer.picos_df['Country'].notna())
-            ]
-            pico_countries = set(pico_data['Country'].unique())
-            
-        if not self.outcome_analyzer.outcomes_df.empty and 'Country' in self.outcome_analyzer.outcomes_df.columns:
-            # Only include countries that have actual outcome data
-            outcome_data = self.outcome_analyzer.outcomes_df[
-                (self.outcome_analyzer.outcomes_df['Country'] != 'Unknown') & 
-                (self.outcome_analyzer.outcomes_df['Country'].notna())
-            ]
-            outcome_countries = set(outcome_data['Country'].unique())
-        
-        all_countries = sorted(pico_countries.union(outcome_countries))
-        
-        if not all_countries:
-            print("No country data available for coverage comparison")
-            return
-        
-        print(f"PICO countries: {pico_countries}")
-        print(f"Outcome countries: {outcome_countries}")
-        
-        pico_coverage = [1 if country in pico_countries else 0 for country in all_countries]
-        outcome_coverage = [1 if country in outcome_countries else 0 for country in all_countries]
-        
-        fig, ax = plt.subplots(figsize=(12, 6))
-        
-        x = np.arange(len(all_countries))
-        width = 0.35
-        
-        bars1 = ax.bar(x - width/2, pico_coverage, width, label='PICOs', 
-                      color=self.scientific_colors['primary'], alpha=0.8,
-                      edgecolor='white', linewidth=0.8)
-        bars2 = ax.bar(x + width/2, outcome_coverage, width, label='Outcomes', 
-                      color=self.scientific_colors['secondary'], alpha=0.8,
-                      edgecolor='white', linewidth=0.8)
-        
-        ax.set_xlabel('Country', fontweight='bold')
-        ax.set_ylabel('Data Availability (1 = Available, 0 = Not Available)', fontweight='bold')
-        ax.set_title('Country Data Coverage: PICOs vs Outcomes', fontsize=14, fontweight='bold', pad=20)
-        ax.set_xticks(x)
-        ax.set_xticklabels(all_countries, fontweight='bold')
-        legend = ax.legend(frameon=True, fancybox=True, shadow=True)
-        for text in legend.get_texts():
-            text.set_fontweight('bold')
-        ax.set_ylim(0, 1.2)
-        ax.grid(True, alpha=0.3, axis='y')
-        
-        plt.tight_layout()
-        plt.savefig(self.output_dir / 'country_coverage_comparison.png', 
-                   dpi=300, bbox_inches='tight', facecolor='white')
-        plt.show()
+
     
     def generate_summary_report(self):
         print("Generating summary report...")
@@ -1361,15 +1424,14 @@ class DataVisualizer:
         report_content.append("OUTCOMES ANALYSIS SUMMARY:")
         report_content.append("-" * 27)
         
-        if not self.outcome_analyzer.outcomes_df.empty:
-            report_content.append(f"Total outcome reports: {len(self.outcome_analyzer.outcomes_df)}")
-            if 'Outcome_Name' in self.outcome_analyzer.outcomes_df.columns:
-                report_content.append(f"Unique outcomes: {self.outcome_analyzer.outcomes_df['Outcome_Name'].nunique()}")
-                report_content.append(f"Most reported outcome: {self.outcome_analyzer.outcomes_df['Outcome_Name'].mode().iloc[0] if not self.outcome_analyzer.outcomes_df['Outcome_Name'].mode().empty else 'N/A'}")
-            if 'Category' in self.outcome_analyzer.outcomes_df.columns:
-                report_content.append(f"Outcome categories: {self.outcome_analyzer.outcomes_df['Category'].nunique()}")
-            if 'Country' in self.outcome_analyzer.outcomes_df.columns:
-                report_content.append(f"Most active country: {self.outcome_analyzer.outcomes_df['Country'].mode().iloc[0] if not self.outcome_analyzer.outcomes_df['Country'].mode().empty else 'N/A'}")
+        if self.outcome_analyzer.total_outcomes > 0:
+            report_content.append(f"Total outcome measures: {self.outcome_analyzer.total_outcomes}")
+            metadata = self.outcome_analyzer.data.get('outcomes_metadata', {})
+            if metadata.get('source_countries'):
+                report_content.append(f"Countries with outcomes: {len(metadata['source_countries'])}")
+                report_content.append(f"Countries: {', '.join(metadata['source_countries'])}")
+            if metadata.get('source_types'):
+                report_content.append(f"Source types: {', '.join(metadata['source_types'])}")
         else:
             report_content.append("No outcomes data available for analysis")
         report_content.append("")
@@ -1381,8 +1443,9 @@ class DataVisualizer:
         if not self.pico_analyzer.picos_df.empty and 'Country' in self.pico_analyzer.picos_df.columns:
             pico_countries = set(self.pico_analyzer.picos_df['Country'].unique())
             
-        if not self.outcome_analyzer.outcomes_df.empty and 'Country' in self.outcome_analyzer.outcomes_df.columns:
-            outcome_countries = set(self.outcome_analyzer.outcomes_df['Country'].unique())
+        metadata = self.outcome_analyzer.data.get('outcomes_metadata', {})
+        if metadata.get('source_countries'):
+            outcome_countries = set(metadata['source_countries'])
         
         common_countries = pico_countries.intersection(outcome_countries)
         
@@ -1441,37 +1504,21 @@ def generate_overview_summary(pico_analyzer, outcome_analyzer, case_name):
     print("\n" + "🎯 OUTCOMES EVIDENCE OVERVIEW")
     print("-" * 50)
     
-    if not outcome_analyzer.outcomes_df.empty:
-        total_outcome_reports = len(outcome_analyzer.outcomes_df)
+    if outcome_analyzer.total_outcomes > 0:
+        print(f"📊 Total Outcome Measures: {outcome_analyzer.total_outcomes}")
         
-        print(f"📊 Total Outcome Reports: {total_outcome_reports}")
+        metadata = outcome_analyzer.data.get('outcomes_metadata', {})
+        source_countries = metadata.get('source_countries', [])
+        source_types = metadata.get('source_types', [])
         
-        if 'Outcome_Name' in outcome_analyzer.outcomes_df.columns:
-            unique_outcomes = outcome_analyzer.outcomes_df['Outcome_Name'].nunique()
-            top_outcome = outcome_analyzer.outcomes_df['Outcome_Name'].mode().iloc[0] if not outcome_analyzer.outcomes_df['Outcome_Name'].mode().empty else 'N/A'
-            print(f"🔢 Unique Outcomes: {unique_outcomes}")
-            print(f"   Most Reported: {top_outcome}")
+        if source_countries:
+            print(f"🌍 Countries with Outcomes: {len(source_countries)}")
+            print(f"   Countries: {', '.join(source_countries)}")
         
-        if 'Country' in outcome_analyzer.outcomes_df.columns:
-            outcome_countries = outcome_analyzer.outcomes_df['Country'].value_counts()
-            print(f"🌍 Countries with Outcomes: {len(outcome_countries)}")
-            print("   Top countries by outcome reports:")
-            for i, (country, count) in enumerate(outcome_countries.head(3).items()):
-                print(f"   {i+1}. {country}: {count} reports")
-        
-        if 'Category' in outcome_analyzer.outcomes_df.columns:
-            categories = outcome_analyzer.outcomes_df['Category'].value_counts()
-            print(f"📂 Outcome Categories: {len(categories)}")
-            for category, count in categories.items():
-                print(f"   - {category.replace('_', ' ').title()}: {count} reports")
-        
-        if 'Source_Type' in outcome_analyzer.outcomes_df.columns:
-            outcome_sources = outcome_analyzer.outcomes_df['Source_Type'].value_counts()
-            outcome_sources = outcome_sources[outcome_sources.index != 'Unknown']
-            if len(outcome_sources) > 0:
-                print(f"📋 Source Types: {', '.join(outcome_sources.index)}")
-                for source, count in outcome_sources.items():
-                    print(f"   - {source.replace('_', ' ').title()}: {count} reports")
+        if source_types:
+            print(f"📋 Source Types: {', '.join(source_types)}")
+            for source in source_types:
+                print(f"   - {source.replace('_', ' ').title()}")
     else:
         print("❌ No outcomes data available for analysis")
     
@@ -1485,15 +1532,16 @@ def generate_overview_summary(pico_analyzer, outcome_analyzer, case_name):
     if not pico_analyzer.picos_df.empty and 'Country' in pico_analyzer.picos_df.columns:
         pico_countries = set(pico_analyzer.picos_df['Country'].unique())
     
-    if not outcome_analyzer.outcomes_df.empty and 'Country' in outcome_analyzer.outcomes_df.columns:
-        outcome_countries = set(outcome_analyzer.outcomes_df['Country'].unique())
+    metadata = outcome_analyzer.data.get('outcomes_metadata', {})
+    if metadata.get('source_countries'):
+        outcome_countries = set(metadata['source_countries'])
     
     all_countries = pico_countries.union(outcome_countries)
     common_countries = pico_countries.intersection(outcome_countries)
     
     print(f"🌐 Total Countries Covered: {len(all_countries)}")
     print(f"🤝 Countries with Both PICOs & Outcomes: {len(common_countries)}")
-    print(f"🔬 PICO-Only Countries: {len(pico_countries - outcome_countries)}")
+    print(f"PICO-Only Countries: {len(pico_countries - outcome_countries)}")
     print(f"🎯 Outcome-Only Countries: {len(outcome_countries - pico_countries)}")
     
     if common_countries:
@@ -1520,6 +1568,10 @@ def run_complete_analysis(pico_file_path, outcome_file_path):
         # Generate overview summary using the new class
         overview = ComprehensiveOverview()
         overview.generate_case_overview(pico_analyzer, outcome_analyzer, case_name)
+        
+        # Print detailed unique PICOs and outcomes before visualizations
+        pico_analyzer.print_unique_picos_overview()
+        outcome_analyzer.print_unique_outcomes_overview()
         
         pico_analyzer.print_summary_statistics()
         outcome_analyzer.print_summary_statistics()
