@@ -1,0 +1,329 @@
+{
+  "doc_id": "Relatório de avaliação de financiamento público de Lenvima (lenvatinib) 2020",
+  "chunks": [
+    {
+      "text": "Public evaluation report LENVIMA is indicated as monotherapy for the treatment of adult patients with advanced or non-resectable hepatocellular carcinoma (HCC) and who have not received any previous systemic therapy. What Lenvatinib looks like and contents of the pack",
+      "metadata": {
+        "doc_id": "Relatório de avaliação de financiamento público de Lenvima (lenvatinib) 2020",
+        "heading": "",
+        "start_page": 1,
+        "end_page": 1,
+        "created_date": "2015",
+        "country": "PT",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/PT/Relatório de avaliação de financiamento público de Lenvima (lenvatinib) 2020_cleaned.json",
+        "split_index": 0,
+        "merged": true
+      }
+    },
+    {
+      "text": "Lenvima (lenvatinib) has undergone public funding evaluation in the following therapeutic indication for the treatment of adult patients with resectable hepatic carcinoma who have not received any therapy compared to the comparator sorafenib, the medicinal product evaluated for comparability.",
+      "metadata": {
+        "doc_id": "Relatório de avaliação de financiamento público de Lenvima (lenvatinib) 2020",
+        "heading": "In the absence of a clinical evaluation, the pharmacotherapeutic indication shall be considered to be satisfactory.",
+        "start_page": 2,
+        "end_page": 2,
+        "created_date": "2015",
+        "country": "PT",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/PT/Relatório de avaliação de financiamento público de Lenvima (lenvatinib) 2020_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "The cost of Lenvima (lenvatinib) therapy is higher than the cost of sorafenib therapy, and has been shown to decrease the risk of systemic cardiovascular disease (CHD) progression by 10% in comparison to previous data.",
+      "metadata": {
+        "doc_id": "Relatório de avaliação de financiamento público de Lenvima (lenvatinib) 2020",
+        "heading": "The Commission shall be empowered to adopt delegated acts in accordance with Article 26 to supplement this Regulation by laying down detailed rules for the application of this Regulation.",
+        "start_page": 2,
+        "end_page": 2,
+        "created_date": "2015",
+        "country": "PT",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/PT/Relatório de avaliação de financiamento público de Lenvima (lenvatinib) 2020_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "Hepatocellular carcinoma (HCC) is the most frequent primary tumor of the liver, comprising about 90% of these tumors. It is the 6th most common worldwide, being responsible for a large number of deaths. HCCs occur in 90% of situations in a cirrhosis context, with the main risk factors in the Western world being hepatitis C virus infection and alcoholism. In the Eastern world there is a high prevalence of hepatitis B (which has been shown to have a direct oncogenic effect). In Portugal, for 2015 and based on the ROR-Sul data, it is estimated that about 360 new cases have been diagnosed nationally. The standardized rate for age (European standard population) is 4.26/100,000 and 0.26/100.000 respectively for men and women.",
+      "metadata": {
+        "doc_id": "Relatório de avaliação de financiamento público de Lenvima (lenvatinib) 2020",
+        "heading": "Epidemiology and characterization of the disease",
+        "start_page": 3,
+        "end_page": 3,
+        "created_date": "2015",
+        "country": "PT",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/PT/Relatório de avaliação de financiamento público de Lenvima (lenvatinib) 2020_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "Based on this Portuguese population of 10 million inhabitants, the number of new cases will be approximately 452 patients. Considering that 32% of these patients will have advanced CHC 145 and 57% of them will not initiate treatment, lenvatinib will be studied for 62.",
+      "metadata": {
+        "doc_id": "Relatório de avaliação de financiamento público de Lenvima (lenvatinib) 2020",
+        "heading": "Epidemiology and characterization of the disease",
+        "start_page": 3,
+        "end_page": 3,
+        "created_date": "2015",
+        "country": "PT",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/PT/Relatório de avaliação de financiamento público de Lenvima (lenvatinib) 2020_cleaned.json",
+        "split_index": 1
+      }
+    },
+    {
+      "text": "Lenvatinib is a tyrosine kinase multiple receptor (RTK) inhibitor and selectively inhibits the activity of vascular endothelial growth factor (VEGF) receptors, VEGFR1 (FLT1), VEGGR2 (KDR), and VEGGFR3 ( FLT4) receptors as well as other pro-angiogenic and oncogenic pathway-related RTKs, including fibroblast growth factor receptors (FGF), FGFR1, 2, 3, and 4 receptors; platelet-derived growth factor receptor (PDGF) receptor, PDGFRα receptor, KIT, and RET.",
+      "metadata": {
+        "doc_id": "Relatório de avaliação de financiamento público de Lenvima (lenvatinib) 2020",
+        "heading": "2.Description of the technology and therapeutic alternatives",
+        "start_page": 4,
+        "end_page": 4,
+        "created_date": "2015",
+        "country": "PT",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/PT/Relatório de avaliação de financiamento público de Lenvima (lenvatinib) 2020_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "The recommended daily dose of lenvatinib is 8 mg (two 4 mg capsules) once daily for patients with body weight < 60 kg, and 12 mg (three 4 mg Capsules), once daily, may be administered to patients with a body weight ≥ 60 kg. Detailed information regarding monitoring, dose adjustment and discontinuation is provided in Table 2 of the SPC. The recommended dose of sorafenib in adults is 400 mg (two 200 mg tablets) twice daily (equivalent to a total daily dose of 800 mg). Treatment should be continued as long as clinical benefit is observed or until unacceptable toxicity occurs. the dose should be reduced to two 200 mg tablets of sorafenib once a day. o Not applicable o Not relevant. comparison 4.",
+      "metadata": {
+        "doc_id": "Relatório de avaliação de financiamento público de Lenvima (lenvatinib) 2020",
+        "heading": "Indication/subpopulation Intervention and comparison",
+        "start_page": 4,
+        "end_page": 6,
+        "created_date": "2015",
+        "country": "PT",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/PT/Relatório de avaliação de financiamento público de Lenvima (lenvatinib) 2020_cleaned.json",
+        "split_index": 0,
+        "merged": true
+      }
+    },
+    {
+      "text": "Overall survival critical Progression free survival important Response rate important Quality of life assessment critical",
+      "metadata": {
+        "doc_id": "Relatório de avaliação de financiamento público de Lenvima (lenvatinib) 2020",
+        "heading": "Measures of effectiveness",
+        "start_page": 6,
+        "end_page": 6,
+        "created_date": "2015",
+        "country": "PT",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/PT/Relatório de avaliação de financiamento público de Lenvima (lenvatinib) 2020_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "No of major adverse events Grade 3 and 4 critical adverse reaction rate Critical treatment-related mortality Dropout rate for critical toxicity Table 3 Evaluation measures",
+      "metadata": {
+        "doc_id": "Relatório de avaliação de financiamento público de Lenvima (lenvatinib) 2020",
+        "heading": "Security measures",
+        "start_page": 6,
+        "end_page": 6,
+        "created_date": "2015",
+        "country": "PT",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/PT/Relatório de avaliação de financiamento público de Lenvima (lenvatinib) 2020_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "REFLECT study (1) Non-inferiority, open-label, phase 3, randomised, multinational comparative trial comparing lenvatinib to sorafenib in first-line treatment of resectable disease. Inclusion and exclusion criteria Eligible patients had hepatocellular carcinoma that was unresectable, diagnosed or histologically, or clinically confirmed according to the Assessment for the Study of Liver Diseases criteria. Modified RECIST criteria were applied. Patients were stage B or C at the Barcelona Liver Cancer Clinic, had a PS or Eastern Cooperative Oncology Group (ECOG) grade score of 0 or 1 or INFARMED, I.P. The Directorate of Health Technology Assessments (DATS) in their multicentre and multicenter HCCs, confirmed with American Child and Associated Cancer Research Centers (ACRC) and Aughm (ASRC) 1.",
+      "metadata": {
+        "doc_id": "Relatório de avaliação de financiamento público de Lenvima (lenvatinib) 2020",
+        "heading": "5.Description of the studies evaluated",
+        "start_page": 6,
+        "end_page": 14,
+        "created_date": "2015",
+        "country": "PT",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/PT/Relatório de avaliação de financiamento público de Lenvima (lenvatinib) 2020_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "All eligible Lenvima (lenvatinib) patients had blood pressure ≤ 150/ 90 mm Hg, adequate hepatic function (albumin ≥ 2.8 g/ dl, bilirubin ≤ 3.0 mg/ dl and aspartate aminotransferase, alkaline phosphatase and alanine amintransferase ≤ 5 times the upper limit of normal), and adequate haematological, renal and pancreatic function. Thus, this clinical trial was parallel-designed, sorafenib-controlled, open-label, randomised, multicentre. Patients received oral lenvatinib (12 mg/ day for body weight ≥60 kg, or 8 mg/day for bodyweight <60 kg) or soravenib 400 mg twice daily, in 28-day cycles. Dose interruptions followed by dose reductions were allowed for lenvitinib-related liver toxicities (reduced to 8 and 4 mg / day, or 4 mg on alternate days). All subjects in the sorabenib arm received an initial dose of 400 mg orally twice daily; dose adjustment was made according to the geographic region. Investigators were assessed with mRIST or CMR carcinoma progression according to geographical region. The quality of life was assessed with the EORTC QLQ-C30 questionnaire and by a specific instrument for hepatocellular carcinoma (EORTC qlq-hcc18). Patients were planned to be followed up for survival every 12 weeks, and all antineoplastic treatments received were reported.",
+      "metadata": {
+        "doc_id": "Relatório de avaliação de financiamento público de Lenvima (lenvatinib) 2020",
+        "heading": "5.Description of the studies evaluated",
+        "start_page": 6,
+        "end_page": 14,
+        "created_date": "2015",
+        "country": "PT",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/PT/Relatório de avaliação de financiamento público de Lenvima (lenvatinib) 2020_cleaned.json",
+        "split_index": 1
+      }
+    },
+    {
+      "text": "Outcomes of efficacy and the endpoint or primary outcome was the overall survival measure, from the date of cause of death to the end date of the study. Patients who were lost at any time were randomized to remain alive and were known to be alive at the last census date. The endpoints or secondary outcomes were progression-free survival (PFS), time to progression (TTP), objective response rate (ORR), quality of life, and pharmacokinetic parameters, mainly for justification of the dose used. Safety outcome safety assessments included vital signs recording, laboratory haematological and biochemical testing, urinalysis, and electrocardiography. Adverse events were graded according to the National Cancer Institute.",
+      "metadata": {
+        "doc_id": "Relatório de avaliação de financiamento público de Lenvima (lenvatinib) 2020",
+        "heading": "5.Description of the studies evaluated",
+        "start_page": 6,
+        "end_page": 14,
+        "created_date": "2015",
+        "country": "PT",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/PT/Relatório de avaliação de financiamento público de Lenvima (lenvatinib) 2020_cleaned.json",
+        "split_index": 2
+      }
+    },
+    {
+      "text": "All patients who received at least one of the study drugs (lenvatinib or sorafenib) were evaluated. The statistical endpoint on overall survival was tested for first-inferiority and non-infectiousness by using sorbamazepine, after assuming a placebo-containing lower-than-normal dose of 1,08 mg/day, with no correlation to the placebo effect. The power of the study to demonstrate non-inferiority was approximately 97%; the power of this study to declare superiority of lenvatinib over sorafenib was approximately 82%. The overall false positive rate was set at 0.05. The number of events required for the primary analysis was 700 deaths, assuming 5% dropouts. Secondary outcomes were also analysed with a 95% confidence interval.",
+      "metadata": {
+        "doc_id": "Relatório de avaliação de financiamento público de Lenvima (lenvatinib) 2020",
+        "heading": "5.Description of the studies evaluated",
+        "start_page": 6,
+        "end_page": 14,
+        "created_date": "2015",
+        "country": "PT",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/PT/Relatório de avaliação de financiamento público de Lenvima (lenvatinib) 2020_cleaned.json",
+        "split_index": 3
+      }
+    },
+    {
+      "text": "The baseline or baseline characteristics of treatment except for hepatitis C and concentrations were similar to those of α-fetoproteins. three groups or arms of L M L M M-Le-D and D en DA n A n AT T nv v TS v S vi S-im m m m a (lenvatinib) Lenvim Tabe Outcom Survival At the time it accompanied Lenva sorafenib (lenvitinib) 4 - baseline patient monthly efficacy data (13 months to nine months was 27.7 months) in the lower arm showed no ibandarin (Fig. 2). in 2016, 701 patients died with lenvatinib and 27,25% in the embryos in terms of months of treatment with lenvitinib (LENVITAB), compared to 12.9 months in the overall survival group (HRIC: 0.93, 0.94, 0.69) for the duration of treatment (ICI: 10.94, 9.6%) for lenvitib in the upper arm group (FIG. The effect was consistent across subgroups.",
+      "metadata": {
+        "doc_id": "Relatório de avaliação de financiamento público de Lenvima (lenvatinib) 2020",
+        "heading": "5.Description of the studies evaluated",
+        "start_page": 6,
+        "end_page": 14,
+        "created_date": "2015",
+        "country": "PT",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/PT/Relatório de avaliação de financiamento público de Lenvima (lenvatinib) 2020_cleaned.json",
+        "split_index": 4
+      }
+    },
+    {
+      "text": "The analysis of overall survival (OS) adjusted for baseline α-fetoprotein levels gives a HR of 0.856, with a 95% CI of 0.736 to 0.995 (p=0.034) for lenvatinib versus sorafenib. Time to Progression The median time to progression (TTP) was 8.9 months (95% CI of 7.4-9.2 months) for patients in the lenvatinib-treated arm compared to 3.7 months (3.6% CI of 3.65.4 months) in patients on the sorafenib arm HR of 0.63 with a 95% CI of 0.53 to 0.73, p< 0.001. Safety Outcomes Adverse event rate Treatment-related adverse events occurred in the majority of patients receiving lenvatinib or sorafenib. Adjusted for patient-years, the rate of adverse event was 18.9 patient-year episodes in the Lenvatinib group and 19.7 episodes per patient year in the Sorafenib group. Adverse events due to treatment with lenvatinib led to discontinuation of the drug in 190 (40%), dose reduction in 176 (37%) patients, and drug withdrawal in 42 (9%) patients.",
+      "metadata": {
+        "doc_id": "Relatório de avaliação de financiamento público de Lenvima (lenvatinib) 2020",
+        "heading": "5.Description of the studies evaluated",
+        "start_page": 6,
+        "end_page": 14,
+        "created_date": "2015",
+        "country": "PT",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/PT/Relatório de avaliação de financiamento público de Lenvima (lenvatinib) 2020_cleaned.json",
+        "split_index": 5
+      }
+    },
+    {
+      "text": "Overall survival The median to overall survival duration (OS) was 13.6 months (95% CI 12.1 14.9) for the 478 patients in the lenvatinib group, compared with 12.3 months (95%, CI 10.4-13.9) for 476 patients in sorafenib (HR 0.92, 95% CI 0.79-1.06) in the intent-to-treat (ITT) analysis. There is no significant difference in most of the domains assessed by the QLQ-C30 questionnaire.There is no evidence of added therapeutic value of lenvatinib in the outcome life. The rate of adverse events was 18.9 patient-years in the lenvatinib group and 19.7 events per patient-year in the sorafenib group.Therefore, there is no evidence of additional harm from Lenvatinib in the outcome number of events the rate of Grade 3 and 4 adverse reactions Adverse events resulting from treatment of grade 3 or higher occurred with no rates with lenvatinig and sorafenig (75.0% versus 66.5%). In the sorafenib arm, fatal adverse events occurred in four (1%) and included tumour haemorrhage, ischaemic stroke, respiratory failure and sudden death (one for each). Thus, there is no evidence of additional harm from lenvatinib in the treatment-related mortality outcome.",
+      "metadata": {
+        "doc_id": "Relatório de avaliação de financiamento público de Lenvima (lenvatinib) 2020",
+        "heading": "Evaluation of evidence by outcome",
+        "start_page": 14,
+        "end_page": 16,
+        "created_date": "2015",
+        "country": "PT",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/PT/Relatório de avaliação de financiamento público de Lenvima (lenvatinib) 2020_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "The evidence submitted was rated as being of moderate quality for all outcomes, given that there are some significant differences between some baseline characteristics with potential prognostic impact and the fact that it is an open label study.",
+      "metadata": {
+        "doc_id": "Relatório de avaliação de financiamento público de Lenvima (lenvatinib) 2020",
+        "heading": "7. Quality of the evidence submitted",
+        "start_page": 16,
+        "end_page": 16,
+        "created_date": "2015",
+        "country": "PT",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/PT/Relatório de avaliação de financiamento público de Lenvima (lenvatinib) 2020_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "The evidence submitted by the company refers to the REFLECT study, which is an open-label, randomised, multinational, multi-centre, non-inferiority comparative trial that compared lenvatinib to sorafenib in the first-line treatment of patients with unresectable HCC. The Committee emphasises that the number of events in this outcome was sufficient to draw conclusions from the study. The REFLECT study demonstrated superiority of lenvatinib compared to sorafenib in the outcomes of progression-free survival (median 7.4 versus 3.7 months, respectively, with a HR of 0.66 and a 95% CI of 0.57 to 0.77, p< 0.001) and response rate (24.1% versus 9.2%), OR 3.13 (95% CI 2.15 to 4.56, p < 0.001), however these results are not critical for this evaluation. There were no significant differences in most quality of life parameters.",
+      "metadata": {
+        "doc_id": "Relatório de avaliação de financiamento público de Lenvima (lenvatinib) 2020",
+        "heading": "8. Evaluation and comments on the evidence submitted",
+        "start_page": 17,
+        "end_page": 18,
+        "created_date": "2015",
+        "country": "PT",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/PT/Relatório de avaliação de financiamento público de Lenvima (lenvatinib) 2020_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "There was no significant increase in adverse events with Lenvatinib as compared to Sorafenib. This conclusion is based on the following:  REFLECT study which is an open-label, randomised, multinational, multi-centre, phase 3 non-inferiority comparative trial comparing lenvatinib to sorafenib in the first-line treatment of patients with unresectable HCC.  In the REFLECT study lenvitinib demonstrated no inferiority and did not demonstrate superiority compared to Sorafenib for the overall survival outcome, the critical outcome of this study. There was no demonstration of superiority in the quality of life outcome.  No significant comparative safety concerns were identified for lenvatinib.",
+      "metadata": {
+        "doc_id": "Relatório de avaliação de financiamento público de Lenvima (lenvatinib) 2020",
+        "heading": "8. Evaluation and comments on the evidence submitted",
+        "start_page": 17,
+        "end_page": 18,
+        "created_date": "2015",
+        "country": "PT",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/PT/Relatório de avaliação de financiamento público de Lenvima (lenvatinib) 2020_cleaned.json",
+        "split_index": 1
+      }
+    },
+    {
+      "text": "This conclusion is based on the following:  REFLECT Study which is an open-label, randomised, multinational, multi-centre, non-inferiority comparative trial that compared lenvatinib to sorafenib in the first-line treatment of patients with unresectable ORCC.  In the REFLET study, Lenvatinib demonstrated no inferiority and no superiority in comparison to Sorafenib for the monotherapy treatment of adult patients with advanced or unresettable CHC.",
+      "metadata": {
+        "doc_id": "Relatório de avaliação de financiamento público de Lenvima (lenvatinib) 2020",
+        "heading": "9. Added therapeutic value",
+        "start_page": 18,
+        "end_page": 18,
+        "created_date": "2015",
+        "country": "PT",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/PT/Relatório de avaliação de financiamento público de Lenvima (lenvatinib) 2020_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "A cost minimisation analysis was carried out between the evaluated medicinal product and the comparator alternative established in the pharmacotherapeutic evaluation. Pursuant to point (a) of paragraph 8 of Decree-Law No 97/2015 of 1 June, the economic advantage of the medicinal products under evaluation is 10% lower compared to its comparative alternative. Thus, Lenvima has a treatment cost 10% lower than the treatment cost of its comparator sorafenib.",
+      "metadata": {
+        "doc_id": "Relatório de avaliação de financiamento público de Lenvima (lenvatinib) 2020",
+        "heading": "The economic evaluation",
+        "start_page": 18,
+        "end_page": 19,
+        "created_date": "2015",
+        "country": "PT",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/PT/Relatório de avaliação de financiamento público de Lenvima (lenvatinib) 2020_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "This conclusion is based on the following:  REFLECT study which is an open-label, randomised, multinational, multi-centre, phase 3 non-inferiority comparative trial comparing lenvatinib to sorafenib in the first-line treatment of patients with unresectable HCC.  In the REFLECT study lenvatitinib demonstrated no inferiority and did not demonstrate superiority compared to sorapenib for the overall survival outcome of this critical outcome evaluation.",
+      "metadata": {
+        "doc_id": "Relatório de avaliação de financiamento público de Lenvima (lenvatinib) 2020",
+        "heading": "11. Conclusions",
+        "start_page": 19,
+        "end_page": 19,
+        "created_date": "2015",
+        "country": "PT",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/PT/Relatório de avaliação de financiamento público de Lenvima (lenvatinib) 2020_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "(1)Kudo et al. (Lenvatinib versus sorafenib in first-lin\nhepatocellular carcinoma: a randomised phase 3 non-\nne treatment of patients with unresectable\n-inferiority trial. Lancet 2018; 391: 1163–73).",
+      "metadata": {
+        "doc_id": "Relatório de avaliação de financiamento público de Lenvima (lenvatinib) 2020",
+        "heading": "12 References in the literature",
+        "start_page": 20,
+        "end_page": 20,
+        "created_date": "2015",
+        "country": "PT",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/PT/Relatório de avaliação de financiamento público de Lenvima (lenvatinib) 2020_cleaned.json",
+        "split_index": 0
+      }
+    }
+  ]
+}

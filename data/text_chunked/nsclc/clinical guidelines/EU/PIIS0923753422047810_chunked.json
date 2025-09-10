@@ -1,0 +1,166 @@
+{
+  "doc_id": "PIIS0923753422047810",
+  "chunks": [
+    {
+      "text": "Oncogene-addicted metastatic non-small-cell lung cancer: ESMO Clinical Practice Guideline for diagnosis, treatment and follow-up L. E. Hendriks1, K. M. Kerr2, J. Menis3,T. S. Mok4, U. Nestle5,6, A. Passaro7, S. Peters8, D. Planchard9, E. F. Smit10,11, B. J. Solomon12, G.Veronesi13,14 & M. Reck15, on behalf of the ESMO Guidelines Committee(cid:1) 1DepartmentofPulmonology,GROWSchoolforOncologyandReproduction,MaastrichtUniversityMedicalCenter,Maastricht,TheNetherlands;2AberdeenRoyal Infirmary,AberdeenUniversityMedicalSchool,Aberdeen,UK;3MedicalOncologyDepartment,UniversityandHospitalTrustofVerona,Verona,Italy;4Departmentof ClinicalOncology,TheChineseUniversityofHongKong,PrinceofWalesHospital,HongKong,China;5DepartmentofRadiationOncology,UniversityHospitalFreiburg, Freiburg;6DepartmentofRadiationOncology,KlinikenMariaHilf,Moenchengladbach,Germany;7DivisionofThoracicOncology,EuropeanInstituteofOncologyIRCCS, Milan,Italy;8DepartmentofOncology,CentreHospitalierUniversitaireVaudois,LausanneUniversity,Lausanne,Switzerland;9DepartmentofMedicalOncology, ThoracicGroup,Gustave-Roussy,Villejuif,France;10ThoracicOncologyService,NetherlandsCancerInstitute,Amsterdam;11DepartmentofPulmonaryDiseases,Leiden UniversityMedicalCenter,Leiden,TheNetherlands;12DepartmentofMedicalOncology,PeterMacCallumCancerCentre,Melbourne,Australia;13FacultyofMedicine",
+      "metadata": {
+        "doc_id": "PIIS0923753422047810",
+        "heading": "SPECIAL ARTICLE",
+        "start_page": 1,
+        "end_page": 2,
+        "created_date": "2022",
+        "country": "EU",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc/clinical guidelines/EU/PIIS0923753422047810_cleaned.json",
+        "split_index": "0_0_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "andSurgery-Vita-SaluteSanRaffaeleUniversity,Milan;14DivisionofThoracicSurgery,IRCCSSanRaffaeleScientificInstitute,Milan,Italy;15DepartmentofThoracic Oncology,AirwayResearchCenterNorth,GermanCenterforLungResearch,LungClinic,Grosshansdorf,Germany Availableonline23January2023 Keywords:ESCAT,ESMOClinicalPracticeGuideline(CPG),ESMO-MCBS,oncogene-addictedmetastaticnon-small-cell lung cancer (mNSCLC), treatment, targeted therapy INCIDENCE AND EPIDEMIOLOGY therapy.ThefrequencyofoncogenicdriversinNSCLCaswell as general discussion of testing strategy and methodology, Details on incidence and epidemiology are covered in the including the use of liquid biopsies, can be found in the Supplementary Material Section 1, available at Supplementary Material Section 3, available at org/10.1016/j.annonc.2022.12.009. org/10.1016/j.annonc.2022.12.009.",
+      "metadata": {
+        "doc_id": "PIIS0923753422047810",
+        "heading": "SPECIAL ARTICLE",
+        "start_page": 1,
+        "end_page": 2,
+        "created_date": "2022",
+        "country": "EU",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc/clinical guidelines/EU/PIIS0923753422047810_cleaned.json",
+        "split_index": "0_1_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "Many parameters might determine which tests are\nDIAGNOSIS, PATHOLOGY AND MOLECULAR BIOLOGY required; pre-eminent amongst them is access to appropriatedrugs.1Testingismandatoryforoncogenicdriversfor\nDiagnostic procedures whichdrugsareapprovedforroutineusage.Broadertesting\nDetails on diagnostic procedures are covered in the maybeusedtosupportearlydrugaccessorclinicaltrials.2,3\nSupplementaryMaterialSection2,availableat\nFor personalised therapy approaches, European Society for\n10.1016/j.annonc.2022.12.009.SeeSupplementaryFigureS1,\nMedical Oncology (ESMO) Scale for Clinical Actionability of availableat\nmolecular Targets (ESCAT) classifications4 need to be aflowchartondiagnosisandtestingbiopsy/cytologysamples\nconsidered (Supplementary Table S1, available at https://\ninstageIVnon-small-celllungcancer(NSCLC). doi.org/10.1016/j.annonc.2022.12.009).",
+      "metadata": {
+        "doc_id": "PIIS0923753422047810",
+        "heading": "SPECIAL ARTICLE",
+        "start_page": 1,
+        "end_page": 2,
+        "created_date": "2022",
+        "country": "EU",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc/clinical guidelines/EU/PIIS0923753422047810_cleaned.json",
+        "split_index": 1
+      }
+    },
+    {
+      "text": "Clinically-relevantEGFRgenemutationsinNSCLCinclude\nPathology and molecular biology substitutions, deletions and insertions in exons 18-21 that activate the tyrosine kinase and variably confer sensitivity\nBiomarkertestingisessentialtoidentifysubgroupsofNSCLC\nor resistance to available epidermal growth factor receptor withoncogenicdriversthatcanbetherapeuticallytargeted. (EGFR) tyrosine kinase inhibitors (TKIs) or other drugs.3,5\nThese drivers are mainly found in lung adenocarcinomas\n(LUADs).Demonstrationofthespecificmolecularalteration The most common alterations conferring sensitivity to\nfirst- to third-generation TKIs are the exon 21 L858R subisnecessarytotailortreatmentwiththeappropriatetargeted stitution and exon 19 deletion mutations. At a minimum\nwhen resources or material are limited, these mutations\n*Correspondence to: ESMO Guidelines Committee, ESMO Head Office, Via\nshouldbeevaluated.Thenextmostcommonalterationisa\nGinevra4,CH-6900Lugano,Switzerland\nE-mail:clinicalguidelines@esmo.org(ESMOGuidelinesCommittee).",
+      "metadata": {
+        "doc_id": "PIIS0923753422047810",
+        "heading": "SPECIAL ARTICLE",
+        "start_page": 1,
+        "end_page": 2,
+        "created_date": "2022",
+        "country": "EU",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc/clinical guidelines/EU/PIIS0923753422047810_cleaned.json",
+        "split_index": 2
+      }
+    },
+    {
+      "text": "largegroupofexon20insertionsmostlyresistanttocurrent\n5Note:ApprovedbytheESMOGuidelinesCommittee:February2002,last EGFRTKIsbutsensitivetosomeemergingagents(discussed\nupdateDecember2022.Thispublicationsupersedesthepreviouslypublished in the treatment paragraph including EGFR exon 20 inversiondAnnOncol2018;29(Suppl4):iv192-iv237. sertions). Other mutations, including in exon 18, variably\n0923-7534/©2023EuropeanSociety forMedicalOncology. Published by\nsensitise, while some mutations confer resistance and may\nElsevierLtd.Allrightsreserved. Volume34 - Issue 4 - 2023 339\ndrive disease relapse. Complete sequencing ofexons 18-21 Resistanceto kinase inhibitorsis almostinevitableandis\nby next-generation sequencing (NGS) is strongly recom- variably due to the emergence of therapy-resistanttumour mended,toidentifyallpossiblesensitisingmutations.Some cell clones with target gene alteration, increased bypass\nallele-specific EGFR sequencing solutions do not provide pathwaysignallingand/orphenotypictransformation(smallcomplete coverage. EGFR FISH or immunohistochemistry cell, squamous-cell carcinoma or sarcomatoid carcinoma).9\n(IHC) have no clinical utility and should not be tested. As treatments to target resistance mechanisms emerge, so\nFusions(rearrangements)involvingALK,ROS1,NTRK1-3and doestestingtodetecteachmechanism,andaneedeitherfor\nRETgenesareimportantoncogenicdriversinsmallgroupsof re-biopsy or, if appropriate, cell-free DNA (cfDNA) testing.",
+      "metadata": {
+        "doc_id": "PIIS0923753422047810",
+        "heading": "SPECIAL ARTICLE",
+        "start_page": 1,
+        "end_page": 2,
+        "created_date": "2022",
+        "country": "EU",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc/clinical guidelines/EU/PIIS0923753422047810_cleaned.json",
+        "split_index": 3
+      }
+    },
+    {
+      "text": "LUADs.3,5EachtargethasseveralTKIsavailable.Furthermore, Widespread use of osimertinib in the first line for EGFR- NRG1 fusions are a potential emerging target in LUADs. mutated NSCLC has decreased the importance of EGFR Oncogenicfusionproteinsresultinconstitutiveactivationof T790MdetectionbutincreasestheneedforidentifyingMET the kinase and may increase fusion gene protein levels, amplificationastreatmentsforthelatterarebeingevaluated. allowingforscreeningoftumoursforsomeofthesefusionsby IHC. Positive anaplastic lymphoma kinase (ALK) IHC with an Recommendations appropriately validated assay may be used to prescribe ALK inhibitors. Cases positive by ROS1 or neurotrophic tyrosine (cid:3) Adequate tissue material for histological diagnosis and",
+      "metadata": {
+        "doc_id": "PIIS0923753422047810",
+        "heading": "SPECIAL ARTICLE",
+        "start_page": 1,
+        "end_page": 2,
+        "created_date": "2022",
+        "country": "EU",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc/clinical guidelines/EU/PIIS0923753422047810_cleaned.json",
+        "split_index": "4_0_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "receptorkinase(NTRK)IHCmustbeconfirmedbyamolecular molecular testing should be obtained to allow for method;thismayalsobepreferredforALKIHC-positivecases. individualtreatmentdecisions[IV,A].Forrecommended FusionscanbedetectedbyFISH,ormultiplexRTePCRpanel methods to obtain tissue, please refer to the ESMO assays, the latter requiring a tailored reaction for each po- Clinical Practice Guideline (CPG) on non-oncogenetentialfusiongenewhichmakesthisapproachmorecomplex. addicted metastatic non-small-cell lung cancer RNA-basedNGSispreferredforidentifyinganexpandingrange (mNSCLC; available at: offusiongenes.IfNGSisusedastheprimaryNTRKscreening guidelines/guidelines-by-topic/lung-and-chest-tumours).10 tool,IHCconfirmationshouldbeconsidered.6 (cid:3) Pathological diagnosis should be made according to the Alterations in structure and/or expression of the MET 2021 World Health Organization classification of lung genedriveoncogenesisinNSCLC.3,5HighMETproteinlevels tumours [IV, A].",
+      "metadata": {
+        "doc_id": "PIIS0923753422047810",
+        "heading": "SPECIAL ARTICLE",
+        "start_page": 1,
+        "end_page": 2,
+        "created_date": "2022",
+        "country": "EU",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc/clinical guidelines/EU/PIIS0923753422047810_cleaned.json",
+        "split_index": "4_1_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "may be detected by IHC. Increased MET signalling may (cid:3) Specific subtyping of all NSCLCs is necessary for theraresult from high gene copy number (GCN), either due to peutic decision making and should be carried out wher- polysomyortruegeneamplification.Detectionisreliableby ever possible. IHC stains should be used to reduce the in situ hybridisation (ISH) techniques, but NGS or compar- NSCLC-not otherwise specified rate to fewer than 10% ative genomic hybridisation may also identify cases. Defi- of cases diagnosed [IV, A]. nitions of high GCN vary and, in absence of current (cid:3) The molecular tests below are recommended in patients standardisation, confound existing data. MET exon 14 with advanced non-squamous-cell carcinoma, and not skipping mutations may be detected by DNA-based NGS, recommended in patients with a confident diagnosis of but RNA-based NGS may also identify additional cases squamous-cell carcinoma, except in unusual cases, e.g. missed by DNA sequencing.7 MET amplification is an young (<50 years) patients, never (<100 cigarettes in a importantresistancemechanismdrivingacquiredresistance lifetime)/former light smokers ((cid:4)15 pack-years, all kinds to EGFR (including osimertinib) and ALK inhibitors. of tobacco) or long-time ex-smokers (quit smoking >15 Mesenchymal-epithelial transition (MET) kinase inhibitors years ago, all kinds of tobacco) [IV, A]. arebeing investigated in severalscenarios and approved in (cid:3) EGFR",
+      "metadata": {
+        "doc_id": "PIIS0923753422047810",
+        "heading": "SPECIAL ARTICLE",
+        "start_page": 1,
+        "end_page": 2,
+        "created_date": "2022",
+        "country": "EU",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc/clinical guidelines/EU/PIIS0923753422047810_cleaned.json",
+        "split_index": "5_0_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "mutation status should be determined [I, A].Test the MET exon 14 skipping setting. methodology should have adequate coverage of muta- KRAS mutations have become an important therapeutic tions in exons 18-21, including those associated with target in LUADs and, unlike the other targets described resistance to some therapies [III, A]. At a minimum, here, are mostly smoking related.5 Specific inhibitors for when resources or material are limited, the most com- KRAS G12C mutations are now available. DNA sequencing mon activating mutations (exon 19 deletion, exon 21 and multiplex RTePCR panel assays are the best approach L858R point mutation) should be determined [I,",
+      "metadata": {
+        "doc_id": "PIIS0923753422047810",
+        "heading": "SPECIAL ARTICLE",
+        "start_page": 1,
+        "end_page": 2,
+        "created_date": "2022",
+        "country": "EU",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc/clinical guidelines/EU/PIIS0923753422047810_cleaned.json",
+        "split_index": "5_1_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "A]. todetection;mostlikelyincorporatedintoNGSpanels,asis (cid:3) The availability of TKIs effective against T790M-mutated thecaseforBRAFmutations.TKIsforBRAFV600Emutations recurrentdiseasemakesT790Mtestingondiseaserelapse areavailable. HER2 exon 20 insertion mutations arerare in onfirst-orsecond-generationEGFRTKIsmandatory[I,A]. LUADs, but promising targeted drugs and antibodyedrug (cid:3) Testing for ALK rearrangements should be carried out conjugates are in development.Therefore,these mutations [I, A]. need to be covered with NGS panels. (cid:3) Detection of the ALK translocation by FISH remains a Mutations coexisting with several of the above driver standard,butIHCwithhigh-performanceALKantibodies alterationsmayinfluenceresponsestotargetedtherapyand and validated assays may be used for screening [III, A] requireadditionaltreatment.8ComutationsinTP53maybe and have been accepted as an equivalent alternative to associatedwith lowerefficacyof EGFR, ALK and ROS1 TKIs. FISH for ALK testing.",
+      "metadata": {
+        "doc_id": "PIIS0923753422047810",
+        "heading": "SPECIAL ARTICLE",
+        "start_page": 1,
+        "end_page": 2,
+        "created_date": "2022",
+        "country": "EU",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc/clinical guidelines/EU/PIIS0923753422047810_cleaned.json",
+        "split_index": "5_1_1",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "Testing for comutations in an NGS panel may therefore (cid:3) Testing for ROS1 rearrangements should be carried out\nbecome important. [II, A]. Detection of the ROS1 translocation by FISH",
+      "metadata": {
+        "doc_id": "PIIS0923753422047810",
+        "heading": "SPECIAL ARTICLE",
+        "start_page": 1,
+        "end_page": 2,
+        "created_date": "2022",
+        "country": "EU",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc/clinical guidelines/EU/PIIS0923753422047810_cleaned.json",
+        "split_index": 6
+      }
+    }
+  ]
+}

@@ -1,0 +1,669 @@
+{
+  "doc_id": "CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189",
+  "chunks": [
+    {
+      "text": "Lung cancer Adult Sectors: City and Hospital Opinion in favour of maintaining the reimbursement as monotherapy in the treatment of adult patients with advanced non-small cell bronchial cancer (NSCBC) with the KRAS G12C mutation, whose disease has progressed after at least one prior systemic line of therapy Placing in LUMYKRAS (sotorasib) is a treatment option in the management strategy for adult patients who have advanced NSCBC rapeseed, presenting with the NSCBC mutation and whose disease is progressing after at most one prior line of systemic therapy.",
+      "metadata": {
+        "doc_id": "CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189",
+        "heading": "This Regulation shall enter into force on the twentieth day following that of its publication in the Official Journal of the European Union.",
+        "start_page": 1,
+        "end_page": 1,
+        "created_date": "2023",
+        "country": "FR",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc/HTA submissions/FR/CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "LUMYRAS (sotorasib) demonstrated statistically significant superiority in terms of progression-free survival and objective response rates as assessed by an independent review panel in an open-label, randomized Phase 3 study compared to docetaxel; however, this result is limited by: − the lack of clinical relevance of the absolute difference in progression free median survival of approximately 1 month; − the open label design of the study, which resulted in possible evaluation biases, including treatment decisions; − uncertain reproducibility of the measurement of progrestion free survival in this study;",
+      "metadata": {
+        "doc_id": "CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189",
+        "heading": "(ISP) and",
+        "start_page": 1,
+        "end_page": 2,
+        "created_date": "2023",
+        "country": "FR",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc/HTA submissions/FR/CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "The Commission considers that LUMYKRAS (sotorasib) does not provide an improvement in the medical service provided (ASMR V) compared to docetaxel. S",
+      "metadata": {
+        "doc_id": "CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189",
+        "heading": "the target",
+        "start_page": 2,
+        "end_page": 2,
+        "created_date": "2023",
+        "country": "FR",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc/HTA submissions/FR/CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189_cleaned.json",
+        "split_index": 0,
+        "merged": true
+      }
+    },
+    {
+      "text": "Background Medical environment General information on the relevant disease or condition Current management Coverage of the medical need Synthesis of available data Efficacy data synthesis 3.2.1 Reminders of clinical data previously reviewed by the Committee of 15/06/2022): CodeBreak 100 study (non-comparative basket study) 3.2.2 New efficacy data provided in support of this re-evaluation This is the code of the CodeBbreak 200 study Tolerance profile 3.3.1 Reminder of the clinical evidence previously submitted by the Commission of 15 06/2022: Code Break 100 trial (non -comparitive basket study). High Health Authority Communication and information service 5 avenue of the Stade de France 93218 SAINT-DENIS LA PLAINE CEDEX. Tel.: +33 (0)1 55 93 70 © High Health Authorities July 2023 opinion opinion Con Cadre p de l'avi Cadre DCI LUMYKRAS 120 mg, film-coated tablet − 30 thermoformed PVC polyethylene PVDC aluminium platelets of 8 tablets (CIP: 34009 302 419 3 6) Social Security (SSC Article L.162-17) Communities (SPC Article L.5123-2) AMGEN er-LUMY KRAS (sotorasib) is indicated as monotherapy in the treatment of CH-adult patients with advanced non-small cell bronchial cancer (NCBPC) with the KRAS G12 mutation whose disease has progressed following initial systemic linear probe treatment (MRI): AMC: 06/0022/0022/055/004. Sotorasib is indicated as monotherapy for the treatment of adult patients with non-small cell bronchial cancer (NSCBC) KRASG.12 p metastatic, pre-treatment.",
+      "metadata": {
+        "doc_id": "CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189",
+        "heading": "Summary",
+        "start_page": 3,
+        "end_page": 5,
+        "created_date": "2023",
+        "country": "FR",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc/HTA submissions/FR/CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "Early post-MCA access authorised (granted 28/04/2022, start date 07/06/2022) in the following indication, identical to MCA: as monotherapy for the treatment of adult patients with advanced non-small cell bronchial cancer (NSCBC) with the KRAS G12C mutation, whose disease has progressed after at least one prior systemic line of therapy.",
+      "metadata": {
+        "doc_id": "CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189",
+        "heading": "Summary",
+        "start_page": 3,
+        "end_page": 5,
+        "created_date": "2023",
+        "country": "FR",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc/HTA submissions/FR/CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189_cleaned.json",
+        "split_index": 1
+      }
+    },
+    {
+      "text": "Support in Germany, Austria, Bulgaria, Slovenia and Sweden at the international level* support under evaluation in Belgium, Spain, Italy and the Netherlands. LUMYKRAS is indicated as monotherapy for the treatment of adult patients with KRAS G12C-mutated locally advanced or metastatic non-small cell lung cancer (NSCLC), who have progressed on, or are intolerant to, platinum-based chemotherapy and/ or anti PD-1/ PD-L1 immunotherapy AMM in the United States overlapping with that in Europe: treatment of adults patients with KLAS G-12C mutated localy advanced or Metastatic not-smell cell lung Cancer (NScLC), as determined by an FDA approved test, who have received at least one systemic therapy Rappel of CT-scans The LUMyKRas is indication for the use in adult patients who have previously progressed from treatment with KRAs G12 C-mutate locally-advanced or metistatic non -small cells lung cancer. LUMYKRAS (sotorasib) was granted post-marketing authorisation for the same indication on 28/04/2022.",
+      "metadata": {
+        "doc_id": "CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189",
+        "heading": "therapeutic",
+        "start_page": 5,
+        "end_page": 5,
+        "created_date": "2023",
+        "country": "FR",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc/HTA submissions/FR/CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "− Assessment schedule Evaluated by the • Review date: 7 June 2023. • Committee • Adoption date: 21 June 2023 • Laboratory hearing date: 19 July 2023 − Stakeholder contributions (including Patient and User Association): Yes (written contribution): Networked and Airborne Patients − External expertise: No * Based on information provided by the laboratory at the time of submission of the dossier",
+      "metadata": {
+        "doc_id": "CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189",
+        "heading": "therapeutic",
+        "start_page": 5,
+        "end_page": 5,
+        "created_date": "2023",
+        "country": "FR",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc/HTA submissions/FR/CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189_cleaned.json",
+        "split_index": 1
+      }
+    },
+    {
+      "text": "Bronchial cancer is the 2nd most common cancer in men and 3rd in women among solid tumors (more than 46,000 new cases per year in 2018). The median age at diagnosis is 67 years with a majority of diagnoses (70 to 80%) made at locally advanced or metastatic stages. With an estimated 33,117 deaths in 2018, bronchial cancers are also ranked 1st in cancer deaths for men and 2nd in women.",
+      "metadata": {
+        "doc_id": "CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189",
+        "heading": "General information on the disease or condition concerned",
+        "start_page": 5,
+        "end_page": 6,
+        "created_date": "2023",
+        "country": "FR",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc/HTA submissions/FR/CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "Prior to the availability of LUMYKRAS (sotorasib), there was no specific treatment targeting the KRAS G12C mutation. The current therapeutic regimen is identical whether or not patients have a KRAS mutation (including G12 C).1 During the initial evaluation of Lumsykras (sotorazib), the Transparency Commission had considered that, given the currently poorly established prognostic and predictive value of the Kras G12c mutation, and the lack of comparative data of acceptable methodological quality, its place in relation to alternative therapies (chemotherapy and immunotherapy) could not be specified. The nature of this treatment depends on the molecules previously used, the ECOG score and the histology: ‒ Patients treated with immunotherapy monotherapy in the first line: chemotherapy based on platinum salts, such as in the 1st line: cisplatin-vinorelbine, cisplatine-gemcitabine, carboplatin-paclitaxel, cisplatin-docetaxel, Cisplatin -pemetrexed (non-epidermoid only); ‒ Immunotherapy + in-line therapy in the second line: single-dose chemotherapeutic, pemetaxel (non -epidermode only).",
+      "metadata": {
+        "doc_id": "CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189",
+        "heading": "Currently in charge",
+        "start_page": 6,
+        "end_page": 6,
+        "created_date": "2023",
+        "country": "FR",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc/HTA submissions/FR/CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "‒ Patients treated with first-line bi-chemotherapy, without immunotherapy: in the absence of a contraindication, immunotherapeutic treatment is the reference: atezolizumab, nivolumab or pembrolizukab (if PD-L1 ≥ 1%), with no hierarchy between these different treatments. ‒ LUMYKRAS (sotorasib) is a treatment option in the management of patients with the progressive KRASC12 mutation, following at least one prior systemic line of therapy;",
+      "metadata": {
+        "doc_id": "CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189",
+        "heading": "Currently in charge",
+        "start_page": 6,
+        "end_page": 6,
+        "created_date": "2023",
+        "country": "FR",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc/HTA submissions/FR/CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189_cleaned.json",
+        "split_index": 1
+      }
+    },
+    {
+      "text": "Table 1: List of medicinal products with MMAA within the scope of assessment NOM (DCI) Indication of MMAE Date of SMR ASMR Laboratory opinion Generic chemotherapies for advanced or metastatic CBNPC NA‡ NA‡ cisplatin Accord, Teva, Viatris 1 CT Opinion dated 15/06/2022 LUMYKRAS 19740_LUMYCRAS_PIC_INS_AvisDef_CT19740.pdf Generics for CBNCP NA‡ carboplatin Acord, Arrow, Hospira, Kabi, Teba, Viatri NAVELBINE CBNPP NA‡ (orbinel) Pierre Fabrication and association: Generic agreement Kabi, Sandoz TAX Enanthospina NA‡ platin, for which there is no surgical indication for the treatment of MSM ‡ Na‡ Na † cisplatine Accord. Lilly and generics: Accord, EG, Ever Pharma, Fresenius Kabi, Hospira, Stragen, Viatris, Zen- tiva and other pharmaceutical companies.",
+      "metadata": {
+        "doc_id": "CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189",
+        "heading": "Treatment with medicines",
+        "start_page": 6,
+        "end_page": 7,
+        "created_date": "2023",
+        "country": "FR",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc/HTA submissions/FR/CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "TECENTRIQ Monotherapy in CBNPC locally advanced or metastatic 30/05/ after prior chemotherapy Roche OPDIVO CBNCP locally epidermoid 03/02/ locally advancing or Metastatic after prior chemo Bristol-Myers Squibb CBNBC locally non-epdermoid 11/01/ locally progressive or metistatic after previous chemo KEYTRUDA CBNCC locally advance or metas-AST 03/03 tactical, with PD-L1 ≥ 1%, and who have received (pembrolizumab) at least one year of therapy for MSD ‡ prescribed prior to the 1999 SMRAS regulation and the GMRAS specification The medicinal properties of AVARZ and Avastin (AURA) and other non-prescription medicinal products. HAS • LUMYKRAS 120 mg, tablet p NA‡ NA‡ /2004 Important data) /2016 Important data//2018 Important (only one) in patients with ALK+) /2017 Important (one only) in ECOG 0 or 1 patients) /2021 Important (in patients with ALL) vacizumab) are used • July 2023 NA‡ ASMR IV (minor) compared to the bone marrow-cys-platin combination ASMR V taken in the ASMR x-stage IV (mild) compared with docetaxel III (moderate compared with Docetaxel IV) as compared to ASMR v-stages IV (medium) compared",
+      "metadata": {
+        "doc_id": "CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189",
+        "heading": "Immunotherapy",
+        "start_page": 7,
+        "end_page": 7,
+        "created_date": "2023",
+        "country": "FR",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc/HTA submissions/FR/CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "Despite these treatments, the prognosis for advanced CBNPC is bleak, with 5-year overall survival ranging from 15% to 50% in patients eligible for targeted therapies or immunotherapy.[1] Therefore, the medical need is currently partially covered by the available alternatives.",
+      "metadata": {
+        "doc_id": "CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189",
+        "heading": "Coverage of medical needs",
+        "start_page": 8,
+        "end_page": 8,
+        "created_date": "2023",
+        "country": "FR",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc/HTA submissions/FR/CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "The initial review of LUMYKRAS (sotorasib) was mainly based on a non-comparative Phase 1/2 (CodeBreak 100) study in 224 patients, including 126 with CBNPC, whose main objective was to estimate the objective response rate, as assessed by an independent review panel. The main results of this study already reviewed in the Notice of 15/06/2022 will be recalled below. The new data provided by the laboratory in support of its request for re-evaluation are: ‒ data from the randomised Phase 3 study (CodeBreak 200); ‒ the final ATU report; ‒ 1st post-MCA Early Access Synthesis Report;  data from an ATU-based observational study; and ‒ updated tolerance data.",
+      "metadata": {
+        "doc_id": "CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189",
+        "heading": "Available data",
+        "start_page": 8,
+        "end_page": 8,
+        "created_date": "2023",
+        "country": "FR",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc/HTA submissions/FR/CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "The median age was 64 years, with a similar proportion of men/women (50%) and patients in good general condition, with an ECOG stage of 0 (30%) or 1 (70%). Almost all patients had metastatic disease (96%) and non-epidermoid tumour (99%). In total, 43% of patients received only one anterior line, 35% received two lines and 22% received three anterior lines. The main analysis was performed on 123 patients (data from 01 September 2020), corresponding to the full set of patients, as 3 patients were considered as having no objective measurable initial response. A partial or complete response rate was observed in 37 patients (34%-49%), i.",
+      "metadata": {
+        "doc_id": "CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189",
+        "heading": "Summary of efficacy data",
+        "start_page": 8,
+        "end_page": 9,
+        "created_date": "2023",
+        "country": "FR",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc/HTA submissions/FR/CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "e. at least 29 patients (37%-49%) with a partial response or no response. These were almost exclusively partial responses (44 patients), with 4 (3%) complete responses. Among the secondary endpoints, the median duration of response was 8.4 months (95% CI: 6.9-8.4), progression-free survival was 6.7 months (IC95%: 4.9-8.1) and overall survival 12.0 months (9.5-NE). Prior treatment was required to include platinum-based chemotherapy and immunotherapy (whether given concomitantly or successively), unless contraindicated.",
+      "metadata": {
+        "doc_id": "CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189",
+        "heading": "Summary of efficacy data",
+        "start_page": 8,
+        "end_page": 9,
+        "created_date": "2023",
+        "country": "FR",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc/HTA submissions/FR/CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189_cleaned.json",
+        "split_index": 1
+      }
+    },
+    {
+      "text": "Patients were randomised (allocation ratio of 1:1) to receive: ‒ Experimental group: sotorasib, 960 mg/ day, oral route; ‒ Control group: docetaxel, 75 mg/ m2 every 3 weeks, IV route (AML dosing); Randomisation was stratified according to the following criteria: number of prior lines (1 vs 2 vs 3 and above), geographical origin (Asian vs non-Asian) and CNS involvement (present vs absent).",
+      "metadata": {
+        "doc_id": "CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189",
+        "heading": "Treatments received",
+        "start_page": 9,
+        "end_page": 9,
+        "created_date": "2023",
+        "country": "FR",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc/HTA submissions/FR/CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "The primary endpoint was progression-free survival as assessed by an independent, blinded review panel. Progression-less survival was defined as the time between randomization and occurrence of progression according to RECIST 1.1 criteria, or death from any cause. Note that patients who started a new anti-cancer therapy before progression or death were screened at the last assessment date prior to initiation. A sensitivity analysis was performed considering these initiations as a progression free survival event. The following outcome criteria were controlled for multiple testing (unilateral alpha risk control at 0.025) using the Maurer-Bretz procedure: ‒ Progression-free survival as assessed by the Independent Review Committee, blinded (principal criterion, see above) ‒ Objective response rate as evaluated by the independent review committee, Blinded, and defined as the proportion of patients who had a complete or partial response according to RECIST 1.1 (secondary criterion); ‒ Overall survival, defined as time between randomization and date of death from any cause (subcriterion) In all cases of statistical significance; multiplicity of the 3 analyses above was adjusted to the proposed median survival for certain quality of life dimensions. planned after the occurrence of approximately 160 events or if recruitment was completed and all patients were followed for at least 6 weeks.",
+      "metadata": {
+        "doc_id": "CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189",
+        "heading": "Criteria for judging",
+        "start_page": 9,
+        "end_page": 10,
+        "created_date": "2023",
+        "country": "FR",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc/HTA submissions/FR/CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "Final progression-free survival analysis was planned after 230 events; ‒ An interim analysis of overall survival was planned at the time of statistical significance of the effect on progression free survival or after 175 deaths.",
+      "metadata": {
+        "doc_id": "CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189",
+        "heading": "Criteria for judging",
+        "start_page": 9,
+        "end_page": 10,
+        "created_date": "2023",
+        "country": "FR",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc/HTA submissions/FR/CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189_cleaned.json",
+        "split_index": 1
+      }
+    },
+    {
+      "text": "In Amendment 3 to the protocol of 15/02/2021 (first randomisation performed on 04/06/2020), several changes were made: ‒ Reduction of the number of subjects from 650 to 330 patients; ‒ Addition of an intermediate analysis of progression-free survival (160 events); ‒ Cross-over possible for patients in the docetaxel group, if progression is reported by the investigator and confirmed by the independent committee.",
+      "metadata": {
+        "doc_id": "CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189",
+        "heading": "Main amendments to the Protocol",
+        "start_page": 10,
+        "end_page": 10,
+        "created_date": "2023",
+        "country": "FR",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc/HTA submissions/FR/CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "A total of 345 patients were randomised with 171 patients in the LUMYKRAS (sotorasib) group and 174 patients in docetaxel. In this open-label study, 2 patients were randomized to the LumykRAS group and 23 patients were not treated in the Docetaxel group. The main characteristics of the patients were comparable between the two groups. The median age was 64 years (min-max: 32-88). The majority of patients were male (59%), with an ECOG score of 1 (66%), had received 1 (45%) or 2 (39%) previous lines for advanced/ metastatic stage, had no cerebral cysticercosis (66%) or metastasis (86%). The majority were female (71%), with a median diagnosis of 2 months (77%), and then non-hepatological (97%).",
+      "metadata": {
+        "doc_id": "CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189",
+        "heading": "Population of the study",
+        "start_page": 10,
+        "end_page": 13,
+        "created_date": "2023",
+        "country": "FR",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc/HTA submissions/FR/CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "The median time to diagnosis was 17 months (min-max: 2-227). Results on the primary outcome criterion: progression-free survival Intermediate analysis The a priori protocol interim analysis was performed on the data freeze of 05/10/2021, after 171 events had occurred. The threshold of significance (O'Brien-Fleming method) for this intermediate analysis was 0.009, and for the final analysis 0.022. The follow-up median was 30 weeks (min max: 0-57) in the sotorasib group and 22 weeks ( min max: 00-56) in the docetaxel group. On the initial report of the 20/12/2021 group, based on data from 05/102021, no significant difference was observed between the HR groups: 2/2021 = 0.85% [ICIC: 0.95%], following the recommendation of the Committee for the April 2021 update of the same data.",
+      "metadata": {
+        "doc_id": "CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189",
+        "heading": "Population of the study",
+        "start_page": 10,
+        "end_page": 13,
+        "created_date": "2023",
+        "country": "FR",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc/HTA submissions/FR/CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189_cleaned.json",
+        "split_index": 1
+      }
+    },
+    {
+      "text": "In April 2022, a post-update analysis was performed on the same data from 05/10/2021. This update included a new assessment of events by the Independent Review Committee. This new analysis was justified by a higher than expected discrepancy between the results obtained by the independent review committee (used for the assessment of the judgement criteria) and a centralized confirmation committee of the 1st progression (used only in the case of progression declared by the investigator (in open), in order to confirm or not this progression, in particular to be able to stop or change the treatment). The results of this post update analysis were inconsistent with those described above, since the statistical significance was reached. Although the conduct of the study was not modified, the laboratory was warned of these positive results. Although the conduct of the study",
+      "metadata": {
+        "doc_id": "CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189",
+        "heading": "Population of the study",
+        "start_page": 10,
+        "end_page": 13,
+        "created_date": "2023",
+        "country": "FR",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc/HTA submissions/FR/CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189_cleaned.json",
+        "split_index": "2_0_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "was unchanged, the laboratory was alerted to these positive results. A number of methodological limitations should be noted with respect to this updated analysis, including: ‒ The involvement of unspecified assessors, whose qualifications and blindness were not specified (including a medical director of a CRO who participated in one of the stages of selection of discordant cases to be re-evaluated); ‒ Only the findings of the independent review committee were modified: the analysis by the centralized confirmation committee of the first progression was considered to be accurate, without any multiplication occurring; ‒ Failure to take into account the total reproducibility related to this assessment. These 223 events corresponded to 168 progressions (100 in the sotorasib group and 68 in the docetaxel group) and 55 deaths without progression (22 in the Sotorasibe group and 33 in the Docetaxel Group).",
+      "metadata": {
+        "doc_id": "CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189",
+        "heading": "Population of the study",
+        "start_page": 10,
+        "end_page": 13,
+        "created_date": "2023",
+        "country": "FR",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc/HTA submissions/FR/CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189_cleaned.json",
+        "split_index": "2_1_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "The median duration of follow-up was 15.2 months [95% CI: 14.9 - 17.3] in the Sotorasib Group and 6.9 months [95% CI: 5.4 - 15.5] in thedocetaxel Groups. The superiority of Soturasib over Docetaxil was demonstrated in terms of progression-free survival as assessed by an independent review panel according to the RISTEC criteria: 1.10, [66% CRI: 0.51-0.86] (p=0.002). Figure 1: Progression-free survival curve as assessed by an independent panel according to RECIST 1.1 from the CodeBreak 200 study, final analysis Results on secondary outcome criteria with alpha risk management Objective response rate as evaluated by an Independent Review Panel according to the RECIST criteria In accordance with the statistical analysis plan, the significance of progression- free survival (criterion) having been demonstrated, significance for the primary objective response rate was tested. Objective response was demonstrated in 48 patients (28% [95% CI: 22-35], with 2 complete responses and 46 partial responses) in the sotorasib group, and in 23 patients (13% [95% CI: 9-19], only partial answers) in docetaxel group, resulting in an OR=2.6 [95 percent CI: 1.5-4.6] (p< 0.001).",
+      "metadata": {
+        "doc_id": "CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189",
+        "heading": "Population of the study",
+        "start_page": 10,
+        "end_page": 13,
+        "created_date": "2023",
+        "country": "FR",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc/HTA submissions/FR/CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189_cleaned.json",
+        "split_index": 3
+      }
+    },
+    {
+      "text": "The median overall survival was 10.6 months (IC95%: 8.9 to 14.0) in the sotorasib group and 11.3 months (I.C. 95%: 9.0 to 14.9) in the docetaxel group, HR=1.01 [IC95: 0.77 to 1.33]. Sensitivity analyses intended to take into account cross-over (methodes rank preserving structural failure time, inverse probability of censoring weighting, 2-step approaches) showed similar results.",
+      "metadata": {
+        "doc_id": "CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189",
+        "heading": "Population of the study",
+        "start_page": 10,
+        "end_page": 13,
+        "created_date": "2023",
+        "country": "FR",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc/HTA submissions/FR/CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189_cleaned.json",
+        "split_index": 4
+      }
+    },
+    {
+      "text": "Since no statistically significant difference was found in overall survival, the hierarchical sequence was discontinued, and the quality of life criteria were not tested. Patients were analysed using the QLQ-C30 questionnaire and the QlQ-LC13. However, due to the following limitations: ‒ Open label study, ‒ Ahead of schedule analysis, No formal conclusions can be drawn from the results of quality of living, which will not be presented.",
+      "metadata": {
+        "doc_id": "CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189",
+        "heading": "Quality of life",
+        "start_page": 13,
+        "end_page": 13,
+        "created_date": "2023",
+        "country": "FR",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc/HTA submissions/FR/CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "The tolerance population was 126 patients, with a median duration of treatment of 24 weeks (min-max: 1-77). Almost all patients reported an adverse event (AEs) (99%). The proportion of AEs of grade ≥ 3 was 61%, that of serious AEs was 55%, that of AES leading to treatment discontinuation was 9%, and that of a AES progressing towards death was 16%. Events of particular interest were reported in 39% of patients, including hepatotoxicity (32%, including 18% Grade ≥ 3) and nephroto toxicity (18%, including 3% Grade≥ 3). 3.3.2 New tolerance data provided in support of this re-evaluation CodeBreak 200 Study The tolerance population consisted of 169 patients in the sotorasib group and 151 in the docetaxel group. The proportion of adverse reactions leading to total discontinuation of medicinal product was 16% in the docetaxel group and 17% in the sotorasib group.The proportion of ADRs leading to temporary discontinous medicinal products was 28% in the Docetaxel Group and 51% in the Sotassib Group. The proportion of adverse reactions leading to death was 12% in the docetaxel group and 22% in the sotorasib group.",
+      "metadata": {
+        "doc_id": "CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189",
+        "heading": "Profile of the tolerance",
+        "start_page": 13,
+        "end_page": 14,
+        "created_date": "2023",
+        "country": "FR",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc/HTA submissions/FR/CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "‒ Hepatotoxicity: 9% in the Docetaxel Group (of which 1% grades ≥ 3), and 27% in the Sotorashib Group (including 20% grades > 3) ‒ Pneumonia: 3% in thedocetaxelGroup (of whom 3% grades ≤ 3), 2% in the Sotorasib Group (1% grades < 3)  Renal toxicity: 12% in docetaxilGroup (2% grates > 3) and 18% in the",
+      "metadata": {
+        "doc_id": "CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189",
+        "heading": "Profile of the tolerance",
+        "start_page": 13,
+        "end_page": 14,
+        "created_date": "2023",
+        "country": "FR",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc/HTA submissions/FR/CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189_cleaned.json",
+        "split_index": 1
+      }
+    },
+    {
+      "text": "The Risk Summary of the LUMYKRAS (sotorasib) RMP (version 1.0 as of 15/11/2022) did not identify any significant risks, no potential risks and no information was missing.",
+      "metadata": {
+        "doc_id": "CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189",
+        "heading": "Data from the GRP",
+        "start_page": 14,
+        "end_page": 14,
+        "created_date": "2023",
+        "country": "FR",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc/HTA submissions/FR/CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "The Periodic Benefit-Risk Evaluation Report (PBRER) /Periodic Safety Update Report (PSUR) covering the period from 28/11/2021 to 27/05/2022 was provided in support of this reassessment.",
+      "metadata": {
+        "doc_id": "CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189",
+        "heading": "Data from the RDPs/PSURs",
+        "start_page": 14,
+        "end_page": 14,
+        "created_date": "2023",
+        "country": "FR",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc/HTA submissions/FR/CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "Reminders of clinical data previously reviewed by the Commission (Opinion of 15/06/2022): Cohort ATU from 09/08/2021 to 29/10/2021 As a reminder, the wording of this cohort-ATU was: Sotorasib is indicated as monotherapy in the treatment of adult patients with metastatic KRAS p.G12C mutated non-small cell lung cancer (NSCLC), previously treated A total of 447 requests for access to treatment were made during this period, of which 7 were refused. The 414 patients considered to be treated are described below. Only 47 patients had a first documented follow-up visit. Due to the insufficient accuracy related to this small sample size, and the possibility of bias, the follow up data (efficacy or tolerability) will not be described. New data provided in support of this re-evaluation: final report of the ATU cohort from 09/08/2021 to 06/06/2022 In total, 1,077 requests for access to treatment were made, of which 37 were refused. Of the 1,040 accepted requests, 1,011 patients were considered to have been treated (information provided by the laboratory). Of these, 958 patients were deemed to have never been exposed (53 never initiated the treatment). Of the 0,011 patients treated, only 1 (22%) had a precision related to the lack of documented efficacy or tolerance, and 220 patients (22%) were selected for follow up visits. 3.4.2 1st post-MCA early access report The laboratory provided data from the 1st early access follow-up report, covering the period 07/ 06/ 2022 to 07/02/ 2023.",
+      "metadata": {
+        "doc_id": "CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189",
+        "heading": "3.4.1 ATU of the cohort",
+        "start_page": 14,
+        "end_page": 15,
+        "created_date": "2023",
+        "country": "FR",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc/HTA submissions/FR/CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "Patients treated under early access could be patients already treated under the ATU cohort switching to the early access system, or patients will be included directly in the total early access (based on the date of inclusion of patients). In total, 783 requests for early access were made, and 750 patients were considered to have been exposed to sotorasib. Only these 750 patients will be described in the remainder of this paragraph. Among the characteristics of these patients, there is a median of 1 previous line (min-max: 0-6). A total of 68% of patients received 1 prior line, 21% received 2 prior lines, 5% received 3 prior lines and 5% received 4 or more prior lines.",
+      "metadata": {
+        "doc_id": "CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189",
+        "heading": "3.4.1 ATU of the cohort",
+        "start_page": 14,
+        "end_page": 15,
+        "created_date": "2023",
+        "country": "FR",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc/HTA submissions/FR/CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189_cleaned.json",
+        "split_index": 1
+      }
+    },
+    {
+      "text": "This retrospective observational study was designed to include patients with Stage IV NSCLC with KRAS G12C mutation who received at least one dose of sotorasib as part of the ATU. The main objective was to evaluate the so-called progression-free survival in real life. A total of 106 patients who started treatment with sotoratib between 15/03/2021 and 15/04/2022 were included in this study. It should be noted that these patients were already included in the description of the cohort ATU (paragraph 3.4.1).",
+      "metadata": {
+        "doc_id": "CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189",
+        "heading": "The results of the observational study IFCT-2102 Lung KG12Ci",
+        "start_page": 15,
+        "end_page": 15,
+        "created_date": "2023",
+        "country": "FR",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc/HTA submissions/FR/CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "Study name Study design Availability of data CodeBreak study Phase II, multicentre, open label, dose comparison study May 2026 100 (NCT03600883) (240 mg vs 960 mg) in patients with a CBNPC with a KRAS G12C mutation who have received at least one systemic antiretroviral therapy",
+      "metadata": {
+        "doc_id": "CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189",
+        "heading": "Program of studies",
+        "start_page": 16,
+        "end_page": 16,
+        "created_date": "2023",
+        "country": "FR",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc/HTA submissions/FR/CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "This opinion concerns the re-evaluation of LUMYKRAS (sotorasib) as a monotherapy indication for the treatment of adult patients with advanced non-small cell bronchial cancer (NSCBC) with the KRAS G12C mutation whose disease has progressed after at least one prior systemic line of therapy. In the absence of direct comparative data, whereas clinically relevant comparators were available, and of major methodological limitations of the indirect comparison provided, the Commission considered that the data did not allow a relatively unbiased assessment of the contribution of LUMYKRAS (sotorasib) in the claimed indication, relative to the clinical relevance of the comparators. In support of its request for re-evaluation, the laboratory provided the results of the Phase III study requested by the Commission in its initial opinion. e laboratory also provided additional data from the ATUc Final Report, the 1st Early Access Synthesis Report and an observational study based on the ATuc.",
+      "metadata": {
+        "doc_id": "CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189",
+        "heading": "The debate is closed.",
+        "start_page": 16,
+        "end_page": 17,
+        "created_date": "2023",
+        "country": "FR",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc/HTA submissions/FR/CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189_cleaned.json",
+        "split_index": "0_0_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "e additional data, however, are unlikely to provide robust evidence to assess the efficacy and tolerability of sotorasib, in particular due to a large proportion of missing data. e formal conclusion cannot therefore be drawn. Overall, LUMYKRAS (sotorasib) was shown to be superior to docetaxel in a randomised, open-label study (CodeBreak 200) in 345 patients with KRAS G12C-mutated CBNPCs who received at least one platinum-based chemotherapy and immunotherapy: ‒ In terms of progression-free survival as assessed by an independent review panel using the RECIST criteria HR: 1.1=0.66 [95% CI: 0.51-0.86] (p=0.002). ‒ The median progression free survival according to the independent review committee was 5.6 months (min-max: 0-16.3) in the sotorasib group and 4.5 months ( min-max:21.06) in the docetaxil group, an objective estimate of the absolute difference between the 1.15-month survival rate and the 1.15% response rate (RECIST: 0.9=0.96) in terms of the independent reviewing committee.",
+      "metadata": {
+        "doc_id": "CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189",
+        "heading": "The debate is closed.",
+        "start_page": 16,
+        "end_page": 17,
+        "created_date": "2023",
+        "country": "FR",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc/HTA submissions/FR/CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189_cleaned.json",
+        "split_index": "0_1_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "The final analysis of overall survival did not reveal a statistically significant difference between the sotorasib group and the docetaxel group: HR=1.01 [95% CI: 0.77-1.33]. The scope of these results is, however, limited by the following: ‒ Despite statistical significance, the one-time estimate of the absolute difference in progression-free survival is small, and the clinical relevance of this difference is questionable; ‒ The open-label design of the study, which led to possible evaluation pathways, including treatment decision evaluation, with a marked increase in the docetaxel group of pre-progression treatment changes compared to the docétaxel group (31 patients; versus 24) ‒ A contradiction in the results of the interdiagnostic analysis of unreported progression in the reproducibility of this objective measure; In this context, the overall prognostic effect is poor, and clinical significance of the difference is debatable; LUMKRAS (LUMKRS) with a negative impact on the quality of life, especially in the short-term context of reassessment of treatment decisions, with notably increased incidence of treatment changes before progression as compared to docetaxil (31; versus 24). It should also be noted that exposure to 25% of the dose tested in this trial produces the same area under the plasma curve.",
+      "metadata": {
+        "doc_id": "CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189",
+        "heading": "The debate is closed.",
+        "start_page": 16,
+        "end_page": 17,
+        "created_date": "2023",
+        "country": "FR",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc/HTA submissions/FR/CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189_cleaned.json",
+        "split_index": 1
+      }
+    },
+    {
+      "text": "Given the efficacy and tolerability data, no additional impact of LUMYKRAS (sotorasib) on morbidity-mortality or quality of life is expected.",
+      "metadata": {
+        "doc_id": "CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189",
+        "heading": "The debate is closed.",
+        "start_page": 16,
+        "end_page": 17,
+        "created_date": "2023",
+        "country": "FR",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc/HTA submissions/FR/CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189_cleaned.json",
+        "split_index": 2
+      }
+    },
+    {
+      "text": "On the basis of all this information and after debate and vote, the Commission considers that within the scope of the evaluation:",
+      "metadata": {
+        "doc_id": "CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189",
+        "heading": "Conclusions of the Transparency Committee",
+        "start_page": 17,
+        "end_page": 17,
+        "created_date": "2023",
+        "country": "FR",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc/HTA submissions/FR/CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "LUMYKRAS (sotorasib) is a treatment option in the management of adult patients with advanced non-small cell bronchial cancer (NSCBC) with the KRAS G12C mutation whose disease has progressed after at least one prior line of systemic therapy.",
+      "metadata": {
+        "doc_id": "CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189",
+        "heading": "Place of the drug in the therapeutic strategy",
+        "start_page": 17,
+        "end_page": 17,
+        "created_date": "2023",
+        "country": "FR",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc/HTA submissions/FR/CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "In view of the current management (section 2.2) and the place of the medicinal product in the therapeutic strategy (Section 5.1), CCPs are the treatments mentioned in section 2.2.",
+      "metadata": {
+        "doc_id": "CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189",
+        "heading": "Clinically relevant comparators",
+        "start_page": 17,
+        "end_page": 17,
+        "created_date": "2023",
+        "country": "FR",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc/HTA submissions/FR/CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "Advanced non-small cell lung cancer with KRAS G12C mutation is a serious disease with a life-threatening prognosis. It is a medicinal product with a curative intent.  The efficacy/ adverse effect ratio is low.  Therapeutic alternatives are available that are not specific to the KRASG12C gene mutation, in a context where the prognostic and predictive value of this mutation are poorly defined and the absence of specific treatment (before the availability of LUMYKRAS (sotorasib).  It is an option for treatment in patients who have progressed after at least one systemic line of treatment. ❑ Public health concern: ‒ Given the severity of the disease, ‒ partial or complete loss of coverage,  No additional adverse effects reported. ❖ There are non-specific treatment alternatives available in a setting where the clinical prognosis and prediction value of the mutation were poorly understood, and the lack of specific therapy (prior to the introduction of SORTASG) was not available. ‒ This is a treatment option for patients who had progressed at least once before systemic treatment.",
+      "metadata": {
+        "doc_id": "CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189",
+        "heading": "Medical Service Provided",
+        "start_page": 18,
+        "end_page": 18,
+        "created_date": "2023",
+        "country": "FR",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc/HTA submissions/FR/CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "In view of all these elements, the Commission considers that the medical service provided by LUMYKRAS (sotorasib) remains low in the MAH indication. The Commission gives a favourable opinion on the continuation of the inclusion of LUM YK R AS (sotora- asib) in the list of medicinal products reimbursable to social insured persons and in the List of medicines authorised for use by the public authorities in the MHA indication and dosages.",
+      "metadata": {
+        "doc_id": "CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189",
+        "heading": "Medical Service Provided",
+        "start_page": 18,
+        "end_page": 18,
+        "created_date": "2023",
+        "country": "FR",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc/HTA submissions/FR/CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189_cleaned.json",
+        "split_index": 1
+      }
+    },
+    {
+      "text": "LUMYKRAS (sotorasib) demonstrated statistically significant superiority in terms of progression-free survival and objective response rate as assessed by an independent review panel in an open-label randomised phase 3 study compared to docetaxel; however, this result is limited by: ‒ the absence of clinical relevance of the absolute difference in the progression free survival medians, of approximately 1 month; ‒ open label conduct of the study, which resulted in possible evaluation biases, including treatment decisions;  the uncertain reproducibility of the progressions-free survivability measure in this study;  the lack of evidence of an effect on overall survival, at an advanced stage with an unfavourable prognosis; the absences of objective clinical pertinence of this concomitant median survival rate, of about 1 month, compared with docetaxil; ◦ the absency of a positive clinical relationship between the results of this study and those of the clinical trial, which led to possible evaluative biases including treatment decision-making;",
+      "metadata": {
+        "doc_id": "CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189",
+        "heading": "Improving Medical Services",
+        "start_page": 18,
+        "end_page": 19,
+        "created_date": "2023",
+        "country": "FR",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc/HTA submissions/FR/CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "The Commission considers that no data are likely to change the target estimate made in the initial opinion. Without purpose.",
+      "metadata": {
+        "doc_id": "CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189",
+        "heading": "Population cible",
+        "start_page": 19,
+        "end_page": 19,
+        "created_date": "2023",
+        "country": "FR",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc/HTA submissions/FR/CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189_cleaned.json",
+        "split_index": 0,
+        "merged": true
+      }
+    },
+    {
+      "text": "Conditions It is suitable for prescribing according to the indication, dosage and treatment regimen of LUMYKRAS 120 mg, 19 July 2023 All our publications are available for download in the following languages:",
+      "metadata": {
+        "doc_id": "CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189",
+        "heading": "Other recommendations of the Commission",
+        "start_page": 19,
+        "end_page": 19,
+        "created_date": "2023",
+        "country": "FR",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc/HTA submissions/FR/CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189_cleaned.json",
+        "split_index": 0
+      }
+    }
+  ]
+}

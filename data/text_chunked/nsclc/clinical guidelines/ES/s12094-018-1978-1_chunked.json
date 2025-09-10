@@ -1,0 +1,732 @@
+{
+  "doc_id": "s12094-018-1978-1",
+  "chunks": [
+    {
+      "text": "M. Majem1 · O. Juan2 · A. Insa3 · N. Reguart4 · J. M. Trigo5 · E. Carcereny6 · R. García‑Campelo7 · Y. García8 ·\nM. Guirado9 · M. Provencio10\nReceived: 22 October 2018 / Accepted: 29 October 2018 / Published online: 17 November 2018\n© The Author(s) 2018",
+      "metadata": {
+        "doc_id": "s12094-018-1978-1",
+        "heading": "SEOM clinical guidelines for the treatment of non‑small cell lung cancer (2018)",
+        "start_page": 1,
+        "end_page": 1,
+        "created_date": "20",
+        "country": "ES",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc/clinical guidelines/ES/s12094-018-1978-1_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "Non-small cell lung cancer (NSCLC) accounts for up to 85% of all lung cancers. The last few years have seen the development of a new staging system, diagnostic procedures such as liquid biopsy, treatments like immunotherapy, as well as deeper\nmolecular knowledge; so, more options can be offered to patients with driver mutations. Groups with specific treatments\naccount for around 25% and demonstrate significant increases in overall survival, and in some subgroups, it is important to evaluate each treatment alternative in accordance with scientific evidence, and even more so with immunotherapy. New\ntreatments similarly mean that we must reconsider what should be done in oligometastatic disease where local treatment attains greater value.",
+      "metadata": {
+        "doc_id": "s12094-018-1978-1",
+        "heading": "Abstract",
+        "start_page": 1,
+        "end_page": 2,
+        "created_date": "20",
+        "country": "ES",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc/clinical guidelines/ES/s12094-018-1978-1_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "Keywords NSCLC · Chemotherapy · Immunotherapy · Targeted therapies · Radiotherapy * M. Majem 2 Medical Oncology Department, Hospital Universitari i mmajem@santpau.cat Politècnic La Fe, Valencia, Spain O. Juan 3 Medical Oncology Department, Hospital Clínico ojjuanv@seom.org Universitario de Valencia, Valencia, Spain A. Insa 4 Medical Oncology Department, Hospital Clínic, IDIBAPS, amelia_insa@ono.com Universitat de Barcelona, Barcelona, Spain N. Reguart 5 Medical Oncology Department, Hospital Universitario NREGUART@clinic.cat Virgen de la Victoria, Málaga, Spain J. M. Trigo 6 Medical Oncology Department, Institut Català d’Oncologia jmtrigo@seom.org Badalona-Hospital Germans Trias i Pujol, Badalona, Spain E. Carcereny 7 Medical Oncology Department, Complexo Hospitalario ecarcereny@iconcologia.net Universitario A Coruña, Coruña, Spain R. García-Campelo 8",
+      "metadata": {
+        "doc_id": "s12094-018-1978-1",
+        "heading": "Abstract",
+        "start_page": 1,
+        "end_page": 2,
+        "created_date": "20",
+        "country": "ES",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc/clinical guidelines/ES/s12094-018-1978-1_cleaned.json",
+        "split_index": "1_0_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "Medical Oncology Department, Institut d’Investigació MA.Rosario.Garcia.Campelo@sergas.es i Innovació Parc Taulí I3PT, Universitat Autònoma de Barcelona, Parc Taulí Hospital Universitari, Sabadell, Spain Y. García ygarcia.tauli.cat@gmail.com 9 Medical Oncology Department, Hospital General Universitario de Elche, Elche, Spain M. Guirado mariaspalux@hotmail.com 10 Medical Oncology Department, Hospital Universitario Puerta de Hierro-Majadahonda, Universidad Autónoma de M. Provencio Madrid, Madrid, Spain mprovencio.hpth@salud.madrid.org 1 Medical Oncology Department, Hospital de la Santa Creu i Sant Pau, Sant Antoni Maria Claret 167, 08025 Barcelona, Spain Vol.:(0112 33456789) Methodology • Clinical history, including smoking and family history; physical examination, performance status (PS) Relevant studies published in peer review journals were used and weight loss should be assessed.",
+      "metadata": {
+        "doc_id": "s12094-018-1978-1",
+        "heading": "Abstract",
+        "start_page": 1,
+        "end_page": 2,
+        "created_date": "20",
+        "country": "ES",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc/clinical guidelines/ES/s12094-018-1978-1_cleaned.json",
+        "split_index": "1_1_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "for the guideline elaboration. The Infectious Diseases Society • Blood test, including hematology, renal and hepatic\nof America grading system was used to assign levels of evi- function. dence and grades of recommendation. • Bronchoscopy. • Chest and upper abdomen (including liver and adrenal\nDiagnosis glands) computerized tomography (CT). • Brain CT or magnetic resonance imaging (MRI) is rec-\nDiagnosis: pathology and molecular testing ommended for patients undergoing radical treatment,\nin patients with EGFR mutation or ALK translocation\nThe pathological diagnosis of non-small cell lung cancer or if there are neurological symptoms in the physical\n(NSCLC) should be made according to the World Health examination. Organization (WHO) classification [1].",
+      "metadata": {
+        "doc_id": "s12094-018-1978-1",
+        "heading": "Abstract",
+        "start_page": 1,
+        "end_page": 2,
+        "created_date": "20",
+        "country": "ES",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc/clinical guidelines/ES/s12094-018-1978-1_cleaned.json",
+        "split_index": 2
+      }
+    },
+    {
+      "text": "The International • Bone scan is recommended if there is bone pain, high\nAssociation for the Study of Lung Cancer (IASLC) provided serum calcium or high alkaline phosphatase. adenocarcinoma classification as well as key recommenda- In patients undergoing potentially radical treatment, tions for the management of small biopsies and cytology [2]. additional recommendations should be considered:\nFor therapeutic implications, specific subtyping of NSCLC is • Whole-body FDG-positron emission tomography strongly recommended whenever possible. Limited diagnostic (PET–CT). workup is also recommended to preserve as much tissue as • Pulmonary function tests. possible for further molecular assessments. • Ergospirometry if the pulmonary function tests are not\nThe Spanish Society of Medical Oncology and the Spanish normal. Society of Pathology published evidence-based recommenda- • Chest MRI in Pancoast tumour. tions for molecular testing in lung cancer [3]. Genetic profiling • Invasive mediastinal staging, endobronchial ultraof NSCLC advanced disease is recommended in daily clinical sound-guided fine-needle aspiration and/or endo-\npractice by both ESMO [4] and ASCO [5] guidelines, as it has scopic ultrasound-guided fine-needle aspiration are demonstrated to have an impact on patients’ outcomes (I,A). recommended in patients with suspected mediastinal or\nNew molecular guidelines recommend to include upfront hilar lymph nodes (LNs) in the PET–CT.",
+      "metadata": {
+        "doc_id": "s12094-018-1978-1",
+        "heading": "Abstract",
+        "start_page": 1,
+        "end_page": 2,
+        "created_date": "20",
+        "country": "ES",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc/clinical guidelines/ES/s12094-018-1978-1_cleaned.json",
+        "split_index": 3
+      }
+    },
+    {
+      "text": "For patients\nROS-1 testing along with EGFR and ALK in stage IV non- with suspected LNs on PET–CT and negative EBUS/\nSCC and endorse to include other additional genes such as EUS results, an additional mediastinoscopy is recom-\nBRAF, MET, HER2, KRAS and RET for laboratories that mended. In patients with no suspected LN on the PETperform next-generation sequencing (NGS) testing [5]. Immu- CT, invasive mediastinal staging is also recommended\nnohistochemistry can be considered as an alternative to fluo- in patients with enlarged mediastinal LNs (≥ 1.5 cm),\nrescence in situ hybridization for ALK and/or ROS1 testing. in tumors ≥ 3 cm and/or in patients with central tumors. In EGFR mutant patients progressing on first- or second- • Histological and cytological confirmation is strongly generation EGFR TKI, the detection of EGFR T790M second- recommended in the presence of pleural/pericardial\nary resistance mutations in tumor tissue is recommended (I,A). effusion or isolated metastatic site.",
+      "metadata": {
+        "doc_id": "s12094-018-1978-1",
+        "heading": "Abstract",
+        "start_page": 1,
+        "end_page": 2,
+        "created_date": "20",
+        "country": "ES",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc/clinical guidelines/ES/s12094-018-1978-1_cleaned.json",
+        "split_index": 4
+      }
+    },
+    {
+      "text": "Liquid biopsies or molecular DNA profiling in blood (ctDNA) is currently accepted as a good surrogate for EGFR testing in\ntissue (II,A), enabling clinicians to collect samples in a non-",
+      "metadata": {
+        "doc_id": "s12094-018-1978-1",
+        "heading": "Abstract",
+        "start_page": 1,
+        "end_page": 2,
+        "created_date": "20",
+        "country": "ES",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc/clinical guidelines/ES/s12094-018-1978-1_cleaned.json",
+        "split_index": 5
+      }
+    },
+    {
+      "text": "All patients with advanced NSCLC should, at baseline, have their tissue assessed for programmed cell death 1 ligand During the 16th World Congress of Lung Cancer, the\n(PD-L1) expression by IHC test for selecting patients for anti- International Association for the Study of Lung Cancer programmed death 1 (PD-1) or anti-PD-L1 treatment [8]. (IASLC) proposed the TNM 8th edition that was accepted\nby the Union for International Cancer Control (UICC) and\nDisease staging the American Joint Committee on Cancer (AJCC) [9]. The\nTNM 8th edition is effective since January 2017 (Table 1). In NSCLC, the following staging work-up is highly The most striking changes in the TNM 8th edition are the recommended: further subdividing and detailing of both T and M stages,\nalthough the consequences for therapeutic approach are not yet obvious in all situations. Table 1 TNM classification 8th edition\nStage T N M\nOccult TX N0 M0\n0 Tis N0 M0\nIA1 T1a(mi)/T1a N0 M0\nIA2 T1b N0 M0\nIA3 T1c N0 M0\nIB T2a N0 M0\nIIA T2b N0 M0\nIIB T1a-T2b N1 M0\nT3 N0 M0\nIIIA T1a-T2b N2 M0\nT3 N1 M0\nT4 N0/N1 M0\nIIIB T1a-T2b N3 M0\nT3/T4 N2 M0\nIIIC T3/T4 N3 M0\nIVA Any T Any N M1a/M1\nIVB Any T Any N M1c\nStage I–II\nA multidisciplinary tumor board evaluation of NSCLC patients with stage I-II disease is strongly recommended\neven non-surgical patients.",
+      "metadata": {
+        "doc_id": "s12094-018-1978-1",
+        "heading": "Staging system invasive approach [6, 7].",
+        "start_page": 2,
+        "end_page": 3,
+        "created_date": "20",
+        "country": "ES",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc/clinical guidelines/ES/s12094-018-1978-1_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "It has to include a preoperativ\ncardiopulmonary assessment. Surgery\nFor stage I–II NSCLC patients and no medical contraindi cations to surgery, surgical resection remains the treatmen\nof choice, yielding the best potential choice of cure fo these patients (IB). The type of surgery resection depends on the extensio of the disease, the location of the tumor and the preopera\ntive evaluation:\n• In stage I–II medically fit NSCLC patients, lobectom\nor anatomic pulmonary resection is recommende rather than sublobar resection (I,B). Systematic medi\nastinal lymph node dissection is recommended ove selective sampling lymph node dissection for accu\nrate pathologic staging [10] (IB).",
+      "metadata": {
+        "doc_id": "s12094-018-1978-1",
+        "heading": "Staging system invasive approach [6, 7].",
+        "start_page": 2,
+        "end_page": 3,
+        "created_date": "20",
+        "country": "ES",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc/clinical guidelines/ES/s12094-018-1978-1_cleaned.json",
+        "split_index": 1
+      }
+    },
+    {
+      "text": "For stage II patient\nundergoing anatomic resection, mediastinal lymp node dissection may provide additional survival benefi\nover sampling [11] (II,B). • A sublobar resection (anatomical segmentectomy) i\nrecommended over nonsurgical therapy for patient who cannot tolerate a lobar resection due to decrease\npulmonary function or comorbid disease (I,B). • For patients with a stage I predominantly ground glass\nopacity with lesion ≤ 1 cm, sublobar resection with negative margins is suggested over lobectomy (I,B). • Reresection is recommended for patients with positive\nmargins in resected stage I–II NSCLC patients. If it is not\npossible, postoperative radiotherapy may be considered\nAdjuvant therapy\nOverall survival (OS) benefit of adjuvant treatment is limited to cisplatin-based chemotherapy in completely resected fit\nstage II–III patients [13]. • Four cycles of cisplatin-based chemotherapy following\ncomplete resection in stage II NSCLC patients remain the standard of care in adjuvant setting, offering a 5% OS\nbenefit [13] (I,A). 1b\n• Stage I (7th TNM edition) NSCLC patients do not benefit from adjuvant therapy except those patients with\ntumors > 4 cm [5, 14] (I,C). • In elderly fit patients, adjuvant platinum-based chemotherapy should be considered. • Postoperative radiotherapy (PORT) is not indicated in\nC\ncompletely resected stage I–II NSCLC patients [15] (I,Ad,\nII,A). ve",
+      "metadata": {
+        "doc_id": "s12094-018-1978-1",
+        "heading": "Staging system invasive approach [6, 7].",
+        "start_page": 2,
+        "end_page": 3,
+        "created_date": "20",
+        "country": "ES",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc/clinical guidelines/ES/s12094-018-1978-1_cleaned.json",
+        "split_index": 2
+      }
+    },
+    {
+      "text": "Preoperative chemotherapy has the potential role to reduce tumor size, increase operability, and eliminate micrometasi- tases. A meta-analysis with 15 randomized trials showed\nnt a significant benefit of preoperative chemotherapy on OS or (representing an absolute survival improvement of 5% at\n5 years [16]. Although neoadjuvant chemotherapy has simion lar impact on OS than adjuvant chemotherapy, more conclu-\na- sive evidence favors adjuvant treatment (I,B). Stereotactic ablative radiotherapy (SART) my\ned\nSART is recommended for medically inoperable NSCLC ipatients with node negative tumors ≤5 cm (2C). Several non-\ner\nrandomized studies suggest that SART might be a suitable uoption for operable patients older than 75 years [17] (II,C).",
+      "metadata": {
+        "doc_id": "s12094-018-1978-1",
+        "heading": "Neoadjuvant therapy",
+        "start_page": 3,
+        "end_page": 3,
+        "created_date": "20",
+        "country": "ES",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc/clinical guidelines/ES/s12094-018-1978-1_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "ts\nph\nOther adjuvant treatments fit\nis Adjuvant EGFR TKI in patients with EGFR mutation has ts not demonstrated a survival benefit yet. Several trials in\ned patients with EGFR mutations or ALK translocations in adjuvant setting are ongoing [18].",
+      "metadata": {
+        "doc_id": "s12094-018-1978-1",
+        "heading": "Neoadjuvant therapy",
+        "start_page": 3,
+        "end_page": 3,
+        "created_date": "20",
+        "country": "ES",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc/clinical guidelines/ES/s12094-018-1978-1_cleaned.json",
+        "split_index": 1
+      }
+    },
+    {
+      "text": "Stage III NSCLC is a heterogeneous and complex disease Unresectable LA-NSCLC includes stage IIIA N2 (bulky that has been classified into different subgroups: resectable, and/or multiple nodal involvement), stage IIIB and IIIC. potentially resectable and unresectable locally advanced\nNSCLC. Treatment decision should be taken by an experi- • Concurrent chemoradiotherapy is the treatment of choice\nenced multidisciplinary team (Fig. 1). for medically fit patients (I,A). Several randomized clinical trials and a meta-analysis have shown a higher 5-year\nResectable and potentially resectable NSCLC survival rates favoring this strategy over sequential approaches [24]. • In patients with R0 resected stage III NSCLC, 4 cycles of • Cisplatin-based combinations are recommended for medadjuvant platinum-based chemotherapy should be given ically fit patients (usually with etoposide or vinorelbine)\n(preferably cisplatin doublet) [19] (I,A). [24].",
+      "metadata": {
+        "doc_id": "s12094-018-1978-1",
+        "heading": "Stage III Unresectable NSCLC",
+        "start_page": 4,
+        "end_page": 6,
+        "created_date": "20",
+        "country": "ES",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc/clinical guidelines/ES/s12094-018-1978-1_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "• In patients with pathological N2 NSCLC, PORT appears • Radiotherapy is usually given at a dose of 60–66 Gy in to improve OS in non-randomized analysis, and it is usu- 30–33 fractions over 6–7 weeks. Higher doses are not ally administered after adjuvant chemotherapy (II,A). recommended outside of clinical trials [25]. • In patients with potentially resectable disease, the opti- • If concurrent chemoradiotherapy is not feasible due to mal treatment strategy remains unclear. Several phase poor performance status, comorbidities, and/or unfit III trials and a meta-analysis showed that induction ther- patients, a sequential approach is a reasonable option apy followed by surgery might be better than surgery [26]. alone [20]. Surgery has been compared to",
+      "metadata": {
+        "doc_id": "s12094-018-1978-1",
+        "heading": "Stage III Unresectable NSCLC",
+        "start_page": 4,
+        "end_page": 6,
+        "created_date": "20",
+        "country": "ES",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc/clinical guidelines/ES/s12094-018-1978-1_cleaned.json",
+        "split_index": "1_0_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "radiotherapy • There is no role for prophylactic cranial irradiation in in patients with tumor response after induction chemo- stage III (II,A). therapy, without differences in overall survival [21]. Sur- • In patients with no progressive disease after concurrent gery was also compared to radiotherapy after induction chemoradiotherapy, consolidation treatment with Durchemoradiotherapy in the Lung Intergroup Trial 0139 valumab for 1 year has shown to improve progression- showing better progression-free survival in the surgery free survival (PFS) and OS (I,A) [27–29]. The European arm, with no differences in OS except in the unplanned Medical Agency has recently approved consolidaanalysis in the subset of patients who underwent lobec- tion with Durvalumab in patients with PD-L1 expres- tomy [22].",
+      "metadata": {
+        "doc_id": "s12094-018-1978-1",
+        "heading": "Stage III Unresectable NSCLC",
+        "start_page": 4,
+        "end_page": 6,
+        "created_date": "20",
+        "country": "ES",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc/clinical guidelines/ES/s12094-018-1978-1_cleaned.json",
+        "split_index": "1_1_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "The optimal chemotherapy regimen has not sion ≥ 1% based on an unplanned post hoc analysis. been established in randomized trials, although cisplatinbased chemotherapy is recommended. • In case of superior sulcus (Pancoast) tumors, concurrent chemoradiation followed by surgery is the preferred option [23] (Table 2). Fig. 1 Treatment algorithm for TreatmentAlgorithmfor StageIII Stage III R0resectedStageIII AdjuvantPla(cid:26)numbased CT+/-PORT(I,A-II,A) Poten(cid:26)allyResectable CTorCT/RTfollowedby StageIII: surgery(I,A) T1-3N2 T4N0-1 Defini(cid:26)veCT/RT(I,A) PS0-1,nocomorbidity, Concurrent NoPD Durvalumab goodpulmonaryfunc(cid:26)on CT/RT(I,A) (I,A) UnresectableStageIII PS2,and/orcomorbidity Sequen(cid:26)al and/orimpairedlung CT/RT(I,A) func(cid:26)on Clinical and Translational O Table 2 Summary of reco Diagnosis Staging Stage I–II Medically fit for surgery Medically inoperable, n Adjuvant chemotherapy therapy) Post operative radiother Stage III Completely resected Potentially resectable Unresectable stage III Stage IV Stage IV without driver m Fist line PD-L1 ≥ 50% PD-L1 < 50% or unknow Squamous cell carcinoma Non-squamous-cell carcin Elderly Fit patients Unfit or comorbidities PS 2 PS 3–4 Oncology ommend y node neg y (four c rapy",
+      "metadata": {
+        "doc_id": "s12094-018-1978-1",
+        "heading": "Stage III Unresectable NSCLC",
+        "start_page": 4,
+        "end_page": 6,
+        "created_date": "20",
+        "country": "ES",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc/clinical guidelines/ES/s12094-018-1978-1_cleaned.json",
+        "split_index": "2_0_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "(PO mutation wn a (SCC) noma (n y (2019) dations gative N cycles o ORT) ns non-SC NSCLC of cispla CC) tumour atin-base rs ≤ 5 cm ed chem m mo- WHO classification for pathological diagnosis is required and also IASLC classification of adenocarcinoma For therapeutic implications, specific subtyping of NSCLC is strong recommended Molecular testing in stage IV non-SCC should include EGFR mutations, ALK and ROS-1 translocations by a validated technique In patients progressing to first or second generation EGFR TKI dete nation of EGFR T790M in plasma or tissue should be performed PD-L1 expression should be test to all patients with advanced NSCL at baseline Comprehensive evaluation must include thorax and upper abdomen More extensive evaluations are recommended if a radical approach i considered Stage disease must be classified using the TNM 8th edition Patients should be evaluated in a multidisciplinary tumor board Lobectomy or anatomic pulmonary resection plus systematic media nal lymph",
+      "metadata": {
+        "doc_id": "s12094-018-1978-1",
+        "heading": "Stage III Unresectable NSCLC",
+        "start_page": 4,
+        "end_page": 6,
+        "created_date": "20",
+        "country": "ES",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc/clinical guidelines/ES/s12094-018-1978-1_cleaned.json",
+        "split_index": "2_0_1",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "node dissection SART Recommended in stage II Not recommended in stage I 7th TNM edition (except T > 4 cm) Not indicated in completely resected stage I–II Treatment decision should be taken by an experienced multidisciplin team Adjuvant chemotherapy (four cycles of adjuvant cisplatin-based che therapy) ± PORT Resection followed by adjuvant chemotherapy Induction chemotherapy or chemoradiotherapy followed by surgery Medically fit: concurrent chemoradiotherapy with cisplatin-based chemotherapy Sequential chemoradiotherapy if concurrent treatment is not feasible PCI is not indicated Durvalumab if no progressive disease after concurrent chemoradiotherapy Pembrolizumab Note: Combination of immunotherapy plus standard chemotherapy be considered Platinum-based chemotherapy based on tumor histology: Platinum-based doublets (4, up to 6 cycles) Immunotherapy (atezolizumab or pembrolizumab) and carboplatin p paclitaxel or nab-placlitaxel)(#) Platinum-based doublet: Cisplatin/pemetrexed has more efficacy and less toxicity than cispla gemcitabine Bevacizumab added to a platinum doublet. if there are no contraindi tions Pemetrexed maintenance Immunotherapy (atezolizumab(#) or pembrolizumab) plus standard chemotherapy Comprehensive",
+      "metadata": {
+        "doc_id": "s12094-018-1978-1",
+        "heading": "Stage III Unresectable NSCLC",
+        "start_page": 4,
+        "end_page": 6,
+        "created_date": "20",
+        "country": "ES",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc/clinical guidelines/ES/s12094-018-1978-1_cleaned.json",
+        "split_index": "2_1_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "geriatric assessment is highly recommended Decision according to histology and PD-L1 expression levels Single agent chemotherapy Combination therapy Single-agent therapy Best supportive care Best supportive care gly ermi- LC CT is astinary emoe may plus atin/ ica- Table 2 (continued) Second line PS 0–2 If no prior immunotherapy If prior immunotherapy If contraindication for immuno If prior immunotherapy alone If prior immunotherapy + CT PS 3–4 Stage IV with driver mutations EGFR mutation First-line EGFR TKI Brain metastasis After EGFR TKI progression Clinical benefit maintained or T790 M positive T790 M negative ALK mutation First-line ALK TKI Progression to crizotinib Brain metastasis Other genetic alterations ROS-1 B-RAFv600 Oligometastatic disease Follow-up Curative intent Surgery SART Advanced disease (#) Not EMA approved Stage IV Stage IV without driver First‑line therapy • For stage IV, PS 0–1 N mutations whose tumor otherap oligopr muta NSCL rs expr py rogress ations LC pat ress PD sive dise s (Fig.",
+      "metadata": {
+        "doc_id": "s12094-018-1978-1",
+        "heading": "Stage III Unresectable NSCLC",
+        "start_page": 4,
+        "end_page": 6,
+        "created_date": "20",
+        "country": "ES",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc/clinical guidelines/ES/s12094-018-1978-1_cleaned.json",
+        "split_index": "2_1_1",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "tients w\nD-L1 a\nease\nwithou\nat level\nut driv ls of 50\nPembrolizumab (PD-L1 ≥ 1%), nivolumab or atezolizumab\nPlatinum doublets\nDocetaxel–nintedanib (non-SCC)\nDocetaxel (SCC, non-SCC)\nPemetrexed (non-SCC)\nPlatinum doublets\nDocetaxel–nintedanib (non-SCC)\nDocetaxel (SCC, non-SCC)\nPemetrexed (non-SCC)\nBest supportive care\nErlotinib, gefitinib, afatinib, d acomitinib(#), osimertinib\nOsimertinib\nContinuation with the EGFR TKI\nOsimertinib (if not previously given)\nPlatinum-based chemotherapy\nAlectinib, brigatinib(#), crizotinib or ceritinib\nCeritinib, alectinib or brigatinib(#)\nAlectinib, brigatinib(#) or lorlatinib(#)\nCrizotinib\nDabrafenib plus trametinib\nSystemic therapy and local ablative strategies\nLocal ablative strategies and TKI-continuation if clinical benefit is still retained (if actionable mutation)\nSmoking cessation counseling\nMedical history, physical examination and spiral chest CT scan every\n6–12 months for 2 years and annually thereafter\nMedical history, physical examination and spiral chest CT scan every\n6 months for 3 years and annually thereafter\nPET–CT ± biopsy if recurrence is suspected\nEarly palliative care\nEvaluation of response every 6–12 weeks or greater (tumor proportion score (TPS) ≥ 50%), pembrolizumab is recommended in the absence of contrain-\ndications to use immunotherapy [30] (I,A).",
+      "metadata": {
+        "doc_id": "s12094-018-1978-1",
+        "heading": "Stage III Unresectable NSCLC",
+        "start_page": 4,
+        "end_page": 6,
+        "created_date": "20",
+        "country": "ES",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc/clinical guidelines/ES/s12094-018-1978-1_cleaned.json",
+        "split_index": 3
+      }
+    },
+    {
+      "text": "• For patients with low (TPS < 50%) or unknown PD-L1\nexpression, chemotherapy with platinum doublets should be considered in all stage IV PS 0–1 NSCLCs without\nver driver mutations (I,A). Data have shown that platinum\n0% combination therapy increases OS and improves quality",
+      "metadata": {
+        "doc_id": "s12094-018-1978-1",
+        "heading": "Stage III Unresectable NSCLC",
+        "start_page": 4,
+        "end_page": 6,
+        "created_date": "20",
+        "country": "ES",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc/clinical guidelines/ES/s12094-018-1978-1_cleaned.json",
+        "split_index": 4
+      }
+    },
+    {
+      "text": "PS 0-1 PS 2 PS 3-4\nPD-L1≥ 50%\nPD-L1< 50%\nSCC and non-SCC\n1st\nSingle agentCT (I,B) line SCC non-SCC Carbopla(cid:31)n-based BSC (II,B)\nCT (II,A)\nPla(cid:31)num+Pemetrexed(II,A)\nPla(cid:31)num based-CT (I,A) Taxol+CBDCA+Bevacizumab(I,A) Pembrolizumab(I,A)(*)\nPla(cid:31)num+Taxane+Pembrolizumab#(I,A) Paclitaxel+CBDCA+Bev+Atezolizumab# (I,A)\nPla(cid:31)num+Taxane+Atezolizumab#(I,B) Pla(cid:31)num+Pemetrexed+Pembrolizumab(I,A)\nPla(cid:31)num+Pemetrexed+Atezolizumab#(I,b)\nIfno prior IO: Ifno prior IO:\n2nd • Nivolumab (IA) •• AN tiv eo zolu lim zua mb a(I bA IA) line • • A Pete mzo bl ri ozu lizm ua mb a( bIA PD-L1 + >1%) (IA) • DocP ee tm axb er lo (l Ii Bzu )+m /-a Nb i( nP tD e- dL a1 n + ib > (1 II% ,B) ) (IA) Pla(cid:31)num based-CT\nDocetaxel(IB) Pemetrexed(I,B) (ifnotpreviouslygiven)\n3rd Docetaxel (if not previously given) Docetaxel+/-Nintedanib PD eo mce et ta rx ee xl e + d N (nin ot ne -d Sa Cn Ci )b(non-SCC) line Pemetrexed(ifnotpreviouslygiven) Docetaxel\nCT, chemotherapy; SCC, squamous; BSC, best suppor(cid:14)ve care\n(*) combina(cid:14)on of immunotherapy + CT may be considered#\n# Not EMA approved\nFig. 2 Treatment algorithm for Stage IV with no targetable alterations\nof life (QoL) compared to supportive care, single-agent • The expected toxicity profile should contribute to the cisplatin or other monotherapy [31–34].",
+      "metadata": {
+        "doc_id": "s12094-018-1978-1",
+        "heading": "Stage IV NSCLC (no targetable altera(cid:14)ons)",
+        "start_page": 7,
+        "end_page": 7,
+        "created_date": "20",
+        "country": "ES",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc/clinical guidelines/ES/s12094-018-1978-1_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "selection of the chemotherapy regimen. The nab-pacli• Meta-analyses have shown higher response rates (RRs) taxel/carboplatin regimen has shown in a phase III trial\nand a slightly longer OS for cisplatin combinations than to have higher RRs (with a larger impact in SCC) than for carboplatin combinations [35] (I,B). Carboplatin can paclitaxel/carboplatin and less neurotoxicity (I,B) [45]. be recommended if any contraindication for cisplatin • Recently, two randomized phase III trials have shown that exists. the addition of immunotherapy (atezolizumab or pem• Non-platinum regimens have reported lower efficacy than brolizumab) to standard first-line chemotherapy (carbo-\nplatinum regimens [36] (I,A). platin plus paclitaxel or nab-placlitaxel) in SCC, results\n• Recently, results from several phase III trials have shown in significantly longer PFS with atezolizumab (I,B) [38]\na significant benefit in terms of efficacy for the addition and OS and PFS with pembrolizumab (I,A) [40] than of immunotherapy to platinum-based chemotherapy chemotherapy alone, regardless of PD-L1 expression. It\nregardless of the PD-L1 status [37–41] (I,A-I,B).",
+      "metadata": {
+        "doc_id": "s12094-018-1978-1",
+        "heading": "Stage IV NSCLC (no targetable altera(cid:14)ons)",
+        "start_page": 7,
+        "end_page": 7,
+        "created_date": "20",
+        "country": "ES",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc/clinical guidelines/ES/s12094-018-1978-1_cleaned.json",
+        "split_index": 1
+      }
+    },
+    {
+      "text": "is important to underline that these combinations were\n• Cisplatin-based combinations and some modalities of not approved by the European Medical Agency when this\ntreatment will be selected based on tumor histology: guideline was submitted.",
+      "metadata": {
+        "doc_id": "s12094-018-1978-1",
+        "heading": "Stage IV NSCLC (no targetable altera(cid:14)ons)",
+        "start_page": 7,
+        "end_page": 7,
+        "created_date": "20",
+        "country": "ES",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc/clinical guidelines/ES/s12094-018-1978-1_cleaned.json",
+        "split_index": 2
+      }
+    },
+    {
+      "text": "• For PS 0–1 SCC patients, without major comorbidities • Any platinum-based doublets with a third-generaand with low (TPS < 50%) or unknown PD-L1, platinum- tion agent can be used in non-SCC patients with low\nbased doublets with the addition of a third-generation (TPS < 50%) or unknown PD-L1 [42] (I,A). cytotoxic agent (gemcitabine, vinorelbine, taxanes) are • Pemetrexed-based combination chemotherapy represents recommended (I,A). The different combinations have a therapeutic option. This regimen showed a slight but\nshown comparable efficacy [42]. significant survival benefit compared with gemcitabine\n• Four cycles are recommended, up to a maximum of six or docetaxel-based combinations (results coming from a\ncycles in selected cases [43, 44] (I,A). meta-analysis and a preplanned subgroup analysis of a particularly in those patients progressing within 9 months randomized phase III trial) [46, 47] (II,A). after start of first-line therapy [55] (II,B). • Bevacizumab/paclitaxel/carboplatin combination chem- • Docetaxel, or pemetrexed have demonstrated improveotherapy followed by maintenance bevacizumab has ment in terms of OS and QoL (I,B) and are recommended\nshown improvement in OS in two randomized clinical for those patients with contraindications to immunothertrials and, therefore, it can be offered to patients with apy or nintedanib combination therapy (non-SCC) [56, advanced PS 0–1 non-SCC and no contraindications for 57]. antiangiogenic treatment [6, 48] (I,A).",
+      "metadata": {
+        "doc_id": "s12094-018-1978-1",
+        "heading": "For squamous cell lung cancer (SCC) For non‑squamous cell lung cancer (Non‑SCC)",
+        "start_page": 7,
+        "end_page": 8,
+        "created_date": "20",
+        "country": "ES",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc/clinical guidelines/ES/s12094-018-1978-1_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "• In patients who have received an immune checkpoint\n• Maintenance therapy can be considered in those PS 0–1 inhibitor as first-line therapy, platinum doublets are recpatients with at least stable disease and who have recov- ommended (I,B). ered from residual toxicity after first-line chemotherapy: • For those patients who have received first-line conventional chemotherapyand immune therapy, single agent,\n• Pemetrexed switch maintenance could be considered docetaxel, pemetrexed (non-SCC) or docetaxel plus ninafter four cycles of non-pemetrexed platinum-based tedanib (non-SCC) could be considered (IIB). chemotherapy [49] (I,B).",
+      "metadata": {
+        "doc_id": "s12094-018-1978-1",
+        "heading": "For squamous cell lung cancer (SCC) For non‑squamous cell lung cancer (Non‑SCC)",
+        "start_page": 7,
+        "end_page": 8,
+        "created_date": "20",
+        "country": "ES",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc/clinical guidelines/ES/s12094-018-1978-1_cleaned.json",
+        "split_index": 1
+      }
+    },
+    {
+      "text": "• There is no sufficient evidence to recommend the use of\n• Pemetrexed continuation maintenance should be con- cytotoxic drugs as fourth-line therapy or beyond; patients\nsidered in patients having disease control after four should be considered to be included in clinical trials, and courses of pemetrexed platinum-based chemotherapy continued best supportive care. [50] (I,A). Elderly and PS2\n• Recently, three randomized phase III trials have shown\nthat the addition of immunotherapy (pembrolizumab or Age should not be considered as a decisive factor for treatatezolizumab) to standard first-line chemotherapy (pem- ment selection, and Comprehensive Geriatric Assessment etrexed platinum-based combination or bevacizumab would help to ascertain the true biological status [58]. plus chemotherapy) in non-SCC resulted in significantly longer OS ± PFS than chemotherapy alone, regardless of • For those elderly fit patients with PS 0–1 and adequate\nPD-L1 expression [37, 39, 41].",
+      "metadata": {
+        "doc_id": "s12094-018-1978-1",
+        "heading": "For squamous cell lung cancer (SCC) For non‑squamous cell lung cancer (Non‑SCC)",
+        "start_page": 7,
+        "end_page": 8,
+        "created_date": "20",
+        "country": "ES",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc/clinical guidelines/ES/s12094-018-1978-1_cleaned.json",
+        "split_index": 2
+      }
+    },
+    {
+      "text": "It is important to under- organ function, first-line treatment decision should be\nline that pembrolizumab with pemetrexed and platinum- based according to histology and PD-L1 expression levbased chemotherapy was the only combination approved els [59] (I,B). Single agent chemotherapy (vinorelbine,\nby the European Medical Agency when this guideline gemcitabine, docetaxel) is recommended for those with was submitted. comorbidities or unfit patients [60] (IB). • For patients with PS 2, chemotherapy prolongs OS\ncompared to best supportive care (BSC) [61] (I,B). In\nSecond‑line therapy an individualized-based decision, combination therapy,\nsingle-agent therapy, or palliative therapy alone may be\nPatients clinically or radiologically progressing after first- used for PS 2 patients. In the first-line setting, platinumline therapy, with a PS 0–1 and appropriate PS 2, should be based doublets (preferably carboplatin) have superior\noffered second-line treatment (I,A). Second-line treatment efficacy to monotherapy, despite higher toxicity rates\nshould be individualized and treatment duration should be [62, 63] (II,A).",
+      "metadata": {
+        "doc_id": "s12094-018-1978-1",
+        "heading": "For squamous cell lung cancer (SCC) For non‑squamous cell lung cancer (Non‑SCC)",
+        "start_page": 7,
+        "end_page": 8,
+        "created_date": "20",
+        "country": "ES",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc/clinical guidelines/ES/s12094-018-1978-1_cleaned.json",
+        "split_index": 3
+      }
+    },
+    {
+      "text": "subject to tolerability and clinical benefit. • Unfit patients with PS 3–4 should not receive active treatment regardless of age because no benefit has been dem-\n• In patients with metastatic non-SCC and SCC who have onstrated. Supportive care is recommended (II,B). not received prior immunotherapy, and with no contraindications, single-agent pembrolizumab (PD-L1\nStage IV with driver mutations (Fig. 3)\nTPS ≥ 1%), nivolumab or atezolizumab is recommended\n(I,A). This recommendation is based on data from the\nEGFR mutation main Phase III trials, showing significant improvements\nin OS and tolerability of immunotherapy agents when compared to single-agent docetaxel [51–54]. First‑line setting\n• Nintedanib added to docetaxel has demonstrated a significant OS benefit as compared with docetaxel alone • EGFR TKIs (gefitinib, erlotinib, afatinib) have shown\nin previously treated stage IV, PS 0–1 adenocarcinoma, superior PFS, RR, toxicity profile and QoL for EGFR\nTKIs as first-line treatment compared with platinum-",
+      "metadata": {
+        "doc_id": "s12094-018-1978-1",
+        "heading": "For squamous cell lung cancer (SCC) For non‑squamous cell lung cancer (Non‑SCC)",
+        "start_page": 7,
+        "end_page": 8,
+        "created_date": "20",
+        "country": "ES",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc/clinical guidelines/ES/s12094-018-1978-1_cleaned.json",
+        "split_index": 4
+      }
+    },
+    {
+      "text": "ALK transloca(cid:31)on ROS transloca(cid:31)on EGFR muta(cid:31)on BRAFV600Emuta(cid:31)on\nAlec(cid:28)nib (I,A) Gefi(cid:28)nib(I,A), Afa(cid:28)nib(I,A) Dabrafenib plus\nBriga(cid:28)nib(I,B)# Crizo(cid:28)nib(III,A) Erlo(cid:28)nib(I,A) +/-bevacizumab Trame(cid:28)nib (II,A)\nCrizo(cid:28)nib (I,A) (I,B), Dacomi(cid:28)nib(I,A)#\nCeri(cid:28)nib(I,A) Osimer(cid:28)nib(I,A)\nat PD& at PD&\nLiquid biopsy (T790M status) Ceri(cid:28)nib* (I, A)\nBriga(cid:28)nib* (II,A)#\nOsimer(cid:28)nib** (I,A) Tissue re-biopsy",
+      "metadata": {
+        "doc_id": "s12094-018-1978-1",
+        "heading": "Stage IV NSCLC (known targetable drivers)",
+        "start_page": 9,
+        "end_page": 9,
+        "created_date": "20",
+        "country": "ES",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc/clinical guidelines/ES/s12094-018-1978-1_cleaned.json",
+        "split_index": 0,
+        "merged": true
+      }
+    },
+    {
+      "text": "at PD&\nT790M-\nPla(cid:28)num-based chemotherapy (I,A)\nLorla(cid:28)nib(II,A)#\nPla(cid:28)num-based chemotherapy\nNot EMA approved\n*In pa(cid:31)ents who received crizo(cid:31)nibpreviously\n**In pa(cid:31)ents who did not receive first-line osimer(cid:31)nib\n& In pa(cid:31)ents with oligo-progression consider local strategies (surgery or SBRT) and con(cid:31)nue with targeted therapy (II,A)\nFig. 3 Treatment algorithm for Stage IV with known targetable drivers\nbased doublets (I,A) [64, 65]. Only a prespecified suba- After EGFR TKI progression\nnalysis showed a significant improvement in OS favoring afatinib in patients with Del19 mutations [65]. • Patients might benefit of continuation with the EGFR TKI,\n• Patients with PS 3–4 may also be offered an EGFR TKI, especially if clinical benefit is maintained from a sustained\nas they are likely to receive a similar clinical benefit to EGFR oncogenic blockade [7] or if there is an oligopropatients with good PS (III,A). gressive disease treatable with local strategies (SART or\n• Results from direct comparison of first-, second- and surgery) (II,A) [75].",
+      "metadata": {
+        "doc_id": "s12094-018-1978-1",
+        "heading": "T790M+",
+        "start_page": 9,
+        "end_page": 10,
+        "created_date": "20",
+        "country": "ES",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc/clinical guidelines/ES/s12094-018-1978-1_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "third-generation EGFR TKIs in previously untreated • EGFR Exon 20, T790 M mutation, is the main mechapatients have been reported. Although a benefit in terms nism of acquired resistance after first- or second-generation of PFS has been demonstrated for third-generation TKIs EGFR TKIs [76]. Osimertinib has demonstrated greater osimertinib (I,A) and dacomitinib (I,A) [66–68], to date efficacy over platinum-based chemotherapy (I,A) [77]. only dacomitinib has shown a significant OS advantage • For patients with systemic symptomatic progression (I,A) [69]. However, grade 3–4 treatment-related adverse in whom T790 M cannot be detected or who have proevents were significantly higher with dacomitinib. OS gressed to osimertinib, platinum-based chemotherapy data from the FLAURA trial comparing osimertinib ver- remains the standard of care (II,A). The combination of sus standard of care are still immature [67]. atezolizumab plus bevacizumab plus",
+      "metadata": {
+        "doc_id": "s12094-018-1978-1",
+        "heading": "T790M+",
+        "start_page": 9,
+        "end_page": 10,
+        "created_date": "20",
+        "country": "ES",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc/clinical guidelines/ES/s12094-018-1978-1_cleaned.json",
+        "split_index": "1_0_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "chemotherapy has • An exploratory data on brain disease suggest that the demonstrated a significant PFS benefit in the subgroup probability of experiencing a progression on central of patients with EGFR mutation (III,A) [50]. nervous system (CNS) was lower with osimertinib and • Continuation of EGFR TKI with platinum-based chemoprovided a higher intracranial activity (II,B) [70]. therapy does not impact on PFS nor on OS [78] (I,A). • Combinations of bevacizumab and erlotinib were also explored in the first-line setting demonstrating a sig- ALK translocation nificant increase in PFS but only a slight trend of OS improvement with the combination [71–73] (I,B). First‑line setting • Combination of pemetrexed-carboplatin and gefitinib has demonstrated a significant increase in PFS and OS in • First-line treatment with ALK TKIs is the preferred japanese population [74] (I,B). treatment (I,A).",
+      "metadata": {
+        "doc_id": "s12094-018-1978-1",
+        "heading": "T790M+",
+        "start_page": 9,
+        "end_page": 10,
+        "created_date": "20",
+        "country": "ES",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc/clinical guidelines/ES/s12094-018-1978-1_cleaned.json",
+        "split_index": "1_1_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "Crizotinib and ceritinib have shown a\nsignificant statistical improvement in terms of PFS and ROS‑1 and other rare targetable genetic alterations\nRR compared with chemotherapy in randomized phase\nIII trials (I,A) [79, 80]. • Crizotinib is indicated for the treatment of ROS-1-pos• Alectinib (I,A) and brigatinib (I,B) have shown a signifi- itive advanced NSCLC based on the results of a single-\ncant improvement in PFS versus crizotinib and, therefore, arm trial in 50 patients [90] (III,A). are the preferred first-line options. Grade 3–5 adverse • Dabrafenib–Trametinib is indicated for the treatment\nevents were higher for patients treated with crizotinib of advanced NSCLC BRAFV600E mutation based on\n[81, 82]. It is important to underline that brigatinib was results from non-comparative studies in pretreated or\nnot approved by the European Medical Agency when this naïve patients [91, 92] (II,A). guideline was submitted. • New investigational drugs have shown activity in\n• Chemotherapy is indicated (III,B) in patients whose ALK early clinical trials targeting oncogenic drivers such\nresults are not available and urgent systemic treatment as crizotinib, tepotinib or capmatinib (MET amplified, is required. Treatment plan should be reassured when M ETe14 mutation), LOXO-292 and BLU-667 (RET),\ngenotypic results were available.",
+      "metadata": {
+        "doc_id": "s12094-018-1978-1",
+        "heading": "T790M+",
+        "start_page": 9,
+        "end_page": 10,
+        "created_date": "20",
+        "country": "ES",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc/clinical guidelines/ES/s12094-018-1978-1_cleaned.json",
+        "split_index": 2
+      }
+    },
+    {
+      "text": "entrectinib (NRTK, ROS, ALK fusions), LOXO-101 or\n• For patients who received chemotherapy in the first-line, larotrectinib (NRTK fusions) [93] and ado-trastuzumab\ncrizotinib should be recommended as second-line treat- emtansine (HER2 mutations). However, none of these\nment (I,A) [83]. Alectinib and ceritinib should also be targeted drugs have an official regulatory approval by\nconsidered, although no specific trials have been con- EMA except the orphan drug designation of LOXO-101 ducted. in NTRK fusion tumors.",
+      "metadata": {
+        "doc_id": "s12094-018-1978-1",
+        "heading": "T790M+",
+        "start_page": 9,
+        "end_page": 10,
+        "created_date": "20",
+        "country": "ES",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc/clinical guidelines/ES/s12094-018-1978-1_cleaned.json",
+        "split_index": 3
+      }
+    },
+    {
+      "text": "• For patients who develop resistance or are intolerant to crizotinib, ceritinib (IA), alectinib (IA) or brigatinib The oligometastatic state consists of patients with metasta- (IIA) can be recommended. Ceritinib and alectinib have sis limited in number and location. The number of metasshown a significant improvement in median PFS and less tases ranges from a single metastatic lesion to a single adverse events than chemotherapy. Brigatinib has shown organ with multiple metastases or to multiple lesions in a favorable PFS in a crizotinib-refractory ALK-positive multiple organs. The most accepted number of metastatic phase II trial [84–86]. lesions is up to five and, most important, these should • Lorlatinib has shown activity in patients who have probe suitable to radical treatment by local therapy:",
+      "metadata": {
+        "doc_id": "s12094-018-1978-1",
+        "heading": "Oligometastatic NSCLC",
+        "start_page": 10,
+        "end_page": 15,
+        "created_date": "20",
+        "country": "ES",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc/clinical guidelines/ES/s12094-018-1978-1_cleaned.json",
+        "split_index": "0_0_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "surgi- gressed on next-generation ALK TKI (ceritinib, alectinib cal resection, SART or both. The oligometastatic disease or brigatinib) [87] (II,A). comprises four different settings [94]: • Ensartinib and entrectinib have also been demonstrated activity in previously treated patients in early phase trials 1. Metastatic lesions limited in number and location at diagnosis, all the lesions including the primary tumor • For patients with systemic symptomatic progression to are suitable to radical therapy. ALK TKI, platinum-based chemotherapy remains the 2. Multiple metastases that are transformed into an olistandard of care (II,A). The combination of atezolizumab gometastatic disease after systemic treatment due to plus bevacizumab plus chemotherapy has demonstrated response, and all lesions can be managed with radical a significant PFS benefit (III,B) [50]. intent.",
+      "metadata": {
+        "doc_id": "s12094-018-1978-1",
+        "heading": "Oligometastatic NSCLC",
+        "start_page": 10,
+        "end_page": 15,
+        "created_date": "20",
+        "country": "ES",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc/clinical guidelines/ES/s12094-018-1978-1_cleaned.json",
+        "split_index": "0_1_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "3. The primary tumor and most areas of metastatic disease\nBrain metastases remain controlled, but one or a limited number of metastases progress while systemic therapy. • Alectinib, brigatinib and lorlatinib have showngreater 4. Oligorecurrence occurs in patients treated with curaactivity in CNS disease. In the ALEX trial, fewer patients tive intent and metachronously present 1–5 metastastic\ntreated with alectinib (12%) had CNS progression than lesions suitable to ablative therapy. crizotinib (45%). In the ALTA-1 trial, intracranial RR\n• Patients with oligometastatic disease at diagnowas 78% for brigatinib versus 29% for crizotinib [82]. sis should be treated with systemic therapy and\n• For asymptomatic or patients who became asymptomatic\nlocal consolidative ablative therapy (LAT) to priwith steroids, brain-penetrable ALK TKIs may be used mary and all metastatic sites. Two phase II studies\nand local treatments may be deferred (I,B). showed that LAT after systemic therapy increased Novartis, Tesaro, outside the submitted work. OJ reports grants from\nPFS vs no further local treatment [95, 96] (I,A).",
+      "metadata": {
+        "doc_id": "s12094-018-1978-1",
+        "heading": "Oligometastatic NSCLC",
+        "start_page": 10,
+        "end_page": 15,
+        "created_date": "20",
+        "country": "ES",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc/clinical guidelines/ES/s12094-018-1978-1_cleaned.json",
+        "split_index": 1
+      }
+    },
+    {
+      "text": "Astra Zeneca and personal fees from Astra Zeneca, BMS, MSD,\nROCHE, Boehringer Ingelheim, Lilly outside the submitted work. • Patients with actionable mutations receiving targeted\nMP reports grants from BMS, Roche and personal fees from BMS, therapies who progress on isolated site can be treated MSD, ROCHE, Pierre Fabre, Novartis; Takeda, Lilly, Pfizer outside\nwith LAT [75, 97] (II,A). the submitted work. NR reports advisory Board/Consultancy/Speaker\nhonoraria from MSD, Bristol-Myers, Roche, Boehringer Ingelheim,\nManagement and follow‑up Guardant Health, Pfizer, Abbie, Ipsen, Novartis, Astra-Zeneca, Lilly,\nTakeda outside the submitted work; Research Funding from Pfizer,\nNanoString Technology, and Institutional financial interests related to\n• Smoking cessation counseling is encouraged in any stage clinical trials and patient recruitment. GC reports non-financial supas it leads to superior treatment outcomes since smoking port from Millennium Pharmaceuticals, Inc., during the conduct of the\nstudy; personal fees from ARIAD, AstraZeneca, Roche, Pfizer, BMS,\nmay impact on drugs’ bioavailability (II,A).",
+      "metadata": {
+        "doc_id": "s12094-018-1978-1",
+        "heading": "Oligometastatic NSCLC",
+        "start_page": 10,
+        "end_page": 15,
+        "created_date": "20",
+        "country": "ES",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc/clinical guidelines/ES/s12094-018-1978-1_cleaned.json",
+        "split_index": 2
+      }
+    },
+    {
+      "text": "Boehringer Ingelheim, MSD outside the submitted work. YG reports\n• There is not an established consensus regarding the most personal fees from Roche, Boehriger-ingelheim, Lilly, MSD, Pfizer,\noptimal follow-up in patients with NSCLC. However, due BMS outside the submitted work. JMT reports personal fees from\nto the inherent aggressiveness of the disease, a close fol- Roche, Boehriger-ingelheim, BMS, Astra Zeneca, MerckSerono outside the submitted work. AI, EC, MG, have not reported any potential\nlow-up is advised. conflicts of interest. Follow up in patients after curative treatment: Ethical approval The current study has been performed in accordance\nwith the ethical standards laid down in the 1964 Declaration of Helsinki and its later amendments. • NSCLC patients treated with radical intent must be followed to identify treatment-related complications, detec- Informed consent No informed consent was necessary for this guide-\ntion of treatable relapse or occurrence of second primary line. lung cancer (III,A).",
+      "metadata": {
+        "doc_id": "s12094-018-1978-1",
+        "heading": "Oligometastatic NSCLC",
+        "start_page": 10,
+        "end_page": 15,
+        "created_date": "20",
+        "country": "ES",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc/clinical guidelines/ES/s12094-018-1978-1_cleaned.json",
+        "split_index": 3
+      }
+    },
+    {
+      "text": "• In patients with curative surgery, a close follow-up visit Open Access This article is distributed under the terms of the Creaincluding medical history, physical examination and chest tive Commons Attribution 4.0 International License veco\nCT is recommended every 6–12 months for the first 2 years mmons. org/licens es/by/4.0/), which permits unrestricted use, distribution, and reproduction in any medium, provided you give appropriate\nand annually thereafter (III,B). credit to the original author(s) and the source, provide a link to the\n• For patients treated with SART with radical intent, CT Creative Commons license, and indicate if changes were made.",
+      "metadata": {
+        "doc_id": "s12094-018-1978-1",
+        "heading": "Oligometastatic NSCLC",
+        "start_page": 10,
+        "end_page": 15,
+        "created_date": "20",
+        "country": "ES",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc/clinical guidelines/ES/s12094-018-1978-1_cleaned.json",
+        "split_index": 4
+      }
+    },
+    {
+      "text": "scans every 6 months for 3 years are recommended and annually thereafter (III,B). PET–CT ± biopsy is endorsed\nwhen recurrence is suspected based on chest CT To dis-\nReferences\ncriminate from focal fibrosis (III,B). • Routine surveillance with blood test, FDG-PET imaging\n1. Travis WD, Brambilla E, Nicholson AG, Yatabe Y, Austin JHM,\nor another radiological assessment is not endorsed (II,D). Beasley MB, et al. The 2015 World Health Organization classification of lung tumors: impact of genetic, clinical and radio-\nFollow up in patients with advanced disease: logic advances since the 2004 classification. J Thorac Oncol.",
+      "metadata": {
+        "doc_id": "s12094-018-1978-1",
+        "heading": "Oligometastatic NSCLC",
+        "start_page": 10,
+        "end_page": 15,
+        "created_date": "20",
+        "country": "ES",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc/clinical guidelines/ES/s12094-018-1978-1_cleaned.json",
+        "split_index": 5
+      }
+    },
+    {
+      "text": "2. Lindeman NI, Cagle PT, Aisner DL, Arcila ME, Beasley MB,\n• Early palliative care is strongly recommended [98] (I,A). Bernicker EH, et al. Updated molecular testing guideline for\n• Evaluation of response is recommended every 6–12 weeks the selection of lung cancer patients for treatment with targeted\nafter therapy initiation, using the same baseline radio- tyrosine kinase inhibitors: guideline from the college of American\npathologists, the international association for the study of lung graphic method. The frequency of the radiologic assesscancer, and the association for molecular pathology. J Mol Diagn. ment can be tailored for patients benefiting long time on\ntargeted agents (III,B). 3.",
+      "metadata": {
+        "doc_id": "s12094-018-1978-1",
+        "heading": "Oligometastatic NSCLC",
+        "start_page": 10,
+        "end_page": 15,
+        "created_date": "20",
+        "country": "ES",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc/clinical guidelines/ES/s12094-018-1978-1_cleaned.json",
+        "split_index": 6
+      }
+    },
+    {
+      "text": "Felip E, Concha A, de Castro J, Gomez-Roman J, Garrido P, Ram• For patients eligible for successive lines that respond to irez J, et al. Biomarker testing in advanced non-small-cell lung\ncancer: a national consensus of the spanish society of pathology\nfirst-line treatment, it is advisable to undergo clinical and/ and the spanish society of medical oncology. Clin Transl Oncol. or radiological evaluation 6 weeks after finishing treatment\nand then every 6–12 weeks to enable second-line therapy 4. Novello S, Barlesi F, Califano R, Cufer T, Ekman S, Levra MG,\nto commence promptly (III,B). et al. Metastatic non-small-cell lung cancer: ESMO clinical practice guidelines for diagnosis, treatment and follow-up. Ann Oncol. 2016;27(suppl 5):v1–27.",
+      "metadata": {
+        "doc_id": "s12094-018-1978-1",
+        "heading": "Oligometastatic NSCLC",
+        "start_page": 10,
+        "end_page": 15,
+        "created_date": "20",
+        "country": "ES",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc/clinical guidelines/ES/s12094-018-1978-1_cleaned.json",
+        "split_index": 7
+      }
+    },
+    {
+      "text": "5. Kalemkerian GP, Narula N, Kennedy EB, Biermann WA, Don-\nCompliance with ethical standards ington J, Leighl NB, et al. Molecular testing guideline for the\nselection of patients with lung cancer for treatment with targeted\nConflict of interest MM reports personal fees from AstraZeneca, tyrosine kinase inhibitors: American Society of Clinical Oncol-\nRoche, Lilly, Bristol-Myers Squibb, Pfizer, Boehringer Ingelheim, ogy endorsement of the College of American Pathozlogists/\nInternational Association for the Study of Lung Cancer/Associa- pooled analysis by the LACE collaborative group. J Clin Oncol.",
+      "metadata": {
+        "doc_id": "s12094-018-1978-1",
+        "heading": "Oligometastatic NSCLC",
+        "start_page": 10,
+        "end_page": 15,
+        "created_date": "20",
+        "country": "ES",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc/clinical guidelines/ES/s12094-018-1978-1_cleaned.json",
+        "split_index": 8
+      }
+    },
+    {
+      "text": "tion for Molecular Pathology clinical practice guideline update. J 2008;26(21):3552–9. Clin Oncol. 2018;36(9):911–9. 20. Burdett SS, Stewart LA, Rydzewska L. Chemotherapy and sur-\n6. Yang JC, Sequist LV, Geater SL, Tsai CM, Mok TS, Schuler M, gery versus surgery alone in non-small cell lung cancer. Cochrane\net al. Clinical activity of afatinib in patients with advanced non- Database Syst Rev. 2007. https: //doi.org/10.1002/146518 58. small-cell lung cancer harbouring uncommon EGFR mutations: CD0061 57.pub2. a combined post hoc analysis of LUX-Lung 2, LUX-Lung 3, and 21. van Meerbeeck JP, Kramer GW, Van Schil PE, Legrand C,\nLUX-Lung 6. Lancet Oncol. 2015;16(7):830–8.",
+      "metadata": {
+        "doc_id": "s12094-018-1978-1",
+        "heading": "Oligometastatic NSCLC",
+        "start_page": 10,
+        "end_page": 15,
+        "created_date": "20",
+        "country": "ES",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc/clinical guidelines/ES/s12094-018-1978-1_cleaned.json",
+        "split_index": 9
+      }
+    },
+    {
+      "text": "Smit EF, Schramel F, et al. Randomized controlled trial of\n35. Ardizzoni A, Boni L, Tiseo M, Fossella FV, Schiller JH, Paes- lung cancer: a randomised, double-blind, phase 3 study. Lancet. mans M, et al. Cisplatin- versus carboplatin-based chemotherapy 2009;374(9699):1432–40. in first-line treatment of advanced non-small-cell lung cancer: 50. Paz-Ares LG, de Marinis F, Dediu M, Thomas M, Pujol JL, Bidoli\nan individual patient data meta-analysis. J Natl Cancer Inst. P, et al. PARAMOUNT: final overall survival results of the phase\n2007;99(11):847–57. III study of maintenance pemetrexed versus placebo immedi-\n36. D’Addario G, Pintilie M, Leighl NB, Feld R, Cerny T, Shepherd ately after induction treatment with pemetrexed plus cisplatin for\nFA. Platinum-based versus non-platinum-based chemotherapy in advanced nonsquamous non-small-cell lung cancer. J Clin Oncol. advanced non-small-cell lung cancer: a meta-analysis of the pub- 2013;31(23):2895–902. lished literature. J Clin Oncol. 2005;23(13):2926–36.",
+      "metadata": {
+        "doc_id": "s12094-018-1978-1",
+        "heading": "Oligometastatic NSCLC",
+        "start_page": 10,
+        "end_page": 15,
+        "created_date": "20",
+        "country": "ES",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc/clinical guidelines/ES/s12094-018-1978-1_cleaned.json",
+        "split_index": 10
+      }
+    },
+    {
+      "text": "51. Herbst RS, Baas P, Kim DW, Felip E, Perez-Gracia JL, Han\nwith advanced non-small-cell lung cancer and Eastern coop- 76. Yu HA, Arcila ME, Rekhtman N, Sima CS, Zakowski MF, Pao W,\nerative oncology group performance status of 2. J Clin Oncol. et al. Analysis of tumor specimens at the time of acquired resist-\n2013;31(23):2849–53. ance to EGFR-TKI therapy in 155 patients with EGFR-mutant\nlung cancer: an open-label, phase 2 trial. Lancet Oncol. non-small-cell lung cancer without progression after first-line\n2017;18(10):1307–16. systemic therapy: a multicentre, randomised, controlled, phase 2\n92. Planchard D, Besse B, Groen HJM, Souquet PJ, Quoix E, Baik study. Lancet Oncol.",
+      "metadata": {
+        "doc_id": "s12094-018-1978-1",
+        "heading": "Oligometastatic NSCLC",
+        "start_page": 10,
+        "end_page": 15,
+        "created_date": "20",
+        "country": "ES",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc/clinical guidelines/ES/s12094-018-1978-1_cleaned.json",
+        "split_index": 11
+      }
+    },
+    {
+      "text": "2016;17(12):1672–82. CS, et al. Dabrafenib plus trametinib in patients with previously 96. Iyengar P, Wardak Z, Gerber DE, Tumati V, Ahn C, Hughes RS,\ntreated BRAF(V600E)-mutant metastatic non-small cell lung et al. Consolidative radiotherapy for limited metastatic non-smallcancer: an open-label, multicentre phase 2 trial. Lancet Oncol. cell lung cancer: a phase 2 randomized clinical trial. JAMA Oncol. 2016;17(7):984–93. 2018;4(1):e173501. 93. Drilon A, Laetsch TW, Kummar S, DuBois SG, Lassen UN, Dem- 97. Ou SH, Janne PA, Bartlett CH, Tang Y, Kim DW, Otterson GA,\netri GD, et al. Efficacy of larotrectinib in TRK fusion-positive can- et al. Clinical benefit of continuing ALK inhibition with crizotinib\ncers in adults and children. New Engl J Med.",
+      "metadata": {
+        "doc_id": "s12094-018-1978-1",
+        "heading": "Oligometastatic NSCLC",
+        "start_page": 10,
+        "end_page": 15,
+        "created_date": "20",
+        "country": "ES",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc/clinical guidelines/ES/s12094-018-1978-1_cleaned.json",
+        "split_index": 12
+      }
+    },
+    {
+      "text": "2018;378(8):731–9. beyond initial disease progression in patients with advanced ALK-\n94. Juan O, Popat S. Ablative therapy for oligometastatic non-small positive NSCLC. Ann Oncol. 2014;25(2):415–22. cell lung cancer. Clin Lung Cancer. 2017;18(6):595–606. 98. Temel JS, Greer JA, Muzikansky A, Gallagher ER, Admane",
+      "metadata": {
+        "doc_id": "s12094-018-1978-1",
+        "heading": "Oligometastatic NSCLC",
+        "start_page": 10,
+        "end_page": 15,
+        "created_date": "20",
+        "country": "ES",
+        "source_type": "clinical_guideline",
+        "original_file_path": "nsclc/clinical guidelines/ES/s12094-018-1978-1_cleaned.json",
+        "split_index": 13
+      }
+    }
+  ]
+}

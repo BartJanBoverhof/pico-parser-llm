@@ -67,6 +67,7 @@ cleaner.clean_all_documents()
 
 # Step 4: Chunk documents (use cleaned translations)
 print("\n=== Step 4: Chunking Documents ===")
+
 chunker = Chunker(
     json_folder_path=POST_CLEANED_PATH,
     output_dir=CHUNKED_PATH,
@@ -116,10 +117,6 @@ case1_config = CASE_CONFIGS["case_1_nsclc_krasg12c_monotherapy_progressed"]
 case1_indication = case1_config["indication"]
 case1_required_terms = case1_config.get("required_terms_clinical")
 case1_mutation_boost = case1_config.get("mutation_boost_terms", [])
-
-print(f"NSCLC Indication: {case1_indication}")
-print(f"NSCLC Required Terms: {case1_required_terms}")
-print(f"NSCLC Mutation Boost Terms: {case1_mutation_boost}")
 
 # Step 8: Run retrieval for NSCLC Case
 print("\n=== Step 8: Running NSCLC Retrieval ===")
@@ -239,12 +236,10 @@ case2_config = CASE_CONFIGS["case_2_hcc_advanced_unresectable"]
 case2_indication = case2_config["indication"]
 case2_required_terms = case2_config.get("required_terms_clinical")
 case2_mutation_boost = case2_config.get("mutation_boost_terms", [])
-case2_drug_keywords = case2_config.get("drug_keywords", [])
 
 print(f"HCC Indication: {case2_indication}")
 print(f"HCC Required Terms: {case2_required_terms}")
 print(f"HCC Mutation Boost Terms: {case2_mutation_boost}")
-print(f"HCC Drug Keywords: {case2_drug_keywords}")
 
 # Step 8: Run retrieval for HCC Case
 print("\n=== Step 8: Running HCC Retrieval ===")
@@ -256,7 +251,6 @@ result_hcc_hta_pc = rag_hcc.run_population_comparator_retrieval_for_source_type(
     countries=COUNTRIES,
     indication=case2_indication,
     mutation_boost_terms=case2_mutation_boost,
-    drug_keywords=case2_drug_keywords,
     initial_k=60,
     final_k=22
 )
@@ -268,7 +262,6 @@ result_hcc_hta_outcomes = rag_hcc.run_outcomes_retrieval_for_source_type(
     countries=COUNTRIES,
     indication=case2_indication,
     mutation_boost_terms=case2_mutation_boost,
-    drug_keywords=case2_drug_keywords,
     initial_k=60,
     final_k=22
 )
@@ -281,7 +274,6 @@ result_hcc_clinical_pc = rag_hcc.run_population_comparator_retrieval_for_source_
     indication=case2_indication,
     required_terms=case2_required_terms,
     mutation_boost_terms=case2_mutation_boost,
-    drug_keywords=case2_drug_keywords,
     initial_k=60,
     final_k=12
 )
@@ -294,7 +286,6 @@ result_hcc_clinical_outcomes = rag_hcc.run_outcomes_retrieval_for_source_type(
     indication=case2_indication,
     required_terms=case2_required_terms,
     mutation_boost_terms=case2_mutation_boost,
-    drug_keywords=case2_drug_keywords,
     initial_k=60,
     final_k=12
 )

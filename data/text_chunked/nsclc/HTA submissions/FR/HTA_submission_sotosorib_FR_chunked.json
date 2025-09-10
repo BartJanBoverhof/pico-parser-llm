@@ -1,0 +1,643 @@
+{
+  "doc_id": "HTA_submission_sotosorib_FR",
+  "chunks": [
+    {
+      "text": "Lung cancer Sectors: City and Hospital C T REMISSION OF WITNESS NOTICE CONDITIONAL 15 JUNE 2022 LUMYKRAS 120 mg, film-coated tablet which is not intended for use in the treatment of lung cancer",
+      "metadata": {
+        "doc_id": "HTA_submission_sotosorib_FR",
+        "heading": "",
+        "start_page": 1,
+        "end_page": 1,
+        "created_date": "2022",
+        "country": "FR",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc/HTA submissions/FR/HTA_submission_sotosorib_FR_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "Opinion in favour of reimbursement as monotherapy in the treatment of adult patients with advanced non-small cell bronchial cancer (NSCBC) with the KRAS G12C mutation whose disease has progressed after at least one prior systemic line of therapy.",
+      "metadata": {
+        "doc_id": "HTA_submission_sotosorib_FR",
+        "heading": "The essentials",
+        "start_page": 1,
+        "end_page": 1,
+        "created_date": "2022",
+        "country": "FR",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc/HTA submissions/FR/HTA_submission_sotosorib_FR_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "No progress in the management of adult patients with advanced non-small cell bronchial cancer with the KRAS G12C mutation whose disease has progressed after at least one prior line of systemic therapy.",
+      "metadata": {
+        "doc_id": "HTA_submission_sotosorib_FR",
+        "heading": "What progress ?",
+        "start_page": 1,
+        "end_page": 1,
+        "created_date": "2022",
+        "country": "FR",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc/HTA submissions/FR/HTA_submission_sotosorib_FR_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "The prognostic or predictive value of the KRAS G12C mutation is currently poorly defined in the CBNPC, and there is no (prior to the availability of LUMYKRAS (sotorasib)) specific therapy targeting this mutation. The current therapeutic management of the CRNPC is identical whether or not patients have a KRAS mutation (including G12 C). At the metastatic stage (IV), it is recommended that second-line therapy be offered systematically, whether patients have responded to a first-line metastasis or not. The nature of this treatment depends on the molecules previously used, the ECOG score and the histology: - Patients treated with immunotherapy monotherapy in the first line: chemotherapy based on platinum salts, such as in the 1st line: cisplatin-vinorelbine, cisplatine-citagembine, carboplatin-paclitaxel, cisplain-docetaxel, Cisplatin -pemetrexed (non-epidermoid only); - patients treated with chemotherapeutic therapy + immunotherapies in the line 1: chemotherapists in the single line: pemetrexed, docetaxel (non -epidermoside only). + first-line chemotherapy : monotherapy: docetaxel, pemetrexed (non-epidermoid only) A combination of paclitaxel + bevacizumab may also be proposed; - patients receiving first line bi-chemotherapy, without immunotherapy.: in the absence of a contraindication, immunotherapeutic treatment is the reference: atezolizumab, nivolumab or pembrolizimab (if PD-L1 ≥ 1%), with no hierarchy between these different treatments.",
+      "metadata": {
+        "doc_id": "HTA_submission_sotosorib_FR",
+        "heading": "What is its place in the therapeutic strategy?",
+        "start_page": 2,
+        "end_page": 3,
+        "created_date": "2022",
+        "country": "FR",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc/HTA submissions/FR/HTA_submission_sotosorib_FR_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "In view of the currently poorly defined prognostic and predictive value of the KRAS G12C mutation in the CBNPC, and the absence of comparative data of acceptable methodological quality, the place of LUMYKRAS (sotorasib) in relation to the available therapeutic alternatives (chemotherapy, immunotherapy) cannot be specified.",
+      "metadata": {
+        "doc_id": "HTA_submission_sotosorib_FR",
+        "heading": "What is its place in the therapeutic strategy?",
+        "start_page": 2,
+        "end_page": 3,
+        "created_date": "2022",
+        "country": "FR",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc/HTA submissions/FR/HTA_submission_sotosorib_FR_cleaned.json",
+        "split_index": 1
+      }
+    },
+    {
+      "text": "ISP Place in Therapeutic Strategy Population HAS - Directi Opini version xame defined as Targeted for inclusion as monotherapy in the treatment of adult patients with advanced non-small cell bronchial cancer (NSCBC) with the KRAS G12C mutation whose disease has progressed after at least one prior systemic line of therapy FAIL This opinion is conditional on re-evaluation of this specialty within a maximum of one year based on the results of the Phase III study conducted in previously treated patients with NSCBC with KRASG12C Mutation (CodeBreak 200). - the poor quality of the demonstration of efficacy of LUMYKRAS (sotorasib), based on data from a non-comparative Phase I/ II study; - the ill-defined nature of the prognostic and predictive value of the KRAS G12C mutation in the CBNPC; - uncertainty about the relative efficacy, considering the absence of a direct comparison and the weak methodology of the indirect comparison provided, in a context where a straightforward comparison to an available therapeutic alternative with a robust methodology is possible; - a considered tolerability profile, marked by an incidence of serious undesirable effects (IUI) in more than two-thirds of patients (≥ 65%) and a reported serious adverse event (EI) in over half of patients (51%)",
+      "metadata": {
+        "doc_id": "HTA_submission_sotosorib_FR",
+        "heading": "Not less than € 5",
+        "start_page": 3,
+        "end_page": 3,
+        "created_date": "2022",
+        "country": "FR",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc/HTA submissions/FR/HTA_submission_sotosorib_FR_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "Despite the low level of evidence, and pending further data on efficacy and tolerability, the Commission considers that LUMYKRAS (sotorasib) as monotherapy is a treatment option in the management of adult patients with advanced non-small cell bronchial cancer (NSCBC) with the KRAS G12C mutation whose disease has progressed after at least one prior systemic line of therapy. It should be emphasised that, in this context where no comparative data of acceptable methodological quality are available to ensure the robustness of the conclusion on the effect of LUMYKRAS (sotorasib) treatment, the introduction of this medicinal product into the therapeutic strategy is accompanied by a greater risk-taking than for medicinal products whose efficacy is based on a comparison with an adapted methodology.",
+      "metadata": {
+        "doc_id": "HTA_submission_sotosorib_FR",
+        "heading": "ASMR V in the management of adult patients with advanced CBPNC, with the mutation",
+        "start_page": 3,
+        "end_page": 7,
+        "created_date": "2022",
+        "country": "FR",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc/HTA submissions/FR/HTA_submission_sotosorib_FR_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "LUMYKRAS (sotorasib) was granted a conditional marketing authorisation (MAA) in the above indication on 06 January 2022. LUM YK R AS (sotorazib) has been the subject of a nominative MAA since 01 December 2020, and a cohort MAA from 24 June 2021 in a narrower indication than the current application, as it is limited to metastatic stages only. A post-MAA early access authorisation was granted in the same scope as the MAA indication for lM on 28 April 20221. LUMYKRAS is indicated as monotherapy for the treatment of adult patients with advanced non-small cell bronchial cancer (NSCBC) with the KRAS G12C mutation, whose disease has progressed after at least one prior systemic line of therapy. Treatment It is recommended that LUMYKRAS be continued until disease progression or unacceptable toxicity occurs. • Missed dose or vomiting • If less than 6 hours have elapsed since the scheduled time of administration, the patient should take the missed dose as usual • If more than six hours have passed since the planned time of application, the person should not take the forgotten dose • Treatments should be continued the next day as prescribed. (vinorelbine) • Pierre Fabre and Non-CBNPC generics: Accord, Arrow, Sandoz",
+      "metadata": {
+        "doc_id": "HTA_submission_sotosorib_FR",
+        "heading": "ASMR V in the management of adult patients with advanced CBPNC, with the mutation",
+        "start_page": 3,
+        "end_page": 7,
+        "created_date": "2022",
+        "country": "FR",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc/HTA submissions/FR/HTA_submission_sotosorib_FR_cleaned.json",
+        "split_index": 1
+      }
+    },
+    {
+      "text": "(paclitaxel) BMS and In combination with cisplatin, generic: in the CBNPC for which Accord, Arrow, a potentially non-Celgene, EG, curative surgery and/ or a Hospira, Kabi, radiotherapy is not Mylan, indicated Ratiopharm, Teva, Sandoz TAXOTERE In conjunction with cis platin, (docetaxel) in the non-Sanofi and resectable CBNCP, locally generic:: advanced or metastatic, not in Accord and Amring, patients not receiving Arrow and Ebewe, receiving chemotherapy EG, Hospera, previously AS AS, Pfizer ALIMTA monotherapy in second line (non-emetrexed) CBnPC, at discontinuation of HAS Kabi - Direction of evaluation and follow-up ‡ Accorded to NA ‡ ‡ Date of appointment ‡ Yes ‡ Not recommended ‡ No ‡ Important ‡",
+      "metadata": {
+        "doc_id": "HTA_submission_sotosorib_FR",
+        "heading": "Taxes and social security contributions",
+        "start_page": 7,
+        "end_page": 8,
+        "created_date": "2022",
+        "country": "FR",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc/HTA submissions/FR/HTA_submission_sotosorib_FR_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "or metastatic after an exception (atezolizumab) No previous chemotherapy in Roche patients ALK+) Epidermoid CBNPC 03/02/2016 Significant ASMR III (moderate) compared to locally advanced docetax or (inscription) Metastatic following previous OPDIVO chemotherapeutic treatment (nivolumab).",
+      "metadata": {
+        "doc_id": "HTA_submission_sotosorib_FR",
+        "heading": "In the case of:",
+        "start_page": 8,
+        "end_page": 8,
+        "created_date": "2022",
+        "country": "FR",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc/HTA submissions/FR/HTA_submission_sotosorib_FR_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "GEMZAR (gemcitabine) and AVASTIN (bevacizumab) are used off-label in line 2 and above and are recommended by AURA); they are considered clinically relevant comparators.",
+      "metadata": {
+        "doc_id": "HTA_submission_sotosorib_FR",
+        "heading": "This is KEYTRUDA .",
+        "start_page": 8,
+        "end_page": 9,
+        "created_date": "2022",
+        "country": "FR",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc/HTA submissions/FR/HTA_submission_sotosorib_FR_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "The clinically relevant comparators of LUMYKRAS (sotorasib) in the MPA indication being evaluated are the medicinal products listed in the table above, as well as GEMZAR (gemcitabine) and AVASTIN (bevacizumab), in the context of an off-label use of the latter two.",
+      "metadata": {
+        "doc_id": "HTA_submission_sotosorib_FR",
+        "heading": " Conclusion",
+        "start_page": 9,
+        "end_page": 9,
+        "created_date": "2022",
+        "country": "FR",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc/HTA submissions/FR/HTA_submission_sotosorib_FR_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "AMM in the United States LUMYKRAS (sotorasib) has a US MA with overlapping labelling treatment of adult patients with KRAS G12C mutated locally advanced or metastatic non-small cell lung cancer (NSCLC), as determined by an FDA approved test, who have received at least one prior systemic therapy . LUMYKRAS is indicated as monotherapy for the treatment of adult patients with KRAS G12C-mutated locally advanced or metastatic United Kingdom Yes non-small cell lung cancer (NSCLC), who have progressed on, or are intolerant to, platinum-based chemotherapy and/ or anti-PD 1/ PD-L1 immunotherapy ANALYSIS OF AVAILABLE DATA The application for registration of LUM YK RAS (sotorasib) is based on a phase I/ II basket non-comparative (CodeBreak 100) study whose objective was to estimate the main objective response rate in different solid tumours with advanced G12 C mutation and previously treated KRAS C.",
+      "metadata": {
+        "doc_id": "HTA_submission_sotosorib_FR",
+        "heading": "The European Union and its Member States",
+        "start_page": 9,
+        "end_page": 10,
+        "created_date": "2022",
+        "country": "FR",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc/HTA submissions/FR/HTA_submission_sotosorib_FR_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "- data from indirect comparisons between patients treated with LUMYKRAS (sotorasib) in the CodeBreak 100 study and those treated with other alternatives in the ESME cohort; - the first quarterly summary report of the cohort ATU Efficacy.",
+      "metadata": {
+        "doc_id": "HTA_submission_sotosorib_FR",
+        "heading": "The European Union and its Member States",
+        "start_page": 9,
+        "end_page": 10,
+        "created_date": "2022",
+        "country": "FR",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc/HTA submissions/FR/HTA_submission_sotosorib_FR_cleaned.json",
+        "split_index": 1
+      }
+    },
+    {
+      "text": "A Phase 1/2, Open-label Study Evaluating the Safety, Tolerability, Pharmacokinetics, Pharmacodynamics, and Efficacy of AMG 510 Reference Monotherapy in Subjects With Advanced Solid Tumors With KRAS p. G12C Mutation and AMG 5110 Combination Therapy in subjects with advanced NSCLC With KR AS p.G12C mutation Clinicaltrials.gov Registration No: NCT03600883 Primary objective to estimate the objective response rate, as assessed by an independent review panel, in adults with advanced solid tumour with KRAS G12 C mutation Baseline Phase I/II, non-comparative study Type: Patient 1 Date: 13/08/2019 Date of last patient included: 05/02/2020 and Date of duration of combination therapy Patients with a previously known anti-HCOS mutation or with a history of cluster headaemia (included in the main clinical trials) Age: ≥ 18 years CRISPR - 19 Cerebral palsy - Epidemic syndrome (including CFS) - CFS - EH1",
+      "metadata": {
+        "doc_id": "HTA_submission_sotosorib_FR",
+        "heading": "7.1.1 The CodeBreak 100 study was carried out in the United Kingdom.",
+        "start_page": 10,
+        "end_page": 10,
+        "created_date": "2022",
+        "country": "FR",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc/HTA submissions/FR/HTA_submission_sotosorib_FR_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "Patients received LUMYKRAS (sotorasib) orally (tablets), 960 mg once daily. Treatment was continued until disease progression, Treatments studied patient discontinuation, death, vision loss, sponsor decision, non-compliance, pregnancy, adverse event, intolerance, need for alternative therapy. - Duration of response: delay between first partial or complete response and first relapse or progression (RECIST criteria 1.1) or death from any cause Main criteria - Disease control rate: proportion of patients with complete, partial, or stable disease judgement response ≥ 5 secondary weeks - Delay to response time: delay from initiation of treatment to first complete or partial response time - Progression-free survival time, as assessed by an independent review panel using the RECIST 1.1 criteria This response time had to be confirmed by a second imaging study at least 4 weeks later. - Response duration: time from first partially or full response time to first relapses or progress (RESIST criteria 1.1.) or death by any cause Key criteria - Control of disease rate: percentage of patients who had a complete, partly or stable judgment response time ≥ 5 weeks secondary time - Time to response: time between start of treatment and first",
+      "metadata": {
+        "doc_id": "HTA_submission_sotosorib_FR",
+        "heading": "Scheme of the study",
+        "start_page": 10,
+        "end_page": 11,
+        "created_date": "2022",
+        "country": "FR",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc/HTA submissions/FR/HTA_submission_sotosorib_FR_cleaned.json",
+        "split_index": "0_0_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "partials or full responses time - Survival time without progression, as measured by an Independent Review Committee: Time from start of therapy to progression or death time should be confirmed with a second image taken at least four weeks later - Overall survival from the beginning of treatment up to death time - Objective survival rate: QLLC-QL-Q-Q or quality of life time after any cause of death by objective objective objective reason Main criteria Principal criteria - Major criteria - Controlling rate of disease control of disease disease - Dose proportion of patient: Patients with completed response time from initiating response time between treatment start of partially complete or complete or full or partially responding response time and first response time at least 5 weeks Secondary response time ≥ 5 seconds secondary response to complete, delay delay 2 weeks Partial criteria delay until completion of treatment 1st partial answer Endurance - Delays response time by independent review committee Clopper-Pearson method Intermediate analyses Futility analyses were performed on a continuous basis using Bayesian methods. These analyses started after the evaluation of the first 25 responses in patients with a CBNPC.",
+      "metadata": {
+        "doc_id": "HTA_submission_sotosorib_FR",
+        "heading": "Scheme of the study",
+        "start_page": 10,
+        "end_page": 11,
+        "created_date": "2022",
+        "country": "FR",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc/HTA submissions/FR/HTA_submission_sotosorib_FR_cleaned.json",
+        "split_index": "0_1_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "The analyses then were performed for all 10 evaluable responses. The study continued as long as the probability that the objective response rate was greater than 23% was ≥ 80%. Method of analysis of the results Population of analysis The efficacy analyses have been performed on the full analysis set population, corresponding to patients who received at least one dose of sotorasib + with at least an initial lesion that can be assessed according to RISTEC 1.1 criteria.",
+      "metadata": {
+        "doc_id": "HTA_submission_sotosorib_FR",
+        "heading": "Scheme of the study",
+        "start_page": 10,
+        "end_page": 11,
+        "created_date": "2022",
+        "country": "FR",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc/HTA submissions/FR/HTA_submission_sotosorib_FR_cleaned.json",
+        "split_index": 1
+      }
+    },
+    {
+      "text": "A total of 224 patients were enrolled in this trial: 126 with NSCLC, 62 with colorectal cancer and 36 with other types of cancer. Data from 01/09/2020: corresponding to the main efficacy analysis of the study. From 01/12/2020 and 15/03/2021: corresponds to the follow-up, exploratory data Number of previous lines, n (%) Type of previous treatment*, n%) Total chemotherapy was 115 (91%) Immunotherapy 116 (92%) Targeted therapy (24%) Initial Stage linclusion, III (%) n 5 (46%) 121 (96%) Histology, n (1%) Epidermoid (199%) Independent (125%) Mutations in the bone marrow*, 126%) N (123%) METERRIBULAR (25%) Tuberculosis (100%) at the end of the main study (12%) At the time of the evaluation by the ECHR Committee (12/1/2020), there were fewer than 100 patients (21%) who could not be assessed as a repeat patient (10%) at any stage of the primary study (61%), because of a combination of the following criteria: The median follow-up was 9.3 months (min-max: 1.1-12.2); a confirmed complete or partial response was observed in 46 patients, representing an objective response rate of 37% [95% CI: 29-47]. The lower bound of the 95% CI is higher than the a priori limit of 23%.",
+      "metadata": {
+        "doc_id": "HTA_submission_sotosorib_FR",
+        "heading": "Results of the study:",
+        "start_page": 11,
+        "end_page": 13,
+        "created_date": "2022",
+        "country": "FR",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc/HTA submissions/FR/HTA_submission_sotosorib_FR_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "This was the case in a very large majority of partial responses (44 patients, 34%), and in 4 (3%) complete responses. In addition, 43% had stable disease. It should be noted that 20 (16%) patients had disease progression. There were no data on the evolution of cerebrospinal metastases. There is no data on the progression of brain metastases. The data were similar on the exploratory follow-up analyses of 1 December 2020 and 15 March 2021, with the inclusion of one additional patient in the full analysis set population, as they were eventually considered to have at least one measurable initial lesion. Secondary outcome criteria The secondary, explorative outcomes are described in the table below (Table 2).",
+      "metadata": {
+        "doc_id": "HTA_submission_sotosorib_FR",
+        "heading": "Results of the study:",
+        "start_page": 11,
+        "end_page": 13,
+        "created_date": "2022",
+        "country": "FR",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc/HTA submissions/FR/HTA_submission_sotosorib_FR_cleaned.json",
+        "split_index": 1
+      }
+    },
+    {
+      "text": "GEL data Gel data from 01/12/2020 GEL of 01/09/2020 N=124 15/03/2021 N=123 N= 124 Follow-up, median month (min-max) 9.3 (1.1-12.2) 12.2 (1.1-15.6) 15.3 (1.1 to 18.4) Duration of response, Median month [IC95%] 8.4 [6.9-8.4] 10.0 [6.9-11.1] 11.1 [6. 9-NE] Rate of disease control, n ((%) % [IC95]) 81% [72-87] 81%[73-87] 8% [73-88] Months to response, mean (min -max) 1.4 (1.6-4.1) 1.2 (1.0-10.1) 1.4 (1.2-10.1) Months of survival without progression, mean [IC99%] 6.7 [9.4-8.1] 6.8 [5.1-8.2] overall survival, medians month [9.5-9.5] [10,5 -10.0] 12,5 [9,5 - 10.0] [NE]",
+      "metadata": {
+        "doc_id": "HTA_submission_sotosorib_FR",
+        "heading": "Table 2.Exploratory secondary outcomes from the CodeBreak 100 study",
+        "start_page": 13,
+        "end_page": 13,
+        "created_date": "2022",
+        "country": "FR",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc/HTA submissions/FR/HTA_submission_sotosorib_FR_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "An indirect comparison was made between patients in the CodeBreak 100 study treated with sotorasib, and patients from the ESME cohort treated with standard treatments.",
+      "metadata": {
+        "doc_id": "HTA_submission_sotosorib_FR",
+        "heading": "7.1.2 Indirect comparison data",
+        "start_page": 13,
+        "end_page": 13,
+        "created_date": "2022",
+        "country": "FR",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc/HTA submissions/FR/HTA_submission_sotosorib_FR_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "- the absence of residual confounding, a necessary hypothesis for this type of method, cannot be assured: o the princeps analysis retaining only 3 prognostic variables, whereas other confounders had been listed a priori; o the inclusion of the 11 measured confounds, in another analysis, leading to a small effective sample size not allowing an accurate or even valid estimation of the treatment effect; o there appear to be unmeasured confusion factors (albuminemia, hepatic function, renal function, LDH, time elapsed since the last line of treatment): these potential confounding factors were not recorded (or data were missing) in the ESME cohort, as they were too important among the patients; the use of princeps cerebrospinal metastases (excluding metastasis) led to an unreliable estimate of the effectiveness of treatment; there was a lack of valid information on the ECOG score (confusion factor) for patients not included in the study (including the EHME code), as there was insufficient data available for the pre-implantation of 100 patients). However, this assertion has not been substantiated and the inclusion of ECOG > 1 patients in the ESME cohort (at the most unfavourable prognosis) cannot therefore be excluded.",
+      "metadata": {
+        "doc_id": "HTA_submission_sotosorib_FR",
+        "heading": "This indirect comparison nevertheless has important methodological limitations:",
+        "start_page": 13,
+        "end_page": 14,
+        "created_date": "2022",
+        "country": "FR",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc/HTA submissions/FR/HTA_submission_sotosorib_FR_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "Overall, given these limitations, the validity of this indirect comparison cannot be assured, and the results will not be presented. However, this evaluation has several limitations: - it is not comparative, not allowing to estimate the specific effect of sotorasib treatment on quality of life; - no objective has been pre-specified in the protocol for the clinical relevance of the results, in particular the minimum clinically relevant significant differences in the population of interest have not been discussed a priori.",
+      "metadata": {
+        "doc_id": "HTA_submission_sotosorib_FR",
+        "heading": "This indirect comparison nevertheless has important methodological limitations:",
+        "start_page": 13,
+        "end_page": 14,
+        "created_date": "2022",
+        "country": "FR",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc/HTA submissions/FR/HTA_submission_sotosorib_FR_cleaned.json",
+        "split_index": 1
+      }
+    },
+    {
+      "text": "The tolerance data described are those from the baseline freeze of 15 March 2021, allowing for the largest decrease. The tolerability population consisted of 126 patients. At 15 March 2021 the median duration of treatment with sotorasib was 24 weeks (min: max: 1-77). Almost all patients reported an adverse event (AEs) (99%). The proportion of AEs of grade ≥ 3 was 61%. The ratio of severe AEs leading to discontinuation of sotoratib treatment was 55%. The proportion in AEs resulting in death was 9% The most common AEs are detailed in the table below Table 3. Table 3.Most common adverse events in the CodeBreak 100 study IU of all IU of ≥ 3 grades Diarrhoea 64 (51%) 7 (6%) Nausea 39 (31%) 1 (1%) Fatigue 32 (25%) 3 (2%) Arthralgia 27 (21%) 3 (2%), Increase in AST 27 (21%), 9 (7%) Increases in ALT 26 (21%) 9, 7 (7%) Constipation 24 (19%) 1, 1% Dyspnoea 24 (19%), 7, 6%) Vomiting 23 (18%) 1, 1 (%) Back pain 21 (17%) 5 (4%) Touching (15%) 4 (3%) There was also a 7% occurrence of pneumonia of grade ≥ 3.Events of particular interest were reported in 39% of patients.",
+      "metadata": {
+        "doc_id": "HTA_submission_sotosorib_FR",
+        "heading": "7.3.1 Data from the CodeBreak 100 study",
+        "start_page": 14,
+        "end_page": 14,
+        "created_date": "2022",
+        "country": "FR",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc/HTA submissions/FR/HTA_submission_sotosorib_FR_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "The Summary of Product Characteristics of LUMYKRAS (sotorasib) (version 0.3 dated 28 September 2021) is presented in the table below:",
+      "metadata": {
+        "doc_id": "HTA_submission_sotosorib_FR",
+        "heading": "Data provided by the Risk Management Plan (RMP)",
+        "start_page": 15,
+        "end_page": 15,
+        "created_date": "2022",
+        "country": "FR",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc/HTA submissions/FR/HTA_submission_sotosorib_FR_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "The Periodic Benefit-Risk Evaluation Report/Periodic Safety Update Report (PBRER/PSUR) covering the period from 21 May 2021 to 27 November 2021 was provided.",
+      "metadata": {
+        "doc_id": "HTA_submission_sotosorib_FR",
+        "heading": "7.3.3 Data from the PSURs",
+        "start_page": 15,
+        "end_page": 15,
+        "created_date": "2022",
+        "country": "FR",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc/HTA submissions/FR/HTA_submission_sotosorib_FR_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "4.4 Special warnings and precautions for use Hepatotoxicity Sotorasib may cause hepatoxicity, which may result in drug-induced hepatic injury or hepatitis. Sotoratib has been associated with transient elevations in serum transaminases (ALT and AST). These elevation were reduced or resolved by dose adjustment or discontinuation of therapy and did not result in hepatic failure or death in clinical studies. Patients should be monitored for liver function (ALT, AST and total bilirubin) prior to initiation of LUMYKRAS therapy, every 3 weeks for the first 3 months of treatment, then monthly or as clinically indicated, with more frequent monitoring in patients with elevated transaminases and/ or bilirubin. If PI/inflammatory pneumonia is suspected, LUMYKRAS should be discontinued immediately and other etiologies eliminated. Treatment should be permanently discontinue if no other potential cause of PI/ inflammatory pulmonary disease is identified (see section 4.2). Use data The laboratory provided the results of the first quarterly ATU synthesis report covering the period from 09",
+      "metadata": {
+        "doc_id": "HTA_submission_sotosorib_FR",
+        "heading": "7.3.4 Data from the CPR",
+        "start_page": 15,
+        "end_page": 19,
+        "created_date": "2022",
+        "country": "FR",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc/HTA submissions/FR/HTA_submission_sotosorib_FR_cleaned.json",
+        "split_index": "0_0_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "August 2021 to 29 October 2021. Sotorasib is indicated as monotherapy in the treatment of adult patients with pre-treated non-small cell bronchial cancer (NSCBC) KRAS p.G12C metastasis. A total of 447 requests for access to treatment were made during this period, 7 of which were refused. Of the 440 accepted requests, 414 patients were considered to be treated (drug provided by the laboratory). Of these, 403 were deemed to be exposed (11 patients who had never considered the treatment). The majority of the 414 treated patients were active smokers (52%) and 66% of the patients (8%) were men. The most frequent metastatic locations were pulmonary (51%), adrenal (50%) and bone (41%). Notably, 10% of patients had active central nervous system metastases, and 20% non-active metastasis. The median number of anterior lines received was 2 (min-max: 0-9). The other patients had 1 anterior line (43%), 2 anterior lines (31%), 3 anterior lines (16%) or 4 anterior lines and more (10%).",
+      "metadata": {
+        "doc_id": "HTA_submission_sotosorib_FR",
+        "heading": "7.3.4 Data from the CPR",
+        "start_page": 15,
+        "end_page": 19,
+        "created_date": "2022",
+        "country": "FR",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc/HTA submissions/FR/HTA_submission_sotosorib_FR_cleaned.json",
+        "split_index": "0_1_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "Only 47 patients will have a first documented follow-up visit. Summary & Discussion The application for LUMYKRAS (sotorasib) in the monotherapy indication for the treatment of adult patients with advanced CBNPC with KRAS G12C mutation whose disease has progressed after at least one prior systemic line of therapy is based primarily on a non-comparative Phase 2 basket study (CodeBreak 100) and on data from indirect comparisons. Efficacy (including quality of life) A total of 126 patients with a CBNPC were included. The median age was 64 years, with a similar proportion of men/women (50%) and patients in good general condition, with an ECOG stage of 0 (30%) or 1 (70%). Almost all patients had metastatic disease (96%) and non-epidermoid tumour (99%).",
+      "metadata": {
+        "doc_id": "HTA_submission_sotosorib_FR",
+        "heading": "7.3.4 Data from the CPR",
+        "start_page": 15,
+        "end_page": 19,
+        "created_date": "2022",
+        "country": "FR",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc/HTA submissions/FR/HTA_submission_sotosorib_FR_cleaned.json",
+        "split_index": 1
+      }
+    },
+    {
+      "text": "In total, 43% of patients had received only one initial line, 35% had received two lines and 22% had received three lines. The main objective analysis was based on 123 patients (corresponding to the September 2020 ICU analysis), with 29% or 37% of patients being considered as having no complete response. Among the secondary endpoints, the median duration of response was 8.4 months (IC95%: 6.9-8.4), the progression-free survival was 6.7 months (I.C. 95%: 4.9-8.1) and the overall survival rate was 12.0 months (9.5-NE). Exploratory follow-up data suggested similar results. Finally, for one of these factors (the ECOG score), 62% of missing data were imputed using an optimistic imputation method (best case scenario). Overall, a bias in the estimation of the relative efficacy of LUMYKRAS (sotorasib) compared to",
+      "metadata": {
+        "doc_id": "HTA_submission_sotosorib_FR",
+        "heading": "7.3.4 Data from the CPR",
+        "start_page": 15,
+        "end_page": 19,
+        "created_date": "2022",
+        "country": "FR",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc/HTA submissions/FR/HTA_submission_sotosorib_FR_cleaned.json",
+        "split_index": "2_0_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "conventional treatments cannot be made, due to the absence of laboratory confusion and an inadequate data management method. The results of the first AATU report are therefore not conclusive and no conclusions can be drawn from it. Note that the laboratory also provided data from the first ATU report. However, due to the limited number (11%) of available follow-up data (insufficient accuracy and possibility of bias), they are unlikely to provide robust evidence to assess the efficacy and tolerability of sotorasib, and will not be described. Due to the non-comparative design of the study, no formal conclusions can be drawn on quality of life. Discussion In the absence of direct comparative data, while clinically relevant comparators were available and the prognostic/ predictive effect of the KRAS G12C mutation",
+      "metadata": {
+        "doc_id": "HTA_submission_sotosorib_FR",
+        "heading": "7.3.4 Data from the CPR",
+        "start_page": 15,
+        "end_page": 19,
+        "created_date": "2022",
+        "country": "FR",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc/HTA submissions/FR/HTA_submission_sotosorib_FR_cleaned.json",
+        "split_index": "2_0_1",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "is poorly defined, the only data submitted to assess the relative efficacy of LUMYKRAS (sotorasib) compared to standard therapies are derived from an indirect comparison. Therefore, the only efficacy and tolerability data are from a non-comparative cohort of the Basketball Study (CodeBreak 100). This study showed an objective response rate, assessed by an independent panel of 37% [95% CI: 29-47]. However, it should be emphasised that: - the non-comparative design only allows an estimation of the absolute effect of LUMYKRAS (sotorasib), and not its additional relative efficacy compared to the efficacy of existing treatments, the placebo effect and the natural course of the disease; - this result was observed in a selected population (including those with ECOG 0 or 1, no active brain metastases): the transferability of the",
+      "metadata": {
+        "doc_id": "HTA_submission_sotosorib_FR",
+        "heading": "7.3.4 Data from the CPR",
+        "start_page": 15,
+        "end_page": 19,
+        "created_date": "2022",
+        "country": "FR",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc/HTA submissions/FR/HTA_submission_sotosorib_FR_cleaned.json",
+        "split_index": "2_1_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "results to a population with a worse prognosis (OGEC 1, > active brain Metastases) cannot be assured; furthermore, the tolerability profile was marked by an incidence of serious undesirable events of ≥ 3 grades in two out of three patients (51%) and of serious unintended events in ≥ one out of two patients (65%). Given the efficacy and tolerability data (preliminary data in a non-comparative study whereas clinically relevant comparators were available), the limitations in the transferability of the results and the lack of demonstrated impact on quality of life, the additional impact of LUMYKRAS (sotorasib) on morbidity-mortality and quality of Life has not been demonstrated to date. Additional data are expected at the EMA level by 31 March 2023 (Phase III CodeBreak 200 study, see next paragraph).",
+      "metadata": {
+        "doc_id": "HTA_submission_sotosorib_FR",
+        "heading": "7.3.4 Data from the CPR",
+        "start_page": 15,
+        "end_page": 19,
+        "created_date": "2022",
+        "country": "FR",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc/HTA submissions/FR/HTA_submission_sotosorib_FR_cleaned.json",
+        "split_index": "2_1_1",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "Study programme in the CBNPC Study name Availability Schedule Phase III randomised, open-label, docetaxel-versus-tested data in CodeBbreak End 2022 - early adult patients with advanced CRBC with the 2023 KRAS G12C mutation, previously treated in IFCT-2012 Retrospective observational study including End 2022 Lung patients treated under the KATUc K12C PLACE IN THE THERAPY STRATEGY Systematic search for the KRAS mutation is recommended before initiating line 1 treatment of the CBnPC. At the metastatic stage (IV), it is recommended that second-line therapy be offered systematically, whether or not patients have responded to a first metastasis line.",
+      "metadata": {
+        "doc_id": "HTA_submission_sotosorib_FR",
+        "heading": "7.3.4 Data from the CPR",
+        "start_page": 15,
+        "end_page": 19,
+        "created_date": "2022",
+        "country": "FR",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc/HTA submissions/FR/HTA_submission_sotosorib_FR_cleaned.json",
+        "split_index": 3
+      }
+    },
+    {
+      "text": "The nature of this treatment depends on the molecules previously used, the ECOG score and the histology: - Patients treated with immunotherapy in monotherapy line 1 Patients: chemotherapy based on platinum salts, such as cisplatin-orelvin, cisplacitabine-platinoplatin, carbamazepine-platine-platinerol, cisplatina-docetaxel, cis-methotrexate (non-treated): monotherapeutically; - Immunotherapy patients: non-chemotherapy by pemetrexed + cismoxide (monotherapy only). LUMYKRAS (sotorasib) in the therapeutic strategy: Despite the low level of evidence, and pending new data on efficacy and tolerability, the Committee considers that the use of the monotherapy regimen of LUMyKRas (sortorasib), as a single agent, is an option for the treatment of patients with advanced non-small cell lung cancer (SCLC) in adults, after prior treatment of systemic cancer.",
+      "metadata": {
+        "doc_id": "HTA_submission_sotosorib_FR",
+        "heading": "7.3.4 Data from the CPR",
+        "start_page": 15,
+        "end_page": 19,
+        "created_date": "2022",
+        "country": "FR",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc/HTA submissions/FR/HTA_submission_sotosorib_FR_cleaned.json",
+        "split_index": 4
+      }
+    },
+    {
+      "text": "In view of the currently poorly defined prognostic and predictive value of the KRAS G12C mutation in the CBNPC, and the absence of comparative data of acceptable methodological quality, the place of LUMYKRAS (sotorasib) in relation to the available therapeutic alternatives (chemotherapy, immunotherapy) cannot be specified. It should be emphasised that, in this context where no data of comparable methodical quality are available to ensure the robustness of the conclusion on the effect of treatment with LUMyKRasib, the introduction of this medicinal product into the therapy strategy must be accompanied by a greater risk for adverse drug reactions than is acceptable on the basis of a summary of product characteristics (RPG) and a comparison with the pharmacological properties of the product (RGP) on which the efficacy summary is based.",
+      "metadata": {
+        "doc_id": "HTA_submission_sotosorib_FR",
+        "heading": "7.3.4 Data from the CPR",
+        "start_page": 15,
+        "end_page": 19,
+        "created_date": "2022",
+        "country": "FR",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc/HTA submissions/FR/HTA_submission_sotosorib_FR_cleaned.json",
+        "split_index": 5
+      }
+    },
+    {
+      "text": "The Summary of Product Characteristics (SPC) and the Risk Management Plan (RMP) must be complied with. Use of this medicinal product in pregnant or breast-feeding women must comply with the SPC CONCLUSIONS OF THE COMMISSION Taking all of this information into account and after discussion and voting, the Commission considers that: Advanced non-small cell lung cancer with KRAS G12C mutation is a serious disease with a life-threatening prognosis.",
+      "metadata": {
+        "doc_id": "HTA_submission_sotosorib_FR",
+        "heading": "7.3.4 Data from the CPR",
+        "start_page": 15,
+        "end_page": 19,
+        "created_date": "2022",
+        "country": "FR",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc/HTA submissions/FR/HTA_submission_sotosorib_FR_cleaned.json",
+        "split_index": 6
+      }
+    },
+    {
+      "text": "LUMYKRAS (sotorasib) is not likely to have an additional public health impact. Taking all these elements into account, the Commission considers that the medical service (MSS) provided by LUMyKRas (sutorasib), is low in the MAMM indication. The Commission gives a favourable opinion on the inclusion of the MSR in the list of reimbursable specialties based on socially assisted specialties, in the absence of a demonstrated impact on morbidity, mortality and quality of life, and on the lack of data to evaluate a possible additional impact on the care and/ or life course.",
+      "metadata": {
+        "doc_id": "HTA_submission_sotosorib_FR",
+        "heading": "Interest of public health",
+        "start_page": 19,
+        "end_page": 20,
+        "created_date": "2022",
+        "country": "FR",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc/HTA submissions/FR/HTA_submission_sotosorib_FR_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "- the lack of robustness of the efficacy demonstration of LUMYKRAS (sotorasib), based on data from a non-comparative phase I/ II study; - the poorly defined prognostic and predictive value of the KRAS G12C mutation in the CBNPC; - uncertainty about the relative efficacy of this treatment, considering the absence of a direct comparison and the weak methodology of the indirect comparison provided, in a context where a direct comparability to an available therapeutic alternative with a robust methodology is possible; - a tolerability profile, marked by an incidence of adverse events (AEs) close to half of patients (55%) and EI grades ≥ 3 in two out of three patients (61%) with the CRISPROM mutation (CBNPC) the Transparency Commission has considered that the burden of patients with advanced systemic disease after treatment with KRAS V (RYUMC) has not improved in less than one third of patients who had a systemic mutation prior to treatment. Target population The target population for LUMYKRAS (sotorasib) is adult patients with advanced CBNPC, with KRAS G12C mutation, whose disease has progressed after at least one prior systemic treatment line.",
+      "metadata": {
+        "doc_id": "HTA_submission_sotosorib_FR",
+        "heading": "Having regard to:",
+        "start_page": 20,
+        "end_page": 21,
+        "created_date": "2022",
+        "country": "FR",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc/HTA submissions/FR/HTA_submission_sotosorib_FR_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "In France, the number of new cases of lung cancer was estimated at 46,363 in 2018, representing 85% of the histological types, or 39,409 patients.10 According to the KBP-2010-CHG study, approximately 80% of patients with CBNCP were diagnosed at an advanced or metastatic stage (stage III or IV), or 31 528 patients. Furthermore, it is estimated that 40% of patients diagnosed with an advanced stage localized to an additional 34 metastatics or advanced stage diagnosed incidents, or an estimated 683 patients in the year, or 153 311 patients. Thus, the number of incident patients with advanced or metastatic CBNPC is estimated to be 34,681 patients. The prevalence of the KRAS G12C mutation has been estimated at 14%, i. e.",
+      "metadata": {
+        "doc_id": "HTA_submission_sotosorib_FR",
+        "heading": "Having regard to:",
+        "start_page": 20,
+        "end_page": 21,
+        "created_date": "2022",
+        "country": "FR",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc/HTA submissions/FR/HTA_submission_sotosorib_FR_cleaned.json",
+        "split_index": 1
+      }
+    },
+    {
+      "text": "approximately 4,856 patients. According to ESME cohort data (unpublished report), approximately 40% of patients with a CBNCP with a KRASG12C Mutation have received at least 2 lines of treatment, i.e. 1,943 patients. The Commission will re-evaluate LUMYKRAS (sotorasib) in the light of these data, and any new data that may become available.",
+      "metadata": {
+        "doc_id": "HTA_submission_sotosorib_FR",
+        "heading": "Having regard to:",
+        "start_page": 20,
+        "end_page": 21,
+        "created_date": "2022",
+        "country": "FR",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc/HTA submissions/FR/HTA_submission_sotosorib_FR_cleaned.json",
+        "split_index": 2
+      }
+    },
+    {
+      "text": "No Relevant presentations LUMYKRAS 120 mg film-coated tablet Package of 240 film coated tablets (CIP code: 34009 302 419 3 6) Applicant Amgen SAS Social Security (CSS L.162-17) Relevant lists Communities (CSP L.5123-2) Date of initiation: 06/01/2022 (centralised procedure) Conditional MPA associated with an RMP Specific requirement for post-authorisation measures regarding conditional MPa: In order to further confirm the efficacy and safety of sotorbasib in the treatment of MPA in patients with advanced non-small cell bronchial cancer (NSCBC) with the KRAS G12C mutation, the MAH must submit the report of the primary study for the comparative phase III study of GAS 2019 (CBNAS 200000) and a comparator study of the previously submitted treatment with GAS 2019. Clinical trial report to be submitted by 31/03/2023 Nominative ATU (first application validated by ANSM on 01/12/2020) and Cohort ATU (24/06/2021, start date 04/08/2021) in the following indication Sotorasib is indicated as monotherapy for the treatment of adult patients with non-small cell bronchial cancer (NSCBC) KRAS p.12C mutated metastatic conditions, pretreatment.",
+      "metadata": {
+        "doc_id": "HTA_submission_sotosorib_FR",
+        "heading": "External expertise",
+        "start_page": 21,
+        "end_page": 21,
+        "created_date": "2022",
+        "country": "FR",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc/HTA submissions/FR/HTA_submission_sotosorib_FR_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "Row 1 contains: 'EI of all grades', 'EI grades ≥ 3' Row 2 includes: 'Diarrhoea', '64 (51%) ', '7 (6%) ' Row 3 includes: \"Nausea\", '39 (31%) \", '1 (1%) ', Row 4 contains: \"Fatigue\", '32 (25%) \", '3 (2%) \", Row 5 includes: \"\"Arthralgia\"\", '27 (21%) \", \"3 (2%) \" Row 6 contains: \"\"Increased AST\",\" '27 (21)%) \", \"'9 (7%) \" ' Row 7 contains: \"'Increscent ALT\"\", '26 (21%) ', '\"9 (7%), \" Row 8 contains:\"\"Constipation\"\", '24 (19%) \", \"1 (1%) \" row 9 contains: '\"Dyspnoea\"\", 24 (19%) \" (67%) \", row 10 includes: \"'Vom\", \"23\" (18%) \", \"11\" (1%) \"\"Sleeping pain\"\", row 12 contains:\"\" (415%) \"Row 4 contains:\"\"\"",
+      "metadata": {
+        "doc_id": "HTA_submission_sotosorib_FR",
+        "heading": "Table 1 on page 14",
+        "start_page": 14,
+        "end_page": 14,
+        "created_date": "2022",
+        "country": "FR",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc/HTA submissions/FR/HTA_submission_sotosorib_FR_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "Table Title: acceptable methodology, place of LUMYKRAS (sotorasib) with respect to the alternatives Table contains the following columns: Column_1, Name of, Column _3, Schedule of the study,Column_5, Availability of,column_7 Row 1:\nName of: study and Data availability Row 2:\nColumn__1: CodeBreak 200, Study schedule: Phase III randomised, open-label, versus docetaxel, in adult patients with advanced CBNPC with the KRAS G12C mutation, previously treated, and Column_: 2022 - early 2023: Row_1 Column: IFCT-2012 KGCi Lung12,Study schedule: Retrospective observational study including patients treated as part of the ATTUc, and End_5: 2022",
+      "metadata": {
+        "doc_id": "HTA_submission_sotosorib_FR",
+        "heading": "methodologically acceptable, the place of LUMYKRAS (sotorasib) in relation to the alternatives",
+        "start_page": 18,
+        "end_page": 18,
+        "created_date": "2022",
+        "country": "FR",
+        "source_type": "hta_submission",
+        "original_file_path": "nsclc/HTA submissions/FR/HTA_submission_sotosorib_FR_cleaned.json",
+        "split_index": 0
+      }
+    }
+  ]
+}
