@@ -1,6 +1,6 @@
 RAG PIPELINE ANALYSIS SUMMARY REPORT
 ==================================================
-Generated on: 2025-09-10 15:36:51
+Generated on: 2025-09-11 14:03:03
 
 PICO ANALYSIS SUMMARY:
 -------------------------

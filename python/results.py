@@ -8,6 +8,7 @@ from pathlib import Path
 import os
 from datetime import datetime
 import matplotlib.patches as mpatches
+import glob
 
 try:
     import geopandas as gpd
@@ -16,6 +17,30 @@ try:
 except ImportError:
     GEOPANDAS_AVAILABLE = False
     print("Warning: geopandas not available. Install with: pip install geopandas")
+
+try:
+    import plotly.graph_objects as go
+    import plotly.express as px
+    from plotly.subplots import make_subplots
+    import plotly.offline as pyo
+    PLOTLY_AVAILABLE = True
+except ImportError:
+    PLOTLY_AVAILABLE = False
+    print("Warning: plotly not available. Install with: pip install plotly")
+
+try:
+    from matplotlib_venn import venn2, venn2_circles
+    VENN_AVAILABLE = True
+except ImportError:
+    VENN_AVAILABLE = False
+    print("Warning: matplotlib-venn not available. Install with: pip install matplotlib-venn")
+
+try:
+    import squarify
+    SQUARIFY_AVAILABLE = True
+except ImportError:
+    SQUARIFY_AVAILABLE = False
+    print("Warning: squarify not available. Install with: pip install squarify")
 
 
 class ComprehensiveOverview:
@@ -760,7 +785,694 @@ class DataVisualizer:
             'light_gray': '#E8E8E8',
             'dark_gray': '#4A4A4A'
         }
-    
+
+    def get_comparators_by_source_type(self):
+        """Extract comparators grouped by source type from consolidated PICO data."""
+        if 'consolidated_picos' not in self.pico_analyzer.data:
+            return set(), set()
+            
+        guideline_comparators = set()
+        hta_comparators = set()
+        
+        for pico in self.pico_analyzer.data['consolidated_picos']:
+            comparator = pico.get('Comparator', '')
+            source_types = pico.get('Source_Types', [])
+            
+            if 'clinical_guideline' in source_types:
+                guideline_comparators.add(comparator)
+            if 'hta_submission' in source_types:
+                hta_comparators.add(comparator)
+                
+        return guideline_comparators, hta_comparators
+
+    def create_comparator_venn_diagram(self):
+        """Create Venn diagram showing overlap of comparators between guidelines and HTA submissions."""
+        if not VENN_AVAILABLE:
+            print("Matplotlib-venn not available. Skipping Venn diagram.")
+            return
+            
+        print("Creating comparator Venn diagram...")
+        
+        guideline_comparators, hta_comparators = self.get_comparators_by_source_type()
+        
+        # Remove empty comparators
+        guideline_comparators.discard('')
+        hta_comparators.discard('')
+        
+        if not guideline_comparators and not hta_comparators:
+            print("No comparator data available for Venn diagram")
+            return
+            
+        fig, ax = plt.subplots(figsize=(10, 8))
+        
+        # Create the Venn diagram
+        venn = venn2([guideline_comparators, hta_comparators], 
+                     set_labels=('Clinical Guidelines', 'HTA Submissions'),
+                     ax=ax)
+        
+        # Customize colors
+        if venn.get_patch_by_id('10'):
+            venn.get_patch_by_id('10').set_color(self.scientific_colors['secondary'])
+            venn.get_patch_by_id('10').set_alpha(0.7)
+        if venn.get_patch_by_id('01'):
+            venn.get_patch_by_id('01').set_color(self.scientific_colors['tertiary'])
+            venn.get_patch_by_id('01').set_alpha(0.7)
+        if venn.get_patch_by_id('11'):
+            venn.get_patch_by_id('11').set_color(self.scientific_colors['primary'])
+            venn.get_patch_by_id('11').set_alpha(0.8)
+        
+        # Add circles for better visibility
+        venn2_circles([guideline_comparators, hta_comparators], ax=ax, linewidth=2)
+        
+        # Calculate overlap statistics
+        overlap = guideline_comparators.intersection(hta_comparators)
+        guideline_only = guideline_comparators - hta_comparators
+        hta_only = hta_comparators - guideline_comparators
+        
+        ax.set_title(f'Comparator Overlap: Guidelines vs HTA Submissions\n'
+                    f'Total Unique Comparators: {len(guideline_comparators.union(hta_comparators))}',
+                    fontsize=14, fontweight='bold', pad=20)
+        
+        # Add statistics text box
+        stats_text = (f"Guidelines Only: {len(guideline_only)}\n"
+                     f"HTA Only: {len(hta_only)}\n"
+                     f"Both Sources: {len(overlap)}")
+        
+        ax.text(0.02, 0.98, stats_text, transform=ax.transAxes, 
+               verticalalignment='top', bbox=dict(boxstyle='round', facecolor='white', alpha=0.8),
+               fontsize=10, fontweight='bold')
+        
+        plt.tight_layout()
+        plt.savefig(self.output_dir / 'comparator_venn_diagram.png', 
+                   dpi=300, bbox_inches='tight', facecolor='white')
+        plt.show()
+        
+        # Print detailed breakdown
+        print("\nComparator Overlap Analysis:")
+        print(f"Guidelines-only comparators ({len(guideline_only)}):")
+        for comp in sorted(guideline_only):
+            print(f"  - {comp}")
+        print(f"\nHTA-only comparators ({len(hta_only)}):")
+        for comp in sorted(hta_only):
+            print(f"  - {comp}")
+        print(f"\nShared comparators ({len(overlap)}):")
+        for comp in sorted(overlap):
+            print(f"  - {comp}")
+
+    def create_comparator_breadth_by_country(self):
+        """Create bar chart showing number of distinct comparators by country."""
+        print("Creating comparator breadth by country chart...")
+        
+        if 'consolidated_picos' not in self.pico_analyzer.data:
+            print("No consolidated PICO data available for comparator breadth analysis")
+            return
+            
+        # Count comparators per country
+        country_comparators = defaultdict(set)
+        country_source_info = defaultdict(set)
+        
+        for pico in self.pico_analyzer.data['consolidated_picos']:
+            comparator = pico.get('Comparator', '')
+            countries = pico.get('Countries', [])
+            source_types = pico.get('Source_Types', [])
+            
+            if comparator and countries:
+                for country in countries:
+                    country_comparators[country].add(comparator)
+                    country_source_info[country].update(source_types)
+        
+        if not country_comparators:
+            print("No country-comparator data available")
+            return
+            
+        # Prepare data for plotting
+        countries = list(country_comparators.keys())
+        comparator_counts = [len(country_comparators[country]) for country in countries]
+        
+        # Determine colors based on source types
+        colors = []
+        for country in countries:
+            sources = country_source_info[country]
+            if len(sources) > 1:
+                colors.append(self.scientific_colors['primary'])  # Both sources
+            elif 'clinical_guideline' in sources:
+                colors.append(self.scientific_colors['secondary'])  # Guidelines only
+            else:
+                colors.append(self.scientific_colors['tertiary'])  # HTA only
+        
+        fig, ax = plt.subplots(figsize=(12, 8))
+        
+        bars = ax.bar(range(len(countries)), comparator_counts, 
+                     color=colors, alpha=0.8, edgecolor='white', linewidth=1)
+        
+        ax.set_xticks(range(len(countries)))
+        ax.set_xticklabels(countries, fontweight='bold')
+        ax.set_ylabel('Number of Distinct Comparators', fontweight='bold')
+        ax.set_xlabel('Country', fontweight='bold')
+        ax.set_title('Comparator Breadth by Country\n(Distinct Comparators Considered in PICO Evidence)', 
+                    fontweight='bold', pad=20)
+        ax.grid(True, alpha=0.3, axis='y')
+        
+        # Add value labels on bars
+        for bar, value in zip(bars, comparator_counts):
+            ax.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 0.1,
+                   str(value), ha='center', va='bottom', fontweight='bold')
+        
+        # Create legend
+        legend_elements = [
+            plt.Rectangle((0,0),1,1, facecolor=self.scientific_colors['primary'], alpha=0.8, label='Both Sources'),
+            plt.Rectangle((0,0),1,1, facecolor=self.scientific_colors['secondary'], alpha=0.8, label='Guidelines Only'),
+            plt.Rectangle((0,0),1,1, facecolor=self.scientific_colors['tertiary'], alpha=0.8, label='HTA Only')
+        ]
+        ax.legend(handles=legend_elements, loc='upper right', frameon=True, fancybox=True, shadow=True)
+        
+        plt.xticks(rotation=45, ha='right')
+        plt.tight_layout()
+        plt.savefig(self.output_dir / 'comparator_breadth_by_country.png', 
+                   dpi=300, bbox_inches='tight', facecolor='white')
+        plt.show()
+
+    def create_country_pico_summary_table(self):
+        """Create comprehensive country-by-country PICO summary table."""
+        print("Creating country-by-country PICO summary table...")
+        
+        if 'consolidated_picos' not in self.pico_analyzer.data:
+            print("No consolidated PICO data available for summary table")
+            return
+            
+        # Collect data by country
+        country_data = defaultdict(lambda: {
+            'population': set(),
+            'intervention': set(),
+            'guideline_comparators': set(),
+            'hta_comparators': set(),
+            'source_types': set()
+        })
+        
+        for pico in self.pico_analyzer.data['consolidated_picos']:
+            population = pico.get('Population', '')
+            intervention = pico.get('Intervention', '')
+            comparator = pico.get('Comparator', '')
+            countries = pico.get('Countries', [])
+            source_types = pico.get('Source_Types', [])
+            
+            for country in countries:
+                country_data[country]['population'].add(population)
+                country_data[country]['intervention'].add(intervention)
+                country_data[country]['source_types'].update(source_types)
+                
+                if 'clinical_guideline' in source_types:
+                    country_data[country]['guideline_comparators'].add(comparator)
+                if 'hta_submission' in source_types:
+                    country_data[country]['hta_comparators'].add(comparator)
+        
+        # Create table
+        table_data = []
+        for country in sorted(country_data.keys()):
+            data = country_data[country]
+            
+            # Get most common population description (first one if multiple)
+            population = list(data['population'])[0] if data['population'] else 'Not specified'
+            if len(population) > 80:
+                population = population[:77] + "..."
+                
+            intervention = list(data['intervention'])[0] if data['intervention'] else 'Not specified'
+            
+            guideline_comps = ', '.join(sorted(data['guideline_comparators'])) if data['guideline_comparators'] else '-'
+            hta_comps = ', '.join(sorted(data['hta_comparators'])) if data['hta_comparators'] else '-'
+            
+            # Truncate long comparator lists
+            if len(guideline_comps) > 60:
+                guideline_comps = guideline_comps[:57] + "..."
+            if len(hta_comps) > 60:
+                hta_comps = hta_comps[:57] + "..."
+                
+            sources = ', '.join([s.replace('_', ' ').title() for s in sorted(data['source_types'])])
+            
+            table_data.append([
+                country,
+                population,
+                intervention,
+                guideline_comps,
+                hta_comps,
+                sources
+            ])
+        
+        # Create DataFrame for better formatting
+        df = pd.DataFrame(table_data, columns=[
+            'Country', 'Population', 'Intervention', 
+            'Guideline Comparators', 'HTA Comparators', 'Source Types'
+        ])
+        
+        # Save as CSV
+        csv_path = self.output_dir / 'country_pico_summary_table.csv'
+        df.to_csv(csv_path, index=False)
+        print(f"PICO summary table saved to: {csv_path}")
+        
+        # Create figure for display
+        fig, ax = plt.subplots(figsize=(16, max(8, len(table_data) * 0.5)))
+        ax.axis('tight')
+        ax.axis('off')
+        
+        # Create table
+        table = ax.table(cellText=table_data,
+                        colLabels=['Country', 'Population Description', 'Intervention', 
+                                 'Guideline Comparators', 'HTA Comparators', 'Source Types'],
+                        cellLoc='left',
+                        loc='center',
+                        bbox=[0, 0, 1, 1])
+        
+        # Style the table
+        table.auto_set_font_size(False)
+        table.set_fontsize(8)
+        table.scale(1, 2)
+        
+        # Header styling
+        for i in range(len(df.columns)):
+            table[(0, i)].set_facecolor(self.scientific_colors['primary'])
+            table[(0, i)].set_text_props(weight='bold', color='white')
+        
+        # Alternate row colors
+        for i in range(1, len(table_data) + 1):
+            for j in range(len(df.columns)):
+                if i % 2 == 0:
+                    table[(i, j)].set_facecolor('#F8F9FA')
+                else:
+                    table[(i, j)].set_facecolor('white')
+        
+        plt.title('Country-by-Country PICO Summary\nComparative Analysis of Evidence Requirements', 
+                 fontsize=14, fontweight='bold', pad=20)
+        
+        plt.tight_layout()
+        plt.savefig(self.output_dir / 'country_pico_summary_table.png', 
+                   dpi=300, bbox_inches='tight', facecolor='white')
+        plt.show()
+        
+        # Print summary statistics
+        print(f"\nSummary Statistics:")
+        print(f"Total countries analyzed: {len(country_data)}")
+        guideline_only = sum(1 for data in country_data.values() 
+                           if 'clinical_guideline' in data['source_types'] and 'hta_submission' not in data['source_types'])
+        hta_only = sum(1 for data in country_data.values() 
+                     if 'hta_submission' in data['source_types'] and 'clinical_guideline' not in data['source_types'])
+        both_sources = sum(1 for data in country_data.values() 
+                         if len(data['source_types']) > 1)
+        print(f"Countries with guidelines only: {guideline_only}")
+        print(f"Countries with HTA only: {hta_only}")
+        print(f"Countries with both sources: {both_sources}")
+
+    def create_outcomes_treemap(self):
+        """Create treemap visualization of outcome variables."""
+        if not SQUARIFY_AVAILABLE:
+            print("Squarify not available. Creating alternative outcomes visualization...")
+            self._create_alternative_outcomes_hierarchy()
+            return
+            
+        print("Creating outcomes treemap...")
+        
+        consolidated_outcomes = self.outcome_analyzer.data.get('consolidated_outcomes', {})
+        if not consolidated_outcomes:
+            print("No consolidated outcomes data available for treemap")
+            return
+        
+        # Prepare data for treemap
+        sizes = []
+        labels = []
+        colors = []
+        color_map = {
+            'efficacy': self.scientific_colors['primary'],
+            'safety': self.scientific_colors['quaternary'],
+            'quality_of_life': self.scientific_colors['secondary'],
+            'economic': self.scientific_colors['tertiary'],
+            'other': self.scientific_colors['dark_gray']
+        }
+        
+        for category, subcategories in consolidated_outcomes.items():
+            if isinstance(subcategories, dict):
+                for subcategory, outcomes in subcategories.items():
+                    if isinstance(outcomes, list):
+                        count = len(outcomes)
+                        sizes.append(count)
+                        labels.append(f"{category.title()}\n{subcategory.replace('_', ' ').title()}\n({count} outcomes)")
+                        colors.append(color_map.get(category, self.scientific_colors['dark_gray']))
+        
+        if not sizes:
+            print("No outcome data available for treemap")
+            return
+        
+        fig, ax = plt.subplots(figsize=(14, 10))
+        
+        # Create treemap
+        squarify.plot(sizes=sizes, label=labels, color=colors, alpha=0.8,
+                     text_kwargs={'fontsize': 9, 'weight': 'bold'}, ax=ax)
+        
+        ax.set_title('Outcomes Evidence Hierarchy\nTreemap by Category and Subcategory', 
+                    fontsize=16, fontweight='bold', pad=20)
+        ax.axis('off')
+        
+        # Create legend
+        legend_elements = [plt.Rectangle((0,0),1,1, facecolor=color, alpha=0.8, label=cat.title()) 
+                          for cat, color in color_map.items() if cat in [c for c, _ in consolidated_outcomes.items()]]
+        ax.legend(handles=legend_elements, loc='upper left', bbox_to_anchor=(1, 1), 
+                 frameon=True, fancybox=True, shadow=True)
+        
+        plt.tight_layout()
+        plt.savefig(self.output_dir / 'outcomes_treemap.png', 
+                   dpi=300, bbox_inches='tight', facecolor='white')
+        plt.show()
+
+    def _create_alternative_outcomes_hierarchy(self):
+        """Create alternative hierarchical visualization when squarify is not available."""
+        print("Creating alternative outcomes hierarchy visualization...")
+        
+        consolidated_outcomes = self.outcome_analyzer.data.get('consolidated_outcomes', {})
+        if not consolidated_outcomes:
+            print("No consolidated outcomes data available")
+            return
+        
+        fig, ax = plt.subplots(figsize=(12, 8))
+        
+        category_data = []
+        for category, subcategories in consolidated_outcomes.items():
+            if isinstance(subcategories, dict):
+                total_count = sum(len(outcomes) for outcomes in subcategories.values() 
+                                if isinstance(outcomes, list))
+                category_data.append((category, total_count))
+        
+        categories = [item[0] for item in category_data]
+        counts = [item[1] for item in category_data]
+        
+        colors = [self.scientific_colors['primary'], self.scientific_colors['quaternary'],
+                 self.scientific_colors['secondary'], self.scientific_colors['tertiary'],
+                 self.scientific_colors['dark_gray']][:len(categories)]
+        
+        wedges, texts, autotexts = ax.pie(counts, labels=[cat.replace('_', ' ').title() for cat in categories],
+                                         autopct='%1.1f%%', colors=colors, startangle=90,
+                                         wedgeprops=dict(edgecolor='white', linewidth=2))
+        
+        ax.set_title('Outcomes Distribution by Category\n(Alternative Hierarchy View)', 
+                    fontweight='bold', pad=20)
+        
+        for autotext in autotexts:
+            autotext.set_color('white')
+            autotext.set_fontweight('bold')
+        
+        plt.tight_layout()
+        plt.savefig(self.output_dir / 'outcomes_hierarchy_alternative.png', 
+                   dpi=300, bbox_inches='tight', facecolor='white')
+        plt.show()
+
+    def create_pico_consolidation_sankey(self):
+        """Create Sankey diagram showing PICO consolidation process."""
+        if not PLOTLY_AVAILABLE:
+            print("Plotly not available. Creating alternative consolidation visualization...")
+            self._create_alternative_consolidation_viz()
+            return
+            
+        print("Creating PICO consolidation Sankey diagram...")
+        
+        # Find original PICO files
+        case_name = "NSCLC"  # Extract from path if needed
+        if "/HCC/" in self.pico_analyzer.pico_file_path:
+            case_name = "HCC"
+        
+        pico_dir = Path(self.pico_analyzer.pico_file_path).parent
+        
+        # Load individual PICO files
+        individual_picos = {}
+        for source_type in ['clinical_guideline', 'hta_submission']:
+            pico_file = pico_dir / f"{source_type}_picos.json"
+            if pico_file.exists():
+                try:
+                    with open(pico_file, 'r', encoding='utf-8') as f:
+                        data = json.load(f)
+                        individual_picos[source_type] = data
+                except Exception as e:
+                    print(f"Error loading {source_type} PICOs: {e}")
+        
+        # Calculate individual PICO counts
+        individual_counts = {}
+        total_individual = 0
+        for source_type, data in individual_picos.items():
+            count = 0
+            if 'picos_by_country' in data:
+                for country_data in data['picos_by_country'].values():
+                    if 'PICOs' in country_data:
+                        count += len(country_data['PICOs'])
+            individual_counts[source_type] = count
+            total_individual += count
+        
+        # Get consolidated count
+        consolidated_count = len(self.pico_analyzer.data.get('consolidated_picos', []))
+        
+        print(f"Individual PICO counts: {individual_counts}")
+        print(f"Total individual PICOs: {total_individual}")
+        print(f"Consolidated PICOs: {consolidated_count}")
+        
+        if total_individual == 0:
+            print("No individual PICO data found. Cannot create Sankey diagram.")
+            return
+        
+        # Create Sankey data
+        source_labels = []
+        target_labels = []
+        values = []
+        
+        # Individual sources to consolidated
+        for source_type, count in individual_counts.items():
+            if count > 0:  # Only include sources that have data
+                source_labels.append(f"{source_type.replace('_', ' ').title()}")
+                target_labels.append("Consolidated PICOs")
+                values.append(count)
+        
+        if not values:
+            print("No valid source data found for Sankey diagram")
+            return
+        
+        # All labels
+        all_labels = list(set(source_labels + target_labels))
+        
+        # Create source and target indices
+        source_indices = [all_labels.index(label) for label in source_labels]
+        target_indices = [all_labels.index(label) for label in target_labels]
+        
+        # Color mapping
+        colors = [
+            'rgba(4, 138, 129, 0.8)',  # Clinical guidelines
+            'rgba(241, 143, 1, 0.8)',  # HTA submissions
+            'rgba(46, 64, 87, 0.8)'    # Consolidated
+        ]
+        
+        fig = go.Figure(data=[go.Sankey(
+            node=dict(
+                pad=15,
+                thickness=20,
+                line=dict(color="black", width=0.5),
+                label=all_labels,
+                color=colors[:len(all_labels)]
+            ),
+            link=dict(
+                source=source_indices,
+                target=target_indices,
+                value=values,
+                color=['rgba(4, 138, 129, 0.4)' if 'Clinical' in source_labels[i] 
+                      else 'rgba(241, 143, 1, 0.4)' for i in range(len(values))]
+            )
+        )])
+        
+        fig.update_layout(
+            title_text=f"{case_name} PICO Consolidation Process Flow<br>"
+                      f"<sub>From {total_individual} Individual PICOs to {consolidated_count} Consolidated PICOs</sub>",
+            font_size=12,
+            font_family="Arial",
+            width=800,
+            height=500
+        )
+        
+        # Save as HTML
+        html_path = self.output_dir / f'{case_name.lower()}_pico_consolidation_sankey.html'
+        fig.write_html(str(html_path))
+        
+        # Save as static image
+        try:
+            png_path = self.output_dir / f'{case_name.lower()}_pico_consolidation_sankey.png'
+            fig.write_image(str(png_path), width=800, height=500, scale=2)
+            print(f"Sankey diagram saved to: {png_path}")
+        except Exception as e:
+            print(f"Could not save PNG (install kaleido for static export): {e}")
+        
+        fig.show()
+        print(f"Interactive Sankey diagram saved to: {html_path}")
+        
+        # Print consolidation statistics
+        print(f"\n{case_name} Consolidation Statistics:")
+        print(f"Total individual PICOs: {total_individual}")
+        for source_type, count in individual_counts.items():
+            if count > 0:
+                print(f"  - {source_type.replace('_', ' ').title()}: {count}")
+        print(f"Consolidated PICOs: {consolidated_count}")
+        reduction_pct = ((total_individual - consolidated_count) / total_individual * 100) if total_individual > 0 else 0
+        print(f"Reduction: {reduction_pct:.1f}% ({total_individual - consolidated_count} PICOs consolidated)")
+
+    def _create_alternative_consolidation_viz(self):
+        """Create alternative consolidation visualization when Plotly is not available."""
+        print("Creating alternative consolidation visualization...")
+        
+        # Extract case name from path more robustly (same logic as main method)
+        file_path = Path(self.pico_analyzer.pico_file_path)
+        print(f"DEBUG ALT: Input file path: {file_path}")
+        print(f"DEBUG ALT: Path parts: {file_path.parts}")
+        
+        case_name = None
+        
+        # Look for case directory in path
+        for part in file_path.parts:
+            if part.upper() in ['NSCLC', 'HCC', 'SCLC', 'BREAST', 'LUNG']:
+                case_name = part.upper()
+                break
+        
+        if not case_name:
+            case_name = "UNKNOWN"
+            print(f"DEBUG ALT: Could not detect case name from path: {file_path}")
+        
+        print(f"DEBUG ALT: Detected case name: {case_name}")
+        
+        # Navigate to the PICO directory
+        case_root_dir = file_path.parent.parent
+        pico_dir = case_root_dir / "PICO"
+        
+        print(f"DEBUG ALT: Case root dir: {case_root_dir}")
+        print(f"DEBUG ALT: PICO dir: {pico_dir}")
+        print(f"DEBUG ALT: PICO dir exists: {pico_dir.exists()}")
+        
+        # Load individual PICO files and count
+        individual_counts = {}
+        total_individual = 0
+        for source_type in ['clinical_guideline', 'hta_submission']:
+            pico_file = pico_dir / f"{source_type}_picos.json"
+            print(f"DEBUG ALT: Checking for: {pico_file}")
+            print(f"DEBUG ALT: File exists: {pico_file.exists()}")
+            
+            if pico_file.exists():
+                try:
+                    with open(pico_file, 'r', encoding='utf-8') as f:
+                        data = json.load(f)
+                        count = 0
+                        
+                        # Try metadata first, then fallback to country counting
+                        metadata = data.get('extraction_metadata', {})
+                        print(f"DEBUG ALT: {source_type} metadata: {metadata}")
+                        
+                        if 'total_picos' in metadata:
+                            count = metadata['total_picos']
+                            print(f"DEBUG ALT: {source_type} count from metadata: {count}")
+                        elif 'picos_by_country' in data:
+                            print(f"DEBUG ALT: Using fallback counting for {source_type}")
+                            for country, country_data in data['picos_by_country'].items():
+                                if 'PICOs' in country_data:
+                                    country_count = len(country_data['PICOs'])
+                                    count += country_count
+                                    print(f"DEBUG ALT: {country}: {country_count} PICOs")
+                            print(f"DEBUG ALT: {source_type} total count from fallback: {count}")
+                        
+                        individual_counts[source_type] = count
+                        total_individual += count
+                        
+                except Exception as e:
+                    print(f"ERROR ALT: Failed to load {source_type} PICOs: {e}")
+                    import traceback
+                    traceback.print_exc()
+            else:
+                print(f"WARNING ALT: File not found: {pico_file}")
+        
+        print(f"DEBUG ALT: Final individual_counts: {individual_counts}")
+        print(f"DEBUG ALT: Total individual: {total_individual}")
+        
+        consolidated_count = len(self.pico_analyzer.data.get('consolidated_picos', []))
+        print(f"DEBUG ALT: Consolidated count: {consolidated_count}")
+        
+        if total_individual == 0:
+            print("ERROR ALT: No individual PICO data found for alternative visualization")
+            return
+        
+        # Create flow diagram
+        fig, ax = plt.subplots(figsize=(12, 8))
+        
+        # Define positions
+        y_positions = [0.7, 0.3]  # For two source types
+        x_individual = 0.2
+        x_consolidated = 0.8
+        
+        # Draw individual sources
+        colors = [self.scientific_colors['secondary'], self.scientific_colors['tertiary']]
+        for i, (source_type, count) in enumerate(individual_counts.items()):
+            if count == 0:
+                continue
+                
+            # Source box
+            box_height = 0.15
+            box_width = 0.2
+            y_pos = y_positions[i] if i < len(y_positions) else 0.5
+            
+            rect = plt.Rectangle((x_individual - box_width/2, y_pos - box_height/2), 
+                               box_width, box_height,
+                               facecolor=colors[i] if i < len(colors) else self.scientific_colors['dark_gray'],
+                               alpha=0.8, edgecolor='black', linewidth=2)
+            ax.add_patch(rect)
+            
+            # Label
+            ax.text(x_individual, y_pos, f"{source_type.replace('_', ' ').title()}\n{count} PICOs",
+                   ha='center', va='center', fontweight='bold', fontsize=10)
+            
+            # Arrow to consolidated
+            ax.annotate('', xy=(x_consolidated - 0.12, 0.5), xytext=(x_individual + 0.1, y_pos),
+                       arrowprops=dict(arrowstyle='->', lw=3, 
+                                     color=colors[i] if i < len(colors) else self.scientific_colors['dark_gray'],
+                                     alpha=0.7))
+        
+        # Consolidated box
+        box_height = 0.2
+        box_width = 0.25
+        rect = plt.Rectangle((x_consolidated - box_width/2, 0.5 - box_height/2), 
+                           box_width, box_height,
+                           facecolor=self.scientific_colors['primary'],
+                           alpha=0.8, edgecolor='black', linewidth=2)
+        ax.add_patch(rect)
+        
+        ax.text(x_consolidated, 0.5, f"Consolidated\nPICOs\n{consolidated_count}",
+               ha='center', va='center', fontweight='bold', fontsize=12, color='white')
+        
+        # Add statistics
+        reduction_pct = ((total_individual - consolidated_count) / total_individual * 100) if total_individual > 0 else 0
+        stats_text = (f"Total Individual: {total_individual}\n"
+                     f"Consolidated: {consolidated_count}\n"
+                     f"Reduction: {reduction_pct:.1f}%")
+        
+        ax.text(0.02, 0.98, stats_text, transform=ax.transAxes, 
+               verticalalignment='top', bbox=dict(boxstyle='round', facecolor='white', alpha=0.8),
+               fontsize=10, fontweight='bold')
+        
+        ax.set_xlim(0, 1)
+        ax.set_ylim(0, 1)
+        ax.set_title(f'{case_name} PICO Consolidation Process\nFrom Individual Sources to Consolidated Evidence', 
+                    fontsize=14, fontweight='bold', pad=20)
+        ax.axis('off')
+        
+        plt.tight_layout()
+        plt.savefig(self.output_dir / f'{case_name.lower()}_pico_consolidation_flow.png', 
+                   dpi=300, bbox_inches='tight', facecolor='white')
+        plt.show()
+        
+        # Print consolidation statistics
+        print(f"\n{case_name} Consolidation Statistics:")
+        print(f"Total individual PICOs: {total_individual}")
+        for source_type, count in individual_counts.items():
+            if count > 0:
+                print(f"  - {source_type.replace('_', ' ').title()}: {count}")
+        print(f"Consolidated PICOs: {consolidated_count}")
+        reduction_pct = ((total_individual - consolidated_count) / total_individual * 100) if total_individual > 0 else 0
+        print(f"Reduction: {reduction_pct:.1f}% ({total_individual - consolidated_count} PICOs consolidated)")
+
     def create_european_heatmap(self):
         if self.pico_analyzer.picos_df.empty or 'Country' not in self.pico_analyzer.picos_df.columns:
             print("No country data available for European heatmap")
@@ -1183,6 +1895,12 @@ class DataVisualizer:
         print("Creating additional PICO visualizations...")
         self._create_comparator_heatmap()
         self.create_european_heatmap()
+        
+        # Create new enhanced visualizations
+        self.create_comparator_venn_diagram()
+        self.create_comparator_breadth_by_country()
+        self.create_country_pico_summary_table()
+        self.create_pico_consolidation_sankey()
     
     def _create_comparator_heatmap(self):
         matrix = self.pico_analyzer.get_country_comparator_matrix()
@@ -1259,8 +1977,25 @@ class DataVisualizer:
                            ha='center', va='center', transform=axes[0, 0].transAxes)
             axes[0, 0].set_title('A. Outcomes by Category', fontweight='bold', pad=15)
         
+        # Chart 2: Country distribution (using metadata)
+        source_countries = metadata.get('source_countries', [])
+        if source_countries:
+            country_outcome_counts = {country: self.outcome_analyzer.total_outcomes for country in source_countries}
+            bars2 = axes[0, 1].bar(range(len(country_outcome_counts)), list(country_outcome_counts.values()),
+                                  color=self.scientific_colors['secondary'], alpha=0.8,
+                                  edgecolor='white', linewidth=0.8)
+            axes[0, 1].set_xticks(range(len(country_outcome_counts)))
+            axes[0, 1].set_xticklabels(list(country_outcome_counts.keys()), 
+                                      rotation=45, ha='right', fontweight='bold')
+            axes[0, 1].set_ylabel('Coverage Indicator', fontweight='bold')
+            axes[0, 1].set_xlabel('Country', fontweight='bold')
+            axes[0, 1].set_title('B. Country Coverage for Outcomes', fontweight='bold', pad=15)
+            axes[0, 1].grid(True, alpha=0.3, axis='y')
+        else:
+            axes[0, 1].text(0.5, 0.5, 'No Country Data Available', 
+                           ha='center', va='center', transform=axes[0, 1].transAxes)
+            axes[0, 1].set_title('B. Country Coverage for Outcomes', fontweight='bold', pad=15)
 
-        
         # Chart 3: Source type distribution - show actual representation
         # Since outcomes aren't source-specific in this structure, we can show the coverage
         # by using the PICO data which shows which source types contributed to the evidence
@@ -1326,6 +2061,8 @@ class DataVisualizer:
                    dpi=300, bbox_inches='tight', facecolor='white')
         plt.show()
         
+        # Create enhanced outcomes visualizations
+        self.create_outcomes_treemap()
     
     def create_combined_analysis(self):
         print("Creating combined analysis visualization...")
@@ -1394,8 +2131,6 @@ class DataVisualizer:
                    dpi=300, bbox_inches='tight', facecolor='white')
         plt.show()
         
-
-    
     def generate_summary_report(self):
         print("Generating summary report...")
         
