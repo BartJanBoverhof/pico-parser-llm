@@ -1,11 +1,13 @@
 Country,Population,Intervention,Guideline Comparators,HTA Comparators,Source Types
-AT,Adult patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12...,Medicine X (under assessment),docetaxel,docetaxel,"Clinical Guideline, Hta Submission"
-DE,Adult patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12...,Medicine X (under assessment),"docetaxel + nintedanib, pemetrexed, sotorasib","afatinib, atezolizumab, docetaxel + nintedanib, docetaxel...","Clinical Guideline, Hta Submission"
-DK,Adult patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12...,Medicine X (under assessment),"adagrasib, docetaxel, sotorasib","adagrasib, docetaxel","Clinical Guideline, Hta Submission"
-EN,Adult patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12...,Medicine X (under assessment),"docetaxel, docetaxel + nintedanib","docetaxel, docetaxel + nintedanib","Clinical Guideline, Hta Submission"
-FR,Adult patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12...,Medicine X (under assessment),"adagrasib, chemotherapy","adagrasib, atezolizumab, nivolumab, pembrolizumab (if PD-...","Clinical Guideline, Hta Submission"
-IT,Adult patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12...,Medicine X (under assessment),chemotherapy,chemotherapy,"Clinical Guideline, Hta Submission"
-NL,Adult patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12...,Medicine X (under assessment),"chemotherapy, docetaxel, erlotinib-tivantinib, gemcitabin...","chemotherapy, docetaxel, pemetrexed","Clinical Guideline, Hta Submission"
-PO,Adult patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12...,Medicine X (under assessment),"adagrasib, docetaxel, docetaxel + nintedanib, pemetrexed","ALK inhibitors (if ALK gene rearrangement), EGFR inhibito...","Clinical Guideline, Hta Submission"
-PT,Adult patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12...,Medicine X (under assessment),"docetaxel, docetaxel + nintedanib, pemetrexed","atezolizumab, docetaxel, docetaxel + nintedanib, nivoluma...","Clinical Guideline, Hta Submission"
-SE,Adult patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12...,Medicine X (under assessment),docetaxel,docetaxel,"Clinical Guideline, Hta Submission"
+AT,Adult patients with advanced or unresectable hepatocellular carcinoma (HCC) (...,Medicine X (under assessment),sorafenib,sorafenib,"Clinical Guideline, Hta Submission"
+BE,Patients with unresectable hepatocellular carcinoma,Medicine X (under assessment),"arterial chemoembolization, hormonal therapy with tamoxif...",-,Clinical Guideline
+DE,Adult patients with advanced or unresectable hepatocellular carcinoma (HCC) (...,Medicine X (under assessment),sorafenib,sorafenib,"Clinical Guideline, Hta Submission"
+DK,Adult patients with advanced or unresectable hepatocellular carcinoma (HCC) (...,Medicine X (under assessment),sorafenib,sorafenib,"Clinical Guideline, Hta Submission"
+EN,Adult patients with advanced or unresectable hepatocellular carcinoma (HCC) (...,Medicine X (under assessment),"lenvatinib, sorafenib","lenvatinib, sorafenib","Clinical Guideline, Hta Submission"
+ES,Adult patients with advanced or unresectable hepatocellular carcinoma (HCC) (...,Medicine X (under assessment),"atezolizumab plus bevacizumab, lenvatinib, sorafenib","atezolizumab plus bevacizumab, lenvatinib, sorafenib","Clinical Guideline, Hta Submission"
+FR,Patients with advanced hepatocellular carcinoma previously treated with soraf...,Medicine X (under assessment),"atezolizumab plus bevacizumab, lenvatinib, nivolumab plus...","atezolizumab plus bevacizumab, lenvatinib, sorafenib","Clinical Guideline, Hta Submission"
+IT,"Cirrhotic (max Child-Pugh B) patients with unresectable M0 multi-nodular HCC,...",Medicine X (under assessment),TACE,-,Clinical Guideline
+NL,Patients with advanced hepatocellular carcinoma in whom intentionally curativ...,Medicine X (under assessment),atezolizumab plus bevacizumab,-,Clinical Guideline
+PO,Patients with advanced or unresectable hepatocellular carcinoma (HCC) followi...,Medicine X (under assessment),"cabozantinib, lenvatinib, ramucirumab, regorafenib, soraf...",-,Clinical Guideline
+PT,Adult patients with advanced or unresectable hepatocellular carcinoma (HCC) (...,Medicine X (under assessment),sorafenib,sorafenib,"Clinical Guideline, Hta Submission"
+SE,Adult patients with advanced or unresectable hepatocellular carcinoma (HCC) (...,Medicine X (under assessment),"atezolizumab plus bevacizumab, cabozantinib, lenvatinib, ...","atezolizumab plus bevacizumab, lenvatinib, sorafenib","Clinical Guideline, Hta Submission"

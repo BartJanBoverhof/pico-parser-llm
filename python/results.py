@@ -1142,7 +1142,7 @@ class DataVisualizer:
         plt.show()
 
     def _create_alternative_outcomes_hierarchy(self):
-        """Create alternative hierarchical visualization when squarify is not available."""
+        """Create alternative hierarchical bar chart when squarify is not available."""
         print("Creating alternative outcomes hierarchy visualization...")
         
         consolidated_outcomes = self.outcome_analyzer.data.get('consolidated_outcomes', {})
@@ -1159,23 +1159,28 @@ class DataVisualizer:
                                 if isinstance(outcomes, list))
                 category_data.append((category, total_count))
         
-        categories = [item[0] for item in category_data]
+        categories = [item[0].replace('_', ' ').title() for item in category_data]
         counts = [item[1] for item in category_data]
         
         colors = [self.scientific_colors['primary'], self.scientific_colors['quaternary'],
                  self.scientific_colors['secondary'], self.scientific_colors['tertiary'],
                  self.scientific_colors['dark_gray']][:len(categories)]
         
-        wedges, texts, autotexts = ax.pie(counts, labels=[cat.replace('_', ' ').title() for cat in categories],
-                                         autopct='%1.1f%%', colors=colors, startangle=90,
-                                         wedgeprops=dict(edgecolor='white', linewidth=2))
+        bars = ax.bar(range(len(categories)), counts, color=colors, alpha=0.8,
+                     edgecolor='white', linewidth=1)
         
+        ax.set_xticks(range(len(categories)))
+        ax.set_xticklabels(categories, rotation=45, ha='right', fontweight='bold')
+        ax.set_ylabel('Number of Outcomes', fontweight='bold')
+        ax.set_xlabel('Outcome Category', fontweight='bold')
         ax.set_title('Outcomes Distribution by Category\n(Alternative Hierarchy View)', 
                     fontweight='bold', pad=20)
+        ax.grid(True, alpha=0.3, axis='y')
         
-        for autotext in autotexts:
-            autotext.set_color('white')
-            autotext.set_fontweight('bold')
+        # Add value labels on bars
+        for bar, value in zip(bars, counts):
+            ax.text(bar.get_x() + bar.get_width()/2, bar.get_height() + max(counts) * 0.01,
+                   str(value), ha='center', va='bottom', fontweight='bold')
         
         plt.tight_layout()
         plt.savefig(self.output_dir / 'outcomes_hierarchy_alternative.png', 
@@ -1809,21 +1814,24 @@ class DataVisualizer:
                            ha='center', va='center', transform=axes[0, 0].transAxes)
             axes[0, 0].set_title('A. PICO Distribution by Country', fontweight='bold', pad=15)
         
-        # Chart 2: Source type distribution
+        # Chart 2: Source type distribution - CHANGED FROM PIE TO BAR CHART
         if 'Source_Type' in self.pico_analyzer.picos_df.columns:
             source_counts = self.pico_analyzer.picos_df['Source_Type'].value_counts()
             colors = [self.scientific_colors['secondary'], self.scientific_colors['tertiary']][:len(source_counts)]
-            wedges, texts, autotexts = axes[0, 1].pie(source_counts.values, 
-                                                     labels=[label.replace('_', ' ').title() for label in source_counts.index],
-                                                     autopct='%1.1f%%', 
-                                                     colors=colors,
-                                                     startangle=90,
-                                                     wedgeprops=dict(edgecolor='white', linewidth=2))
-            axes[0, 1].set_title('B. PICO Distribution by Source Type', fontweight='bold', pad=15)
             
-            for autotext in autotexts:
-                autotext.set_color('white')
-                autotext.set_fontweight('bold')
+            bars2 = axes[0, 1].bar(range(len(source_counts)), source_counts.values,
+                                  color=colors, alpha=0.8, edgecolor='white', linewidth=0.8)
+            axes[0, 1].set_xticks(range(len(source_counts)))
+            axes[0, 1].set_xticklabels([label.replace('_', ' ').title() for label in source_counts.index], 
+                                      rotation=45, ha='right', fontweight='bold')
+            axes[0, 1].set_ylabel('Number of PICOs', fontweight='bold')
+            axes[0, 1].set_xlabel('Source Type', fontweight='bold')
+            axes[0, 1].set_title('B. PICO Distribution by Source Type', fontweight='bold', pad=15)
+            axes[0, 1].grid(True, alpha=0.3, axis='y')
+            
+            for bar, value in zip(bars2, source_counts.values):
+                axes[0, 1].text(bar.get_x() + bar.get_width()/2, bar.get_height() + 0.1,
+                               str(value), ha='center', va='bottom', fontweight='bold')
         else:
             axes[0, 1].text(0.5, 0.5, 'No Source Type Data Available', 
                            ha='center', va='center', transform=axes[0, 1].transAxes)
@@ -1832,7 +1840,7 @@ class DataVisualizer:
         # Chart 3: Comparator frequency
         if 'Comparator' in self.pico_analyzer.picos_df.columns:
             comp_counts = self.pico_analyzer.picos_df['Comparator'].value_counts().head(8)
-            bars2 = axes[1, 0].barh(range(len(comp_counts)), comp_counts.values, 
+            bars3 = axes[1, 0].barh(range(len(comp_counts)), comp_counts.values, 
                                    color=self.scientific_colors['quaternary'], alpha=0.8,
                                    edgecolor='white', linewidth=0.8)
             axes[1, 0].set_yticks(range(len(comp_counts)))
@@ -1843,7 +1851,7 @@ class DataVisualizer:
             axes[1, 0].grid(True, alpha=0.3, axis='x')
             axes[1, 0].invert_yaxis()
             
-            for bar, value in zip(bars2, comp_counts.values):
+            for bar, value in zip(bars3, comp_counts.values):
                 axes[1, 0].text(bar.get_width() + 0.05, bar.get_y() + bar.get_height()/2,
                                str(value), ha='left', va='center', fontweight='bold')
         else:
@@ -1996,7 +2004,7 @@ class DataVisualizer:
                            ha='center', va='center', transform=axes[0, 1].transAxes)
             axes[0, 1].set_title('B. Country Coverage for Outcomes', fontweight='bold', pad=15)
 
-        # Chart 3: Source type distribution - show actual representation
+        # Chart 3: Source type distribution - CHANGED FROM PIE TO BAR CHART
         # Since outcomes aren't source-specific in this structure, we can show the coverage
         # by using the PICO data which shows which source types contributed to the evidence
         if not self.pico_analyzer.picos_df.empty and 'Source_Type' in self.pico_analyzer.picos_df.columns:
@@ -2006,17 +2014,20 @@ class DataVisualizer:
             
             if source_outcome_counts:
                 colors = [self.scientific_colors['tertiary'], self.scientific_colors['quaternary']][:len(source_outcome_counts)]
-                wedges, texts, autotexts = axes[1, 0].pie(list(source_outcome_counts.values()),
-                                                         labels=[label.replace('_', ' ').title() for label in source_outcome_counts.keys()],
-                                                         autopct='%1.1f%%', 
-                                                         colors=colors,
-                                                         startangle=90,
-                                                         wedgeprops=dict(edgecolor='white', linewidth=2))
-                axes[1, 0].set_title('C. Source Type Coverage for Outcomes', fontweight='bold', pad=15)
                 
-                for autotext in autotexts:
-                    autotext.set_color('white')
-                    autotext.set_fontweight('bold')
+                bars3 = axes[1, 0].bar(range(len(source_outcome_counts)), list(source_outcome_counts.values()),
+                                      color=colors, alpha=0.8, edgecolor='white', linewidth=0.8)
+                axes[1, 0].set_xticks(range(len(source_outcome_counts)))
+                axes[1, 0].set_xticklabels([label.replace('_', ' ').title() for label in source_outcome_counts.keys()],
+                                          rotation=45, ha='right', fontweight='bold')
+                axes[1, 0].set_ylabel('Coverage Indicator', fontweight='bold')
+                axes[1, 0].set_xlabel('Source Type', fontweight='bold')
+                axes[1, 0].set_title('C. Source Type Coverage for Outcomes', fontweight='bold', pad=15)
+                axes[1, 0].grid(True, alpha=0.3, axis='y')
+                
+                for bar, value in zip(bars3, source_outcome_counts.values()):
+                    axes[1, 0].text(bar.get_x() + bar.get_width()/2, bar.get_height() + max(source_outcome_counts.values()) * 0.01,
+                                   str(value), ha='center', va='bottom', fontweight='bold')
             else:
                 axes[1, 0].text(0.5, 0.5, 'No Source Type Data Available', 
                                ha='center', va='center', transform=axes[1, 0].transAxes)
@@ -2078,45 +2089,52 @@ class DataVisualizer:
         fig, axes = plt.subplots(1, 2, figsize=(14, 6))
         fig.suptitle('Source Type Distribution Comparison', fontsize=16, fontweight='bold', y=0.98)
         
-        # PICO sources pie chart
+        # PICO sources bar chart - CHANGED FROM PIE TO BAR CHART
         if pico_has_source:
             pico_sources = self.pico_analyzer.picos_df['Source_Type'].value_counts()
             colors_pico = [self.scientific_colors['primary'], self.scientific_colors['secondary']][:len(pico_sources)]
-            wedges1, texts1, autotexts1 = axes[0].pie(pico_sources.values, 
-                                                      labels=[label.replace('_', ' ').title() 
-                                                             for label in pico_sources.index],
-                                                      autopct='%1.1f%%', 
-                                                      colors=colors_pico,
-                                                      startangle=90,
-                                                      wedgeprops=dict(edgecolor='white', linewidth=2))
-            axes[0].set_title('A. PICOs by Source Type', fontweight='bold', pad=20)
             
-            for autotext in autotexts1:
-                autotext.set_color('white')
-                autotext.set_fontweight('bold')
+            bars1 = axes[0].bar(range(len(pico_sources)), pico_sources.values, 
+                               color=colors_pico, alpha=0.8, edgecolor='white', linewidth=0.8)
+            axes[0].set_xticks(range(len(pico_sources)))
+            axes[0].set_xticklabels([label.replace('_', ' ').title() for label in pico_sources.index],
+                                   rotation=45, ha='right', fontweight='bold')
+            axes[0].set_ylabel('Number of PICOs', fontweight='bold')
+            axes[0].set_xlabel('Source Type', fontweight='bold')
+            axes[0].set_title('A. PICOs by Source Type', fontweight='bold', pad=20)
+            axes[0].grid(True, alpha=0.3, axis='y')
+            
+            for bar, value in zip(bars1, pico_sources.values):
+                axes[0].text(bar.get_x() + bar.get_width()/2, bar.get_height() + max(pico_sources.values) * 0.01,
+                           str(value), ha='center', va='bottom', fontweight='bold')
         else:
             axes[0].text(0.5, 0.5, 'No PICO Source Type Data', 
                         ha='center', va='center', transform=axes[0].transAxes)
             axes[0].set_title('A. PICOs by Source Type', fontweight='bold', pad=20)
         
-        # Outcome sources pie chart
+        # Outcome sources bar chart - CHANGED FROM PIE TO BAR CHART
         if outcome_has_source:
             metadata = self.outcome_analyzer.data.get('outcomes_metadata', {})
             source_types = metadata.get('source_types', [])
             
             if source_types:
                 colors_outcome = [self.scientific_colors['tertiary'], self.scientific_colors['quaternary']][:len(source_types)]
-                wedges2, texts2, autotexts2 = axes[1].pie([1]*len(source_types),  # Equal weight for visualization
-                                                          labels=[label.replace('_', ' ').title() for label in source_types],
-                                                          autopct='%1.1f%%', 
-                                                          colors=colors_outcome,
-                                                          startangle=90,
-                                                          wedgeprops=dict(edgecolor='white', linewidth=2))
-                axes[1].set_title('B. Outcomes by Source Type', fontweight='bold', pad=20)
+                # Equal weight for visualization
+                outcome_values = [self.outcome_analyzer.total_outcomes] * len(source_types)
                 
-                for autotext in autotexts2:
-                    autotext.set_color('white')
-                    autotext.set_fontweight('bold')
+                bars2 = axes[1].bar(range(len(source_types)), outcome_values,
+                                   color=colors_outcome, alpha=0.8, edgecolor='white', linewidth=0.8)
+                axes[1].set_xticks(range(len(source_types)))
+                axes[1].set_xticklabels([label.replace('_', ' ').title() for label in source_types],
+                                       rotation=45, ha='right', fontweight='bold')
+                axes[1].set_ylabel('Coverage Indicator', fontweight='bold')
+                axes[1].set_xlabel('Source Type', fontweight='bold')
+                axes[1].set_title('B. Outcomes by Source Type', fontweight='bold', pad=20)
+                axes[1].grid(True, alpha=0.3, axis='y')
+                
+                for bar, value in zip(bars2, outcome_values):
+                    axes[1].text(bar.get_x() + bar.get_width()/2, bar.get_height() + max(outcome_values) * 0.01,
+                               str(value), ha='center', va='bottom', fontweight='bold')
             else:
                 axes[1].text(0.5, 0.5, 'No Outcome Source Type Data', 
                             ha='center', va='center', transform=axes[1].transAxes)
