@@ -48,6 +48,97 @@ class PICOConsolidator:
         except:
             self.encoding = tiktoken.encoding_for_model("cl100k_base")
 
+    def get_train_test_split_countries(self, case: str) -> Dict[str, Dict[str, List[str]]]:
+        """
+        Define the train/test split for countries by case and source type.
+        
+        Args:
+            case: Case identifier (e.g., "NSCLC", "HCC")
+            
+        Returns:
+            Dictionary with train/test splits by source type
+        """
+        splits = {
+            "NSCLC": {
+                "train": {
+                    "hta_submission": ["PO"],
+                    "clinical_guideline": ["AT", "NL"]
+                },
+                "test": {
+                    "hta_submission": ["DE", "DK", "PT", "EN", "FR", "SE"],
+                    "clinical_guideline": ["EU", "EN", "FR", "SE", "DE", "DK"]
+                }
+            },
+            "HCC": {
+                "train": {
+                    "hta_submission": [],
+                    "clinical_guideline": []
+                },
+                "test": {
+                    "hta_submission": ["ALL"],
+                    "clinical_guideline": ["ALL"]
+                }
+            }
+        }
+        
+        return splits.get(case.upper(), {})
+
+    def filter_countries_by_split(self, pico_data: Dict[str, Dict], test_set: bool = False) -> Dict[str, Dict]:
+        """
+        Filter countries based on train/test split configuration.
+        
+        Args:
+            pico_data: PICO data by source type
+            test_set: If True, use test countries; if False, use train countries
+            
+        Returns:
+            Filtered PICO data
+        """
+        case = self.results_dir.split(os.sep)[-1] if os.sep in self.results_dir else "NSCLC"
+        splits = self.get_train_test_split_countries(case)
+        
+        if not splits:
+            print(f"No train/test split configuration found for case: {case}")
+            return pico_data
+        
+        split_type = "test" if test_set else "train"
+        target_countries = splits.get(split_type, {})
+        
+        filtered_data = {}
+        
+        for source_type, data in pico_data.items():
+            if source_type not in target_countries:
+                print(f"Source type {source_type} not found in {split_type} configuration")
+                continue
+                
+            allowed_countries = target_countries[source_type]
+            
+            if not allowed_countries or (len(allowed_countries) == 1 and allowed_countries[0] == "ALL"):
+                filtered_data[source_type] = data
+                print(f"Including all countries for {source_type} in {split_type} set")
+                continue
+            
+            filtered_data[source_type] = {
+                "extraction_metadata": data.get("extraction_metadata", {}),
+                "picos_by_country": {}
+            }
+            
+            original_countries = list(data.get("picos_by_country", {}).keys())
+            included_countries = []
+            
+            for country in original_countries:
+                if country in allowed_countries:
+                    filtered_data[source_type]["picos_by_country"][country] = data["picos_by_country"][country]
+                    included_countries.append(country)
+            
+            if included_countries:
+                print(f"Filtered {source_type} to {split_type} countries: {included_countries}")
+            else:
+                print(f"No {split_type} countries found for {source_type}, excluding from consolidation")
+                del filtered_data[source_type]
+        
+        return filtered_data
+
     def count_tokens(self, text: str) -> int:
         """Count tokens in text using the current encoding."""
         return len(self.encoding.encode(text))
@@ -479,7 +570,8 @@ class PICOConsolidator:
         self, 
         consolidated_picos: Dict, 
         consolidated_outcomes: Dict,
-        indication: str = ""
+        indication: str = "",
+        test_set: bool = False
     ):
         """
         Save consolidated results to separate JSON files.
@@ -488,6 +580,7 @@ class PICOConsolidator:
             consolidated_picos: Consolidated PICO results
             consolidated_outcomes: Consolidated outcomes results
             indication: Indication string for filename
+            test_set: Whether this is test set data
         """
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         
@@ -498,6 +591,8 @@ class PICOConsolidator:
         
         if not safe_indication:
             safe_indication = "consolidated"
+        
+        split_suffix = "_test" if test_set else "_train"
 
         saved_files = {}
 
@@ -506,7 +601,8 @@ class PICOConsolidator:
                 "consolidation_metadata": {
                     "timestamp": timestamp,
                     "indication": indication,
-                    "consolidation_type": "picos"
+                    "consolidation_type": "picos",
+                    "data_split": "test" if test_set else "train"
                 },
                 "consolidated_picos": consolidated_picos.get("consolidated_picos", [])
             }
@@ -514,7 +610,7 @@ class PICOConsolidator:
             if "consolidation_metadata" in consolidated_picos:
                 picos_result["consolidation_metadata"].update(consolidated_picos["consolidation_metadata"])
             
-            picos_filename = f"{safe_indication}_consolidated_picos_{timestamp}.json"
+            picos_filename = f"{safe_indication}_consolidated_picos{split_suffix}_{timestamp}.json"
             picos_filepath = os.path.join(self.consolidated_dir, picos_filename)
             
             try:
@@ -532,7 +628,8 @@ class PICOConsolidator:
                 "outcomes_metadata": {
                     "timestamp": timestamp,
                     "indication": indication,
-                    "consolidation_type": "outcomes"
+                    "consolidation_type": "outcomes",
+                    "data_split": "test" if test_set else "train"
                 },
                 "consolidated_outcomes": consolidated_outcomes.get("outcomes_by_category", {})
             }
@@ -540,7 +637,7 @@ class PICOConsolidator:
             if "outcomes_metadata" in consolidated_outcomes:
                 outcomes_result["outcomes_metadata"].update(consolidated_outcomes["outcomes_metadata"])
             
-            outcomes_filename = f"{safe_indication}_consolidated_outcomes_{timestamp}.json"
+            outcomes_filename = f"{safe_indication}_consolidated_outcomes{split_suffix}_{timestamp}.json"
             outcomes_filepath = os.path.join(self.consolidated_dir, outcomes_filename)
             
             try:
@@ -569,7 +666,8 @@ class PICOConsolidator:
     def consolidate_all(
         self, 
         source_types: Optional[List[str]] = None,
-        model_override: Optional[Union[str, ChatOpenAI]] = None
+        model_override: Optional[Union[str, ChatOpenAI]] = None,
+        test_set: bool = False
     ) -> Dict:
         """
         Run the complete consolidation pipeline.
@@ -577,11 +675,13 @@ class PICOConsolidator:
         Args:
             source_types: List of source types to consolidate
             model_override: Optional model override
+            test_set: If True, use test countries; if False, use train countries
 
         Returns:
             Dictionary with consolidation results
         """
-        print("=== Starting PICO and Outcomes Consolidation ===")
+        split_name = "test" if test_set else "train"
+        print(f"=== Starting PICO and Outcomes Consolidation for {split_name} set ===")
         
         print("Step 1: Loading PICO extraction files...")
         pico_data = self.load_pico_files(source_types)
@@ -590,11 +690,19 @@ class PICOConsolidator:
             print("No PICO data found to consolidate")
             return {}
 
-        print("Step 1.5: Checking for separate outcome extractions...")
+        print(f"Step 1.5: Filtering countries for {split_name} set...")
+        pico_data = self.filter_countries_by_split(pico_data, test_set=test_set)
+        
+        if not pico_data:
+            print(f"No data remaining after {split_name} set filtering")
+            return {}
+
+        print("Step 1.6: Checking for separate outcome extractions...")
         outcome_data = self.load_separate_outcome_extractions(list(pico_data.keys()))
         
         if outcome_data:
             print("Found separate outcome extractions, combining with PICOs...")
+            outcome_data = self.filter_countries_by_split(outcome_data, test_set=test_set)
             pico_data = self.combine_picos_with_outcomes(pico_data, outcome_data)
         else:
             print("No separate outcome extractions found, proceeding with existing PICO data")
@@ -615,16 +723,18 @@ class PICOConsolidator:
         saved_files = self.save_consolidated_results(
             consolidated_picos, 
             consolidated_outcomes, 
-            metadata.get("indication", "")
+            metadata.get("indication", ""),
+            test_set=test_set
         )
 
-        print("=== Consolidation Complete ===")
+        print(f"=== Consolidation Complete for {split_name} set ===")
         
         return {
             "consolidated_picos": consolidated_picos,
             "consolidated_outcomes": consolidated_outcomes,
             "metadata": metadata,
             "saved_files": saved_files,
+            "data_split": split_name,
             "summary": {
                 "original_picos": len(all_picos),
                 "consolidated_picos": len(consolidated_picos.get("consolidated_picos", [])) if consolidated_picos else 0,

@@ -194,10 +194,11 @@ print("\n=== Step 11: Running NSCLC PICO and Outcomes Consolidation ===")
 # Initialize the NSCLC consolidator
 rag_nsclc.initialize_pico_consolidator()
 
-# Run consolidation for both source types for NSCLC
-print("\n--- Consolidating NSCLC PICOs and Outcomes across all sources ---")
-consolidation_results_nsclc = rag_nsclc.run_pico_consolidation(
-    source_types=["hta_submission", "clinical_guideline"]
+# Run consolidation for NSCLC test set
+print("\n--- Consolidating NSCLC PICOs and Outcomes for Test Set ---")
+consolidation_results_nsclc_test = rag_nsclc.run_pico_consolidation(
+    source_types=["hta_submission", "clinical_guideline"],
+    test_set=True
 )
 
 # ============================================================================
@@ -313,10 +314,11 @@ print("\n=== Step 11: Running HCC PICO and Outcomes Consolidation ===")
 # Initialize the HCC consolidator
 rag_hcc.initialize_pico_consolidator()
 
-# Run consolidation for both source types for HCC
-print("\n--- Consolidating HCC PICOs and Outcomes across all sources ---")
-consolidation_results_hcc = rag_hcc.run_pico_consolidation(
-    source_types=["hta_submission", "clinical_guideline"]
+# Run consolidation for HCC (all data goes to test set for HCC)
+print("\n--- Consolidating HCC PICOs and Outcomes for Test Set ---")
+consolidation_results_hcc_test = rag_hcc.run_pico_consolidation(
+    source_types=["hta_submission", "clinical_guideline"],
+    test_set=True
 )
 
 # ============================================================================
@@ -333,101 +335,190 @@ print("="*80)
 # Initialize comprehensive overview class
 comprehensive_overview = ComprehensiveOverview()
 
-all_pico_files = []
-all_outcome_files = []
+all_pico_files_train = []
+all_outcome_files_train = []
+all_pico_files_test = []
+all_outcome_files_test = []
 
-# Collect all PICO and Outcome files
+# Collect all PICO and Outcome files for both train and test sets
 for case in ["NSCLC", "HCC"]:
     case_dir = Path(f"results/{case}/consolidated")
     if case_dir.exists():
-        pico_files = list(case_dir.glob("*consolidated_picos*.json"))
-        outcome_files = list(case_dir.glob("*consolidated_outcomes*.json"))
+        # Training files
+        train_pico_files = list(case_dir.glob("*consolidated_picos_train*.json"))
+        train_outcome_files = list(case_dir.glob("*consolidated_outcomes_train*.json"))
         
-        if pico_files and outcome_files:
-            all_pico_files.extend([(max(pico_files, key=os.path.getmtime), case)])
-            all_outcome_files.extend([(max(outcome_files, key=os.path.getmtime), case)])
+        # Test files
+        test_pico_files = list(case_dir.glob("*consolidated_picos_test*.json"))
+        test_outcome_files = list(case_dir.glob("*consolidated_outcomes_test*.json"))
+        
+        if train_pico_files and train_outcome_files:
+            all_pico_files_train.extend([(max(train_pico_files, key=os.path.getmtime), case)])
+            all_outcome_files_train.extend([(max(train_outcome_files, key=os.path.getmtime), case)])
+        
+        if test_pico_files and test_outcome_files:
+            all_pico_files_test.extend([(max(test_pico_files, key=os.path.getmtime), case)])
+            all_outcome_files_test.extend([(max(test_outcome_files, key=os.path.getmtime), case)])
 
-# Generate cross-case overview
-if all_pico_files and all_outcome_files:
-    comprehensive_overview.generate_cross_case_overview(all_pico_files, all_outcome_files)
+# Generate cross-case overviews for both train and test sets
+if all_pico_files_train and all_outcome_files_train:
+    print("\n--- Generating Training Set Overview ---")
+    comprehensive_overview.generate_cross_case_overview(
+        all_pico_files_train, 
+        all_outcome_files_train,
+        output_suffix="_train"
+    )
 
-# NSCLC Analysis
+if all_pico_files_test and all_outcome_files_test:
+    print("\n--- Generating Test Set Overview ---")
+    comprehensive_overview.generate_cross_case_overview(
+        all_pico_files_test, 
+        all_outcome_files_test,
+        output_suffix="_test"
+    )
+
+# NSCLC Analysis for both train and test sets
 print("\n=== NSCLC DETAILED ANALYSIS ===")
 nsclc_consolidated_dir = Path("results/NSCLC/consolidated")
 if nsclc_consolidated_dir.exists():
-    # Get the most recent PICO and Outcomes files for NSCLC
-    pico_files = list(nsclc_consolidated_dir.glob("*consolidated_picos*.json"))
-    outcome_files = list(nsclc_consolidated_dir.glob("*consolidated_outcomes*.json"))
+    # Training set analysis
+    print("\n--- NSCLC Training Set Analysis ---")
+    train_pico_files = list(nsclc_consolidated_dir.glob("*consolidated_picos_train*.json"))
+    train_outcome_files = list(nsclc_consolidated_dir.glob("*consolidated_outcomes_train*.json"))
     
-    if pico_files and outcome_files:
-        # Sort by modification time and get the most recent
-        pico_file = max(pico_files, key=os.path.getmtime)
-        outcome_file = max(outcome_files, key=os.path.getmtime)
+    if train_pico_files and train_outcome_files:
+        train_pico_file = max(train_pico_files, key=os.path.getmtime)
+        train_outcome_file = max(train_outcome_files, key=os.path.getmtime)
         
-        print(f"Analyzing NSCLC PICO data from: {pico_file}")
-        print(f"Analyzing NSCLC Outcomes data from: {outcome_file}")
+        print(f"Analyzing NSCLC Training PICO data from: {train_pico_file}")
+        print(f"Analyzing NSCLC Training Outcomes data from: {train_outcome_file}")
         print()
         
         try:
-            # Run comprehensive analysis for NSCLC
-            pico_analyzer_nsclc, outcome_analyzer_nsclc, visualizer_nsclc = run_complete_analysis(
-                pico_file_path=str(pico_file),
-                outcome_file_path=str(outcome_file)
+            pico_analyzer_nsclc_train, outcome_analyzer_nsclc_train, visualizer_nsclc_train = run_complete_analysis(
+                pico_file_path=str(train_pico_file),
+                outcome_file_path=str(train_outcome_file),
+                output_suffix="_train"
             )
-            print("NSCLC analysis completed successfully!")
+            print("NSCLC training set analysis completed successfully!")
         except Exception as e:
-            print(f"Error in NSCLC analysis: {e}")
+            print(f"Error in NSCLC training set analysis: {e}")
             import traceback
             traceback.print_exc()
-            
     else:
-        print("Warning: Could not find consolidated NSCLC PICO or Outcomes files.")
-        if not pico_files:
-            print("Missing NSCLC PICO files in results/NSCLC/consolidated/")
-        if not outcome_files:
-            print("Missing NSCLC Outcomes files in results/NSCLC/consolidated/")
-            
+        print("Warning: Could not find NSCLC training set consolidated files.")
+    
+    # Test set analysis
+    print("\n--- NSCLC Test Set Analysis ---")
+    test_pico_files = list(nsclc_consolidated_dir.glob("*consolidated_picos_test*.json"))
+    test_outcome_files = list(nsclc_consolidated_dir.glob("*consolidated_outcomes_test*.json"))
+    
+    if test_pico_files and test_outcome_files:
+        test_pico_file = max(test_pico_files, key=os.path.getmtime)
+        test_outcome_file = max(test_outcome_files, key=os.path.getmtime)
+        
+        print(f"Analyzing NSCLC Test PICO data from: {test_pico_file}")
+        print(f"Analyzing NSCLC Test Outcomes data from: {test_outcome_file}")
+        print()
+        
+        try:
+            pico_analyzer_nsclc_test, outcome_analyzer_nsclc_test, visualizer_nsclc_test = run_complete_analysis(
+                pico_file_path=str(test_pico_file),
+                outcome_file_path=str(test_outcome_file),
+                output_suffix="_test"
+            )
+            print("NSCLC test set analysis completed successfully!")
+        except Exception as e:
+            print(f"Error in NSCLC test set analysis: {e}")
+            import traceback
+            traceback.print_exc()
+    else:
+        print("Warning: Could not find NSCLC test set consolidated files.")
 else:
     print("Warning: results/NSCLC/consolidated directory not found.")
     print("Make sure the NSCLC consolidation step completed successfully.")
 
-# HCC Analysis
+# HCC Analysis (test set only since all HCC data goes to test)
 print("\n=== HCC DETAILED ANALYSIS ===")
 hcc_consolidated_dir = Path("results/HCC/consolidated")
 if hcc_consolidated_dir.exists():
-    # Get the most recent PICO and Outcomes files for HCC
-    pico_files = list(hcc_consolidated_dir.glob("*consolidated_picos*.json"))
-    outcome_files = list(hcc_consolidated_dir.glob("*consolidated_outcomes*.json"))
+    # Test set analysis
+    print("\n--- HCC Test Set Analysis ---")
+    test_pico_files = list(hcc_consolidated_dir.glob("*consolidated_picos_test*.json"))
+    test_outcome_files = list(hcc_consolidated_dir.glob("*consolidated_outcomes_test*.json"))
     
-    if pico_files and outcome_files:
-        # Sort by modification time and get the most recent
-        pico_file = max(pico_files, key=os.path.getmtime)
-        outcome_file = max(outcome_files, key=os.path.getmtime)
+    if test_pico_files and test_outcome_files:
+        test_pico_file = max(test_pico_files, key=os.path.getmtime)
+        test_outcome_file = max(test_outcome_files, key=os.path.getmtime)
         
-        print(f"Analyzing HCC PICO data from: {pico_file}")
-        print(f"Analyzing HCC Outcomes data from: {outcome_file}")
+        print(f"Analyzing HCC Test PICO data from: {test_pico_file}")
+        print(f"Analyzing HCC Test Outcomes data from: {test_outcome_file}")
         print()
         
         try:
-            # Run comprehensive analysis for HCC
-            pico_analyzer_hcc, outcome_analyzer_hcc, visualizer_hcc = run_complete_analysis(
-                pico_file_path=str(pico_file),
-                outcome_file_path=str(outcome_file)
+            pico_analyzer_hcc_test, outcome_analyzer_hcc_test, visualizer_hcc_test = run_complete_analysis(
+                pico_file_path=str(test_pico_file),
+                outcome_file_path=str(test_outcome_file),
+                output_suffix="_test"
             )
-            print("HCC analysis completed successfully!")
+            print("HCC test set analysis completed successfully!")
         except Exception as e:
-            print(f"Error in HCC analysis: {e}")
+            print(f"Error in HCC test set analysis: {e}")
             import traceback
             traceback.print_exc()
-            
     else:
-        print("Warning: Could not find consolidated HCC PICO or Outcomes files.")
-        if not pico_files:
-            print("Missing HCC PICO files in results/HCC/consolidated/")
-        if not outcome_files:
-            print("Missing HCC Outcomes files in results/HCC/consolidated/")
-            
+        print("Warning: Could not find HCC test set consolidated files.")
+        if not test_pico_files:
+            print("Missing HCC PICO test files in results/HCC/consolidated/")
+        if not test_outcome_files:
+            print("Missing HCC Outcomes test files in results/HCC/consolidated/")
 else:
     print("Warning: results/HCC/consolidated directory not found.")
     print("Make sure the HCC consolidation step completed successfully.")
 
+# Summary statistics for train/test splits
+print("\n" + "="*100)
+print("TRAIN/TEST SPLIT SUMMARY")
+print("="*100)
+
+def print_split_summary(case_name, case_dir):
+    """Print summary statistics for train/test split."""
+    consolidated_dir = Path(f"results/{case_name}/consolidated")
+    if not consolidated_dir.exists():
+        print(f"{case_name}: No consolidated directory found")
+        return
+    
+    train_files = len(list(consolidated_dir.glob("*_train_*.json")))
+    test_files = len(list(consolidated_dir.glob("*_test_*.json")))
+    
+    print(f"{case_name}:")
+    print(f"  Training files: {train_files}")
+    print(f"  Test files: {test_files}")
+    
+    # Count countries in each split if files exist
+    train_pico_files = list(consolidated_dir.glob("*consolidated_picos_train*.json"))
+    test_pico_files = list(consolidated_dir.glob("*consolidated_picos_test*.json"))
+    
+    if train_pico_files:
+        try:
+            with open(train_pico_files[0], 'r', encoding='utf-8') as f:
+                train_data = json.load(f)
+            train_countries = train_data.get("consolidation_metadata", {}).get("source_countries", [])
+            print(f"  Training countries: {', '.join(train_countries) if train_countries else 'None'}")
+        except:
+            print(f"  Training countries: Unable to read")
+    
+    if test_pico_files:
+        try:
+            with open(test_pico_files[0], 'r', encoding='utf-8') as f:
+                test_data = json.load(f)
+            test_countries = test_data.get("consolidation_metadata", {}).get("source_countries", [])
+            print(f"  Test countries: {', '.join(test_countries) if test_countries else 'None'}")
+        except:
+            print(f"  Test countries: Unable to read")
+    
+    print()
+
+import json
+print_split_summary("NSCLC", "results/NSCLC")
+print_split_summary("HCC", "results/HCC")

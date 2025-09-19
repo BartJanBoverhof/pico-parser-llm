@@ -1,0 +1,109 @@
+{
+  "outcomes_metadata": {
+    "timestamp": "2025-09-19T14:38:39.755853",
+    "indication": "treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context",
+    "consolidation_type": "outcomes",
+    "data_split": "test",
+    "total_unique_outcomes": 34,
+    "source_countries": [
+      "DE",
+      "DK",
+      "EN",
+      "EU",
+      "FR",
+      "PT",
+      "SE"
+    ],
+    "source_types": [
+      "clinical_guideline",
+      "hta_submission"
+    ]
+  },
+  "consolidated_outcomes": {
+    "efficacy": {
+      "survival_endpoints": [
+        "Overall survival (OS; defined as time from randomisation to death from any cause) [DE, DK, EN, FR, PT, SE, clinical_guideline, hta_submission]",
+        "Progression-free survival (PFS; defined as time from randomisation until disease progression or death from any cause; may be assessed by independent, blinded review panel per RECIST 1.1 or investigator-assessed) [DE, DK, EN, FR, PT, SE, clinical_guideline, hta_submission]",
+        "Event-free survival [DK, PT, hta_submission]",
+        "Time to progression (TTP) [DK, PT, hta_submission]",
+        "Progression after next line of therapy (PFS2) [DK, hta_submission]",
+        "Time to next treatment (TTNT) [DK, PT, hta_submission]",
+        "Treatment duration / Duration of treatment [DK, PT, hta_submission]",
+        "Prolonged survival [SE, clinical_guideline]",
+        "Survival (not otherwise specified) [DE, clinical_guideline]"
+      ],
+      "response_measures": [
+        "Objective response rate (ORR; also called response rates; defined as proportion of patients with complete or partial response, may be measured by RECIST 1.1 or by independent review committee) [DK, EN, FR, PT, DE, DK, EN, FR, PT, SE, clinical_guideline, hta_submission]",
+        "Disease control rate (proportion of patients with complete, partial, or stable disease for at least 5 weeks) [DK, FR, PT, hta_submission]",
+        "Time to response (time from treatment initiation to first complete or partial response) [DK, FR, PT, hta_submission]",
+        "Duration of response (DoR; time from first partial or complete response to first relapse or progression per RECIST 1.1 or death from any cause) [DK, FR, PT, hta_submission]",
+        "Response rates (measured by RECIST criteria) [DK, DE, clinical_guideline]",
+        "Symptom control [SE, clinical_guideline]"
+      ],
+      "progression_measures": [
+        "Investigator-assessed progression-free survival [DK, hta_submission]",
+        "Sensitivity analysis of progression-free survival (considering initiation of new anti-cancer therapy as a PFS event) [FR, hta_submission]"
+      ]
+    },
+    "safety": {
+      "adverse_events": [
+        "Adverse events (AEs; including all grades and grade ≥3, collected according to CTCAE v5.0 or v4.03, or graded by CTCAE) [DK, EN, FR, PT, DK, EN, FR, PT, DK, clinical_guideline, hta_submission]",
+        "Serious adverse events (Grade 3-4) [PT, FR, hta_submission]",
+        "Mortality-related toxicity [PT, hta_submission]",
+        "Tolerability profile [FR, hta_submission]",
+        "Potential risk of serious side effects on the skin [FR, clinical_guideline]",
+        "Adverse effects [EN, clinical_guideline]",
+        "Side effects [DE, hta_submission]",
+        "Diarrhoea (adverse event) [DK, clinical_guideline]",
+        "ALT increase (adverse event) [DK, clinical_guideline]",
+        "AST increase (adverse event) [DK, clinical_guideline]",
+        "Neutropenia (adverse event) [DK, clinical_guideline]",
+        "Fatigue (adverse event) [DK, clinical_guideline]",
+        "Febrile neutropenia (adverse event) [DK, clinical_guideline]"
+      ],
+      "serious_events": [
+        "Serious undesirable effects [FR, hta_submission]"
+      ],
+      "discontinuations": [
+        "Discontinuation due to adverse events (time from first dose until discontinuation due to AEs) [DK, EN, FR, PT, hta_submission]"
+      ]
+    },
+    "quality_of_life": {
+      "patient_reported_outcomes": [
+        "Health-related quality of life (HRQoL; measured using EORTC QLQ-C30, EORTC QLQ-LC13, BPI-SF, FACT-G GP5, PGI-C questionnaires, or EORTC QLQ; may include adjustment for multiplicity in analyses of median survival for certain QoL dimensions) [DE, DK, EN, FR, PT, SE, clinical_guideline, hta_submission]",
+        "Patient-reported outcomes (PROMs; including EORTC QLQ) [DK, hta_submission]",
+        "Quality-adjusted life years (QALYs) [DK, SE, hta_submission]"
+      ],
+      "functional_status": [
+        "Time to deterioration of overall health status [PT, hta_submission]",
+        "Time to deterioration of physical functioning [PT, hta_submission]",
+        "Overall condition (Karnofsky or ECOG performance status) [DE, clinical_guideline]",
+        "Preservation of quality of life [SE, clinical_guideline]"
+      ],
+      "symptom_measures": [
+        "Endpoints on symptomatology and health status [DE, hta_submission]"
+      ]
+    },
+    "economic": {
+      "cost_effectiveness": [
+        "Cost-effectiveness (incremental cost-effectiveness ratio, ICER; cost per QALY achieved; modelled as mean overall and progression-free survival, incremental cost-effectiveness ratio) [DK, EN, SE, hta_submission]"
+      ],
+      "utilities": [
+        "Utility values in the progression-free health state (visual analogue scale) [EN, hta_submission]",
+        "Treatment-related disutility for intravenous administration [EN, hta_submission]"
+      ],
+      "resource_utilization": [
+        "Resource use estimates [DK, EN, SE, hta_submission]"
+      ]
+    },
+    "other": {
+      "exploratory_endpoints": [
+        "Treatment duration [DK, PT, hta_submission]",
+        "Time to response [DK, FR, PT, hta_submission]"
+      ],
+      "biomarkers": [
+        "Mutation status determination (KRAS G12C mutation, DNA sequencing or multiplex RT-PCR panel assays) [EU, clinical_guideline]"
+      ]
+    }
+  }
+}

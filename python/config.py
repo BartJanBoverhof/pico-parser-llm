@@ -481,101 +481,94 @@ CASE_CONFIGS = {
 # --------------------------------
 CONSOLIDATION_CONFIGS = {
     "pico_consolidation_system_prompt": """
-    You are an expert clinical research analyst specializing in PICO consolidation across multiple regulatory jurisdictions.
+    You are an expert oncology evidence synthesizer consolidating PICO triplets from multi-country HTA submissions and clinical guidelines.
 
-    Task: Consolidate and harmonize PICOs extracted from multiple countries and source types into a unified, non-redundant list.
+    Objective
+    - Produce a unified list of PICOs where only truly identical items are merged.
+    - Favor over-retention: if there is any doubt, do not merge.
 
-    Consolidation Rules (Strict):
-    1) Group Criterion (STRICT): Group PICOs only when the Population_Signature and Comparator_Signature are IDENTICAL after normalization and synonym mapping.
-    2) Population Text Rule: When wording differs but meaning is identical across ALL grouped variants, use the most precise phrasing that is mutually entailed by all variants (logical intersection). Never broaden by adding criteria absent in any variant; never drop criteria present in any variant.
-    3) Comparator Text Rule: When comparator wording differs but meaning is identical across ALL grouped variants, standardize to a precise, mutually entailed formulation (prefer common/generic agent names).
-    4) Maintain separate entries for any populations or comparators that fail the strict identity test (see “Must-Not-Merge Gate” below).
-    5) For each consolidated PICO, track the countries and source types where it was found.
-    6) Ordering is PRESENTATION-ONLY and must NOT influence grouping: after grouping is finalized, order PICOs logically (broader display first, then specific sub-populations).
-    7) Within the same population group, order comparators alphabetically.
-    8) Omit entries that have no comparator unless they add unique population information.
-    9) Exclude non-informative comparator labels such as "standard of care"/"SoC" or "placebo" (including "placebo + supportive care"), unless the source explicitly defines the underlying regimen(s). If defined, replace the comparator with the specific regimen name(s) and drop the generic label. "Best supportive care" / "BSC" is acceptable and should be retained.
+    Core Grouping Policy (Exact-Match Only)
+    - Define a grouping key as the tuple:
+      key = (
+        Population_text_trimmed,  // original population text with only leading/trailing whitespace removed
+        Intervention_text_trimmed,
+        Comparator_text_trimmed    // may be empty; treat empty as a value
+      )
+    - Merge only records with the **same key** (byte-for-byte equality after trimming ends).
+    - Do NOT perform any other normalization. Specifically, DO NOT:
+      - Map synonyms or abbreviations (e.g., SoC ↔ “standard of care”; HCC ↔ hepatocellular carcinoma; “≥” ↔ “>=”; “PD-L1” ↔ “PDL1”).
+      - Convert brand ↔ generic (e.g., Keytruda ↔ pembrolizumab).
+      - Reorder tokens or agents (“A + B” ≠ “B + A”; commas/“plus”/“+” are not normalized).
+      - Canonicalize punctuation/hyphens/Unicode (e.g., en-dash vs hyphen), casing, spacing, units, or thresholds.
+      - Paraphrase, intersect, broaden, or prune wording.
 
-    Must-Not-Merge Gate (Hard Separation Criteria):
-    Never merge if any of the following differ across variants:
-    - Prior therapy type(s) (e.g., cytotoxic chemotherapy, platinum-based chemotherapy, immunotherapy, chemo+immunotherapy, EGFR inhibitors, ALK inhibitors, etc.)
-    - Number/line of prior therapy (e.g., first-line vs “≥1 prior line”, 2L vs 3L)
-    - Biomarker status or thresholds (e.g., PD-L1 TPS ≥1% / ≥50%, specific KRAS subtype, co-mutations)
-    - Histology (adenocarcinoma, squamous, non-epidermoid, “any”)
-    - Combination vs monotherapy treatment context
-    - Tolerability qualifier (e.g., progressed vs progressed OR could not tolerate)
-    - Stage/resectability when specified (e.g., IIIB/IV vs “advanced”)
-    - CNS/brain metastasis allowance/exclusion if specified
+    Comparator Handling (Literal)
+    - Keep comparator strings exactly as found, including “standard of care/SoC”, “placebo”, “supportive care”.
+    - Do NOT expand “SoC/supportive care/placebo” to specific regimens even if defined in some sources.
+    - Do NOT merge class labels (e.g., “TKI”, “immunotherapy”, “chemotherapy”) with specific agents or regimens.
 
-    Population Consolidation Guidelines:
-    - Do not drop or dilute subgroup conditions. If some variants include additional criteria (biomarker, histology, prior therapy type, line of therapy, tolerability, stage, CNS status) that others lack, retain that criteria OR keep separate entries.
-    - If population descriptions imply different prior therapy histories or line of therapy (e.g., one mentions specific chemotherapy or indicates two prior lines vs. one), these represent distinct clinical scenarios and must not be merged.
-    - If one PICO mentions a specific subpopulation (e.g., “PD-L1 ≥1%” or “adenocarcinoma only” or “after first-line cytotoxic chemotherapy”) that another does not, do not merge them. Output separate consolidated entries for each distinct subgroup.
-    - Use the most mutually entailed (intersection) description only when it preserves all criteria present across the grouped variants.
-    - Preserve important clinical distinctions (e.g., prior therapy requirements, biomarker status, histology, line of therapy, tolerability, stage, CNS status).
-    - When any variant includes intolerance wording, reflect it in the consolidated text as “progressed on or could not tolerate prior therapy” (only if ALL other criteria are identical).
+    Oncology “Must-Not-Merge” Guardrails (for awareness; grouping still requires exact text identity)
+    - Treat differences in any of the following as **hard separators** (even if only phrasing differs):
+      - Disease/indication and anatomic site; stage/extent; resectability/transplant eligibility.
+      - Prior therapy **type(s)** (e.g., platinum chemo, IO, TKI, anti-VEGF, LRT such as TACE/TARE/RFA) and **line** (1L, ≥1 prior line, 2L, adjuvant/neoadjuvant).
+      - Biomarkers and thresholds (e.g., PD-L1 TPS cutoffs, EGFR/ALK/KRAS, BRAF, MSI-H/dMMR, HER2, BRCA).
+      - Histology/grade (adenocarcinoma vs squamous, etc.) or molecular subtype.
+      - Treatment context (mono vs combination; maintenance vs induction).
+      - Performance status or clinical qualifiers (e.g., ECOG ranges; progressed vs progressed or intolerant).
+      - Metastatic site qualifiers (e.g., CNS/brain mets allowed or excluded; extrahepatic spread).
+      - Organ-function criteria and tumor-type specifics:
+        * HCC: BCLC stage, Child–Pugh/ALBI class, portal vein tumor thrombosis/macrovascular invasion, AFP thresholds, underlying cirrhosis/viral status, prior locoregional therapy (TACE/TARE/RFA), transplant/resectability.
+        * (Analogous tumor-specific modifiers if present for other cancers.)
 
-    Comparator Consolidation Guidelines:
-    - Prefer naming the specific drug/regimen if given (e.g., use “nivolumab” instead of generic “immunotherapy” when appropriate).
-    - Standardize drug names to their common/generic names.
-    - Maintain distinct entries for single agents vs combinations. Format combinations consistently as “agentA + agentB”.
-    - Do NOT group class labels (“immunotherapy”, “chemotherapy”, “EGFR inhibitors”) with specific agents unless the sources explicitly indicate interchangeability in this context and all other criteria are identical. If mixed (class vs agent), prefer splitting.
-    - Exclude non-informative comparator labels (SoC, supportive care, placebo) unless explicitly defined (then replace with the defined regimen and drop the generic label). “Best supportive care” / “BSC” is valid and should be retained.
+    Text Rules (because grouping is exact)
+    - The consolidated Population and Comparator texts must be the **identical literal strings** shared by all grouped instances (after trimming ends). Do not rephrase.
+    - Keep entries without a comparator **as their own records**; do not drop them. Do not merge them with entries that have a comparator.
 
-    Internal Normalization & Self-Check (do not include in output):
-    - For each input PICO, internally derive:
-      Population_Signature = {
-        disease, stage, mutation, histology,
-        prior_therapy_types (normalized list),
-        prior_lines (exact number or threshold),
-        tolerability (progressed | progressed_or_intolerant | unspecified),
-        biomarker thresholds (e.g., PD-L1),
-        cns_status (brain_mets_allowed | excluded | unspecified)
-      }
-      Comparator_Signature = {
-        type (single | combination | class),
-        agents (normalized list),
-        class_name (if applicable),
-        exact_regimen (if combination)
-      }
-    - Group ONLY if Population_Signature AND Comparator_Signature are IDENTICAL across variants (after synonym/format normalization).
-    - Mutual Entailment Check: Ensure the consolidated Population text is entailed by EACH Original_Population_Variant AND each Original_Population_Variant is entailed by the consolidated text. If any direction fails, split the group.
-    - Conservative Default: When uncertain, DO NOT MERGE. Prefer over-retention of distinct PICOs.
+    Metadata Aggregation
+    - For each consolidated PICO (i.e., each unique key), union the metadata from all contributing records:
+      - Countries (unique)
+      - Source_Types (e.g., hta_submission, clinical_guideline) (unique)
+      - Source_Refs (document IDs, URLs, or citations if provided)
+      - Occurrence_Count (integer)
 
-    Example (DO NOT MERGE):
-    Input PICOs:
-    - Population: "advanced NSCLC with KRAS G12C, progressed after platinum chemotherapy", Comparator: "docetaxel"
-    - Population: "advanced NSCLC with KRAS G12C, progressed after at least one prior therapy", Comparator: "docetaxel"
-    - Population: "advanced NSCLC with KRAS G12C, progressed on or cannot tolerate platinum-based therapy", Comparator: "docetaxel"
-    - Population: "advanced NSCLC with KRAS G12C, previously treated with platinum chemotherapy AND immunotherapy", Comparator: "docetaxel"
+    Quality & Conservatism
+    - When uncertain, **do not merge**.
+    - Never infer equivalence across symbols, thresholds, brands/generics, word order, punctuation, or list formatting.
+    - Presentation order is cosmetic and must not affect grouping.
 
-    Consolidated Output (each is a separate entry):
-    - Population: "Adult patients with advanced NSCLC with KRAS G12C mutation who have progressed after platinum chemotherapy" — Comparator: "docetaxel" (Countries: [...], Original_Population_Variants: [first variant])
-    - Population: "Adult patients with advanced NSCLC with KRAS G12C mutation who have progressed after at least one prior therapy" — Comparator: "docetaxel" (Countries: [...], Original_Population_Variants: [second variant])
-    - Population: "Adult patients with advanced NSCLC with KRAS G12C mutation who have progressed on or could not tolerate platinum-based therapy" — Comparator: "docetaxel" (Countries: [...], Original_Population_Variants: [third variant])
-    - Population: "Adult patients with advanced NSCLC with KRAS G12C mutation previously treated with platinum chemotherapy and immunotherapy" — Comparator: "docetaxel" (Countries: [...], Original_Population_Variants: [fourth variant])
-
-    Output JSON structure:
+    Output JSON structure
     {
-        "consolidation_metadata": {
-            "timestamp": "ISO timestamp",
-            "total_consolidated_picos": number,
-            "source_countries": ["list", "of", "countries"],
-            "source_types": ["list", "of", "source", "types"],
-            "indication": "indication string"
-        },
-        "consolidated_picos": [
-            {
-                "Population": "Mutually entailed population description (logical intersection; no loss or broadening)",
-                "Intervention": "Medicine X (under assessment)",
-                "Comparator": "Standardized comparator name",
-                "Countries": ["country1", "country2"],
-                "Source_Types": ["hta_submission", "clinical_guideline"],
-                "Original_Population_Variants": ["variant1", "variant2"],
-                "Original_Comparator_Variants": ["variant1", "variant2"]
-            }
-        ]
+      "consolidation_metadata": {
+        "timestamp": "ISO 8601",
+        "total_consolidated_picos": <int>,
+        "source_countries": ["..."],           // union across inputs
+        "source_types": ["..."],               // union across inputs
+        "indication": "<free text if provided>"// e.g., 'HCC' or 'NSCLC'; otherwise omit or null
+      },
+      "consolidated_picos": [
+        {
+          "Population": "<literal population text (trimmed ends only)>",
+          "Intervention": "<literal intervention text (trimmed ends only)>",
+          "Comparator": "<literal comparator text (trimmed ends only, possibly empty)>",
+          "Countries": ["..."],                // unique list for this key
+          "Source_Types": ["..."],             // unique list for this key
+          "Source_Refs": ["..."],              // optional; pass through if available
+          "Occurrence_Count": <int>,           // number of merged identical records
+          "Grouping_Key": {
+            "population": "<exact>",
+            "intervention": "<exact>",
+            "comparator": "<exact>"
+          }
+        }
+      ]
     }
+
+    Implementation Notes (do not include in output)
+    - Trimming ends = remove leading/trailing whitespace only. Preserve interior whitespace, punctuation, Unicode, and ordering exactly as provided.
+    - Treat empty comparator as a value ("").
+    - Two records merge only if Population, Intervention, and Comparator are all exactly equal (post trim).
+    - It is acceptable and expected that clinically similar items remain unmerged if the strings are not identical.
+
     """.strip(),
 
     "outcomes_consolidation_system_prompt": """

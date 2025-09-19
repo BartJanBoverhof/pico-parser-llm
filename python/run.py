@@ -672,7 +672,8 @@ class RagPipeline:
     def run_pico_consolidation(
         self,
         source_types: List[str],
-        indication: Optional[str] = None
+        indication: Optional[str] = None,
+        test_set: bool = False
     ):
         """
         Run PICO and outcomes consolidation across multiple source types.
@@ -680,6 +681,7 @@ class RagPipeline:
         Args:
             source_types: List of source types to consolidate
             indication: Medical indication (optional)
+            test_set: If True, use test countries; if False, use train countries
             
         Returns:
             Dictionary with consolidation results
@@ -688,8 +690,9 @@ class RagPipeline:
             print("PICO consolidator not initialized. Please run initialize_pico_consolidator first.")
             return None
         
+        split_name = "test" if test_set else "train"
         case_info = f" for case '{self.case}'" if self.case else ""
-        print(f"Running PICO and outcomes consolidation across {len(source_types)} source types{case_info}...")
+        print(f"Running PICO and outcomes consolidation across {len(source_types)} source types{case_info} ({split_name} set)...")
         
         # Check if PICO files exist for the requested source types
         existing_source_types = []
@@ -705,12 +708,129 @@ class RagPipeline:
             print(f"No PICO extraction files found for consolidation{case_info}. Please run PICO extraction first.")
             return None
         
-        # Run consolidation using the consolidate_all method
+        # Run consolidation using the consolidate_all method with test_set parameter
         results = self.pico_consolidator.consolidate_all(
-            source_types=existing_source_types
+            source_types=existing_source_types,
+            test_set=test_set
         )
         
         return results
+
+    def extract_picos_hta_with_retrieval(
+        self,
+        countries: List[str],
+        indication: str,
+        initial_k_pc: int = 50,
+        final_k_pc: int = 20,
+        initial_k_outcomes: int = 40,
+        final_k_outcomes: int = 15,
+        drug_keywords: Optional[List[str]] = None,
+        mutation_boost_terms: Optional[List[str]] = None
+    ):
+        """
+        Extract PICOs from HTA submissions using retrieval pipeline.
+        
+        Args:
+            countries: List of country codes
+            indication: Medical indication
+            initial_k_pc: Initial retrieval count for Population & Comparator
+            final_k_pc: Final retrieval count for Population & Comparator
+            initial_k_outcomes: Initial retrieval count for Outcomes
+            final_k_outcomes: Final retrieval count for Outcomes
+            drug_keywords: List of drug keywords for filtering
+            mutation_boost_terms: List of mutation terms for boosting
+            
+        Returns:
+            Dictionary with extraction results
+        """
+        # Run Population & Comparator retrieval
+        self.run_population_comparator_retrieval_for_source_type(
+            source_type="hta_submission",
+            countries=countries,
+            indication=indication,
+            initial_k=initial_k_pc,
+            final_k=final_k_pc,
+            drug_keywords=drug_keywords,
+            mutation_boost_terms=mutation_boost_terms
+        )
+        
+        # Run Outcomes retrieval
+        self.run_outcomes_retrieval_for_source_type(
+            source_type="hta_submission",
+            countries=countries,
+            indication=indication,
+            initial_k=initial_k_outcomes,
+            final_k=final_k_outcomes,
+            drug_keywords=drug_keywords,
+            mutation_boost_terms=mutation_boost_terms
+        )
+        
+        # Run PICO extraction
+        return self.run_pico_extraction_for_source_type(
+            source_type="hta_submission",
+            indication=indication,
+            countries=countries
+        )
+
+    def extract_picos_clinical_with_retrieval(
+        self,
+        countries: List[str],
+        indication: str,
+        initial_k_pc: int = 50,
+        final_k_pc: int = 20,
+        initial_k_outcomes: int = 40,
+        final_k_outcomes: int = 15,
+        required_terms: Optional[List[List[str]]] = None,
+        mutation_boost_terms: Optional[List[str]] = None,
+        drug_keywords: Optional[List[str]] = None
+    ):
+        """
+        Extract PICOs from clinical guidelines using retrieval pipeline.
+        
+        Args:
+            countries: List of country codes
+            indication: Medical indication
+            initial_k_pc: Initial retrieval count for Population & Comparator
+            final_k_pc: Final retrieval count for Population & Comparator
+            initial_k_outcomes: Initial retrieval count for Outcomes
+            final_k_outcomes: Final retrieval count for Outcomes
+            required_terms: List of required term combinations
+            mutation_boost_terms: List of mutation terms for boosting
+            drug_keywords: List of drug keywords for filtering
+            
+        Returns:
+            Dictionary with extraction results
+        """
+        # Run Population & Comparator retrieval
+        self.run_population_comparator_retrieval_for_source_type(
+            source_type="clinical_guideline",
+            countries=countries,
+            indication=indication,
+            initial_k=initial_k_pc,
+            final_k=final_k_pc,
+            required_terms=required_terms,
+            mutation_boost_terms=mutation_boost_terms,
+            drug_keywords=drug_keywords
+        )
+        
+        # Run Outcomes retrieval
+        self.run_outcomes_retrieval_for_source_type(
+            source_type="clinical_guideline",
+            countries=countries,
+            indication=indication,
+            initial_k=initial_k_outcomes,
+            final_k=final_k_outcomes,
+            required_terms=required_terms,
+            mutation_boost_terms=mutation_boost_terms,
+            drug_keywords=drug_keywords
+        )
+        
+        # Run PICO extraction
+        return self.run_pico_extraction_for_source_type(
+            source_type="clinical_guideline",
+            indication=indication,
+            countries=countries
+        )
 
     def run_case_based_pipeline_with_retrieval(
         self,
@@ -725,7 +845,8 @@ class RagPipeline:
         skip_processing: bool = True,
         skip_translation: bool = True,
         vectorstore_type: Optional[str] = None,
-        run_consolidation: bool = False
+        run_consolidation: bool = False,
+        test_set: bool = False
     ):
         """
         Run pipeline using retrieval for a specific case configuration.
@@ -743,6 +864,7 @@ class RagPipeline:
             skip_translation: Skip translation
             vectorstore_type: Vectorstore type to use
             run_consolidation: Whether to run PICO and outcomes consolidation
+            test_set: If True, use test countries; if False, use train countries
         
         Returns:
             Dictionary with extracted PICOs for each source type and consolidation results
@@ -823,9 +945,11 @@ class RagPipeline:
             
             # Run consolidation if requested
             if run_consolidation:
-                print("\n=== Running PICO and Outcomes Consolidation ===")
+                split_name = "test" if test_set else "train"
+                print(f"\n=== Running PICO and Outcomes Consolidation for {split_name} set ===")
                 consolidation_results = self.run_pico_consolidation(
-                    source_types=source_types
+                    source_types=source_types,
+                    test_set=test_set
                 )
                 results["consolidation"] = consolidation_results
             
