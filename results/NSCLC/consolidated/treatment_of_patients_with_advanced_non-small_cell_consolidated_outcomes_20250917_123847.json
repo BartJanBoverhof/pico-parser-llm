@@ -1,0 +1,102 @@
+{
+  "outcomes_metadata": {
+    "timestamp": "2025-09-17T12:38:47.143438",
+    "indication": "treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context",
+    "consolidation_type": "outcomes",
+    "total_unique_outcomes": 36,
+    "source_countries": [
+      "AT",
+      "DE",
+      "DK",
+      "EN",
+      "EU",
+      "FR",
+      "NL",
+      "PO",
+      "PT",
+      "SE"
+    ],
+    "source_types": [
+      "clinical_guideline",
+      "hta_submission"
+    ]
+  },
+  "consolidated_outcomes": {
+    "efficacy": {
+      "survival_endpoints": [
+        "Overall survival (OS; defined as time from randomization to death from any cause)",
+        "Progression-free survival (PFS; defined as time from randomization until disease progression or death from any cause; may be assessed by investigator, independent review, or RECIST 1.1)",
+        "Event-free survival",
+        "Time to progression (TTP)",
+        "Progression after next line of therapy (PFS2)",
+        "Time to next treatment (TTNT)",
+        "Prolonged survival"
+      ],
+      "response_measures": [
+        "Objective response rate (ORR; also called overall response rate or response rate; measured by RECIST 1.1 or other criteria, assessed by investigator or independent review committee)",
+        "Disease control rate (DCR; proportion of patients with complete, partial, or stable disease for at least 5 weeks)",
+        "Time to response (time from treatment initiation to first complete or partial response)",
+        "Duration of response (DoR; time from first partial or complete response to first relapse or progression per RECIST 1.1 or death from any cause)",
+        "Treatment duration (duration of treatment)"
+      ],
+      "progression_measures": [
+        "Investigator-assessed progression-free survival",
+        "Sensitivity analysis of progression-free survival (considering initiation of new anti-cancer therapy as a PFS event)"
+      ]
+    },
+    "safety": {
+      "adverse_events": [
+        "Adverse events (AEs; including all grades and grade ≥3, collected according to CTCAE v5.0 or v4.03, or graded by CTCAE; includes treatment-related adverse events, adverse reactions, and specific events such as diarrhoea, ALT increase, AST increase, neutropenia, fatigue, febrile neutropenia, anaemia, headache, cough, shortness of breath, nausea, vomiting, constipation, abdominal pain, joint pain, back pain, fever, increased asparaginase aminotransferase activity, increased alanine aminotransferase activity, gastrointestinal, hepatic, renal, QTc prolongation)",
+        "Adverse effects (unspecified)",
+        "Tolerability profile",
+        "Potential risk of serious side effects on the skin"
+      ],
+      "serious_events": [
+        "Serious adverse events (SAEs; Grade 3-4, including incidence of serious undesirable effects, treatment-related adverse reactions grade 3 or higher, adverse events resulting in death, mortality-related toxicity)"
+      ],
+      "discontinuations": [
+        "Discontinuation due to adverse events (time from first dose until discontinuation due to AEs; includes adverse events leading to discontinuation, dose modification, or death)"
+      ]
+    },
+    "quality_of_life": {
+      "patient_reported_outcomes": [
+        "Health-related quality of life (HRQoL; measured using EORTC QLQ-C30, EORTC QLQ-LC13, BPI-SF, FACT-G GP5, PGI-C questionnaires, or unspecified instruments)",
+        "Patient-reported outcomes (PROMs; including EORTC QLQ)",
+        "Quality of life (unspecified)",
+        "Preservation of quality of life"
+      ],
+      "functional_status": [
+        "Overall condition (Karnofsky or ECOG performance status)",
+        "Time to deterioration of physical functioning"
+      ],
+      "symptom_measures": [
+        "Endpoints on symptomatology and health status",
+        "Symptom control",
+        "Time to deterioration of overall health status"
+      ]
+    },
+    "economic": {
+      "cost_effectiveness": [
+        "Cost-effectiveness (incremental cost-effectiveness ratio, ICER; cost per QALY achieved; modelled as mean overall and progression-free survival, incremental cost-effectiveness ratio)",
+        "Budget impact analysis"
+      ],
+      "utilities": [
+        "Quality-adjusted life years (QALYs)",
+        "Treatment-related disutility for intravenous administration",
+        "Utility values in the progression-free health state (visual analogue scale)"
+      ],
+      "resource_utilization": [
+        "Resource use estimates"
+      ]
+    },
+    "other": {
+      "exploratory_endpoints": [
+        "Time to death (as a measure of HRQoL)",
+        "Adjustment for multiplicity in analyses of median survival for certain quality of life dimensions"
+      ],
+      "biomarkers": [
+        "Mutation status determination (KRAS G12C mutation, DNA sequencing or multiplex RT-PCR panel assays)"
+      ]
+    }
+  }
+}

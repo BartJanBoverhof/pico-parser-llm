@@ -169,6 +169,8 @@ class PICOExtractor:
                 context_block=context
             )
             
+            input_tokens = self.count_tokens(system_prompt) + self.count_tokens(user_prompt)
+            
             if model_override and isinstance(model_override, ChatOpenAI):
                 messages = [
                     SystemMessage(content=system_prompt),
@@ -189,6 +191,9 @@ class PICOExtractor:
                     max_tokens=2000
                 )
                 result_text = response.choices[0].message.content
+            
+            output_tokens = self.count_tokens(result_text) if result_text else 0
+            print(f"Population+Comparator extraction - Input tokens: {input_tokens}, Output tokens: {output_tokens}")
             
             try:
                 result = json.loads(result_text)
@@ -247,6 +252,8 @@ class PICOExtractor:
                 context_block=context
             )
             
+            input_tokens = self.count_tokens(system_prompt) + self.count_tokens(user_prompt)
+            
             if model_override and isinstance(model_override, ChatOpenAI):
                 messages = [
                     SystemMessage(content=system_prompt),
@@ -267,6 +274,9 @@ class PICOExtractor:
                     max_tokens=2000
                 )
                 result_text = response.choices[0].message.content
+            
+            output_tokens = self.count_tokens(result_text) if result_text else 0
+            print(f"Outcomes extraction - Input tokens: {input_tokens}, Output tokens: {output_tokens}")
             
             try:
                 result = json.loads(result_text)

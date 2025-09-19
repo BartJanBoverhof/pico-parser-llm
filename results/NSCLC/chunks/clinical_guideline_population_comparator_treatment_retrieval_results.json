@@ -1,12 +1,12 @@
 {
   "retrieval_metadata": {
-    "timestamp": "2025-09-10T09:57:22.541163",
+    "timestamp": "2025-09-17T10:18:54.963379",
     "source_type": "clinical_guideline",
     "retrieval_type": "population_comparator",
-    "query": "Find treatment recommendations with population and comparator information relevant to: treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context.\n        Prefer content that states:\n        - Applicable populations and sub-populations (biomarkers/testing, prior therapy/line, inclusion/exclusion)\n        - Recommended treatment options and alternatives/SoC that could serve as comparators\n        - Treatment sequencing and line of therapy considerations\n        - Patient selection criteria and biomarker requirements\n        Focus on guideline recommendations for specific patient populations and treatment alternatives.",
+    "query": "Find treatment recommendations with population and comparator information relevant to: treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context.\n        Prefer content that states:\n        - Applicable populations and sub-populations (biomarkers/testing, prior therapy/line, inclusion/exclusion)\n        - Recommended treatment options and alternatives that could serve as comparators\n        - Treatment sequencing and line of therapy considerations\n        - Patient selection criteria and biomarker requirements\n        Focus on guideline recommendations for specific patient populations and treatment alternatives.",
     "indication": "treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context",
     "total_countries": 15,
-    "total_chunks": 50
+    "total_chunks": 49
   },
   "results_by_country": {
     "AT": {
@@ -38,6 +38,25 @@
           }
         },
         {
+          "text": "**Heading:** Investigation note **Source Type:** clinical_guideline\n\nUltrasound Abdominal FDG-PET-CT1 for curative treatment design EUS/ EBUS2 with biopsy for V. a. mediastinal lymph node infection Mediastinoscopy (VAM3, VAMLA3) if insufficient mediastinal staging cannot be obtained by video-assisted thoracoscopy if necessary (VATS3) MRT4 Cranium Method of first choice for the diagnosis of fragile metabolic CT5 Cranium if MRI4 Cranio is not feasible Bone scintigraphy if FD GET-PT1 is non-feasible CT5 Abdomen (including adjoining kidneys, if F D GET -PT1 underlying liver and pelvic area is not Feasible) MRI4 Whole body alternative, FG T-PT if there is no evidence of a lack of alternative therapy not indicated for short-term therapy, and pleural effusion, if necessary. Clinical stages IV: ALK translocations BRAF V600 mutation EGFR activating mutations Exon 18-21 plus T790 HER2 mutations KRAS-G12C mutation c-MET Exon 14 skipping mutation NTRK translocations RET translocation ROS1 translocated Legends: 1 FDG-PET-CT Positron emission tomography with computed tomography; 2 EUS/EBE endocrine ultrasound with fecal biopsy; 3 VAM video: mediastinopresistive lymphadenomy, 4 mediastinal magnetic resonance imaging (MRT) MRI; 5 Magnetic field imaging of the prostate gland (MRI), which may be performed in conjunction with a CT scan. As of 1 January 2017, the stadium classification according to IASLC/UICC8 has been revised.",
+          "metadata": {
+            "heading": "Investigation note",
+            "doc_id": "lungenkarzinom-nicht-kleinzellig-nsclc",
+            "country": "AT",
+            "source_type": "clinical_guideline",
+            "start_page": 15,
+            "end_page": 15,
+            "created_date": "unknown_year",
+            "folder_path": "clinical guidelines/AT",
+            "split_index": 0,
+            "text_length": 1431,
+            "potential_comparators": [
+              "Clinical",
+              "As"
+            ]
+          }
+        },
+        {
           "text": "**Heading:** Figure 6: Algorithm for molecularly stratified therapy in advanced stages **Source Type:** clinical_guideline\n\n1 ALK Anaplastic Lymphoma Kinase; BRAF V600 in the majority V600E, but also other activating V600 mutations; EGFR Epidermal Growth Factor Receptor gene; HER2 mutations (not overexpressed); KRAS G12C mutation; c-MET Exon 14 Skipping Mutation; NTRK mutations gene fusions involving the NRTK gene (NTRK1, NTRk2, NTR K3); RET mutations ?? gene fusion involving RET; EGROS1 Tyrosine kinase ROS; 2 Currently valid additional information; 3 EGFR mutations that are uncommon, I TKI mutations most commonly seen in the epidermal growth factor receptor; 4 mutations associated with ALKI or duplicated mutations in the TKI; 5 mutations not specifically exhibited in combination with UCK1, TKI, TKI or TKI in patients with severe hypersensitivity to chemotherapy; 18 TKI and TKI exon 20 Incompatible mutations with UCKI alone; 20 or other non-sensitive mutations at the point of exposure to Ceratinib; 5 Metastases. 6 ROSi ROS1 inhibitor: crizotinib and entrectinib; other options include cabozantinib, ceritinb and lorlatinib.",
           "metadata": {
             "heading": "Figure 6: Algorithm for molecularly stratified therapy in advanced stages",
@@ -52,29 +71,10 @@
             "text_length": 1139,
             "potential_comparators": [
               "crizotinib",
-              "entrectinib",
               "lorlatinib",
+              "cabozantinib",
               "ceratinib",
-              "cabozantinib"
-            ]
-          }
-        },
-        {
-          "text": "**Heading:** Investigation note **Source Type:** clinical_guideline\n\nUltrasound Abdominal FDG-PET-CT1 for curative treatment design EUS/ EBUS2 with biopsy for V. a. mediastinal lymph node infection Mediastinoscopy (VAM3, VAMLA3) if insufficient mediastinal staging cannot be obtained by video-assisted thoracoscopy if necessary (VATS3) MRT4 Cranium Method of first choice for the diagnosis of fragile metabolic CT5 Cranium if MRI4 Cranio is not feasible Bone scintigraphy if FD GET-PT1 is non-feasible CT5 Abdomen (including adjoining kidneys, if F D GET -PT1 underlying liver and pelvic area is not Feasible) MRI4 Whole body alternative, FG T-PT if there is no evidence of a lack of alternative therapy not indicated for short-term therapy, and pleural effusion, if necessary. Clinical stages IV: ALK translocations BRAF V600 mutation EGFR activating mutations Exon 18-21 plus T790 HER2 mutations KRAS-G12C mutation c-MET Exon 14 skipping mutation NTRK translocations RET translocation ROS1 translocated Legends: 1 FDG-PET-CT Positron emission tomography with computed tomography; 2 EUS/EBE endocrine ultrasound with fecal biopsy; 3 VAM video: mediastinopresistive lymphadenomy, 4 mediastinal magnetic resonance imaging (MRT) MRI; 5 Magnetic field imaging of the prostate gland (MRI), which may be performed in conjunction with a CT scan. As of 1 January 2017, the stadium classification according to IASLC/UICC8 has been revised.",
-          "metadata": {
-            "heading": "Investigation note",
-            "doc_id": "lungenkarzinom-nicht-kleinzellig-nsclc",
-            "country": "AT",
-            "source_type": "clinical_guideline",
-            "start_page": 15,
-            "end_page": 15,
-            "created_date": "unknown_year",
-            "folder_path": "clinical guidelines/AT",
-            "split_index": 0,
-            "text_length": 1431,
-            "potential_comparators": [
-              "As",
-              "Clinical"
+              "entrectinib"
             ]
           }
         },
@@ -92,8 +92,8 @@
             "split_index": 0,
             "text_length": 758,
             "potential_comparators": [
-              "Data",
-              "Approved"
+              "Approved",
+              "Data"
             ]
           }
         },
@@ -111,10 +111,10 @@
             "split_index": 0,
             "text_length": 840,
             "potential_comparators": [
-              "It",
               "Early",
-              "If",
-              "ALK"
+              "It",
+              "ALK",
+              "If"
             ]
           }
         },
@@ -204,10 +204,10 @@
             "split_index": 3,
             "text_length": 980,
             "potential_comparators": [
-              "According",
-              "Patients",
+              "Testing",
               "asimginib",
-              "Testing"
+              "Patients",
+              "According"
             ]
           }
         },
@@ -225,11 +225,11 @@
             "split_index": 3,
             "text_length": 1044,
             "potential_comparators": [
-              "entrectinib",
+              "Patients",
               "trastuzumab",
-              "larotrectinib",
               "amivantamab",
-              "Patients"
+              "entrectinib",
+              "larotrectinib"
             ]
           }
         },
@@ -306,14 +306,14 @@
             "text_length": 667,
             "potential_comparators": [
               "NTRK",
-              "KRAS",
-              "RET",
-              "BRAF",
+              "ROS1",
               "MET",
-              "Rebioparsing",
-              "ALK",
               "ERBB2",
-              "ROS1"
+              "Rebioparsing",
+              "BRAF",
+              "RET",
+              "ALK",
+              "KRAS"
             ]
           }
         },
@@ -331,9 +331,9 @@
             "split_index": 2,
             "text_length": 790,
             "potential_comparators": [
+              "ntrectinib",
               "amivantamab",
               "larotrectinib",
-              "ntrectinib",
               "trastuzumab"
             ]
           }
@@ -352,10 +352,10 @@
             "split_index": "1_0_0",
             "text_length": 858,
             "potential_comparators": [
-              "Exon",
               "MAPK",
+              "DOLG",
               "Our",
-              "DOLG"
+              "Exon"
             ]
           }
         }
@@ -413,8 +413,8 @@
             "split_index": 0,
             "text_length": 844,
             "potential_comparators": [
-              "It",
-              "People"
+              "People",
+              "It"
             ]
           }
         },
@@ -451,12 +451,12 @@
             "split_index": 0,
             "text_length": 1311,
             "potential_comparators": [
-              "But",
-              "Sotorasib",
-              "Subject",
+              "Collecting",
               "So",
               "nintedanib",
-              "Collecting",
+              "Subject",
+              "But",
+              "Sotorasib",
               "All"
             ]
           }
@@ -500,22 +500,35 @@
           }
         },
         {
-          "text": "**Heading:** Indirect treatment comparison **Source Type:** clinical_guideline\n\nAll rights reserved. Subject to Notice of rights\nsmall\nbel\ns;\ng\ne\nd\ny\nm\nno\nease\nect\nus\ns\nus\nand-\nhea\nes\nade 8 of\nSotorasib for previously treated KRAS G12C mutation-positive advanced non-s lung cancer (TA781)\nsecondary analysis of sotorasib versus docetaxel plus nintedanib, the company regarded an MAIC as unfeasible. Therefore, a piecewise\napproach to hazard ratio estimates applied to the docetaxel arm of\nSELECT-1 was done using results from LUME-Lung 1, a randomised controlled trial comparing docetaxel with docetaxel plus nintedanib. A\nsupplementary analysis of sotorasib versus docetaxel was also done using a propensity score weighting analysis (PSWA) approach, using da\nfrom CodeBreaK100 for sotorasib and the chemotherapy arm of the\nAmgen Flatiron Health real-world evidence study.",
+          "text": "**Heading:** Contents **Source Type:** clinical_guideline\n\n1 Recommendations . 2 Information about sotorasib . Anticipated marketing authorisation indication . Dosage in the marketing authorisation . Price . 3 Committee discussion . The condition . Treatment pathway . Clinical evidence . Indirect treatment comparison . Assumptions in the economic model . Health-related quality of life . End of life . Cost-effectiveness estimates . Cancer Drugs Fund . Other factors . Conclusion . 4 Implementation . 5 Appraisal committee members and NICE proje\nAppraisal committee members . NICE project team . © NICE 2024. All rights reserved. Subject to Notice of rig\nutatio\nect te\nghts (h\non-po\neam . https:/\nositive\n//www\ne adv\nw.nice\nvanc\ne.org.u\nced no\nuk/term\non-s\nms-an\nsmall. nd- P\n-cell\nSotorasib for previously treated KRAS G12C mutation-positive advanced non-small-cell lung cancer (TA781)",
           "metadata": {
-            "heading": "Indirect treatment comparison",
+            "heading": "Contents",
             "doc_id": "lung_kras_EN",
             "country": "EN",
             "source_type": "clinical_guideline",
-            "start_page": 8,
-            "end_page": 11,
+            "start_page": 3,
+            "end_page": 4,
             "created_date": "20",
             "folder_path": "clinical guidelines/EN",
-            "split_index": 1,
-            "text_length": 872,
+            "split_index": 0,
+            "text_length": 888,
             "potential_comparators": [
-              "nintedanib",
+              "Clinical",
+              "All",
+              "Dosage",
+              "Conclusion",
+              "Indirect",
+              "Assumptions",
+              "End",
+              "Treatment",
+              "NICE",
+              "Cost-effectiveness",
+              "Other",
+              "Health-related",
               "Subject",
-              "Therefore"
+              "Price",
+              "Cancer",
+              "Anticipated"
             ]
           }
         },
@@ -536,35 +549,41 @@
           }
         },
         {
-          "text": "**Heading:** Contents **Source Type:** clinical_guideline\n\n1 Recommendations . 2 Information about sotorasib . Anticipated marketing authorisation indication . Dosage in the marketing authorisation . Price . 3 Committee discussion . The condition . Treatment pathway . Clinical evidence . Indirect treatment comparison . Assumptions in the economic model . Health-related quality of life . End of life . Cost-effectiveness estimates . Cancer Drugs Fund . Other factors . Conclusion . 4 Implementation . 5 Appraisal committee members and NICE proje\nAppraisal committee members . NICE project team . © NICE 2024. All rights reserved. Subject to Notice of rig\nutatio\nect te\nghts (h\non-po\neam . https:/\nositive\n//www\ne adv\nw.nice\nvanc\ne.org.u\nced no\nuk/term\non-s\nms-an\nsmall. nd- P\n-cell\nSotorasib for previously treated KRAS G12C mutation-positive advanced non-small-cell lung cancer (TA781)",
+          "text": "**Heading:** Indirect treatment comparison **Source Type:** clinical_guideline\n\nAll rights reserved. Subject to Notice of rights\nsmall\nbel\ns;\ng\ne\nd\ny\nm\nno\nease\nect\nus\ns\nus\nand-\nhea\nes\nade 8 of\nSotorasib for previously treated KRAS G12C mutation-positive advanced non-s lung cancer (TA781)\nsecondary analysis of sotorasib versus docetaxel plus nintedanib, the company regarded an MAIC as unfeasible. Therefore, a piecewise\napproach to hazard ratio estimates applied to the docetaxel arm of\nSELECT-1 was done using results from LUME-Lung 1, a randomised controlled trial comparing docetaxel with docetaxel plus nintedanib. A\nsupplementary analysis of sotorasib versus docetaxel was also done using a propensity score weighting analysis (PSWA) approach, using da\nfrom CodeBreaK100 for sotorasib and the chemotherapy arm of the\nAmgen Flatiron Health real-world evidence study.",
           "metadata": {
-            "heading": "Contents",
+            "heading": "Indirect treatment comparison",
             "doc_id": "lung_kras_EN",
             "country": "EN",
             "source_type": "clinical_guideline",
-            "start_page": 3,
-            "end_page": 4,
+            "start_page": 8,
+            "end_page": 11,
+            "created_date": "20",
+            "folder_path": "clinical guidelines/EN",
+            "split_index": 1,
+            "text_length": 872,
+            "potential_comparators": [
+              "Subject",
+              "Therefore",
+              "nintedanib"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** The condition **Source Type:** clinical_guideline\n\nThere is a high unmet need for targeted treatments for KRAS\nG12C mutation-positive locally advanced or metastatic NSCL\n3.1 The KRAS oncogene is the most commonly mutated gene in lung cancer. The KRAS G12C mutation is the most common and occurs in 12% of nonsmall-cell lung cancer (NSCLC) tumours in the UK. This mutation is more\ncommon in non-squamous NSCLC and does not usually occur with other known mutations such as EGFR, ALK and ROS-1. These other known\nmutations may have targeted treatments available but there is currently no targeted treatment for the KRAS G12C mutation. People with KRAS\nG12C mutation-positive locally advanced or metastatic NSCLC usually have chemotherapy, a non-targeted treatment associated with adverse\neffects that affect health-related quality of life. The clinical expert\nhighlighted that people with KRAS G12C mutation-positive NSCLC have a poor prognosis. The clinical and patient experts noted that there is an\nunmet need for effective and tolerable treatments in this population.",
+          "metadata": {
+            "heading": "The condition",
+            "doc_id": "lung_kras_EN",
+            "country": "EN",
+            "source_type": "clinical_guideline",
+            "start_page": 6,
+            "end_page": 7,
             "created_date": "20",
             "folder_path": "clinical guidelines/EN",
             "split_index": 0,
-            "text_length": 888,
+            "text_length": 1081,
             "potential_comparators": [
-              "All",
-              "Cancer",
-              "Indirect",
-              "Subject",
-              "Other",
-              "NICE",
-              "End",
-              "Cost-effectiveness",
-              "Health-related",
-              "Dosage",
-              "Price",
-              "Conclusion",
-              "Clinical",
-              "Assumptions",
-              "Anticipated",
-              "Treatment"
+              "People",
+              "These"
             ]
           }
         },
@@ -584,25 +603,6 @@
             "potential_comparators": [
               "Subject",
               "All"
-            ]
-          }
-        },
-        {
-          "text": "**Heading:** The condition **Source Type:** clinical_guideline\n\nThere is a high unmet need for targeted treatments for KRAS\nG12C mutation-positive locally advanced or metastatic NSCL\n3.1 The KRAS oncogene is the most commonly mutated gene in lung cancer. The KRAS G12C mutation is the most common and occurs in 12% of nonsmall-cell lung cancer (NSCLC) tumours in the UK. This mutation is more\ncommon in non-squamous NSCLC and does not usually occur with other known mutations such as EGFR, ALK and ROS-1. These other known\nmutations may have targeted treatments available but there is currently no targeted treatment for the KRAS G12C mutation. People with KRAS\nG12C mutation-positive locally advanced or metastatic NSCLC usually have chemotherapy, a non-targeted treatment associated with adverse\neffects that affect health-related quality of life. The clinical expert\nhighlighted that people with KRAS G12C mutation-positive NSCLC have a poor prognosis. The clinical and patient experts noted that there is an\nunmet need for effective and tolerable treatments in this population.",
-          "metadata": {
-            "heading": "The condition",
-            "doc_id": "lung_kras_EN",
-            "country": "EN",
-            "source_type": "clinical_guideline",
-            "start_page": 6,
-            "end_page": 7,
-            "created_date": "20",
-            "folder_path": "clinical guidelines/EN",
-            "split_index": 0,
-            "text_length": 1081,
-            "potential_comparators": [
-              "These",
-              "People"
             ]
           }
         },
@@ -737,8 +737,8 @@
             "split_index": 2,
             "text_length": 1518,
             "potential_comparators": [
-              "Research",
-              "These"
+              "These",
+              "Research"
             ]
           }
         },
@@ -756,9 +756,9 @@
             "split_index": 1,
             "text_length": 1557,
             "potential_comparators": [
-              "crizohnib",
+              "selmahnib",
               "tepohnib",
-              "selmahnib"
+              "crizohnib"
             ]
           }
         },
@@ -776,9 +776,9 @@
             "split_index": "0_0_0",
             "text_length": 1129,
             "potential_comparators": [
-              "Multigenic",
               "Note",
-              "Progress"
+              "Progress",
+              "Multigenic"
             ]
           }
         },
@@ -796,12 +796,12 @@
             "split_index": "0_1_0",
             "text_length": 1046,
             "potential_comparators": [
-              "tectinib",
               "trastuzumab",
+              "amivantamab",
+              "tectinib",
               "Note",
               "mobocertinib",
-              "poziotinib",
-              "amivantamab"
+              "poziotinib"
             ]
           }
         },
@@ -860,12 +860,12 @@
             "split_index": 11,
             "text_length": 858,
             "potential_comparators": [
-              "Suitability",
               "Chest",
+              "Int",
               "Rossi",
-              "Rivera",
               "Initial",
-              "Int"
+              "Suitability",
+              "Rivera"
             ]
           }
         }
@@ -874,32 +874,12 @@
     "IT": {
       "country_metadata": {
         "country_code": "IT",
-        "chunk_count": 4,
-        "total_text_length": 3988,
+        "chunk_count": 3,
+        "total_text_length": 2882,
         "unique_documents": 1,
-        "unique_headings": 3
+        "unique_headings": 2
       },
       "chunks": [
-        {
-          "text": "**Heading:** Treatment of disease with p.G12C mutation of KRAS **Source Type:** clinical_guideline\n\nKRAS oncogene mutations are the most frequent in NSCLC and the most represented is the G12C mutation of season 2 which has been identified in approximately 10-12% of lung adenocarcinomas. They are more common in Caucasian ethnicity and smokers and are characterised by the concomitant presence of a high expression of both PD-L1 and TMB. Therefore, immunotherapy alone or in combination with platinum-based chemotherapy represents the current standard of care in the line I treatment of these patients. After the removal of duplicates and the acquisition of full-text, 3 studies were included, the Phase I and II CodeBreaK 100 study and the Phase III Code BreaK 200 study. The Phase I CodeBeaK 100 trial, which involved patients diagnosed with pre-treated, advanced-stage solid tumours with KRAS p.G12C mutation, showed a promising safety and efficacy profile of treatment with suborbase monotherapy in patients with NSCLC (35). The presence of untreated active brain metastases was an exclusion criterion.",
-          "metadata": {
-            "heading": "Treatment of disease with p.G12C mutation of KRAS",
-            "doc_id": "LG149_Polmone_agg2024",
-            "country": "IT",
-            "source_type": "clinical_guideline",
-            "start_page": 132,
-            "end_page": 135,
-            "created_date": "2024",
-            "folder_path": "clinical guidelines/IT",
-            "split_index": 0,
-            "text_length": 1106,
-            "potential_comparators": [
-              "They",
-              "After",
-              "Therefore"
-            ]
-          }
-        },
         {
           "text": "**Heading:** 3.1.2 Predictive molecular pathology **Source Type:** clinical_guideline\n\nFinally, among the approved predictive biomarkers useful in defining the therapeutic strategy is PD-L1 re-expression for the selection of patients with advanced NSCLC eligible for line I immunotherapy. Patients may be eligible for immunotherapy treatment if their tumour sample contains at least 100 viable tumour cells, is tested with validated antibody clones, and shows PD-L1 positivity ≥ 50% of tumour cell counts as measured by the Tumor Proportional Score (TPS) (68). In patients with advanced NSCLC, line II eligibility for pembrolizumab predicts a TPS ≥ 1%. In summary, evaluation, preferably by next-generation sequencing (NGS), of molecular alterations to EGFR exons 18, 19, 20 and 21, ALK, ROS1, RET and NTRK rearrangements, MET 14 skipping, V600 point mutations to BRAF 15 gene, G12C mutation to KRAS, and immunohistochemical evaluation (HCI) of PD-L1 expression are required for the definition of ISC therapeutic strategy in",
           "metadata": {
@@ -914,8 +894,8 @@
             "split_index": "3_0_0",
             "text_length": 1024,
             "potential_comparators": [
-              "Patients",
-              "pembrolizumab"
+              "pembrolizumab",
+              "Patients"
             ]
           }
         },
@@ -997,9 +977,9 @@
             "split_index": 1,
             "text_length": 1114,
             "potential_comparators": [
+              "tivantinib",
               "LOW",
-              "erlotinib",
-              "tivantinib"
+              "erlotinib"
             ]
           }
         },
@@ -1017,8 +997,8 @@
             "split_index": 0,
             "text_length": 1181,
             "potential_comparators": [
-              "Using",
               "However",
+              "Using",
               "Row"
             ]
           }
@@ -1037,11 +1017,11 @@
             "split_index": 2,
             "text_length": 1261,
             "potential_comparators": [
-              "afatinib",
-              "Tumor",
               "NGS",
+              "afatinib",
+              "Niet",
               "Mutations",
-              "Niet"
+              "Tumor"
             ]
           }
         },
@@ -1059,11 +1039,11 @@
             "split_index": "2_1_0",
             "text_length": 896,
             "potential_comparators": [
-              "docetaxel 75 mg",
               "pemetrexed 500 mg",
-              "tivantinib",
+              "erlotinib",
+              "docetaxel 75 mg",
               "gemcitabine 1250mg",
-              "erlotinib"
+              "tivantinib"
             ]
           }
         }
@@ -1128,19 +1108,19 @@
             "split_index": 0,
             "text_length": 1504,
             "potential_comparators": [
-              "Selperkatinib",
               "pralsetinib",
-              "RET",
-              "kabozantinib",
-              "These",
-              "Based",
-              "selperkatinib",
-              "Pralsetinib",
-              "alektinib",
-              "sorafenib",
-              "Intracranial",
+              "sunitinib",
               "vandetanib",
-              "sunitinib"
+              "These",
+              "Intracranial",
+              "Based",
+              "RET",
+              "Selperkatinib",
+              "sorafenib",
+              "selperkatinib",
+              "kabozantinib",
+              "alektinib",
+              "Pralsetinib"
             ]
           }
         },

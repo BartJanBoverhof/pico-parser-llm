@@ -1,0 +1,178 @@
+{
+  "outcomes_metadata": {
+    "timestamp": "2025-09-17T13:00:04.069758",
+    "indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
+    "consolidation_type": "outcomes",
+    "total_unique_outcomes": 56,
+    "source_countries": [
+      "AT",
+      "BE",
+      "CZ",
+      "DE",
+      "DK",
+      "EN",
+      "ES",
+      "EU",
+      "FR",
+      "IT",
+      "NL",
+      "PO",
+      "PT",
+      "SE"
+    ],
+    "source_types": [
+      "clinical_guideline",
+      "hta_submission"
+    ]
+  },
+  "consolidated_outcomes": {
+    "efficacy": {
+      "survival_endpoints": [
+        "Overall survival (OS; time from randomization to death from any cause) [AT, ES, EN, NL, FR, SE, DK, PT, PO, DE, BE, IT, DK(clinical_guideline), NL(clinical_guideline), PO(clinical_guideline), SE(clinical_guideline), EU(clinical_guideline)]",
+        "All-cause mortality (death due to any cause) [AT, DE]",
+        "Reduction in HCC-related mortality [EU]",
+        "Long-term survival [IT, DK(clinical_guideline)]",
+        "5-year survival [DK(clinical_guideline)]",
+        "Improved survival [IT]",
+        "Prolongation of survival [NL(clinical_guideline)]"
+      ],
+      "response_measures": [
+        "Objective response rate (ORR; percentage of patients with partial or complete response according to RECIST 1.1 and/or mRECIST criteria) [AT, ES, EN, FR, SE, DK, PT, PO, DE, NL(clinical_guideline), PO(clinical_guideline), BE, SE(clinical_guideline)]",
+        "Tumor response rate [AT, DE, NL(clinical_guideline)]",
+        "Complete response (CR; as defined by mRECIST) [DK, PO, DE(clinical_guideline), NL(clinical_guideline)]",
+        "Partial response (PR; as defined by mRECIST) [DK, PO, DE(clinical_guideline), NL(clinical_guideline), BE]",
+        "Stable disease (SD) [DK, PO]",
+        "Disease control rate (DCR; includes partial response, minor response, stable disease) [AT, ES, FR, DK, PO, DE, NL, NL(clinical_guideline)]",
+        "Clinical benefit rate (CBR) [FR, DK]",
+        "Therapeutic efficacy [ES(clinical_guideline)]",
+        "Tumor reduction [AT, DE]",
+        "Tumor control (panel review after two treatment cycles) [DE(clinical_guideline), NL(clinical_guideline)]",
+        "Local control/local tumor control [AT, NL(clinical_guideline), DE(clinical_guideline)]",
+        "Success rate (downstaging/bridging) [NL(clinical_guideline)]",
+        "Secondary resectability [DE(clinical_guideline), AT(clinical_guideline)]",
+        "Assessment of response to treatment (RECIST/mRECIST criteria for locoregional/systemic therapy) [PO(clinical_guideline), SE(clinical_guideline), ES(clinical_guideline)]",
+        "Response rates (RECIST criteria) [BE, FR(clinical_guideline), SE(clinical_guideline), IT, PO(clinical_guideline)]"
+      ],
+      "progression_measures": [
+        "Progression-free survival (PFS; time from randomization to tumor progression or death, defined by RECIST 1.1) [ES, EN, FR, SE, DK, PT, PO, DE, NL(clinical_guideline), DK(clinical_guideline)]",
+        "Time to progression (TTP; time from randomization to disease/tumor progression) [AT, ES, FR, DK, PT, PO, DE, NL(clinical_guideline), PO(clinical_guideline)]",
+        "Time to symptomatic progression (TTSP; time to patient-reported impairment of quality of life or symptoms) [AT, ES]",
+        "Time to symptom progression [NL, EN, NL(clinical_guideline)]",
+        "Time to radiological disease progression [EN]",
+        "Time to deterioration [DE(clinical_guideline), AT(clinical_guideline)]",
+        "Time to response [DK]",
+        "Time in health states (progression-free, progressive illness, death) in partitioned survival model [SE]",
+        "Recurrence/disease recurrence [AT, DE, BE, ES(clinical_guideline), NL(clinical_guideline)]",
+        "Early detection of local recurrence or de novo tumor [NL(clinical_guideline)]",
+        "Delay of recurrence [BE]",
+        "Tumor recurrence [FR(clinical_guideline)]",
+        "Bridging therapy and reduction of progression (locoregional methods) [PO(clinical_guideline)]"
+      ]
+    },
+    "safety": {
+      "adverse_events": [
+        "Adverse events (including grade 3/4 or III/IV adverse reactions such as hand-foot skin reaction, diarrhea, hypertension, skin rash or desquamation, gastrointestinal disorders, bleeding, infections, liver disorders, hypothyroidism, infusion reactions, hyperthyroidism, proteinuria, diabetes mellitus, hepatotoxicity, loss of appetite, weight loss, hepatic encephalopathy, hepatic insufficiency, decreased appetite, arterial thromboembolic events, haemorrhagic events, renal events, intraoperative complications, side-effects of biopsy, complications of arterial embolization, and others) [AT, ES, EN, NL, FR, SE, DK, PT, PO, DE, BE, IT, DK(clinical_guideline), NL(clinical_guideline), PO(clinical_guideline), SE(clinical_guideline), EU(clinical_guideline)]",
+        "Adverse events (graded according to National Cancer Institute or CTCAE v5.0) [PT, FR(clinical_guideline), SE(clinical_guideline), IT, PO(clinical_guideline)]",
+        "Treatment-emergent adverse events (TEAEs) [PO, DK]",
+        "Grade 3 and 4 adverse reaction rate [PT, DK, PO]",
+        "Serious adverse events/adverse reactions [ES, NL, FR, DK, PT, PO, DE, BE, DK(clinical_guideline), NL(clinical_guideline)]",
+        "Treatment-related mortality [PT]",
+        "Dropout rate for toxicity [PT]",
+        "Safety and tolerability in patients with hepatic dysfunction [NL]",
+        "Safety assessments (vital signs, laboratory haematological and biochemical testing, urinalysis, electrocardiography) [PT]",
+        "Patient safety [SE(clinical_guideline)]",
+        "Toxicity [FR(clinical_guideline)]",
+        "Complications (including long-term treatment-related complications, perioperative mortality, morbidity, serious complications such as leukaemia, postoperative softening, gallbladder abscess) [AT, DE, NL, DK(clinical_guideline), NL(clinical_guideline), BE, EU(clinical_guideline)]",
+        "Complication incidence [AT]",
+        "Side-effects (including intraoperative complications, side-effects of biopsy, and others) [DE(clinical_guideline), EU(clinical_guideline)]"
+      ],
+      "serious_events": [
+        "Serious adverse events/adverse reactions [ES, NL, FR, DK, PT, PO, DE, BE, DK(clinical_guideline), NL(clinical_guideline)]",
+        "Serious complications [DK(clinical_guideline), BE]"
+      ],
+      "discontinuations": [
+        "Discontinuation or dose modification due to adverse events [ES, FR, DK, PT, PO, DE, NL]",
+        "Dose reduction or suspension due to adverse events [PO, PT]",
+        "Drug withdrawal due to adverse events [PT]",
+        "Dropout rate for toxicity [PT]"
+      ]
+    },
+    "quality_of_life": {
+      "patient_reported_outcomes": [
+        "Health-related quality of life (HRQoL; measured by EORTC QLQ-C30, EORTC QLQ-HCC18, EQ-5D, EQ-5D VAS, FACT-G, FACT-Hep, and other validated instruments) [AT, ES, EN, FR, SE, DK, PT, PO, DE, NL(clinical_guideline), DK(clinical_guideline), SE(clinical_guideline)]",
+        "Quality of life (measured with validated and reliable instruments, including subjective global assessment) [AT, DE, NL, DK, DE(clinical_guideline), NL(clinical_guideline), DK(clinical_guideline), IT, BE, SE(clinical_guideline)]",
+        "Time to patient-reported impairment of quality of life (EORTC QLQ-C30 full scale, fitness sub-scale, and functional role subscale) [ES]",
+        "Time to clinically meaningful deterioration in HRQoL domains (role functioning, pain, diarrhoea from EORTC QLQ-C30; nutrition, body image from EORTC QLQ-HCC18) [DK]",
+        "Enhancement of quality of life [NL(clinical_guideline)]"
+      ],
+      "functional_status": [
+        "Performance status (ECOG PS, WHO PS 0-1) [SE, SE(clinical_guideline), ES(clinical_guideline)]",
+        "Functional status [SE(clinical_guideline)]",
+        "Eastern Cooperative Oncology Group Performance Status (ECOG PS) [SE]",
+        "Child-Pugh scale for liver function [SE, SE(clinical_guideline), IT]",
+        "Liver function/liver function assessment (including Child-Pugh classification) [AT, DE, FR, SE(clinical_guideline), IT, ES(clinical_guideline)]"
+      ],
+      "symptom_measures": [
+        "Symptoms (fatigue, pain, jaundice, fever, abdominal swelling measured by EORTC QLQ-HCC18) [AT, DE]",
+        "Symptom assessment (via disease-specific quality of life modules) [SE(clinical_guideline)]",
+        "Management of symptoms [SE(clinical_guideline)]",
+        "Distress (physical and psychological complaints after treatment, reported using a validated screening tool) [NL(clinical_guideline)]"
+      ]
+    },
+    "economic": {
+      "cost_effectiveness": [
+        "Cost-effectiveness (incremental cost-effectiveness ratio, ICER; cost per QALY; cost-benefit analysis; cost/benefit ratio of surveillance) [EN, NL, SE, DK, IT]",
+        "Budget impact [NL]",
+        "Cost-effectiveness analysis (including total treatment costs and budget impact) [NL]",
+        "Resource use estimates [SE, DK]",
+        "Need for use of medical resources [ES]"
+      ],
+      "utilities": [
+        "Quality-adjusted life years (QALYs) [EN, SE, DK]",
+        "Health state utility values [SE]"
+      ],
+      "resource_utilization": [
+        "Length of hospital stay [AT, DE]",
+        "Days of missed work [AT, DE]",
+        "Resource use estimates [SE, DK]"
+      ]
+    },
+    "other": {
+      "exploratory_endpoints": [
+        "Therapeutic value [CZ]",
+        "Interchangeability with medicines included in the insured package [CZ]",
+        "Success rate (downstaging/bridging) [NL(clinical_guideline)]",
+        "Early detection of HCC [SE(clinical_guideline), EU(clinical_guideline), IT]",
+        "Detection of early HCC (using ultrasound and serum AFP measurement) [EU]",
+        "False-positive results (with addition of serum AFP to ultrasound) [EU, IT]",
+        "Diagnostic accuracy [DK(clinical_guideline)]",
+        "Accurate diagnosis (using multiphasic CT and MRI following LI-RADS v2018 technical recommendations) [EU]",
+        "Pathological assessment of diagnosis, prognosis, and tumour subtypes (using panels of immunohistochemistry markers) [EU]",
+        "Molecular classification of HCC subtypes [EU]",
+        "Post-treatment follow-up to assess therapeutic efficacy and detect recurrences [ES(clinical_guideline)]",
+        "Comparison of outcomes between treatment modalities (e.g., resection vs. locoregional methods) [PO(clinical_guideline)]",
+        "Outcomes after liver transplantation (Milan criteria, UCSF-expanded criteria) [IT]",
+        "Down-staging prior to liver transplantation (intention-to-treat analysis) [IT]",
+        "Clinical outcomes of radiofrequency ablation, percutaneous alcohol and acetic acid injection [IT]",
+        "Safety and efficacy of radiotherapy [IT]",
+        "Tolerance of treatment in patients with Child-Pugh B liver cirrhosis [IT]",
+        "Quality of treatment [SE(clinical_guideline)]",
+        "Comfort [SE(clinical_guideline)]",
+        "Structured follow-up [SE(clinical_guideline)]"
+      ],
+      "biomarkers": [
+        "Tumour spread assessment (size, number, vascular invasion, extrahepatic spread, TNM system) [SE]",
+        "Prognosis (BCLC staging system, Child-Pugh and MELD scores, related to tumour stage at diagnosis, severity of underlying liver disease, and patient performance status) [ES(clinical_guideline), IT, DK(clinical_guideline)]",
+        "Risk of developing hepatocellular carcinoma (alpha-fetoprotein at time of detection of focal liver lesion) [IT]",
+        "Serum AFP measurement [EU]",
+        "Panels of immunohistochemistry markers [EU]",
+        "Molecular classification of HCC subtypes [EU]"
+      ],
+      "pharmacokinetics": [
+        "Plasma pharmacokinetics parameters [DK]",
+        "Pharmacokinetic/pharmacodynamic relationship between exposure and efficacy/safety [DK]",
+        "Pharmacokinetic parameters [PT]"
+      ]
+    }
+  }
+}

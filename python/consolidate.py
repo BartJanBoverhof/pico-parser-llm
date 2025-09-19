@@ -1,5 +1,6 @@
 import json
 import os
+import tiktoken
 from datetime import datetime
 from typing import List, Dict, Any, Optional, Union
 from openai import OpenAI
@@ -41,6 +42,15 @@ class PICOConsolidator:
             model=self.model_name,
             temperature=0.1
         )
+        
+        try:
+            self.encoding = tiktoken.encoding_for_model("gpt-4")
+        except:
+            self.encoding = tiktoken.encoding_for_model("cl100k_base")
+
+    def count_tokens(self, text: str) -> int:
+        """Count tokens in text using the current encoding."""
+        return len(self.encoding.encode(text))
 
     def load_pico_files(self, source_types: Optional[List[str]] = None) -> Dict[str, Dict]:
         """
@@ -288,6 +298,8 @@ class PICOConsolidator:
         Return the result as valid JSON following the structure specified in the system prompt.
         """
 
+        input_tokens = self.count_tokens(system_prompt) + self.count_tokens(user_prompt)
+
         try:
             messages = [
                 SystemMessage(content=system_prompt),
@@ -309,6 +321,9 @@ class PICOConsolidator:
                 response = model.invoke(messages)
                 result_text = response.content
 
+            output_tokens = self.count_tokens(result_text) if result_text else 0
+            print(f"PICO consolidation - Input tokens: {input_tokens}, Output tokens: {output_tokens}")
+            
             print(f"PICO consolidation LLM response length: {len(result_text) if result_text else 0}")
             print(f"PICO consolidation LLM response preview: {result_text[:200] if result_text else 'None'}")
             
@@ -398,6 +413,8 @@ class PICOConsolidator:
         Return the result as valid JSON following the structure specified in the system prompt.
         """
 
+        input_tokens = self.count_tokens(system_prompt) + self.count_tokens(user_prompt)
+
         try:
             messages = [
                 SystemMessage(content=system_prompt),
@@ -418,6 +435,9 @@ class PICOConsolidator:
             else:
                 response = model.invoke(messages)
                 result_text = response.content
+
+            output_tokens = self.count_tokens(result_text) if result_text else 0
+            print(f"Outcomes consolidation - Input tokens: {input_tokens}, Output tokens: {output_tokens}")
 
             print(f"Outcomes consolidation LLM response length: {len(result_text) if result_text else 0}")
             print(f"Outcomes consolidation LLM response preview: {result_text[:200] if result_text else 'None'}")

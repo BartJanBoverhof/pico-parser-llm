@@ -64,18 +64,18 @@ SOURCE_TYPE_CONFIGS = {
         PICO element definitions (use these strictly):
         - Population (P): EXACT wording from the context describing the applicable group (disease/stage, biomarkers/testing, prior therapy/line, inclusion/exclusion). If a narrower sub-population is specified, capture that exact phrasing.
         - Intervention (I): Always "Medicine X (under assessment)" (not taken from the documents).
-        - Comparator (C): A specific alternative regimen or drug/class (or ITC/NMA comparator) named in the context for the same setting/line. Do not use generic labels such as "standard of care"/"SoC", "supportive care", or "placebo" unless the document explicitly defines these with named regimen(s); if so, use the named regimen(s) and omit the generic label. "Best supportive care"/"BSC" is acceptable as a valid comparator.
+        - Comparator (C): A specific alternative regimen or drug/class (or ITC/NMA comparator) named in the context for the same setting/line. Prefer specific named agents/regimens when present. If only a generic label is named in the provided context (e.g., "standard of care"/"SoC", "supportive care", "chemotherapy", "immunotherapy", or "placebo"), use that label as the Comparator. If the document explicitly defines such labels with named regimen(s) in the same context, use the named regimen(s) and omit the generic label. "Best supportive care"/"BSC" is acceptable as a valid comparator.
         - Outcomes (O): Always use empty string "" (outcomes will be extracted separately).
 
         Extraction rules:
         1) Use ONLY information present in the context; do not infer missing facts.
         2) Capture Population verbatim as written (including sub-populations where applicable).
-        3) For EACH appropriate alternative described in the same setting, create a separate PICO with:
-           - "Intervention" = "Medicine X (under assessment)"
-           - "Comparator"  = the specific alternative/regimen/class/ITC-NMA comparator as named (not a generic label like SoC/supportive care/placebo)
-           - "Outcomes" = ""
+        3) For EACH appropriate alternative described in the same setting, create a separate PICO ONLY when the provided context contains both the Population description and a comparator for the same setting/line, with:
+          - "Intervention" = "Medicine X (under assessment)"
+          - "Comparator"  = the specific alternative/regimen/class/ITC-NMA comparator as named (prefer specific agents/regimens; if only a generic label like SoC/supportive care/chemotherapy/immunotherapy/placebo is given in this context, use that label)
+          - "Outcomes" = ""
         4) If a comparator is indicated only for a subset of the population (e.g. "only PD-L1 positive patients"), treat that as a distinct Population string for that PICO.
-        5) If a passage names only a generic comparator label (SoC/supportive care/placebo) without defining specific regimen(s), SKIP creating a PICO for that comparator. Exception: "best supportive care" or "BSC" should be retained as valid comparators.
+        5) If a passage names only a generic comparator label (SoC/supportive care/chemotherapy/immunotherapy/placebo) without defining specific regimen(s) in the provided context, CREATE the PICO using that generic comparator label. If specific regimen(s) are also named in the same context, use the specific regimen name(s) and omit the generic label. Exception: "best supportive care" or "BSC" should be retained as valid comparators.
         6) If a jurisdiction/country/agency is explicitly stated, record it; otherwise use null (unquoted).
         7) You may reason stepwise INTERNALLY, but DO NOT include your reasoning in the output.
         8) Return VALID JSON ONLY that adheres to the output contract below. Do not wrap in code fences, do not add comments, and do not include trailing commas.
@@ -118,7 +118,7 @@ SOURCE_TYPE_CONFIGS = {
         {context_block}
 
         Your task:
-        Extract Population and Comparator information for this indication and for any clearly defined sub-populations. Exclude entries where the only comparator is a generic label such as "standard of care"/"SoC", "supportive care", or "placebo" unless the document defines precisely which regimen(s) these refer to; in that case, use the specific regimen name(s) and omit the generic label. "Best supportive care" or "BSC" should be retained as valid comparators.
+        Extract Population and Comparator information for this indication and for any clearly defined sub-populations. Only emit a PICO when both the Population description and a comparator for the same setting/line appear in the provided context. Prefer specific named agents/regimens when present. If the provided context uses only a generic comparator label such as "standard of care"/"SoC", "supportive care", "chemotherapy", "immunotherapy", or "placebo", include that generic label as the Comparator. If the document defines precise regimen(s) in the same context, use those specific regimen name(s) and omit the generic label. "Best supportive care" or "BSC" should be retained as valid comparators.
 
         Output JSON ONLY in this exact structure:
         {{
@@ -128,12 +128,13 @@ SOURCE_TYPE_CONFIGS = {
             {{
               "Population": "<exact wording from the context for the applicable (sub-)population>",
               "Intervention": "Medicine X (under assessment)",
-              "Comparator": "<specific alternative/regimen/class or ITC/NMA comparator (not a generic SoC/supportive care/placebo label, but BSC is acceptable)>",
+              "Comparator": "<specific alternative/regimen/class or ITC/NMA comparator (generic SoC/supportive care/chemotherapy/immunotherapy/placebo is acceptable when that is how it is named in the provided context; prefer specific regimens when available in the same context)>",
               "Outcomes": ""
             }}
           ]
         }}
         """.strip(),
+
 
         # Outcomes extraction system prompt
         "outcomes_system_prompt": """
@@ -495,67 +496,64 @@ CONSOLIDATION_CONFIGS = {
     8) Omit entries that have no comparator unless they add unique population information.
     9) Exclude non-informative comparator labels such as "standard of care"/"SoC" or "placebo" (including "placebo + supportive care"), unless the source explicitly defines the underlying regimen(s). If defined, replace the comparator with the specific regimen name(s) and drop the generic label. "Best supportive care" / "BSC" is acceptable and should be retained.
 
-    Must-Not-Merge Gate (Dynamic, Axis-Based):
-    - First discover clinically salient axes from the input text (see Axis Discovery below). Never merge if any discovered axis differs across variants.
-    - Treat presence vs absence of a constraint as a difference: if one variant specifies an axis value and another is silent, keep them separate.
-    - Axes include, but are not limited to (examples for guidance only; do not hard-code to any disease):
-      • Stage/severity system in use and specified level(s)  
-      • Organ function/performance/fitness scales or classes (any named scale or grade)  
-      • Anatomic extent/involvement (local/advanced/metastatic; specific site involvement)  
-      • Prior therapy exposure: modality/type(s) and sequence/line count  
-      • Eligibility/contraindications and tolerability qualifiers  
-      • Biomarkers or laboratory thresholds (any analyte/marker and cut-offs), genotype/phenotype subgroups  
-      • Treatment modality context (systemic vs local/locoregional vs surgical vs transplant)  
-      • Therapy structure (monotherapy vs combination)
+    Must-Not-Merge Gate (Hard Separation Criteria):
+    Never merge if any of the following differ across variants:
+    - Prior therapy type(s) (e.g., cytotoxic chemotherapy, platinum-based chemotherapy, immunotherapy, chemo+immunotherapy, EGFR inhibitors, ALK inhibitors, etc.)
+    - Number/line of prior therapy (e.g., first-line vs “≥1 prior line”, 2L vs 3L)
+    - Biomarker status or thresholds (e.g., PD-L1 TPS ≥1% / ≥50%, specific KRAS subtype, co-mutations)
+    - Histology (adenocarcinoma, squamous, non-epidermoid, “any”)
+    - Combination vs monotherapy treatment context
+    - Tolerability qualifier (e.g., progressed vs progressed OR could not tolerate)
+    - Stage/resectability when specified (e.g., IIIB/IV vs “advanced”)
+    - CNS/brain metastasis allowance/exclusion if specified
 
-    Population Consolidation Guidelines (Tumor-agnostic):
-    - Do not drop or dilute subgroup conditions. If any variant includes additional criteria on any discovered axis (biomarker threshold, stage system/level, organ function class, anatomic extent, prior therapy modality/sequence, eligibility/contraindications, tolerability, etc.) that others lack, either retain that criterion (only if present in all) OR keep separate entries.
-    - Differences in prior therapy histories or line/sequence always indicate distinct scenarios and must not be merged unless signatures are identical.
-    - If one PICO mentions a specific subpopulation that another does not, do not merge them. Output separate consolidated entries for each distinct subgroup.
-    - Use the mutually entailed (intersection) description only when it preserves all constraints present across the grouped variants.
-    - When any variant includes intolerance wording, reflect it as “progressed on or could not tolerate prior therapy” ONLY if all other discovered axes are identical.
+    Population Consolidation Guidelines:
+    - Do not drop or dilute subgroup conditions. If some variants include additional criteria (biomarker, histology, prior therapy type, line of therapy, tolerability, stage, CNS status) that others lack, retain that criteria OR keep separate entries.
+    - If population descriptions imply different prior therapy histories or line of therapy (e.g., one mentions specific chemotherapy or indicates two prior lines vs. one), these represent distinct clinical scenarios and must not be merged.
+    - If one PICO mentions a specific subpopulation (e.g., “PD-L1 ≥1%” or “adenocarcinoma only” or “after first-line cytotoxic chemotherapy”) that another does not, do not merge them. Output separate consolidated entries for each distinct subgroup.
+    - Use the most mutually entailed (intersection) description only when it preserves all criteria present across the grouped variants.
+    - Preserve important clinical distinctions (e.g., prior therapy requirements, biomarker status, histology, line of therapy, tolerability, stage, CNS status).
+    - When any variant includes intolerance wording, reflect it in the consolidated text as “progressed on or could not tolerate prior therapy” (only if ALL other criteria are identical).
 
-    Comparator Consolidation Guidelines (Tumor-agnostic):
-    - Prefer specific drug/regimen names when given; standardize to common/generic names.
+    Comparator Consolidation Guidelines:
+    - Prefer naming the specific drug/regimen if given (e.g., use “nivolumab” instead of generic “immunotherapy” when appropriate).
+    - Standardize drug names to their common/generic names.
     - Maintain distinct entries for single agents vs combinations. Format combinations consistently as “agentA + agentB”.
-    - Add a modality dimension when relevant (e.g., systemic, local/locoregional, surgical, transplant). Keep modality differences separate unless explicitly identical across variants.
-    - Do NOT group class labels (“immunotherapy”, “chemotherapy”, “TKI class”, “EGFR inhibitors”, etc.) with specific agents unless the sources explicitly indicate interchangeability in this context AND all other axes match. If mixed (class vs agent), prefer splitting.
+    - Do NOT group class labels (“immunotherapy”, “chemotherapy”, “EGFR inhibitors”) with specific agents unless the sources explicitly indicate interchangeability in this context and all other criteria are identical. If mixed (class vs agent), prefer splitting.
     - Exclude non-informative comparator labels (SoC, supportive care, placebo) unless explicitly defined (then replace with the defined regimen and drop the generic label). “Best supportive care” / “BSC” is valid and should be retained.
-    - **Comparator hierarchy retained:** When normalizing comparators, retain the hierarchy concurrently (keep {class, agents, regimen} when available). Do NOT drop specific agents or regimen details merely because a class label is present; do not collapse a combination into a class.
 
     Internal Normalization & Self-Check (do not include in output):
-    - Axis Discovery: From all Population and Comparator texts, extract a set of (axis_name, value) pairs that are clinically salient for this disease context. Examples of axis types (placeholders, not disease-specific): 
-        stage_system, stage_level, organ_function_scale, organ_function_level, anatomic_extent, prior_therapy_modalities, prior_therapy_lines, eligibility_flags, contraindication_flags, tolerability_status, biomarker_name, biomarker_threshold, modality (systemic|local|surgical|transplant), therapy_structure (mono|combo), and any other salient factors present in the inputs.
-      Normalize synonyms/spellings, numeric thresholds (≤/≥), and combination formatting (“A + B”).
-      - **Lossless normalization mandate:** Normalization must be lossless and hierarchical. Retain both the coarse class and all specific qualifiers (e.g., {class: "chemotherapy", qualifiers: ["cytotoxic", "platinum-based"]}). Do NOT collapse specific qualifiers into the class.
-    - Dynamic Signatures (internal only):
+    - For each input PICO, internally derive:
       Population_Signature = {
-        "disease_context": short free-text tag discovered from inputs,
-        "discovered_axes": { axis_name: normalized_value(s), ... }
+        disease, stage, mutation, histology,
+        prior_therapy_types (normalized list),
+        prior_lines (exact number or threshold),
+        tolerability (progressed | progressed_or_intolerant | unspecified),
+        biomarker thresholds (e.g., PD-L1),
+        cns_status (brain_mets_allowed | excluded | unspecified)
       }
       Comparator_Signature = {
-        "modality": "systemic|local|surgical|transplant|class",
-        "agents": [normalized_agent_names],
-        "class_name": optional,
-        "regimen": "A + B" if combination
+        type (single | combination | class),
+        agents (normalized list),
+        class_name (if applicable),
+        exact_regimen (if combination)
       }
-    - Strict Grouping: Group ONLY if Population_Signature AND Comparator_Signature are IDENTICAL across variants (post-normalization).
-      - **Axis key parity:** Signatures must contain the same set of discovered axis keys. If any axis is present in one variant and absent in another, do NOT merge (presence-vs-absence rule).
+    - Group ONLY if Population_Signature AND Comparator_Signature are IDENTICAL across variants (after synonym/format normalization).
     - Mutual Entailment Check: Ensure the consolidated Population text is entailed by EACH Original_Population_Variant AND each Original_Population_Variant is entailed by the consolidated text. If any direction fails, split the group.
     - Conservative Default: When uncertain, DO NOT MERGE. Prefer over-retention of distinct PICOs.
 
-    Abstract Example (DO NOT MERGE; anchor-free):
-    Input PICOs (same intervention under assessment; comparators shown as examples):
-    - Population: "Disease X, Stage System S: Level L1, prior systemic therapy: 1L modality A, biomarker B ≥ T"; Comparator: "Agent A"
-    - Population: "Disease X, Stage System S: Level L1, prior systemic therapy: 1L modality A + modality C"; Comparator: "Agent A"
-    - Population: "Disease X, Stage System S: Level L2, no prior systemic therapy"; Comparator: "Local modality M"
-    - Population: "Disease X, Stage System S: Level L1, post-Agent A, contraindication to Class C"; Comparator: "Agent D"
+    Example (DO NOT MERGE):
+    Input PICOs:
+    - Population: "advanced NSCLC with KRAS G12C, progressed after platinum chemotherapy", Comparator: "docetaxel"
+    - Population: "advanced NSCLC with KRAS G12C, progressed after at least one prior therapy", Comparator: "docetaxel"
+    - Population: "advanced NSCLC with KRAS G12C, progressed on or cannot tolerate platinum-based therapy", Comparator: "docetaxel"
+    - Population: "advanced NSCLC with KRAS G12C, previously treated with platinum chemotherapy AND immunotherapy", Comparator: "docetaxel"
 
-    Consolidated Output (each is a separate entry; DO NOT MERGE):
-    - "… Stage S L1, prior 1L modality A, biomarker B ≥ T" — Comparator: "Agent A"
-    - "… Stage S L1, prior 1L modality A + modality C" — Comparator: "Agent A"
-    - "… Stage S L2, treatment-naïve" — Comparator: "Local modality M"
-    - "… Stage S L1, post-Agent A, contraindication to Class C" — Comparator: "Agent D"
+    Consolidated Output (each is a separate entry):
+    - Population: "Adult patients with advanced NSCLC with KRAS G12C mutation who have progressed after platinum chemotherapy" — Comparator: "docetaxel" (Countries: [...], Original_Population_Variants: [first variant])
+    - Population: "Adult patients with advanced NSCLC with KRAS G12C mutation who have progressed after at least one prior therapy" — Comparator: "docetaxel" (Countries: [...], Original_Population_Variants: [second variant])
+    - Population: "Adult patients with advanced NSCLC with KRAS G12C mutation who have progressed on or could not tolerate platinum-based therapy" — Comparator: "docetaxel" (Countries: [...], Original_Population_Variants: [third variant])
+    - Population: "Adult patients with advanced NSCLC with KRAS G12C mutation previously treated with platinum chemotherapy and immunotherapy" — Comparator: "docetaxel" (Countries: [...], Original_Population_Variants: [fourth variant])
 
     Output JSON structure:
     {
@@ -603,9 +601,9 @@ CONSOLIDATION_CONFIGS = {
     Outcome Consolidation Rules:
     - Merge similar outcomes (e.g., "overall survival" and "OS" -> "Overall survival (OS)")
     - Treat 'objective response rate' and 'overall response rate' as the same outcome (combine into one entry with acronym ORR)
-    - Preserve measurement details (e.g., "measured by RECIST 1.1", "CTCAE v5.0"; or other disease-appropriate response/AE criteria if specified)
+    - Preserve measurement details (e.g., "measured by RECIST 1.1", "CTCAE v5.0")
     - Keep distinct outcomes separate even if similar (e.g., PFS vs. time to progression, ORR vs. duration of response)
-    - Include specific instruments for QoL (e.g., "EORTC QLQ-C30", "EQ-5D") when available
+    - Include specific instruments for QoL (e.g., "EORTC QLQ-C30", "EQ-5D")
     - Remove arm-specific and numerical/statistical trial results (medians, means, rates/percentages, counts, hazard ratios, odds ratios, relative risks, confidence intervals, p-values, ICER/QALY numeric values). Retain only outcome names and their definitions/measurement methods.
 
     Output JSON structure:
