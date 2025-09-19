@@ -51,15 +51,18 @@ class ComprehensiveOverview:
     
     def generate_case_overview(self, pico_analyzer, outcome_analyzer, case_name):
         """Generate a nice formatted overview summary for PICOs and Outcomes for a specific case"""
+        data_split = getattr(pico_analyzer, 'data_split', 'unknown')
+        split_info = f" ({data_split.title()} Set)" if data_split != 'unknown' else ""
+        
         print("\n" + "="*100)
-        print(f"{case_name.upper()} COMPREHENSIVE ANALYSIS OVERVIEW")
+        print(f"{case_name.upper()} COMPREHENSIVE ANALYSIS OVERVIEW{split_info}")
         print("="*100)
         
         # PICO Overview
         print("\n" + "🔬 PICO EVIDENCE OVERVIEW")
         print("-" * 50)
         
-        case_data = {'picos': 0, 'outcomes': 0, 'pico_countries': set(), 'outcome_countries': set(), 'source_types': set()}
+        case_data = {'picos': 0, 'outcomes': 0, 'pico_countries': set(), 'outcome_countries': set(), 'source_types': set(), 'data_split': data_split}
         
         if not pico_analyzer.picos_df.empty:
             total_picos = len(pico_analyzer.data.get('consolidated_picos', []))
@@ -149,13 +152,15 @@ class ComprehensiveOverview:
         print("\n" + "="*100)
         
         # Store case data for cross-case analysis
-        self.all_cases_data[case_name] = case_data
+        case_key = f"{case_name}_{data_split}" if data_split != 'unknown' else case_name
+        self.all_cases_data[case_key] = case_data
         
         return case_data
     
-    def generate_cross_case_overview(self, all_pico_files, all_outcome_files):
+    def generate_cross_case_overview(self, all_pico_files, all_outcome_files, output_suffix=""):
         """Generate overview across all cases"""
-        print("\n" + "🌍 CROSS-CASE ANALYSIS OVERVIEW")
+        split_info = output_suffix.replace('_', ' ').title() if output_suffix else 'All Data'
+        print(f"\n🌍 CROSS-CASE ANALYSIS OVERVIEW ({split_info})")
         print("-" * 60)
         
         total_consolidated_picos = 0
@@ -193,7 +198,7 @@ class ComprehensiveOverview:
             except Exception as e:
                 print(f"   Error loading {case} outcomes: {e}")
         
-        print(f"\n📊 TOTAL ACROSS ALL CASES:")
+        print(f"\n📊 TOTAL ACROSS ALL CASES ({split_info}):")
         print(f"   🔬 Total Consolidated PICOs: {total_consolidated_picos}")
         print(f"   🎯 Total Outcome Measures: {total_outcome_reports}")
         print(f"   🌍 Countries with PICO Evidence: {len(all_countries_pico)}")
@@ -210,19 +215,41 @@ class ComprehensiveOverview:
         """Get stored summary data for a specific case"""
         return self.all_cases_data.get(case_name, {})
 
+
 class PICOAnalyzer:
     def __init__(self, pico_file_path):
         self.pico_file_path = pico_file_path
         self.data = None
         self.picos_df = None
+        self.data_split = self._extract_data_split()
+        self.case = self._extract_case_name()
         self.load_data()
         self.prepare_datamatrix()
+    
+    def _extract_data_split(self):
+        """Extract data split (train/test) from file path."""
+        file_path = str(self.pico_file_path).lower()
+        if '_train_' in file_path or file_path.endswith('_train.json'):
+            return 'train'
+        elif '_test_' in file_path or file_path.endswith('_test.json'):
+            return 'test'
+        else:
+            return 'unknown'
+    
+    def _extract_case_name(self):
+        """Extract case name from file path."""
+        path_parts = Path(self.pico_file_path).parts
+        for part in path_parts:
+            if part.upper() in ['NSCLC', 'HCC', 'SCLC', 'BREAST', 'LUNG']:
+                return part.upper()
+        return 'UNKNOWN'
     
     def load_data(self):
         try:
             with open(self.pico_file_path, 'r', encoding='utf-8') as f:
                 self.data = json.load(f)
-            print(f"Successfully loaded PICO data from {self.pico_file_path}")
+            split_info = f" ({self.data_split} set)" if self.data_split != 'unknown' else ""
+            print(f"Successfully loaded PICO data from {self.pico_file_path}{split_info}")
         except FileNotFoundError:
             raise FileNotFoundError(f"PICO file not found: {self.pico_file_path}")
         except json.JSONDecodeError as e:
@@ -293,7 +320,9 @@ class PICOAnalyzer:
                                 'Country': country,
                                 'Source_Type': source_type,
                                 'Population_Variants_Count': len(pop_variants),
-                                'Comparator_Variants_Count': len(comp_variants)
+                                'Comparator_Variants_Count': len(comp_variants),
+                                'Data_Split': self.data_split,
+                                'Case': self.case
                             }
                             pico_records.append(record)
                 
@@ -310,7 +339,8 @@ class PICOAnalyzer:
     
     def print_unique_picos_overview(self):
         """Print detailed overview of all unique PICOs found"""
-        print("\n" + "🔬 DETAILED PICO EVIDENCE LISTING")
+        split_info = f" ({self.data_split.title()} Set)" if self.data_split != 'unknown' else ""
+        print("\n" + "🔬 DETAILED PICO EVIDENCE LISTING" + split_info)
         print("=" * 80)
         
         if 'consolidated_picos' not in self.data or not self.data['consolidated_picos']:
@@ -360,8 +390,9 @@ class PICOAnalyzer:
         print("=" * 80)
     
     def print_summary_statistics(self):
+        split_info = f" ({self.data_split.title()} Set)" if self.data_split != 'unknown' else ""
         print("="*80)
-        print("PICO ANALYSIS SUMMARY")
+        print(f"PICO ANALYSIS SUMMARY{split_info}")
         print("="*80)
         
         if self.picos_df.empty:
@@ -374,6 +405,8 @@ class PICOAnalyzer:
             print(f"Total Consolidated PICOs: {metadata.get('total_consolidated_picos', 'Unknown')}")
             print(f"Source Countries: {', '.join(metadata.get('source_countries', []))}")
             print(f"Source Types: {', '.join(metadata.get('source_types', []))}")
+            if self.data_split != 'unknown':
+                print(f"Data Split: {self.data_split.title()}")
             print()
             
             print("POPULATION AND COMPARATOR STATISTICS")
@@ -435,6 +468,8 @@ class OutcomeAnalyzer:
         self.data = None
         self.outcomes_df = None
         self.total_outcomes = 0
+        self.data_split = self._extract_data_split()
+        self.case = self._extract_case_name()
         self.load_data()
         self.prepare_datamatrix()
         
@@ -446,11 +481,30 @@ class OutcomeAnalyzer:
         else:
             print(f"Using calculated total_outcomes: {self.total_outcomes}")
     
+    def _extract_data_split(self):
+        """Extract data split (train/test) from file path."""
+        file_path = str(self.outcome_file_path).lower()
+        if '_train_' in file_path or file_path.endswith('_train.json'):
+            return 'train'
+        elif '_test_' in file_path or file_path.endswith('_test.json'):
+            return 'test'
+        else:
+            return 'unknown'
+    
+    def _extract_case_name(self):
+        """Extract case name from file path."""
+        path_parts = Path(self.outcome_file_path).parts
+        for part in path_parts:
+            if part.upper() in ['NSCLC', 'HCC', 'SCLC', 'BREAST', 'LUNG']:
+                return part.upper()
+        return 'UNKNOWN'
+    
     def load_data(self):
         try:
             with open(self.outcome_file_path, 'r', encoding='utf-8') as f:
                 self.data = json.load(f)
-            print(f"Successfully loaded Outcomes data from {self.outcome_file_path}")
+            split_info = f" ({self.data_split} set)" if self.data_split != 'unknown' else ""
+            print(f"Successfully loaded Outcomes data from {self.outcome_file_path}{split_info}")
         except FileNotFoundError:
             raise FileNotFoundError(f"Outcomes file not found: {self.outcome_file_path}")
         except json.JSONDecodeError as e:
@@ -513,7 +567,9 @@ class OutcomeAnalyzer:
                                                     'Outcome_Name': outcome_name,
                                                     'Country': country,
                                                     'Source_Type': source_type,
-                                                    'Has_Details': False
+                                                    'Has_Details': False,
+                                                    'Data_Split': self.data_split,
+                                                    'Case': self.case
                                                 }
                                                 outcome_records.append(record)
                                                 
@@ -530,7 +586,9 @@ class OutcomeAnalyzer:
                                                         'Outcome_Name': outcome_name,
                                                         'Country': report.get('country', 'Unknown'),
                                                         'Source_Type': report.get('source_type', 'Unknown'),
-                                                        'Has_Details': has_details
+                                                        'Has_Details': has_details,
+                                                        'Data_Split': self.data_split,
+                                                        'Case': self.case
                                                     }
                                                     outcome_records.append(record)
                                         else:
@@ -543,7 +601,9 @@ class OutcomeAnalyzer:
                                                         'Outcome_Name': outcome_name,
                                                         'Country': country,
                                                         'Source_Type': source_type,
-                                                        'Has_Details': has_details
+                                                        'Has_Details': has_details,
+                                                        'Data_Split': self.data_split,
+                                                        'Case': self.case
                                                     }
                                                     outcome_records.append(record)
                                         
@@ -569,7 +629,8 @@ class OutcomeAnalyzer:
     
     def print_unique_outcomes_overview(self):
         """Print detailed overview of all unique outcomes found"""
-        print("\n" + "🎯 DETAILED OUTCOMES EVIDENCE LISTING")
+        split_info = f" ({self.data_split.title()} Set)" if self.data_split != 'unknown' else ""
+        print("\n" + "🎯 DETAILED OUTCOMES EVIDENCE LISTING" + split_info)
         print("=" * 80)
         
         if 'consolidated_outcomes' not in self.data or not self.data['consolidated_outcomes']:
@@ -660,8 +721,9 @@ class OutcomeAnalyzer:
         print("=" * 80)
     
     def print_summary_statistics(self):
+        split_info = f" ({self.data_split.title()} Set)" if self.data_split != 'unknown' else ""
         print("="*80)
-        print("OUTCOMES ANALYSIS SUMMARY")
+        print(f"OUTCOMES ANALYSIS SUMMARY{split_info}")
         print("="*80)
         
         if self.total_outcomes == 0:
@@ -674,6 +736,8 @@ class OutcomeAnalyzer:
             print(f"Total Unique Outcomes: {metadata.get('total_unique_outcomes', self.total_outcomes)}")
             print(f"Source Countries: {', '.join(metadata.get('source_countries', []))}")
             print(f"Source Types: {', '.join(metadata.get('source_types', []))}")
+            if self.data_split != 'unknown':
+                print(f"Data Split: {self.data_split.title()}")
             print()
             
             print("OUTCOMES STATISTICS")
@@ -753,7 +817,11 @@ class DataVisualizer:
     def __init__(self, pico_analyzer, outcome_analyzer, output_dir="results/visualizations"):
         self.pico_analyzer = pico_analyzer
         self.outcome_analyzer = outcome_analyzer
-        self.output_dir = Path(output_dir)
+        
+        # Create split-specific output directory
+        split_suffix = f"_{pico_analyzer.data_split}" if pico_analyzer.data_split != 'unknown' else ""
+        case_suffix = f"_{pico_analyzer.case.lower()}" if pico_analyzer.case != 'UNKNOWN' else ""
+        self.output_dir = Path(f"{output_dir}{case_suffix}{split_suffix}")
         self.output_dir.mkdir(parents=True, exist_ok=True)
         
         plt.rcParams.update({
@@ -785,6 +853,12 @@ class DataVisualizer:
             'light_gray': '#E8E8E8',
             'dark_gray': '#4A4A4A'
         }
+
+    def _get_title_suffix(self):
+        """Get suffix for plot titles including case and data split info."""
+        case_info = f" - {self.pico_analyzer.case}" if self.pico_analyzer.case != 'UNKNOWN' else ""
+        split_info = f" ({self.pico_analyzer.data_split.title()} Set)" if self.pico_analyzer.data_split != 'unknown' else ""
+        return f"{case_info}{split_info}"
 
     def get_comparators_by_source_type(self):
         """Extract comparators grouped by source type from consolidated PICO data."""
@@ -849,7 +923,8 @@ class DataVisualizer:
         guideline_only = guideline_comparators - hta_comparators
         hta_only = hta_comparators - guideline_comparators
         
-        ax.set_title(f'Comparator Overlap: Guidelines vs HTA Submissions\n'
+        title_suffix = self._get_title_suffix()
+        ax.set_title(f'Comparator Overlap: Guidelines vs HTA Submissions{title_suffix}\n'
                     f'Total Unique Comparators: {len(guideline_comparators.union(hta_comparators))}',
                     fontsize=14, fontweight='bold', pad=20)
         
@@ -929,7 +1004,9 @@ class DataVisualizer:
         ax.set_xticklabels(countries, fontweight='bold')
         ax.set_ylabel('Number of Distinct Comparators', fontweight='bold')
         ax.set_xlabel('Country', fontweight='bold')
-        ax.set_title('Comparator Breadth by Country\n(Distinct Comparators Considered in PICO Evidence)', 
+        
+        title_suffix = self._get_title_suffix()
+        ax.set_title(f'Comparator Breadth by Country{title_suffix}\n(Distinct Comparators Considered in PICO Evidence)', 
                     fontweight='bold', pad=20)
         ax.grid(True, alpha=0.3, axis='y')
         
@@ -1060,7 +1137,8 @@ class DataVisualizer:
                 else:
                     table[(i, j)].set_facecolor('white')
         
-        plt.title('Country-by-Country PICO Summary\nComparative Analysis of Evidence Requirements', 
+        title_suffix = self._get_title_suffix()
+        plt.title(f'Country-by-Country PICO Summary{title_suffix}\nComparative Analysis of Evidence Requirements', 
                  fontsize=14, fontweight='bold', pad=20)
         
         plt.tight_layout()
@@ -1126,7 +1204,8 @@ class DataVisualizer:
         squarify.plot(sizes=sizes, label=labels, color=colors, alpha=0.8,
                      text_kwargs={'fontsize': 9, 'weight': 'bold'}, ax=ax)
         
-        ax.set_title('Outcomes Evidence Hierarchy\nTreemap by Category and Subcategory', 
+        title_suffix = self._get_title_suffix()
+        ax.set_title(f'Outcomes Evidence Hierarchy{title_suffix}\nTreemap by Category and Subcategory', 
                     fontsize=16, fontweight='bold', pad=20)
         ax.axis('off')
         
@@ -1173,7 +1252,9 @@ class DataVisualizer:
         ax.set_xticklabels(categories, rotation=45, ha='right', fontweight='bold')
         ax.set_ylabel('Number of Outcomes', fontweight='bold')
         ax.set_xlabel('Outcome Category', fontweight='bold')
-        ax.set_title('Outcomes Distribution by Category\n(Alternative Hierarchy View)', 
+        
+        title_suffix = self._get_title_suffix()
+        ax.set_title(f'Outcomes Distribution by Category{title_suffix}\n(Alternative Hierarchy View)', 
                     fontweight='bold', pad=20)
         ax.grid(True, alpha=0.3, axis='y')
         
@@ -1196,12 +1277,10 @@ class DataVisualizer:
             
         print("Creating PICO consolidation Sankey diagram...")
         
-        # Find original PICO files
-        case_name = "NSCLC"  # Extract from path if needed
-        if "/HCC/" in self.pico_analyzer.pico_file_path:
-            case_name = "HCC"
-        
-        pico_dir = Path(self.pico_analyzer.pico_file_path).parent
+        # Navigate to the PICO directory
+        pico_file_path = Path(self.pico_analyzer.pico_file_path)
+        case_root_dir = pico_file_path.parent.parent
+        pico_dir = case_root_dir / "PICO"
         
         # Load individual PICO files
         individual_picos = {}
@@ -1285,8 +1364,9 @@ class DataVisualizer:
             )
         )])
         
+        title_suffix = self._get_title_suffix()
         fig.update_layout(
-            title_text=f"{case_name} PICO Consolidation Process Flow<br>"
+            title_text=f"PICO Consolidation Process Flow{title_suffix}<br>"
                       f"<sub>From {total_individual} Individual PICOs to {consolidated_count} Consolidated PICOs</sub>",
             font_size=12,
             font_family="Arial",
@@ -1295,12 +1375,12 @@ class DataVisualizer:
         )
         
         # Save as HTML
-        html_path = self.output_dir / f'{case_name.lower()}_pico_consolidation_sankey.html'
+        html_path = self.output_dir / 'pico_consolidation_sankey.html'
         fig.write_html(str(html_path))
         
         # Save as static image
         try:
-            png_path = self.output_dir / f'{case_name.lower()}_pico_consolidation_sankey.png'
+            png_path = self.output_dir / 'pico_consolidation_sankey.png'
             fig.write_image(str(png_path), width=800, height=500, scale=2)
             print(f"Sankey diagram saved to: {png_path}")
         except Exception as e:
@@ -1310,6 +1390,7 @@ class DataVisualizer:
         print(f"Interactive Sankey diagram saved to: {html_path}")
         
         # Print consolidation statistics
+        case_name = self.pico_analyzer.case
         print(f"\n{case_name} Consolidation Statistics:")
         print(f"Total individual PICOs: {total_individual}")
         for source_type, count in individual_counts.items():
@@ -1323,40 +1404,16 @@ class DataVisualizer:
         """Create alternative consolidation visualization when Plotly is not available."""
         print("Creating alternative consolidation visualization...")
         
-        # Extract case name from path more robustly (same logic as main method)
-        file_path = Path(self.pico_analyzer.pico_file_path)
-        print(f"DEBUG ALT: Input file path: {file_path}")
-        print(f"DEBUG ALT: Path parts: {file_path.parts}")
-        
-        case_name = None
-        
-        # Look for case directory in path
-        for part in file_path.parts:
-            if part.upper() in ['NSCLC', 'HCC', 'SCLC', 'BREAST', 'LUNG']:
-                case_name = part.upper()
-                break
-        
-        if not case_name:
-            case_name = "UNKNOWN"
-            print(f"DEBUG ALT: Could not detect case name from path: {file_path}")
-        
-        print(f"DEBUG ALT: Detected case name: {case_name}")
-        
         # Navigate to the PICO directory
-        case_root_dir = file_path.parent.parent
+        pico_file_path = Path(self.pico_analyzer.pico_file_path)
+        case_root_dir = pico_file_path.parent.parent
         pico_dir = case_root_dir / "PICO"
-        
-        print(f"DEBUG ALT: Case root dir: {case_root_dir}")
-        print(f"DEBUG ALT: PICO dir: {pico_dir}")
-        print(f"DEBUG ALT: PICO dir exists: {pico_dir.exists()}")
         
         # Load individual PICO files and count
         individual_counts = {}
         total_individual = 0
         for source_type in ['clinical_guideline', 'hta_submission']:
             pico_file = pico_dir / f"{source_type}_picos.json"
-            print(f"DEBUG ALT: Checking for: {pico_file}")
-            print(f"DEBUG ALT: File exists: {pico_file.exists()}")
             
             if pico_file.exists():
                 try:
@@ -1366,38 +1423,27 @@ class DataVisualizer:
                         
                         # Try metadata first, then fallback to country counting
                         metadata = data.get('extraction_metadata', {})
-                        print(f"DEBUG ALT: {source_type} metadata: {metadata}")
                         
                         if 'total_picos' in metadata:
                             count = metadata['total_picos']
-                            print(f"DEBUG ALT: {source_type} count from metadata: {count}")
                         elif 'picos_by_country' in data:
-                            print(f"DEBUG ALT: Using fallback counting for {source_type}")
                             for country, country_data in data['picos_by_country'].items():
                                 if 'PICOs' in country_data:
                                     country_count = len(country_data['PICOs'])
                                     count += country_count
-                                    print(f"DEBUG ALT: {country}: {country_count} PICOs")
-                            print(f"DEBUG ALT: {source_type} total count from fallback: {count}")
                         
                         individual_counts[source_type] = count
                         total_individual += count
                         
                 except Exception as e:
-                    print(f"ERROR ALT: Failed to load {source_type} PICOs: {e}")
-                    import traceback
-                    traceback.print_exc()
+                    print(f"Failed to load {source_type} PICOs: {e}")
             else:
-                print(f"WARNING ALT: File not found: {pico_file}")
-        
-        print(f"DEBUG ALT: Final individual_counts: {individual_counts}")
-        print(f"DEBUG ALT: Total individual: {total_individual}")
+                print(f"File not found: {pico_file}")
         
         consolidated_count = len(self.pico_analyzer.data.get('consolidated_picos', []))
-        print(f"DEBUG ALT: Consolidated count: {consolidated_count}")
         
         if total_individual == 0:
-            print("ERROR ALT: No individual PICO data found for alternative visualization")
+            print("No individual PICO data found for alternative visualization")
             return
         
         # Create flow diagram
@@ -1459,16 +1505,19 @@ class DataVisualizer:
         
         ax.set_xlim(0, 1)
         ax.set_ylim(0, 1)
-        ax.set_title(f'{case_name} PICO Consolidation Process\nFrom Individual Sources to Consolidated Evidence', 
+        
+        title_suffix = self._get_title_suffix()
+        ax.set_title(f'PICO Consolidation Process{title_suffix}\nFrom Individual Sources to Consolidated Evidence', 
                     fontsize=14, fontweight='bold', pad=20)
         ax.axis('off')
         
         plt.tight_layout()
-        plt.savefig(self.output_dir / f'{case_name.lower()}_pico_consolidation_flow.png', 
+        plt.savefig(self.output_dir / 'pico_consolidation_flow.png', 
                    dpi=300, bbox_inches='tight', facecolor='white')
         plt.show()
         
         # Print consolidation statistics
+        case_name = self.pico_analyzer.case
         print(f"\n{case_name} Consolidation Statistics:")
         print(f"Total individual PICOs: {total_individual}")
         for source_type, count in individual_counts.items():
@@ -1640,7 +1689,8 @@ class DataVisualizer:
             ax.spines['bottom'].set_visible(False)
             ax.spines['left'].set_visible(False)
             
-            ax.set_title(f'European Distribution of PICO Evidence\nby Country ({len(country_counts)} countries)', 
+            title_suffix = self._get_title_suffix()
+            ax.set_title(f'European Distribution of PICO Evidence{title_suffix}\nby Country ({len(country_counts)} countries)', 
                         fontsize=16, fontweight='bold', pad=20)
             
             no_data_patch = mpatches.Patch(color='#F0F0F0', label='No PICO data')
@@ -1772,7 +1822,9 @@ class DataVisualizer:
         
         ax.set_xlabel('Longitude', fontweight='bold')
         ax.set_ylabel('Latitude', fontweight='bold')
-        ax.set_title(f'European Distribution of PICO Evidence\n({len(country_counts)} countries - Simplified View)', 
+        
+        title_suffix = self._get_title_suffix()
+        ax.set_title(f'European Distribution of PICO Evidence{title_suffix}\n({len(country_counts)} countries - Simplified View)', 
                     fontsize=14, fontweight='bold', pad=20)
         
         ax.grid(True, alpha=0.3)
@@ -1791,7 +1843,8 @@ class DataVisualizer:
         print("Creating PICO visualizations...")
         
         fig, axes = plt.subplots(2, 2, figsize=(14, 10))
-        fig.suptitle('PICO Analysis Overview', fontsize=16, fontweight='bold', y=0.95)
+        title_suffix = self._get_title_suffix()
+        fig.suptitle(f'PICO Analysis Overview{title_suffix}', fontsize=16, fontweight='bold', y=0.95)
         
         # Chart 1: Country distribution
         if 'Country' in self.pico_analyzer.picos_df.columns:
@@ -1924,7 +1977,8 @@ class DataVisualizer:
                         linewidths=0.5, linecolor='white',
                         square=False)
         
-        plt.title('Country vs Comparator Distribution Matrix', 
+        title_suffix = self._get_title_suffix()
+        plt.title(f'Country vs Comparator Distribution Matrix{title_suffix}', 
                  fontsize=14, fontweight='bold', pad=20)
         plt.xlabel('Comparator', fontweight='bold')
         plt.ylabel('Country', fontweight='bold')
@@ -1951,7 +2005,8 @@ class DataVisualizer:
         print("Creating Outcome visualizations...")
         
         fig, axes = plt.subplots(2, 2, figsize=(14, 10))
-        fig.suptitle('Outcomes Analysis Overview', fontsize=16, fontweight='bold', y=0.95)
+        title_suffix = self._get_title_suffix()
+        fig.suptitle(f'Outcomes Analysis Overview{title_suffix}', fontsize=16, fontweight='bold', y=0.95)
         
         # For visualizations, we'll use the consolidated outcomes structure directly
         consolidated_outcomes = self.outcome_analyzer.data.get('consolidated_outcomes', {})
@@ -2087,7 +2142,8 @@ class DataVisualizer:
             return
         
         fig, axes = plt.subplots(1, 2, figsize=(14, 6))
-        fig.suptitle('Source Type Distribution Comparison', fontsize=16, fontweight='bold', y=0.98)
+        title_suffix = self._get_title_suffix()
+        fig.suptitle(f'Source Type Distribution Comparison{title_suffix}', fontsize=16, fontweight='bold', y=0.98)
         
         # PICO sources bar chart - CHANGED FROM PIE TO BAR CHART
         if pico_has_source:
@@ -2153,9 +2209,16 @@ class DataVisualizer:
         print("Generating summary report...")
         
         report_content = []
-        report_content.append("RAG PIPELINE ANALYSIS SUMMARY REPORT")
+        split_info = f" ({self.pico_analyzer.data_split.title()} Set)" if self.pico_analyzer.data_split != 'unknown' else ""
+        case_info = f" - {self.pico_analyzer.case}" if self.pico_analyzer.case != 'UNKNOWN' else ""
+        
+        report_content.append(f"RAG PIPELINE ANALYSIS SUMMARY REPORT{case_info}{split_info}")
         report_content.append("=" * 50)
         report_content.append(f"Generated on: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+        if self.pico_analyzer.data_split != 'unknown':
+            report_content.append(f"Data Split: {self.pico_analyzer.data_split.title()}")
+        if self.pico_analyzer.case != 'UNKNOWN':
+            report_content.append(f"Case: {self.pico_analyzer.case}")
         report_content.append("")
         
         report_content.append("PICO ANALYSIS SUMMARY:")
@@ -2209,7 +2272,17 @@ class DataVisualizer:
         report_content.append(f"Outcome-only countries: {len(outcome_countries - pico_countries)}")
         report_content.append(f"Total country coverage: {len(pico_countries.union(outcome_countries))}")
         
-        with open(self.output_dir / 'analysis_summary_report.txt', 'w') as f:
+        # Train/test split information
+        if self.pico_analyzer.data_split != 'unknown':
+            report_content.append("")
+            report_content.append("TRAIN/TEST SPLIT INFORMATION:")
+            report_content.append("-" * 30)
+            report_content.append(f"Current analysis covers: {self.pico_analyzer.data_split.title()} set")
+            if pico_countries:
+                report_content.append(f"{self.pico_analyzer.data_split.title()} countries: {', '.join(sorted(pico_countries))}")
+        
+        report_filename = f'analysis_summary_report.txt'
+        with open(self.output_dir / report_filename, 'w') as f:
             f.write('\n'.join(report_content))
         
         print('\n'.join(report_content))
@@ -2217,8 +2290,11 @@ class DataVisualizer:
 
 def generate_overview_summary(pico_analyzer, outcome_analyzer, case_name):
     """Generate a nice formatted overview summary for PICOs and Outcomes"""
+    data_split = getattr(pico_analyzer, 'data_split', 'unknown')
+    split_info = f" ({data_split.title()} Set)" if data_split != 'unknown' else ""
+    
     print("\n" + "="*100)
-    print(f"{case_name.upper()} COMPREHENSIVE ANALYSIS OVERVIEW")
+    print(f"{case_name.upper()} COMPREHENSIVE ANALYSIS OVERVIEW{split_info}")
     print("="*100)
     
     # PICO Overview
@@ -2294,17 +2370,33 @@ def generate_overview_summary(pico_analyzer, outcome_analyzer, case_name):
     
     print(f"🌐 Total Countries Covered: {len(all_countries)}")
     print(f"🤝 Countries with Both PICOs & Outcomes: {len(common_countries)}")
-    print(f"PICO-Only Countries: {len(pico_countries - outcome_countries)}")
+    print(f"🔬 PICO-Only Countries: {len(pico_countries - outcome_countries)}")
     print(f"🎯 Outcome-Only Countries: {len(outcome_countries - pico_countries)}")
     
     if common_countries:
         print(f"   Countries with complete coverage: {', '.join(sorted(common_countries))}")
     
+    if data_split != 'unknown':
+        print(f"\n📋 Data Split: {data_split.title()} Set")
+        print(f"   Countries in this split: {', '.join(sorted(all_countries))}")
+    
     print("\n" + "="*100)
 
 
-def run_complete_analysis(pico_file_path, outcome_file_path):
-    print("Starting comprehensive RAG pipeline analysis...")
+def run_complete_analysis(pico_file_path, outcome_file_path, output_suffix=""):
+    """
+    Run complete analysis pipeline for PICO and outcomes data.
+    
+    Args:
+        pico_file_path: Path to consolidated PICO JSON file
+        outcome_file_path: Path to consolidated outcomes JSON file
+        output_suffix: Suffix to add to output files (e.g., "_train", "_test")
+    
+    Returns:
+        Tuple of (PICOAnalyzer, OutcomeAnalyzer, DataVisualizer) instances
+    """
+    suffix_info = output_suffix.replace('_', ' ').title() if output_suffix else ""
+    print(f"Starting comprehensive RAG pipeline analysis{f' for {suffix_info} set' if suffix_info else ''}...")
     print()
     
     try:
@@ -2312,13 +2404,9 @@ def run_complete_analysis(pico_file_path, outcome_file_path):
         outcome_analyzer = OutcomeAnalyzer(outcome_file_path)
         
         # Extract case name from file path for overview
-        case_name = "Analysis"
-        if "/NSCLC/" in pico_file_path or "/nsclc/" in pico_file_path:
-            case_name = "NSCLC"
-        elif "/HCC/" in pico_file_path or "/hcc/" in pico_file_path:
-            case_name = "HCC"
+        case_name = pico_analyzer.case if pico_analyzer.case != 'UNKNOWN' else "Analysis"
         
-        # Generate overview summary using the new class
+        # Generate overview summary using the updated class
         overview = ComprehensiveOverview()
         overview.generate_case_overview(pico_analyzer, outcome_analyzer, case_name)
         
@@ -2337,7 +2425,8 @@ def run_complete_analysis(pico_file_path, outcome_file_path):
         
         visualizer.generate_summary_report()
         
-        print("Analysis complete! All visualizations and reports saved to results/visualizations/")
+        analysis_type = f"{suffix_info} set " if suffix_info else ""
+        print(f"Analysis complete for {analysis_type}! All visualizations and reports saved to {visualizer.output_dir}/")
         
         return pico_analyzer, outcome_analyzer, visualizer
         
