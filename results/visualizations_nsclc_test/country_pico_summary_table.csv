@@ -1,8 +1,8 @@
 Country,Population,Intervention,Guideline Comparators,HTA Comparators,Source Types
 DE,Adults with advanced non-small cell lung cancer (NSCLC) with KRAS p.G12C muta...,Medicine X (under assessment),Sotorasib,"Patient-individual therapy, taking into account previous ...","Clinical Guideline, Hta Submission"
-DK,adult patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12...,Medicine X (under assessment),"adagrasib, docetaxel, sotorasib","docetaxel monotherapy, standard of care therapy","Clinical Guideline, Hta Submission"
+DK,patients with advanced NSCLC and KRAS G12C mutation previously treated with p...,Medicine X (under assessment),"adagrasib, docetaxel, sotorasib","docetaxel monotherapy, standard of care therapy","Clinical Guideline, Hta Submission"
 EN,KRAS G12C mutation-positive locally advanced or metastatic non-small-cell lun...,Medicine X (under assessment),"docetaxel, docetaxel plus nintedanib","docetaxel, docetaxel plus nintedanib","Clinical Guideline, Hta Submission"
 EU,treatment of patients with advanced non-small cell lung cancer (NSCLC) with K...,Medicine X (under assessment),,-,Clinical Guideline
-FR,patients treated with chemotherapeutic therapy + immunotherapies in the line 1,Medicine X (under assessment),adagrasib,"chemotherapists in the single line: pemetrexed, docetaxel...","Clinical Guideline, Hta Submission"
+FR,patients treated with immunotherapy monotherapy in the first line,Medicine X (under assessment),adagrasib,"chemotherapists in the single line: pemetrexed, docetaxel...","Clinical Guideline, Hta Submission"
 PT,tumours expressing PD-L1 with a TPS >=1%,Medicine X (under assessment),-,"atezolizumab, docetaxel, docetaxel + nintedanib, nivoluma...",Hta Submission
 SE,adult patients with advanced non-small cell lung cancer (NSCLC) with a KRAS G...,Medicine X (under assessment),,"best supportive care, docetaxel","Clinical Guideline, Hta Submission"

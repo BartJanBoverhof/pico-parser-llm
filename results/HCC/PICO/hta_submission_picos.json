@@ -1,203 +1,37 @@
 {
   "extraction_metadata": {
-    "timestamp": "2025-09-17T12:53:01.477473",
+    "timestamp": "2025-09-29T12:01:32.983665",
     "source_type": "hta_submission",
     "indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
-    "total_countries": 11,
-    "total_picos": 46
+    "total_countries": 10,
+    "total_picos": 45
   },
   "picos_by_country": {
-    "AT": {
+    "DK": {
       "Indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
-      "Country": "AT",
-      "PICOs": [
-        {
-          "Population": "adults with HCC in Barcelona Clinic Liver Cancer (BCLC) stage B or C who did not receive any prior systemic therapy for the advanced or inoperable disease. Hepatic cirrhosis of any aetiology was not an exclusion criterion. Patients in BCLC stage B had to be ineligible for transarterial chemoembolization (TACE). Further inclusion criteria were Child-Pugh stage A and an Eastern Cooperative Oncology Group – Performance Status (ECOG-PS) score of 0 or 1.",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "sorafenib",
-          "Outcomes": "all-cause mortality (death due to any cause), overall survival (OS), tumor response rate, adverse events (including grade III/IV adverse reactions such as hand-foot skin reactions, diarrhea, hypertension, skin rash or desquamation), quality of life, liver function, tumor reduction, time to progression (TTP), disease control rate (DCR), time to symptomatic progression (TTSP), mRECIST response, complication incidence, health status (measured by EQ-5D VAS), health-related quality of life (global health status, function scales of EORTC QLQ-C30, function scales of EORTC QLQ-HCC18), symptoms (fatigue, pain, jaundice, fever, abdominal swelling measured by EORTC QLQ-HCC18), disease recurrence, length of hospital stay, complications, local control, days of missed work"
-        },
-        {
-          "Population": "patients with advanced HCC",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "TACE",
-          "Outcomes": "all-cause mortality (death due to any cause), overall survival (OS), tumor response rate, adverse events (including grade III/IV adverse reactions such as hand-foot skin reactions, diarrhea, hypertension, skin rash or desquamation), quality of life, liver function, tumor reduction, time to progression (TTP), disease control rate (DCR), time to symptomatic progression (TTSP), mRECIST response, complication incidence, health status (measured by EQ-5D VAS), health-related quality of life (global health status, function scales of EORTC QLQ-C30, function scales of EORTC QLQ-HCC18), symptoms (fatigue, pain, jaundice, fever, abdominal swelling measured by EORTC QLQ-HCC18), disease recurrence, length of hospital stay, complications, local control, days of missed work"
-        },
-        {
-          "Population": "patients with advanced HCC",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "TACE + Sorafenib",
-          "Outcomes": "all-cause mortality (death due to any cause), overall survival (OS), tumor response rate, adverse events (including grade III/IV adverse reactions such as hand-foot skin reactions, diarrhea, hypertension, skin rash or desquamation), quality of life, liver function, tumor reduction, time to progression (TTP), disease control rate (DCR), time to symptomatic progression (TTSP), mRECIST response, complication incidence, health status (measured by EQ-5D VAS), health-related quality of life (global health status, function scales of EORTC QLQ-C30, function scales of EORTC QLQ-HCC18), symptoms (fatigue, pain, jaundice, fever, abdominal swelling measured by EORTC QLQ-HCC18), disease recurrence, length of hospital stay, complications, local control, days of missed work"
-        },
-        {
-          "Population": "patients with unresectable primary hepatocellular carcinoma (HCC) who are not candidates for surgical resection or liver transplantation",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "local hepatic therapies",
-          "Outcomes": "all-cause mortality (death due to any cause), overall survival (OS), tumor response rate, adverse events (including grade III/IV adverse reactions such as hand-foot skin reactions, diarrhea, hypertension, skin rash or desquamation), quality of life, liver function, tumor reduction, time to progression (TTP), disease control rate (DCR), time to symptomatic progression (TTSP), mRECIST response, complication incidence, health status (measured by EQ-5D VAS), health-related quality of life (global health status, function scales of EORTC QLQ-C30, function scales of EORTC QLQ-HCC18), symptoms (fatigue, pain, jaundice, fever, abdominal swelling measured by EORTC QLQ-HCC18), disease recurrence, length of hospital stay, complications, local control, days of missed work"
-        },
-        {
-          "Population": "patients with unresectable primary hepatocellular carcinoma (HCC) who are not candidates for surgical resection or liver transplantation",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "transarterial chemoembolization",
-          "Outcomes": "all-cause mortality (death due to any cause), overall survival (OS), tumor response rate, adverse events (including grade III/IV adverse reactions such as hand-foot skin reactions, diarrhea, hypertension, skin rash or desquamation), quality of life, liver function, tumor reduction, time to progression (TTP), disease control rate (DCR), time to symptomatic progression (TTSP), mRECIST response, complication incidence, health status (measured by EQ-5D VAS), health-related quality of life (global health status, function scales of EORTC QLQ-C30, function scales of EORTC QLQ-HCC18), symptoms (fatigue, pain, jaundice, fever, abdominal swelling measured by EORTC QLQ-HCC18), disease recurrence, length of hospital stay, complications, local control, days of missed work"
-        },
-        {
-          "Population": "patients with unresectable primary hepatocellular carcinoma (HCC) who are not candidates for surgical resection or liver transplantation",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "transarterial embolization",
-          "Outcomes": "all-cause mortality (death due to any cause), overall survival (OS), tumor response rate, adverse events (including grade III/IV adverse reactions such as hand-foot skin reactions, diarrhea, hypertension, skin rash or desquamation), quality of life, liver function, tumor reduction, time to progression (TTP), disease control rate (DCR), time to symptomatic progression (TTSP), mRECIST response, complication incidence, health status (measured by EQ-5D VAS), health-related quality of life (global health status, function scales of EORTC QLQ-C30, function scales of EORTC QLQ-HCC18), symptoms (fatigue, pain, jaundice, fever, abdominal swelling measured by EORTC QLQ-HCC18), disease recurrence, length of hospital stay, complications, local control, days of missed work"
-        },
-        {
-          "Population": "patients with unresectable primary hepatocellular carcinoma (HCC) who are not candidates for surgical resection or liver transplantation",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "radiotherapy",
-          "Outcomes": "all-cause mortality (death due to any cause), overall survival (OS), tumor response rate, adverse events (including grade III/IV adverse reactions such as hand-foot skin reactions, diarrhea, hypertension, skin rash or desquamation), quality of life, liver function, tumor reduction, time to progression (TTP), disease control rate (DCR), time to symptomatic progression (TTSP), mRECIST response, complication incidence, health status (measured by EQ-5D VAS), health-related quality of life (global health status, function scales of EORTC QLQ-C30, function scales of EORTC QLQ-HCC18), symptoms (fatigue, pain, jaundice, fever, abdominal swelling measured by EORTC QLQ-HCC18), disease recurrence, length of hospital stay, complications, local control, days of missed work"
-        },
-        {
-          "Population": "patients with unresectable primary hepatocellular carcinoma (HCC) who are not candidates for surgical resection or liver transplantation",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "supportive care",
-          "Outcomes": "all-cause mortality (death due to any cause), overall survival (OS), tumor response rate, adverse events (including grade III/IV adverse reactions such as hand-foot skin reactions, diarrhea, hypertension, skin rash or desquamation), quality of life, liver function, tumor reduction, time to progression (TTP), disease control rate (DCR), time to symptomatic progression (TTSP), mRECIST response, complication incidence, health status (measured by EQ-5D VAS), health-related quality of life (global health status, function scales of EORTC QLQ-C30, function scales of EORTC QLQ-HCC18), symptoms (fatigue, pain, jaundice, fever, abdominal swelling measured by EORTC QLQ-HCC18), disease recurrence, length of hospital stay, complications, local control, days of missed work"
-        },
-        {
-          "Population": "patients with unresectable primary hepatocellular carcinoma (HCC) who are not candidates for surgical resection or liver transplantation",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "systemic chemotherapy",
-          "Outcomes": "all-cause mortality (death due to any cause), overall survival (OS), tumor response rate, adverse events (including grade III/IV adverse reactions such as hand-foot skin reactions, diarrhea, hypertension, skin rash or desquamation), quality of life, liver function, tumor reduction, time to progression (TTP), disease control rate (DCR), time to symptomatic progression (TTSP), mRECIST response, complication incidence, health status (measured by EQ-5D VAS), health-related quality of life (global health status, function scales of EORTC QLQ-C30, function scales of EORTC QLQ-HCC18), symptoms (fatigue, pain, jaundice, fever, abdominal swelling measured by EORTC QLQ-HCC18), disease recurrence, length of hospital stay, complications, local control, days of missed work"
-        },
-        {
-          "Population": "patients with unresectable primary hepatocellular carcinoma (HCC) who are not candidates for surgical resection or liver transplantation",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "radiofrequency ablation",
-          "Outcomes": "all-cause mortality (death due to any cause), overall survival (OS), tumor response rate, adverse events (including grade III/IV adverse reactions such as hand-foot skin reactions, diarrhea, hypertension, skin rash or desquamation), quality of life, liver function, tumor reduction, time to progression (TTP), disease control rate (DCR), time to symptomatic progression (TTSP), mRECIST response, complication incidence, health status (measured by EQ-5D VAS), health-related quality of life (global health status, function scales of EORTC QLQ-C30, function scales of EORTC QLQ-HCC18), symptoms (fatigue, pain, jaundice, fever, abdominal swelling measured by EORTC QLQ-HCC18), disease recurrence, length of hospital stay, complications, local control, days of missed work"
-        },
-        {
-          "Population": "patients with unresectable primary hepatocellular carcinoma (HCC) who are not candidates for surgical resection or liver transplantation",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "microwave ablation",
-          "Outcomes": "all-cause mortality (death due to any cause), overall survival (OS), tumor response rate, adverse events (including grade III/IV adverse reactions such as hand-foot skin reactions, diarrhea, hypertension, skin rash or desquamation), quality of life, liver function, tumor reduction, time to progression (TTP), disease control rate (DCR), time to symptomatic progression (TTSP), mRECIST response, complication incidence, health status (measured by EQ-5D VAS), health-related quality of life (global health status, function scales of EORTC QLQ-C30, function scales of EORTC QLQ-HCC18), symptoms (fatigue, pain, jaundice, fever, abdominal swelling measured by EORTC QLQ-HCC18), disease recurrence, length of hospital stay, complications, local control, days of missed work"
-        },
-        {
-          "Population": "patients with unresectable primary hepatocellular carcinoma (HCC) who are not candidates for surgical resection or liver transplantation",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "other ablations (laser ablation, cryoablation, HIFU, irreversible electroporation)",
-          "Outcomes": "all-cause mortality (death due to any cause), overall survival (OS), tumor response rate, adverse events (including grade III/IV adverse reactions such as hand-foot skin reactions, diarrhea, hypertension, skin rash or desquamation), quality of life, liver function, tumor reduction, time to progression (TTP), disease control rate (DCR), time to symptomatic progression (TTSP), mRECIST response, complication incidence, health status (measured by EQ-5D VAS), health-related quality of life (global health status, function scales of EORTC QLQ-C30, function scales of EORTC QLQ-HCC18), symptoms (fatigue, pain, jaundice, fever, abdominal swelling measured by EORTC QLQ-HCC18), disease recurrence, length of hospital stay, complications, local control, days of missed work"
-        },
-        {
-          "Population": "patients with unresectable primary hepatocellular carcinoma (HCC) who are not candidates for surgical resection or liver transplantation",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "alcohol injection",
-          "Outcomes": "all-cause mortality (death due to any cause), overall survival (OS), tumor response rate, adverse events (including grade III/IV adverse reactions such as hand-foot skin reactions, diarrhea, hypertension, skin rash or desquamation), quality of life, liver function, tumor reduction, time to progression (TTP), disease control rate (DCR), time to symptomatic progression (TTSP), mRECIST response, complication incidence, health status (measured by EQ-5D VAS), health-related quality of life (global health status, function scales of EORTC QLQ-C30, function scales of EORTC QLQ-HCC18), symptoms (fatigue, pain, jaundice, fever, abdominal swelling measured by EORTC QLQ-HCC18), disease recurrence, length of hospital stay, complications, local control, days of missed work"
-        },
-        {
-          "Population": "patients with unresectable primary hepatocellular carcinoma (HCC) who are not candidates for surgical resection or liver transplantation",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "acetic acid injection",
-          "Outcomes": "all-cause mortality (death due to any cause), overall survival (OS), tumor response rate, adverse events (including grade III/IV adverse reactions such as hand-foot skin reactions, diarrhea, hypertension, skin rash or desquamation), quality of life, liver function, tumor reduction, time to progression (TTP), disease control rate (DCR), time to symptomatic progression (TTSP), mRECIST response, complication incidence, health status (measured by EQ-5D VAS), health-related quality of life (global health status, function scales of EORTC QLQ-C30, function scales of EORTC QLQ-HCC18), symptoms (fatigue, pain, jaundice, fever, abdominal swelling measured by EORTC QLQ-HCC18), disease recurrence, length of hospital stay, complications, local control, days of missed work"
-        },
-        {
-          "Population": "patients with unresectable primary hepatocellular carcinoma (HCC) who are not candidates for surgical resection or liver transplantation",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "liver resection",
-          "Outcomes": "all-cause mortality (death due to any cause), overall survival (OS), tumor response rate, adverse events (including grade III/IV adverse reactions such as hand-foot skin reactions, diarrhea, hypertension, skin rash or desquamation), quality of life, liver function, tumor reduction, time to progression (TTP), disease control rate (DCR), time to symptomatic progression (TTSP), mRECIST response, complication incidence, health status (measured by EQ-5D VAS), health-related quality of life (global health status, function scales of EORTC QLQ-C30, function scales of EORTC QLQ-HCC18), symptoms (fatigue, pain, jaundice, fever, abdominal swelling measured by EORTC QLQ-HCC18), disease recurrence, length of hospital stay, complications, local control, days of missed work"
-        },
-        {
-          "Population": "patients with unresectable primary hepatocellular carcinoma (HCC) who are not candidates for surgical resection or liver transplantation",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "liver transplantation",
-          "Outcomes": "all-cause mortality (death due to any cause), overall survival (OS), tumor response rate, adverse events (including grade III/IV adverse reactions such as hand-foot skin reactions, diarrhea, hypertension, skin rash or desquamation), quality of life, liver function, tumor reduction, time to progression (TTP), disease control rate (DCR), time to symptomatic progression (TTSP), mRECIST response, complication incidence, health status (measured by EQ-5D VAS), health-related quality of life (global health status, function scales of EORTC QLQ-C30, function scales of EORTC QLQ-HCC18), symptoms (fatigue, pain, jaundice, fever, abdominal swelling measured by EORTC QLQ-HCC18), disease recurrence, length of hospital stay, complications, local control, days of missed work"
-        },
-        {
-          "Population": "patients with unresectable primary hepatocellular carcinoma (HCC) who are not candidates for surgical resection or liver transplantation",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "placebo",
-          "Outcomes": "all-cause mortality (death due to any cause), overall survival (OS), tumor response rate, adverse events (including grade III/IV adverse reactions such as hand-foot skin reactions, diarrhea, hypertension, skin rash or desquamation), quality of life, liver function, tumor reduction, time to progression (TTP), disease control rate (DCR), time to symptomatic progression (TTSP), mRECIST response, complication incidence, health status (measured by EQ-5D VAS), health-related quality of life (global health status, function scales of EORTC QLQ-C30, function scales of EORTC QLQ-HCC18), symptoms (fatigue, pain, jaundice, fever, abdominal swelling measured by EORTC QLQ-HCC18), disease recurrence, length of hospital stay, complications, local control, days of missed work"
-        },
-        {
-          "Population": "patients with advanced or unresectable hepatocellular carcinoma",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "best supportive care",
-          "Outcomes": "all-cause mortality (death due to any cause), overall survival (OS), tumor response rate, adverse events (including grade III/IV adverse reactions such as hand-foot skin reactions, diarrhea, hypertension, skin rash or desquamation), quality of life, liver function, tumor reduction, time to progression (TTP), disease control rate (DCR), time to symptomatic progression (TTSP), mRECIST response, complication incidence, health status (measured by EQ-5D VAS), health-related quality of life (global health status, function scales of EORTC QLQ-C30, function scales of EORTC QLQ-HCC18), symptoms (fatigue, pain, jaundice, fever, abdominal swelling measured by EORTC QLQ-HCC18), disease recurrence, length of hospital stay, complications, local control, days of missed work"
-        }
-      ],
-      "ChunksUsed": 30,
-      "ContextTokens": 5863
-    },
-    "ES": {
-      "Indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
-      "Country": "ES",
+      "Country": "DK",
       "PICOs": [
         {
           "Population": "patients with unresectable hepatocellular carcinoma",
           "Intervention": "Medicine X (under assessment)",
           "Comparator": "sorafenib",
-          "Outcomes": "overall survival (OS; time from randomisation to death from any cause), progression-free survival (PFS; time from randomisation to tumour progression defined by RECIST 1.1 criteria or death from any cause), objective response rate (percentage of patients with partial or complete response according to RECIST 1.1 and modified RECIST [mRECIST] criteria for liver disease), duration of response (time from partial or complete response to disease progression or exit), deterioration in patient quality of life (measured by EORTC QLQ-C30 and EORTC QLQ-HCC18 questionnaires), time to patient-reported impairment of quality of life (EORTC QLQ-C30 full scale, fitness sub-scale, and functional role subscale), adverse events (including serious adverse events, grade 5 adverse events, and specific adverse events such as gastrointestinal disorders, bleeding, infections, liver disorders, hypothyroidism, infusion reactions, hyperthyroidism, hypertension, proteinuria, diabetes mellitus), discontinuation or dose modification due to adverse events, need for use of medical resources"
+          "Outcomes": "overall survival (OS), progression-free survival (PFS), progression-free survival (PFS; RECIST 1.1), progression-free survival (PFS; mRECIST), time to progression (TTP), objective response rate (ORR), objective response rate (ORR; mRECIST), complete response (CR), partial response (PR), time to response, duration of response (DoR), disease control rate (DCR; mRECIST), clinical benefit rate (CBR), plasma pharmacokinetics parameters, population pharmacokinetics, pharmacokinetic/pharmacodynamic relationship, adverse events (general), serious adverse events, adverse events leading to discontinuation, diarrhoea, nutrition (as a symptom domain), pain, body image (as a symptom domain), role functioning (as a symptom domain), health-related quality of life (HRQoL), EORTC QLQ-C30, EORTC QLQ-HCC18, EQ-5D, EQ-5D visual analogue scale (VAS), EQ-5D health utility index (HUI), time to clinically meaningful worsening (EORTC QLQ-C30 domains), time to clinically meaningful worsening (EORTC QLQ-HCC18 domains), time to clinically meaningful worsening (EQ-5D VAS), time to clinically meaningful worsening (EQ-5D HUI), cost-effectiveness, quality-adjusted life years (QALYs), post-treatment anti-cancer therapy, blood and tumour biomarkers correlated with clinical outcomes"
         },
         {
-          "Population": "patients with unresectable hepatocellular carcinoma",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "lenvatinib",
-          "Outcomes": "overall survival (OS; time from randomisation to death from any cause), progression-free survival (PFS; time from randomisation to tumour progression defined by RECIST 1.1 criteria or death from any cause), objective response rate (percentage of patients with partial or complete response according to RECIST 1.1 and modified RECIST [mRECIST] criteria for liver disease), duration of response (time from partial or complete response to disease progression or exit), deterioration in patient quality of life (measured by EORTC QLQ-C30 and EORTC QLQ-HCC18 questionnaires), time to patient-reported impairment of quality of life (EORTC QLQ-C30 full scale, fitness sub-scale, and functional role subscale), adverse events (including serious adverse events, grade 5 adverse events, and specific adverse events such as gastrointestinal disorders, bleeding, infections, liver disorders, hypothyroidism, infusion reactions, hyperthyroidism, hypertension, proteinuria, diabetes mellitus), discontinuation or dose modification due to adverse events, need for use of medical resources"
-        },
-        {
-          "Population": "patients with unresectable hepatocellular carcinoma",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "atezolizumab plus bevacizumab",
-          "Outcomes": "overall survival (OS; time from randomisation to death from any cause), progression-free survival (PFS; time from randomisation to tumour progression defined by RECIST 1.1 criteria or death from any cause), objective response rate (percentage of patients with partial or complete response according to RECIST 1.1 and modified RECIST [mRECIST] criteria for liver disease), duration of response (time from partial or complete response to disease progression or exit), deterioration in patient quality of life (measured by EORTC QLQ-C30 and EORTC QLQ-HCC18 questionnaires), time to patient-reported impairment of quality of life (EORTC QLQ-C30 full scale, fitness sub-scale, and functional role subscale), adverse events (including serious adverse events, grade 5 adverse events, and specific adverse events such as gastrointestinal disorders, bleeding, infections, liver disorders, hypothyroidism, infusion reactions, hyperthyroidism, hypertension, proteinuria, diabetes mellitus), discontinuation or dose modification due to adverse events, need for use of medical resources"
-        },
-        {
-          "Population": "patients with unresectable hepatocellular carcinoma",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "placebo",
-          "Outcomes": "overall survival (OS; time from randomisation to death from any cause), progression-free survival (PFS; time from randomisation to tumour progression defined by RECIST 1.1 criteria or death from any cause), objective response rate (percentage of patients with partial or complete response according to RECIST 1.1 and modified RECIST [mRECIST] criteria for liver disease), duration of response (time from partial or complete response to disease progression or exit), deterioration in patient quality of life (measured by EORTC QLQ-C30 and EORTC QLQ-HCC18 questionnaires), time to patient-reported impairment of quality of life (EORTC QLQ-C30 full scale, fitness sub-scale, and functional role subscale), adverse events (including serious adverse events, grade 5 adverse events, and specific adverse events such as gastrointestinal disorders, bleeding, infections, liver disorders, hypothyroidism, infusion reactions, hyperthyroidism, hypertension, proteinuria, diabetes mellitus), discontinuation or dose modification due to adverse events, need for use of medical resources"
-        },
-        {
-          "Population": "Patients aged 18 years or older and diagnosed with locally advanced or metastatic and/ or unresectable HCC with histological/ cytological confirmation or clinical features consistent with the American Association for the Study of the Liver (AASLD) criteria in cirrhotic patients",
+          "Population": "treatment naive adult (aged ≥18 years) patients with advanced, unresectable or metastatic hepatocellular carcinoma",
           "Intervention": "Medicine X (under assessment)",
           "Comparator": "sorafenib",
-          "Outcomes": "overall survival (OS; time from randomisation to death from any cause), progression-free survival (PFS; time from randomisation to tumour progression defined by RECIST 1.1 criteria or death from any cause), objective response rate (percentage of patients with partial or complete response according to RECIST 1.1 and modified RECIST [mRECIST] criteria for liver disease), duration of response (time from partial or complete response to disease progression or exit), deterioration in patient quality of life (measured by EORTC QLQ-C30 and EORTC QLQ-HCC18 questionnaires), time to patient-reported impairment of quality of life (EORTC QLQ-C30 full scale, fitness sub-scale, and functional role subscale), adverse events (including serious adverse events, grade 5 adverse events, and specific adverse events such as gastrointestinal disorders, bleeding, infections, liver disorders, hypothyroidism, infusion reactions, hyperthyroidism, hypertension, proteinuria, diabetes mellitus), discontinuation or dose modification due to adverse events, need for use of medical resources"
+          "Outcomes": "overall survival (OS), progression-free survival (PFS), progression-free survival (PFS; RECIST 1.1), progression-free survival (PFS; mRECIST), time to progression (TTP), objective response rate (ORR), objective response rate (ORR; mRECIST), complete response (CR), partial response (PR), time to response, duration of response (DoR), disease control rate (DCR; mRECIST), clinical benefit rate (CBR), plasma pharmacokinetics parameters, population pharmacokinetics, pharmacokinetic/pharmacodynamic relationship, adverse events (general), serious adverse events, adverse events leading to discontinuation, diarrhoea, nutrition (as a symptom domain), pain, body image (as a symptom domain), role functioning (as a symptom domain), health-related quality of life (HRQoL), EORTC QLQ-C30, EORTC QLQ-HCC18, EQ-5D, EQ-5D visual analogue scale (VAS), EQ-5D health utility index (HUI), time to clinically meaningful worsening (EORTC QLQ-C30 domains), time to clinically meaningful worsening (EORTC QLQ-HCC18 domains), time to clinically meaningful worsening (EQ-5D VAS), time to clinically meaningful worsening (EQ-5D HUI), cost-effectiveness, quality-adjusted life years (QALYs), post-treatment anti-cancer therapy, blood and tumour biomarkers correlated with clinical outcomes"
         },
         {
-          "Population": "advanced or unresectable hepatocellular carcinoma that has not previously been treated with any other systemic therapy",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "atezolizumab plus bevacizumab",
-          "Outcomes": "overall survival (OS; time from randomisation to death from any cause), progression-free survival (PFS; time from randomisation to tumour progression defined by RECIST 1.1 criteria or death from any cause), objective response rate (percentage of patients with partial or complete response according to RECIST 1.1 and modified RECIST [mRECIST] criteria for liver disease), duration of response (time from partial or complete response to disease progression or exit), deterioration in patient quality of life (measured by EORTC QLQ-C30 and EORTC QLQ-HCC18 questionnaires), time to patient-reported impairment of quality of life (EORTC QLQ-C30 full scale, fitness sub-scale, and functional role subscale), adverse events (including serious adverse events, grade 5 adverse events, and specific adverse events such as gastrointestinal disorders, bleeding, infections, liver disorders, hypothyroidism, infusion reactions, hyperthyroidism, hypertension, proteinuria, diabetes mellitus), discontinuation or dose modification due to adverse events, need for use of medical resources"
-        },
-        {
-          "Population": "patients with advanced and/ or unresectable hepatocarcinoma, Child-Pugh EMI, in the absence of grade 0 or grade 3-4",
+          "Population": "Adult patients with advanced HCC and adult patients with inoperable HCC",
           "Intervention": "Medicine X (under assessment)",
           "Comparator": "sorafenib",
-          "Outcomes": "overall survival (OS; time from randomisation to death from any cause), progression-free survival (PFS; time from randomisation to tumour progression defined by RECIST 1.1 criteria or death from any cause), objective response rate (percentage of patients with partial or complete response according to RECIST 1.1 and modified RECIST [mRECIST] criteria for liver disease), duration of response (time from partial or complete response to disease progression or exit), deterioration in patient quality of life (measured by EORTC QLQ-C30 and EORTC QLQ-HCC18 questionnaires), time to patient-reported impairment of quality of life (EORTC QLQ-C30 full scale, fitness sub-scale, and functional role subscale), adverse events (including serious adverse events, grade 5 adverse events, and specific adverse events such as gastrointestinal disorders, bleeding, infections, liver disorders, hypothyroidism, infusion reactions, hyperthyroidism, hypertension, proteinuria, diabetes mellitus), discontinuation or dose modification due to adverse events, need for use of medical resources"
+          "Outcomes": "overall survival (OS), progression-free survival (PFS), progression-free survival (PFS; RECIST 1.1), progression-free survival (PFS; mRECIST), time to progression (TTP), objective response rate (ORR), objective response rate (ORR; mRECIST), complete response (CR), partial response (PR), time to response, duration of response (DoR), disease control rate (DCR; mRECIST), clinical benefit rate (CBR), plasma pharmacokinetics parameters, population pharmacokinetics, pharmacokinetic/pharmacodynamic relationship, adverse events (general), serious adverse events, adverse events leading to discontinuation, diarrhoea, nutrition (as a symptom domain), pain, body image (as a symptom domain), role functioning (as a symptom domain), health-related quality of life (HRQoL), EORTC QLQ-C30, EORTC QLQ-HCC18, EQ-5D, EQ-5D visual analogue scale (VAS), EQ-5D health utility index (HUI), time to clinically meaningful worsening (EORTC QLQ-C30 domains), time to clinically meaningful worsening (EORTC QLQ-HCC18 domains), time to clinically meaningful worsening (EQ-5D VAS), time to clinically meaningful worsening (EQ-5D HUI), cost-effectiveness, quality-adjusted life years (QALYs), post-treatment anti-cancer therapy, blood and tumour biomarkers correlated with clinical outcomes"
         }
       ],
-      "ChunksUsed": 30,
-      "ContextTokens": 8377
-    },
-    "EN": {
-      "Indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
-      "Country": "EN",
-      "PICOs": [
-        {
-          "Population": "adults with advanced or unresectable HCC in adults who have not had previous systemic treatment, only if: • they have Child-Pugh grade A liver impairment and an Eastern Cooperative Oncology Group (ECOG) performance status of 0 or 1",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "sorafenib",
-          "Outcomes": "overall survival, progression-free survival, time to radiological disease progression, time to symptomatic disease progression (measured by FHSI-8 questionnaire), adverse events (including serious adverse events such as diarrhoea and hand-foot skin reaction), discontinuation of treatment due to adverse events, health-related quality of life, cost-effectiveness (incremental cost-effectiveness ratio, ICER), quality-adjusted life years (QALYs)"
-        },
-        {
-          "Population": "adults with advanced or unresectable HCC in adults who have not had previous systemic treatment, only if: • they have Child-Pugh grade A liver impairment and an Eastern Cooperative Oncology Group (ECOG) performance status of 0 or 1",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "lenvatinib",
-          "Outcomes": "overall survival, progression-free survival, time to radiological disease progression, time to symptomatic disease progression (measured by FHSI-8 questionnaire), adverse events (including serious adverse events such as diarrhoea and hand-foot skin reaction), discontinuation of treatment due to adverse events, health-related quality of life, cost-effectiveness (incremental cost-effectiveness ratio, ICER), quality-adjusted life years (QALYs)"
-        },
-        {
-          "Population": "most patients with advanced hepatocellular carcinoma",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "best supportive care",
-          "Outcomes": "overall survival, progression-free survival, time to radiological disease progression, time to symptomatic disease progression (measured by FHSI-8 questionnaire), adverse events (including serious adverse events such as diarrhoea and hand-foot skin reaction), discontinuation of treatment due to adverse events, health-related quality of life, cost-effectiveness (incremental cost-effectiveness ratio, ICER), quality-adjusted life years (QALYs)"
-        }
-      ],
-      "ChunksUsed": 30,
-      "ContextTokens": 5749
+      "ChunksUsed": 40,
+      "ContextTokens": 8873
     },
     "NL": {
       "Indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
@@ -207,45 +41,17 @@
           "Population": "patients with advanced hepatocellular carcinoma",
           "Intervention": "Medicine X (under assessment)",
           "Comparator": "placebo",
-          "Outcomes": "overall survival, time to symptom progression, time to progression, disease control (including partial response, minor response defined as reduction of tumour size by 25 to 50%, and stable disease for at least 16 weeks), adverse reactions (including serious adverse reactions and grade 3/4 adverse reactions), safety and tolerability in patients with hepatic dysfunction, cost-effectiveness analysis (including total treatment costs and budget impact)"
+          "Outcomes": "overall survival, time to symptom progression, time to progression, disease control, partial response, minor response (reduction of tumour size by 25 to 50%), stable disease (at least 16 weeks), serious adverse reactions, hypertension, diarrhoea, lymphoedema, abdominal pain, hand feeding reactions, fatigue, bleeding, adverse reactions (general), cost-effectiveness analysis"
         },
         {
           "Population": "patients with hepatocellular carcinoma in whom initiation of curative treatment or (continuation) of locoregional or local palliative treatment is not possible or considered medically inappropriate (hepatocell carcinomas)",
           "Intervention": "Medicine X (under assessment)",
           "Comparator": "best care regimen available",
-          "Outcomes": "overall survival, time to symptom progression, time to progression, disease control (including partial response, minor response defined as reduction of tumour size by 25 to 50%, and stable disease for at least 16 weeks), adverse reactions (including serious adverse reactions and grade 3/4 adverse reactions), safety and tolerability in patients with hepatic dysfunction, cost-effectiveness analysis (including total treatment costs and budget impact)"
+          "Outcomes": "overall survival, time to symptom progression, time to progression, disease control, partial response, minor response (reduction of tumour size by 25 to 50%), stable disease (at least 16 weeks), serious adverse reactions, hypertension, diarrhoea, lymphoedema, abdominal pain, hand feeding reactions, fatigue, bleeding, adverse reactions (general), cost-effectiveness analysis"
         }
       ],
-      "ChunksUsed": 30,
-      "ContextTokens": 5588
-    },
-    "CZ": {
-      "Indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
-      "Country": "CZ",
-      "PICOs": [
-        {
-          "Population": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "",
-          "Outcomes": "therapeutic value, interchangeability with medicines included in the insured package"
-        }
-      ],
-      "ChunksUsed": 2,
-      "ContextTokens": 404
-    },
-    "FR": {
-      "Indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
-      "Country": "FR",
-      "PICOs": [
-        {
-          "Population": "patients with advanced or unresectable hepatocellular carcinoma (HCC) (stage BCLC B or C) who have not received prior systemic therapy",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "sorafenib",
-          "Outcomes": "overall survival (OS, defined as time from randomization to death from any cause, with censoring at cut-off date or last contact), progression-free survival (PFS, defined as time from randomization to disease progression or death), time to progression (defined as time from randomization to disease progression), objective response rate, disease control rate, clinical benefit rate, adverse events (including serious adverse events, grade 3 adverse reactions, treatment-related deaths, and specific events such as hepatotoxicity, hypertension, loss of appetite, weight loss, hepatic encephalopathy, hepatic insufficiency, decreased appetite, arterial thromboembolic events, haemorrhagic events, hypothyroidism, renal events, and hand-foot syndrome), discontinuation of treatment due to adverse events, health-related quality of life (assessed using EQ5D-3L, EORTC QLQ-C30, and EORTC QLQ-HCC18 questionnaires)"
-        }
-      ],
-      "ChunksUsed": 30,
-      "ContextTokens": 7930
+      "ChunksUsed": 40,
+      "ContextTokens": 7094
     },
     "SE": {
       "Indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
@@ -255,101 +61,87 @@
           "Population": "adult patients with advanced or non-resettable HCC",
           "Intervention": "Medicine X (under assessment)",
           "Comparator": "Tecentriq (atezolizumab) plus bevacizumab",
-          "Outcomes": "overall survival (OS, defined as time from randomization to death from any cause), progression-free survival (PFS), objective tumour response, time to tumour progression, adverse events (including serious adverse events and adverse reactions leading to discontinuation of treatment), health-related quality of life (including quality of life weights and health state utility values), quality-adjusted life years (QALYs), cost-effectiveness (cost per QALY, cost-benefit analysis), resource use estimates, Eastern Cooperative Oncology Group Performance Status (ECOG PS), Child-Pugh scale for liver function, tumour spread assessment (size, number, vascular invasion, extrahepatic spread, TNM system), time in health states (progression-free, progressive illness, death) in partitioned survival model"
+          "Outcomes": "overall survival (OS; time from randomization to death from any cause), progression-free survival (PFS), objective tumour response, time to tumour progression, adverse reactions leading to discontinuation of treatment, quality of life weights (EQ-5D-3L-converted weights with Dolan tariff), state-specific quality-of-life weights, cost per quality-adjusted life year (QALY), cost-benefit analysis, Eastern Cooperative Oncology Group Performance Status (ECOG PS), Child-Pugh scale, tumour spread (TNM system), adverse events (general), grade 3 or higher adverse reactions"
         },
         {
           "Population": "adult patients with advanced or non-resettable HCC",
           "Intervention": "Medicine X (under assessment)",
           "Comparator": "sorafenib",
-          "Outcomes": "overall survival (OS, defined as time from randomization to death from any cause), progression-free survival (PFS), objective tumour response, time to tumour progression, adverse events (including serious adverse events and adverse reactions leading to discontinuation of treatment), health-related quality of life (including quality of life weights and health state utility values), quality-adjusted life years (QALYs), cost-effectiveness (cost per QALY, cost-benefit analysis), resource use estimates, Eastern Cooperative Oncology Group Performance Status (ECOG PS), Child-Pugh scale for liver function, tumour spread assessment (size, number, vascular invasion, extrahepatic spread, TNM system), time in health states (progression-free, progressive illness, death) in partitioned survival model"
+          "Outcomes": "overall survival (OS; time from randomization to death from any cause), progression-free survival (PFS), objective tumour response, time to tumour progression, adverse reactions leading to discontinuation of treatment, quality of life weights (EQ-5D-3L-converted weights with Dolan tariff), state-specific quality-of-life weights, cost per quality-adjusted life year (QALY), cost-benefit analysis, Eastern Cooperative Oncology Group Performance Status (ECOG PS), Child-Pugh scale, tumour spread (TNM system), adverse events (general), grade 3 or higher adverse reactions"
         },
         {
           "Population": "adult patients with advanced or non-resettable HCC",
           "Intervention": "Medicine X (under assessment)",
           "Comparator": "Lenvima (lenvatinib)",
-          "Outcomes": "overall survival (OS, defined as time from randomization to death from any cause), progression-free survival (PFS), objective tumour response, time to tumour progression, adverse events (including serious adverse events and adverse reactions leading to discontinuation of treatment), health-related quality of life (including quality of life weights and health state utility values), quality-adjusted life years (QALYs), cost-effectiveness (cost per QALY, cost-benefit analysis), resource use estimates, Eastern Cooperative Oncology Group Performance Status (ECOG PS), Child-Pugh scale for liver function, tumour spread assessment (size, number, vascular invasion, extrahepatic spread, TNM system), time in health states (progression-free, progressive illness, death) in partitioned survival model"
+          "Outcomes": "overall survival (OS; time from randomization to death from any cause), progression-free survival (PFS), objective tumour response, time to tumour progression, adverse reactions leading to discontinuation of treatment, quality of life weights (EQ-5D-3L-converted weights with Dolan tariff), state-specific quality-of-life weights, cost per quality-adjusted life year (QALY), cost-benefit analysis, Eastern Cooperative Oncology Group Performance Status (ECOG PS), Child-Pugh scale, tumour spread (TNM system), adverse events (general), grade 3 or higher adverse reactions"
+        },
+        {
+          "Population": "patients with HCC having a non viral etiology",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "Tecentriq plus bevacizumab",
+          "Outcomes": "overall survival (OS; time from randomization to death from any cause), progression-free survival (PFS), objective tumour response, time to tumour progression, adverse reactions leading to discontinuation of treatment, quality of life weights (EQ-5D-3L-converted weights with Dolan tariff), state-specific quality-of-life weights, cost per quality-adjusted life year (QALY), cost-benefit analysis, Eastern Cooperative Oncology Group Performance Status (ECOG PS), Child-Pugh scale, tumour spread (TNM system), adverse events (general), grade 3 or higher adverse reactions"
         }
       ],
-      "ChunksUsed": 30,
-      "ContextTokens": 6289
+      "ChunksUsed": 40,
+      "ContextTokens": 8135
     },
-    "PO": {
+    "ES": {
       "Indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
-      "Country": "PO",
-      "PICOs": [
-        {
-          "Population": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "",
-          "Outcomes": "overall survival (OS), progression-free survival (PFS), time to progression (TTP), objective response rate (ORR), complete response (CR), partial response (PR), stable disease (SD), disease control rate (DCR), adverse events (including serious adverse events and grade 3 or 4 adverse events), treatment-emergent adverse events (TEAEs), discontinuation, dose reduction, or suspension due to adverse events, number needed to harm (NNH), number needed to treat (NNT), health-related quality of life (measured by EQ-5D and EQ VAS, assessing mobility, self-care, usual activities, pain/discomfort, anxiety/depression, and a visual analogue scale 0-100), quality of life (measured by FACT-G questionnaire, covering physical, family/social, emotional, and functional well-being), hazard ratio (HR), mean difference (MD), relative risk (RR), risk difference (RD)"
-        }
-      ],
-      "ChunksUsed": 30,
-      "ContextTokens": 7298
-    },
-    "DE": {
-      "Indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
-      "Country": "DE",
-      "PICOs": [
-        {
-          "Population": "adults with HCC in Barcelona Clinic Liver Cancer (BCLC) stage B or C who did not receive any prior systemic therapy for the advanced or inoperable disease. Hepatic cirrhosis of any aetiology was not an exclusion criterion. Patients in BCLC stage B had to be ineligible for transarterial chemoembolization (TACE). Further inclusion criteria were Child-Pugh stage A and an Eastern Cooperative Oncology Group – Performance Status (ECOG-PS) score of 0 or 1.",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "sorafenib",
-          "Outcomes": "all-cause mortality (death due to any cause), overall survival (OS), tumor response rate, adverse events (including grade III/IV adverse reactions such as hand-foot skin reaction, diarrhea, hypertension, skin rash or desquamation), quality of life, liver function, tumor reduction, time to progression (TTP), time to symptomatic progression (TTSP), disease control rate (DCR), health status (measured by European Quality of Life – 5 Dimensions Visual Analogue Scale, EQ-5D VAS), health-related quality of life (measured by global health status and function scales of EORTC QLQ-C30 and EORTC QLQ-HCC18), symptoms (fatigue, pain, jaundice, fever, abdominal swelling measured by EORTC QLQ-HCC18), disease recurrence, length of hospital stay, complications, local control, days of missed work, discontinuation due to adverse events"
-        },
-        {
-          "Population": "patients with advanced HCC",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "TACE",
-          "Outcomes": "all-cause mortality (death due to any cause), overall survival (OS), tumor response rate, adverse events (including grade III/IV adverse reactions such as hand-foot skin reaction, diarrhea, hypertension, skin rash or desquamation), quality of life, liver function, tumor reduction, time to progression (TTP), time to symptomatic progression (TTSP), disease control rate (DCR), health status (measured by European Quality of Life – 5 Dimensions Visual Analogue Scale, EQ-5D VAS), health-related quality of life (measured by global health status and function scales of EORTC QLQ-C30 and EORTC QLQ-HCC18), symptoms (fatigue, pain, jaundice, fever, abdominal swelling measured by EORTC QLQ-HCC18), disease recurrence, length of hospital stay, complications, local control, days of missed work, discontinuation due to adverse events"
-        },
-        {
-          "Population": "patients with advanced HCC",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "TACE + Sorafenib",
-          "Outcomes": "all-cause mortality (death due to any cause), overall survival (OS), tumor response rate, adverse events (including grade III/IV adverse reactions such as hand-foot skin reaction, diarrhea, hypertension, skin rash or desquamation), quality of life, liver function, tumor reduction, time to progression (TTP), time to symptomatic progression (TTSP), disease control rate (DCR), health status (measured by European Quality of Life – 5 Dimensions Visual Analogue Scale, EQ-5D VAS), health-related quality of life (measured by global health status and function scales of EORTC QLQ-C30 and EORTC QLQ-HCC18), symptoms (fatigue, pain, jaundice, fever, abdominal swelling measured by EORTC QLQ-HCC18), disease recurrence, length of hospital stay, complications, local control, days of missed work, discontinuation due to adverse events"
-        },
-        {
-          "Population": "HCC patients with PVT",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "TACE",
-          "Outcomes": "all-cause mortality (death due to any cause), overall survival (OS), tumor response rate, adverse events (including grade III/IV adverse reactions such as hand-foot skin reaction, diarrhea, hypertension, skin rash or desquamation), quality of life, liver function, tumor reduction, time to progression (TTP), time to symptomatic progression (TTSP), disease control rate (DCR), health status (measured by European Quality of Life – 5 Dimensions Visual Analogue Scale, EQ-5D VAS), health-related quality of life (measured by global health status and function scales of EORTC QLQ-C30 and EORTC QLQ-HCC18), symptoms (fatigue, pain, jaundice, fever, abdominal swelling measured by EORTC QLQ-HCC18), disease recurrence, length of hospital stay, complications, local control, days of missed work, discontinuation due to adverse events"
-        },
-        {
-          "Population": "patients with advanced or unresectable hepatocellular carcinoma",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "best supportive care",
-          "Outcomes": "all-cause mortality (death due to any cause), overall survival (OS), tumor response rate, adverse events (including grade III/IV adverse reactions such as hand-foot skin reaction, diarrhea, hypertension, skin rash or desquamation), quality of life, liver function, tumor reduction, time to progression (TTP), time to symptomatic progression (TTSP), disease control rate (DCR), health status (measured by European Quality of Life – 5 Dimensions Visual Analogue Scale, EQ-5D VAS), health-related quality of life (measured by global health status and function scales of EORTC QLQ-C30 and EORTC QLQ-HCC18), symptoms (fatigue, pain, jaundice, fever, abdominal swelling measured by EORTC QLQ-HCC18), disease recurrence, length of hospital stay, complications, local control, days of missed work, discontinuation due to adverse events"
-        }
-      ],
-      "ChunksUsed": 30,
-      "ContextTokens": 5944
-    },
-    "DK": {
-      "Indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
-      "Country": "DK",
+      "Country": "ES",
       "PICOs": [
         {
           "Population": "patients with unresectable hepatocellular carcinoma",
           "Intervention": "Medicine X (under assessment)",
           "Comparator": "sorafenib",
-          "Outcomes": "overall survival (OS), progression-free survival (PFS), time to progression (TTP), objective response rate (ORR), complete response (CR), partial response (PR), duration of response, time to response, disease control rate (DCR, mRECIST), clinical benefit rate (CBR), adverse events (including serious adverse events, treatment-emergent adverse events, adverse events leading to discontinuation, adverse events occurring in more than 5% of patients), health-related quality of life (HRQoL, measured by EORTC QLQ-C30, EORTC QLQ-HCC18, and EQ-5D questionnaires), time to clinically meaningful deterioration in HRQoL domains (role functioning, pain, diarrhoea from EORTC QLQ-C30; nutrition, body image from EORTC QLQ-HCC18), plasma pharmacokinetics parameters, pharmacokinetic/pharmacodynamic relationship between exposure and efficacy/safety, resource use estimates, cost-effectiveness (incremental cost-effectiveness ratio, ICER), quality-adjusted life years (QALYs)"
+          "Outcomes": "overall survival (OS; time from randomisation to death from any cause), progression-free survival (PFS; time from randomisation to tumour progression defined by RECIST 1.1 or death from any cause), objective response rate (ORR; percentage of patients with partial or complete response, RECIST 1.1 and mRECIST), duration of response (time from partial or complete response to disease progression or exit), deterioration in patient quality of life (EORTC QLQ-C30, EORTC QLQ-HCC18), arterial hypertension, proteinuria, gastrointestinal disorders, bleeding, infections, liver disorders, hypothyroidism, infusion reactions, hyperthyroidism, hypertension, fatigue, increased aspartate aminotransferase (AST), increased alanine aminotransferase (ALT), pruritus, diarrhoea, fever, loss of appetite, constipation, increased serum bilirubin, abdominal pain, nausea, cough, thrombocytopenia, weight loss, epilepsy, palmar rash, asthenia, diabetes mellitus, adverse events (general), serious adverse events, grade 3-4 adverse events, grade 5 adverse events, dose modification or discontinuation due to adverse events, EORTC QLQ-C30, EORTC QLQ-HCC18"
         },
         {
-          "Population": "treatment naive adult (aged ≥18 years) patients with advanced, unresectable or metastatic hepatocellular carcinoma",
+          "Population": "patients with unresectable hepatocellular carcinoma",
           "Intervention": "Medicine X (under assessment)",
-          "Comparator": "sorafenib",
-          "Outcomes": "overall survival (OS), progression-free survival (PFS), time to progression (TTP), objective response rate (ORR), complete response (CR), partial response (PR), duration of response, time to response, disease control rate (DCR, mRECIST), clinical benefit rate (CBR), adverse events (including serious adverse events, treatment-emergent adverse events, adverse events leading to discontinuation, adverse events occurring in more than 5% of patients), health-related quality of life (HRQoL, measured by EORTC QLQ-C30, EORTC QLQ-HCC18, and EQ-5D questionnaires), time to clinically meaningful deterioration in HRQoL domains (role functioning, pain, diarrhoea from EORTC QLQ-C30; nutrition, body image from EORTC QLQ-HCC18), plasma pharmacokinetics parameters, pharmacokinetic/pharmacodynamic relationship between exposure and efficacy/safety, resource use estimates, cost-effectiveness (incremental cost-effectiveness ratio, ICER), quality-adjusted life years (QALYs)"
+          "Comparator": "lenvatinib",
+          "Outcomes": "overall survival (OS; time from randomisation to death from any cause), progression-free survival (PFS; time from randomisation to tumour progression defined by RECIST 1.1 or death from any cause), objective response rate (ORR; percentage of patients with partial or complete response, RECIST 1.1 and mRECIST), duration of response (time from partial or complete response to disease progression or exit), deterioration in patient quality of life (EORTC QLQ-C30, EORTC QLQ-HCC18), arterial hypertension, proteinuria, gastrointestinal disorders, bleeding, infections, liver disorders, hypothyroidism, infusion reactions, hyperthyroidism, hypertension, fatigue, increased aspartate aminotransferase (AST), increased alanine aminotransferase (ALT), pruritus, diarrhoea, fever, loss of appetite, constipation, increased serum bilirubin, abdominal pain, nausea, cough, thrombocytopenia, weight loss, epilepsy, palmar rash, asthenia, diabetes mellitus, adverse events (general), serious adverse events, grade 3-4 adverse events, grade 5 adverse events, dose modification or discontinuation due to adverse events, EORTC QLQ-C30, EORTC QLQ-HCC18"
         },
         {
-          "Population": "Adult patients with advanced HCC and adult patients with inoperable HCC.",
+          "Population": "patients with advanced and/ or unresectable hepatocarcinoma, Child-Pugh EMI, in the absence of grade 0 or grade 3-4",
           "Intervention": "Medicine X (under assessment)",
           "Comparator": "sorafenib",
-          "Outcomes": "overall survival (OS), progression-free survival (PFS), time to progression (TTP), objective response rate (ORR), complete response (CR), partial response (PR), duration of response, time to response, disease control rate (DCR, mRECIST), clinical benefit rate (CBR), adverse events (including serious adverse events, treatment-emergent adverse events, adverse events leading to discontinuation, adverse events occurring in more than 5% of patients), health-related quality of life (HRQoL, measured by EORTC QLQ-C30, EORTC QLQ-HCC18, and EQ-5D questionnaires), time to clinically meaningful deterioration in HRQoL domains (role functioning, pain, diarrhoea from EORTC QLQ-C30; nutrition, body image from EORTC QLQ-HCC18), plasma pharmacokinetics parameters, pharmacokinetic/pharmacodynamic relationship between exposure and efficacy/safety, resource use estimates, cost-effectiveness (incremental cost-effectiveness ratio, ICER), quality-adjusted life years (QALYs)"
+          "Outcomes": "overall survival (OS; time from randomisation to death from any cause), progression-free survival (PFS; time from randomisation to tumour progression defined by RECIST 1.1 or death from any cause), objective response rate (ORR; percentage of patients with partial or complete response, RECIST 1.1 and mRECIST), duration of response (time from partial or complete response to disease progression or exit), deterioration in patient quality of life (EORTC QLQ-C30, EORTC QLQ-HCC18), arterial hypertension, proteinuria, gastrointestinal disorders, bleeding, infections, liver disorders, hypothyroidism, infusion reactions, hyperthyroidism, hypertension, fatigue, increased aspartate aminotransferase (AST), increased alanine aminotransferase (ALT), pruritus, diarrhoea, fever, loss of appetite, constipation, increased serum bilirubin, abdominal pain, nausea, cough, thrombocytopenia, weight loss, epilepsy, palmar rash, asthenia, diabetes mellitus, adverse events (general), serious adverse events, grade 3-4 adverse events, grade 5 adverse events, dose modification or discontinuation due to adverse events, EORTC QLQ-C30, EORTC QLQ-HCC18"
+        },
+        {
+          "Population": "patients aged 18 years or older and diagnosed with locally advanced or metastatic and/ or unresectable HCC with histological/ cytological confirmation or clinical features consistent with the American Association for the Study of the Liver (AASLD) criteria in cirrhotic patients",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "sorafenib",
+          "Outcomes": "overall survival (OS; time from randomisation to death from any cause), progression-free survival (PFS; time from randomisation to tumour progression defined by RECIST 1.1 or death from any cause), objective response rate (ORR; percentage of patients with partial or complete response, RECIST 1.1 and mRECIST), duration of response (time from partial or complete response to disease progression or exit), deterioration in patient quality of life (EORTC QLQ-C30, EORTC QLQ-HCC18), arterial hypertension, proteinuria, gastrointestinal disorders, bleeding, infections, liver disorders, hypothyroidism, infusion reactions, hyperthyroidism, hypertension, fatigue, increased aspartate aminotransferase (AST), increased alanine aminotransferase (ALT), pruritus, diarrhoea, fever, loss of appetite, constipation, increased serum bilirubin, abdominal pain, nausea, cough, thrombocytopenia, weight loss, epilepsy, palmar rash, asthenia, diabetes mellitus, adverse events (general), serious adverse events, grade 3-4 adverse events, grade 5 adverse events, dose modification or discontinuation due to adverse events, EORTC QLQ-C30, EORTC QLQ-HCC18"
+        },
+        {
+          "Population": "all patients had locally advanced, unresectable or metastatic CHC, for which they had not received prior systemic therapy",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "lenvatinib",
+          "Outcomes": "overall survival (OS; time from randomisation to death from any cause), progression-free survival (PFS; time from randomisation to tumour progression defined by RECIST 1.1 or death from any cause), objective response rate (ORR; percentage of patients with partial or complete response, RECIST 1.1 and mRECIST), duration of response (time from partial or complete response to disease progression or exit), deterioration in patient quality of life (EORTC QLQ-C30, EORTC QLQ-HCC18), arterial hypertension, proteinuria, gastrointestinal disorders, bleeding, infections, liver disorders, hypothyroidism, infusion reactions, hyperthyroidism, hypertension, fatigue, increased aspartate aminotransferase (AST), increased alanine aminotransferase (ALT), pruritus, diarrhoea, fever, loss of appetite, constipation, increased serum bilirubin, abdominal pain, nausea, cough, thrombocytopenia, weight loss, epilepsy, palmar rash, asthenia, diabetes mellitus, adverse events (general), serious adverse events, grade 3-4 adverse events, grade 5 adverse events, dose modification or discontinuation due to adverse events, EORTC QLQ-C30, EORTC QLQ-HCC18"
+        },
+        {
+          "Population": "patients with Child- Pugh C or Child-Pugh B with decompensations associated with poor prognosis such as refractory ascites, recurrent hepatic encephalopathy, spontaneous bacterial peritonitis, etc.",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "best supportive care",
+          "Outcomes": "overall survival (OS; time from randomisation to death from any cause), progression-free survival (PFS; time from randomisation to tumour progression defined by RECIST 1.1 or death from any cause), objective response rate (ORR; percentage of patients with partial or complete response, RECIST 1.1 and mRECIST), duration of response (time from partial or complete response to disease progression or exit), deterioration in patient quality of life (EORTC QLQ-C30, EORTC QLQ-HCC18), arterial hypertension, proteinuria, gastrointestinal disorders, bleeding, infections, liver disorders, hypothyroidism, infusion reactions, hyperthyroidism, hypertension, fatigue, increased aspartate aminotransferase (AST), increased alanine aminotransferase (ALT), pruritus, diarrhoea, fever, loss of appetite, constipation, increased serum bilirubin, abdominal pain, nausea, cough, thrombocytopenia, weight loss, epilepsy, palmar rash, asthenia, diabetes mellitus, adverse events (general), serious adverse events, grade 3-4 adverse events, grade 5 adverse events, dose modification or discontinuation due to adverse events, EORTC QLQ-C30, EORTC QLQ-HCC18"
         }
       ],
-      "ChunksUsed": 30,
-      "ContextTokens": 6670
+      "ChunksUsed": 40,
+      "ContextTokens": 10821
+    },
+    "FR": {
+      "Indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
+      "Country": "FR",
+      "PICOs": [
+        {
+          "Population": "patients with advanced or unresectable hepatocellular carcinoma (HCC) (stage BCLC B or C) who have not received prior systemic therapy",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "sorafenib",
+          "Outcomes": "overall survival (OS), progression-free survival (PFS), progression-free survival (RECIST 1.1), time to progression, objective response rate (ORR), disease control rate, clinical benefit rate, quality of life (EQ-5D-3L), EORTC QLQ-C30, EORTC QLQ-HCC18, adverse events (general), grade 3 adverse events, serious adverse events, treatment-related deaths, hypertension, diarrhoea, decreased appetite, weight loss, fatigue, hand-foot syndrome, proteinuria, dysphonia, alopecia, hepatic encephalopathy, hepatic insufficiency, ascites, tumour progression, abdominal pain, brain haemorrhage, sepsis, brain/gastrointestinal bleeding, intestinal failure, respiratory failure, cerebral vascular accident, cardiovascular arrest, myocardial infarction, haemorrhage, sudden death, arterial thromboembolic events, haemorrhagic events, hypothyroidism, renal events, discontinuation of treatment due to adverse events"
+        }
+      ],
+      "ChunksUsed": 40,
+      "ContextTokens": 10539
     },
     "PT": {
       "Indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
@@ -359,17 +151,211 @@
           "Population": "adult patients with advanced or non-resectable hepatocellular carcinoma (HCC) and who have not received any previous systemic therapy",
           "Intervention": "Medicine X (under assessment)",
           "Comparator": "sorafenib",
-          "Outcomes": "overall survival (OS), progression-free survival (PFS), time to progression (TTP), objective response rate (ORR), quality of life (assessed by EORTC QLQ-C30 and EORTC QLQ-HCC18 questionnaires), pharmacokinetic parameters, safety assessments (including vital signs, laboratory haematological and biochemical testing, urinalysis, electrocardiography), adverse events (graded according to the National Cancer Institute), discontinuation due to adverse events, dose reduction due to adverse events, drug withdrawal due to adverse events, grade 3 and 4 adverse reaction rate, treatment-related mortality, dropout rate for toxicity"
+          "Outcomes": "overall survival (OS), progression-free survival (PFS), progression-free survival (modified RECIST criteria), time to progression (TTP), objective response rate (ORR), quality of life, EORTC QLQ-C30, EORTC QLQ-HCC18, pharmacokinetic parameters, vital signs recording, laboratory haematological testing, laboratory biochemical testing, urinalysis, electrocardiography, adverse events (graded according to the National Cancer Institute), grade 3 adverse reactions, grade 4 adverse reactions, treatment-related mortality, dropout rate for toxicity, tumour haemorrhage, ischaemic stroke, respiratory failure, sudden death"
         },
         {
           "Population": "patients with unresectable HCC",
           "Intervention": "Medicine X (under assessment)",
           "Comparator": "sorafenib",
-          "Outcomes": "overall survival (OS), progression-free survival (PFS), time to progression (TTP), objective response rate (ORR), quality of life (assessed by EORTC QLQ-C30 and EORTC QLQ-HCC18 questionnaires), pharmacokinetic parameters, safety assessments (including vital signs, laboratory haematological and biochemical testing, urinalysis, electrocardiography), adverse events (graded according to the National Cancer Institute), discontinuation due to adverse events, dose reduction due to adverse events, drug withdrawal due to adverse events, grade 3 and 4 adverse reaction rate, treatment-related mortality, dropout rate for toxicity"
+          "Outcomes": "overall survival (OS), progression-free survival (PFS), progression-free survival (modified RECIST criteria), time to progression (TTP), objective response rate (ORR), quality of life, EORTC QLQ-C30, EORTC QLQ-HCC18, pharmacokinetic parameters, vital signs recording, laboratory haematological testing, laboratory biochemical testing, urinalysis, electrocardiography, adverse events (graded according to the National Cancer Institute), grade 3 adverse reactions, grade 4 adverse reactions, treatment-related mortality, dropout rate for toxicity, tumour haemorrhage, ischaemic stroke, respiratory failure, sudden death"
         }
       ],
-      "ChunksUsed": 30,
-      "ContextTokens": 5019
+      "ChunksUsed": 37,
+      "ContextTokens": 5908
+    },
+    "DE": {
+      "Indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
+      "Country": "DE",
+      "PICOs": [
+        {
+          "Population": "adults with HCC in Barcelona Clinic Liver Cancer (BCLC) stage B or C who did not receive any prior systemic therapy for the advanced or inoperable disease",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "sorafenib",
+          "Outcomes": "all-cause mortality, overall survival (OS), time to progression (TTP), time to symptomatic progression (TTSP), disease control rate (DCR), tumor response rate, overall response rate (ORR), tumor reduction, recurrence-free survival, disease recurrence, local control, length of hospital stay, days of missed work, complications, adverse events, hand-foot syndrome, diarrhoea, hypertension, skin rash, desquamation, rash, fatigue, pain, jaundice, fever, abdominal swelling, liver failure, post-treatment complications, cognitive functioning, liver function, toxicity, EORTC QLQ-C30, EORTC QLQ-HCC18, EQ-5D VAS, health status, health-related quality of life, global health status, function scales of EORTC QLQ-C30, function scales of EORTC QLQ-HCC18, time to deterioration (defined as a score increase by at least 10 points over baseline on EORTC QLQ-C30 and EORTC QLQ-HCC18), quality-adjusted life years (QALYs), cost-effectiveness (incremental cost-effectiveness ratio, ICER)"
+        },
+        {
+          "Population": "patients with advanced HCC",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "TACE",
+          "Outcomes": "all-cause mortality, overall survival (OS), time to progression (TTP), time to symptomatic progression (TTSP), disease control rate (DCR), tumor response rate, overall response rate (ORR), tumor reduction, recurrence-free survival, disease recurrence, local control, length of hospital stay, days of missed work, complications, adverse events, hand-foot syndrome, diarrhoea, hypertension, skin rash, desquamation, rash, fatigue, pain, jaundice, fever, abdominal swelling, liver failure, post-treatment complications, cognitive functioning, liver function, toxicity, EORTC QLQ-C30, EORTC QLQ-HCC18, EQ-5D VAS, health status, health-related quality of life, global health status, function scales of EORTC QLQ-C30, function scales of EORTC QLQ-HCC18, time to deterioration (defined as a score increase by at least 10 points over baseline on EORTC QLQ-C30 and EORTC QLQ-HCC18), quality-adjusted life years (QALYs), cost-effectiveness (incremental cost-effectiveness ratio, ICER)"
+        },
+        {
+          "Population": "patients with advanced HCC",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "TACE + sorafenib",
+          "Outcomes": "all-cause mortality, overall survival (OS), time to progression (TTP), time to symptomatic progression (TTSP), disease control rate (DCR), tumor response rate, overall response rate (ORR), tumor reduction, recurrence-free survival, disease recurrence, local control, length of hospital stay, days of missed work, complications, adverse events, hand-foot syndrome, diarrhoea, hypertension, skin rash, desquamation, rash, fatigue, pain, jaundice, fever, abdominal swelling, liver failure, post-treatment complications, cognitive functioning, liver function, toxicity, EORTC QLQ-C30, EORTC QLQ-HCC18, EQ-5D VAS, health status, health-related quality of life, global health status, function scales of EORTC QLQ-C30, function scales of EORTC QLQ-HCC18, time to deterioration (defined as a score increase by at least 10 points over baseline on EORTC QLQ-C30 and EORTC QLQ-HCC18), quality-adjusted life years (QALYs), cost-effectiveness (incremental cost-effectiveness ratio, ICER)"
+        },
+        {
+          "Population": "HCC patients with PVT",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "TACE",
+          "Outcomes": "all-cause mortality, overall survival (OS), time to progression (TTP), time to symptomatic progression (TTSP), disease control rate (DCR), tumor response rate, overall response rate (ORR), tumor reduction, recurrence-free survival, disease recurrence, local control, length of hospital stay, days of missed work, complications, adverse events, hand-foot syndrome, diarrhoea, hypertension, skin rash, desquamation, rash, fatigue, pain, jaundice, fever, abdominal swelling, liver failure, post-treatment complications, cognitive functioning, liver function, toxicity, EORTC QLQ-C30, EORTC QLQ-HCC18, EQ-5D VAS, health status, health-related quality of life, global health status, function scales of EORTC QLQ-C30, function scales of EORTC QLQ-HCC18, time to deterioration (defined as a score increase by at least 10 points over baseline on EORTC QLQ-C30 and EORTC QLQ-HCC18), quality-adjusted life years (QALYs), cost-effectiveness (incremental cost-effectiveness ratio, ICER)"
+        },
+        {
+          "Population": "patients with advanced or unresectable hepatocellular carcinoma",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "best supportive care",
+          "Outcomes": "all-cause mortality, overall survival (OS), time to progression (TTP), time to symptomatic progression (TTSP), disease control rate (DCR), tumor response rate, overall response rate (ORR), tumor reduction, recurrence-free survival, disease recurrence, local control, length of hospital stay, days of missed work, complications, adverse events, hand-foot syndrome, diarrhoea, hypertension, skin rash, desquamation, rash, fatigue, pain, jaundice, fever, abdominal swelling, liver failure, post-treatment complications, cognitive functioning, liver function, toxicity, EORTC QLQ-C30, EORTC QLQ-HCC18, EQ-5D VAS, health status, health-related quality of life, global health status, function scales of EORTC QLQ-C30, function scales of EORTC QLQ-HCC18, time to deterioration (defined as a score increase by at least 10 points over baseline on EORTC QLQ-C30 and EORTC QLQ-HCC18), quality-adjusted life years (QALYs), cost-effectiveness (incremental cost-effectiveness ratio, ICER)"
+        }
+      ],
+      "ChunksUsed": 40,
+      "ContextTokens": 8251
+    },
+    "EN": {
+      "Indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
+      "Country": "EN",
+      "PICOs": [
+        {
+          "Population": "adults with advanced or unresectable HCC who have not had previous systemic treatment, who have Child-Pugh grade A liver impairment and an Eastern Cooperative Oncology Group (ECOG) performance status of 0 or 1",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "sorafenib",
+          "Outcomes": "overall survival, progression-free survival, time to radiological disease progression, time to symptomatic disease progression (FHSI-8 questionnaire), duration of treatment, treatment discontinuation, diarrhoea, hand-foot skin reaction, dermatological toxicities, hypertension, haemorrhage, cardiac ischaemia, cardiac infarction, gastrointestinal perforation, hepatic impairment, wound healing complications, adverse events (general), health-related quality of life, quality-adjusted life years (QALYs), cost-effectiveness (incremental cost-effectiveness ratio, ICER), resource use estimates"
+        },
+        {
+          "Population": "adults with advanced or unresectable HCC who have not had previous systemic treatment, who have Child-Pugh grade A liver impairment and an Eastern Cooperative Oncology Group (ECOG) performance status of 0 or 1",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "lenvatinib",
+          "Outcomes": "overall survival, progression-free survival, time to radiological disease progression, time to symptomatic disease progression (FHSI-8 questionnaire), duration of treatment, treatment discontinuation, diarrhoea, hand-foot skin reaction, dermatological toxicities, hypertension, haemorrhage, cardiac ischaemia, cardiac infarction, gastrointestinal perforation, hepatic impairment, wound healing complications, adverse events (general), health-related quality of life, quality-adjusted life years (QALYs), cost-effectiveness (incremental cost-effectiveness ratio, ICER), resource use estimates"
+        },
+        {
+          "Population": "most patients with advanced hepatocellular carcinoma",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "best supportive care",
+          "Outcomes": "overall survival, progression-free survival, time to radiological disease progression, time to symptomatic disease progression (FHSI-8 questionnaire), duration of treatment, treatment discontinuation, diarrhoea, hand-foot skin reaction, dermatological toxicities, hypertension, haemorrhage, cardiac ischaemia, cardiac infarction, gastrointestinal perforation, hepatic impairment, wound healing complications, adverse events (general), health-related quality of life, quality-adjusted life years (QALYs), cost-effectiveness (incremental cost-effectiveness ratio, ICER), resource use estimates"
+        }
+      ],
+      "ChunksUsed": 40,
+      "ContextTokens": 7554
+    },
+    "PO": {
+      "Indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
+      "Country": "PO",
+      "PICOs": [
+        {
+          "Population": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "",
+          "Outcomes": "overall survival (OS), progression-free survival (PFS), time to progression (TTP), objective response rate (ORR), complete response (CR), partial response (PR), stable disease (SD), disease control rate (DCR), number needed to harm (NNH), number needed to treat (NNT), hazard ratio (HR), mean difference (MD), relative risk (RR), risk difference (RD), FACT-G (Functional Assessment of Cancer Therapy – General), EQ-5D (Euro QoL – 5 dimensions), EQ VAS (Euro QoL visual analogue scale), hand-foot skin reaction, diarrhoea, rash, skin desquamation, fatigue, weight loss, hypertension, decreased appetite, hypocalcaemia, increased ALT activity, alopecia, secondary cancer, dyspnoea, pleural effusion, cough, back pain, limb pain, infections, lymphopenia, anorexia, hypophosphataemia, haemorrhage, vomiting, constipation, dry skin, erythema, pruritus, arthralgia, pain, fever, decreased weight, increased amylase, increased lipase, folliculitis, leukopenia, neutropenia, anaemia, thrombocytopenia, hypothyroidism, hypokalaemia, hyponatraemia, hypoglycaemia, depression, peripheral sensory neuropathy, dysgeusia, tinnitus, congestive heart failure, myocardial ischaemia, myocardial infarction, flushing, rhinorrhoea, dysphonia, stomatitis, dyspepsia, dysphagia, gastro oesophageal reflux disease, keratoacanthoma, squamous cell cancer of the skin, dermatitis exfoliative, acne, hyperkeratosis, myalgia, muscle spasms, renal failure, proteinuria, erectile dysfunction, asthenia, influenza like illness, mucosal inflammation, transient increase in transaminases, adverse events (general), deaths"
+        }
+      ],
+      "ChunksUsed": 40,
+      "ContextTokens": 9347
+    },
+    "AT": {
+      "Indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
+      "Country": "AT",
+      "PICOs": [
+        {
+          "Population": "adults with HCC in Barcelona Clinic Liver Cancer (BCLC) stage B or C who did not receive any prior systemic therapy for the advanced or inoperable disease. Hepatic cirrhosis of any aetiology was not an exclusion criterion. Patients in BCLC stage B had to be ineligible for transarterial chemoembolization (TACE). Further inclusion criteria were Child-Pugh stage A and an Eastern Cooperative Oncology Group – Performance Status (ECOG-PS) score of 0 or 1.",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "sorafenib",
+          "Outcomes": "all-cause mortality, overall survival (OS), time to progression (TTP), time to symptomatic progression (TTSP), disease control rate (DCR), tumor response rate, overall response rate (ORR), tumor reduction, recurrence-free survival, disease recurrence, local control, length of hospital stay, days of missed work, adverse events, hand-foot syndrome, diarrhoea, diarrhea, hypertension, skin rash, rash, desquamation, liver failure, post-treatment complications, fatigue, pain, jaundice, fever, abdominal swelling, cognitive functioning, EORTC QLQ-C30, EORTC QLQ-HCC18, EQ-5D visual analogue scale (EQ-5D VAS), health status, health-related quality of life, symptoms (EORTC QLQ-C30 symptom scales), symptoms (EORTC QLQ-HCC18 symptom scales; time to deterioration defined as a score increase by at least 10 points over baseline), function scales of EORTC QLQ-C30, function scales of EORTC QLQ-HCC18, major complications, toxicity, complication incidence"
+        },
+        {
+          "Population": "patients with advanced HCC",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "TACE",
+          "Outcomes": "all-cause mortality, overall survival (OS), time to progression (TTP), time to symptomatic progression (TTSP), disease control rate (DCR), tumor response rate, overall response rate (ORR), tumor reduction, recurrence-free survival, disease recurrence, local control, length of hospital stay, days of missed work, adverse events, hand-foot syndrome, diarrhoea, diarrhea, hypertension, skin rash, rash, desquamation, liver failure, post-treatment complications, fatigue, pain, jaundice, fever, abdominal swelling, cognitive functioning, EORTC QLQ-C30, EORTC QLQ-HCC18, EQ-5D visual analogue scale (EQ-5D VAS), health status, health-related quality of life, symptoms (EORTC QLQ-C30 symptom scales), symptoms (EORTC QLQ-HCC18 symptom scales; time to deterioration defined as a score increase by at least 10 points over baseline), function scales of EORTC QLQ-C30, function scales of EORTC QLQ-HCC18, major complications, toxicity, complication incidence"
+        },
+        {
+          "Population": "patients with advanced HCC",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "TACE + sorafenib",
+          "Outcomes": "all-cause mortality, overall survival (OS), time to progression (TTP), time to symptomatic progression (TTSP), disease control rate (DCR), tumor response rate, overall response rate (ORR), tumor reduction, recurrence-free survival, disease recurrence, local control, length of hospital stay, days of missed work, adverse events, hand-foot syndrome, diarrhoea, diarrhea, hypertension, skin rash, rash, desquamation, liver failure, post-treatment complications, fatigue, pain, jaundice, fever, abdominal swelling, cognitive functioning, EORTC QLQ-C30, EORTC QLQ-HCC18, EQ-5D visual analogue scale (EQ-5D VAS), health status, health-related quality of life, symptoms (EORTC QLQ-C30 symptom scales), symptoms (EORTC QLQ-HCC18 symptom scales; time to deterioration defined as a score increase by at least 10 points over baseline), function scales of EORTC QLQ-C30, function scales of EORTC QLQ-HCC18, major complications, toxicity, complication incidence"
+        },
+        {
+          "Population": "patients with unresectable primary hepatocellular carcinoma (HCC) who are not candidates for surgical resection or liver transplantation",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "local hepatic therapies",
+          "Outcomes": "all-cause mortality, overall survival (OS), time to progression (TTP), time to symptomatic progression (TTSP), disease control rate (DCR), tumor response rate, overall response rate (ORR), tumor reduction, recurrence-free survival, disease recurrence, local control, length of hospital stay, days of missed work, adverse events, hand-foot syndrome, diarrhoea, diarrhea, hypertension, skin rash, rash, desquamation, liver failure, post-treatment complications, fatigue, pain, jaundice, fever, abdominal swelling, cognitive functioning, EORTC QLQ-C30, EORTC QLQ-HCC18, EQ-5D visual analogue scale (EQ-5D VAS), health status, health-related quality of life, symptoms (EORTC QLQ-C30 symptom scales), symptoms (EORTC QLQ-HCC18 symptom scales; time to deterioration defined as a score increase by at least 10 points over baseline), function scales of EORTC QLQ-C30, function scales of EORTC QLQ-HCC18, major complications, toxicity, complication incidence"
+        },
+        {
+          "Population": "patients with unresectable primary hepatocellular carcinoma (HCC) who are not candidates for surgical resection or liver transplantation",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "transarterial chemoembolization",
+          "Outcomes": "all-cause mortality, overall survival (OS), time to progression (TTP), time to symptomatic progression (TTSP), disease control rate (DCR), tumor response rate, overall response rate (ORR), tumor reduction, recurrence-free survival, disease recurrence, local control, length of hospital stay, days of missed work, adverse events, hand-foot syndrome, diarrhoea, diarrhea, hypertension, skin rash, rash, desquamation, liver failure, post-treatment complications, fatigue, pain, jaundice, fever, abdominal swelling, cognitive functioning, EORTC QLQ-C30, EORTC QLQ-HCC18, EQ-5D visual analogue scale (EQ-5D VAS), health status, health-related quality of life, symptoms (EORTC QLQ-C30 symptom scales), symptoms (EORTC QLQ-HCC18 symptom scales; time to deterioration defined as a score increase by at least 10 points over baseline), function scales of EORTC QLQ-C30, function scales of EORTC QLQ-HCC18, major complications, toxicity, complication incidence"
+        },
+        {
+          "Population": "patients with unresectable primary hepatocellular carcinoma (HCC) who are not candidates for surgical resection or liver transplantation",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "transarterial embolization",
+          "Outcomes": "all-cause mortality, overall survival (OS), time to progression (TTP), time to symptomatic progression (TTSP), disease control rate (DCR), tumor response rate, overall response rate (ORR), tumor reduction, recurrence-free survival, disease recurrence, local control, length of hospital stay, days of missed work, adverse events, hand-foot syndrome, diarrhoea, diarrhea, hypertension, skin rash, rash, desquamation, liver failure, post-treatment complications, fatigue, pain, jaundice, fever, abdominal swelling, cognitive functioning, EORTC QLQ-C30, EORTC QLQ-HCC18, EQ-5D visual analogue scale (EQ-5D VAS), health status, health-related quality of life, symptoms (EORTC QLQ-C30 symptom scales), symptoms (EORTC QLQ-HCC18 symptom scales; time to deterioration defined as a score increase by at least 10 points over baseline), function scales of EORTC QLQ-C30, function scales of EORTC QLQ-HCC18, major complications, toxicity, complication incidence"
+        },
+        {
+          "Population": "patients with unresectable primary hepatocellular carcinoma (HCC) who are not candidates for surgical resection or liver transplantation",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "radiotherapy",
+          "Outcomes": "all-cause mortality, overall survival (OS), time to progression (TTP), time to symptomatic progression (TTSP), disease control rate (DCR), tumor response rate, overall response rate (ORR), tumor reduction, recurrence-free survival, disease recurrence, local control, length of hospital stay, days of missed work, adverse events, hand-foot syndrome, diarrhoea, diarrhea, hypertension, skin rash, rash, desquamation, liver failure, post-treatment complications, fatigue, pain, jaundice, fever, abdominal swelling, cognitive functioning, EORTC QLQ-C30, EORTC QLQ-HCC18, EQ-5D visual analogue scale (EQ-5D VAS), health status, health-related quality of life, symptoms (EORTC QLQ-C30 symptom scales), symptoms (EORTC QLQ-HCC18 symptom scales; time to deterioration defined as a score increase by at least 10 points over baseline), function scales of EORTC QLQ-C30, function scales of EORTC QLQ-HCC18, major complications, toxicity, complication incidence"
+        },
+        {
+          "Population": "patients with unresectable primary hepatocellular carcinoma (HCC) who are not candidates for surgical resection or liver transplantation",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "supportive care",
+          "Outcomes": "all-cause mortality, overall survival (OS), time to progression (TTP), time to symptomatic progression (TTSP), disease control rate (DCR), tumor response rate, overall response rate (ORR), tumor reduction, recurrence-free survival, disease recurrence, local control, length of hospital stay, days of missed work, adverse events, hand-foot syndrome, diarrhoea, diarrhea, hypertension, skin rash, rash, desquamation, liver failure, post-treatment complications, fatigue, pain, jaundice, fever, abdominal swelling, cognitive functioning, EORTC QLQ-C30, EORTC QLQ-HCC18, EQ-5D visual analogue scale (EQ-5D VAS), health status, health-related quality of life, symptoms (EORTC QLQ-C30 symptom scales), symptoms (EORTC QLQ-HCC18 symptom scales; time to deterioration defined as a score increase by at least 10 points over baseline), function scales of EORTC QLQ-C30, function scales of EORTC QLQ-HCC18, major complications, toxicity, complication incidence"
+        },
+        {
+          "Population": "patients with unresectable primary hepatocellular carcinoma (HCC) who are not candidates for surgical resection or liver transplantation",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "systemic chemotherapy",
+          "Outcomes": "all-cause mortality, overall survival (OS), time to progression (TTP), time to symptomatic progression (TTSP), disease control rate (DCR), tumor response rate, overall response rate (ORR), tumor reduction, recurrence-free survival, disease recurrence, local control, length of hospital stay, days of missed work, adverse events, hand-foot syndrome, diarrhoea, diarrhea, hypertension, skin rash, rash, desquamation, liver failure, post-treatment complications, fatigue, pain, jaundice, fever, abdominal swelling, cognitive functioning, EORTC QLQ-C30, EORTC QLQ-HCC18, EQ-5D visual analogue scale (EQ-5D VAS), health status, health-related quality of life, symptoms (EORTC QLQ-C30 symptom scales), symptoms (EORTC QLQ-HCC18 symptom scales; time to deterioration defined as a score increase by at least 10 points over baseline), function scales of EORTC QLQ-C30, function scales of EORTC QLQ-HCC18, major complications, toxicity, complication incidence"
+        },
+        {
+          "Population": "patients with unresectable primary hepatocellular carcinoma (HCC) who are not candidates for surgical resection or liver transplantation",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "radiofrequency ablation",
+          "Outcomes": "all-cause mortality, overall survival (OS), time to progression (TTP), time to symptomatic progression (TTSP), disease control rate (DCR), tumor response rate, overall response rate (ORR), tumor reduction, recurrence-free survival, disease recurrence, local control, length of hospital stay, days of missed work, adverse events, hand-foot syndrome, diarrhoea, diarrhea, hypertension, skin rash, rash, desquamation, liver failure, post-treatment complications, fatigue, pain, jaundice, fever, abdominal swelling, cognitive functioning, EORTC QLQ-C30, EORTC QLQ-HCC18, EQ-5D visual analogue scale (EQ-5D VAS), health status, health-related quality of life, symptoms (EORTC QLQ-C30 symptom scales), symptoms (EORTC QLQ-HCC18 symptom scales; time to deterioration defined as a score increase by at least 10 points over baseline), function scales of EORTC QLQ-C30, function scales of EORTC QLQ-HCC18, major complications, toxicity, complication incidence"
+        },
+        {
+          "Population": "patients with unresectable primary hepatocellular carcinoma (HCC) who are not candidates for surgical resection or liver transplantation",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "microwave ablation",
+          "Outcomes": "all-cause mortality, overall survival (OS), time to progression (TTP), time to symptomatic progression (TTSP), disease control rate (DCR), tumor response rate, overall response rate (ORR), tumor reduction, recurrence-free survival, disease recurrence, local control, length of hospital stay, days of missed work, adverse events, hand-foot syndrome, diarrhoea, diarrhea, hypertension, skin rash, rash, desquamation, liver failure, post-treatment complications, fatigue, pain, jaundice, fever, abdominal swelling, cognitive functioning, EORTC QLQ-C30, EORTC QLQ-HCC18, EQ-5D visual analogue scale (EQ-5D VAS), health status, health-related quality of life, symptoms (EORTC QLQ-C30 symptom scales), symptoms (EORTC QLQ-HCC18 symptom scales; time to deterioration defined as a score increase by at least 10 points over baseline), function scales of EORTC QLQ-C30, function scales of EORTC QLQ-HCC18, major complications, toxicity, complication incidence"
+        },
+        {
+          "Population": "patients with unresectable primary hepatocellular carcinoma (HCC) who are not candidates for surgical resection or liver transplantation",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "other ablations (laser ablation, cryoablation, HIFU, irreversible electroporation)",
+          "Outcomes": "all-cause mortality, overall survival (OS), time to progression (TTP), time to symptomatic progression (TTSP), disease control rate (DCR), tumor response rate, overall response rate (ORR), tumor reduction, recurrence-free survival, disease recurrence, local control, length of hospital stay, days of missed work, adverse events, hand-foot syndrome, diarrhoea, diarrhea, hypertension, skin rash, rash, desquamation, liver failure, post-treatment complications, fatigue, pain, jaundice, fever, abdominal swelling, cognitive functioning, EORTC QLQ-C30, EORTC QLQ-HCC18, EQ-5D visual analogue scale (EQ-5D VAS), health status, health-related quality of life, symptoms (EORTC QLQ-C30 symptom scales), symptoms (EORTC QLQ-HCC18 symptom scales; time to deterioration defined as a score increase by at least 10 points over baseline), function scales of EORTC QLQ-C30, function scales of EORTC QLQ-HCC18, major complications, toxicity, complication incidence"
+        },
+        {
+          "Population": "patients with unresectable primary hepatocellular carcinoma (HCC) who are not candidates for surgical resection or liver transplantation",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "alcohol injection",
+          "Outcomes": "all-cause mortality, overall survival (OS), time to progression (TTP), time to symptomatic progression (TTSP), disease control rate (DCR), tumor response rate, overall response rate (ORR), tumor reduction, recurrence-free survival, disease recurrence, local control, length of hospital stay, days of missed work, adverse events, hand-foot syndrome, diarrhoea, diarrhea, hypertension, skin rash, rash, desquamation, liver failure, post-treatment complications, fatigue, pain, jaundice, fever, abdominal swelling, cognitive functioning, EORTC QLQ-C30, EORTC QLQ-HCC18, EQ-5D visual analogue scale (EQ-5D VAS), health status, health-related quality of life, symptoms (EORTC QLQ-C30 symptom scales), symptoms (EORTC QLQ-HCC18 symptom scales; time to deterioration defined as a score increase by at least 10 points over baseline), function scales of EORTC QLQ-C30, function scales of EORTC QLQ-HCC18, major complications, toxicity, complication incidence"
+        },
+        {
+          "Population": "patients with unresectable primary hepatocellular carcinoma (HCC) who are not candidates for surgical resection or liver transplantation",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "acetic acid injection",
+          "Outcomes": "all-cause mortality, overall survival (OS), time to progression (TTP), time to symptomatic progression (TTSP), disease control rate (DCR), tumor response rate, overall response rate (ORR), tumor reduction, recurrence-free survival, disease recurrence, local control, length of hospital stay, days of missed work, adverse events, hand-foot syndrome, diarrhoea, diarrhea, hypertension, skin rash, rash, desquamation, liver failure, post-treatment complications, fatigue, pain, jaundice, fever, abdominal swelling, cognitive functioning, EORTC QLQ-C30, EORTC QLQ-HCC18, EQ-5D visual analogue scale (EQ-5D VAS), health status, health-related quality of life, symptoms (EORTC QLQ-C30 symptom scales), symptoms (EORTC QLQ-HCC18 symptom scales; time to deterioration defined as a score increase by at least 10 points over baseline), function scales of EORTC QLQ-C30, function scales of EORTC QLQ-HCC18, major complications, toxicity, complication incidence"
+        },
+        {
+          "Population": "patients with unresectable primary hepatocellular carcinoma (HCC) who are not candidates for surgical resection or liver transplantation",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "liver resection",
+          "Outcomes": "all-cause mortality, overall survival (OS), time to progression (TTP), time to symptomatic progression (TTSP), disease control rate (DCR), tumor response rate, overall response rate (ORR), tumor reduction, recurrence-free survival, disease recurrence, local control, length of hospital stay, days of missed work, adverse events, hand-foot syndrome, diarrhoea, diarrhea, hypertension, skin rash, rash, desquamation, liver failure, post-treatment complications, fatigue, pain, jaundice, fever, abdominal swelling, cognitive functioning, EORTC QLQ-C30, EORTC QLQ-HCC18, EQ-5D visual analogue scale (EQ-5D VAS), health status, health-related quality of life, symptoms (EORTC QLQ-C30 symptom scales), symptoms (EORTC QLQ-HCC18 symptom scales; time to deterioration defined as a score increase by at least 10 points over baseline), function scales of EORTC QLQ-C30, function scales of EORTC QLQ-HCC18, major complications, toxicity, complication incidence"
+        },
+        {
+          "Population": "patients with unresectable primary hepatocellular carcinoma (HCC) who are not candidates for surgical resection or liver transplantation",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "liver transplantation",
+          "Outcomes": "all-cause mortality, overall survival (OS), time to progression (TTP), time to symptomatic progression (TTSP), disease control rate (DCR), tumor response rate, overall response rate (ORR), tumor reduction, recurrence-free survival, disease recurrence, local control, length of hospital stay, days of missed work, adverse events, hand-foot syndrome, diarrhoea, diarrhea, hypertension, skin rash, rash, desquamation, liver failure, post-treatment complications, fatigue, pain, jaundice, fever, abdominal swelling, cognitive functioning, EORTC QLQ-C30, EORTC QLQ-HCC18, EQ-5D visual analogue scale (EQ-5D VAS), health status, health-related quality of life, symptoms (EORTC QLQ-C30 symptom scales), symptoms (EORTC QLQ-HCC18 symptom scales; time to deterioration defined as a score increase by at least 10 points over baseline), function scales of EORTC QLQ-C30, function scales of EORTC QLQ-HCC18, major complications, toxicity, complication incidence"
+        },
+        {
+          "Population": "patients with advanced hepatocellular carcinoma only for people with Child-Pugh grade A liver impairment",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "sorafenib",
+          "Outcomes": "all-cause mortality, overall survival (OS), time to progression (TTP), time to symptomatic progression (TTSP), disease control rate (DCR), tumor response rate, overall response rate (ORR), tumor reduction, recurrence-free survival, disease recurrence, local control, length of hospital stay, days of missed work, adverse events, hand-foot syndrome, diarrhoea, diarrhea, hypertension, skin rash, rash, desquamation, liver failure, post-treatment complications, fatigue, pain, jaundice, fever, abdominal swelling, cognitive functioning, EORTC QLQ-C30, EORTC QLQ-HCC18, EQ-5D visual analogue scale (EQ-5D VAS), health status, health-related quality of life, symptoms (EORTC QLQ-C30 symptom scales), symptoms (EORTC QLQ-HCC18 symptom scales; time to deterioration defined as a score increase by at least 10 points over baseline), function scales of EORTC QLQ-C30, function scales of EORTC QLQ-HCC18, major complications, toxicity, complication incidence"
+        },
+        {
+          "Population": "patients with advanced or unresectable hepatocellular carcinoma",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "Best Supportive Care",
+          "Outcomes": "all-cause mortality, overall survival (OS), time to progression (TTP), time to symptomatic progression (TTSP), disease control rate (DCR), tumor response rate, overall response rate (ORR), tumor reduction, recurrence-free survival, disease recurrence, local control, length of hospital stay, days of missed work, adverse events, hand-foot syndrome, diarrhoea, diarrhea, hypertension, skin rash, rash, desquamation, liver failure, post-treatment complications, fatigue, pain, jaundice, fever, abdominal swelling, cognitive functioning, EORTC QLQ-C30, EORTC QLQ-HCC18, EQ-5D visual analogue scale (EQ-5D VAS), health status, health-related quality of life, symptoms (EORTC QLQ-C30 symptom scales), symptoms (EORTC QLQ-HCC18 symptom scales; time to deterioration defined as a score increase by at least 10 points over baseline), function scales of EORTC QLQ-C30, function scales of EORTC QLQ-HCC18, major complications, toxicity, complication incidence"
+        }
+      ],
+      "ChunksUsed": 40,
+      "ContextTokens": 8274
     }
   }
 }

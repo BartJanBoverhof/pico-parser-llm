@@ -1,93 +1,31 @@
 {
   "extraction_metadata": {
-    "timestamp": "2025-09-17T12:34:36.891389",
+    "timestamp": "2025-09-29T11:52:35.307179",
     "source_type": "hta_submission",
     "indication": "treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context",
     "total_countries": 7,
-    "total_picos": 27
+    "total_picos": 41
   },
   "picos_by_country": {
-    "DE": {
+    "SE": {
       "Indication": "treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context",
-      "Country": "DE",
+      "Country": "SE",
       "PICOs": [
         {
-          "Population": "Adults with locally advanced and unresectable or metastatic NSCLC with molecularly diagnosed KRAS G12C mutation. Patients had to have disease progression during or after at least 1 prior systemic therapy for advanced or unresectable stage of the disease. Prior therapy should include combined or sequential platinum-containing combination chemotherapy and an anti-PD-1/PD-L1.",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "docetaxel",
-          "Outcomes": "progression-free survival (PFS, defined as time from randomisation until disease progression or death from any cause), overall survival (OS, defined as time from randomisation to death from any cause), endpoints on symptomatology and health status, health-related quality of life (measured using EORTC QLQ-C30, EORTC QLQ-LC13, BPI-SF, FACT-G GP5, and PGI-C questionnaires), side effects"
-        },
-        {
-          "Population": "Adults with advanced non-small cell lung cancer (NSCLC) with KRAS p.G12C mutation after first-line therapy with an anti-PD-1/PD-L1 in combination with platinum-containing chemotherapy or after sequential therapy with an anti-PD-1/PD-L1 and platinum-containing chemotherapy and for whom a therapy other than docetaxel is the appropriate patient-individual therapy",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "Patient-individual therapy, taking into account previous therapy and histology with selection of afatinib, pemetrexed, erlotinib, docetaxel in combination with ramucirumab, docetaxel in combination with nintedanib and vinorelbine",
-          "Outcomes": "progression-free survival (PFS, defined as time from randomisation until disease progression or death from any cause), overall survival (OS, defined as time from randomisation to death from any cause), endpoints on symptomatology and health status, health-related quality of life (measured using EORTC QLQ-C30, EORTC QLQ-LC13, BPI-SF, FACT-G GP5, and PGI-C questionnaires), side effects"
-        },
-        {
-          "Population": "Adults with advanced non-small cell lung cancer (NSCLC) with KRAS p.G12C mutation after first-line therapy with cytotoxic chemotherapy",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "different chemotherapies without platinum (cisplatin/ carboplatin) as well as treatment with an immune checkpoint inhibitor as monotherapy",
-          "Outcomes": "progression-free survival (PFS, defined as time from randomisation until disease progression or death from any cause), overall survival (OS, defined as time from randomisation to death from any cause), endpoints on symptomatology and health status, health-related quality of life (measured using EORTC QLQ-C30, EORTC QLQ-LC13, BPI-SF, FACT-G GP5, and PGI-C questionnaires), side effects"
-        },
-        {
-          "Population": "Adults with advanced non-small cell lung cancer (NSCLC) with KRAS p.G12C mutation after first-line therapy with cytotoxic chemotherapy",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "docetaxel (only for patients with PD-L1 negative tumours)",
-          "Outcomes": "progression-free survival (PFS, defined as time from randomisation until disease progression or death from any cause), overall survival (OS, defined as time from randomisation to death from any cause), endpoints on symptomatology and health status, health-related quality of life (measured using EORTC QLQ-C30, EORTC QLQ-LC13, BPI-SF, FACT-G GP5, and PGI-C questionnaires), side effects"
-        },
-        {
-          "Population": "Adults with advanced non-small cell lung cancer (NSCLC) with KRAS p.G12C mutation after first-line therapy with cytotoxic chemotherapy",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "pemetrexed (only for patients with PD-L1 negative tumours and except in case of predominantly squamous histology)",
-          "Outcomes": "progression-free survival (PFS, defined as time from randomisation until disease progression or death from any cause), overall survival (OS, defined as time from randomisation to death from any cause), endpoints on symptomatology and health status, health-related quality of life (measured using EORTC QLQ-C30, EORTC QLQ-LC13, BPI-SF, FACT-G GP5, and PGI-C questionnaires), side effects"
-        },
-        {
-          "Population": "Adults with advanced non-small cell lung cancer (NSCLC) with KRAS p.G12C mutation after first-line therapy with cytotoxic chemotherapy",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "nivolumab",
-          "Outcomes": "progression-free survival (PFS, defined as time from randomisation until disease progression or death from any cause), overall survival (OS, defined as time from randomisation to death from any cause), endpoints on symptomatology and health status, health-related quality of life (measured using EORTC QLQ-C30, EORTC QLQ-LC13, BPI-SF, FACT-G GP5, and PGI-C questionnaires), side effects"
-        },
-        {
-          "Population": "Adults with advanced non-small cell lung cancer (NSCLC) with KRAS p.G12C mutation after first-line therapy with cytotoxic chemotherapy",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "pembrolizumab (only for patients with PD-L1 expressing tumours (PD-L1 expression ≥ 1% of tumour cells))",
-          "Outcomes": "progression-free survival (PFS, defined as time from randomisation until disease progression or death from any cause), overall survival (OS, defined as time from randomisation to death from any cause), endpoints on symptomatology and health status, health-related quality of life (measured using EORTC QLQ-C30, EORTC QLQ-LC13, BPI-SF, FACT-G GP5, and PGI-C questionnaires), side effects"
-        },
-        {
-          "Population": "Adults with advanced non-small cell lung cancer (NSCLC) with KRAS p.G12C mutation after first-line therapy with cytotoxic chemotherapy",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "atezolizumab",
-          "Outcomes": "progression-free survival (PFS, defined as time from randomisation until disease progression or death from any cause), overall survival (OS, defined as time from randomisation to death from any cause), endpoints on symptomatology and health status, health-related quality of life (measured using EORTC QLQ-C30, EORTC QLQ-LC13, BPI-SF, FACT-G GP5, and PGI-C questionnaires), side effects"
-        },
-        {
-          "Population": "Adults with advanced non-small cell lung cancer (NSCLC) with KRAS p.G12C mutation after first-line therapy with cytotoxic chemotherapy",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "docetaxel in combination with nintedanib (only for patients with PD-L1 negative tumours and adenocarcinoma histology)",
-          "Outcomes": "progression-free survival (PFS, defined as time from randomisation until disease progression or death from any cause), overall survival (OS, defined as time from randomisation to death from any cause), endpoints on symptomatology and health status, health-related quality of life (measured using EORTC QLQ-C30, EORTC QLQ-LC13, BPI-SF, FACT-G GP5, and PGI-C questionnaires), side effects"
-        }
-      ],
-      "ChunksUsed": 30,
-      "ContextTokens": 7191
-    },
-    "DK": {
-      "Indication": "treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context",
-      "Country": "DK",
-      "PICOs": [
-        {
-          "Population": "adult patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation who have progressed after at least one prior line of systemic therapy",
+          "Population": "adult patients with advanced non-small cell lung cancer (NSCLC) with a KRAS G12C mutation, in case of progression after at least one previous line of systemic therapy",
           "Intervention": "Medicine X (under assessment)",
           "Comparator": "docetaxel monotherapy",
-          "Outcomes": "overall survival (OS), progression-free survival (PFS), investigator-assessed progression-free survival, event-free survival, time to progression (TTP), time to next treatment (TTNT), progression after next line of therapy (PFS2), objective response rate (ORR), disease control rate, response rates, time to response, duration of response, treatment duration, adverse events (AEs; including all grades and grade ≥3, collected according to CTCAE v5.0 or v4.03), discontinuation due to adverse events (time from first dose until discontinuation due to AEs), health-related quality of life (HRQoL), patient-reported outcomes (PROMs; including EORTC QLQ), quality-adjusted life years (QALYs), resource use estimates, cost-effectiveness (incremental cost-effectiveness ratio, ICER)"
+          "Outcomes": "progression-free survival (PFS), overall survival (OS), quality-adjusted life years (QALYs), cost-effectiveness (cost per QALY), health-related quality of life measured by time to death"
         },
         {
-          "Population": "adult patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation who have progressed after at least one prior line of systemic therapy",
+          "Population": "patients with advanced non-small cell lung cancer (NSCLC) with a KRAS G12C mutation that has progressed after at least one prior systemic therapy and who have been treated with docetaxel or who are not medically suitable for treatment with Docetaxel",
           "Intervention": "Medicine X (under assessment)",
-          "Comparator": "standard of care therapy",
-          "Outcomes": "overall survival (OS), progression-free survival (PFS), investigator-assessed progression-free survival, event-free survival, time to progression (TTP), time to next treatment (TTNT), progression after next line of therapy (PFS2), objective response rate (ORR), disease control rate, response rates, time to response, duration of response, treatment duration, adverse events (AEs; including all grades and grade ≥3, collected according to CTCAE v5.0 or v4.03), discontinuation due to adverse events (time from first dose until discontinuation due to AEs), health-related quality of life (HRQoL), patient-reported outcomes (PROMs; including EORTC QLQ), quality-adjusted life years (QALYs), resource use estimates, cost-effectiveness (incremental cost-effectiveness ratio, ICER)"
+          "Comparator": "best supportive care",
+          "Outcomes": "progression-free survival (PFS), overall survival (OS), quality-adjusted life years (QALYs), cost-effectiveness (cost per QALY), health-related quality of life measured by time to death"
         }
       ],
-      "ChunksUsed": 30,
-      "ContextTokens": 8115
+      "ChunksUsed": 40,
+      "ContextTokens": 8310
     },
     "PT": {
       "Indication": "treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context",
@@ -97,53 +35,167 @@
           "Population": "adult patients with advanced non-small cell lung cancer (NSCLC) with mutated KRAS G12C and who have progressed after at least one prior systemic line of therapy",
           "Intervention": "Medicine X (under assessment)",
           "Comparator": "docetaxel",
-          "Outcomes": "overall survival (OS), progression-free survival (PFS), objective response rate (ORR), duration of response (DoR), disease control rate, event-free survival, time to progression, time to next treatment, duration of treatment, adverse events (assessed using Common Terminology Criteria for Adverse Events v5), serious adverse events (Grade 3-4), discontinuation due to adverse events, mortality-related toxicity, health-related quality of life, time to deterioration of overall health status, time to deterioration of physical functioning"
+          "Outcomes": "overall survival (OS), progression-free survival (PFS; RECIST v1.1), event-free survival, time to progression, time to next treatment, objective response rate (ORR), duration of response (DoR), disease control rate, duration of treatment, dropout rate, adverse events (Common Terminology Criteria for Adverse Events version 5.0), serious adverse events (grade 3-4), mortality-related toxicity, morbidity and mortality associated with clinical events, quality of life, deterioration of overall health status, deterioration of physical functioning"
         },
         {
           "Population": "adult patients with advanced non-small cell lung cancer (NSCLC) with mutated KRAS G12C and who have progressed after at least one prior systemic line of therapy",
           "Intervention": "Medicine X (under assessment)",
           "Comparator": "docetaxel + nintedanib",
-          "Outcomes": "overall survival (OS), progression-free survival (PFS), objective response rate (ORR), duration of response (DoR), disease control rate, event-free survival, time to progression, time to next treatment, duration of treatment, adverse events (assessed using Common Terminology Criteria for Adverse Events v5), serious adverse events (Grade 3-4), discontinuation due to adverse events, mortality-related toxicity, health-related quality of life, time to deterioration of overall health status, time to deterioration of physical functioning"
+          "Outcomes": "overall survival (OS), progression-free survival (PFS; RECIST v1.1), event-free survival, time to progression, time to next treatment, objective response rate (ORR), duration of response (DoR), disease control rate, duration of treatment, dropout rate, adverse events (Common Terminology Criteria for Adverse Events version 5.0), serious adverse events (grade 3-4), mortality-related toxicity, morbidity and mortality associated with clinical events, quality of life, deterioration of overall health status, deterioration of physical functioning"
         },
         {
           "Population": "adult patients with advanced non-small cell lung cancer (NSCLC) with mutated KRAS G12C and who have progressed after at least one prior systemic line of therapy",
           "Intervention": "Medicine X (under assessment)",
           "Comparator": "pemetrexed",
-          "Outcomes": "overall survival (OS), progression-free survival (PFS), objective response rate (ORR), duration of response (DoR), disease control rate, event-free survival, time to progression, time to next treatment, duration of treatment, adverse events (assessed using Common Terminology Criteria for Adverse Events v5), serious adverse events (Grade 3-4), discontinuation due to adverse events, mortality-related toxicity, health-related quality of life, time to deterioration of overall health status, time to deterioration of physical functioning"
+          "Outcomes": "overall survival (OS), progression-free survival (PFS; RECIST v1.1), event-free survival, time to progression, time to next treatment, objective response rate (ORR), duration of response (DoR), disease control rate, duration of treatment, dropout rate, adverse events (Common Terminology Criteria for Adverse Events version 5.0), serious adverse events (grade 3-4), mortality-related toxicity, morbidity and mortality associated with clinical events, quality of life, deterioration of overall health status, deterioration of physical functioning"
         },
         {
           "Population": "adult patients with advanced non-small cell lung cancer (NSCLC) with mutated KRAS G12C and who have progressed after at least one prior systemic line of therapy",
           "Intervention": "Medicine X (under assessment)",
           "Comparator": "nivolumab",
-          "Outcomes": "overall survival (OS), progression-free survival (PFS), objective response rate (ORR), duration of response (DoR), disease control rate, event-free survival, time to progression, time to next treatment, duration of treatment, adverse events (assessed using Common Terminology Criteria for Adverse Events v5), serious adverse events (Grade 3-4), discontinuation due to adverse events, mortality-related toxicity, health-related quality of life, time to deterioration of overall health status, time to deterioration of physical functioning"
+          "Outcomes": "overall survival (OS), progression-free survival (PFS; RECIST v1.1), event-free survival, time to progression, time to next treatment, objective response rate (ORR), duration of response (DoR), disease control rate, duration of treatment, dropout rate, adverse events (Common Terminology Criteria for Adverse Events version 5.0), serious adverse events (grade 3-4), mortality-related toxicity, morbidity and mortality associated with clinical events, quality of life, deterioration of overall health status, deterioration of physical functioning"
         },
         {
           "Population": "adult patients with advanced non-small cell lung cancer (NSCLC) with mutated KRAS G12C and who have progressed after at least one prior systemic line of therapy",
           "Intervention": "Medicine X (under assessment)",
           "Comparator": "pembrolizumab",
-          "Outcomes": "overall survival (OS), progression-free survival (PFS), objective response rate (ORR), duration of response (DoR), disease control rate, event-free survival, time to progression, time to next treatment, duration of treatment, adverse events (assessed using Common Terminology Criteria for Adverse Events v5), serious adverse events (Grade 3-4), discontinuation due to adverse events, mortality-related toxicity, health-related quality of life, time to deterioration of overall health status, time to deterioration of physical functioning"
+          "Outcomes": "overall survival (OS), progression-free survival (PFS; RECIST v1.1), event-free survival, time to progression, time to next treatment, objective response rate (ORR), duration of response (DoR), disease control rate, duration of treatment, dropout rate, adverse events (Common Terminology Criteria for Adverse Events version 5.0), serious adverse events (grade 3-4), mortality-related toxicity, morbidity and mortality associated with clinical events, quality of life, deterioration of overall health status, deterioration of physical functioning"
         },
         {
           "Population": "adult patients with advanced non-small cell lung cancer (NSCLC) with mutated KRAS G12C and who have progressed after at least one prior systemic line of therapy",
           "Intervention": "Medicine X (under assessment)",
           "Comparator": "atezolizumab",
-          "Outcomes": "overall survival (OS), progression-free survival (PFS), objective response rate (ORR), duration of response (DoR), disease control rate, event-free survival, time to progression, time to next treatment, duration of treatment, adverse events (assessed using Common Terminology Criteria for Adverse Events v5), serious adverse events (Grade 3-4), discontinuation due to adverse events, mortality-related toxicity, health-related quality of life, time to deterioration of overall health status, time to deterioration of physical functioning"
+          "Outcomes": "overall survival (OS), progression-free survival (PFS; RECIST v1.1), event-free survival, time to progression, time to next treatment, objective response rate (ORR), duration of response (DoR), disease control rate, duration of treatment, dropout rate, adverse events (Common Terminology Criteria for Adverse Events version 5.0), serious adverse events (grade 3-4), mortality-related toxicity, morbidity and mortality associated with clinical events, quality of life, deterioration of overall health status, deterioration of physical functioning"
         },
         {
           "Population": "adult patients with advanced non-small cell lung cancer (NSCLC) with mutated KRAS G12C and who have progressed after at least one prior systemic line of therapy",
           "Intervention": "Medicine X (under assessment)",
           "Comparator": "platinum doublet",
-          "Outcomes": "overall survival (OS), progression-free survival (PFS), objective response rate (ORR), duration of response (DoR), disease control rate, event-free survival, time to progression, time to next treatment, duration of treatment, adverse events (assessed using Common Terminology Criteria for Adverse Events v5), serious adverse events (Grade 3-4), discontinuation due to adverse events, mortality-related toxicity, health-related quality of life, time to deterioration of overall health status, time to deterioration of physical functioning"
+          "Outcomes": "overall survival (OS), progression-free survival (PFS; RECIST v1.1), event-free survival, time to progression, time to next treatment, objective response rate (ORR), duration of response (DoR), disease control rate, duration of treatment, dropout rate, adverse events (Common Terminology Criteria for Adverse Events version 5.0), serious adverse events (grade 3-4), mortality-related toxicity, morbidity and mortality associated with clinical events, quality of life, deterioration of overall health status, deterioration of physical functioning"
         },
         {
-          "Population": "tumours expressing PD-L1 with a TPS >=1%",
+          "Population": "adult patients with advanced non-small cell lung cancer (NSCLC) with mutated KRAS G12C and who have progressed after at least one prior systemic line of therapy and tumours expressing PD-L1 with a TPS >=1%",
           "Intervention": "Medicine X (under assessment)",
           "Comparator": "pembrolizumab",
-          "Outcomes": "overall survival (OS), progression-free survival (PFS), objective response rate (ORR), duration of response (DoR), disease control rate, event-free survival, time to progression, time to next treatment, duration of treatment, adverse events (assessed using Common Terminology Criteria for Adverse Events v5), serious adverse events (Grade 3-4), discontinuation due to adverse events, mortality-related toxicity, health-related quality of life, time to deterioration of overall health status, time to deterioration of physical functioning"
+          "Outcomes": "overall survival (OS), progression-free survival (PFS; RECIST v1.1), event-free survival, time to progression, time to next treatment, objective response rate (ORR), duration of response (DoR), disease control rate, duration of treatment, dropout rate, adverse events (Common Terminology Criteria for Adverse Events version 5.0), serious adverse events (grade 3-4), mortality-related toxicity, morbidity and mortality associated with clinical events, quality of life, deterioration of overall health status, deterioration of physical functioning"
         }
       ],
-      "ChunksUsed": 30,
-      "ContextTokens": 7744
+      "ChunksUsed": 40,
+      "ContextTokens": 10349
+    },
+    "FR": {
+      "Indication": "treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context",
+      "Country": "FR",
+      "PICOs": [
+        {
+          "Population": "adult patients with advanced CBNPC, with KRAS G12C mutation, whose disease has progressed after at least one prior systemic treatment line",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "chemotherapy",
+          "Outcomes": "progression-free survival (independent review panel, RECIST 1.1), progression-free survival (sensitivity analysis considering initiation of new anti-cancer therapy as event), objective response rate (independent review panel, RECIST 1.1), overall survival (time from randomization to death from any cause), duration of response (RECIST 1.1), disease control rate (proportion of patients with complete, partial, or stable disease for at least 5 weeks), time to response (time from treatment initiation to first complete or partial response), serious adverse events, incidence of serious undesirable effects, EORTC QLQ-C30, EORTC QLQ-LC13"
+        },
+        {
+          "Population": "adult patients with advanced CBNPC, with KRAS G12C mutation, whose disease has progressed after at least one prior systemic treatment line",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "immunotherapy",
+          "Outcomes": "progression-free survival (independent review panel, RECIST 1.1), progression-free survival (sensitivity analysis considering initiation of new anti-cancer therapy as event), objective response rate (independent review panel, RECIST 1.1), overall survival (time from randomization to death from any cause), duration of response (RECIST 1.1), disease control rate (proportion of patients with complete, partial, or stable disease for at least 5 weeks), time to response (time from treatment initiation to first complete or partial response), serious adverse events, incidence of serious undesirable effects, EORTC QLQ-C30, EORTC QLQ-LC13"
+        },
+        {
+          "Population": "patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "standard of care therapy",
+          "Outcomes": "progression-free survival (independent review panel, RECIST 1.1), progression-free survival (sensitivity analysis considering initiation of new anti-cancer therapy as event), objective response rate (independent review panel, RECIST 1.1), overall survival (time from randomization to death from any cause), duration of response (RECIST 1.1), disease control rate (proportion of patients with complete, partial, or stable disease for at least 5 weeks), time to response (time from treatment initiation to first complete or partial response), serious adverse events, incidence of serious undesirable effects, EORTC QLQ-C30, EORTC QLQ-LC13"
+        },
+        {
+          "Population": "patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "docetaxel",
+          "Outcomes": "progression-free survival (independent review panel, RECIST 1.1), progression-free survival (sensitivity analysis considering initiation of new anti-cancer therapy as event), objective response rate (independent review panel, RECIST 1.1), overall survival (time from randomization to death from any cause), duration of response (RECIST 1.1), disease control rate (proportion of patients with complete, partial, or stable disease for at least 5 weeks), time to response (time from treatment initiation to first complete or partial response), serious adverse events, incidence of serious undesirable effects, EORTC QLQ-C30, EORTC QLQ-LC13"
+        }
+      ],
+      "ChunksUsed": 40,
+      "ContextTokens": 9265
+    },
+    "DK": {
+      "Indication": "treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context",
+      "Country": "DK",
+      "PICOs": [
+        {
+          "Population": "adult patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation who have progressed after at least one prior line of systemic therapy",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "docetaxel monotherapy",
+          "Outcomes": "overall survival (OS), progression-free survival (PFS), progression-free survival (RECIST v1.1), event-free survival, time to progression (TTP), time to next treatment (TTNT), objective response rate (ORR), disease control rate, duration of response (DoR), time to response, adverse events, adverse events (CTCAE v5.0), adverse events (CTCAE v4.03), treatment discontinuation due to adverse events, adverse events grade 3 or higher, EORTC QLQ-C30, EORTC QLQ-LC13, NSCLC-SAQ, PGIS, PGIC, PRO-CTCAE, FACT-G (item GP5), EQ-5D-5L, changes in cancer-specific symptoms (patient-reported outcome measures), changes in overall health status (patient-reported outcome measures), quality-adjusted life years (QALYs), cost-effectiveness (incremental cost-effectiveness ratio, ICER)"
+        },
+        {
+          "Population": "patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation who have progressed after at least one prior line of systemic therapy",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "standard of care therapy",
+          "Outcomes": "overall survival (OS), progression-free survival (PFS), progression-free survival (RECIST v1.1), event-free survival, time to progression (TTP), time to next treatment (TTNT), objective response rate (ORR), disease control rate, duration of response (DoR), time to response, adverse events, adverse events (CTCAE v5.0), adverse events (CTCAE v4.03), treatment discontinuation due to adverse events, adverse events grade 3 or higher, EORTC QLQ-C30, EORTC QLQ-LC13, NSCLC-SAQ, PGIS, PGIC, PRO-CTCAE, FACT-G (item GP5), EQ-5D-5L, changes in cancer-specific symptoms (patient-reported outcome measures), changes in overall health status (patient-reported outcome measures), quality-adjusted life years (QALYs), cost-effectiveness (incremental cost-effectiveness ratio, ICER)"
+        }
+      ],
+      "ChunksUsed": 40,
+      "ContextTokens": 10711
+    },
+    "DE": {
+      "Indication": "treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context",
+      "Country": "DE",
+      "PICOs": [
+        {
+          "Population": "Adults with advanced non-small cell lung cancer (NSCLC) with KRAS p.G12C mutation after first-line therapy with an anti-PD-1/PD-L1 in combination with platinum-containing chemotherapy or after sequential therapy with an anti-PD-1/PD-L1 and platinum-containing chemotherapy and for whom docetaxel is the appropriate patient-individual therapy (patient group c1))",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "docetaxel",
+          "Outcomes": "progression-free survival (blinded independent central review), overall survival (time from randomisation to death from any cause), symptomatology, health status, health-related quality of life, adverse events (AEs), serious adverse events (SAEs), severe adverse events, discontinuation due to adverse events, interstitial lung disease (severe AE), liver disorders (severe AEs), stomatitis (AE), peripheral oedema (AE), peripheral neuropathy (AE), alopecia (AE), blood and lymphatic system disorders (AE), fatigue (AE), fever (AE), infections and infestations (AE), EORTC QLQ-C30, EORTC QLQ-LC13, BPI-SF, FACT-G GP5, PGI-C, EQ-5D VAS, PRO-CTCAE"
+        },
+        {
+          "Population": "Adults with advanced non-small cell lung cancer (NSCLC) with KRAS p.G12C mutation after first-line therapy with an anti-PD-1/PD-L1 in combination with platinum-containing chemotherapy or after sequential therapy with an anti-PD-1/PD-L1 and platinum-containing chemotherapy and for whom a therapy other than docetaxel is the appropriate patient-individual therapy (patient group c2))",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "patient-individual therapy, taking into account previous therapy and histology with selection of afatinib, pemetrexed, erlotinib, docetaxel in combination with ramucirumab, docetaxel in combination with nintedanib and vinorelbine",
+          "Outcomes": "progression-free survival (blinded independent central review), overall survival (time from randomisation to death from any cause), symptomatology, health status, health-related quality of life, adverse events (AEs), serious adverse events (SAEs), severe adverse events, discontinuation due to adverse events, interstitial lung disease (severe AE), liver disorders (severe AEs), stomatitis (AE), peripheral oedema (AE), peripheral neuropathy (AE), alopecia (AE), blood and lymphatic system disorders (AE), fatigue (AE), fever (AE), infections and infestations (AE), EORTC QLQ-C30, EORTC QLQ-LC13, BPI-SF, FACT-G GP5, PGI-C, EQ-5D VAS, PRO-CTCAE"
+        },
+        {
+          "Population": "Adults with advanced non-small cell lung cancer (NSCLC) with KRAS p.G12C mutation after first-line therapy with cytotoxic chemotherapy",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "different chemotherapies without platinum (cisplatin/ carboplatin) as well as treatment with an immune checkpoint inhibitor as monotherapy",
+          "Outcomes": "progression-free survival (blinded independent central review), overall survival (time from randomisation to death from any cause), symptomatology, health status, health-related quality of life, adverse events (AEs), serious adverse events (SAEs), severe adverse events, discontinuation due to adverse events, interstitial lung disease (severe AE), liver disorders (severe AEs), stomatitis (AE), peripheral oedema (AE), peripheral neuropathy (AE), alopecia (AE), blood and lymphatic system disorders (AE), fatigue (AE), fever (AE), infections and infestations (AE), EORTC QLQ-C30, EORTC QLQ-LC13, BPI-SF, FACT-G GP5, PGI-C, EQ-5D VAS, PRO-CTCAE"
+        },
+        {
+          "Population": "Adults with advanced non-small cell lung cancer (NSCLC) with KRAS p.G12C mutation after first-line therapy with cytotoxic chemotherapy",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "docetaxel (only for patients with PD-L1 negative tumours)",
+          "Outcomes": "progression-free survival (blinded independent central review), overall survival (time from randomisation to death from any cause), symptomatology, health status, health-related quality of life, adverse events (AEs), serious adverse events (SAEs), severe adverse events, discontinuation due to adverse events, interstitial lung disease (severe AE), liver disorders (severe AEs), stomatitis (AE), peripheral oedema (AE), peripheral neuropathy (AE), alopecia (AE), blood and lymphatic system disorders (AE), fatigue (AE), fever (AE), infections and infestations (AE), EORTC QLQ-C30, EORTC QLQ-LC13, BPI-SF, FACT-G GP5, PGI-C, EQ-5D VAS, PRO-CTCAE"
+        },
+        {
+          "Population": "Adults with advanced non-small cell lung cancer (NSCLC) with KRAS p.G12C mutation after first-line therapy with cytotoxic chemotherapy",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "pemetrexed (only for patients with PD-L1 negative tumours and except in case of predominantly squamous histology)",
+          "Outcomes": "progression-free survival (blinded independent central review), overall survival (time from randomisation to death from any cause), symptomatology, health status, health-related quality of life, adverse events (AEs), serious adverse events (SAEs), severe adverse events, discontinuation due to adverse events, interstitial lung disease (severe AE), liver disorders (severe AEs), stomatitis (AE), peripheral oedema (AE), peripheral neuropathy (AE), alopecia (AE), blood and lymphatic system disorders (AE), fatigue (AE), fever (AE), infections and infestations (AE), EORTC QLQ-C30, EORTC QLQ-LC13, BPI-SF, FACT-G GP5, PGI-C, EQ-5D VAS, PRO-CTCAE"
+        },
+        {
+          "Population": "Adults with advanced non-small cell lung cancer (NSCLC) with KRAS p.G12C mutation after first-line therapy with cytotoxic chemotherapy",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "nivolumab",
+          "Outcomes": "progression-free survival (blinded independent central review), overall survival (time from randomisation to death from any cause), symptomatology, health status, health-related quality of life, adverse events (AEs), serious adverse events (SAEs), severe adverse events, discontinuation due to adverse events, interstitial lung disease (severe AE), liver disorders (severe AEs), stomatitis (AE), peripheral oedema (AE), peripheral neuropathy (AE), alopecia (AE), blood and lymphatic system disorders (AE), fatigue (AE), fever (AE), infections and infestations (AE), EORTC QLQ-C30, EORTC QLQ-LC13, BPI-SF, FACT-G GP5, PGI-C, EQ-5D VAS, PRO-CTCAE"
+        },
+        {
+          "Population": "Adults with advanced non-small cell lung cancer (NSCLC) with KRAS p.G12C mutation after first-line therapy with cytotoxic chemotherapy",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "pembrolizumab (only for patients with PD-L1 expressing tumours (PD-L1 expression ≥ 1% of tumour cells))",
+          "Outcomes": "progression-free survival (blinded independent central review), overall survival (time from randomisation to death from any cause), symptomatology, health status, health-related quality of life, adverse events (AEs), serious adverse events (SAEs), severe adverse events, discontinuation due to adverse events, interstitial lung disease (severe AE), liver disorders (severe AEs), stomatitis (AE), peripheral oedema (AE), peripheral neuropathy (AE), alopecia (AE), blood and lymphatic system disorders (AE), fatigue (AE), fever (AE), infections and infestations (AE), EORTC QLQ-C30, EORTC QLQ-LC13, BPI-SF, FACT-G GP5, PGI-C, EQ-5D VAS, PRO-CTCAE"
+        },
+        {
+          "Population": "Adults with advanced non-small cell lung cancer (NSCLC) with KRAS p.G12C mutation after first-line therapy with cytotoxic chemotherapy",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "atezolizumab",
+          "Outcomes": "progression-free survival (blinded independent central review), overall survival (time from randomisation to death from any cause), symptomatology, health status, health-related quality of life, adverse events (AEs), serious adverse events (SAEs), severe adverse events, discontinuation due to adverse events, interstitial lung disease (severe AE), liver disorders (severe AEs), stomatitis (AE), peripheral oedema (AE), peripheral neuropathy (AE), alopecia (AE), blood and lymphatic system disorders (AE), fatigue (AE), fever (AE), infections and infestations (AE), EORTC QLQ-C30, EORTC QLQ-LC13, BPI-SF, FACT-G GP5, PGI-C, EQ-5D VAS, PRO-CTCAE"
+        },
+        {
+          "Population": "Adults with advanced non-small cell lung cancer (NSCLC) with KRAS p.G12C mutation after first-line therapy with cytotoxic chemotherapy",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "docetaxel in combination with nintedanib (only for patients with PD-L1 negative tumours and adenocarcinoma histology)",
+          "Outcomes": "progression-free survival (blinded independent central review), overall survival (time from randomisation to death from any cause), symptomatology, health status, health-related quality of life, adverse events (AEs), serious adverse events (SAEs), severe adverse events, discontinuation due to adverse events, interstitial lung disease (severe AE), liver disorders (severe AEs), stomatitis (AE), peripheral oedema (AE), peripheral neuropathy (AE), alopecia (AE), blood and lymphatic system disorders (AE), fatigue (AE), fever (AE), infections and infestations (AE), EORTC QLQ-C30, EORTC QLQ-LC13, BPI-SF, FACT-G GP5, PGI-C, EQ-5D VAS, PRO-CTCAE"
+        }
+      ],
+      "ChunksUsed": 40,
+      "ContextTokens": 9532
     },
     "EN": {
       "Indication": "treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context",
@@ -153,77 +205,109 @@
           "Population": "previously treated KRAS G12C mutation-positive advanced non-small-cell lung cancer",
           "Intervention": "Medicine X (under assessment)",
           "Comparator": "docetaxel",
-          "Outcomes": "overall survival (OS), progression-free survival (PFS), objective response rate (RECIST 1.1), health-related quality of life, treatment-related disutility for intravenous administration, utility values in the progression-free health state (visual analogue scale), adverse events, discontinuation due to adverse events, cost-effectiveness (modelled as mean overall and progression-free survival, incremental cost-effectiveness ratio), resource use estimates"
+          "Outcomes": "overall survival (OS), progression-free survival (PFS), objective response rate (ORR; RECIST 1.1, blinded independent central review), complete response (RECIST 1.1), partial response (RECIST 1.1), health-related quality of life, visual analogue scale (utilities in progression-free health state), utility decrement per cycle of treatment, progression-free survival utility, progression-free survival on-treatment utility differential, quality-adjusted life years (QALYs), cost-effectiveness (incremental cost-effectiveness ratio, ICER), adverse events (general)"
         },
         {
           "Population": "previously treated KRAS G12C mutation-positive advanced non-small-cell lung cancer",
           "Intervention": "Medicine X (under assessment)",
           "Comparator": "docetaxel plus nintedanib",
-          "Outcomes": "overall survival (OS), progression-free survival (PFS), objective response rate (RECIST 1.1), health-related quality of life, treatment-related disutility for intravenous administration, utility values in the progression-free health state (visual analogue scale), adverse events, discontinuation due to adverse events, cost-effectiveness (modelled as mean overall and progression-free survival, incremental cost-effectiveness ratio), resource use estimates"
+          "Outcomes": "overall survival (OS), progression-free survival (PFS), objective response rate (ORR; RECIST 1.1, blinded independent central review), complete response (RECIST 1.1), partial response (RECIST 1.1), health-related quality of life, visual analogue scale (utilities in progression-free health state), utility decrement per cycle of treatment, progression-free survival utility, progression-free survival on-treatment utility differential, quality-adjusted life years (QALYs), cost-effectiveness (incremental cost-effectiveness ratio, ICER), adverse events (general)"
         }
       ],
-      "ChunksUsed": 30,
-      "ContextTokens": 6326
-    },
-    "FR": {
-      "Indication": "treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context",
-      "Country": "FR",
-      "PICOs": [
-        {
-          "Population": "patients treated with immunotherapy monotherapy in the first line",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "chemotherapy based on platinum salts, such as in the 1st line: cisplatin-vinorelbine, cisplatine-citagembine, carboplatin-paclitaxel, cisplain-docetaxel, Cisplatin-pemetrexed (non-epidermoid only)",
-          "Outcomes": "progression-free survival (as assessed by an independent, blinded review panel, defined as time from randomization to progression per RECIST 1.1 or death from any cause), sensitivity analysis of progression-free survival (considering initiation of new anti-cancer therapy as a progression-free survival event), objective response rate (as evaluated by an independent review committee, defined as the proportion of patients with complete or partial response per RECIST 1.1), overall survival (defined as time from randomization to death from any cause), duration of response (time from first partial or complete response to first relapse or progression per RECIST 1.1 or death from any cause), disease control rate (proportion of patients with complete, partial, or stable disease for at least 5 weeks), time to response (time from treatment initiation to first complete or partial response), adverse events (including serious adverse events and incidence of serious undesirable effects), discontinuation due to adverse events, health-related quality of life (including adjustment for multiplicity in analyses of median survival for certain quality of life dimensions), tolerability profile"
-        },
-        {
-          "Population": "patients treated with chemotherapeutic therapy + immunotherapies in the line 1",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "chemotherapists in the single line: pemetrexed, docetaxel (non-epidermoside only)",
-          "Outcomes": "progression-free survival (as assessed by an independent, blinded review panel, defined as time from randomization to progression per RECIST 1.1 or death from any cause), sensitivity analysis of progression-free survival (considering initiation of new anti-cancer therapy as a progression-free survival event), objective response rate (as evaluated by an independent review committee, defined as the proportion of patients with complete or partial response per RECIST 1.1), overall survival (defined as time from randomization to death from any cause), duration of response (time from first partial or complete response to first relapse or progression per RECIST 1.1 or death from any cause), disease control rate (proportion of patients with complete, partial, or stable disease for at least 5 weeks), time to response (time from treatment initiation to first complete or partial response), adverse events (including serious adverse events and incidence of serious undesirable effects), discontinuation due to adverse events, health-related quality of life (including adjustment for multiplicity in analyses of median survival for certain quality of life dimensions), tolerability profile"
-        },
-        {
-          "Population": "patients receiving first line bi-chemotherapy, without immunotherapy",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "immunotherapeutic treatment is the reference: atezolizumab, nivolumab or pembrolizimab (if PD-L1 ≥ 1%)",
-          "Outcomes": "progression-free survival (as assessed by an independent, blinded review panel, defined as time from randomization to progression per RECIST 1.1 or death from any cause), sensitivity analysis of progression-free survival (considering initiation of new anti-cancer therapy as a progression-free survival event), objective response rate (as evaluated by an independent review committee, defined as the proportion of patients with complete or partial response per RECIST 1.1), overall survival (defined as time from randomization to death from any cause), duration of response (time from first partial or complete response to first relapse or progression per RECIST 1.1 or death from any cause), disease control rate (proportion of patients with complete, partial, or stable disease for at least 5 weeks), time to response (time from treatment initiation to first complete or partial response), adverse events (including serious adverse events and incidence of serious undesirable effects), discontinuation due to adverse events, health-related quality of life (including adjustment for multiplicity in analyses of median survival for certain quality of life dimensions), tolerability profile"
-        }
-      ],
-      "ChunksUsed": 30,
-      "ContextTokens": 7051
-    },
-    "SE": {
-      "Indication": "treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context",
-      "Country": "SE",
-      "PICOs": [
-        {
-          "Population": "adult patients with advanced non-small cell lung cancer (NSCLC) with a KRAS G12C mutation, in case of progression after at least one previous line of systemic therapy",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "docetaxel",
-          "Outcomes": "progression-free survival (PFS), overall survival (OS), health-related quality of life (measured by time to death), quality-adjusted life years (QALYs), cost-effectiveness (cost per QALY achieved), safety, resource use estimates"
-        },
-        {
-          "Population": "patients with advanced non-small cell lung cancer (NSCLC) with the KRAS G12C mutation who have progressed after at least one prior line of systemic therapy and who have been treated with docetaxel or who are not medically suitable for treatment with Docetaxel",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "best supportive care",
-          "Outcomes": "progression-free survival (PFS), overall survival (OS), health-related quality of life (measured by time to death), quality-adjusted life years (QALYs), cost-effectiveness (cost per QALY achieved), safety, resource use estimates"
-        }
-      ],
-      "ChunksUsed": 30,
-      "ContextTokens": 6713
+      "ChunksUsed": 40,
+      "ContextTokens": 8142
     },
     "PO": {
       "Indication": "treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context",
       "Country": "PO",
       "PICOs": [
         {
-          "Population": "treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context",
+          "Population": "the second-line treatment of patients with NDRP with a KRAS G12C mutation",
           "Intervention": "Medicine X (under assessment)",
-          "Comparator": "",
-          "Outcomes": "progression-free survival (PFS), overall response rate (ORR), disease control rate (DCR), overall survival (OS), health-related quality of life (measured by EORTC QLQ-C30 and EORTC QLQ-LC13 questionnaires), adverse events (including serious adverse events, treatment-related adverse events, treatment-related adverse reactions grade 3 or higher, adverse events leading to discontinuation, adverse events leading to dose modification, adverse events resulting in death), specific adverse events (anaemia, headache, cough, shortness of breath, diarrhoea, nausea, vomiting, constipation, abdominal pain, joint pain, back pain, fatigue, fever, increased asparaginase aminotransferase activity, increased alanine aminotransferase activity), cost-effectiveness (incremental cost-effectiveness ratio, ICER), budget impact analysis, resource use estimates"
+          "Comparator": "sotorasib",
+          "Outcomes": "progression-free survival (PFS), overall response rate (ORR), disease control rate (DCR), overall survival (OS), diarrhoea, increased alanine aminotransferase (ALT), increased aspartate aminotransferase (AST), fatigue, fever, peripheral oedema, shortness of breath, cough, vomiting, decreased appetite, constipation, anaemia, increased asparaginase aminotransferase activity, increased alanine aminotransferase activity, headache, alopecia, neutropenia, joint pain, back pain, abdominal pain, oral cavity blockage, asthenia, weight loss, peripheral neuropathy, chest pain, serious adverse events (SAEs), adverse events (general), treatment-related adverse events (general), treatment-related adverse events leading to discontinuation, grade ≥ 3 treatment-related adverse events, treatment-associated adverse experiences resulting in death, European Organisation for Research and Treatment of Cancer Quality of Life Questionnaire Core 30 (EORTC QLQ-C30), European Organisation for Research and Treatment of Cancer Quality of Life Questionnaire Lung Cancer Module (EORTC QLQ-LC13), quality-adjusted life years (QALYs), cost-effectiveness (incremental cost-utility ratio, ICUR), years of life gained (LYG)"
+        },
+        {
+          "Population": "the second-line treatment of patients with NDRP with a KRAS G12C mutation",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "adagrasib",
+          "Outcomes": "progression-free survival (PFS), overall response rate (ORR), disease control rate (DCR), overall survival (OS), diarrhoea, increased alanine aminotransferase (ALT), increased aspartate aminotransferase (AST), fatigue, fever, peripheral oedema, shortness of breath, cough, vomiting, decreased appetite, constipation, anaemia, increased asparaginase aminotransferase activity, increased alanine aminotransferase activity, headache, alopecia, neutropenia, joint pain, back pain, abdominal pain, oral cavity blockage, asthenia, weight loss, peripheral neuropathy, chest pain, serious adverse events (SAEs), adverse events (general), treatment-related adverse events (general), treatment-related adverse events leading to discontinuation, grade ≥ 3 treatment-related adverse events, treatment-associated adverse experiences resulting in death, European Organisation for Research and Treatment of Cancer Quality of Life Questionnaire Core 30 (EORTC QLQ-C30), European Organisation for Research and Treatment of Cancer Quality of Life Questionnaire Lung Cancer Module (EORTC QLQ-LC13), quality-adjusted life years (QALYs), cost-effectiveness (incremental cost-utility ratio, ICUR), years of life gained (LYG)"
+        },
+        {
+          "Population": "the second-line treatment of patients with NDRP with a KRAS G12C mutation",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "chemotherapy (docetaxel or pemetrexed)",
+          "Outcomes": "progression-free survival (PFS), overall response rate (ORR), disease control rate (DCR), overall survival (OS), diarrhoea, increased alanine aminotransferase (ALT), increased aspartate aminotransferase (AST), fatigue, fever, peripheral oedema, shortness of breath, cough, vomiting, decreased appetite, constipation, anaemia, increased asparaginase aminotransferase activity, increased alanine aminotransferase activity, headache, alopecia, neutropenia, joint pain, back pain, abdominal pain, oral cavity blockage, asthenia, weight loss, peripheral neuropathy, chest pain, serious adverse events (SAEs), adverse events (general), treatment-related adverse events (general), treatment-related adverse events leading to discontinuation, grade ≥ 3 treatment-related adverse events, treatment-associated adverse experiences resulting in death, European Organisation for Research and Treatment of Cancer Quality of Life Questionnaire Core 30 (EORTC QLQ-C30), European Organisation for Research and Treatment of Cancer Quality of Life Questionnaire Lung Cancer Module (EORTC QLQ-LC13), quality-adjusted life years (QALYs), cost-effectiveness (incremental cost-utility ratio, ICUR), years of life gained (LYG)"
+        },
+        {
+          "Population": "the second-line treatment of patients with NDRP with a KRAS G12C mutation",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "docetaxel in combination with nintedanib",
+          "Outcomes": "progression-free survival (PFS), overall response rate (ORR), disease control rate (DCR), overall survival (OS), diarrhoea, increased alanine aminotransferase (ALT), increased aspartate aminotransferase (AST), fatigue, fever, peripheral oedema, shortness of breath, cough, vomiting, decreased appetite, constipation, anaemia, increased asparaginase aminotransferase activity, increased alanine aminotransferase activity, headache, alopecia, neutropenia, joint pain, back pain, abdominal pain, oral cavity blockage, asthenia, weight loss, peripheral neuropathy, chest pain, serious adverse events (SAEs), adverse events (general), treatment-related adverse events (general), treatment-related adverse events leading to discontinuation, grade ≥ 3 treatment-related adverse events, treatment-associated adverse experiences resulting in death, European Organisation for Research and Treatment of Cancer Quality of Life Questionnaire Core 30 (EORTC QLQ-C30), European Organisation for Research and Treatment of Cancer Quality of Life Questionnaire Lung Cancer Module (EORTC QLQ-LC13), quality-adjusted life years (QALYs), cost-effectiveness (incremental cost-utility ratio, ICUR), years of life gained (LYG)"
+        },
+        {
+          "Population": "the second-line treatment of patients with NDRP with a KRAS G12C mutation",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "EGFR inhibitors in patients who have not received these medicines in the first line",
+          "Outcomes": "progression-free survival (PFS), overall response rate (ORR), disease control rate (DCR), overall survival (OS), diarrhoea, increased alanine aminotransferase (ALT), increased aspartate aminotransferase (AST), fatigue, fever, peripheral oedema, shortness of breath, cough, vomiting, decreased appetite, constipation, anaemia, increased asparaginase aminotransferase activity, increased alanine aminotransferase activity, headache, alopecia, neutropenia, joint pain, back pain, abdominal pain, oral cavity blockage, asthenia, weight loss, peripheral neuropathy, chest pain, serious adverse events (SAEs), adverse events (general), treatment-related adverse events (general), treatment-related adverse events leading to discontinuation, grade ≥ 3 treatment-related adverse events, treatment-associated adverse experiences resulting in death, European Organisation for Research and Treatment of Cancer Quality of Life Questionnaire Core 30 (EORTC QLQ-C30), European Organisation for Research and Treatment of Cancer Quality of Life Questionnaire Lung Cancer Module (EORTC QLQ-LC13), quality-adjusted life years (QALYs), cost-effectiveness (incremental cost-utility ratio, ICUR), years of life gained (LYG)"
+        },
+        {
+          "Population": "the second-line treatment of patients with NDRP with a KRAS G12C mutation",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "osymertinib in patients previously treated with first or second generation EGFR blockers",
+          "Outcomes": "progression-free survival (PFS), overall response rate (ORR), disease control rate (DCR), overall survival (OS), diarrhoea, increased alanine aminotransferase (ALT), increased aspartate aminotransferase (AST), fatigue, fever, peripheral oedema, shortness of breath, cough, vomiting, decreased appetite, constipation, anaemia, increased asparaginase aminotransferase activity, increased alanine aminotransferase activity, headache, alopecia, neutropenia, joint pain, back pain, abdominal pain, oral cavity blockage, asthenia, weight loss, peripheral neuropathy, chest pain, serious adverse events (SAEs), adverse events (general), treatment-related adverse events (general), treatment-related adverse events leading to discontinuation, grade ≥ 3 treatment-related adverse events, treatment-associated adverse experiences resulting in death, European Organisation for Research and Treatment of Cancer Quality of Life Questionnaire Core 30 (EORTC QLQ-C30), European Organisation for Research and Treatment of Cancer Quality of Life Questionnaire Lung Cancer Module (EORTC QLQ-LC13), quality-adjusted life years (QALYs), cost-effectiveness (incremental cost-utility ratio, ICUR), years of life gained (LYG)"
+        },
+        {
+          "Population": "the second-line treatment of patients with NDRP with a KRAS G12C mutation",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "ALK inhibitors if ALK gene rearrangement",
+          "Outcomes": "progression-free survival (PFS), overall response rate (ORR), disease control rate (DCR), overall survival (OS), diarrhoea, increased alanine aminotransferase (ALT), increased aspartate aminotransferase (AST), fatigue, fever, peripheral oedema, shortness of breath, cough, vomiting, decreased appetite, constipation, anaemia, increased asparaginase aminotransferase activity, increased alanine aminotransferase activity, headache, alopecia, neutropenia, joint pain, back pain, abdominal pain, oral cavity blockage, asthenia, weight loss, peripheral neuropathy, chest pain, serious adverse events (SAEs), adverse events (general), treatment-related adverse events (general), treatment-related adverse events leading to discontinuation, grade ≥ 3 treatment-related adverse events, treatment-associated adverse experiences resulting in death, European Organisation for Research and Treatment of Cancer Quality of Life Questionnaire Core 30 (EORTC QLQ-C30), European Organisation for Research and Treatment of Cancer Quality of Life Questionnaire Lung Cancer Module (EORTC QLQ-LC13), quality-adjusted life years (QALYs), cost-effectiveness (incremental cost-utility ratio, ICUR), years of life gained (LYG)"
+        },
+        {
+          "Population": "the second-line treatment of patients with NDRP with a KRAS G12C mutation",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "immunity (nivolumab or atezolizumab)",
+          "Outcomes": "progression-free survival (PFS), overall response rate (ORR), disease control rate (DCR), overall survival (OS), diarrhoea, increased alanine aminotransferase (ALT), increased aspartate aminotransferase (AST), fatigue, fever, peripheral oedema, shortness of breath, cough, vomiting, decreased appetite, constipation, anaemia, increased asparaginase aminotransferase activity, increased alanine aminotransferase activity, headache, alopecia, neutropenia, joint pain, back pain, abdominal pain, oral cavity blockage, asthenia, weight loss, peripheral neuropathy, chest pain, serious adverse events (SAEs), adverse events (general), treatment-related adverse events (general), treatment-related adverse events leading to discontinuation, grade ≥ 3 treatment-related adverse events, treatment-associated adverse experiences resulting in death, European Organisation for Research and Treatment of Cancer Quality of Life Questionnaire Core 30 (EORTC QLQ-C30), European Organisation for Research and Treatment of Cancer Quality of Life Questionnaire Lung Cancer Module (EORTC QLQ-LC13), quality-adjusted life years (QALYs), cost-effectiveness (incremental cost-utility ratio, ICUR), years of life gained (LYG)"
+        },
+        {
+          "Population": "the second-line treatment of patients with NDRP with a KRAS G12C mutation",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "palliative radiotherapy",
+          "Outcomes": "progression-free survival (PFS), overall response rate (ORR), disease control rate (DCR), overall survival (OS), diarrhoea, increased alanine aminotransferase (ALT), increased aspartate aminotransferase (AST), fatigue, fever, peripheral oedema, shortness of breath, cough, vomiting, decreased appetite, constipation, anaemia, increased asparaginase aminotransferase activity, increased alanine aminotransferase activity, headache, alopecia, neutropenia, joint pain, back pain, abdominal pain, oral cavity blockage, asthenia, weight loss, peripheral neuropathy, chest pain, serious adverse events (SAEs), adverse events (general), treatment-related adverse events (general), treatment-related adverse events leading to discontinuation, grade ≥ 3 treatment-related adverse events, treatment-associated adverse experiences resulting in death, European Organisation for Research and Treatment of Cancer Quality of Life Questionnaire Core 30 (EORTC QLQ-C30), European Organisation for Research and Treatment of Cancer Quality of Life Questionnaire Lung Cancer Module (EORTC QLQ-LC13), quality-adjusted life years (QALYs), cost-effectiveness (incremental cost-utility ratio, ICUR), years of life gained (LYG)"
+        },
+        {
+          "Population": "the second-line treatment of patients with NDRP with a KRAS G12C mutation",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "symptomatic progression",
+          "Outcomes": "progression-free survival (PFS), overall response rate (ORR), disease control rate (DCR), overall survival (OS), diarrhoea, increased alanine aminotransferase (ALT), increased aspartate aminotransferase (AST), fatigue, fever, peripheral oedema, shortness of breath, cough, vomiting, decreased appetite, constipation, anaemia, increased asparaginase aminotransferase activity, increased alanine aminotransferase activity, headache, alopecia, neutropenia, joint pain, back pain, abdominal pain, oral cavity blockage, asthenia, weight loss, peripheral neuropathy, chest pain, serious adverse events (SAEs), adverse events (general), treatment-related adverse events (general), treatment-related adverse events leading to discontinuation, grade ≥ 3 treatment-related adverse events, treatment-associated adverse experiences resulting in death, European Organisation for Research and Treatment of Cancer Quality of Life Questionnaire Core 30 (EORTC QLQ-C30), European Organisation for Research and Treatment of Cancer Quality of Life Questionnaire Lung Cancer Module (EORTC QLQ-LC13), quality-adjusted life years (QALYs), cost-effectiveness (incremental cost-utility ratio, ICUR), years of life gained (LYG)"
+        },
+        {
+          "Population": "Sotorasib (SOT) was compared with docetaxel (DOC), nintedanib in combination with docetexel (NIN+DOC) and pemetrexed (XPM)",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "docetaxel",
+          "Outcomes": "progression-free survival (PFS), overall response rate (ORR), disease control rate (DCR), overall survival (OS), diarrhoea, increased alanine aminotransferase (ALT), increased aspartate aminotransferase (AST), fatigue, fever, peripheral oedema, shortness of breath, cough, vomiting, decreased appetite, constipation, anaemia, increased asparaginase aminotransferase activity, increased alanine aminotransferase activity, headache, alopecia, neutropenia, joint pain, back pain, abdominal pain, oral cavity blockage, asthenia, weight loss, peripheral neuropathy, chest pain, serious adverse events (SAEs), adverse events (general), treatment-related adverse events (general), treatment-related adverse events leading to discontinuation, grade ≥ 3 treatment-related adverse events, treatment-associated adverse experiences resulting in death, European Organisation for Research and Treatment of Cancer Quality of Life Questionnaire Core 30 (EORTC QLQ-C30), European Organisation for Research and Treatment of Cancer Quality of Life Questionnaire Lung Cancer Module (EORTC QLQ-LC13), quality-adjusted life years (QALYs), cost-effectiveness (incremental cost-utility ratio, ICUR), years of life gained (LYG)"
+        },
+        {
+          "Population": "Sotorasib (SOT) was compared with docetaxel (DOC), nintedanib in combination with docetexel (NIN+DOC) and pemetrexed (XPM)",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "nintedanib in combination with docetaxel",
+          "Outcomes": "progression-free survival (PFS), overall response rate (ORR), disease control rate (DCR), overall survival (OS), diarrhoea, increased alanine aminotransferase (ALT), increased aspartate aminotransferase (AST), fatigue, fever, peripheral oedema, shortness of breath, cough, vomiting, decreased appetite, constipation, anaemia, increased asparaginase aminotransferase activity, increased alanine aminotransferase activity, headache, alopecia, neutropenia, joint pain, back pain, abdominal pain, oral cavity blockage, asthenia, weight loss, peripheral neuropathy, chest pain, serious adverse events (SAEs), adverse events (general), treatment-related adverse events (general), treatment-related adverse events leading to discontinuation, grade ≥ 3 treatment-related adverse events, treatment-associated adverse experiences resulting in death, European Organisation for Research and Treatment of Cancer Quality of Life Questionnaire Core 30 (EORTC QLQ-C30), European Organisation for Research and Treatment of Cancer Quality of Life Questionnaire Lung Cancer Module (EORTC QLQ-LC13), quality-adjusted life years (QALYs), cost-effectiveness (incremental cost-utility ratio, ICUR), years of life gained (LYG)"
+        },
+        {
+          "Population": "Sotorasib (SOT) was compared with docetaxel (DOC), nintedanib in combination with docetexel (NIN+DOC) and pemetrexed (XPM)",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "pemetrexed",
+          "Outcomes": "progression-free survival (PFS), overall response rate (ORR), disease control rate (DCR), overall survival (OS), diarrhoea, increased alanine aminotransferase (ALT), increased aspartate aminotransferase (AST), fatigue, fever, peripheral oedema, shortness of breath, cough, vomiting, decreased appetite, constipation, anaemia, increased asparaginase aminotransferase activity, increased alanine aminotransferase activity, headache, alopecia, neutropenia, joint pain, back pain, abdominal pain, oral cavity blockage, asthenia, weight loss, peripheral neuropathy, chest pain, serious adverse events (SAEs), adverse events (general), treatment-related adverse events (general), treatment-related adverse events leading to discontinuation, grade ≥ 3 treatment-related adverse events, treatment-associated adverse experiences resulting in death, European Organisation for Research and Treatment of Cancer Quality of Life Questionnaire Core 30 (EORTC QLQ-C30), European Organisation for Research and Treatment of Cancer Quality of Life Questionnaire Lung Cancer Module (EORTC QLQ-LC13), quality-adjusted life years (QALYs), cost-effectiveness (incremental cost-utility ratio, ICUR), years of life gained (LYG)"
+        },
+        {
+          "Population": "treatment of adult patients with advanced non-small cell lung cancer (NSCLC) with a KRas g12c mutation who have experienced disease progression after at least one line of previous use",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "docetaxel",
+          "Outcomes": "progression-free survival (PFS), overall response rate (ORR), disease control rate (DCR), overall survival (OS), diarrhoea, increased alanine aminotransferase (ALT), increased aspartate aminotransferase (AST), fatigue, fever, peripheral oedema, shortness of breath, cough, vomiting, decreased appetite, constipation, anaemia, increased asparaginase aminotransferase activity, increased alanine aminotransferase activity, headache, alopecia, neutropenia, joint pain, back pain, abdominal pain, oral cavity blockage, asthenia, weight loss, peripheral neuropathy, chest pain, serious adverse events (SAEs), adverse events (general), treatment-related adverse events (general), treatment-related adverse events leading to discontinuation, grade ≥ 3 treatment-related adverse events, treatment-associated adverse experiences resulting in death, European Organisation for Research and Treatment of Cancer Quality of Life Questionnaire Core 30 (EORTC QLQ-C30), European Organisation for Research and Treatment of Cancer Quality of Life Questionnaire Lung Cancer Module (EORTC QLQ-LC13), quality-adjusted life years (QALYs), cost-effectiveness (incremental cost-utility ratio, ICUR), years of life gained (LYG)"
         }
       ],
-      "ChunksUsed": 30,
-      "ContextTokens": 7003
+      "ChunksUsed": 40,
+      "ContextTokens": 9672
     }
   }
 }

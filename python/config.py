@@ -145,20 +145,28 @@ SOURCE_TYPE_CONFIGS = {
         Focus on:
         - Outcomes (O): Clinical outcomes reported in the context (e.g., OS, PFS, ORR, DoR, safety, QoL, economic/utilities). Do not invent outcomes.
 
-        Extraction rules:
+        CRITICAL Extraction rules for COMPLETENESS:
         1) Use ONLY information present in the context; do not infer missing facts.
-        2) Extract all relevant outcomes mentioned for the indication.
-        3) Include all distinct outcomes mentioned (avoid merging different endpoints into one) - if multiple terms refer to the same outcome, you may use a single term, but do not omit any unique outcome.
-        4) If the context specifies how an outcome is measured or defined (e.g. a QoL questionnaire name, a threshold like 15% improvement for responders, or a time-to-deterioration metric), include that detail in the outcome description.
-        5) EXCLUDE all numerical/statistical results and arm-specific performance (do not reproduce medians, means, rates/percentages, counts, hazard ratios, odds ratios, relative risks, confidence intervals, p-values, ICER/QALY numeric values, Kaplan–Meier point estimates, or text like "with <drug/regimen>"). When such data appears, rewrite to the generic outcome and its measurement method only (e.g., "progression-free survival (RECIST 1.1)").
-        6) Remove medicine or comparator names attached to a specific result; outcomes must be drug-agnostic.
-        7) If a jurisdiction/country/agency is explicitly stated, record it; otherwise use null (unquoted).
-        8) You may reason stepwise INTERNALLY, but DO NOT include your reasoning in the output.
-        9) Return VALID JSON ONLY that adheres to the output contract below. Do not wrap in code fences, do not add comments, and do not include trailing commas.
+        2) Extract ALL relevant outcomes mentioned for the indication - COMPLETENESS is critical.
+        3) List ALL distinct outcomes separately - never merge different endpoints into one, even if they seem related.
+        4) SPECIFIC ADVERSE EVENTS: List EVERY specific adverse event mentioned individually (e.g., "diarrhoea", "nausea", "fatigue", "neutropenia"). Do NOT summarize multiple AEs into a single category like "adverse events including X, Y, Z". Instead, list each as a separate outcome: "diarrhoea, nausea, fatigue, neutropenia, adverse events (general)".
+        5) QUALITY OF LIFE INSTRUMENTS: List EVERY QoL/utility instrument mentioned separately with its full name (e.g., "EORTC QLQ-C30", "EQ-5D-5L", "SF-36", "visual analogue scale"). Do NOT merge different instruments. Each instrument is a distinct outcome.
+        6) If the context specifies how an outcome is measured or defined (e.g., a QoL questionnaire name, grading scale like CTCAE v5.0, assessment criteria like RECIST 1.1, a threshold like 15% improvement, or a time-to-deterioration metric), include that detail with the outcome name.
+        7) EXCLUDE all numerical/statistical results and arm-specific performance (do not reproduce medians, means, rates/percentages, counts, hazard ratios, odds ratios, relative risks, confidence intervals, p-values, ICER/QALY numeric values, Kaplan–Meier point estimates, or text like "with <drug/regimen>"). When such data appears, extract only the outcome name and its measurement method (e.g., "progression-free survival (RECIST 1.1)" not "PFS was 5.6 months").
+        8) Remove medicine or comparator names attached to a specific result; outcomes must be drug-agnostic.
+        9) If a jurisdiction/country/agency is explicitly stated, record it; otherwise use null (unquoted).
+        10) You may reason stepwise INTERNALLY, but DO NOT include your reasoning in the output.
+        11) Return VALID JSON ONLY that adheres to the output contract below. Do not wrap in code fences, do not add comments, and do not include trailing commas.
+
+        Examples of proper extraction:
+        - CORRECT for AEs: "diarrhoea, nausea, vomiting, fatigue, neutropenia, anaemia, headache, rash"
+        - INCORRECT for AEs: "adverse events including gastrointestinal effects (diarrhoea, nausea, vomiting)"
+        - CORRECT for QoL: "EORTC QLQ-C30, EORTC QLQ-LC13, EQ-5D-5L, SF-36, visual analogue scale"
+        - INCORRECT for QoL: "quality of life measured by EORTC questionnaires and EQ-5D"
 
         JSON output contract:
         - Top-level object with keys: "Indication" (string), "Country" (string or null), "Outcomes" (string).
-        - "Outcomes" is a detailed string listing all relevant outcomes found in the context with their specific details when available, limited to outcome names and measurement definitions (no numerical/statistical results).
+        - "Outcomes" is a detailed string listing ALL relevant outcomes found in the context with their specific details when available, limited to outcome names and measurement definitions (no numerical/statistical results).
         - Use double quotes for all JSON strings.
         - Use null (without quotes) when no country/jurisdiction is stated.
         """.strip(),
@@ -170,26 +178,26 @@ SOURCE_TYPE_CONFIGS = {
 
         Few-shot example (for format only):
         Example context snippet:
-        "overall survival, median overall survival (not reached for atezolizumab plus bevacizumab; less than 24 months for sorafenib and lenvatinib), mean gain in overall survival (6.1 months for sorafenib compared to placebo plus best supportive care, dependent on extrapolation method), progression-free survival (median 6.8 months [95% CI 5.7 to 8.3] with atezolizumab plus bevacizumab, 4.3 months [95% CI 4.0 to 5.6] with comparator), time to radiological disease progression, time to symptomatic disease progression (measured by FHSI-8 questionnaire), adverse events (including serious adverse events such as diarrhoea and hand-foot skin reaction), discontinuation of treatment due to adverse events, health-related quality of life, quality-adjusted life years (QALYs), cost-effectiveness (incremental cost-effectiveness ratio, ICER), resource use estimates"
+        "Primary endpoint was overall survival. Secondary endpoints included progression-free survival assessed by RECIST 1.1, objective response rate, duration of response. Safety was assessed using CTCAE v5.0 with specific adverse events including diarrhoea (occurring in 65% of patients), nausea (45%), fatigue (52%), neutropenia (18%), anaemia (12%), and headache (15%). Quality of life was measured using EORTC QLQ-C30, EORTC QLQ-LC13, and EQ-5D-5L questionnaires. Economic outcomes included quality-adjusted life years and cost-effectiveness analysis."
 
         Example JSON output:
         {{
           "Indication": "{indication}",
           "Country": null,
-          "Outcomes": "overall survival (OS), progression-free survival (PFS), time to radiological disease progression, time to symptomatic disease progression (FHSI-8), adverse events (including serious adverse events), discontinuation due to adverse events, health-related quality of life, quality-adjusted life years (QALYs), cost-effectiveness (incremental cost-effectiveness ratio, ICER), resource use estimates"
+          "Outcomes": "overall survival (OS), progression-free survival (PFS; RECIST 1.1), objective response rate (ORR), duration of response (DoR), diarrhoea, nausea, fatigue, neutropenia, anaemia, headache, adverse events (CTCAE v5.0), EORTC QLQ-C30, EORTC QLQ-LC13, EQ-5D-5L, quality-adjusted life years (QALYs), cost-effectiveness (incremental cost-effectiveness ratio, ICER)"
         }}
 
         Context for extraction:
         {context_block}
 
         Your task:
-        Extract all relevant clinical outcomes for this indication with their specific measurement details when provided. Do NOT include statistical results, numerical values, confidence intervals, p-values, or medicine/arm-specific results. Outcomes must be drug-agnostic and limited to outcome names and how they are measured or defined.
+        Extract ALL relevant clinical outcomes for this indication with their specific measurement details when provided. CRITICAL: List EVERY specific adverse event separately (diarrhoea, nausea, fatigue, etc.) and EVERY QoL instrument separately (EORTC QLQ-C30, EQ-5D-5L, SF-36, etc.). Do NOT summarize or group these - list each one individually. Do NOT include statistical results, numerical values, confidence intervals, p-values, or medicine/arm-specific results. Outcomes must be drug-agnostic and limited to outcome names and how they are measured or defined.
 
         Output JSON ONLY in this exact structure:
         {{
           "Indication": "{indication}",
           "Country": null or a jurisdiction string explicitly stated in the context,
-          "Outcomes": "<detailed list of outcomes found in the context with specific measurement information when available, excluding all numerical/statistical results and arm-specific performance>"
+          "Outcomes": "<comprehensive list of ALL outcomes found in the context, with EACH specific adverse event listed separately, EACH QoL instrument listed separately, and specific measurement information when available, excluding all numerical/statistical results and arm-specific performance>"
         }}
         """.strip()
     },
@@ -327,20 +335,28 @@ SOURCE_TYPE_CONFIGS = {
         Focus on:
         - Outcomes (O): Expected benefits, outcomes, harms (and evidence grading if stated). Do not invent outcomes.
 
-        Extraction rules:
+        CRITICAL Extraction rules for COMPLETENESS:
         1) Use ONLY the context; do not infer beyond what is written.
-        2) Extract all relevant outcomes mentioned for the indication.
-        3) Include all distinct outcomes mentioned (avoid merging different endpoints into one) - if multiple terms refer to the same outcome, you may use a single term, but do not omit any unique outcome.
-        4) If the context specifies how an outcome is measured or defined (e.g. a QoL questionnaire name, a threshold like 15% improvement for responders, or a time-to-deterioration metric), include that detail in the outcome description.
-        5) EXCLUDE all numerical/statistical results and arm-specific performance (do not reproduce medians, means, rates/percentages, counts, hazard ratios, odds ratios, relative risks, confidence intervals, p-values, ICER/QALY numeric values, Kaplan–Meier point estimates, or text like "with <drug/regimen>"). When such data appears, rewrite to the generic outcome and its measurement method only.
-        6) Remove medicine or comparator names attached to a specific result; outcomes must be drug-agnostic.
-        7) Record jurisdiction/country/organization if explicitly stated; else use null (unquoted).
-        8) You may reason stepwise INTERNALLY, but DO NOT include your reasoning in the output.
-        9) Return VALID JSON ONLY that adheres to the output contract below. Do not wrap in code fences, do not add comments, and do not include trailing commas.
+        2) Extract ALL relevant outcomes mentioned for the indication - COMPLETENESS is critical.
+        3) List ALL distinct outcomes separately - never merge different endpoints into one, even if they seem related.
+        4) SPECIFIC ADVERSE EVENTS: List EVERY specific adverse event mentioned individually (e.g., "diarrhoea", "nausea", "fatigue", "neutropenia"). Do NOT summarize multiple AEs into a single category like "adverse events including X, Y, Z". Instead, list each as a separate outcome: "diarrhoea, nausea, fatigue, neutropenia, adverse events (general)".
+        5) QUALITY OF LIFE INSTRUMENTS: List EVERY QoL/utility instrument mentioned separately with its full name (e.g., "EORTC QLQ-C30", "EQ-5D-5L", "SF-36", "visual analogue scale"). Do NOT merge different instruments. Each instrument is a distinct outcome.
+        6) If the context specifies how an outcome is measured or defined (e.g., a QoL questionnaire name, grading scale like CTCAE v5.0, assessment criteria like RECIST 1.1, a threshold like 15% improvement, or a time-to-deterioration metric), include that detail with the outcome name.
+        7) EXCLUDE all numerical/statistical results and arm-specific performance (do not reproduce medians, means, rates/percentages, counts, hazard ratios, odds ratios, relative risks, confidence intervals, p-values, ICER/QALY numeric values, Kaplan–Meier point estimates, or text like "with <drug/regimen>"). When such data appears, extract only the outcome name and its measurement method.
+        8) Remove medicine or comparator names attached to a specific result; outcomes must be drug-agnostic.
+        9) Record jurisdiction/country/organization if explicitly stated; else use null (unquoted).
+        10) You may reason stepwise INTERNALLY, but DO NOT include your reasoning in the output.
+        11) Return VALID JSON ONLY that adheres to the output contract below. Do not wrap in code fences, do not add comments, and do not include trailing commas.
+
+        Examples of proper extraction:
+        - CORRECT for AEs: "diarrhoea, nausea, vomiting, fatigue, neutropenia, anaemia, headache, rash"
+        - INCORRECT for AEs: "adverse events including gastrointestinal effects (diarrhoea, nausea, vomiting)"
+        - CORRECT for QoL: "EORTC QLQ-C30, EORTC QLQ-LC13, EQ-5D-5L, SF-36, visual analogue scale"
+        - INCORRECT for QoL: "quality of life measured by EORTC questionnaires and EQ-5D"
 
         JSON output contract:
         - Top-level object with keys: "Indication" (string), "Country" (string or null), "Outcomes" (string).
-        - "Outcomes" is a detailed string listing all relevant outcomes found in the context with their specific details when available, limited to outcome names and measurement definitions (no numerical/statistical results).
+        - "Outcomes" is a detailed string listing ALL relevant outcomes found in the context with their specific details when available, limited to outcome names and measurement definitions (no numerical/statistical results).
         - Use double quotes for all JSON strings.
         - Use null (without quotes) when no country/jurisdiction is stated.
         """.strip(),
@@ -352,26 +368,26 @@ SOURCE_TYPE_CONFIGS = {
 
         Few-shot example (for format only):
         Example context snippet:
-        "Expected benefits include improved survival and response rates measured by RECIST criteria (ORR 37.1%, 95% CI 28.6-46.2). Safety considerations include adverse events graded by CTCAE v5.0 with diarrhoea occurring in 65% of patients."
+        "Expected benefits include improved survival and response rates measured by RECIST criteria. Safety considerations include adverse events graded by CTCAE v5.0 with diarrhoea occurring in 65% of patients, as well as fatigue, nausea, and neutropenia. Quality of life was assessed using EORTC QLQ-C30, EORTC QLQ-LC13, and EQ-5D-5L."
 
         Example JSON output:
         {{
           "Indication": "{indication}",
           "Country": null,
-          "Outcomes": "improved survival, response rates (RECIST criteria), adverse events (CTCAE v5.0)"
+          "Outcomes": "improved survival, response rates (RECIST criteria), diarrhoea, fatigue, nausea, neutropenia, adverse events (CTCAE v5.0), EORTC QLQ-C30, EORTC QLQ-LC13, EQ-5D-5L"
         }}
 
         Context for extraction:
         {context_block}
 
         Your task:
-        Extract all relevant clinical outcomes for this indication from guideline context with their specific measurement details when provided, but exclude statistical results, percentages, confidence intervals, and numerical study findings. Outcomes must be drug-agnostic and limited to outcome names and how they are measured or defined.
+        Extract ALL relevant clinical outcomes for this indication from guideline context with their specific measurement details when provided. CRITICAL: List EVERY specific adverse event separately (diarrhoea, nausea, fatigue, etc.) and EVERY QoL instrument separately (EORTC QLQ-C30, EQ-5D-5L, SF-36, etc.). Do NOT summarize or group these - list each one individually. Exclude statistical results, percentages, confidence intervals, and numerical study findings. Outcomes must be drug-agnostic and limited to outcome names and how they are measured or defined.
 
         Output JSON ONLY in this exact structure:
         {{
           "Indication": "{indication}",
           "Country": null or a jurisdiction/organization string explicitly stated in the context,
-          "Outcomes": "<detailed list of outcomes found in the context with specific measurement information when available, excluding statistical/numerical results and arm-specific performance>"
+          "Outcomes": "<comprehensive list of ALL outcomes found in the context, with EACH specific adverse event listed separately, EACH QoL instrument listed separately, and specific measurement information when available, excluding statistical/numerical results and arm-specific performance>"
         }}
         """.strip()
     }
@@ -496,18 +512,18 @@ CONSOLIDATION_CONFIGS = {
       )
     - Merge only records with the **same key** (byte-for-byte equality after trimming ends).
     - Do NOT perform any other normalization. Specifically, DO NOT:
-      - Map synonyms or abbreviations (e.g., SoC ↔ “standard of care”; HCC ↔ hepatocellular carcinoma; “≥” ↔ “>=”; “PD-L1” ↔ “PDL1”).
+      - Map synonyms or abbreviations (e.g., SoC ↔ "standard of care"; HCC ↔ hepatocellular carcinoma; "≥" ↔ ">="; "PD-L1" ↔ "PDL1").
       - Convert brand ↔ generic (e.g., Keytruda ↔ pembrolizumab).
-      - Reorder tokens or agents (“A + B” ≠ “B + A”; commas/“plus”/“+” are not normalized).
+      - Reorder tokens or agents ("A + B" ≠ "B + A"; commas/"plus"/"+" are not normalized).
       - Canonicalize punctuation/hyphens/Unicode (e.g., en-dash vs hyphen), casing, spacing, units, or thresholds.
       - Paraphrase, intersect, broaden, or prune wording.
 
     Comparator Handling (Literal)
-    - Keep comparator strings exactly as found, including “standard of care/SoC”, “placebo”, “supportive care”.
-    - Do NOT expand “SoC/supportive care/placebo” to specific regimens even if defined in some sources.
-    - Do NOT merge class labels (e.g., “TKI”, “immunotherapy”, “chemotherapy”) with specific agents or regimens.
+    - Keep comparator strings exactly as found, including "standard of care/SoC", "placebo", "supportive care".
+    - Do NOT expand "SoC/supportive care/placebo" to specific regimens even if defined in some sources.
+    - Do NOT merge class labels (e.g., "TKI", "immunotherapy", "chemotherapy") with specific agents or regimens.
 
-    Oncology “Must-Not-Merge” Guardrails (for awareness; grouping still requires exact text identity)
+    Oncology "Must-Not-Merge" Guardrails (for awareness; grouping still requires exact text identity)
     - Treat differences in any of the following as **hard separators** (even if only phrasing differs):
       - Disease/indication and anatomic site; stage/extent; resectability/transplant eligibility.
       - Prior therapy **type(s)** (e.g., platinum chemo, IO, TKI, anti-VEGF, LRT such as TACE/TARE/RFA) and **line** (1L, ≥1 prior line, 2L, adjuvant/neoadjuvant).
@@ -574,12 +590,12 @@ CONSOLIDATION_CONFIGS = {
     "outcomes_consolidation_system_prompt": """
     You are an expert clinical outcomes specialist focusing on organizing and categorizing clinical trial and real-world evidence outcomes.
 
-    Task: Consolidate and categorize all outcomes from multiple countries and source types into organized, non-redundant categories.
+    Task: Consolidate and categorize all outcomes from multiple countries and source types into organized, non-redundant categories while preserving ALL distinct outcomes, especially specific adverse events and measurement instruments.
 
     Categorization Guidelines:
     1) Group outcomes into major categories: Efficacy, Safety, Quality of Life, Economic, Other
-    2) Within each category, create logical subcategories 
-    3) Remove duplicate outcomes but preserve important measurement details
+    2) Within each category, create logical subcategories
+    3) CRITICAL: Preserve ALL distinct outcomes - do NOT over-consolidate
     4) Maintain the clinical context and specific measurement instruments when available
     5) Order outcomes within categories by clinical importance
     6) Track which countries and source types reported each outcome
@@ -591,13 +607,34 @@ CONSOLIDATION_CONFIGS = {
     - Economic: Cost-effectiveness, utilities, budget impact, resource utilization
     - Other: Exploratory endpoints, biomarkers, pharmacokinetics
 
-    Outcome Consolidation Rules:
-    - Merge similar outcomes (e.g., "overall survival" and "OS" -> "Overall survival (OS)")
+    CRITICAL Outcome Consolidation Rules:
+
+    A) MINIMAL CONSOLIDATION - Preserve Distinctness:
+    - Merge ONLY when outcomes are truly synonymous (e.g., "overall survival" and "OS" → "Overall survival (OS)")
     - Treat 'objective response rate' and 'overall response rate' as the same outcome (combine into one entry with acronym ORR)
-    - Preserve measurement details (e.g., "measured by RECIST 1.1", "CTCAE v5.0")
-    - Keep distinct outcomes separate even if similar (e.g., PFS vs. time to progression, ORR vs. duration of response)
-    - Include specific instruments for QoL (e.g., "EORTC QLQ-C30", "EQ-5D")
-    - Remove arm-specific and numerical/statistical trial results (medians, means, rates/percentages, counts, hazard ratios, odds ratios, relative risks, confidence intervals, p-values, ICER/QALY numeric values). Retain only outcome names and their definitions/measurement methods.
+    - Keep ALL other distinct outcomes separate even if related (e.g., PFS vs. time to progression, ORR vs. duration of response)
+    
+    B) SPECIFIC ADVERSE EVENTS - List ALL Individually:
+    - Create a comprehensive list of EVERY specific adverse event mentioned across all sources
+    - DO NOT use phrases like "including" or "such as" followed by examples - list ALL AEs
+    - Each distinct AE must appear as a separate item in the list
+    - Examples of distinct AEs to preserve separately: diarrhoea, nausea, vomiting, fatigue, neutropenia, anaemia, headache, cough, shortness of breath, constipation, abdominal pain, joint pain, back pain, fever, decreased appetite, rash, QTc prolongation, ALT increase, AST increase, creatinine increase, alopecia
+    - Also include general categories like "adverse events (AEs; collected according to CTCAE v5.0)"
+    
+    C) QUALITY OF LIFE / UTILITY INSTRUMENTS - List ALL Separately:
+    - EVERY distinct QoL or utility measurement instrument must be listed as a separate outcome
+    - DO NOT merge different instruments even if they measure similar constructs
+    - Examples of distinct instruments to preserve separately: EORTC QLQ-C30, EORTC QLQ-LC13, EQ-5D-5L, EQ-5D-3L, SF-36, BPI-SF, FACT-G GP5, PGI-C, visual analogue scale
+    - Include the full instrument name/version when available (e.g., "EQ-5D-5L" not just "EQ-5D")
+    
+    D) Measurement Details:
+    - Preserve measurement details when available (e.g., "measured by RECIST 1.1", "CTCAE v5.0")
+    - Include specific versions/scales (e.g., "CTCAE v5.0" vs "CTCAE v4.03")
+    
+    E) Remove Only True Duplicates:
+    - Remove arm-specific and numerical/statistical trial results (medians, means, rates/percentages, counts, hazard ratios, odds ratios, relative risks, confidence intervals, p-values, ICER/QALY numeric values)
+    - Retain only outcome names and their definitions/measurement methods
+    - Remove medicine/drug names attached to outcomes
 
     Output JSON structure:
     {
@@ -608,32 +645,47 @@ CONSOLIDATION_CONFIGS = {
             "source_types": ["list", "of", "source", "types"],
             "indication": "indication string"
         },
-        "outcomes_by_category": {
+        "consolidated_outcomes": {
             "efficacy": {
-                "survival_endpoints": ["outcome1", "outcome2"],
-                "response_measures": ["outcome1", "outcome2"],
-                "progression_measures": ["outcome1", "outcome2"]
+                "survival_endpoints": ["outcome1", "outcome2", ...],
+                "response_measures": ["outcome1", "outcome2", ...],
+                "progression_measures": ["outcome1", "outcome2", ...]
             },
             "safety": {
-                "adverse_events": ["outcome1", "outcome2"],
-                "serious_events": ["outcome1", "outcome2"],
-                "discontinuations": ["outcome1", "outcome2"]
+                "adverse_events": [
+                    "List EVERY specific adverse event here as separate items",
+                    "diarrhoea", "nausea", "vomiting", "fatigue", "neutropenia", 
+                    "anaemia", "headache", "cough", "etc.",
+                    "adverse events (general category with grading system if specified)"
+                ],
+                "serious_events": ["outcome1", "outcome2", ...],
+                "discontinuations": ["outcome1", "outcome2", ...]
             },
             "quality_of_life": {
-                "patient_reported_outcomes": ["outcome1", "outcome2"],
-                "functional_status": ["outcome1", "outcome2"],
-                "symptom_measures": ["outcome1", "outcome2"]
+                "patient_reported_outcomes": [
+                    "List EVERY QoL/utility instrument here as separate items",
+                    "EORTC QLQ-C30", "EORTC QLQ-LC13", "EQ-5D-5L", "SF-36",
+                    "BPI-SF", "FACT-G GP5", "visual analogue scale", "etc."
+                ],
+                "functional_status": ["outcome1", "outcome2", ...],
+                "symptom_measures": ["outcome1", "outcome2", ...]
             },
             "economic": {
-                "cost_effectiveness": ["outcome1", "outcome2"],
-                "utilities": ["outcome1", "outcome2"],
-                "resource_utilization": ["outcome1", "outcome2"]
+                "cost_effectiveness": ["outcome1", "outcome2", ...],
+                "utilities": ["outcome1", "outcome2", ...],
+                "resource_utilization": ["outcome1", "outcome2", ...]
             },
             "other": {
-                "exploratory_endpoints": ["outcome1", "outcome2"],
-                "biomarkers": ["outcome1", "outcome2"]
+                "exploratory_endpoints": ["outcome1", "outcome2", ...],
+                "biomarkers": ["outcome1", "outcome2", ...]
             }
         }
     }
+
+    CRITICAL REMINDERS:
+    - The adverse_events list should contain 10-30+ individual AE items (depending on source richness)
+    - The patient_reported_outcomes list should contain 5-15+ individual instruments (depending on source richness)
+    - DO NOT summarize multiple items with phrases like "adverse events including diarrhoea, nausea, fatigue" - instead list "diarrhoea", "nausea", "fatigue" as separate array items
+    - When in doubt about whether to merge, DO NOT MERGE - keep items separate
     """.strip()
 }

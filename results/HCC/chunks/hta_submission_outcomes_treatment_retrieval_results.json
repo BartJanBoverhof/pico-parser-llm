@@ -1,21 +1,21 @@
 {
   "retrieval_metadata": {
-    "timestamp": "2025-09-17T10:25:16.834138",
+    "timestamp": "2025-09-29T11:57:57.853391",
     "source_type": "hta_submission",
     "retrieval_type": "outcomes",
     "query": "Find passages that specify clinical Outcomes and endpoints relevant to: treatment of patients with advanced or unresectable hepatocellular carcinoma.\n        Prefer sections that describe:\n        - Primary and secondary efficacy endpoints (OS, PFS, ORR, DoR, etc.)\n        - Safety outcomes and adverse events\n        - Quality of life measures and patient-reported outcomes (including any specific instruments like EORTC QLQ, EQ-5D, SF-36)\n        - Economic outcomes and utilities\n        - Exploratory or additional endpoints (e.g. time to next treatment/PFS2, progression of brain metastases, time to deterioration) if reported\n        - Statistical methods and analysis approaches\n        Focus on specific outcome definitions and measurement methodologies.",
     "indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
     "total_countries": 14,
-    "total_chunks": 151
+    "total_chunks": 248
   },
   "results_by_country": {
     "AT": {
       "country_metadata": {
         "country_code": "AT",
-        "chunk_count": 15,
-        "total_text_length": 12942,
+        "chunk_count": 25,
+        "total_text_length": 22238,
         "unique_documents": 2,
-        "unique_headings": 7
+        "unique_headings": 9
       },
       "chunks": [
         {
@@ -33,8 +33,8 @@
             "text_length": 1074,
             "potential_comparators": [
               "Methodik",
-              "Fragestellung",
-              "sorafenib"
+              "sorafenib",
+              "Fragestellung"
             ]
           }
         },
@@ -53,10 +53,10 @@
             "text_length": 562,
             "potential_comparators": [
               "Suchzeitraum",
-              "TACE",
-              "Population",
               "Fragestellung",
-              "sorafenib"
+              "sorafenib",
+              "TACE",
+              "Population"
             ]
           }
         },
@@ -74,14 +74,14 @@
             "split_index": "1_0_0",
             "text_length": 1150,
             "potential_comparators": [
-              "KQ2",
+              "KQ3",
+              "KQ1",
+              "What",
+              "Local",
               "Fragestellung",
               "sorafenib",
-              "Local",
               "Fazit",
-              "What",
-              "KQ3",
-              "KQ1"
+              "KQ2"
             ]
           }
         },
@@ -99,9 +99,9 @@
             "split_index": 0,
             "text_length": 818,
             "potential_comparators": [
+              "Population",
               "Fragestellung",
-              "Randomised",
-              "Population"
+              "Randomised"
             ]
           }
         },
@@ -138,9 +138,9 @@
             "text_length": 1260,
             "potential_comparators": [
               "sorafenib",
+              "Population",
               "Fragestellung",
-              "Additional",
-              "Population"
+              "Additional"
             ]
           }
         },
@@ -195,9 +195,9 @@
             "split_index": 0,
             "text_length": 856,
             "potential_comparators": [
-              "Survival",
               "Fazit",
-              "Despite"
+              "Despite",
+              "Survival"
             ]
           }
         },
@@ -215,11 +215,11 @@
             "split_index": "1_1_0",
             "text_length": 1112,
             "potential_comparators": [
-              "Regarding",
+              "Health-related",
               "Consequently",
               "sorafenib",
-              "lenvatinib",
-              "Health-related"
+              "Regarding",
+              "lenvatinib"
             ]
           }
         },
@@ -237,14 +237,14 @@
             "split_index": 1,
             "text_length": 741,
             "potential_comparators": [
-              "Berlin",
+              "Comparative",
               "Registration",
+              "Oncology",
               "QF",
               "Diagnosis",
               "Bioluminescent",
               "Long",
-              "Comparative",
-              "Oncology"
+              "Berlin"
             ]
           }
         },
@@ -300,8 +300,8 @@
             "split_index": 0,
             "text_length": 798,
             "potential_comparators": [
-              "lenvatinib",
               "It",
+              "lenvatinib",
               "sorafenib"
             ]
           }
@@ -321,6 +321,204 @@
             "text_length": 1229,
             "potential_comparators": [
               "One"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** 3. presentation of results **Source Type:** hta_submission\n\nor transplantation for specific patient and tumour characteristics, such as age, gender, disease etiology, and Child-Pugh score? Population: HCC in patients who meet all of the following criteria: • No extrahepatic spread • No portal invasion kin orafen ynam cal r on, ed urgica erapie section erates fo h nib mia al es n or • Child-Pugh class A or B disease • Eastern Cooperative Oncology Group (ECOG) status ≤1 and/or • BCLC stage A or B, or equivalent Intervention / Komparator: Local therapies (siehe Ergebnisteil) Endpunkte: overall survival and quality of life—and various adverse event Suchzeitraum (Aktualität der Recherche): MEDLINE and Embase from January 2000 to July 2012 Anzahl eingeschlossene Studien/Patienten (Gesamt): Siehe Ergebnisteil! Qualitätsbewertung der Studien: In the assessment of risk of bias in individual studies, we followed the Agency for Healthcare Research and Quality (AHRQ) “Methods Guide for Effectiveness and Comparative Effectiveness Reviews” (Methods Guide) / GRADE 3.",
+          "metadata": {
+            "heading": "3. presentation of results",
+            "doc_id": "2018-10-01_Informationen-zVT_Lenvatinib-D-379",
+            "country": "AT",
+            "source_type": "hta_submission",
+            "start_page": 17,
+            "end_page": 23,
+            "created_date": "2017",
+            "folder_path": "HTA submissions/AT",
+            "split_index": "1_1_0",
+            "text_length": 1081,
+            "potential_comparators": [
+              "Qualitätsbewertung",
+              "Population"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** 3. presentation of results **Source Type:** hta_submission\n\nErgebnisdarstellung\nQualität der Studien: In the present meta-analysis, all included studies were\nwell-designed and of high quality (Jadad score range from 4 to 5). Overall survival (n=7 studies):\n• sorafenib was associated with a significant improvement in OS\n• (HR=0.74, 95% CI: 0.61, 0.90; P=0.002)\n• heterogeneity was significant (P=0.000, I2=77.0%)\n• Subgroup analysis: sorafenib was an effective treatment for patients with\nECOG PS of 1–2 (HR=0.77, 95% CI: 0.60, 1.0; P=0.05), or macroscopic\nvascular invasion (MVI) and/or extrahepatic spread (EHS) (HR=0.65,\n95% CI: 0.46, 0.93; P=0.02)\n• Begg and Egger tests provided no evidence of publication bias\nXie ZB\nTransar\nemboliz\nor witho chemot\nadvance\nhepatoc\ncarcinom\nsystema\nreview. et al.",
+          "metadata": {
+            "heading": "3. presentation of results",
+            "doc_id": "2018-10-01_Informationen-zVT_Lenvatinib-D-379",
+            "country": "AT",
+            "source_type": "hta_submission",
+            "start_page": 17,
+            "end_page": 23,
+            "created_date": "2017",
+            "folder_path": "HTA submissions/AT",
+            "split_index": 5,
+            "text_length": 816,
+            "potential_comparators": [
+              "sorafenib",
+              "Overall"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** The literature: **Source Type:** hta_submission\n\nIt is also important to note that there are many different types of liver cancer, including hepatocellular carcinoma and hepatocytosis, and that some of the most common types of cancer are hepatocytopenia, metastasis, and metastatic liver disease. Transarterial chemoembolization vs bland embolization in hepatocellular carcinoma: A meta-analysis of randomized trials. United European Gastroenterol J 5th Federal Joint Committee (G-BA) Decision on an amendment to the Decision on quality assurance measures for proton therapy in patients with inoperable hepatocellulose cancer (HCC): extension of the period of validity of 27 November 2015 [online]. JAMA Oncol 2015;1(6):756-765.",
+          "metadata": {
+            "heading": "The literature:",
+            "doc_id": "2018-10-01_Informationen-zVT_Lenvatinib-D-379",
+            "country": "AT",
+            "source_type": "hta_submission",
+            "start_page": 39,
+            "end_page": 40,
+            "created_date": "2017",
+            "folder_path": "HTA submissions/AT",
+            "split_index": 0,
+            "text_length": 741,
+            "potential_comparators": [
+              "Transarterial",
+              "United",
+              "JAMA"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** ACT: appropriate comparator therapy; BCLC: Barcelona Clinic Liver Cancer; BSC: Best Supportive Care; **Source Type:** hta_submission\n\nTable Title: ACT: appropriate comparator therapy; BCLC: Barcelona Clinic Liver Cancer; BSC: Best Supportive Care;\nTable contains the following columns: Research question, Indicationa, ACT b, Probability and extent of added benefit\nResearch question: 1, Indicationa: Adult patients with advanced or inoperable hepatocellular carcinoma (HCC) who have not yet received systemic therapy:  with Child-Pugh A or no hepatic cirrhosis, ACT b: Sorafenib, and Probability and extent of added benefit: Added benefit not provend\nResearch question: 2, Indicationa: Adult patients with advanced or inoperable hepatocellular carcinoma (HCC) who have not yet received systemic therapy:  with Child-Pugh B, ACT b: BSCc, and Probability and extent of added benefit: Added benefit not proven\nResearch question: a: For this therapeutic indication, it is assumed that neither curative treatment (for BLCL stages 0 and A) nor locoregional therapy in BLCL stage B, particularly transarterial (chemo)embolization (TACE or TAE), is an option (any longer). It is also assumed that patients in BCLC stage D are ineligible for lenvatinib treatment.",
+          "metadata": {
+            "heading": "ACT: appropriate comparator therapy; BCLC: Barcelona Clinic Liver Cancer; BSC: Best Supportive Care;",
+            "doc_id": "a18-57_lenvatinib_extract-of-dossier-assessment_v1-1",
+            "country": "AT",
+            "source_type": "hta_submission",
+            "start_page": 10,
+            "end_page": 10,
+            "created_date": "2019",
+            "folder_path": "HTA submissions/AT",
+            "split_index": 0,
+            "text_length": 1269,
+            "potential_comparators": [
+              "It",
+              "lenvatinib",
+              "sorafenib"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Results **Source Type:** hta_submission\n\nA positive effect of a greater extent (considerable) was found for the outcome of diarrhoea in patients < 75 years of age. By contrast, there was a hint of lesser benefit for the cognitive functioning dimension of health-related quality of life. Furthermore, it must be noted that no usable data are available for the selection of specific AEs. In this situation, it is conceivable that the overall conclusion on added benefit may change materially if the missing information became available, since the presented event rates also reveal potential disadvantages of lenvatinib. For this reason, it is not possible to adequately weigh all positive and negative effects of lenvatinib. For research question 1, an added benefit of lenvatinib is therefore not proven. No relevant study was found for research question 2. An added benefit of lenvatinib is therefore not proven for this research question.",
+          "metadata": {
+            "heading": "Results",
+            "doc_id": "a18-57_lenvatinib_extract-of-dossier-assessment_v1-1",
+            "country": "AT",
+            "source_type": "hta_submission",
+            "start_page": 6,
+            "end_page": 10,
+            "created_date": "2019",
+            "folder_path": "HTA submissions/AT",
+            "split_index": "7_0_0",
+            "text_length": 952,
+            "potential_comparators": [
+              "No",
+              "lenvatinib",
+              "Furthermore"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** 3. presentation of results **Source Type:** hta_submission\n\nexisted, data were judged to be insufficient due to high risk of bias and/or imprecision of estimates. 1. Fragestellung The efficacy of sorafenib in the treatment of advanced hepatocellular a- carcinoma (HCC) remains controversial. Therefore, we conducted a metaanalysis to evaluate the efficacy and safety of sorafenib for treating patients with advanced HCC. Population: adult patients with advanced (unresectable or metastatic) HCC Intervention: sorafenib or sorafenib-based therapy Komparator: placebo or placebo-based (without sorafenib) therapy Endpunkte: primary: overall survival (OS); secondary: time to progression (TTP), overall response rate (ORR), and toxicity Suchzeitraum (Aktualität der Recherche): bis 03/2014 Anzahl eingeschlossene Studien/Patienten (Gesamt): 7 (n=3807) Qualitätsbewertung der Studien: The methodological quality of each study was assessed with the Jadad scale. 3.",
+          "metadata": {
+            "heading": "3. presentation of results",
+            "doc_id": "2018-10-01_Informationen-zVT_Lenvatinib-D-379",
+            "country": "AT",
+            "source_type": "hta_submission",
+            "start_page": 17,
+            "end_page": 23,
+            "created_date": "2017",
+            "folder_path": "HTA submissions/AT",
+            "split_index": "4_1_0",
+            "text_length": 972,
+            "potential_comparators": [
+              "Therefore",
+              "sorafenib",
+              "Population",
+              "Fragestellung"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** In the absence of any other comments, the conclusions set out in recitals (57) to (58) of the provisional Regulation are confirmed. **Source Type:** hta_submission\n\nLi J et al., 2017\nTranscatheter\nhepatic arterial chemoembolizatio\nn and sorafenib for hepatocellular\ncarcinoma: a\nmeta-analysis of randomized,\ndouble-blind\ncontrolled trials. Siehe auch: Zeng\nJ et al., 2016\n• The meta-analysis showed that the combination of TACE and RFA is\nassociated with a significantly longer overall survival (HR = 0.62, 95% CI:\n0.49–0.78, p < 0.001) and recurrence-free survival (HR = 0.55, 95% CI:\n0.40–0.76, p < 0.001) in contrast with RFA monotherapy. • The seemingly higher incidence of major complications in the\ncombination group compared with RFA group did not reach statistical significance.",
+          "metadata": {
+            "heading": "In the absence of any other comments, the conclusions set out in recitals (57) to (58) of the provisional Regulation are confirmed.",
+            "doc_id": "2018-10-01_Informationen-zVT_Lenvatinib-D-379",
+            "country": "AT",
+            "source_type": "hta_submission",
+            "start_page": 14,
+            "end_page": 15,
+            "created_date": "2017",
+            "folder_path": "HTA submissions/AT",
+            "split_index": 0,
+            "text_length": 799,
+            "potential_comparators": [
+              "Siehe",
+              "sorafenib"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** 3. presentation of results **Source Type:** hta_submission\n\nrterial\nzation\nout\ntherap\ned\ncellula\nma: a\natic\nl\nn with py for\nar\na\nTime to progression (n=6 studies):\n• TTP benefit existed in the sorafenib group when compared with the\ncontrol group (HR=0.69, 95% CI: 0.55, 0.86; P=0.001)\n• heterogeneity was significant (P=0.000, I2=84.4%)\n• Subgroup analysis: significant TTP benefits of sorafenib treatment in the\npatients irrespective of MVI, EHS, and ECOG status\n• Begg and Egger tests provided no evidence of publication bias\nOverall response rate (n=5 studies):\n• sorafenib did not have a higher ORR when compared with other\ntreatments (RR=0.85, 95% CI: 0.65, 1.11; P=0.10)\n• Begg and Egger tests provided no evidence of publication bias\nAdverse events (n=5 studies):\n• Sorafenib induced a significantly higher rate of hand-foot syndrome\n(RR=5.4, 95% CI: 1.8, 16.2; P=0.003), diarrhea (RR=1.45, 95% CI: 1.21,\n2.34; P=0.003), fatigue (RR=1.70, 95% CI: 1.30, 2.23; P=0.000), and\nrash (RR=3.21, 95% CI: 1.65, 6.26; P=0.001)\n4. Fazit der Autoren: Treatment with sorafenib significantly improved OS and\nTTP in patients with advanced HCC.",
+          "metadata": {
+            "heading": "3. presentation of results",
+            "doc_id": "2018-10-01_Informationen-zVT_Lenvatinib-D-379",
+            "country": "AT",
+            "source_type": "hta_submission",
+            "start_page": 17,
+            "end_page": 23,
+            "created_date": "2017",
+            "folder_path": "HTA submissions/AT",
+            "split_index": 6,
+            "text_length": 1148,
+            "potential_comparators": [
+              "Fazit",
+              "sorafenib"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Results **Source Type:** hta_submission\n\nMortality\n Overall survival\nFor the outcome of overall survival, no statistically significant difference between treatment groups was found. Consequently, there is no hint of an added benefit of lenvatinib in\ncomparison with sorafenib; an added benefit is therefore not proven. Morbidity\n Symptoms\nOutcomes on symptoms were surveyed using the symptom scales of the European Organization for Research and Treatment of Cancer Quality of Life Questionnaire (EORTC QLQ-C30) and\nthe disease-specific European Organization for Research and Treatment of Cancer HCCspecific Quality of Life Questionnaire (EORTC QLQ-HCC18). In both cases, time to\ndeterioration, defined as a score increase by at least 10 points over baseline, was examined.",
+          "metadata": {
+            "heading": "Results",
+            "doc_id": "a18-57_lenvatinib_extract-of-dossier-assessment_v1-1",
+            "country": "AT",
+            "source_type": "hta_submission",
+            "start_page": 6,
+            "end_page": 10,
+            "created_date": "2019",
+            "folder_path": "HTA submissions/AT",
+            "split_index": 0,
+            "text_length": 787,
+            "potential_comparators": [
+              "Morbidity",
+              "sorafenib",
+              "lenvatinib",
+              "Consequently"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Table 22: Research questions of the benefit assessment of lenvatinib **Source Type:** hta_submission\n\nb: Presentation of the respective ACT specified by the G-BA. c: BSC is considered the therapy that ensures the best possible, individually optimized supportive care to\nalleviate symptoms and improve the quality of life. ACT: appropriate comparator therapy; BCLC: Barcelona Clinic Liver Cancer; BSC: best supportive care;\nG-BA: Federal Joint Committee; TACE: transarterial chemoembolization; TAE: transarterial embolization\nThe company deviates from the G-BA’s specification of the ACT by not differentiating between the research questions and using sorafenib as the ACT for all therapeutic indications of\nlenvatinib.",
+          "metadata": {
+            "heading": "Table 22: Research questions of the benefit assessment of lenvatinib",
+            "doc_id": "a18-57_lenvatinib_extract-of-dossier-assessment_v1-1",
+            "country": "AT",
+            "source_type": "hta_submission",
+            "start_page": 4,
+            "end_page": 6,
+            "created_date": "2019",
+            "folder_path": "HTA submissions/AT",
+            "split_index": 1,
+            "text_length": 731,
+            "potential_comparators": [
+              "ACT",
+              "lenvatinib",
+              "sorafenib"
             ]
           }
         }
@@ -370,10 +568,10 @@
     "DE": {
       "country_metadata": {
         "country_code": "DE",
-        "chunk_count": 15,
-        "total_text_length": 13631,
+        "chunk_count": 25,
+        "total_text_length": 22417,
         "unique_documents": 2,
-        "unique_headings": 6
+        "unique_headings": 9
       },
       "chunks": [
         {
@@ -391,8 +589,8 @@
             "text_length": 1074,
             "potential_comparators": [
               "Methodik",
-              "Fragestellung",
-              "sorafenib"
+              "sorafenib",
+              "Fragestellung"
             ]
           }
         },
@@ -411,10 +609,10 @@
             "text_length": 562,
             "potential_comparators": [
               "Suchzeitraum",
-              "TACE",
-              "Population",
               "Fragestellung",
-              "sorafenib"
+              "sorafenib",
+              "TACE",
+              "Population"
             ]
           }
         },
@@ -432,14 +630,14 @@
             "split_index": "1_0_0",
             "text_length": 1150,
             "potential_comparators": [
-              "KQ2",
+              "KQ3",
+              "KQ1",
+              "What",
+              "Local",
               "Fragestellung",
               "sorafenib",
-              "Local",
               "Fazit",
-              "What",
-              "KQ3",
-              "KQ1"
+              "KQ2"
             ]
           }
         },
@@ -457,9 +655,9 @@
             "split_index": 0,
             "text_length": 818,
             "potential_comparators": [
+              "Population",
               "Fragestellung",
-              "Randomised",
-              "Population"
+              "Randomised"
             ]
           }
         },
@@ -478,9 +676,9 @@
             "text_length": 1260,
             "potential_comparators": [
               "sorafenib",
+              "Population",
               "Fragestellung",
-              "Additional",
-              "Population"
+              "Additional"
             ]
           }
         },
@@ -535,9 +733,9 @@
             "split_index": 0,
             "text_length": 856,
             "potential_comparators": [
-              "Survival",
               "Fazit",
-              "Despite"
+              "Despite",
+              "Survival"
             ]
           }
         },
@@ -555,11 +753,11 @@
             "split_index": "1_1_0",
             "text_length": 1112,
             "potential_comparators": [
-              "Regarding",
+              "Health-related",
               "Consequently",
               "sorafenib",
-              "lenvatinib",
-              "Health-related"
+              "Regarding",
+              "lenvatinib"
             ]
           }
         },
@@ -597,14 +795,14 @@
             "split_index": 1,
             "text_length": 741,
             "potential_comparators": [
-              "Berlin",
+              "Comparative",
               "Registration",
+              "Oncology",
               "QF",
               "Diagnosis",
               "Bioluminescent",
               "Long",
-              "Comparative",
-              "Oncology"
+              "Berlin"
             ]
           }
         },
@@ -658,8 +856,8 @@
             "split_index": 0,
             "text_length": 798,
             "potential_comparators": [
-              "lenvatinib",
               "It",
+              "lenvatinib",
               "sorafenib"
             ]
           }
@@ -682,16 +880,215 @@
               "Population"
             ]
           }
+        },
+        {
+          "text": "**Heading:** 3. presentation of results **Source Type:** hta_submission\n\nErgebnisdarstellung\nQualität der Studien: In the present meta-analysis, all included studies were\nwell-designed and of high quality (Jadad score range from 4 to 5). Overall survival (n=7 studies):\n• sorafenib was associated with a significant improvement in OS\n• (HR=0.74, 95% CI: 0.61, 0.90; P=0.002)\n• heterogeneity was significant (P=0.000, I2=77.0%)\n• Subgroup analysis: sorafenib was an effective treatment for patients with\nECOG PS of 1–2 (HR=0.77, 95% CI: 0.60, 1.0; P=0.05), or macroscopic\nvascular invasion (MVI) and/or extrahepatic spread (EHS) (HR=0.65,\n95% CI: 0.46, 0.93; P=0.02)\n• Begg and Egger tests provided no evidence of publication bias\nXie ZB\nTransar\nemboliz\nor witho chemot\nadvance\nhepatoc\ncarcinom\nsystema\nreview. et al.",
+          "metadata": {
+            "heading": "3. presentation of results",
+            "doc_id": "2018-10-01_Informationen-zVT_Lenvatinib-D-379",
+            "country": "DE",
+            "source_type": "hta_submission",
+            "start_page": 17,
+            "end_page": 23,
+            "created_date": "2017",
+            "folder_path": "HTA submissions/DE",
+            "split_index": 5,
+            "text_length": 816,
+            "potential_comparators": [
+              "sorafenib",
+              "Overall"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** The literature: **Source Type:** hta_submission\n\nIt is also important to note that there are many different types of liver cancer, including hepatocellular carcinoma and hepatocytosis, and that some of the most common types of cancer are hepatocytopenia, metastasis, and metastatic liver disease. Transarterial chemoembolization vs bland embolization in hepatocellular carcinoma: A meta-analysis of randomized trials. United European Gastroenterol J 5th Federal Joint Committee (G-BA) Decision on an amendment to the Decision on quality assurance measures for proton therapy in patients with inoperable hepatocellulose cancer (HCC): extension of the period of validity of 27 November 2015 [online]. JAMA Oncol 2015;1(6):756-765.",
+          "metadata": {
+            "heading": "The literature:",
+            "doc_id": "2018-10-01_Informationen-zVT_Lenvatinib-D-379",
+            "country": "DE",
+            "source_type": "hta_submission",
+            "start_page": 39,
+            "end_page": 40,
+            "created_date": "2017",
+            "folder_path": "HTA submissions/DE",
+            "split_index": 0,
+            "text_length": 741,
+            "potential_comparators": [
+              "Transarterial",
+              "United",
+              "JAMA"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** ACT: appropriate comparator therapy; BCLC: Barcelona Clinic Liver Cancer; BSC: Best Supportive Care; **Source Type:** hta_submission\n\nTable Title: ACT: appropriate comparator therapy; BCLC: Barcelona Clinic Liver Cancer; BSC: Best Supportive Care;\nTable contains the following columns: Research question, Indicationa, ACT b, Probability and extent of added benefit\nResearch question: 1, Indicationa: Adult patients with advanced or inoperable hepatocellular carcinoma (HCC) who have not yet received systemic therapy:  with Child-Pugh A or no hepatic cirrhosis, ACT b: Sorafenib, and Probability and extent of added benefit: Added benefit not provend\nResearch question: 2, Indicationa: Adult patients with advanced or inoperable hepatocellular carcinoma (HCC) who have not yet received systemic therapy:  with Child-Pugh B, ACT b: BSCc, and Probability and extent of added benefit: Added benefit not proven\nResearch question: a: For this therapeutic indication, it is assumed that neither curative treatment (for BLCL stages 0 and A) nor locoregional therapy in BLCL stage B, particularly transarterial (chemo)embolization (TACE or TAE), is an option (any longer). It is also assumed that patients in BCLC stage D are ineligible for lenvatinib treatment.",
+          "metadata": {
+            "heading": "ACT: appropriate comparator therapy; BCLC: Barcelona Clinic Liver Cancer; BSC: Best Supportive Care;",
+            "doc_id": "a18-57_lenvatinib_extract-of-dossier-assessment_v1-1",
+            "country": "DE",
+            "source_type": "hta_submission",
+            "start_page": 10,
+            "end_page": 10,
+            "created_date": "2019",
+            "folder_path": "HTA submissions/DE",
+            "split_index": 0,
+            "text_length": 1269,
+            "potential_comparators": [
+              "It",
+              "lenvatinib",
+              "sorafenib"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Results **Source Type:** hta_submission\n\nA positive effect of a greater extent (considerable) was found for the outcome of diarrhoea in patients < 75 years of age. By contrast, there was a hint of lesser benefit for the cognitive functioning dimension of health-related quality of life. Furthermore, it must be noted that no usable data are available for the selection of specific AEs. In this situation, it is conceivable that the overall conclusion on added benefit may change materially if the missing information became available, since the presented event rates also reveal potential disadvantages of lenvatinib. For this reason, it is not possible to adequately weigh all positive and negative effects of lenvatinib. For research question 1, an added benefit of lenvatinib is therefore not proven. No relevant study was found for research question 2. An added benefit of lenvatinib is therefore not proven for this research question.",
+          "metadata": {
+            "heading": "Results",
+            "doc_id": "a18-57_lenvatinib_extract-of-dossier-assessment_v1-1",
+            "country": "DE",
+            "source_type": "hta_submission",
+            "start_page": 6,
+            "end_page": 10,
+            "created_date": "2019",
+            "folder_path": "HTA submissions/DE",
+            "split_index": "7_0_0",
+            "text_length": 952,
+            "potential_comparators": [
+              "No",
+              "lenvatinib",
+              "Furthermore"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** 3. presentation of results **Source Type:** hta_submission\n\nexisted, data were judged to be insufficient due to high risk of bias and/or imprecision of estimates. 1. Fragestellung The efficacy of sorafenib in the treatment of advanced hepatocellular a- carcinoma (HCC) remains controversial. Therefore, we conducted a metaanalysis to evaluate the efficacy and safety of sorafenib for treating patients with advanced HCC. Population: adult patients with advanced (unresectable or metastatic) HCC Intervention: sorafenib or sorafenib-based therapy Komparator: placebo or placebo-based (without sorafenib) therapy Endpunkte: primary: overall survival (OS); secondary: time to progression (TTP), overall response rate (ORR), and toxicity Suchzeitraum (Aktualität der Recherche): bis 03/2014 Anzahl eingeschlossene Studien/Patienten (Gesamt): 7 (n=3807) Qualitätsbewertung der Studien: The methodological quality of each study was assessed with the Jadad scale. 3.",
+          "metadata": {
+            "heading": "3. presentation of results",
+            "doc_id": "2018-10-01_Informationen-zVT_Lenvatinib-D-379",
+            "country": "DE",
+            "source_type": "hta_submission",
+            "start_page": 17,
+            "end_page": 23,
+            "created_date": "2017",
+            "folder_path": "HTA submissions/DE",
+            "split_index": "4_1_0",
+            "text_length": 972,
+            "potential_comparators": [
+              "Therefore",
+              "sorafenib",
+              "Population",
+              "Fragestellung"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** In the absence of any other comments, the conclusions set out in recitals (57) to (58) of the provisional Regulation are confirmed. **Source Type:** hta_submission\n\nLi J et al., 2017\nTranscatheter\nhepatic arterial chemoembolizatio\nn and sorafenib for hepatocellular\ncarcinoma: a\nmeta-analysis of randomized,\ndouble-blind\ncontrolled trials. Siehe auch: Zeng\nJ et al., 2016\n• The meta-analysis showed that the combination of TACE and RFA is\nassociated with a significantly longer overall survival (HR = 0.62, 95% CI:\n0.49–0.78, p < 0.001) and recurrence-free survival (HR = 0.55, 95% CI:\n0.40–0.76, p < 0.001) in contrast with RFA monotherapy. • The seemingly higher incidence of major complications in the\ncombination group compared with RFA group did not reach statistical significance.",
+          "metadata": {
+            "heading": "In the absence of any other comments, the conclusions set out in recitals (57) to (58) of the provisional Regulation are confirmed.",
+            "doc_id": "2018-10-01_Informationen-zVT_Lenvatinib-D-379",
+            "country": "DE",
+            "source_type": "hta_submission",
+            "start_page": 14,
+            "end_page": 15,
+            "created_date": "2017",
+            "folder_path": "HTA submissions/DE",
+            "split_index": 0,
+            "text_length": 799,
+            "potential_comparators": [
+              "Siehe",
+              "sorafenib"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** 3. presentation of results **Source Type:** hta_submission\n\nrterial\nzation\nout\ntherap\ned\ncellula\nma: a\natic\nl\nn with py for\nar\na\nTime to progression (n=6 studies):\n• TTP benefit existed in the sorafenib group when compared with the\ncontrol group (HR=0.69, 95% CI: 0.55, 0.86; P=0.001)\n• heterogeneity was significant (P=0.000, I2=84.4%)\n• Subgroup analysis: significant TTP benefits of sorafenib treatment in the\npatients irrespective of MVI, EHS, and ECOG status\n• Begg and Egger tests provided no evidence of publication bias\nOverall response rate (n=5 studies):\n• sorafenib did not have a higher ORR when compared with other\ntreatments (RR=0.85, 95% CI: 0.65, 1.11; P=0.10)\n• Begg and Egger tests provided no evidence of publication bias\nAdverse events (n=5 studies):\n• Sorafenib induced a significantly higher rate of hand-foot syndrome\n(RR=5.4, 95% CI: 1.8, 16.2; P=0.003), diarrhea (RR=1.45, 95% CI: 1.21,\n2.34; P=0.003), fatigue (RR=1.70, 95% CI: 1.30, 2.23; P=0.000), and\nrash (RR=3.21, 95% CI: 1.65, 6.26; P=0.001)\n4. Fazit der Autoren: Treatment with sorafenib significantly improved OS and\nTTP in patients with advanced HCC.",
+          "metadata": {
+            "heading": "3. presentation of results",
+            "doc_id": "2018-10-01_Informationen-zVT_Lenvatinib-D-379",
+            "country": "DE",
+            "source_type": "hta_submission",
+            "start_page": 17,
+            "end_page": 23,
+            "created_date": "2017",
+            "folder_path": "HTA submissions/DE",
+            "split_index": 6,
+            "text_length": 1148,
+            "potential_comparators": [
+              "Fazit",
+              "sorafenib"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Results **Source Type:** hta_submission\n\nMortality\n Overall survival\nFor the outcome of overall survival, no statistically significant difference between treatment groups was found. Consequently, there is no hint of an added benefit of lenvatinib in\ncomparison with sorafenib; an added benefit is therefore not proven. Morbidity\n Symptoms\nOutcomes on symptoms were surveyed using the symptom scales of the European Organization for Research and Treatment of Cancer Quality of Life Questionnaire (EORTC QLQ-C30) and\nthe disease-specific European Organization for Research and Treatment of Cancer HCCspecific Quality of Life Questionnaire (EORTC QLQ-HCC18). In both cases, time to\ndeterioration, defined as a score increase by at least 10 points over baseline, was examined.",
+          "metadata": {
+            "heading": "Results",
+            "doc_id": "a18-57_lenvatinib_extract-of-dossier-assessment_v1-1",
+            "country": "DE",
+            "source_type": "hta_submission",
+            "start_page": 6,
+            "end_page": 10,
+            "created_date": "2019",
+            "folder_path": "HTA submissions/DE",
+            "split_index": 0,
+            "text_length": 787,
+            "potential_comparators": [
+              "Morbidity",
+              "sorafenib",
+              "lenvatinib",
+              "Consequently"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Table 22: Research questions of the benefit assessment of lenvatinib **Source Type:** hta_submission\n\nb: Presentation of the respective ACT specified by the G-BA. c: BSC is considered the therapy that ensures the best possible, individually optimized supportive care to\nalleviate symptoms and improve the quality of life. ACT: appropriate comparator therapy; BCLC: Barcelona Clinic Liver Cancer; BSC: best supportive care;\nG-BA: Federal Joint Committee; TACE: transarterial chemoembolization; TAE: transarterial embolization\nThe company deviates from the G-BA’s specification of the ACT by not differentiating between the research questions and using sorafenib as the ACT for all therapeutic indications of\nlenvatinib.",
+          "metadata": {
+            "heading": "Table 22: Research questions of the benefit assessment of lenvatinib",
+            "doc_id": "a18-57_lenvatinib_extract-of-dossier-assessment_v1-1",
+            "country": "DE",
+            "source_type": "hta_submission",
+            "start_page": 4,
+            "end_page": 6,
+            "created_date": "2019",
+            "folder_path": "HTA submissions/DE",
+            "split_index": 1,
+            "text_length": 731,
+            "potential_comparators": [
+              "ACT",
+              "lenvatinib",
+              "sorafenib"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** and al., 2017 **Source Type:** hta_submission\n\natic review sarterial\nzation for cellular\nPopulation: HCC patients with PVT. Intervention / Komparator: comparing TACE to another treatment for\nw\nmanagement of HCC with PVT s\nEndpunkte: overall survival (OS), mRECIST response, and complication\nincidence\nSuchzeitraum (Aktualität der Recherche): PubMed was searched from\nJanuary 1, 2006 to August 31, 2016. Anzahl eingeschlossene Studien/Patienten (Gesamt): 13 studies with\n1933 TACE patients were included. Qualitätsbewertung der Studien: Newcastle–Ottawa Scale",
+          "metadata": {
+            "heading": "and al., 2017",
+            "doc_id": "2018-10-01_Informationen-zVT_Lenvatinib-D-379",
+            "country": "DE",
+            "source_type": "hta_submission",
+            "start_page": 10,
+            "end_page": 10,
+            "created_date": "2017",
+            "folder_path": "HTA submissions/DE",
+            "split_index": 0,
+            "text_length": 571,
+            "potential_comparators": [
+              "Anzahl",
+              "Intervention",
+              "Qualitätsbewertung"
+            ]
+          }
         }
       ]
     },
     "DK": {
       "country_metadata": {
         "country_code": "DK",
-        "chunk_count": 15,
-        "total_text_length": 13319,
+        "chunk_count": 25,
+        "total_text_length": 21525,
         "unique_documents": 1,
-        "unique_headings": 13
+        "unique_headings": 23
       },
       "chunks": [
         {
@@ -727,11 +1124,11 @@
             "split_index": "1_0_0",
             "text_length": 1295,
             "potential_comparators": [
+              "Differences",
               "Page",
-              "lenvatinib",
-              "Using",
               "Subject",
-              "Differences"
+              "Using",
+              "lenvatinib"
             ]
           }
         },
@@ -749,9 +1146,9 @@
             "split_index": 0,
             "text_length": 985,
             "potential_comparators": [
-              "lenvatinib",
+              "Eligibility",
               "Table",
-              "Eligibility"
+              "lenvatinib"
             ]
           }
         },
@@ -804,13 +1201,13 @@
             "split_index": 0,
             "text_length": 1221,
             "potential_comparators": [
+              "Follow-up",
+              "Lancet",
               "Comparator-controlled",
+              "sorafenib",
               "Publications",
               "Patients",
-              "sorafenib",
-              "Follow-up",
-              "lenvatinib",
-              "Lancet"
+              "lenvatinib"
             ]
           }
         },
@@ -868,10 +1265,10 @@
             "text_length": 1195,
             "potential_comparators": [
               "Results",
-              "sorafenib",
               "Quality",
-              "lenvatinib",
-              "Medical"
+              "sorafenib",
+              "Medical",
+              "lenvatinib"
             ]
           }
         },
@@ -889,11 +1286,11 @@
             "split_index": 1,
             "text_length": 1124,
             "potential_comparators": [
-              "Baseline",
               "During",
               "Analysis",
               "Following",
               "sorafenib",
+              "Baseline",
               "lenvatinib"
             ]
           }
@@ -912,14 +1309,14 @@
             "split_index": "1_1_0",
             "text_length": 1328,
             "potential_comparators": [
-              "lenvatinib",
-              "Superiority",
-              "FIGURE",
-              "Since",
-              "sorafenib",
               "Two",
               "Non-inferiority",
-              "No"
+              "FIGURE",
+              "sorafenib",
+              "Since",
+              "No",
+              "lenvatinib",
+              "Superiority"
             ]
           }
         },
@@ -937,15 +1334,15 @@
             "split_index": 0,
             "text_length": 805,
             "potential_comparators": [
-              "Clinical",
-              "Time",
+              "J-C",
               "Journal",
+              "Clinical",
               "Value",
-              "United",
               "sorafenib",
-              "lenvatinib",
               "Conference",
-              "J-C"
+              "Time",
+              "United",
+              "lenvatinib"
             ]
           }
         },
@@ -1002,16 +1399,225 @@
               "sorafenib"
             ]
           }
+        },
+        {
+          "text": "**Heading:** 7 Referencer **Source Type:** hta_submission\n\nNational clinical guidelines for the screening and treatment of primary liver cancer (HepatoCellular Carcinoma, HCC). 2012. 4. Follow-up programme for cancer of the upper gastrointestinal tract (2015) SST [Internet]. 2015 [cited 2017 Sep 15]. Available from: 5.Medicine Council. Recommendation of the Medical Council regarding regorafenib as a standard treatment for hepatocellulose carcinoma. 2018. 6.EMA - European Medicines Agency. Product Summary of Harvonibaccin. 2017; 7.1 Brander.",
+          "metadata": {
+            "heading": "7 Referencer",
+            "doc_id": "baggrund-for-medicinraadets-anbefaling-vedr-lenvatinib-som-mulig-standardbehandling-til-hepatocellulaert-karcinom-vers-10-med-bilag_adlegacy",
+            "country": "DK",
+            "source_type": "hta_submission",
+            "start_page": 154,
+            "end_page": 155,
+            "created_date": "unknown_year",
+            "folder_path": "HTA submissions/DK",
+            "split_index": 0,
+            "text_length": 546,
+            "potential_comparators": [
+              "Follow-up",
+              "regorafenib",
+              "Product",
+              "Available",
+              "Recommendation"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** 2.4. Health-related quality of life (HRQoL) **Source Type:** hta_submission\n\nAssessments of HRQoL scores were performed using the generic cancer HRQoL instrument (EORTC\nQLQC30), the HCC-specific module (EORTC QLQ-HCC18), and the generic HRQoL instrument, EQ-5D. During the Randomization Phase, the EORTC QLQ-C30, EORTC QLQ-HCC18, and EQ-5D were administered at Baseline, Day 1 of each cycle after Cycle 1, and at the off-treatment visit. During the\nExtension Phase, the EORTC QLQ-C30, EORTC QLQ-HCC18, and EQ-5D were administered on Day 1 of each treatment and during the off-treatment visit. Compliance was high (>95%) and consistent for all measures throughout the course of the Randomisation phase (7).Time-to-symptom worsening (TSW) hazard ratio results are reported for all EORTC QLQ-C30,\nEORTC QLQ-HCC18 domains and EQ-5D visual analogue scale (VAS) and health utility index (HUI). The\nmedian months to clinically meaningful worsening for the EQ-5D health utility index (HUI) and visual\nanalogue scale (VAS) domains were numerically higher and in favour of the lenvatinib arm, but were nonsignificant (P > 0.05) (8).",
+          "metadata": {
+            "heading": "2.4. Health-related quality of life (HRQoL)",
+            "doc_id": "baggrund-for-medicinraadets-anbefaling-vedr-lenvatinib-som-mulig-standardbehandling-til-hepatocellulaert-karcinom-vers-10-med-bilag_adlegacy",
+            "country": "DK",
+            "source_type": "hta_submission",
+            "start_page": 126,
+            "end_page": 127,
+            "created_date": "unknown_year",
+            "folder_path": "HTA submissions/DK",
+            "split_index": 0,
+            "text_length": 1135,
+            "potential_comparators": [
+              "Compliance",
+              "During",
+              "lenvatinib",
+              "Health-related"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Carcinoma: emergence of Therapies. Journal of gastrointestinal cancer, 2018, 1‐9 | added to CENTRAL: 30 **Source Type:** hta_submission\n\nApril 2018 | 2018 Issue 4, Embase\nReason for exclusion: Review article. Not a randomized controlled trial. 4: A Ribeiro de Souza, M Reig, J Bruix. Systemic treatment for advanced hepatocellular carcinoma: the\nsearch of new agents to join sorafenib in the effective therapeutic armamentarium. Expert opinion on Embase\nReason for exclusion: Review article. Not a randomized controlled trial. P n o it a c if it n e d g n in e r c S t h i l i b l e d u c t i on by the Applica\nA flow",
+          "metadata": {
+            "heading": "Carcinoma: emergence of Therapies. Journal of gastrointestinal cancer, 2018, 1‐9 | added to CENTRAL: 30",
+            "doc_id": "baggrund-for-medicinraadets-anbefaling-vedr-lenvatinib-som-mulig-standardbehandling-til-hepatocellulaert-karcinom-vers-10-med-bilag_adlegacy",
+            "country": "DK",
+            "source_type": "hta_submission",
+            "start_page": 105,
+            "end_page": 105,
+            "created_date": "unknown_year",
+            "folder_path": "HTA submissions/DK",
+            "split_index": 0,
+            "text_length": 630,
+            "potential_comparators": [
+              "Systemic",
+              "Journal",
+              "sorafenib",
+              "Expert"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Overall survival by subgroup **Source Type:** hta_submission\n\nThe effect of lenvatinib and sorafenib on OS generally was consistent across subgroups, including age, sex, and BW; HR (lenvatinib:sorafenib) was <1 for most subgroups. A forest plot of HR for lenvatinib vs sorafenib in OS in patient subgroups appears in Figure 5.2 [1].  The effect of lenvatinib on OS was consistent across the Western and Asia-Pacific regions, while OS for sorafenib was longer in the Western region than in the Asia-Pacific region. o In the lenvatinib arm, median OS in the Western region (13.6 months) was consistent with that observed in the Asia-Pacific region (13.5 months). o In contrast, median OS with sorafenib in the Western region (14.2 months) was longer than the median OS with sorafenib in the Asia-Pacific region (11.0 months).  Lenvatinib also demonstrated",
+          "metadata": {
+            "heading": "Overall survival by subgroup",
+            "doc_id": "baggrund-for-medicinraadets-anbefaling-vedr-lenvatinib-som-mulig-standardbehandling-til-hepatocellulaert-karcinom-vers-10-med-bilag_adlegacy",
+            "country": "DK",
+            "source_type": "hta_submission",
+            "start_page": 70,
+            "end_page": 72,
+            "created_date": "unknown_year",
+            "folder_path": "HTA submissions/DK",
+            "split_index": "0_0_0",
+            "text_length": 868,
+            "potential_comparators": [
+              "lenvatinib",
+              "sorafenib"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** 5.1 Clinical issue 1 **Source Type:** hta_submission\n\nWhat is the clinical added value of lenvatinib for adult patients with advanced or inoperable hepatocellular carcinoma who are candidates for systematic treatment, compared with sorafenib?",
+          "metadata": {
+            "heading": "5.1 Clinical issue 1",
+            "doc_id": "baggrund-for-medicinraadets-anbefaling-vedr-lenvatinib-som-mulig-standardbehandling-til-hepatocellulaert-karcinom-vers-10-med-bilag_adlegacy",
+            "country": "DK",
+            "source_type": "hta_submission",
+            "start_page": 68,
+            "end_page": 68,
+            "created_date": "unknown_year",
+            "folder_path": "HTA submissions/DK",
+            "split_index": 0,
+            "text_length": 255,
+            "potential_comparators": [
+              "lenvatinib",
+              "sorafenib"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Table 1: Subsequent anticancer medication following first-line treatment **Source Type:** hta_submission\n\nKud\nhep\ndent covariate, with other prognostic factors. Median OS was 22.4 months for\nnders and 11.4 months for nonresponders. Hazard ratios (HR) of landmark analyses at\nnd 6 months were 0.75 (95% CI, 0.57–0.98), 0.72 (95% CI, 0.56–0.92), and 0.73 (95%\n7–0.93). These results showed that in the REFLECT trial, OR was an independent\ntor of OS in patients with HCC regardless of treatment. nces:\nsina et al. Subsequent anticancer medication following first-line lenvatinib: A posthoc\nsponder analysis from the phase 3 REFLECT study in unresectable hepatocellular rcinoma. [Internet]. [cited 2019 Jan 18].",
+          "metadata": {
+            "heading": "Table 1: Subsequent anticancer medication following first-line treatment",
+            "doc_id": "baggrund-for-medicinraadets-anbefaling-vedr-lenvatinib-som-mulig-standardbehandling-til-hepatocellulaert-karcinom-vers-10-med-bilag_adlegacy",
+            "country": "DK",
+            "source_type": "hta_submission",
+            "start_page": 139,
+            "end_page": 140,
+            "created_date": "unknown_year",
+            "folder_path": "HTA submissions/DK",
+            "split_index": 1,
+            "text_length": 720,
+            "potential_comparators": [
+              "Median",
+              "These",
+              "Subsequent",
+              "lenvatinib",
+              "Hazard",
+              "Internet"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** 6.1.2 Results and assessment **Source Type:** hta_submission\n\nResults and assessment of the endpoints prespecified by the Panel as critical and important, respectively, are as follows: overall survival, OS (critical) Survival is a critical endpoint as HCC is a fatal disease. The Panel wants the endpoint to be expressed as median survival and survival rates at 12 and 24 months. Table 3. Median survival in the lenvatinib arm median overall survival is 13.6 months, compared to 12.3 months in the sorafenib arm. This corresponds to a difference of 1.3 months in favour of lenvatitinib. The SCC has assessed that any difference of 3 months or more is clinically relevant. Lenvatinib does not meet this requirement. The relative difference in efficacy for the median hazard survival ratio (HR) is 0.92 [0.71,06] and shows that there is no statistically significant difference between treatments.",
+          "metadata": {
+            "heading": "6.1.2 Results and assessment",
+            "doc_id": "baggrund-for-medicinraadets-anbefaling-vedr-lenvatinib-som-mulig-standardbehandling-til-hepatocellulaert-karcinom-vers-10-med-bilag_adlegacy",
+            "country": "DK",
+            "source_type": "hta_submission",
+            "start_page": 46,
+            "end_page": 46,
+            "created_date": "unknown_year",
+            "folder_path": "HTA submissions/DK",
+            "split_index": 0,
+            "text_length": 907,
+            "potential_comparators": [
+              "Median",
+              "Table",
+              "lenvatitinib",
+              "Lenvatinib",
+              "sorafenib",
+              "lenvatinib"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** 4 Background of the case **Source Type:** hta_submission\n\nLenvatinib is indicated for the systemic treatment of patients with advanced or non-resectable hepatocellular carcinoma who have not previously received systemic therapy Additional information can be found in the Medical Council' s assessment of the clinical benefit of lenvatinib for the treatment of hepatocellulose cancer.",
+          "metadata": {
+            "heading": "4 Background of the case",
+            "doc_id": "baggrund-for-medicinraadets-anbefaling-vedr-lenvatinib-som-mulig-standardbehandling-til-hepatocellulaert-karcinom-vers-10-med-bilag_adlegacy",
+            "country": "DK",
+            "source_type": "hta_submission",
+            "start_page": 5,
+            "end_page": 5,
+            "created_date": "unknown_year",
+            "folder_path": "HTA submissions/DK",
+            "split_index": 0,
+            "text_length": 396,
+            "potential_comparators": [
+              "lenvatinib"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Effect of post-treatment anticancer therapy on Overall Survival **Source Type:** hta_submission\n\nThere was an imbalance between the treatment arms regarding the proportion of patients who received post-treatment anti-cancer therapy (including procedures and medications) during survival follow-up (\nTable 5.3). Fewer patients in the lenv\npatients in the sorafenib arm (51.1%\nvatinib arm (43. .1%) had post-t\ntreatm\nment anti-c\ncancer therapy than\nTABLE 5.3: ANTICANCER MEDICATIONS (NOT GIVEN FOR ANY PROCEDURE) DURING SURVIVAL FOLLOW-UP - FAS [2]\nLenvatinib Sorafenib\nWestern Asia-Pacific Total Western Asia-Pacific Total\n(N=157) (N=321) (N=478) (N-157) (N=319) (N=476)\nReceived any anti-cancer 44 (28.0) 162 (50.5) 206 (43.1) 71 (45.2) 172 (53.9) 243 (51.1)\ntherapy* during survival followup, n (%)\nReceived any anti-cancer 41 (26.1) 115 (35.8) 156 (32.6) 61 (38.9) 123 (38.6) 184 (38.7)\nmedication (not given for a procedure) during survival\nfollow-up, n (%)\nUnderwent any anti-cancer 11 (7.0) 111 (34.6) 122 (25.5) 18 (11.5) 112 (35.1) 130 (27.3)\nprocedure during survival follow-up, n (%)\n*Posttreatment anti-cancer therapy includes both posttreatment anti-cancer procedures and posttreatment anti-cancer medications received during survival follow-up. As described in Section Overall survival by subgroup, in the lenvatinib arm, median OS in the Western region (13.6 months) was consistent with that observed in the Asia-Pacific region (13.5 months).",
+          "metadata": {
+            "heading": "Effect of post-treatment anticancer therapy on Overall Survival",
+            "doc_id": "baggrund-for-medicinraadets-anbefaling-vedr-lenvatinib-som-mulig-standardbehandling-til-hepatocellulaert-karcinom-vers-10-med-bilag_adlegacy",
+            "country": "DK",
+            "source_type": "hta_submission",
+            "start_page": 72,
+            "end_page": 74,
+            "created_date": "unknown_year",
+            "folder_path": "HTA submissions/DK",
+            "split_index": 0,
+            "text_length": 1468,
+            "potential_comparators": [
+              "Fewer",
+              "As",
+              "vatinib",
+              "sorafenib",
+              "lenvatinib"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Indhold **Source Type:** hta_submission\n\n1 Purpose . 2 Background . 2.1 Current treatment ... 2.2 Lenvatinib . 3 Clinical issues . 3.1 Cliniical issues 1 . 3.2 Selection of efficacy targets . Critical efficacy goals . Important efficacy objectives . 4 Literature search . 5 Data processing/analysis . 6 Other considerations . . 7 References . 8 Composition of the scientific committees and the co-authoring of the report of the Committee on Medicinal Products 2 of the 13 members of the Scientific Advisory Board of the . Forko BCLC: CHMP: CI: EMA: EORTC Q EorTC Q ESMO: GRADE: HCC: HR: ITT: MeSH: OR: OS: PICO: RFA: RR: SAE: SD ortel QLQ-C QLq-H lser C30: Hcc18 Barc Com Con Euro Que Euro Que Syst Deve Hep Haza Med Odd Sam Foku Related Serio Cellular Liver Cancer m Committee for Medicinal Products for Human Use n Interferon opevalan Medicines Agency for Research and Treatment estionnaire Event-Core 30 opean Research Organisation for Treatments essionnaire-H mencellular carcinoma 18 Medical Society for Oncology oncology for the evaluation of the Outcomes (Grading Ratio) and the Evaluation of Subcutaneous Hepatitis (Hepatitis) Hepatopathic Survival and Systemic Survival (Radiopathology) The following is a list of the most commonly reported adverse reactions:",
+          "metadata": {
+            "heading": "Indhold",
+            "doc_id": "baggrund-for-medicinraadets-anbefaling-vedr-lenvatinib-som-mulig-standardbehandling-til-hepatocellulaert-karcinom-vers-10-med-bilag_adlegacy",
+            "country": "DK",
+            "source_type": "hta_submission",
+            "start_page": 144,
+            "end_page": 145,
+            "created_date": "unknown_year",
+            "folder_path": "HTA submissions/DK",
+            "split_index": 0,
+            "text_length": 1281,
+            "potential_comparators": [
+              "Forko",
+              "Critical",
+              "lenvatinib",
+              "Important"
+            ]
+          }
         }
       ]
     },
     "EN": {
       "country_metadata": {
         "country_code": "EN",
-        "chunk_count": 15,
-        "total_text_length": 12790,
+        "chunk_count": 25,
+        "total_text_length": 21319,
         "unique_documents": 2,
-        "unique_headings": 9
+        "unique_headings": 17
       },
       "chunks": [
         {
@@ -1028,9 +1634,9 @@
             "split_index": 3,
             "text_length": 291,
             "potential_comparators": [
-              "Subject",
               "All",
               "bevacizumab",
+              "Subject",
               "atezolizumab"
             ]
           }
@@ -1050,8 +1656,8 @@
             "text_length": 1138,
             "potential_comparators": [
               "It",
-              "Although",
-              "sorafenib"
+              "sorafenib",
+              "Although"
             ]
           }
         },
@@ -1069,22 +1675,22 @@
             "split_index": 0,
             "text_length": 724,
             "potential_comparators": [
-              "Exploratory",
-              "Clinical",
-              "Modelling",
-              "Dosage",
-              "Conclusion",
               "Indirect",
-              "umab",
-              "End",
+              "Modelling",
+              "Clinical",
+              "Conclusion",
+              "atezolizumab",
               "Innovation",
-              "Treatment",
               "NICE",
-              "Cost-effectiveness",
+              "Treatment",
               "Subject",
+              "umab",
               "Price",
               "All",
-              "atezolizumab"
+              "Exploratory",
+              "Dosage",
+              "End",
+              "Cost-effectiveness"
             ]
           }
         },
@@ -1102,16 +1708,16 @@
             "split_index": 0,
             "text_length": 1048,
             "potential_comparators": [
-              "Clinical",
-              "Atezolizumab",
-              "Results",
-              "Therefore",
               "bevacizumab",
-              "Despite",
+              "Clinical",
+              "Results",
+              "atezolizumab",
+              "Therefore",
               "sorafenib",
-              "lenvatinib",
               "But",
-              "atezolizumab"
+              "Atezolizumab",
+              "Despite",
+              "lenvatinib"
             ]
           }
         },
@@ -1148,9 +1754,9 @@
             "split_index": 1,
             "text_length": 1164,
             "potential_comparators": [
-              "However",
               "All",
               "sorafenib",
+              "However",
               "They"
             ]
           }
@@ -1188,9 +1794,9 @@
             "split_index": 2,
             "text_length": 538,
             "potential_comparators": [
-              "Subject",
               "All",
               "bevacizumab",
+              "Subject",
               "atezolizumab"
             ]
           }
@@ -1245,9 +1851,9 @@
             "split_index": "1_1_0",
             "text_length": 943,
             "potential_comparators": [
-              "lenvatinib",
-              "sorafenib",
               "Lenvatinib",
+              "sorafenib",
+              "lenvatinib",
               "They"
             ]
           }
@@ -1266,14 +1872,14 @@
             "split_index": 0,
             "text_length": 761,
             "potential_comparators": [
-              "lenvatinib",
-              "They",
               "bevacizumab",
-              "sorafenib",
+              "atezolizumab",
+              "They",
               "Prognosis",
               "Subject",
+              "sorafenib",
               "All",
-              "atezolizumab"
+              "lenvatinib"
             ]
           }
         },
@@ -1291,9 +1897,9 @@
             "split_index": 3,
             "text_length": 1272,
             "potential_comparators": [
-              "Subject",
-              "However",
               "It",
+              "However",
+              "Subject",
               "sorafenib"
             ]
           }
@@ -1312,8 +1918,8 @@
             "split_index": 0,
             "text_length": 483,
             "potential_comparators": [
-              "bevacizumab",
               "atezolizumab",
+              "bevacizumab",
               "sorafenib"
             ]
           }
@@ -1333,8 +1939,217 @@
             "text_length": 1224,
             "potential_comparators": [
               "It",
-              "They",
+              "sorafenib",
+              "They"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Atezolizumab plus bevacizumab meets the criteria to be considered an end of life treatment **Source Type:** hta_submission\n\n3.8 The committee considered the advice about life-extending treatments\nfor people with a short life expectancy in NICE's guide to the methods of technology appraisal. It reviewed the mean overall-survival estimates\nfrom the model. Life expectancy with sorafenib and lenvatinib was less\nthan 24 months. Also, the undiscounted life-years gained for\natezolizumab plus bevacizumab were much higher than 3 months, regardless of which overall-survival function was used. The committee\ntherefore concluded that the end of life criteria were met.",
+          "metadata": {
+            "heading": "Atezolizumab plus bevacizumab meets the criteria to be considered an end of life treatment",
+            "doc_id": "atezolizumab-with-bevacizumab-for-treating-advanced-or-unresectable-hepatocellular-carcinoma-pdf-82609262480581",
+            "country": "EN",
+            "source_type": "hta_submission",
+            "start_page": 13,
+            "end_page": 13,
+            "created_date": "20",
+            "folder_path": "HTA submissions/EN",
+            "split_index": 0,
+            "text_length": 676,
+            "potential_comparators": [
+              "It",
+              "bevacizumab",
+              "Also",
+              "atezolizumab",
+              "Life",
+              "sorafenib",
+              "lenvatinib"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** 3 Evidence **Source Type:** hta_submission\n\nAll rights reserved. Subject to Notice of rights Page 6 of\nSorafenib for treating advanced hepatocellular carcinoma (TA474) used for NICE's original technology appraisal guidance on sora\ntreating advanced hepatocellular carcinoma. © NICE 2024. All rights reserved. Subject to Notice of rights\nafenib for uk/terms-a\nr\nand- Page 7 of",
+          "metadata": {
+            "heading": "3 Evidence",
+            "doc_id": "sorafenib-for-treating-advanced-hepatocellular-carcinoma-pdf-82604966022853",
+            "country": "EN",
+            "source_type": "hta_submission",
+            "start_page": 6,
+            "end_page": 7,
+            "created_date": "20",
+            "folder_path": "HTA submissions/EN",
+            "split_index": 2,
+            "text_length": 388,
+            "potential_comparators": [
+              "All",
+              "afenib",
+              "Subject",
               "sorafenib"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Validating the overall survival extrapolation **Source Type:** hta_submission\n\nIt recognised that Palmer et al. was\na published retrospective cohort study comparing patients with hepatocellular carcinoma in 2 hepatobiliary oncology units in the UK who\neither received funding for sorafenib (n=57) or did not receive funding\n(n=76) before the existence of the Cancer Drugs Fund. The committee\nheard from the company that the decision to fund sorafenib was not based on clinical variables. The committee was aware that there was a\nhigher proportion of patients with metastatic disease in the unfunded group. The committee noted that patients who did not receive funding\nfor sorafenib did not live as long as patients who did have funding. It also\nconsidered that the association between funding and death may be confounded, that is, patients with better prognoses might be more likely\nto receive funding and treatment than patients with poorer prognoses. It\nnoted the ERG's comment that the study was not suitable for decisionmaking. However, the committee could not exclude the possibility of\nresidual confounding and concluded that the data from Palmer were a less robust source of evidence than the GIDEON data, now matched to\nSHARP. It further noted that the parametric curves to extrapolate overall\nsurvival using the Palmer data did not favour a log normal or Weibull distribution over the other.",
+          "metadata": {
+            "heading": "Validating the overall survival extrapolation",
+            "doc_id": "sorafenib-for-treating-advanced-hepatocellular-carcinoma-pdf-82604966022853",
+            "country": "EN",
+            "source_type": "hta_submission",
+            "start_page": 16,
+            "end_page": 19,
+            "created_date": "20",
+            "folder_path": "HTA submissions/EN",
+            "split_index": 1,
+            "text_length": 1413,
+            "potential_comparators": [
+              "It",
+              "However",
+              "sorafenib"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** concluded that atezolizumab plus bevacizumab is clinically effective compared with sorafenib in people with Child-Pugh grade A liver impairment and an **Source Type:** hta_submission\n\n© NICE 2024. All rights reserved. Subject to Notice of rights Page 8 of\nECOG performance status of 0 or 1.",
+          "metadata": {
+            "heading": "concluded that atezolizumab plus bevacizumab is clinically effective compared with sorafenib in people with Child-Pugh grade A liver impairment and an",
+            "doc_id": "atezolizumab-with-bevacizumab-for-treating-advanced-or-unresectable-hepatocellular-carcinoma-pdf-82609262480581",
+            "country": "EN",
+            "source_type": "hta_submission",
+            "start_page": 8,
+            "end_page": 9,
+            "created_date": "20",
+            "folder_path": "HTA submissions/EN",
+            "split_index": 0,
+            "text_length": 303,
+            "potential_comparators": [
+              "bevacizumab",
+              "atezolizumab",
+              "Subject",
+              "sorafenib",
+              "All"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Duration of treatment **Source Type:** hta_submission\n\nAll rights reserved. Subject to Notice of rights\no\nnt,\nP\nny\nto\nnt. ent\nhe\nin\ned\ned\nme\nand- P\nSorafenib for treating advanced hepatocellular carcinoma (TA474) on treatment data from SHARP. The company presented a survival\nanalysis of the time from the date of randomisation to the date of discontinuation of treatment from any cause. To extrapolate beyond the\nend of the trial, the company applied 5 parametric models: exponential,\nGompertz, log logistic, log normal and Weibull, plus a hybrid analysis that the company considered the most robust. The committee understood\nthat the ERG preferred the fully parametric log normal model because a hybrid approach was only appropriate when there was a strong rationale\nfor not using all of the available data to inform the extrapolated curve. The committee stated that the log normal distribution was the best statistical fit of the 5 distributions explored by the company. The\ncommittee noted that based on the Kass et al. criteria, the Bayesian\ninformation criterion statistics strongly indicated that the log normal distribution was a better fit to the observed data than the Weibull. The\ncommittee also heard from the clinical expert that approximately 10% of patients are still having sorafenib treatment at 3 years, which supported\nusing the log normal distribution. The committee concluded that the\ncompany's fully parametric method using the log normal distribution was the most robust estimate of treatment duration.",
+          "metadata": {
+            "heading": "Duration of treatment",
+            "doc_id": "sorafenib-for-treating-advanced-hepatocellular-carcinoma-pdf-82604966022853",
+            "country": "EN",
+            "source_type": "hta_submission",
+            "start_page": 19,
+            "end_page": 21,
+            "created_date": "20",
+            "folder_path": "HTA submissions/EN",
+            "split_index": 4,
+            "text_length": 1538,
+            "potential_comparators": [
+              "Subject",
+              "sorafenib"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** 1 Recommendations **Source Type:** hta_submission\n\nSorafenib has a marketing authorisation in the UK for treating tion hepatocellular carcinoma. The summary of product characteristics includes the following conditions that may be associated with sorafenib treatment:\ndermatological toxicities, hypertension, haemorrhage, cardiac ischaemia and/or infarction, gastrointestinal perforation, hepatic\nimpairment and wound healing complications. For full details of\nadverse reactions and contraindications, see the summary of product characteristics. nded Sorafenib is administered orally as 200-mg film-coated tablets. The\nrecommended dosage is 400 mg twice daily (a total daily dose of\n800 mg). The dosage may be adjusted to 2×200-mg tablets once dail\nif adverse drug reactions are suspected.",
+          "metadata": {
+            "heading": "1 Recommendations",
+            "doc_id": "sorafenib-for-treating-advanced-hepatocellular-carcinoma-pdf-82604966022853",
+            "country": "EN",
+            "source_type": "hta_submission",
+            "start_page": 4,
+            "end_page": 5,
+            "created_date": "20",
+            "folder_path": "HTA submissions/EN",
+            "split_index": 2,
+            "text_length": 801,
+            "potential_comparators": [
+              "of\n800 mg",
+              "is 400 mg",
+              "sorafenib"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Cost and resource use estimates **Source Type:** hta_submission\n\nAll rights reserved. Subject to Notice of rights P\nSorafenib for treating advanced hepatocellular carcinoma (TA474) the company provided recent resource use estimates based on the\nopinion of 3 different clinicians. At the first Cancer Drugs Fund\nreconsideration meeting the committee noted that the revised resource use data estimates varied widely and therefore it was better to pool the\noriginal and revised estimates. In its response to the appraisal\nconsultation document, the company claimed that resource estimates from the original appraisal were no longer accurate because of\nsignificant changes in clinical practice. Specifically, patients now had\ntreatment in oncology rather than hepatology clinics and had palliative care in the community.",
+          "metadata": {
+            "heading": "Cost and resource use estimates",
+            "doc_id": "sorafenib-for-treating-advanced-hepatocellular-carcinoma-pdf-82604966022853",
+            "country": "EN",
+            "source_type": "hta_submission",
+            "start_page": 21,
+            "end_page": 22,
+            "created_date": "20",
+            "folder_path": "HTA submissions/EN",
+            "split_index": 1,
+            "text_length": 829,
+            "potential_comparators": [
+              "Subject",
+              "sorafenib",
+              "Specifically"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Duration of treatment **Source Type:** hta_submission\n\nThe committee discussed the company's analysis of the individual patient level data on the time to treatment © NICE 2024. All rights reserved. Subject to Notice of rights n e s e gh P) The for g d and- P Sorafenib for treating advanced hepatocellular carcinoma (TA474) discontinuation from the matched GIDEON analysis. The committee understood from the company that everyone in GIDEON stopped treatment so the company provided only an unrestricted mean and a Kaplan–Meier analysis (rather than a parametric model). But the committee highlighted that it would have preferred the company to also fit parametric curves to the data because of the differences in the GIDEON and SHARP populations, and the small number of events towards the end of the Kaplan–Meier curves of time to treatment discontinuation, which leads to uncertainty. The committee concluded that data from SHARP should be",
+          "metadata": {
+            "heading": "Duration of treatment",
+            "doc_id": "sorafenib-for-treating-advanced-hepatocellular-carcinoma-pdf-82604966022853",
+            "country": "EN",
+            "source_type": "hta_submission",
+            "start_page": 19,
+            "end_page": 21,
+            "created_date": "20",
+            "folder_path": "HTA submissions/EN",
+            "split_index": "2_0_0",
+            "text_length": 954,
+            "potential_comparators": [
+              "All",
+              "Subject",
+              "sorafenib",
+              "But"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Population **Source Type:** hta_submission\n\nThe committee acknowledged the comments from clinical experts and\nNHS England that current clinical experience suggests that patients need both adequate liver function and performance status to have sorafenib in\nclinical practice in England. On this basis, they also commented that\ntreatment should be restricted to people with Child-Pugh grade A liver function and performance status of 0 to 2. Taking all the evidence into\naccount, the committee concluded that people with Child-Pugh grade A liver function are the appropriate population for its recommendations for\ntreating advanced hepatocellular carcinoma with sorafenib in England.",
+          "metadata": {
+            "heading": "Population",
+            "doc_id": "sorafenib-for-treating-advanced-hepatocellular-carcinoma-pdf-82604966022853",
+            "country": "EN",
+            "source_type": "hta_submission",
+            "start_page": 16,
+            "end_page": 16,
+            "created_date": "20",
+            "folder_path": "HTA submissions/EN",
+            "split_index": 1,
+            "text_length": 694,
+            "potential_comparators": [
+              "sorafenib",
+              "Taking"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Modelling overall survival **Source Type:** hta_submission\n\nThe log-normal function is suitable for modelling overall survival, but the log-logistic and generalised gamma functions should also\nbe considered\n3.6 The company investigated a range of parametric survival distributions\nfitted independently to each treatment arm to model overall survival. In\nits base-case analysis the company used the exponential function to predict overall survival. This was informed by a panel of 6 clinical\nexperts, who advised that the survival projections from the exponential\n© NICE 2024. All rights reserved. Subject to Notice of rights Page 10\nconditions#notice-of-rights). of 17\nAtezolizumab with bevacizumab for treating advanced or unresectable hepatoc carcinoma (TA666)\nfunction most closely matched survival in NHS practice for sorafenib an lenvatinib. The panel suggested the generalised gamma function may\nalso be plausible.",
+          "metadata": {
+            "heading": "Modelling overall survival",
+            "doc_id": "atezolizumab-with-bevacizumab-for-treating-advanced-or-unresectable-hepatocellular-carcinoma-pdf-82609262480581",
+            "country": "EN",
+            "source_type": "hta_submission",
+            "start_page": 10,
+            "end_page": 12,
+            "created_date": "20",
+            "folder_path": "HTA submissions/EN",
+            "split_index": 0,
+            "text_length": 933,
+            "potential_comparators": [
+              "bevacizumab",
+              "atezolizumab",
+              "Subject",
+              "sorafenib",
+              "All",
+              "lenvatinib"
             ]
           }
         }
@@ -1343,8 +2158,8 @@
     "ES": {
       "country_metadata": {
         "country_code": "ES",
-        "chunk_count": 15,
-        "total_text_length": 15497,
+        "chunk_count": 25,
+        "total_text_length": 24999,
         "unique_documents": 1,
         "unique_headings": 1
       },
@@ -1363,8 +2178,8 @@
             "split_index": "6_1_0",
             "text_length": 1015,
             "potential_comparators": [
-              "atezobevacizumab",
-              "sorafenib"
+              "sorafenib",
+              "atezobevacizumab"
             ]
           }
         },
@@ -1382,9 +2197,9 @@
             "split_index": 8,
             "text_length": 890,
             "potential_comparators": [
-              "sorafenzumab",
+              "atezolizumab",
               "bevacizumab",
-              "atezolizumab"
+              "sorafenzumab"
             ]
           }
         },
@@ -1402,9 +2217,9 @@
             "split_index": 0,
             "text_length": 1397,
             "potential_comparators": [
+              "atezolizumab",
               "bevacizumab",
-              "sorafenib",
-              "atezolizumab"
+              "sorafenib"
             ]
           }
         },
@@ -1422,16 +2237,16 @@
             "split_index": 3,
             "text_length": 1335,
             "potential_comparators": [
-              "After",
-              "soravenib",
-              "Similarly",
-              "Following",
-              "sorafenib",
-              "levantinib",
-              "lenvatinib",
-              "Only",
               "soraphenib",
-              "lenvatanib"
+              "lenvatinib",
+              "Similarly",
+              "levantinib",
+              "sorafenib",
+              "lenvatanib",
+              "Only",
+              "Following",
+              "soravenib",
+              "After"
             ]
           }
         },
@@ -1449,10 +2264,10 @@
             "split_index": 14,
             "text_length": 1131,
             "potential_comparators": [
-              "atezolizumabbevacizumab",
-              "bevacizumab",
               "atezolizumab",
-              "sorafenib"
+              "bevacizumab",
+              "sorafenib",
+              "atezolizumabbevacizumab"
             ]
           }
         },
@@ -1470,13 +2285,13 @@
             "split_index": 15,
             "text_length": 899,
             "potential_comparators": [
-              "atezumab",
-              "Conclusion",
-              "Overall",
               "bevacizumab",
-              "vacizumab",
+              "atezumab",
+              "Overall",
+              "Conclusion",
+              "atezolizumab",
               "sorafenib",
-              "atezolizumab"
+              "vacizumab"
             ]
           }
         },
@@ -1512,9 +2327,9 @@
             "split_index": 11,
             "text_length": 802,
             "potential_comparators": [
-              "atezumab",
               "See",
               "DISCUSSION",
+              "atezumab",
               "sorafenib"
             ]
           }
@@ -1533,12 +2348,12 @@
             "split_index": 16,
             "text_length": 1236,
             "potential_comparators": [
-              "Kudo",
               "bevacizumab",
-              "atezoizumab",
-              "sorafenib",
+              "Kudo",
+              "atezolizumab",
               "atezolizeumab",
-              "atezolizumab"
+              "atezoizumab",
+              "sorafenib"
             ]
           }
         },
@@ -1556,19 +2371,19 @@
             "split_index": 17,
             "text_length": 882,
             "potential_comparators": [
-              "Siegel",
-              "atelizumab",
-              "See",
-              "Food",
-              "hepatozumab",
-              "Finn",
-              "Hepatozumab",
               "Atelizumab",
-              "Mittal",
-              "sorafenib",
+              "atelizumab",
               "CA",
+              "Mittal",
+              "Cancer",
+              "Food",
+              "Finn",
+              "sorafenib",
+              "hepatozumab",
+              "Siegel",
+              "Hepatozumab",
               "lenvatinib",
-              "Cancer"
+              "See"
             ]
           }
         },
@@ -1607,9 +2422,9 @@
             "split_index": 2,
             "text_length": 1437,
             "potential_comparators": [
-              "Stage",
               "Stages",
-              "They"
+              "They",
+              "Stage"
             ]
           }
         },
@@ -1627,15 +2442,15 @@
             "split_index": "18_0_0",
             "text_length": 911,
             "potential_comparators": [
-              "Gomaa",
-              "Director",
-              "bevacizumab",
-              "Raul",
               "Worldwide",
-              "European",
-              "All",
+              "bevacizumab",
               "atezolizumab",
-              "Digestive"
+              "Digestive",
+              "Raul",
+              "European",
+              "Director",
+              "All",
+              "Gomaa"
             ]
           }
         },
@@ -1653,14 +2468,14 @@
             "split_index": "10_0_0",
             "text_length": 957,
             "potential_comparators": [
-              "atezumab",
-              "bevacizumab",
-              "soravenib",
-              "atezoizumab",
               "Diabetes",
+              "bevacizumab",
+              "atezumab",
+              "atezolizumab",
+              "atezoizumab",
               "Notable",
               "sorafenib",
-              "atezolizumab"
+              "soravenib"
             ]
           }
         },
@@ -1683,6 +2498,238 @@
               "sorafenib"
             ]
           }
+        },
+        {
+          "text": "**Source Type:** hta_submission\n\nThe initial dose of atezolizumab should be administered for 60 minutes. If the first infusion is well tolerated, subsequent infusions may be given for 30 minutes. It is recommended that patients be treated until loss of clinical benefit or onset of unmanageable toxicity. Pharmacology Atezolizumab is a genetically engineered humanised IgG1 Fc monoclonal antibody, an anti-ligand of the PDL1 programmed death ligand receptor, produced in Chinese hamster ovary cells by recombinant technology. Efficacy and safety have not been studied in the population below 18 years of age. No dose adjustment is necessary in patients ≥ 65 years. Safety-effectiveness has not been investigated in patients with renal insufficiency or patients with hepatic impairment. It is recommended that patients be treated until loss of clinical benefit or onset of unacceptable toxicity. Efficacy The efficacy data for the combination of atezolizumab plus bevacizumab are derived from the GO30140 trial (Phase IB) which demonstrated an additive effect of bevazizumab with respect to atezoizumab monotherapy in patients with unresectable CHC, and from the IMbrave 150 trial (phase III) (15, 20). A multicentre and multinational, parallel-group study comparing the combination of atezolizumab plus bevacizumab versus sorafenib.",
+          "metadata": {
+            "heading": "",
+            "doc_id": "IPT_50-2022-Tecentriq",
+            "country": "ES",
+            "source_type": "hta_submission",
+            "start_page": 1,
+            "end_page": 10,
+            "created_date": "2022",
+            "folder_path": "HTA submissions/ES",
+            "split_index": 5,
+            "text_length": 1332,
+            "potential_comparators": [
+              "It",
+              "bevacizumab",
+              "Safety-effectiveness",
+              "atezolizumab",
+              "Pharmacology",
+              "atezoizumab",
+              "sorafenib",
+              "bevazizumab",
+              "No",
+              "If",
+              "Efficacy"
+            ]
+          }
+        },
+        {
+          "text": "**Source Type:** hta_submission\n\nAccording to the latest data from the Spanish Society of Medical Oncology (SEOM), from January to May 2020, 2,075 people died from malignant tumors of the liver and intrahepatic bile ducts; and an incidence of 1,551 new cases of CHC is estimated for 2021 (6). In Europe, Oceania and America, the main etiological factors are chronic infection by the Hepatitis C Virus (HCV) and alcohol consumption, adding in the last decade, fatty liver associated with metabolic disease (MAFLD, from the English metabolic dysfunction associated fatty Liver disease) (3-5). The Barcelona Clinic Liver Cancer (BCLC) system continues to be the one recommended by the vast majority of clinical guidelines (8-10).",
+          "metadata": {
+            "heading": "",
+            "doc_id": "IPT_50-2022-Tecentriq",
+            "country": "ES",
+            "source_type": "hta_submission",
+            "start_page": 1,
+            "end_page": 10,
+            "created_date": "2022",
+            "folder_path": "HTA submissions/ES",
+            "split_index": 1,
+            "text_length": 726,
+            "potential_comparators": []
+          }
+        },
+        {
+          "text": "**Source Type:** hta_submission\n\nPatients aged 18 years or older and diagnosed with locally advanced or metastatic and/ or unresectable HCC with histological/ cytological confirmation or clinical features consistent with the American Association for the Study of the Liver (AASLD) criteria in cirrhotic patients were included. Stratification was performed by geographical region (Asia [excluding Japan] vs. rest of the world), macrovascular invasion and/ or extrahepatic dissemination (presence vs. absence), baseline alpha-fetoprotein (AFP) levels (ng< 400m/ L vs. ≥ 400 m/ L) and overall status (0 ECOG vs. group 1). Patients randomised to the sorafenib group received 400 mg of the drug, orally, twice daily. Treatment continued until unacceptable toxicity or loss of benefit. Therapy could be continued beyond progression if there was evidence of clinical benefit at the discretion of the investigator. No dose adjustments were allowed in the atezolizumab-bevacizumab arm, but were permitted in the Sorafenib arm. Tumor",
+          "metadata": {
+            "heading": "",
+            "doc_id": "IPT_50-2022-Tecentriq",
+            "country": "ES",
+            "source_type": "hta_submission",
+            "start_page": 1,
+            "end_page": 10,
+            "created_date": "2022",
+            "folder_path": "HTA submissions/ES",
+            "split_index": "6_0_0",
+            "text_length": 1023,
+            "potential_comparators": [
+              "bevacizumab",
+              "Therapy",
+              "atezolizumab",
+              "Treatment",
+              "sorafenib",
+              "received 400 mg",
+              "Stratification",
+              "Patients",
+              "Tumor",
+              "No"
+            ]
+          }
+        },
+        {
+          "text": "**Source Type:** hta_submission\n\nThe median OS was 19.2 months with atezolizumab + bevacizumab versus 13.4 months with sorafenib (HR, 0.66 [95% CI, 0.52, 0.85]; P = 0.0009). The survival at 18 months was 52% with atezlizimab + Bevacizumab and 40% with Sorafenib. In relation to the safety of the atezolizumab combination, the most frequent adverse reactions overall were: hypertension (29.8%), fatigue (20.4%), proteinuria (20.1%), increased aspartate aminotransferase (19.5%), pruritus (19,5%), diarrhoea (18.8%), fever (17.9%), loss of appetite (17.6%), increased alanine amintransferase (ALT) (14%), constipation (13.4%), increased serum bilirubin (13.1%), abdominal pain (12.5%), nausea (12.2%), cough (11.2%), thromboplastinemia (10.2%), weight loss (11.3%), epilepsy (10.7%),",
+          "metadata": {
+            "heading": "",
+            "doc_id": "IPT_50-2022-Tecentriq",
+            "country": "ES",
+            "source_type": "hta_submission",
+            "start_page": 1,
+            "end_page": 10,
+            "created_date": "2022",
+            "folder_path": "HTA submissions/ES",
+            "split_index": "9_0_0",
+            "text_length": 781,
+            "potential_comparators": [
+              "atezolizumab",
+              "bevacizumab",
+              "atezlizimab",
+              "sorafenib"
+            ]
+          }
+        },
+        {
+          "text": "**Source Type:** hta_submission\n\nThe results showed that sorafenb was not inferior to linear sorafenab, and after several years of treatment, it was not authorized for use in the CHC regimen. Regarding first-line treatments, for several years sorafenib was the only systemic treatment available for HCC. While the safety profile of sorafenub was acceptable in the context of this disease, the overall prognosis of HCC with this treatment continued to be unsatisfactory. This led to numerous trials to try to obtain new alternatives. In 2018, the REFLECT trial demonstrated non-inferiority of lenvatinib with respect to lenfenib (25). All patients had locally advanced, unresectable or metastatic CHC, for which they had not received prior systemic therapy. Stratification was performed by geographical region (Asia [excluding Japan] vs. rest of the world), macrovascular invasiveness and/ or dissemination (BC), absenteeism vs. absence of athezolizumab-bevacizumab: sorafenib,",
+          "metadata": {
+            "heading": "",
+            "doc_id": "IPT_50-2022-Tecentriq",
+            "country": "ES",
+            "source_type": "hta_submission",
+            "start_page": 1,
+            "end_page": 10,
+            "created_date": "2022",
+            "folder_path": "HTA submissions/ES",
+            "split_index": "13_0_0",
+            "text_length": 976,
+            "potential_comparators": [
+              "While",
+              "bevacizumab",
+              "athezolizumab",
+              "lenfenib",
+              "sorafenib",
+              "All",
+              "Stratification",
+              "Regarding",
+              "lenvatinib"
+            ]
+          }
+        },
+        {
+          "text": "**Source Type:** hta_submission\n\npalmar rash (11.2%) and trombocytopenia (10.3%). The most common grade 3-4 adverse event in the atezolizumab-bevacizumab arm was hypertension (15.2%), a well-established adverse effect in the safety profile of bevazizumab. The most frequent grade 3 or 4 adverse reactions were: hypertension (15.2%), increased aspartate aminotransferase (AST) (7%), increased ALT (3.6%), thrombocytopenia (3.3%), proteinuria (3%), fatigue (2.4%), increased serum bilirubin (2.4%), infusion reaction (2.4%) diarrhoea (1.8%), decreased appetite (1.2%), fever (1.2%), abdominal pain (1.2%) nausea (0.3%) and asthenia (0.3%). Grade 5 adverse effects occurred in 15 patients in the atezolizumab-bevacizumab combination group (4.6%) and in 9 patients of the sorafenib group (5.8%).",
+          "metadata": {
+            "heading": "",
+            "doc_id": "IPT_50-2022-Tecentriq",
+            "country": "ES",
+            "source_type": "hta_submission",
+            "start_page": 1,
+            "end_page": 10,
+            "created_date": "2022",
+            "folder_path": "HTA submissions/ES",
+            "split_index": "9_1_0",
+            "text_length": 791,
+            "potential_comparators": [
+              "bevacizumab",
+              "atezolizumab",
+              "sorafenib",
+              "Grade",
+              "bevazizumab"
+            ]
+          }
+        },
+        {
+          "text": "**Source Type:** hta_submission\n\nIntrahospital Adm Efficacy (according to pivotal studies) Superior to sorafenib IMbrave 150) ANEX stopping the combination is in the first line NCIALES COMPA vacizumab mab mab s to the hospital Day administration ib (trial Pagi XO nation atezolizumab-be and treatment systems ARADAS WITH OTHERS Lenvat Lenvima® Oral 8/24 mg/ h (weight < 60 12/24mg/ h) (weight ≥ 60 Yes Arterial hypertension Diarrhoea Hyporexia Regimen not less than sorafenil (RECT test) 9 in 16 Women Patients ALTE 0kg) 0 in 10 Repeated intravenous injections and a peer-reviewed clinical study (NIVERC) 400 mg Orlistat or SIFARS SILARS Neutrogenous arterial hypersensitivity Syndrome Baseline characteristics of patients in the pivotal study IMbrav Comisi ve150 (15). Table 3. analysis by subgroup of surviv supplementary appendix IMbrave150.",
+          "metadata": {
+            "heading": "",
+            "doc_id": "IPT_50-2022-Tecentriq",
+            "country": "ES",
+            "source_type": "hta_submission",
+            "start_page": 1,
+            "end_page": 10,
+            "created_date": "2022",
+            "folder_path": "HTA submissions/ES",
+            "split_index": 19,
+            "text_length": 844,
+            "potential_comparators": [
+              "atezolizumab",
+              "Table",
+              "sorafenib",
+              "vacizumab"
+            ]
+          }
+        },
+        {
+          "text": "**Source Type:** hta_submission\n\nAn analysis of progression-free survival (PFS), two intermediate analyses and a final analysis of overall survival were planned. The primary analysis was to be performed after approximately 308 cases of disease progression or death, and the first intermediate analysis of global survival was scheduled to be carried out at the same time. Up to 29 August 2019, a total of 306 case of disease progress or death had occurred, including 161 deaths. Overall survival was significantly higher in the atezolizumab-bevacizumab treatment arm; the median survival rate was 84.8% (95% CI 80.9-88.7) and 67.2% (95% IC 61.3-73.1) at 6 and 12 months, respectively, in the dezolizumab-bavizumab group; and 72.2% (90% CI 65.1-79.4) and 54.6% (95%CI 45.2-64.0) at 6 months and 12 month in the sorafenib group. Overall, the subgroup analyses showed that the results are consistent with the overall estimates of SG and SLP (see Annex, Table 3).",
+          "metadata": {
+            "heading": "",
+            "doc_id": "IPT_50-2022-Tecentriq",
+            "country": "ES",
+            "source_type": "hta_submission",
+            "start_page": 1,
+            "end_page": 10,
+            "created_date": "2022",
+            "folder_path": "HTA submissions/ES",
+            "split_index": 7,
+            "text_length": 958,
+            "potential_comparators": [
+              "bevacizumab",
+              "Overall",
+              "atezolizumab",
+              "Up",
+              "sorafenib",
+              "dezolizumab",
+              "bavizumab"
+            ]
+          }
+        },
+        {
+          "text": "**Source Type:** hta_submission\n\n3%) (14). Finally, in 2020, the combination of this IPT, atezolizumab and bevacib, after the phase II clinical trial of IMIIvebra150 has been authorized for the treatment of advanced or untreatable first-line CHC (see Annex 1). This review will be discussed in Table 1 of this document (15). The combination of atezolizumab with bevacizumab is indicated in advanced or unresectable hepatocellular carcinoma that has not previously been treated with any other systemic therapy. This combination was approved by the Food and Drug Administration (FDA) in May 2020 and by the European Medicines Agency (EMA) in October 2020 (16, 17). Another authorised indication of the combination of Atezolizumab and bevazizumab together with paclitaxel and carboplatin is the first-line treatment of non-metastatic non-squamous metastatic microcytic lung cancer (NMSC) in adult patients whose tumours do not express alterations in EGFRK or ALK, which is not the target of this ATT (ATEZUZumab) intravenous perfume solution at a recommended dose of 1,200 mg Atezolidumab (18) administered intravenously every three weeks. The recommended dose is 1,200 mg given intravenously as a slow infusion every three weeks.",
+          "metadata": {
+            "heading": "",
+            "doc_id": "IPT_50-2022-Tecentriq",
+            "country": "ES",
+            "source_type": "hta_submission",
+            "start_page": 1,
+            "end_page": 10,
+            "created_date": "2022",
+            "folder_path": "HTA submissions/ES",
+            "split_index": 4,
+            "text_length": 1227,
+            "potential_comparators": [
+              "atezuzumab",
+              "bevacizumab",
+              "atezolizumab",
+              "Finally",
+              "bevazizumab",
+              "Another",
+              "atezolidumab"
+            ]
+          }
+        },
+        {
+          "text": "**Source Type:** hta_submission\n\nonset was 4.4 months (range: 1.2-8.3 months). No case of diabetes mellitus led to withdrawal of atezozizumab. No case of diabetes mellitus led to the withdrawal of atezolizumab. The updated analysis with an additional 12 months of follow-up of the IMbrave 150 study showed no new signs of toxicity in the atezolizeumab + bevacizumab group, although the frequency of hypertension increased from 24% to 28% and proteinuria from 19% to 29%, as well as the incidence of immuno-mediated hepatitis (defined by diagnosis and/ or laboratory abnormalities) whose increase of 10% was considered mainly responsible for the increase in the rate of adverse events of special concern from 69% to 76% compared to the primary analysis (21). Dose reductions for any reason were not permitted in the atezolizumab-bevacizumab arm.",
+          "metadata": {
+            "heading": "",
+            "doc_id": "IPT_50-2022-Tecentriq",
+            "country": "ES",
+            "source_type": "hta_submission",
+            "start_page": 1,
+            "end_page": 10,
+            "created_date": "2022",
+            "folder_path": "HTA submissions/ES",
+            "split_index": "10_1_0",
+            "text_length": 844,
+            "potential_comparators": [
+              "bevacizumab",
+              "atezolizumab",
+              "atezozizumab",
+              "atezolizeumab",
+              "No",
+              "Dose"
+            ]
+          }
         }
       ]
     },
@@ -1699,10 +2746,10 @@
     "FR": {
       "country_metadata": {
         "country_code": "FR",
-        "chunk_count": 15,
-        "total_text_length": 15293,
+        "chunk_count": 25,
+        "total_text_length": 26233,
         "unique_documents": 1,
-        "unique_headings": 3
+        "unique_headings": 4
       },
       "chunks": [
         {
@@ -1719,11 +2766,11 @@
             "split_index": 2,
             "text_length": 1269,
             "potential_comparators": [
+              "lenvitinib",
+              "soraphenib",
               "Finally",
               "sorafenib",
-              "lenvatinib",
-              "soraphenib",
-              "lenvitinib"
+              "lenvatinib"
             ]
           }
         },
@@ -1741,12 +2788,12 @@
             "split_index": "5_1_0",
             "text_length": 1345,
             "potential_comparators": [
-              "Taking",
-              "sorafeninib",
-              "sorafenib",
-              "lenvatinib",
+              "lenvitinib",
               "lenvetinib",
-              "lenvitinib"
+              "sorafeninib",
+              "Taking",
+              "sorafenib",
+              "lenvatinib"
             ]
           }
         },
@@ -1764,8 +2811,8 @@
             "split_index": 4,
             "text_length": 1061,
             "potential_comparators": [
-              "lenvatinib",
-              "Therefore"
+              "Therefore",
+              "lenvatinib"
             ]
           }
         },
@@ -1783,11 +2830,11 @@
             "split_index": "4_0_0",
             "text_length": 909,
             "potential_comparators": [
-              "lenvatnib",
+              "lenvitinib",
               "sorafeninib",
               "sorafenib",
-              "lenvatinib",
-              "lenvitinib"
+              "lenvatnib",
+              "lenvatinib"
             ]
           }
         },
@@ -1805,12 +2852,12 @@
             "split_index": 5,
             "text_length": 1071,
             "potential_comparators": [
-              "Using",
-              "If",
               "sorafenib",
-              "Efficacy",
               "Hazard",
-              "lenvatinib"
+              "Using",
+              "lenvatinib",
+              "If",
+              "Efficacy"
             ]
           }
         },
@@ -1828,11 +2875,11 @@
             "split_index": 0,
             "text_length": 837,
             "potential_comparators": [
-              "sorafenib",
-              "Sorafenib",
-              "lenvatinib",
               "November",
-              "Lancet"
+              "Sorafenib",
+              "Lancet",
+              "sorafenib",
+              "lenvatinib"
             ]
           }
         },
@@ -1889,11 +2936,11 @@
             "split_index": "4_1_0",
             "text_length": 893,
             "potential_comparators": [
+              "lenvitinib",
+              "pembrolizumab",
               "nivolumab",
               "sorafenib",
-              "pembrolizumab",
-              "lenvatinib",
-              "lenvitinib"
+              "lenvatinib"
             ]
           }
         },
@@ -1948,15 +2995,15 @@
             "split_index": "5_0_0",
             "text_length": 1362,
             "potential_comparators": [
+              "lenvitinib",
+              "pembrolizaumab",
               "PLACE",
-              "sorafeninib",
-              "sorafenib",
               "pembrolizumab",
               "sorafennib",
-              "lenvatinib",
+              "sorafeninib",
               "Lenvatinib",
-              "pembrolizaumab",
-              "lenvitinib"
+              "sorafenib",
+              "lenvatinib"
             ]
           }
         },
@@ -2014,8 +3061,215 @@
             "text_length": 1049,
             "potential_comparators": [
               "lenvatinib",
+              "Main",
+              "sorafenib"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** 8.1.1.1 Method to be used **Source Type:** hta_submission\n\n19989, the HR pool estimate of overall survival of soraphenib vs placebo is 0.69; [0.57; IC 0.83]. (10.7 months vs 7.9 months; HR = 0.69) and the Asia-Pacific trial11 (6.5 months vs 4.2; HR= 0.68). The threshold of not less than 1.08 was estimated using the upper limit of confidence method of Rothmann et al. 2003 and corresponds to a preservation of at least 60% of the true effect of sorafenib vs placebo. In case of non-inferiority established on the primary endpoint, the secondary endpoints were tested in a hierarchical manner (for superiority). No specific alpha risk control was performed for the multiplicity of assays on the primary outcome criterion (non-inferiority and superiority) taking into account the closed testing procedure ( closed testing ). In the absence of an inferiority of the primary criteria, the secondary outcome criteria were tested in a hierarchical bi-lateral alpha risk test which allowed for the control of the alpha risk of",
+          "metadata": {
+            "heading": "8.1.1.1 Method to be used",
+            "doc_id": "CT-17321_LENVIMA_PIC_EI_Avis3_CT17321",
+            "country": "FR",
+            "source_type": "hta_submission",
+            "start_page": 7,
+            "end_page": 10,
+            "created_date": "2019",
+            "folder_path": "HTA submissions/FR",
+            "split_index": "6_0_0",
+            "text_length": 1033,
+            "potential_comparators": [
+              "No",
+              "soraphenib",
+              "sorafenib"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** 8.1.1.1 Method to be used **Source Type:** hta_submission\n\nTreatments were administered until disease progression, unacceptable toxicity, at the request of the patient or withdrawal of consent. Note that patients in the lenvatinib group could receive sorafenib in case of progression of disease, whereas those in the Sorafenib group could not receive post-progression according to the Lenvatinib MAG. * Dose jumps, dose reductions or discontinuations were permitted in the event of lenvatnib-related toxicity. in a 1:1 ratio (lenvatinib vs. sorafenib) and stratified by: - Geographical region: Asia-Pacific vs. western regions (EU, US etc.) - Gate and/ or extrahepatic vein invasion: yes vs.",
+          "metadata": {
+            "heading": "8.1.1.1 Method to be used",
+            "doc_id": "CT-17321_LENVIMA_PIC_EI_Avis3_CT17321",
+            "country": "FR",
+            "source_type": "hta_submission",
+            "start_page": 7,
+            "end_page": 10,
+            "created_date": "2019",
+            "folder_path": "HTA submissions/FR",
+            "split_index": 2,
+            "text_length": 704,
+            "potential_comparators": [
+              "lenvatnib",
+              "Note",
+              "lenvatinib",
+              "sorafenib"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** In the absence of such information, the applicant shall provide a declaration of compliance with this criterion. **Source Type:** hta_submission\n\nand the general condition of the patients4,5,6,7. Unlike other solid tumors, for which the therapeutic decision is made based on the TNM classification, there is no consensus prognostic classification for HCC7. Therefore, several classifications or scores have been proposed including the Barcelona Clinic Liver Cancer (BCLC) 8 classification which has the advantage of enabling a prognosis stratification and proposing a treatment algorithm. When HCC is at an early stage (BC 0-A), patients are generally eligible for curative treatment by surgery, radiosurgery or transplantation. In case of failure, refractory disease or ineligibility for TACE, or in the presence of vascular invasion and/ or extrahepatic injury (advanced stage CLC), treatment with sorafenib is recommended in patients with preserved general condition (ECOG ≤ 2) and preserved hepatic function (Child-Pugh A). In adult patients with advanced or unresectable hepatocellular carcinoma (HCC) (stage BCLC B or C) who have not received prior systemic therapy, the medical need is therefore considered to be partially met by sorafenib. However, there remains a medical need for better tolerated and/ or more effective treatments at this stage of the disease.",
+          "metadata": {
+            "heading": "In the absence of such information, the applicant shall provide a declaration of compliance with this criterion.",
+            "doc_id": "CT-17321_LENVIMA_PIC_EI_Avis3_CT17321",
+            "country": "FR",
+            "source_type": "hta_submission",
+            "start_page": 1,
+            "end_page": 5,
+            "created_date": "2019",
+            "folder_path": "HTA submissions/FR",
+            "split_index": "4_1_0",
+            "text_length": 1383,
+            "potential_comparators": [
+              "When",
+              "Unlike",
+              "Therefore",
+              "However",
+              "sorafenib"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** In the absence of such information, the applicant shall provide a declaration of compliance with this criterion. **Source Type:** hta_submission\n\nTHERAPY INDICATIONS LENVIMA is indicated as monotherapy in the treatment of adult patients with differentiated thyroid carcinoma (papilloma, follicular, Hürthle cell) or locally advanced metastatic, radioactive and refractory metastases (RAI). The recommended daily dose of lenvatinib is 8 mg (two 4 mg capsules) once daily for patients weighing < 60 kg and 12 mg (three 4 mg tablets) once a day for patients weighting ≥ 60 kg. 4 mg Stop Stop until occurrence (one 4 mg capsule) by resolution to Grade 0 (same effect or 1 or 2 new effects) Third 4 mg days Stop Until occurrence (4 mg capsules) by resolutions to Grades 0 (the same effect or 2 or 3 new effects). Toxicity with a life-threatening effect (Grade 4): Stop a. Treat nausea, vomiting or diarrhoea before stopping or reducing the dose.",
+          "metadata": {
+            "heading": "In the absence of such information, the applicant shall provide a declaration of compliance with this criterion.",
+            "doc_id": "CT-17321_LENVIMA_PIC_EI_Avis3_CT17321",
+            "country": "FR",
+            "source_type": "hta_submission",
+            "start_page": 1,
+            "end_page": 5,
+            "created_date": "2019",
+            "folder_path": "HTA submissions/FR",
+            "split_index": 3,
+            "text_length": 953,
+            "potential_comparators": [
+              "Treat",
+              "Toxicity",
+              "is 8 mg",
+              "one 4 mg",
+              "three 4 mg",
+              "lenvatinib",
+              "Third 4 mg",
+              "two 4 mg",
+              "and 12 mg"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** In the absence of such information, the applicant shall provide a declaration of compliance with this criterion. **Source Type:** hta_submission\n\nnot identified as having Aspirin-independent hepatocytomatocarcinoma) in patients who would not be eligible for treatment with sorafennib in the same pharmacology class, but who would have a higher mortality rate than those in the French Pharmacovigilance Committee, and in particular those patients who were not eligible to receive a medical grade ≥ 3 history of renal cancer from the same group, Medical, Economic and Public Health Evaluation 2/ 25 ADMINISTRATIVE INFORMATIONS AND REGULATIONS Date of Initiation (Centralized Procedure): 28/05/2015 Date of Extension of Indication (Object of the Opinion): 20/08/2018 Engagement in the MPAA: an observational study to characterize the overall toxicity profile of advanced or unresectable hepatocellular carcinoma (HCC) in adult patients who have not received prior systemic therapy, including those with relapsed childhood disease, and to include data on tolerance in patients with recurrent conditions, including in Europe.",
+          "metadata": {
+            "heading": "In the absence of such information, the applicant shall provide a declaration of compliance with this criterion.",
+            "doc_id": "CT-17321_LENVIMA_PIC_EI_Avis3_CT17321",
+            "country": "FR",
+            "source_type": "hta_submission",
+            "start_page": 1,
+            "end_page": 5,
+            "created_date": "2019",
+            "folder_path": "HTA submissions/FR",
+            "split_index": "0_1_0",
+            "text_length": 1133,
+            "potential_comparators": [
+              "sorafennib"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** 8.1.1.2 Results of the project **Source Type:** hta_submission\n\n22.6%) in the sorafenib treatment group, respectively. For information, the rate of investigator-related RSI was 93.9% in the lenvatinib group vs. 95.2% in the sorafenib group. the percentage of Grade 3 to 5 RSI appeared to be higher in the Lenvatinib Group compared to the Sorafenib Group (75.0% vs. The most frequent AEs (> 2% in each treatment group) are shown in the table below. Among these, the AEs that appear to be more frequently reported in the lenvatinib group by the sorafenib group are hepatic encephalopathy (4.4% vs 0.6%), hepatic insufficiency (2.9% vs 1.7%), and decreased appetite (2.3% vs 0.4%). Table 4: Frequency of the most frequent GIs (REFLECT-304 study SAS population) Lenvatinib group Serious adverse event (n = 476) (n=475) n (%) n (%), Hepatic encephalopathy 21 (4,4) 3 (0,6) Hepatic insufficiency 14 (2,9) 8 (1,7) Ascites 12 (2,5) 11 (2,3) Decreased appetite 11 (2.3) 2 (0.4) Tumor progression 10 (2.1) 14 (2.9) Abdominal pain (1.3) 10 (2,1) SAS: analysis (population safety tolerance) Total deaths were 350 (73,68) in each group, of which 273 (74%) were due to disease progression versus 28 (81,1%) in the lenvatnib group. In total, 11 deaths in the lenvatinib group (2.3%) and 4 in the sorafenib group (0.8%) occurring during treatment or within 30 days after the last dose of treatment were considered by the investigator to be related to treatment.",
+          "metadata": {
+            "heading": "8.1.1.2 Results of the project",
+            "doc_id": "CT-17321_LENVIMA_PIC_EI_Avis3_CT17321",
+            "country": "FR",
+            "source_type": "hta_submission",
+            "start_page": 10,
+            "end_page": 18,
+            "created_date": "2019",
+            "folder_path": "HTA submissions/FR",
+            "split_index": 4,
+            "text_length": 1458,
+            "potential_comparators": [
+              "Table",
               "sorafenib",
-              "Main"
+              "Among",
+              "lenvatnib",
+              "lenvatinib"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** 8.1.1.1 Method to be used **Source Type:** hta_submission\n\n0.05 as an exploratory case, followed by a negative evaluation of the outcomes of secondary criteria. In total, 3 amendments to the protocol have been made since its first version on 12 November 2012. The 1st amendment (6 January 2014) mainly consisted of additions and clarifications regarding certain selection criteria (pre-cancer treatment, concomitant treatment, etc.), the addition of the EORTC-QLQ-C30 questionnaire as a secondary quality of life assessment criterion (with updated statistical analysis), and the modification of the follow-up time for overall survival (life expectancy 2 to 3 months). The following two amendments consisted in amendments and clarification regarding the events that were expected to occur in the analyses. It should also be noted that there has been a change in the planned analyses, as all efficacy analyses have been performed on stratification factors recorded in the interactive voice/web response system (IxRS) instead of the randomization factors reported in the CRF as established in the initial protocol.",
+          "metadata": {
+            "heading": "8.1.1.1 Method to be used",
+            "doc_id": "CT-17321_LENVIMA_PIC_EI_Avis3_CT17321",
+            "country": "FR",
+            "source_type": "hta_submission",
+            "start_page": 7,
+            "end_page": 10,
+            "created_date": "2019",
+            "folder_path": "HTA submissions/FR",
+            "split_index": "6_1_0",
+            "text_length": 1124,
+            "potential_comparators": [
+              "It"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** In the absence of such information, the applicant shall provide a declaration of compliance with this criterion. **Source Type:** hta_submission\n\nList I Drug Conditions subject to hospital prescription prescription and prescription reserved for specialists in oncology or physicians delivering/ holding special competence in cancer medicine Medicines requiring special monitoring during treatment Antinoplastics and immunomodulators Anti-neoplastic agents ATC classification Other antineoplastic drugs Protein kinase inhibitors L01XE29 lenvatinib CONTEXT This is the review of the application for modification of the conditions of inclusion of the LENVIMA (lenvatinib gel) specialties on the list of reimbursable specialties for hospital admission and the non-exhaustive list of specialties available for patients receiving monotherapeutic treatment as a consequence of previously received systemic anti-tumour therapy, or for patients who have not received monotherapy treatment.",
+          "metadata": {
+            "heading": "In the absence of such information, the applicant shall provide a declaration of compliance with this criterion.",
+            "doc_id": "CT-17321_LENVIMA_PIC_EI_Avis3_CT17321",
+            "country": "FR",
+            "source_type": "hta_submission",
+            "start_page": 1,
+            "end_page": 5,
+            "created_date": "2019",
+            "folder_path": "HTA submissions/FR",
+            "split_index": 1,
+            "text_length": 993,
+            "potential_comparators": [
+              "lenvatinib"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** In the absence of such information, the applicant shall provide a declaration of compliance with this criterion. **Source Type:** hta_submission\n\nThe Commission considers that the medical service provided by LENVIMA is insufficient in relation to the therapies available to justify a national solidarity approach in the extension of the HAS-directive indication. Taking into account: - the demonstration of non-inferiority (without demonstrated superiority) of lenvatinib compared to sorafenib in terms of overall survival and the methodological limitations of this demonstration: - a very select population (Child-Pugh A, ECOG 0 or 1) with no histological evidence of hepatocellular carcinoma required, - an open-label study, - the possibility for patients in the Lenvatinib group to be treated with Sorafenib if the disease progressed when the reverse was not possible, - choice of the non-infertility threshold of 1.08, corresponding to a consistent loss of efficacy of 40% of the effect of sorafeninib versus placebo, - French tolerance to unattended severe outcomes (patients",
+          "metadata": {
+            "heading": "In the absence of such information, the applicant shall provide a declaration of compliance with this criterion.",
+            "doc_id": "CT-17321_LENVIMA_PIC_EI_Avis3_CT17321",
+            "country": "FR",
+            "source_type": "hta_submission",
+            "start_page": 1,
+            "end_page": 5,
+            "created_date": "2019",
+            "folder_path": "HTA submissions/FR",
+            "split_index": "0_0_0",
+            "text_length": 1093,
+            "potential_comparators": [
+              "sorafeninib",
+              "lenvatinib",
+              "sorafenib",
+              "Taking"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** 8.1.1.2 Results of the project **Source Type:** hta_submission\n\nEffective A total of 954 patients were randomised (478 in the lenvatinib group and 476 in the sorafenib group), corresponding to the ITT population. Of these, 3 patients (2 in the Lenvatinib Group and 1 in the Sorafenib Group) did not receive treatment. Time since diagnosis - month Mean 21.1 Typical deviation 30.17 Median 8.2 Aetiology Hepatitis B 251 (52.5) Hepatitic C 91 (19.0) Alcohol 36 (7.5) Other 38 (7.9) Not known 62 (13.0) BCLC Stage n (%) B 104 (21.8) C 374 (78.2) Child-Pugh Score n (%) A 475 (99.4) B 3 (0.6) Vascular and/ or extrahepatic metastases Yes 329 (68.8) No 149 (31.2) Underlying cirrhosis N (%) Yes 543 (50.8) No 235 (49.2) Total alpha-folate protein (AFP) concentration among them (LET) - 50 ng/ m2 (107.0) No 17 (7.0)) Alcohol 38 (7,9) Other not known Radiotherapy 49 (10,3) HAS - Directorate of Medical Evaluation, Economics in half of these cases. Patients with non-alcoholic liver disease (NAC) were treated differently depending on lenvatinib concentration.",
+          "metadata": {
+            "heading": "8.1.1.2 Results of the project",
+            "doc_id": "CT-17321_LENVIMA_PIC_EI_Avis3_CT17321",
+            "country": "FR",
+            "source_type": "hta_submission",
+            "start_page": 10,
+            "end_page": 18,
+            "created_date": "2019",
+            "folder_path": "HTA submissions/FR",
+            "split_index": 0,
+            "text_length": 1066,
+            "potential_comparators": [
+              "Patients",
+              "lenvatinib",
+              "sorafenib",
+              "Time"
             ]
           }
         }
@@ -2034,10 +3288,10 @@
     "NL": {
       "country_metadata": {
         "country_code": "NL",
-        "chunk_count": 15,
-        "total_text_length": 11644,
+        "chunk_count": 25,
+        "total_text_length": 18614,
         "unique_documents": 1,
-        "unique_headings": 8
+        "unique_headings": 14
       },
       "chunks": [
         {
@@ -2054,11 +3308,11 @@
             "split_index": "0_1_0",
             "text_length": 1097,
             "potential_comparators": [
-              "Treatment",
-              "to 400 mg",
-              "sorafenib",
               "sorafenb 400 mg",
-              "Table"
+              "Table",
+              "Treatment",
+              "sorafenib",
+              "to 400 mg"
             ]
           }
         },
@@ -2094,11 +3348,11 @@
             "split_index": 2,
             "text_length": 1262,
             "potential_comparators": [
-              "Clinical",
               "It",
+              "Clinical",
               "Conclusion",
-              "Experience",
               "As",
+              "Experience",
               "sorafenib"
             ]
           }
@@ -2118,8 +3372,8 @@
             "text_length": 1132,
             "potential_comparators": [
               "sorafenib",
-              "Conclusion",
-              "Sorafenib"
+              "Sorafenib",
+              "Conclusion"
             ]
           }
         },
@@ -2153,8 +3407,8 @@
             "split_index": 2,
             "text_length": 1170,
             "potential_comparators": [
-              "Embolism",
               "Therefore",
+              "Embolism",
               "sorafenib"
             ]
           }
@@ -2173,10 +3427,10 @@
             "split_index": 0,
             "text_length": 539,
             "potential_comparators": [
+              "soravenib",
               "Since",
-              "Based",
               "sorafenib",
-              "soravenib"
+              "Based"
             ]
           }
         },
@@ -2249,8 +3503,8 @@
             "split_index": 3,
             "text_length": 1041,
             "potential_comparators": [
-              "Radiotherapy",
-              "sorafenib"
+              "sorafenib",
+              "Radiotherapy"
             ]
           }
         },
@@ -2305,9 +3559,9 @@
             "split_index": 4,
             "text_length": 969,
             "potential_comparators": [
-              "Pagina",
+              "Hermans",
               "sorafenib",
-              "Hermans"
+              "Pagina"
             ]
           }
         },
@@ -2325,9 +3579,197 @@
             "split_index": 2,
             "text_length": 864,
             "potential_comparators": [
+              "Comparative",
               "One",
+              "There"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** The first part of the introduction. **Source Type:** hta_submission\n\nIn a letter dated 6 December 2007, the Minister for Health, Welfare and Sport asked the College of Health Insurance to carry out a substantive review of Nexavar® in hepatocellular carcinoma.",
+          "metadata": {
+            "heading": "The first part of the introduction.",
+            "doc_id": "Sorafenib+(Nexavar)+bij+Hepatocellulair+carcinoom-gevorderd+niercelcarcinoom (1)",
+            "country": "NL",
+            "source_type": "hta_submission",
+            "start_page": 6,
+            "end_page": 6,
+            "created_date": "2007",
+            "folder_path": "HTA submissions/NL",
+            "split_index": 0,
+            "text_length": 272,
+            "potential_comparators": []
+          }
+        },
+        {
+          "text": "**Heading:** 2. new indication **Source Type:** hta_submission\n\nTreatment of patients with advanced renal cell carcinoma in whom previous therapy based on interferon alfa or interleukin 2 has failed or who are considered unsuitable for this therapy. 2.a.1.Manufacturer' s proposal The manufacturer requests extension of Annex 2 of the Health Insurance Schedule, adding the indication treatment of hepatocellular carcinooma. To determine whether sorafenib is also eligible for reimbursement for the new indication, the therapeutic value has been determined and the cost of inclusion estimated (see below). 2.a.3. 2.a.4 Conclusion Therapeutic value In the treatment of patients with advanced hepatocellular carcinoma, sorafenib has a therapeutical added value 2.a.5 Assessment of effectiveness For the assessment of efficacy, a waiver was granted due to the relative rarity of the condition and the lack of effective treatment methods 2.a.6 Cost-effectiveness.",
+          "metadata": {
+            "heading": "2. new indication",
+            "doc_id": "Sorafenib+(Nexavar)+bij+Hepatocellulair+carcinoom-gevorderd+niercelcarcinoom (1)",
+            "country": "NL",
+            "source_type": "hta_submission",
+            "start_page": 6,
+            "end_page": 7,
+            "created_date": "2007",
+            "folder_path": "HTA submissions/NL",
+            "split_index": 0,
+            "text_length": 958,
+            "potential_comparators": [
+              "sorafenib"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** The first part of the introduction. **Source Type:** hta_submission\n\nSorafenib is an inhibitor of several kinases involved in tumour proliferation and angiogenesis.Sorafenib was previously authorised for the treatment of patients with advanced renal cell carcinoma, after failure of interferon-α or interleukin-2 therapy or if patients are not eligible for this therapy.1 Recently, the registered indication has been extended to include the indication: treatment of hepatocellular carcinomas.2 The CHF considers, based on the studies conducted with sorafenib in the management of Hepatocellulaire Carcinomas, a therapeutic benefit for patients with hepatocell carcinomes for whom initiation of curative treatment or (continuation of) locoregional or local palliative treatment is considered medically impracticable or unnecessary ( hepatocele carcinome). For these patients, no other pharmaceutical treatment costs are available, so that the full cost of using sorabenib is no longer borne by the CHF.",
+          "metadata": {
+            "heading": "The first part of the introduction.",
+            "doc_id": "Sorafenib+(Nexavar)+bij+Hepatocellulair+carcinoom-gevorderd+niercelcarcinoom (1)",
+            "country": "NL",
+            "source_type": "hta_submission",
+            "start_page": 14,
+            "end_page": 14,
+            "created_date": "2007",
+            "folder_path": "HTA submissions/NL",
+            "split_index": 0,
+            "text_length": 1014,
+            "potential_comparators": [
+              "sorabenib",
+              "sorafenib"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Value of sorafenib as declared by the manufacturer **Source Type:** hta_submission\n\nNexavar was registered in July 2006 for the treatment of advanced renal cell carcinoma, following failure of treatment with interferon alfa or interleukin 2, or if the patient is not eligible for this treatment. The product is now the first systemic medicinal product for which a statistically significant survival gain and statistical significant prolongation of time to progression have been demonstrated in patients with hepatocellular cancer in a randomised, placebo-controlled clinical trial.",
+          "metadata": {
+            "heading": "Value of sorafenib as declared by the manufacturer",
+            "doc_id": "Sorafenib+(Nexavar)+bij+Hepatocellulair+carcinoom-gevorderd+niercelcarcinoom (1)",
+            "country": "NL",
+            "source_type": "hta_submission",
+            "start_page": 13,
+            "end_page": 13,
+            "created_date": "2007",
+            "folder_path": "HTA submissions/NL",
+            "split_index": 0,
+            "text_length": 594,
+            "potential_comparators": [
+              "sorafenib"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Secondly, there is the introduction. **Source Type:** hta_submission\n\nTreatment of patients with advanced renal cell carcinoma who have failed previous therapy based on interferon alfa or interleukin 2 or who are considered unsuitable for this therapy.",
+          "metadata": {
+            "heading": "Secondly, there is the introduction.",
+            "doc_id": "Sorafenib+(Nexavar)+bij+Hepatocellulair+carcinoom-gevorderd+niercelcarcinoom (1)",
+            "country": "NL",
+            "source_type": "hta_submission",
+            "start_page": 8,
+            "end_page": 8,
+            "created_date": "2007",
+            "folder_path": "HTA submissions/NL",
+            "split_index": 0,
+            "text_length": 265,
+            "potential_comparators": []
+          }
+        },
+        {
+          "text": "**Heading:** 5 - References and references **Source Type:** hta_submission\n\nThe pharmacotherapeutic report on sorafenib (Nexavar®) was published by the College of Health Insurance, Diemen, 2006.",
+          "metadata": {
+            "heading": "5 - References and references",
+            "doc_id": "Sorafenib+(Nexavar)+bij+Hepatocellulair+carcinoom-gevorderd+niercelcarcinoom (1)",
+            "country": "NL",
+            "source_type": "hta_submission",
+            "start_page": 15,
+            "end_page": 15,
+            "created_date": "2007",
+            "folder_path": "HTA submissions/NL",
+            "split_index": 0,
+            "text_length": 194,
+            "potential_comparators": [
+              "sorafenib"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** The Court of Justice has held that: **Source Type:** hta_submission\n\nDifferent staging classifications are used in the diagnosis of hepatocellular carcinoma, with no consensus on the preferred staging system. The recommendations in the guideline issued under the auspices of the American Association for the Study of Liver Diseases and with the collaboration of the European association for the study of the liver (2005), are based on the Barcelona-CBC-Cancer-Clinic (Liververver-Liver) System (LCV) (SLCV).3 The recent guidelines from the European National Comprehensive Cancer Network (ECN) are less generous with regard to these factors. National Comprehensive Cancer Network (USA; 2008) is less nuanced regarding the factors mentioned There is no (other) recent European directive.",
+          "metadata": {
+            "heading": "The Court of Justice has held that:",
+            "doc_id": "Sorafenib+(Nexavar)+bij+Hepatocellulair+carcinoom-gevorderd+niercelcarcinoom (1)",
+            "country": "NL",
+            "source_type": "hta_submission",
+            "start_page": 8,
+            "end_page": 9,
+            "created_date": "2007",
+            "folder_path": "HTA submissions/NL",
+            "split_index": 1,
+            "text_length": 798,
+            "potential_comparators": [
+              "National"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** 2.1 Number of patients treated **Source Type:** hta_submission\n\nThe recommended dose of sorafenib is 400 mg twice a day. Treatment should be continued for as long as the patient has medical benefit or until unacceptable toxicity occurs. The manufacturer estimates that the average duration of treatment is 5 months (155 days), based on the average length of treatment in studies with the use of the average dose of Sorafenib in place of 710 mg per day, which was also recorded in two clinical trials, where the cost of the dose was 800 mg.",
+          "metadata": {
+            "heading": "2.1 Number of patients treated",
+            "doc_id": "Sorafenib+(Nexavar)+bij+Hepatocellulair+carcinoom-gevorderd+niercelcarcinoom (1)",
+            "country": "NL",
+            "source_type": "hta_submission",
+            "start_page": 14,
+            "end_page": 14,
+            "created_date": "2007",
+            "folder_path": "HTA submissions/NL",
+            "split_index": 0,
+            "text_length": 552,
+            "potential_comparators": [
+              "was 800 mg",
+              "Treatment",
+              "of 710 mg",
+              "sorafenib",
+              "is 400 mg"
+            ]
+          }
+        },
+        {
+          "text": "**Source Type:** hta_submission\n\nThis medicine is included in Annex 1B of the health insurance regulation and is currently being assessed for the treatment of a new cancer, i. e. This review concerns a new indication, namely the use of sorafenib in the treatment of hepatocellular carcinoma (liver cancer). You have granted the manufacturer of the medicine Nexavar® an exemption for a pharmaco-economic study. The Pharmaceutical Aid Committee (CFH) of the CVZ has now completed the substantive review. The considerations herein are contained in the CFH Report 08/03 attached as an annex. On the basis of this opinion of CFH and administrative considerations, the CDC has adopted its opinion on Nexavir® (sorafenib) in hepatocell carcinomas. CVZ Opinion The CVZ recommends that you extend the detailed conditions for Nexaver® to Annex 2 of the Health Insurance Regulations. This extension covers a subgroup of patients with hepatotoxicity to sorafenil per year, 164 patients were enrolled in the Netherlands in 1989-2000 (more than one patient per year). Background In the Netherlands, during the period 1989-2000, 1964 patients with hepatocellular carcinoma were enrolled (an average of 164 patients per year). The 5-year survival rate was 7% and the 1-year survivorship rate was 22%.",
+          "metadata": {
+            "heading": "",
+            "doc_id": "Sorafenib+(Nexavar)+bij+Hepatocellulair+carcinoom-gevorderd+niercelcarcinoom (1)",
+            "country": "NL",
+            "source_type": "hta_submission",
+            "start_page": 1,
+            "end_page": 4,
+            "created_date": "2007",
+            "folder_path": "HTA submissions/NL",
+            "split_index": 1,
+            "text_length": 1284,
+            "potential_comparators": [
+              "Background",
+              "sorafenib",
+              "CVZ",
+              "You"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** The Court of Justice has held that: **Source Type:** hta_submission\n\n3.a. Scope Epidemiology. Hepatocellular carcinoma is newly diagnosed in an estimated 560,000 people per year, worldwide.1 In the Netherlands, a total of 1964 patients with hepatocellulose cancer were registered in the period 1989-2000 (1964/12 = 164/year).2 The male-female ratio was 2.4:1. In 2000, the standardized incidence was 1.6/100,000 men and 0.3/100,000 women. There was no increase over time. Risk factors in Europe are: hepatitis C (60-70%), alcohol consumption (20%), hepatitis B (10-15%) and other (10%). In a European study covering 1990-1994, the 5-year survival rate for the Netherlands was 7% and the 1-year survivorship rate was 22%.2 Stage classification. Several factors are important for the prognosis and thus for the indication for treatment, including tumour size, degree of tumour spread, liver function (Child-Pugh stage), the general physical condition of the patient (performance status; PS), and symptoms associated with cancer.",
+          "metadata": {
+            "heading": "The Court of Justice has held that:",
+            "doc_id": "Sorafenib+(Nexavar)+bij+Hepatocellulair+carcinoom-gevorderd+niercelcarcinoom (1)",
+            "country": "NL",
+            "source_type": "hta_submission",
+            "start_page": 8,
+            "end_page": 9,
+            "created_date": "2007",
+            "folder_path": "HTA submissions/NL",
+            "split_index": 0,
+            "text_length": 1039,
+            "potential_comparators": [
               "There",
-              "Comparative"
+              "Scope",
+              "Hepatocellular",
+              "Several",
+              "Risk"
             ]
           }
         }
@@ -2336,10 +3778,10 @@
     "PO": {
       "country_metadata": {
         "country_code": "PO",
-        "chunk_count": 15,
-        "total_text_length": 15992,
+        "chunk_count": 25,
+        "total_text_length": 24541,
         "unique_documents": 1,
-        "unique_headings": 5
+        "unique_headings": 10
       },
       "chunks": [
         {
@@ -2392,8 +3834,8 @@
             "split_index": "1_1_0",
             "text_length": 859,
             "potential_comparators": [
-              "sorafenib",
-              "According"
+              "According",
+              "sorafenib"
             ]
           }
         },
@@ -2411,11 +3853,11 @@
             "split_index": 0,
             "text_length": 1398,
             "potential_comparators": [
-              "Then",
               "It",
-              "Based",
               "AOTM-OT-4351-41/2014",
-              "sorafenib"
+              "Then",
+              "sorafenib",
+              "Based"
             ]
           }
         },
@@ -2471,10 +3913,10 @@
             "split_index": 3,
             "text_length": 1404,
             "potential_comparators": [
-              "Taking",
-              "All",
               "Ahmed",
-              "Answers"
+              "Answers",
+              "All",
+              "Taking"
             ]
           }
         },
@@ -2511,10 +3953,10 @@
             "split_index": 4,
             "text_length": 1537,
             "potential_comparators": [
-              "sorafenib",
-              "However",
               "It",
-              "Additionally"
+              "Additionally",
+              "However",
+              "sorafenib"
             ]
           }
         },
@@ -2553,8 +3995,8 @@
             "split_index": "1_1_0",
             "text_length": 1414,
             "potential_comparators": [
-              "Additional",
-              "sorafenib"
+              "sorafenib",
+              "Additional"
             ]
           }
         },
@@ -2608,9 +4050,9 @@
             "split_index": 1,
             "text_length": 810,
             "potential_comparators": [
-              "sorafenib",
               "It",
-              "Nevertheless"
+              "Nevertheless",
+              "sorafenib"
             ]
           }
         },
@@ -2628,12 +4070,203 @@
             "split_index": 2,
             "text_length": 1156,
             "potential_comparators": [
-              "Due",
               "Overall",
+              "Due",
               "Therefore",
               "However",
               "sorafenib"
             ]
+          }
+        },
+        {
+          "text": "**Heading:** References **Source Type:** hta_submission\n\n1. Position of the Transparency Council No. 19/2020 of 24 February 2020 on the evaluation of Nexavar\n(sorafenibum) under the following drug programme: “Treatment of patients with progressive, locally\nadvanced or metastatic, differentiated (papillary/follicular/oxyphilic – Hürthle cell) thyroid cancer, refractory to radioactive iodine (ICD10 C73)”\n2. Rep\n“Tre\n(pap\nC73\nport No. OT.4331.62.2019 Nexavar (sorafenibum) under the following drug programme:\neatment of patients with progressive, locally advanced or metastatic, differentiated pillary/follicular/oxyphilic – Hürthle cell) thyroid cancer, refractory to radioactive iodine (ICD10\n3)”. Completion date of the verification analysis: 14 February 2020",
+          "metadata": {
+            "heading": "References",
+            "doc_id": "EN-RP_19_2020_Nexavar_TN_zaczerniona-na-www",
+            "country": "PO",
+            "source_type": "hta_submission",
+            "start_page": 15,
+            "end_page": 16,
+            "created_date": "2020",
+            "folder_path": "HTA submissions/PO",
+            "split_index": 0,
+            "text_length": 763,
+            "potential_comparators": [
+              "OT.4331.62.2019",
+              "Rep",
+              "Completion",
+              "Position"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Progression-free survival (PFS) **Source Type:** hta_submission\n\nDepending on the histopathological type of differentiated thyroid cancer, a significantly statistically lower risk of progression was reported in sorafenib users compared to patients using placebo in the subgroup:\n• Patients with papillary cancer, 43% lower – HR = 0.53 (95% CI: 0.37; 0.75);\n• Patients with oxyphilic cancer, 56% lower – HR = 0.44 (95% CI: 0.25; 0.78);\nNo statistical significance was achieved in the subgroup of patients with follicular cancer.",
+          "metadata": {
+            "heading": "Progression-free survival (PFS)",
+            "doc_id": "EN-RP_19_2020_Nexavar_TN_zaczerniona-na-www",
+            "country": "PO",
+            "source_type": "hta_submission",
+            "start_page": 6,
+            "end_page": 7,
+            "created_date": "2020",
+            "folder_path": "HTA submissions/PO",
+            "split_index": 1,
+            "text_length": 540,
+            "potential_comparators": [
+              "sorafenib"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Quality of life **Source Type:** hta_submission\n\nThe assessment of the quality of life in patients from the DECISION study was presented in Schlumberger\n2013; the Agency also took into account data from the EUnetHTA 2015 report. Statistically significant differences to the disadvantage of sorafenib were noted in the quality of life assessment questionnaires:\n• FACT-G: MD = -3.45 (95% Cl: -5.45; - 2.20);\n• EQ-5D: MD = -0.07 (95% Cl: -0.10; 0.04);\n• EQ-5D VAS: MD = -6.75 (95% Cl: -9.38; -4.13). Taking into account the NICE 2017 report, which indicates 0.10 to 0.12 point-changes on the EQ-5D scale and\nat least 7-point changes on the EQ-5D VAS scale as statistically significant, the obtained results should be considered clinically irrelevant.",
+          "metadata": {
+            "heading": "Quality of life",
+            "doc_id": "EN-RP_19_2020_Nexavar_TN_zaczerniona-na-www",
+            "country": "PO",
+            "source_type": "hta_submission",
+            "start_page": 7,
+            "end_page": 7,
+            "created_date": "2020",
+            "folder_path": "HTA submissions/PO",
+            "split_index": 0,
+            "text_length": 761,
+            "potential_comparators": [
+              "sorafenib",
+              "Statistically",
+              "Taking"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Adverse events (AEs) **Source Type:** hta_submission\n\nThe uncertainty of the clinical analysis is affected by the following limitations:\n• The patient population included in the DECISION study did not fully match the population included\nin the drug programme. Patients qualified for the drug programme with papillary/follicular/Hürthle\ncell thyroid carcinoma refractory to radioactive iodine constituted 57%, 8% and 18% of patients included in the study, respectively, while poorly differentiated cancer patients constituted 10% of the\nstudy population. Considering the above, it is worth noting that the results for individual\nsubpopulations are presented only in the assessment of the primary endpoint (PFS).",
+          "metadata": {
+            "heading": "Adverse events (AEs)",
+            "doc_id": "EN-RP_19_2020_Nexavar_TN_zaczerniona-na-www",
+            "country": "PO",
+            "source_type": "hta_submission",
+            "start_page": 8,
+            "end_page": 10,
+            "created_date": "2020",
+            "folder_path": "HTA submissions/PO",
+            "split_index": 5,
+            "text_length": 723,
+            "potential_comparators": [
+              "Patients",
+              "Considering"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Proposals of risk-sharing schemes **Source Type:** hta_submission\n\ndeviations in favour of the intervention in question were recorded in the scenarios testing the extrapolation of Kaplan-Meier curves from the DECISION study regarding overall survival, using alternative parametric distributions (log-normal and loglogistic) – the ICUR value [information protected as a trade secret] in relation to [information protected as a trade secret] • This variant of the analysis not taking the RSS into account: o The highest deviations to the disadvantage of sorafenib were due to: ▪ adopting the HR from the final survival analysis – this changes the ICUR value to PLN 491,000/QALY ▪ taking into account cross-over correction using the IPE method – ICUR equal to PLN 544,000/QALY. o Deviations from the results of the basic analysis in favour of sorafenib resulted from the adoption of alternative parametric curves (log-normal, log-logistic) for overall survival – ICUR was PLN 190,000/QALY and PLN 195,000/QALY, respectively.",
+          "metadata": {
+            "heading": "Proposals of risk-sharing schemes",
+            "doc_id": "EN-RP_19_2020_Nexavar_TN_zaczerniona-na-www",
+            "country": "PO",
+            "source_type": "hta_submission",
+            "start_page": 10,
+            "end_page": 15,
+            "created_date": "2020",
+            "folder_path": "HTA submissions/PO",
+            "split_index": "2_1_0",
+            "text_length": 1034,
+            "potential_comparators": [
+              "sorafenib"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Proposals of risk-sharing schemes **Source Type:** hta_submission\n\nThe economic model includes the following costs: the cost of sorafenib, the cost of drug administration,\ndiagnosis and monitoring of therapy under the proposed drug programme, the cost of routine care (BSC), the cost of non-drug services, and the cost of treating grade 3 and 4 adverse events for which statistically\nsignificant differences in incidence were observed. Discounting in the amount of 5% for costs and 3.5% for\nhealth effects was taken into account. A lifetime time horizon (30 years) was adopted. According to the applicant's estimates from the NHF's perspective, the use of sorafenib with BSC in BSC is\n[information protected as a trade secret]. The estimated incremental cost utility ratio (ICUR) for the SOR vs\nBSC comparison was:\n• PLN/QALY [information protected as a trade secret] taking into account the risk-sharing scheme\n(RSS);\n• PLN 351,946/QALY without taking the RSS into account. [information protected as a trade secret] of the profitability threshold referred to in the Act on reimbursement (PLN 147,024/QALY).",
+          "metadata": {
+            "heading": "Proposals of risk-sharing schemes",
+            "doc_id": "EN-RP_19_2020_Nexavar_TN_zaczerniona-na-www",
+            "country": "PO",
+            "source_type": "hta_submission",
+            "start_page": 10,
+            "end_page": 15,
+            "created_date": "2020",
+            "folder_path": "HTA submissions/PO",
+            "split_index": 1,
+            "text_length": 1120,
+            "potential_comparators": [
+              "According",
+              "Discounting",
+              "sorafenib"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Proposals of risk-sharing schemes **Source Type:** hta_submission\n\nImplementing the solution proposed by the applicant was assessed as unlikely. Review of recommendations issued in other countries in relation to the technology in question\n7 clinical guidelines have been identified:\n• Jarząb 2018 – Polish;\n• European Thyroid Association (ETA) 2019 – Europe;\n• European Society of Medical Oncology (ESMO) 2019 – Europe;\n• National Comprehensive Cancer Network (NCCN) 2.2019 – United States;\n• National Cancer Institute (NCI) 2018 – United States;\n• American Thyroid Association (ATA) 2015 – United States;\n• Italian Society of Endocrinology (SIE) 2018 – Italy. All the guidelines point to sorafenib as the recommended or applicable therapy for the treatment of patients with progressive, locally advanced and/or metastatic thyroid cancer refractory to radioactive iodine.",
+          "metadata": {
+            "heading": "Proposals of risk-sharing schemes",
+            "doc_id": "EN-RP_19_2020_Nexavar_TN_zaczerniona-na-www",
+            "country": "PO",
+            "source_type": "hta_submission",
+            "start_page": 10,
+            "end_page": 15,
+            "created_date": "2020",
+            "folder_path": "HTA submissions/PO",
+            "split_index": 10,
+            "text_length": 884,
+            "potential_comparators": [
+              "All",
+              "sorafenib",
+              "Review"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Time to progression (TTP) **Source Type:** hta_submission\n\nA 5.4 month longer median TTP was noted in the sorafenib arm (median = 11.1 months) compared to the PLC\narm (median = 5.7 months). The risk of shorter TTP was statistically significantly lower by 44% in the arm\nusing SOR vs PLC: HR = 0.56 (95% Cl: 0.43; 0.72).",
+          "metadata": {
+            "heading": "Time to progression (TTP)",
+            "doc_id": "EN-RP_19_2020_Nexavar_TN_zaczerniona-na-www",
+            "country": "PO",
+            "source_type": "hta_submission",
+            "start_page": 7,
+            "end_page": 7,
+            "created_date": "2020",
+            "folder_path": "HTA submissions/PO",
+            "split_index": 0,
+            "text_length": 332,
+            "potential_comparators": [
+              "sorafenib"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Proposals of risk-sharing schemes **Source Type:** hta_submission\n\nThe conducted probabilistic sensitivity analysis indicates that, at the current cost-effectiveness threshold (PLN\n147,024/QALY), the cost-effectiveness probability of sorafenib in the RSS variant is [information protected as a trade secret] and 2% in the variant without RSS. Limitations of the analysis\nThe main limitation of the economic analysis is the significant uncertainty regarding the key parameter – overall survival – included in the economic model. The median overall survival in the DECISION study was not\nachieved and no differences between sorafenib and BSC in terms of this endpoint were found. The applicant's\nbasic analysis is based on results adjusted for cross-over (which occurred in 75% of patients in the BSC arm) obtained as part of post-hoc secondary survival analyses. It should also be underlined that the applicant has\nnot submitted scientific evidence showing a correlation between PFS and OS. Assuming that the applicant's\nmodel lacks differences in overall survival between the two compared arms, the intervention in question becomes a technology dominated [information protected as a trade secret]. It should also be noted that the analyses adopted the HR value for overall survival based on an interimanalysis from the cut-off point in May 2013, despite the existence of more recent data for this parameter (cut- off point in July 2015). The applicant explains that this approach is caused by the inability to reproduce\nsurvival curves for more recent data.",
+          "metadata": {
+            "heading": "Proposals of risk-sharing schemes",
+            "doc_id": "EN-RP_19_2020_Nexavar_TN_zaczerniona-na-www",
+            "country": "PO",
+            "source_type": "hta_submission",
+            "start_page": 10,
+            "end_page": 15,
+            "created_date": "2020",
+            "folder_path": "HTA submissions/PO",
+            "split_index": 3,
+            "text_length": 1570,
+            "potential_comparators": [
+              "It",
+              "Assuming",
+              "sorafenib",
+              "Limitations"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Progression-free survival (PFS) **Source Type:** hta_submission\n\nDifferences in PFS in favour of the SOR arm compared to the arm using PLC were noted for a median observation period of 16.2 months:\n• As assessed by an independent committee, median PFS in the arm using SOR (median = 10.8 months)\nwas 5 months longer than in the arm using PLC (median 5.8 months). A statistically significantly lower\nrisk of progression (by 41%) in the SOR arm compared to the PLC arm was recorded: HR = 0.59 (95%\nCI: 0.45; 0.76);\n• As assessed by the researchers, median PFS in the SOR arm (median = 10.8 months) was 5.4 month\nlonger than in the PLC arm (median = 5.4 months). A statistically significantly lower risk of progression\n(by 51%) in the SOR arm compared to the PLC arm was recorded: HR = 0.49 (95% CI: 0.39; 0.61).",
+          "metadata": {
+            "heading": "Progression-free survival (PFS)",
+            "doc_id": "EN-RP_19_2020_Nexavar_TN_zaczerniona-na-www",
+            "country": "PO",
+            "source_type": "hta_submission",
+            "start_page": 6,
+            "end_page": 7,
+            "created_date": "2020",
+            "folder_path": "HTA submissions/PO",
+            "split_index": 0,
+            "text_length": 822,
+            "potential_comparators": []
           }
         }
       ]
@@ -2641,10 +4274,10 @@
     "PT": {
       "country_metadata": {
         "country_code": "PT",
-        "chunk_count": 15,
-        "total_text_length": 10577,
+        "chunk_count": 22,
+        "total_text_length": 14560,
         "unique_documents": 1,
-        "unique_headings": 8
+        "unique_headings": 14
       },
       "chunks": [
         {
@@ -2661,9 +4294,9 @@
             "split_index": 2,
             "text_length": 805,
             "potential_comparators": [
-              "Safety",
+              "Patients",
               "Adverse",
-              "Patients"
+              "Safety"
             ]
           }
         },
@@ -2681,10 +4314,10 @@
             "split_index": 0,
             "text_length": 925,
             "potential_comparators": [
+              "sorafenib",
               "lenvatinib",
               "Evaluation",
-              "There",
-              "sorafenib"
+              "There"
             ]
           }
         },
@@ -2702,12 +4335,12 @@
             "split_index": 5,
             "text_length": 1022,
             "potential_comparators": [
+              "Adjusted",
               "Adverse",
-              "Time",
               "Safety",
               "sorafenib",
-              "lenvatinib",
-              "Adjusted"
+              "Time",
+              "lenvatinib"
             ]
           }
         },
@@ -2725,11 +4358,11 @@
             "split_index": 1,
             "text_length": 796,
             "potential_comparators": [
-              "Evaluation",
+              "lenvitinib",
+              "There",
               "sorafenib",
               "lenvatinib",
-              "There",
-              "lenvitinib"
+              "Evaluation"
             ]
           }
         },
@@ -2764,8 +4397,8 @@
             "text_length": 815,
             "potential_comparators": [
               "lenvatinib",
-              "sorafenib",
-              "Secondary"
+              "Secondary",
+              "sorafenib"
             ]
           }
         },
@@ -2783,9 +4416,9 @@
             "split_index": 4,
             "text_length": 884,
             "potential_comparators": [
+              "lenvitinib",
               "lenvatinib",
-              "sorafenib",
-              "lenvitinib"
+              "sorafenib"
             ]
           }
         },
@@ -2803,10 +4436,10 @@
             "split_index": 0,
             "text_length": 1228,
             "potential_comparators": [
+              "sorafenib",
               "lenvatinib",
-              "There",
               "Thus",
-              "sorafenib"
+              "There"
             ]
           }
         },
@@ -2826,9 +4459,9 @@
             "potential_comparators": [
               "Modified",
               "sorafenib",
-              "lenvatinib",
               "Inclusion",
-              "Patients"
+              "Patients",
+              "lenvatinib"
             ]
           }
         },
@@ -2846,21 +4479,21 @@
             "split_index": 1,
             "text_length": 1361,
             "potential_comparators": [
-              "or 8 mg",
-              "Investigators",
-              "or 4 mg",
-              "Dose",
-              "of 400 mg",
-              "soravenib",
-              "Thus",
-              "soravenib 400 mg",
-              "sorabenib",
+              "lenvitinib",
               "and 4 mg",
+              "or 4 mg",
+              "sorabenib",
+              "of 400 mg",
+              "or 8 mg",
+              "Dose",
+              "Investigators",
+              "Thus",
               "sorafenib",
-              "lenvatinib",
               "All",
               "Patients",
-              "lenvitinib"
+              "soravenib",
+              "lenvatinib",
+              "soravenib 400 mg"
             ]
           }
         },
@@ -2894,9 +4527,9 @@
             "split_index": 0,
             "text_length": 277,
             "potential_comparators": [
+              "Lenvatinib",
               "lenvatinib",
               "sorafenib",
-              "Lenvatinib",
               "Lancet"
             ]
           }
@@ -2933,8 +4566,8 @@
             "split_index": 0,
             "text_length": 523,
             "potential_comparators": [
-              "lenvatinib",
               "sorafenib",
+              "lenvatinib",
               "Added"
             ]
           }
@@ -2953,8 +4586,150 @@
             "split_index": 0,
             "text_length": 301,
             "potential_comparators": [
-              "What",
+              "lenvatinib",
+              "What"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Epidemiology and characterization of the disease **Source Type:** hta_submission\n\nBased on this Portuguese population of 10 million inhabitants, the number of new cases will be approximately 452 patients. Considering that 32% of these patients will have advanced CHC 145 and 57% of them will not initiate treatment, lenvatinib will be studied for 62.",
+          "metadata": {
+            "heading": "Epidemiology and characterization of the disease",
+            "doc_id": "Relatório de avaliação de financiamento público de Lenvima (lenvatinib) 2020",
+            "country": "PT",
+            "source_type": "hta_submission",
+            "start_page": 3,
+            "end_page": 3,
+            "created_date": "2015",
+            "folder_path": "HTA submissions/PT",
+            "split_index": 1,
+            "text_length": 363,
+            "potential_comparators": [
+              "lenvatinib",
+              "Considering"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** In the absence of a clinical evaluation, the pharmacotherapeutic indication shall be considered to be satisfactory. **Source Type:** hta_submission\n\nLenvima (lenvatinib) has undergone public funding evaluation in the following therapeutic indication for the treatment of adult patients with resectable hepatic carcinoma who have not received any therapy compared to the comparator sorafenib, the medicinal product evaluated for comparability.",
+          "metadata": {
+            "heading": "In the absence of a clinical evaluation, the pharmacotherapeutic indication shall be considered to be satisfactory.",
+            "doc_id": "Relatório de avaliação de financiamento público de Lenvima (lenvatinib) 2020",
+            "country": "PT",
+            "source_type": "hta_submission",
+            "start_page": 2,
+            "end_page": 2,
+            "created_date": "2015",
+            "folder_path": "HTA submissions/PT",
+            "split_index": 0,
+            "text_length": 455,
+            "potential_comparators": [
+              "lenvatinib",
+              "sorafenib"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Indication/subpopulation Intervention and comparison **Source Type:** hta_submission\n\nThe recommended daily dose of lenvatinib is 8 mg (two 4 mg capsules) once daily for patients with body weight < 60 kg, and 12 mg (three 4 mg Capsules), once daily, may be administered to patients with a body weight ≥ 60 kg. Detailed information regarding monitoring, dose adjustment and discontinuation is provided in Table 2 of the SPC. The recommended dose of sorafenib in adults is 400 mg (two 200 mg tablets) twice daily (equivalent to a total daily dose of 800 mg). Treatment should be continued as long as clinical benefit is observed or until unacceptable toxicity occurs. the dose should be reduced to two 200 mg tablets of sorafenib once a day. o Not applicable o Not relevant. comparison 4.",
+          "metadata": {
+            "heading": "Indication/subpopulation Intervention and comparison",
+            "doc_id": "Relatório de avaliação de financiamento público de Lenvima (lenvatinib) 2020",
+            "country": "PT",
+            "source_type": "hta_submission",
+            "start_page": 4,
+            "end_page": 6,
+            "created_date": "2015",
+            "folder_path": "HTA submissions/PT",
+            "split_index": 0,
+            "text_length": 799,
+            "potential_comparators": [
+              "of 800 mg",
+              "is 400 mg",
+              "is 8 mg",
+              "three 4 mg",
+              "two 200 mg",
+              "Treatment",
+              "lenvatinib",
+              "sorafenib",
+              "two 4 mg",
+              "Detailed",
+              "and 12 mg"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Epidemiology and characterization of the disease **Source Type:** hta_submission\n\nHepatocellular carcinoma (HCC) is the most frequent primary tumor of the liver, comprising about 90% of these tumors. It is the 6th most common worldwide, being responsible for a large number of deaths. HCCs occur in 90% of situations in a cirrhosis context, with the main risk factors in the Western world being hepatitis C virus infection and alcoholism. In the Eastern world there is a high prevalence of hepatitis B (which has been shown to have a direct oncogenic effect). In Portugal, for 2015 and based on the ROR-Sul data, it is estimated that about 360 new cases have been diagnosed nationally. The standardized rate for age (European standard population) is 4.26/100,000 and 0.26/100.000 respectively for men and women.",
+          "metadata": {
+            "heading": "Epidemiology and characterization of the disease",
+            "doc_id": "Relatório de avaliação de financiamento público de Lenvima (lenvatinib) 2020",
+            "country": "PT",
+            "source_type": "hta_submission",
+            "start_page": 3,
+            "end_page": 3,
+            "created_date": "2015",
+            "folder_path": "HTA submissions/PT",
+            "split_index": 0,
+            "text_length": 824,
+            "potential_comparators": [
+              "It",
+              "HCCs"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** 2.Description of the technology and therapeutic alternatives **Source Type:** hta_submission\n\nLenvatinib is a tyrosine kinase multiple receptor (RTK) inhibitor and selectively inhibits the activity of vascular endothelial growth factor (VEGF) receptors, VEGFR1 (FLT1), VEGGR2 (KDR), and VEGGFR3 ( FLT4) receptors as well as other pro-angiogenic and oncogenic pathway-related RTKs, including fibroblast growth factor receptors (FGF), FGFR1, 2, 3, and 4 receptors; platelet-derived growth factor receptor (PDGF) receptor, PDGFRα receptor, KIT, and RET.",
+          "metadata": {
+            "heading": "2.Description of the technology and therapeutic alternatives",
+            "doc_id": "Relatório de avaliação de financiamento público de Lenvima (lenvatinib) 2020",
+            "country": "PT",
+            "source_type": "hta_submission",
+            "start_page": 4,
+            "end_page": 4,
+            "created_date": "2015",
+            "folder_path": "HTA submissions/PT",
+            "split_index": 0,
+            "text_length": 563,
+            "potential_comparators": [
               "lenvatinib"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** The economic evaluation **Source Type:** hta_submission\n\nA cost minimisation analysis was carried out between the evaluated medicinal product and the comparator alternative established in the pharmacotherapeutic evaluation. Pursuant to point (a) of paragraph 8 of Decree-Law No 97/2015 of 1 June, the economic advantage of the medicinal products under evaluation is 10% lower compared to its comparative alternative. Thus, Lenvima has a treatment cost 10% lower than the treatment cost of its comparator sorafenib.",
+          "metadata": {
+            "heading": "The economic evaluation",
+            "doc_id": "Relatório de avaliação de financiamento público de Lenvima (lenvatinib) 2020",
+            "country": "PT",
+            "source_type": "hta_submission",
+            "start_page": 18,
+            "end_page": 19,
+            "created_date": "2015",
+            "folder_path": "HTA submissions/PT",
+            "split_index": 0,
+            "text_length": 527,
+            "potential_comparators": [
+              "sorafenib",
+              "Thus",
+              "Pursuant"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** The Commission shall be empowered to adopt delegated acts in accordance with Article 26 to supplement this Regulation by laying down detailed rules for the application of this Regulation. **Source Type:** hta_submission\n\nThe cost of Lenvima (lenvatinib) therapy is higher than the cost of sorafenib therapy, and has been shown to decrease the risk of systemic cardiovascular disease (CHD) progression by 10% in comparison to previous data.",
+          "metadata": {
+            "heading": "The Commission shall be empowered to adopt delegated acts in accordance with Article 26 to supplement this Regulation by laying down detailed rules for the application of this Regulation.",
+            "doc_id": "Relatório de avaliação de financiamento público de Lenvima (lenvatinib) 2020",
+            "country": "PT",
+            "source_type": "hta_submission",
+            "start_page": 2,
+            "end_page": 2,
+            "created_date": "2015",
+            "folder_path": "HTA submissions/PT",
+            "split_index": 0,
+            "text_length": 452,
+            "potential_comparators": [
+              "lenvatinib",
+              "sorafenib"
             ]
           }
         }
@@ -2963,10 +4738,10 @@
     "SE": {
       "country_metadata": {
         "country_code": "SE",
-        "chunk_count": 15,
-        "total_text_length": 11195,
+        "chunk_count": 25,
+        "total_text_length": 19400,
         "unique_documents": 1,
-        "unique_headings": 13
+        "unique_headings": 16
       },
       "chunks": [
         {
@@ -2983,10 +4758,10 @@
             "split_index": 0,
             "text_length": 866,
             "potential_comparators": [
+              "sorafenib",
               "durvalumab",
-              "Additional",
               "tremelimumab",
-              "sorafenib"
+              "Additional"
             ]
           }
         },
@@ -3004,8 +4779,8 @@
             "split_index": 0,
             "text_length": 345,
             "potential_comparators": [
-              "sorafenib",
-              "bevacizumab"
+              "bevacizumab",
+              "sorafenib"
             ]
           }
         },
@@ -3025,8 +4800,8 @@
             "potential_comparators": [
               "Value",
               "As",
-              "Brazier",
               "sorafenib",
+              "Brazier",
               "TLV's"
             ]
           }
@@ -3047,13 +4822,13 @@
             "potential_comparators": [
               "bevacizumab",
               "tremelimumab",
-              "imudovumab",
               "durvalumab",
+              "imudovumab",
+              "atezolizumab",
               "sorabenib",
               "sorafenib",
-              "lenvatinib",
               "Both",
-              "atezolizumab"
+              "lenvatinib"
             ]
           }
         },
@@ -3071,11 +4846,11 @@
             "split_index": 0,
             "text_length": 1370,
             "potential_comparators": [
-              "Based",
               "bevacizumab",
-              "STRIDE",
+              "atezolizumab",
               "sorafenib",
-              "atezolizumab"
+              "STRIDE",
+              "Based"
             ]
           }
         },
@@ -3096,8 +4871,8 @@
               "bevacizumab",
               "Section",
               "Also",
-              "sorafenib",
               "TLV",
+              "sorafenib",
               "Patients"
             ]
           }
@@ -3116,9 +4891,9 @@
             "split_index": 0,
             "text_length": 508,
             "potential_comparators": [
+              "soraphenib",
               "PFS",
               "lenvatinib",
-              "soraphenib",
               "sorafenib"
             ]
           }
@@ -3137,11 +4912,11 @@
             "split_index": 0,
             "text_length": 923,
             "potential_comparators": [
-              "Liver",
               "bevacizumab",
+              "atezolizumab",
               "BCLC",
-              "Tumor",
-              "atezolizumab"
+              "Liver",
+              "Tumor"
             ]
           }
         },
@@ -3159,13 +4934,13 @@
             "split_index": 1,
             "text_length": 473,
             "potential_comparators": [
-              "World",
-              "Available",
               "bevacizumab",
-              "Finn",
               "tremelimumab",
               "durvalumab",
-              "atezolizumab"
+              "atezolizumab",
+              "World",
+              "Finn",
+              "Available"
             ]
           }
         },
@@ -3202,9 +4977,9 @@
             "split_index": 0,
             "text_length": 852,
             "potential_comparators": [
+              "bevacizumab",
               "TLV",
-              "sorafenib",
-              "bevacizumab"
+              "sorafenib"
             ]
           }
         },
@@ -3240,10 +5015,10 @@
             "split_index": 1,
             "text_length": 806,
             "potential_comparators": [
-              "sorafenib",
-              "Lenvima",
+              "Additionally",
               "Without",
-              "Additionally"
+              "sorafenib",
+              "Lenvima"
             ]
           }
         },
@@ -3261,19 +5036,19 @@
             "split_index": 0,
             "text_length": 778,
             "potential_comparators": [
-              "Nationellt",
-              "EMEA/H/C/006016/0000\"",
-              "Regionala",
-              "atezolizumab",
-              "Available",
               "bevacizumab",
-              "Cheng",
+              "Version",
               "tremelimumab",
               "durvalumab",
-              "sorafenib",
-              "Version",
+              "Regionala",
+              "atezolizumab",
               "Availabe",
-              "NEJM"
+              "EMEA/H/C/006016/0000\"",
+              "Nationellt",
+              "NEJM",
+              "sorafenib",
+              "Cheng",
+              "Available"
             ]
           }
         },
@@ -3291,10 +5066,216 @@
             "split_index": 0,
             "text_length": 441,
             "potential_comparators": [
-              "bevazizumab",
-              "atezozizumab",
+              "atezolizumab",
               "bevacizumab",
-              "atezolizumab"
+              "atezozizumab",
+              "bevazizumab"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Overall survival **Source Type:** hta_submission\n\nIn the company' s baseline scenario, the OS for STRIDE is extrapolated with the distribution [--] The distribution [--] is used to extrapolate the OS of sorafenib. According to the company, the choice of the extrapolation distribution is based on a weighting of good statistical fit to KM- 8 Medicinal products containing Sorafenib are included in the periodic table of contents. 9 Bevacizumab-containing medicinal products are biologics and there are several biosimilars. 10 Exponential, Weibull, log-normal, log log-logistic, Gompertz, generalized gamma, Hazard 1 node, hazard 2 nodes, Hazart 3 node, Odds 1 node , Odds 2 node, odds 3 Node, Normal 1 node and Normal 2 node.",
+          "metadata": {
+            "heading": "Overall survival",
+            "doc_id": "bed240212_imjudo_4104-2022",
+            "country": "SE",
+            "source_type": "hta_submission",
+            "start_page": 19,
+            "end_page": 20,
+            "created_date": "2024",
+            "folder_path": "HTA submissions/SE",
+            "split_index": 0,
+            "text_length": 738,
+            "potential_comparators": [
+              "bevacizumab",
+              "According",
+              "sorafenib"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Discussion by the TLV **Source Type:** hta_submission\n\nuse, but appear to be more useful than those from NICE. the study appears to be somewhat high, but whether the quality of life weights used by NICE are more reasonable to use is difficult to determine. TLV chooses to apply the HIMALAYA quality-of-life weights as they are obtained through the clinical study; TLV uses the EQ-5D-3L-converted weights in combination with the Dolan tariff; in addition, TLV applies state-specific quality- Of-Life weights. In TLV's analysis, the quality- of-life weightings are 0.814 in the progression-free state and 0.788 in the progressed state; in the sensitivity analysis TLV shows how the outcome is affected by the use of the same quality-Of-Life Weights as used in NICE's evaluation of Lenima. In addition to the above-mentioned differences between companies and the assumptions of TLV, the company has preferred to use the different scenarios of the treatment of the TLV.",
+          "metadata": {
+            "heading": "Discussion by the TLV",
+            "doc_id": "bed240212_imjudo_4104-2022",
+            "country": "SE",
+            "source_type": "hta_submission",
+            "start_page": 24,
+            "end_page": 25,
+            "created_date": "2024",
+            "folder_path": "HTA submissions/SE",
+            "split_index": "0_1_0",
+            "text_length": 978,
+            "potential_comparators": [
+              "TLV"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Discussion by the TLV **Source Type:** hta_submission\n\nThis interpretation is in line with the interpretation of the authors of the publication [5]. Furthermore, the expert has stated that there is a great need for treatment alternatives regardless of the etiology. Based on this, TLV considers that for this health-economic assessment, a division of the population into respective non-viral etiologies is not sufficiently justified.",
+          "metadata": {
+            "heading": "Discussion by the TLV",
+            "doc_id": "bed240212_imjudo_4104-2022",
+            "country": "SE",
+            "source_type": "hta_submission",
+            "start_page": 8,
+            "end_page": 8,
+            "created_date": "2024",
+            "folder_path": "HTA submissions/SE",
+            "split_index": 2,
+            "text_length": 446,
+            "potential_comparators": [
+              "Furthermore",
+              "Based"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Discussion by the TLV **Source Type:** hta_submission\n\nprogressing is [--] for patients treated with STRIDE compared to sorapenib over a long period of time. TLV estimates that both the proportion of patients who are progression- free over time and the efficacy benefit assumed by the company may be overestimated. The company ' s modeling of the PFS and duration of treatment (TTD curve, see more in section 3.2.1) for STRIDA also imply that after a period, the percentage of patients are progress- free is [--]. TLV adjusts the extrapolated PFS curve to STRIDS by assuming the risk for progressing in both treatment cycles is the same at 35 months, which coincides with the 10th time point of the STRIDIE and KM curve (see KM Curve for PFS). Total survival and progression-free survival in the comparison between STRIDE and Lenvima TLV considers that there are uncertainties in the company' s modelling of OS and PFS for Lenvimi.",
+          "metadata": {
+            "heading": "Discussion by the TLV",
+            "doc_id": "bed240212_imjudo_4104-2022",
+            "country": "SE",
+            "source_type": "hta_submission",
+            "start_page": 21,
+            "end_page": 24,
+            "created_date": "2024",
+            "folder_path": "HTA submissions/SE",
+            "split_index": "2_1_0",
+            "text_length": 944,
+            "potential_comparators": [
+              "Total",
+              "TLV",
+              "sorapenib"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Results obtained **Source Type:** hta_submission\n\nFrom October 2017 to June 2019, 1,950 patients were screened for participation in the study. 393 patients were randomized to the STRIDE arm and 389 patients were randomised to the sorafenib arm. Baseline characteristics are shown in Table 1.Data collection was performed on 27 August 2021, at which time the median follow-up was 33.2 months in the Stride arm and 32.2 months for the Sorafenib arms. See Figure 1 for Kaplan-Meier curves for OS and PFS. For the secondary efficacy endpoint PFS, the median was 3.8 months (95% CI 3.7-5.3) in the STRIDE arm compared to 4.1% (95% KI 3.8-5.5) in the sorafenib arm. PFS data were mature.",
+          "metadata": {
+            "heading": "Results obtained",
+            "doc_id": "bed240212_imjudo_4104-2022",
+            "country": "SE",
+            "source_type": "hta_submission",
+            "start_page": 9,
+            "end_page": 13,
+            "created_date": "2024",
+            "folder_path": "HTA submissions/SE",
+            "split_index": 0,
+            "text_length": 694,
+            "potential_comparators": [
+              "Baseline",
+              "See",
+              "PFS",
+              "sorafenib"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Discussion by the TLV **Source Type:** hta_submission\n\nAt 10 years, the estimation of OS is in line with the expert estimate of approximately 03 percent. The company refers to several studies, including a systematic review study by Lin et al (2022) that compiled OSdata from 13 clinical trials of immunotherapy in non-small cell lung cancer, malignant melanoma and urothelial cancer [18]. The study shows that there is a difference in overall survival between patients treated with immunotherapies compared to chemotherapy for up to 60 months, and that the studies show support for long-term survival. TLV's clinical expert states that it is reasonable to expect that treatment with STRIDE in HCC may result in long survival for a proportion of patients.",
+          "metadata": {
+            "heading": "Discussion by the TLV",
+            "doc_id": "bed240212_imjudo_4104-2022",
+            "country": "SE",
+            "source_type": "hta_submission",
+            "start_page": 21,
+            "end_page": 24,
+            "created_date": "2024",
+            "folder_path": "HTA submissions/SE",
+            "split_index": 1,
+            "text_length": 767,
+            "potential_comparators": [
+              "TLV's"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Discussion by the TLV **Source Type:** hta_submission\n\nThe EMA assessed that baseline characteristics were well balanced across study arms, but notes that many of the patients in the study were of Asian origin and considers that the sum of alcohol consumption in this study population was lower than in the corresponding patient population in the EU. The TLV clinical expert considers that the study design, where a second course of STRIDE was possible for some patients, could be a treatment option for isolated patients in Sweden. In Sweden, patients are treated first-line with sorafenib or lenvatinib if atezolizumab plus bevacizumab is not appropriate. However, according to the TLV Clinical Expert, an equivalent efficacy of sorefenib/lenvatinib is expected irrespective of patients' suitability for atezoizumab + bevaziumab. EMA considers that the adverse reactions of STRIDE are significant, but that relatively few patients discontinue treatment and that most of the side effects are clinically manageable. EMA is of the opinion that the side effect profile of ST RIDE is not significantly worse than that of sorafenib.[2] TLV's clinical expert considers STRITE's side effects were expected and that they do not differ significantly from other studies with combined immunotherapy. Furthermore, the expert believes that the Grade 3 and 4 adverse effects were comparable in STRIDEs and sorabenibs, and that it was positive that STRIDA did not cause side effects.",
+          "metadata": {
+            "heading": "Discussion by the TLV",
+            "doc_id": "bed240212_imjudo_4104-2022",
+            "country": "SE",
+            "source_type": "hta_submission",
+            "start_page": 13,
+            "end_page": 14,
+            "created_date": "2024",
+            "folder_path": "HTA submissions/SE",
+            "split_index": 0,
+            "text_length": 1482,
+            "potential_comparators": [
+              "bevacizumab",
+              "atezolizumab",
+              "Furthermore",
+              "bevaziumab",
+              "atezoizumab",
+              "However",
+              "sorafenib",
+              "EMA",
+              "sorefenib",
+              "lenvatinib"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Discussion by the TLV **Source Type:** hta_submission\n\nHe estimates the same treatment options may become relevant after first line treatment with STRIDE, but that Tecentrq plus be vacizuma b could also be considered. For patients who were first-lined with sorafeneb or Lenviima, Stivarga (regorafenib) or Cabometyx (kabozantinib) are recommended as follow-ups according to TLV' s expert. Individual patients who have received AFP may be considered for treatment with Cyramovir (ciramovirazumab) after first Line treatment withTecentriq, or Kostfenib, or be monitored for differences between patients who are treated with Lenviimab and those who are being treated with Striide. TLV considers that the company' s assumption is uncertain and therefore chooses to assume that the costs of care visits and monitoring for patients treated with sorafenib or Lenvima are the same as for those treated with STRIDE.",
+          "metadata": {
+            "heading": "Discussion by the TLV",
+            "doc_id": "bed240212_imjudo_4104-2022",
+            "country": "SE",
+            "source_type": "hta_submission",
+            "start_page": 27,
+            "end_page": 31,
+            "created_date": "2024",
+            "folder_path": "HTA submissions/SE",
+            "split_index": 3,
+            "text_length": 919,
+            "potential_comparators": [
+              "kabozantinib",
+              "ciramovirazumab",
+              "TLV",
+              "sorafenib",
+              "regorafenib",
+              "lenviimab",
+              "kostfenib",
+              "Individual"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Discussion by the TLV **Source Type:** hta_submission\n\nTLV estimates that there are uncertainties in the company' s modelling of OS and chooses to adjust the extrapolation of OS. This is described in the paragraphs below. In TLV' s baseline scenario, OS is extrapolated with the Hazard 1 distribution in both treatment arms. This means that a lower proportion of patients survive over time compared to the company ' s ex-trapolation. TLV presents susceptibility analyses in which OS is extrapolated to other distributions and presents a susceptability analysis in which the time horizon is shortened to ten years. In the TLV and the company' s extrapolation of OS, STRIDE has an efficacy advantage compared to sorafenib long-term follow-up in HIMALAYA. The company has shown that the risk of death in the respective STRIDES and phenibs during the subsequent follow up period is consistent with the KM estimate for the study comparison arm.",
+          "metadata": {
+            "heading": "Discussion by the TLV",
+            "doc_id": "bed240212_imjudo_4104-2022",
+            "country": "SE",
+            "source_type": "hta_submission",
+            "start_page": 21,
+            "end_page": 24,
+            "created_date": "2024",
+            "folder_path": "HTA submissions/SE",
+            "split_index": 0,
+            "text_length": 952,
+            "potential_comparators": [
+              "TLV",
+              "sorafenib"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Table 5 OS for STRIDE from adjusted HIMALAYA compared with OS for atezolizumab plus bevacizumab from IMbrave150 **Source Type:** hta_submission\n\nDue to the different follow-up times in the studies and the risk of disproportionate risks, the company also [--], see Table 6.",
+          "metadata": {
+            "heading": "Table 5 OS for STRIDE from adjusted HIMALAYA compared with OS for atezolizumab plus bevacizumab from IMbrave150",
+            "doc_id": "bed240212_imjudo_4104-2022",
+            "country": "SE",
+            "source_type": "hta_submission",
+            "start_page": 15,
+            "end_page": 15,
+            "created_date": "2024",
+            "folder_path": "HTA submissions/SE",
+            "split_index": 0,
+            "text_length": 285,
+            "potential_comparators": [
+              "atezolizumab",
+              "bevacizumab"
             ]
           }
         }

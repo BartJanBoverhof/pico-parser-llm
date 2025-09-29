@@ -169,8 +169,6 @@ class PICOExtractor:
                 context_block=context
             )
             
-            input_tokens = self.count_tokens(system_prompt) + self.count_tokens(user_prompt)
-            
             if model_override and isinstance(model_override, ChatOpenAI):
                 messages = [
                     SystemMessage(content=system_prompt),
@@ -191,9 +189,6 @@ class PICOExtractor:
                     max_tokens=2000
                 )
                 result_text = response.choices[0].message.content
-            
-            output_tokens = self.count_tokens(result_text) if result_text else 0
-            print(f"Population+Comparator extraction - Input tokens: {input_tokens}, Output tokens: {output_tokens}")
             
             try:
                 result = json.loads(result_text)
@@ -252,8 +247,6 @@ class PICOExtractor:
                 context_block=context
             )
             
-            input_tokens = self.count_tokens(system_prompt) + self.count_tokens(user_prompt)
-            
             if model_override and isinstance(model_override, ChatOpenAI):
                 messages = [
                     SystemMessage(content=system_prompt),
@@ -274,9 +267,6 @@ class PICOExtractor:
                     max_tokens=2000
                 )
                 result_text = response.choices[0].message.content
-            
-            output_tokens = self.count_tokens(result_text) if result_text else 0
-            print(f"Outcomes extraction - Input tokens: {input_tokens}, Output tokens: {output_tokens}")
             
             try:
                 result = json.loads(result_text)
@@ -414,8 +404,7 @@ class PICOExtractor:
             
             extracted_results.append(outcomes_result)
             
-            outcomes_text = outcomes_result.get('Outcomes') or ''
-            print(f"Extracted outcomes for {country}: {outcomes_text[:100]}...")
+            print(f"Extracted outcomes for {country}: {outcomes_result.get('Outcomes', '')[:100]}...")
         
         return extracted_results
 
@@ -439,7 +428,7 @@ class PICOExtractor:
             outcomes_result = outcomes_by_country.get(country, {"Outcomes": "", "Country": country, "ChunksUsed": 0, "ContextTokens": 0})
             
             pc_picos = pc_result.get("PICOs", [])
-            country_outcomes = outcomes_result.get("Outcomes") or ""
+            country_outcomes = outcomes_result.get("Outcomes", "")
             
             if not pc_picos and not country_outcomes:
                 continue
