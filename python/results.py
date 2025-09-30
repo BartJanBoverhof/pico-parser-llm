@@ -43,6 +43,250 @@ except ImportError:
     print("Warning: squarify not available. Install with: pip install squarify")
 
 
+class TranslationAnalyzer:
+    """Analyzer for translation metadata and quality scores"""
+    
+    def __init__(self, translated_path="data/text_translated"):
+        self.translated_path = Path(translated_path)
+        self.translation_data = []
+        
+    def load_translation_metadata(self):
+        """Load translation metadata from all translated documents"""
+        print("Loading translation metadata from documents...")
+        
+        json_files = list(self.translated_path.rglob("*.json"))
+        
+        for json_file in json_files:
+            try:
+                with open(json_file, 'r', encoding='utf-8') as f:
+                    data = json.load(f)
+                    
+                if '_translation_metadata' not in data:
+                    continue
+                    
+                metadata = data['_translation_metadata']
+                
+                path_parts = json_file.parts
+                case = None
+                source_type = None
+                
+                for part in path_parts:
+                    if part.lower() in ['nsclc', 'hcc', 'sclc', 'breast', 'lung']:
+                        case = part.upper()
+                    if part.lower() in ['hta submissions', 'clinical guidelines']:
+                        source_type = 'hta_submission' if 'hta' in part.lower() else 'clinical_guideline'
+                
+                doc_info = {
+                    'file_name': json_file.name,
+                    'case': case,
+                    'source_type': source_type,
+                    'country': data.get('country', 'Unknown'),
+                    'metadata': metadata
+                }
+                
+                self.translation_data.append(doc_info)
+                
+            except Exception as e:
+                print(f"Error loading {json_file}: {e}")
+                continue
+        
+        print(f"Loaded translation metadata from {len(self.translation_data)} documents")
+        
+    def extract_quality_scores(self, metadata):
+        """Extract all quality scores from metadata"""
+        quality_scores = metadata.get('quality_scores', {})
+        translation_metadata = metadata.get('translation_metadata', {})
+        
+        scores = {
+            'overall': quality_scores.get('overall', None),
+            'processing_time': translation_metadata.get('processing_time_seconds', 
+                                                        metadata.get('total_processing_time_seconds', None))
+        }
+        
+        linguistic = quality_scores.get('linguistic', {})
+        scores.update({
+            'linguistic_fluency': linguistic.get('fluency', None),
+            'linguistic_accuracy': linguistic.get('accuracy', None),
+            'linguistic_consistency': linguistic.get('consistency', None),
+            'linguistic_completeness': linguistic.get('completeness', None),
+            'linguistic_composite': linguistic.get('linguistic_composite', None)
+        })
+        
+        domain_specific = quality_scores.get('domain_specific', {})
+        scores.update({
+            'domain_medical_terminology': domain_specific.get('medical_terminology', None),
+            'domain_numerical_integrity': domain_specific.get('numerical_integrity', None),
+            'domain_statistical_terms': domain_specific.get('statistical_terms', None),
+            'domain_unit_preservation': domain_specific.get('unit_preservation', None),
+            'domain_composite': domain_specific.get('domain_composite', None)
+        })
+        
+        structural = quality_scores.get('structural', {})
+        scores.update({
+            'structural_format_preservation': structural.get('format_preservation', None),
+            'structural_document_integrity': structural.get('document_integrity', None),
+            'structural_information_architecture': structural.get('information_architecture', None),
+            'structural_composite': structural.get('structural_composite', None)
+        })
+        
+        return scores
+    
+    def calculate_statistics(self, scores_list):
+        """Calculate mean and standard deviation for a list of scores"""
+        valid_scores = [s for s in scores_list if s is not None]
+        
+        if not valid_scores:
+            return None, None
+            
+        mean = np.mean(valid_scores)
+        std = np.std(valid_scores)
+        
+        return mean, std
+    
+    def analyze_group(self, documents, group_name):
+        """Analyze translation statistics for a group of documents"""
+        if not documents:
+            return None
+            
+        all_scores = defaultdict(list)
+        
+        for doc in documents:
+            scores = self.extract_quality_scores(doc['metadata'])
+            for key, value in scores.items():
+                if value is not None:
+                    all_scores[key].append(value)
+        
+        results = {
+            'group_name': group_name,
+            'document_count': len(documents),
+            'statistics': {}
+        }
+        
+        for score_type, values in all_scores.items():
+            if values:
+                mean, std = self.calculate_statistics(values)
+                if score_type == 'processing_time':
+                    total = sum(values)
+                    results['statistics'][score_type] = {
+                        'mean': mean,
+                        'std': std,
+                        'total': total,
+                        'count': len(values)
+                    }
+                else:
+                    results['statistics'][score_type] = {
+                        'mean': mean,
+                        'std': std,
+                        'count': len(values)
+                    }
+        
+        return results
+    
+    def print_statistics(self, results, title):
+        """Print formatted statistics"""
+        if not results or not results.get('statistics'):
+            print(f"\n{title}")
+            print("="*80)
+            print("No translation data available")
+            return
+            
+        print(f"\n{title}")
+        print("="*80)
+        print(f"Documents analyzed: {results['document_count']}")
+        print()
+        
+        stats = results['statistics']
+        
+        if 'overall' in stats:
+            print("OVERALL TRANSLATION QUALITY")
+            print("-"*50)
+            s = stats['overall']
+            print(f"  Mean: {s['mean']:.4f}")
+            print(f"  SD:   {s['std']:.4f}")
+            print(f"  N:    {s['count']}")
+            print()
+        
+        linguistic_keys = [k for k in stats.keys() if k.startswith('linguistic_')]
+        if linguistic_keys:
+            print("LINGUISTIC SCORES")
+            print("-"*50)
+            for key in sorted(linguistic_keys):
+                s = stats[key]
+                label = key.replace('linguistic_', '').replace('_', ' ').title()
+                print(f"  {label:20s}: Mean={s['mean']:.4f}, SD={s['std']:.4f}, N={s['count']}")
+            print()
+        
+        domain_keys = [k for k in stats.keys() if k.startswith('domain_')]
+        if domain_keys:
+            print("DOMAIN-SPECIFIC SCORES")
+            print("-"*50)
+            for key in sorted(domain_keys):
+                s = stats[key]
+                label = key.replace('domain_', '').replace('_', ' ').title()
+                print(f"  {label:25s}: Mean={s['mean']:.4f}, SD={s['std']:.4f}, N={s['count']}")
+            print()
+        
+        structural_keys = [k for k in stats.keys() if k.startswith('structural_')]
+        if structural_keys:
+            print("STRUCTURAL SCORES")
+            print("-"*50)
+            for key in sorted(structural_keys):
+                s = stats[key]
+                label = key.replace('structural_', '').replace('_', ' ').title()
+                print(f"  {label:30s}: Mean={s['mean']:.4f}, SD={s['std']:.4f}, N={s['count']}")
+            print()
+        
+        if 'processing_time' in stats:
+            print("PROCESSING TIME")
+            print("-"*50)
+            s = stats['processing_time']
+            print(f"  Mean:  {s['mean']:.2f} seconds")
+            print(f"  SD:    {s['std']:.2f} seconds")
+            print(f"  Total: {s['total']:.2f} seconds ({s['total']/60:.2f} minutes)")
+            print(f"  N:     {s['count']}")
+            print()
+    
+    def run_complete_analysis(self):
+        """Run complete translation analysis with all groupings"""
+        if not self.translation_data:
+            self.load_translation_metadata()
+        
+        if not self.translation_data:
+            print("No translation metadata found")
+            return
+        
+        print("\n" + "="*100)
+        print("TRANSLATION QUALITY ANALYSIS")
+        print("="*100)
+        
+        all_results = self.analyze_group(self.translation_data, "All Documents")
+        self.print_statistics(all_results, "ALL DOCUMENTS")
+        
+        hta_docs = [d for d in self.translation_data if d['source_type'] == 'hta_submission']
+        if hta_docs:
+            hta_results = self.analyze_group(hta_docs, "HTA Submissions")
+            self.print_statistics(hta_results, "HTA SUBMISSIONS")
+        
+        clinical_docs = [d for d in self.translation_data if d['source_type'] == 'clinical_guideline']
+        if clinical_docs:
+            clinical_results = self.analyze_group(clinical_docs, "Clinical Guidelines")
+            self.print_statistics(clinical_results, "CLINICAL GUIDELINES")
+        
+        nsclc_docs = [d for d in self.translation_data if d['case'] == 'NSCLC']
+        if nsclc_docs:
+            nsclc_results = self.analyze_group(nsclc_docs, "NSCLC Documents")
+            self.print_statistics(nsclc_results, "NSCLC DOCUMENTS")
+        
+        hcc_docs = [d for d in self.translation_data if d['case'] == 'HCC']
+        if hcc_docs:
+            hcc_results = self.analyze_group(hcc_docs, "HCC Documents")
+            self.print_statistics(hcc_results, "HCC DOCUMENTS")
+        
+        print("\n" + "="*100)
+        print("TRANSLATION QUALITY ANALYSIS COMPLETE")
+        print("="*100)
+
+
 class ComprehensiveOverview:
     """Class to generate comprehensive overview summaries for RAG pipeline analysis"""
     
@@ -58,7 +302,6 @@ class ComprehensiveOverview:
         print(f"{case_name.upper()} COMPREHENSIVE ANALYSIS OVERVIEW{split_info}")
         print("="*100)
         
-        # PICO Overview
         print("\n" + "🔬 PICO EVIDENCE OVERVIEW")
         print("-" * 50)
         
@@ -95,7 +338,6 @@ class ComprehensiveOverview:
         else:
             print("❌ No PICO data available for analysis")
         
-        # Outcomes Overview
         print("\n" + "🎯 OUTCOMES EVIDENCE OVERVIEW")
         print("-" * 50)
         
@@ -105,7 +347,6 @@ class ComprehensiveOverview:
             print(f"📊 Total Outcome Measures: {outcome_analyzer.total_outcomes}")
             print(f"📂 Outcome Categories: {len(outcome_analyzer.data.get('consolidated_outcomes', {}))}")
             
-            # Get countries from metadata instead of processed DataFrame
             metadata = outcome_analyzer.data.get('outcomes_metadata', {})
             source_countries = metadata.get('source_countries', [])
             source_types = metadata.get('source_types', [])
@@ -123,7 +364,6 @@ class ComprehensiveOverview:
         else:
             print("❌ No outcomes data available for analysis")
         
-        # Coverage Summary
         print("\n" + "🗺️  COVERAGE SUMMARY")
         print("-" * 50)
         
@@ -133,7 +373,6 @@ class ComprehensiveOverview:
         if not pico_analyzer.picos_df.empty and 'Country' in pico_analyzer.picos_df.columns:
             pico_countries = set(pico_analyzer.picos_df['Country'].unique())
         
-        # Get outcome countries from metadata
         metadata = outcome_analyzer.data.get('outcomes_metadata', {})
         if metadata.get('source_countries'):
             outcome_countries = set(metadata['source_countries'])
@@ -151,7 +390,6 @@ class ComprehensiveOverview:
         
         print("\n" + "="*100)
         
-        # Store case data for cross-case analysis
         case_key = f"{case_name}_{data_split}" if data_split != 'unknown' else case_name
         self.all_cases_data[case_key] = case_data
         
@@ -227,7 +465,7 @@ class PICOAnalyzer:
         self.prepare_datamatrix()
     
     def _extract_data_split(self):
-        """Extract data split (train/test) from file path."""
+        """Extract data split from file path."""
         file_path = str(self.pico_file_path).lower()
         if '_train_' in file_path or file_path.endswith('_train.json'):
             return 'train'
@@ -261,7 +499,6 @@ class PICOAnalyzer:
         pico_records = []
         
         try:
-            # Check if data structure is as expected
             if 'consolidated_picos' not in self.data:
                 print("Warning: 'consolidated_picos' key not found in data")
                 self.picos_df = pd.DataFrame()
@@ -269,7 +506,6 @@ class PICOAnalyzer:
                 
             consolidated_picos = self.data['consolidated_picos']
             
-            # Handle case where consolidated_picos might be a string or other type
             if not isinstance(consolidated_picos, list):
                 print(f"Warning: consolidated_picos is not a list, it's a {type(consolidated_picos)}")
                 self.picos_df = pd.DataFrame()
@@ -277,31 +513,26 @@ class PICOAnalyzer:
             
             for i, pico in enumerate(consolidated_picos):
                 try:
-                    # Ensure pico is a dictionary
                     if not isinstance(pico, dict):
                         print(f"Warning: PICO item {i} is not a dictionary, it's a {type(pico)}")
                         continue
                     
-                    # Extract countries with fallback handling
                     countries = pico.get('Countries', [])
                     if isinstance(countries, str):
                         countries = [countries]
                     elif not isinstance(countries, list):
                         countries = []
                     
-                    # Extract source types with fallback handling
                     source_types = pico.get('Source_Types', [])
                     if isinstance(source_types, str):
                         source_types = [source_types]
                     elif not isinstance(source_types, list):
                         source_types = []
                     
-                    # Extract other fields with safe defaults
                     population = pico.get('Population', 'Unknown')
                     intervention = pico.get('Intervention', 'Unknown')
                     comparator = pico.get('Comparator', 'Unknown')
                     
-                    # Handle population and comparator variants
                     pop_variants = pico.get('Original_Population_Variants', [])
                     comp_variants = pico.get('Original_Comparator_Variants', [])
                     
@@ -310,7 +541,6 @@ class PICOAnalyzer:
                     if not isinstance(comp_variants, list):
                         comp_variants = []
                     
-                    # Create records for each country-source combination
                     for country in countries:
                         for source_type in source_types:
                             record = {
@@ -359,7 +589,6 @@ class PICOAnalyzer:
                 countries = pico.get('Countries', [])
                 source_types = pico.get('Source_Types', [])
                 
-                # Ensure countries and source_types are lists
                 if isinstance(countries, str):
                     countries = [countries]
                 if isinstance(source_types, str):
@@ -372,7 +601,6 @@ class PICOAnalyzer:
                 print(f"├─ 🌍 Countries: {', '.join(countries) if countries else 'Not specified'}")
                 print(f"└─ 📋 Sources: {', '.join([s.replace('_', ' ').title() for s in source_types]) if source_types else 'Not specified'}")
                 
-                # Show population and comparator variants if available
                 pop_variants = pico.get('Original_Population_Variants', [])
                 comp_variants = pico.get('Original_Comparator_Variants', [])
                 
@@ -473,7 +701,6 @@ class OutcomeAnalyzer:
         self.load_data()
         self.prepare_datamatrix()
         
-        # Use metadata value if available as it might be deduplicated
         metadata = self.data.get('outcomes_metadata', {})
         if 'total_unique_outcomes' in metadata:
             self.total_outcomes = metadata['total_unique_outcomes']
@@ -482,7 +709,7 @@ class OutcomeAnalyzer:
             print(f"Using calculated total_outcomes: {self.total_outcomes}")
     
     def _extract_data_split(self):
-        """Extract data split (train/test) from file path."""
+        """Extract data split from file path."""
         file_path = str(self.outcome_file_path).lower()
         if '_train_' in file_path or file_path.endswith('_train.json'):
             return 'train'
@@ -517,7 +744,6 @@ class OutcomeAnalyzer:
         total_outcomes = 0
         
         try:
-            # Check if data structure is as expected
             if 'consolidated_outcomes' not in self.data:
                 print("Warning: 'consolidated_outcomes' key not found in data")
                 self.outcomes_df = pd.DataFrame()
@@ -525,27 +751,23 @@ class OutcomeAnalyzer:
                 
             consolidated_outcomes = self.data['consolidated_outcomes']
             
-            # Handle case where consolidated_outcomes might not be a dictionary
             if not isinstance(consolidated_outcomes, dict):
                 print(f"Warning: consolidated_outcomes is not a dictionary, it's a {type(consolidated_outcomes)}")
                 self.outcomes_df = pd.DataFrame()
                 return
             
-            # Get metadata for country and source information
             metadata = self.data.get('outcomes_metadata', {})
             source_countries = metadata.get('source_countries', [])
             source_types = metadata.get('source_types', [])
             
             for category, subcategories in consolidated_outcomes.items():
                 try:
-                    # Ensure subcategories is a dictionary
                     if not isinstance(subcategories, dict):
                         print(f"Warning: subcategories for {category} is not a dictionary, it's a {type(subcategories)}")
                         continue
                     
                     for subcategory, outcomes in subcategories.items():
                         try:
-                            # Ensure outcomes is a list
                             if not isinstance(outcomes, list):
                                 print(f"Warning: outcomes for {category}/{subcategory} is not a list, it's a {type(outcomes)}")
                                 continue
@@ -554,11 +776,9 @@ class OutcomeAnalyzer:
                             
                             for outcome in outcomes:
                                 try:
-                                    # Handle both string and dictionary outcomes
                                     if isinstance(outcome, str):
                                         outcome_name = outcome
                                         
-                                        # Create records for each country-source combination from metadata
                                         for country in source_countries:
                                             for source_type in source_types:
                                                 record = {
@@ -592,7 +812,6 @@ class OutcomeAnalyzer:
                                                     }
                                                     outcome_records.append(record)
                                         else:
-                                            # Use metadata for countries and sources
                                             for country in source_countries:
                                                 for source_type in source_types:
                                                     record = {
@@ -651,7 +870,6 @@ class OutcomeAnalyzer:
         
         print(f"📋 Found {total_outcomes} unique outcomes across {len(consolidated_outcomes)} categories:\n")
         
-        # Show metadata information
         print("🌍 Coverage Information:")
         if source_countries:
             print(f"├─ Countries: {', '.join(source_countries)}")
@@ -677,17 +895,14 @@ class OutcomeAnalyzer:
                         for i, outcome in enumerate(outcomes, 1):
                             try:
                                 if isinstance(outcome, str):
-                                    # Simple string outcome
                                     outcome_name = outcome
                                     print(f"  {i:2d}. {outcome_name}")
                                     
                                 elif isinstance(outcome, dict):
-                                    # Complex outcome object
                                     outcome_name = outcome.get('name', 'Unnamed outcome')
                                     has_details = 'details' in outcome and bool(outcome.get('details', []))
                                     reported_by = outcome.get('reported_by', [])
                                     
-                                    # Count unique countries and source types
                                     countries = set()
                                     source_types_reported = set()
                                     if isinstance(reported_by, list):
@@ -766,7 +981,6 @@ class OutcomeAnalyzer:
                     print()
                 
             else:
-                # Show category breakdown from the raw data
                 consolidated_outcomes = self.data.get('consolidated_outcomes', {})
                 for category, subcategories in consolidated_outcomes.items():
                     if isinstance(subcategories, dict):
@@ -818,7 +1032,6 @@ class DataVisualizer:
         self.pico_analyzer = pico_analyzer
         self.outcome_analyzer = outcome_analyzer
         
-        # Create split-specific output directory
         split_suffix = f"_{pico_analyzer.data_split}" if pico_analyzer.data_split != 'unknown' else ""
         case_suffix = f"_{pico_analyzer.case.lower()}" if pico_analyzer.case != 'UNKNOWN' else ""
         self.output_dir = Path(f"{output_dir}{case_suffix}{split_suffix}")
@@ -879,7 +1092,85 @@ class DataVisualizer:
                 
         return guideline_comparators, hta_comparators
 
-    def create_comparator_venn_diagram(self):
+    def generate_summary_report(self):
+        print("Generating summary report...")
+        
+        report_content = []
+        split_info = f" ({self.pico_analyzer.data_split.title()} Set)" if self.pico_analyzer.data_split != 'unknown' else ""
+        case_info = f" - {self.pico_analyzer.case}" if self.pico_analyzer.case != 'UNKNOWN' else ""
+        
+        report_content.append(f"RAG PIPELINE ANALYSIS SUMMARY REPORT{case_info}{split_info}")
+        report_content.append("=" * 50)
+        report_content.append(f"Generated on: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+        if self.pico_analyzer.data_split != 'unknown':
+            report_content.append(f"Data Split: {self.pico_analyzer.data_split.title()}")
+        if self.pico_analyzer.case != 'UNKNOWN':
+            report_content.append(f"Case: {self.pico_analyzer.case}")
+        report_content.append("")
+        
+        report_content.append("PICO ANALYSIS SUMMARY:")
+        report_content.append("-" * 25)
+        
+        if not self.pico_analyzer.picos_df.empty:
+            if 'consolidated_picos' in self.pico_analyzer.data:
+                report_content.append(f"Total consolidated PICOs: {len(self.pico_analyzer.data['consolidated_picos'])}")
+            if 'Country' in self.pico_analyzer.picos_df.columns:
+                report_content.append(f"Unique countries: {self.pico_analyzer.picos_df['Country'].nunique()}")
+                report_content.append(f"Most common country: {self.pico_analyzer.picos_df['Country'].mode().iloc[0] if not self.pico_analyzer.picos_df['Country'].mode().empty else 'N/A'}")
+            if 'Comparator' in self.pico_analyzer.picos_df.columns:
+                report_content.append(f"Unique comparators: {self.pico_analyzer.picos_df['Comparator'].nunique()}")
+                report_content.append(f"Most common comparator: {self.pico_analyzer.picos_df['Comparator'].mode().iloc[0] if not self.pico_analyzer.picos_df['Comparator'].mode().empty else 'N/A'}")
+        else:
+            report_content.append("No PICO data available for analysis")
+        report_content.append("")
+        
+        report_content.append("OUTCOMES ANALYSIS SUMMARY:")
+        report_content.append("-" * 27)
+        
+        if self.outcome_analyzer.total_outcomes > 0:
+            report_content.append(f"Total outcome measures: {self.outcome_analyzer.total_outcomes}")
+            metadata = self.outcome_analyzer.data.get('outcomes_metadata', {})
+            if metadata.get('source_countries'):
+                report_content.append(f"Countries with outcomes: {len(metadata['source_countries'])}")
+                report_content.append(f"Countries: {', '.join(metadata['source_countries'])}")
+            if metadata.get('source_types'):
+                report_content.append(f"Source types: {', '.join(metadata['source_types'])}")
+        else:
+            report_content.append("No outcomes data available for analysis")
+        report_content.append("")
+        
+        pico_countries = set()
+        outcome_countries = set()
+        
+        if not self.pico_analyzer.picos_df.empty and 'Country' in self.pico_analyzer.picos_df.columns:
+            pico_countries = set(self.pico_analyzer.picos_df['Country'].unique())
+            
+        metadata = self.outcome_analyzer.data.get('outcomes_metadata', {})
+        if metadata.get('source_countries'):
+            outcome_countries = set(metadata['source_countries'])
+        
+        common_countries = pico_countries.intersection(outcome_countries)
+        
+        report_content.append("COVERAGE ANALYSIS:")
+        report_content.append("-" * 18)
+        report_content.append(f"Countries with both PICOs and outcomes: {len(common_countries)}")
+        report_content.append(f"PICO-only countries: {len(pico_countries - outcome_countries)}")
+        report_content.append(f"Outcome-only countries: {len(outcome_countries - pico_countries)}")
+        report_content.append(f"Total country coverage: {len(pico_countries.union(outcome_countries))}")
+        
+        if self.pico_analyzer.data_split != 'unknown':
+            report_content.append("")
+            report_content.append("TRAIN/TEST SPLIT INFORMATION:")
+            report_content.append("-" * 30)
+            report_content.append(f"Current analysis covers: {self.pico_analyzer.data_split.title()} set")
+            if pico_countries:
+                report_content.append(f"{self.pico_analyzer.data_split.title()} countries: {', '.join(sorted(pico_countries))}")
+        
+        report_filename = f'analysis_summary_report.txt'
+        with open(self.output_dir / report_filename, 'w') as f:
+            f.write('\n'.join(report_content))
+        
+        print('\n'.join(report_content))
         """Create Venn diagram showing overlap of comparators between guidelines and HTA submissions."""
         if not VENN_AVAILABLE:
             print("Matplotlib-venn not available. Skipping Venn diagram.")
@@ -889,7 +1180,6 @@ class DataVisualizer:
         
         guideline_comparators, hta_comparators = self.get_comparators_by_source_type()
         
-        # Remove empty comparators
         guideline_comparators.discard('')
         hta_comparators.discard('')
         
@@ -899,12 +1189,10 @@ class DataVisualizer:
             
         fig, ax = plt.subplots(figsize=(10, 8))
         
-        # Create the Venn diagram
         venn = venn2([guideline_comparators, hta_comparators], 
                      set_labels=('Clinical Guidelines', 'HTA Submissions'),
                      ax=ax)
         
-        # Customize colors
         if venn.get_patch_by_id('10'):
             venn.get_patch_by_id('10').set_color(self.scientific_colors['secondary'])
             venn.get_patch_by_id('10').set_alpha(0.7)
@@ -915,10 +1203,8 @@ class DataVisualizer:
             venn.get_patch_by_id('11').set_color(self.scientific_colors['primary'])
             venn.get_patch_by_id('11').set_alpha(0.8)
         
-        # Add circles for better visibility
         venn2_circles([guideline_comparators, hta_comparators], ax=ax, linewidth=2)
         
-        # Calculate overlap statistics
         overlap = guideline_comparators.intersection(hta_comparators)
         guideline_only = guideline_comparators - hta_comparators
         hta_only = hta_comparators - guideline_comparators
@@ -928,7 +1214,6 @@ class DataVisualizer:
                     f'Total Unique Comparators: {len(guideline_comparators.union(hta_comparators))}',
                     fontsize=14, fontweight='bold', pad=20)
         
-        # Add statistics text box
         stats_text = (f"Guidelines Only: {len(guideline_only)}\n"
                      f"HTA Only: {len(hta_only)}\n"
                      f"Both Sources: {len(overlap)}")
@@ -942,7 +1227,6 @@ class DataVisualizer:
                    dpi=300, bbox_inches='tight', facecolor='white')
         plt.show()
         
-        # Print detailed breakdown
         print("\nComparator Overlap Analysis:")
         print(f"Guidelines-only comparators ({len(guideline_only)}):")
         for comp in sorted(guideline_only):
@@ -962,7 +1246,6 @@ class DataVisualizer:
             print("No consolidated PICO data available for comparator breadth analysis")
             return
             
-        # Count comparators per country
         country_comparators = defaultdict(set)
         country_source_info = defaultdict(set)
         
@@ -980,20 +1263,18 @@ class DataVisualizer:
             print("No country-comparator data available")
             return
             
-        # Prepare data for plotting
         countries = list(country_comparators.keys())
         comparator_counts = [len(country_comparators[country]) for country in countries]
         
-        # Determine colors based on source types
         colors = []
         for country in countries:
             sources = country_source_info[country]
             if len(sources) > 1:
-                colors.append(self.scientific_colors['primary'])  # Both sources
+                colors.append(self.scientific_colors['primary'])
             elif 'clinical_guideline' in sources:
-                colors.append(self.scientific_colors['secondary'])  # Guidelines only
+                colors.append(self.scientific_colors['secondary'])
             else:
-                colors.append(self.scientific_colors['tertiary'])  # HTA only
+                colors.append(self.scientific_colors['tertiary'])
         
         fig, ax = plt.subplots(figsize=(12, 8))
         
@@ -1010,12 +1291,10 @@ class DataVisualizer:
                     fontweight='bold', pad=20)
         ax.grid(True, alpha=0.3, axis='y')
         
-        # Add value labels on bars
         for bar, value in zip(bars, comparator_counts):
             ax.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 0.1,
                    str(value), ha='center', va='bottom', fontweight='bold')
         
-        # Create legend
         legend_elements = [
             plt.Rectangle((0,0),1,1, facecolor=self.scientific_colors['primary'], alpha=0.8, label='Both Sources'),
             plt.Rectangle((0,0),1,1, facecolor=self.scientific_colors['secondary'], alpha=0.8, label='Guidelines Only'),
@@ -1037,7 +1316,6 @@ class DataVisualizer:
             print("No consolidated PICO data available for summary table")
             return
             
-        # Collect data by country
         country_data = defaultdict(lambda: {
             'population': set(),
             'intervention': set(),
@@ -1063,12 +1341,10 @@ class DataVisualizer:
                 if 'hta_submission' in source_types:
                     country_data[country]['hta_comparators'].add(comparator)
         
-        # Create table
         table_data = []
         for country in sorted(country_data.keys()):
             data = country_data[country]
             
-            # Get most common population description (first one if multiple)
             population = list(data['population'])[0] if data['population'] else 'Not specified'
             if len(population) > 80:
                 population = population[:77] + "..."
@@ -1078,7 +1354,6 @@ class DataVisualizer:
             guideline_comps = ', '.join(sorted(data['guideline_comparators'])) if data['guideline_comparators'] else '-'
             hta_comps = ', '.join(sorted(data['hta_comparators'])) if data['hta_comparators'] else '-'
             
-            # Truncate long comparator lists
             if len(guideline_comps) > 60:
                 guideline_comps = guideline_comps[:57] + "..."
             if len(hta_comps) > 60:
@@ -1095,23 +1370,19 @@ class DataVisualizer:
                 sources
             ])
         
-        # Create DataFrame for better formatting
         df = pd.DataFrame(table_data, columns=[
             'Country', 'Population', 'Intervention', 
             'Guideline Comparators', 'HTA Comparators', 'Source Types'
         ])
         
-        # Save as CSV
         csv_path = self.output_dir / 'country_pico_summary_table.csv'
         df.to_csv(csv_path, index=False)
         print(f"PICO summary table saved to: {csv_path}")
         
-        # Create figure for display
         fig, ax = plt.subplots(figsize=(16, max(8, len(table_data) * 0.5)))
         ax.axis('tight')
         ax.axis('off')
         
-        # Create table
         table = ax.table(cellText=table_data,
                         colLabels=['Country', 'Population Description', 'Intervention', 
                                  'Guideline Comparators', 'HTA Comparators', 'Source Types'],
@@ -1119,17 +1390,14 @@ class DataVisualizer:
                         loc='center',
                         bbox=[0, 0, 1, 1])
         
-        # Style the table
         table.auto_set_font_size(False)
         table.set_fontsize(8)
         table.scale(1, 2)
         
-        # Header styling
         for i in range(len(df.columns)):
             table[(0, i)].set_facecolor(self.scientific_colors['primary'])
             table[(0, i)].set_text_props(weight='bold', color='white')
         
-        # Alternate row colors
         for i in range(1, len(table_data) + 1):
             for j in range(len(df.columns)):
                 if i % 2 == 0:
@@ -1146,7 +1414,6 @@ class DataVisualizer:
                    dpi=300, bbox_inches='tight', facecolor='white')
         plt.show()
         
-        # Print summary statistics
         print(f"\nSummary Statistics:")
         print(f"Total countries analyzed: {len(country_data)}")
         guideline_only = sum(1 for data in country_data.values() 
@@ -1173,7 +1440,6 @@ class DataVisualizer:
             print("No consolidated outcomes data available for treemap")
             return
         
-        # Prepare data for treemap
         sizes = []
         labels = []
         colors = []
@@ -1200,7 +1466,6 @@ class DataVisualizer:
         
         fig, ax = plt.subplots(figsize=(14, 10))
         
-        # Create treemap
         squarify.plot(sizes=sizes, label=labels, color=colors, alpha=0.8,
                      text_kwargs={'fontsize': 9, 'weight': 'bold'}, ax=ax)
         
@@ -1209,7 +1474,6 @@ class DataVisualizer:
                     fontsize=16, fontweight='bold', pad=20)
         ax.axis('off')
         
-        # Create legend
         legend_elements = [plt.Rectangle((0,0),1,1, facecolor=color, alpha=0.8, label=cat.title()) 
                           for cat, color in color_map.items() if cat in [c for c, _ in consolidated_outcomes.items()]]
         ax.legend(handles=legend_elements, loc='upper left', bbox_to_anchor=(1, 1), 
@@ -1258,7 +1522,6 @@ class DataVisualizer:
                     fontweight='bold', pad=20)
         ax.grid(True, alpha=0.3, axis='y')
         
-        # Add value labels on bars
         for bar, value in zip(bars, counts):
             ax.text(bar.get_x() + bar.get_width()/2, bar.get_height() + max(counts) * 0.01,
                    str(value), ha='center', va='bottom', fontweight='bold')
@@ -1277,12 +1540,10 @@ class DataVisualizer:
             
         print("Creating PICO consolidation Sankey diagram...")
         
-        # Navigate to the PICO directory
         pico_file_path = Path(self.pico_analyzer.pico_file_path)
         case_root_dir = pico_file_path.parent.parent
         pico_dir = case_root_dir / "PICO"
         
-        # Load individual PICO files
         individual_picos = {}
         for source_type in ['clinical_guideline', 'hta_submission']:
             pico_file = pico_dir / f"{source_type}_picos.json"
@@ -1294,7 +1555,6 @@ class DataVisualizer:
                 except Exception as e:
                     print(f"Error loading {source_type} PICOs: {e}")
         
-        # Calculate individual PICO counts
         individual_counts = {}
         total_individual = 0
         for source_type, data in individual_picos.items():
@@ -1306,7 +1566,6 @@ class DataVisualizer:
             individual_counts[source_type] = count
             total_individual += count
         
-        # Get consolidated count
         consolidated_count = len(self.pico_analyzer.data.get('consolidated_picos', []))
         
         print(f"Individual PICO counts: {individual_counts}")
@@ -1317,14 +1576,12 @@ class DataVisualizer:
             print("No individual PICO data found. Cannot create Sankey diagram.")
             return
         
-        # Create Sankey data
         source_labels = []
         target_labels = []
         values = []
         
-        # Individual sources to consolidated
         for source_type, count in individual_counts.items():
-            if count > 0:  # Only include sources that have data
+            if count > 0:
                 source_labels.append(f"{source_type.replace('_', ' ').title()}")
                 target_labels.append("Consolidated PICOs")
                 values.append(count)
@@ -1333,18 +1590,15 @@ class DataVisualizer:
             print("No valid source data found for Sankey diagram")
             return
         
-        # All labels
         all_labels = list(set(source_labels + target_labels))
         
-        # Create source and target indices
         source_indices = [all_labels.index(label) for label in source_labels]
         target_indices = [all_labels.index(label) for label in target_labels]
         
-        # Color mapping
         colors = [
-            'rgba(4, 138, 129, 0.8)',  # Clinical guidelines
-            'rgba(241, 143, 1, 0.8)',  # HTA submissions
-            'rgba(46, 64, 87, 0.8)'    # Consolidated
+            'rgba(4, 138, 129, 0.8)',
+            'rgba(241, 143, 1, 0.8)',
+            'rgba(46, 64, 87, 0.8)'
         ]
         
         fig = go.Figure(data=[go.Sankey(
@@ -1374,11 +1628,9 @@ class DataVisualizer:
             height=500
         )
         
-        # Save as HTML
         html_path = self.output_dir / 'pico_consolidation_sankey.html'
         fig.write_html(str(html_path))
         
-        # Save as static image
         try:
             png_path = self.output_dir / 'pico_consolidation_sankey.png'
             fig.write_image(str(png_path), width=800, height=500, scale=2)
@@ -1389,7 +1641,6 @@ class DataVisualizer:
         fig.show()
         print(f"Interactive Sankey diagram saved to: {html_path}")
         
-        # Print consolidation statistics
         case_name = self.pico_analyzer.case
         print(f"\n{case_name} Consolidation Statistics:")
         print(f"Total individual PICOs: {total_individual}")
@@ -1404,12 +1655,10 @@ class DataVisualizer:
         """Create alternative consolidation visualization when Plotly is not available."""
         print("Creating alternative consolidation visualization...")
         
-        # Navigate to the PICO directory
         pico_file_path = Path(self.pico_analyzer.pico_file_path)
         case_root_dir = pico_file_path.parent.parent
         pico_dir = case_root_dir / "PICO"
         
-        # Load individual PICO files and count
         individual_counts = {}
         total_individual = 0
         for source_type in ['clinical_guideline', 'hta_submission']:
@@ -1421,7 +1670,6 @@ class DataVisualizer:
                         data = json.load(f)
                         count = 0
                         
-                        # Try metadata first, then fallback to country counting
                         metadata = data.get('extraction_metadata', {})
                         
                         if 'total_picos' in metadata:
@@ -1446,21 +1694,17 @@ class DataVisualizer:
             print("No individual PICO data found for alternative visualization")
             return
         
-        # Create flow diagram
         fig, ax = plt.subplots(figsize=(12, 8))
         
-        # Define positions
-        y_positions = [0.7, 0.3]  # For two source types
+        y_positions = [0.7, 0.3]
         x_individual = 0.2
         x_consolidated = 0.8
         
-        # Draw individual sources
         colors = [self.scientific_colors['secondary'], self.scientific_colors['tertiary']]
         for i, (source_type, count) in enumerate(individual_counts.items()):
             if count == 0:
                 continue
                 
-            # Source box
             box_height = 0.15
             box_width = 0.2
             y_pos = y_positions[i] if i < len(y_positions) else 0.5
@@ -1471,17 +1715,14 @@ class DataVisualizer:
                                alpha=0.8, edgecolor='black', linewidth=2)
             ax.add_patch(rect)
             
-            # Label
             ax.text(x_individual, y_pos, f"{source_type.replace('_', ' ').title()}\n{count} PICOs",
                    ha='center', va='center', fontweight='bold', fontsize=10)
             
-            # Arrow to consolidated
             ax.annotate('', xy=(x_consolidated - 0.12, 0.5), xytext=(x_individual + 0.1, y_pos),
                        arrowprops=dict(arrowstyle='->', lw=3, 
                                      color=colors[i] if i < len(colors) else self.scientific_colors['dark_gray'],
                                      alpha=0.7))
         
-        # Consolidated box
         box_height = 0.2
         box_width = 0.25
         rect = plt.Rectangle((x_consolidated - box_width/2, 0.5 - box_height/2), 
@@ -1493,7 +1734,6 @@ class DataVisualizer:
         ax.text(x_consolidated, 0.5, f"Consolidated\nPICOs\n{consolidated_count}",
                ha='center', va='center', fontweight='bold', fontsize=12, color='white')
         
-        # Add statistics
         reduction_pct = ((total_individual - consolidated_count) / total_individual * 100) if total_individual > 0 else 0
         stats_text = (f"Total Individual: {total_individual}\n"
                      f"Consolidated: {consolidated_count}\n"
@@ -1516,7 +1756,6 @@ class DataVisualizer:
                    dpi=300, bbox_inches='tight', facecolor='white')
         plt.show()
         
-        # Print consolidation statistics
         case_name = self.pico_analyzer.case
         print(f"\n{case_name} Consolidation Statistics:")
         print(f"Total individual PICOs: {total_individual}")
@@ -1534,7 +1773,6 @@ class DataVisualizer:
             
         print("Creating European PICO distribution map...")
         
-        # Print country information before plotting
         country_counts = self.pico_analyzer.picos_df['Country'].value_counts()
         print(f"Total countries with PICOs: {len(country_counts)}")
         print("Countries and their PICO counts:")
@@ -1640,7 +1878,6 @@ class DataVisualizer:
                 vmin = 1
                 vmax = europe_with_data['pico_count'].max()
                 
-                # Use a better colormap that doesn't include white for data countries
                 europe_with_data.plot(
                     column='pico_count', 
                     ax=ax, 
@@ -1652,12 +1889,10 @@ class DataVisualizer:
                     vmax=vmax
                 )
                 
-                # Annotate all countries with PICOs
                 for idx, row in europe_with_data.iterrows():
                     try:
                         centroid = row.geometry.centroid
                         
-                        # Manual positioning for France to fix location issue
                         if row[name_column] == 'France':
                             x_pos, y_pos = 2.2, 46.2
                         else:
@@ -1792,7 +2027,6 @@ class DataVisualizer:
         max_count = country_counts.max()
         min_count = country_counts.min()
         
-        # Use YlOrRd colormap to avoid white for countries with data
         for country_code, count in country_counts.items():
             if country_code in country_mapping:
                 country_name = country_mapping[country_code]
@@ -1846,7 +2080,6 @@ class DataVisualizer:
         title_suffix = self._get_title_suffix()
         fig.suptitle(f'PICO Analysis Overview{title_suffix}', fontsize=16, fontweight='bold', y=0.95)
         
-        # Chart 1: Country distribution
         if 'Country' in self.pico_analyzer.picos_df.columns:
             country_counts = self.pico_analyzer.picos_df['Country'].value_counts()
             bars1 = axes[0, 0].bar(range(len(country_counts)), country_counts.values, 
@@ -1867,7 +2100,6 @@ class DataVisualizer:
                            ha='center', va='center', transform=axes[0, 0].transAxes)
             axes[0, 0].set_title('A. PICO Distribution by Country', fontweight='bold', pad=15)
         
-        # Chart 2: Source type distribution - CHANGED FROM PIE TO BAR CHART
         if 'Source_Type' in self.pico_analyzer.picos_df.columns:
             source_counts = self.pico_analyzer.picos_df['Source_Type'].value_counts()
             colors = [self.scientific_colors['secondary'], self.scientific_colors['tertiary']][:len(source_counts)]
@@ -1890,7 +2122,6 @@ class DataVisualizer:
                            ha='center', va='center', transform=axes[0, 1].transAxes)
             axes[0, 1].set_title('B. PICO Distribution by Source Type', fontweight='bold', pad=15)
         
-        # Chart 3: Comparator frequency
         if 'Comparator' in self.pico_analyzer.picos_df.columns:
             comp_counts = self.pico_analyzer.picos_df['Comparator'].value_counts().head(8)
             bars3 = axes[1, 0].barh(range(len(comp_counts)), comp_counts.values, 
@@ -1912,7 +2143,6 @@ class DataVisualizer:
                            ha='center', va='center', transform=axes[1, 0].transAxes)
             axes[1, 0].set_title('C. Most Frequent Comparators', fontweight='bold', pad=15)
         
-        # Chart 4: Country vs Source Type matrix
         if 'Country' in self.pico_analyzer.picos_df.columns and 'Source_Type' in self.pico_analyzer.picos_df.columns:
             country_source_matrix = self.pico_analyzer.picos_df.pivot_table(
                 index='Country', columns='Source_Type', values='Intervention', 
@@ -1957,7 +2187,6 @@ class DataVisualizer:
         self._create_comparator_heatmap()
         self.create_european_heatmap()
         
-        # Create new enhanced visualizations
         self.create_comparator_venn_diagram()
         self.create_comparator_breadth_by_country()
         self.create_country_pico_summary_table()
@@ -2008,11 +2237,9 @@ class DataVisualizer:
         title_suffix = self._get_title_suffix()
         fig.suptitle(f'Outcomes Analysis Overview{title_suffix}', fontsize=16, fontweight='bold', y=0.95)
         
-        # For visualizations, we'll use the consolidated outcomes structure directly
         consolidated_outcomes = self.outcome_analyzer.data.get('consolidated_outcomes', {})
         metadata = self.outcome_analyzer.data.get('outcomes_metadata', {})
         
-        # Chart 1: Category distribution
         category_counts = {}
         for category, subcategories in consolidated_outcomes.items():
             if isinstance(subcategories, dict):
@@ -2040,7 +2267,6 @@ class DataVisualizer:
                            ha='center', va='center', transform=axes[0, 0].transAxes)
             axes[0, 0].set_title('A. Outcomes by Category', fontweight='bold', pad=15)
         
-        # Chart 2: Country distribution (using metadata)
         source_countries = metadata.get('source_countries', [])
         if source_countries:
             country_outcome_counts = {country: self.outcome_analyzer.total_outcomes for country in source_countries}
@@ -2059,12 +2285,8 @@ class DataVisualizer:
                            ha='center', va='center', transform=axes[0, 1].transAxes)
             axes[0, 1].set_title('B. Country Coverage for Outcomes', fontweight='bold', pad=15)
 
-        # Chart 3: Source type distribution - CHANGED FROM PIE TO BAR CHART
-        # Since outcomes aren't source-specific in this structure, we can show the coverage
-        # by using the PICO data which shows which source types contributed to the evidence
         if not self.pico_analyzer.picos_df.empty and 'Source_Type' in self.pico_analyzer.picos_df.columns:
             pico_source_counts = self.pico_analyzer.picos_df['Source_Type'].value_counts()
-            # For outcomes visualization, show how many outcome measures are available from each source type
             source_outcome_counts = {source: self.outcome_analyzer.total_outcomes for source in pico_source_counts.index}
             
             if source_outcome_counts:
@@ -2092,7 +2314,6 @@ class DataVisualizer:
                            ha='center', va='center', transform=axes[1, 0].transAxes)
             axes[1, 0].set_title('C. Source Type Coverage for Outcomes', fontweight='bold', pad=15)
         
-        # Chart 4: Subcategory breakdown
         subcategory_counts = {}
         for category, subcategories in consolidated_outcomes.items():
             if isinstance(subcategories, dict):
@@ -2101,7 +2322,6 @@ class DataVisualizer:
                         subcategory_counts[f"{category}_{subcategory}"] = len(outcomes)
         
         if subcategory_counts:
-            # Show top 10 subcategories
             top_subcategories = sorted(subcategory_counts.items(), key=lambda x: x[1], reverse=True)[:10]
             bars4 = axes[1, 1].barh(range(len(top_subcategories)), [count for _, count in top_subcategories], 
                                    color=self.scientific_colors['quaternary'], alpha=0.8,
@@ -2127,13 +2347,11 @@ class DataVisualizer:
                    dpi=300, bbox_inches='tight', facecolor='white')
         plt.show()
         
-        # Create enhanced outcomes visualizations
         self.create_outcomes_treemap()
     
     def create_combined_analysis(self):
         print("Creating combined analysis visualization...")
         
-        # Check if we have data for both analyzers
         pico_has_source = not self.pico_analyzer.picos_df.empty and 'Source_Type' in self.pico_analyzer.picos_df.columns
         outcome_has_source = self.outcome_analyzer.total_outcomes > 0
         
@@ -2145,7 +2363,6 @@ class DataVisualizer:
         title_suffix = self._get_title_suffix()
         fig.suptitle(f'Source Type Distribution Comparison{title_suffix}', fontsize=16, fontweight='bold', y=0.98)
         
-        # PICO sources bar chart - CHANGED FROM PIE TO BAR CHART
         if pico_has_source:
             pico_sources = self.pico_analyzer.picos_df['Source_Type'].value_counts()
             colors_pico = [self.scientific_colors['primary'], self.scientific_colors['secondary']][:len(pico_sources)]
@@ -2168,14 +2385,12 @@ class DataVisualizer:
                         ha='center', va='center', transform=axes[0].transAxes)
             axes[0].set_title('A. PICOs by Source Type', fontweight='bold', pad=20)
         
-        # Outcome sources bar chart - CHANGED FROM PIE TO BAR CHART
         if outcome_has_source:
             metadata = self.outcome_analyzer.data.get('outcomes_metadata', {})
             source_types = metadata.get('source_types', [])
             
             if source_types:
                 colors_outcome = [self.scientific_colors['tertiary'], self.scientific_colors['quaternary']][:len(source_types)]
-                # Equal weight for visualization
                 outcome_values = [self.outcome_analyzer.total_outcomes] * len(source_types)
                 
                 bars2 = axes[1].bar(range(len(source_types)), outcome_values,
@@ -2252,7 +2467,6 @@ class DataVisualizer:
             report_content.append("No outcomes data available for analysis")
         report_content.append("")
         
-        # Coverage analysis
         pico_countries = set()
         outcome_countries = set()
         
@@ -2272,7 +2486,6 @@ class DataVisualizer:
         report_content.append(f"Outcome-only countries: {len(outcome_countries - pico_countries)}")
         report_content.append(f"Total country coverage: {len(pico_countries.union(outcome_countries))}")
         
-        # Train/test split information
         if self.pico_analyzer.data_split != 'unknown':
             report_content.append("")
             report_content.append("TRAIN/TEST SPLIT INFORMATION:")
@@ -2297,7 +2510,6 @@ def generate_overview_summary(pico_analyzer, outcome_analyzer, case_name):
     print(f"{case_name.upper()} COMPREHENSIVE ANALYSIS OVERVIEW{split_info}")
     print("="*100)
     
-    # PICO Overview
     print("\n" + "🔬 PICO EVIDENCE OVERVIEW")
     print("-" * 50)
     
@@ -2329,7 +2541,6 @@ def generate_overview_summary(pico_analyzer, outcome_analyzer, case_name):
     else:
         print("❌ No PICO data available for analysis")
     
-    # Outcomes Overview
     print("\n" + "🎯 OUTCOMES EVIDENCE OVERVIEW")
     print("-" * 50)
     
@@ -2351,7 +2562,6 @@ def generate_overview_summary(pico_analyzer, outcome_analyzer, case_name):
     else:
         print("❌ No outcomes data available for analysis")
     
-    # Coverage Summary
     print("\n" + "🗺️  COVERAGE SUMMARY")
     print("-" * 50)
     
@@ -2390,7 +2600,7 @@ def run_complete_analysis(pico_file_path, outcome_file_path, output_suffix=""):
     Args:
         pico_file_path: Path to consolidated PICO JSON file
         outcome_file_path: Path to consolidated outcomes JSON file
-        output_suffix: Suffix to add to output files (e.g., "_train", "_test")
+        output_suffix: Suffix to add to output files
     
     Returns:
         Tuple of (PICOAnalyzer, OutcomeAnalyzer, DataVisualizer) instances
@@ -2403,14 +2613,11 @@ def run_complete_analysis(pico_file_path, outcome_file_path, output_suffix=""):
         pico_analyzer = PICOAnalyzer(pico_file_path)
         outcome_analyzer = OutcomeAnalyzer(outcome_file_path)
         
-        # Extract case name from file path for overview
         case_name = pico_analyzer.case if pico_analyzer.case != 'UNKNOWN' else "Analysis"
         
-        # Generate overview summary using the updated class
         overview = ComprehensiveOverview()
         overview.generate_case_overview(pico_analyzer, outcome_analyzer, case_name)
         
-        # Print detailed unique PICOs and outcomes before visualizations
         pico_analyzer.print_unique_picos_overview()
         outcome_analyzer.print_unique_outcomes_overview()
         
@@ -2435,3 +2642,167 @@ def run_complete_analysis(pico_file_path, outcome_file_path, output_suffix=""):
         import traceback
         traceback.print_exc()
         return None, None, None
+
+
+class RunResults:
+    """Main class to orchestrate all results analysis"""
+    
+    def __init__(self, translated_path="data/text_translated", results_path="results"):
+        self.translated_path = translated_path
+        self.results_path = results_path
+        self.cases = ["NSCLC", "HCC"]
+        
+    def run_translation_analysis(self):
+        """Run translation quality analysis"""
+        print("\n" + "="*100)
+        print("TRANSLATION QUALITY ANALYSIS")
+        print("="*100)
+        
+        translation_analyzer = TranslationAnalyzer(translated_path=self.translated_path)
+        translation_analyzer.run_complete_analysis()
+    
+    def run_comprehensive_overview(self):
+        """Generate comprehensive overview for all cases"""
+        print("\n" + "="*100)
+        print("COMPREHENSIVE RESULTS ANALYSIS")
+        print("="*100)
+        
+        print("\n" + "📋 GENERATING COMPREHENSIVE OVERVIEW FOR ALL CASES")
+        print("="*80)
+        
+        comprehensive_overview = ComprehensiveOverview()
+        
+        all_pico_files_train = []
+        all_outcome_files_train = []
+        all_pico_files_test = []
+        all_outcome_files_test = []
+        
+        for case in self.cases:
+            case_dir = Path(f"{self.results_path}/{case}/consolidated")
+            if case_dir.exists():
+                train_pico_files = list(case_dir.glob("*consolidated_picos_train*.json"))
+                train_outcome_files = list(case_dir.glob("*consolidated_outcomes_train*.json"))
+                
+                test_pico_files = list(case_dir.glob("*consolidated_picos_test*.json"))
+                test_outcome_files = list(case_dir.glob("*consolidated_outcomes_test*.json"))
+                
+                if train_pico_files and train_outcome_files:
+                    all_pico_files_train.extend([(max(train_pico_files, key=os.path.getmtime), case)])
+                    all_outcome_files_train.extend([(max(train_outcome_files, key=os.path.getmtime), case)])
+                
+                if test_pico_files and test_outcome_files:
+                    all_pico_files_test.extend([(max(test_pico_files, key=os.path.getmtime), case)])
+                    all_outcome_files_test.extend([(max(test_outcome_files, key=os.path.getmtime), case)])
+        
+        if all_pico_files_train and all_outcome_files_train:
+            print("\n--- Generating Training Set Overview ---")
+            comprehensive_overview.generate_cross_case_overview(
+                all_pico_files_train, 
+                all_outcome_files_train,
+                output_suffix="_train"
+            )
+        
+        if all_pico_files_test and all_outcome_files_test:
+            print("\n--- Generating Test Set Overview ---")
+            comprehensive_overview.generate_cross_case_overview(
+                all_pico_files_test, 
+                all_outcome_files_test,
+                output_suffix="_test"
+            )
+    
+    def run_case_analysis(self, case_name, splits=["train", "test"]):
+        """Run detailed analysis for a specific case"""
+        print(f"\n=== {case_name.upper()} DETAILED ANALYSIS ===")
+        
+        consolidated_dir = Path(f"{self.results_path}/{case_name}/consolidated")
+        if not consolidated_dir.exists():
+            print(f"Warning: {self.results_path}/{case_name}/consolidated directory not found.")
+            print(f"Make sure the {case_name} consolidation step completed successfully.")
+            return
+        
+        for split in splits:
+            print(f"\n--- {case_name} {split.title()} Set Analysis ---")
+            
+            pico_files = list(consolidated_dir.glob(f"*consolidated_picos_{split}*.json"))
+            outcome_files = list(consolidated_dir.glob(f"*consolidated_outcomes_{split}*.json"))
+            
+            if pico_files and outcome_files:
+                pico_file = max(pico_files, key=os.path.getmtime)
+                outcome_file = max(outcome_files, key=os.path.getmtime)
+                
+                print(f"Analyzing {case_name} {split.title()} PICO data from: {pico_file}")
+                print(f"Analyzing {case_name} {split.title()} Outcomes data from: {outcome_file}")
+                print()
+                
+                try:
+                    pico_analyzer, outcome_analyzer, visualizer = run_complete_analysis(
+                        pico_file_path=str(pico_file),
+                        outcome_file_path=str(outcome_file),
+                        output_suffix=f"_{split}"
+                    )
+                    print(f"{case_name} {split} set analysis completed successfully!")
+                except Exception as e:
+                    print(f"Error in {case_name} {split} set analysis: {e}")
+                    import traceback
+                    traceback.print_exc()
+            else:
+                print(f"Warning: Could not find {case_name} {split} set consolidated files.")
+                if not pico_files:
+                    print(f"Missing {case_name} PICO {split} files in {consolidated_dir}/")
+                if not outcome_files:
+                    print(f"Missing {case_name} Outcomes {split} files in {consolidated_dir}/")
+    
+    def print_split_summary(self):
+        """Print train/test split summary for all cases"""
+        print("\n" + "="*100)
+        print("TRAIN/TEST SPLIT SUMMARY")
+        print("="*100)
+        
+        for case_name in self.cases:
+            consolidated_dir = Path(f"{self.results_path}/{case_name}/consolidated")
+            if not consolidated_dir.exists():
+                print(f"{case_name}: No consolidated directory found")
+                continue
+            
+            train_files = len(list(consolidated_dir.glob("*_train_*.json")))
+            test_files = len(list(consolidated_dir.glob("*_test_*.json")))
+            
+            print(f"{case_name}:")
+            print(f"  Training files: {train_files}")
+            print(f"  Test files: {test_files}")
+            
+            train_pico_files = list(consolidated_dir.glob("*consolidated_picos_train*.json"))
+            test_pico_files = list(consolidated_dir.glob("*consolidated_picos_test*.json"))
+            
+            if train_pico_files:
+                try:
+                    with open(train_pico_files[0], 'r', encoding='utf-8') as f:
+                        train_data = json.load(f)
+                    train_countries = train_data.get("consolidation_metadata", {}).get("source_countries", [])
+                    print(f"  Training countries: {', '.join(train_countries) if train_countries else 'None'}")
+                except:
+                    print(f"  Training countries: Unable to read")
+            
+            if test_pico_files:
+                try:
+                    with open(test_pico_files[0], 'r', encoding='utf-8') as f:
+                        test_data = json.load(f)
+                    test_countries = test_data.get("consolidation_metadata", {}).get("source_countries", [])
+                    print(f"  Test countries: {', '.join(test_countries) if test_countries else 'None'}")
+                except:
+                    print(f"  Test countries: Unable to read")
+            
+            print()
+    
+    def run_all(self):
+        """Run all results analysis"""
+        self.run_translation_analysis()
+        
+        self.run_comprehensive_overview()
+        
+        self.run_case_analysis("NSCLC", splits=["train", "test"])
+        
+        self.run_case_analysis("HCC", splits=["test"])
+        
+        self.print_split_summary()
+            
