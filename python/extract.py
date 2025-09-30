@@ -11,7 +11,7 @@ from langchain.schema import SystemMessage, HumanMessage
 class PICOExtractor:
     """
     PICO extractor that uses split extraction pipeline.
-    Extracts Population & Comparator separately from Outcomes, then combines results.
+    Extracts Population & Comparator separately from Outcomes.
     """
     def __init__(
         self,
@@ -31,9 +31,11 @@ class PICOExtractor:
         self.results_output_dir = results_output_dir
         self.chunks_input_dir = os.path.join(results_output_dir, "chunks")
         self.pico_output_dir = os.path.join(results_output_dir, "PICO")
+        self.outcomes_output_dir = os.path.join(results_output_dir, "outcomes")
         self.source_type_config = source_type_config or {}
         
         os.makedirs(self.pico_output_dir, exist_ok=True)
+        os.makedirs(self.outcomes_output_dir, exist_ok=True)
         
         self.openai = OpenAI()
         
@@ -347,6 +349,9 @@ class PICOExtractor:
             
             print(f"Extracted {len(pc_result.get('PICOs', []))} Population+Comparator entries for {country}")
         
+        if extracted_results:
+            self.save_extracted_picos(extracted_results, source_type_to_use, indication_from_metadata)
+        
         return extracted_results
 
     def extract_outcomes(
@@ -406,94 +411,10 @@ class PICOExtractor:
             
             print(f"Extracted outcomes for {country}: {outcomes_result.get('Outcomes', '')[:100]}...")
         
+        if extracted_results:
+            self.save_extracted_outcomes(extracted_results, source_type_to_use, indication_from_metadata)
+        
         return extracted_results
-
-    def combine_split_results(
-        self,
-        population_comparator_results: List[Dict[str, Any]],
-        outcomes_results: List[Dict[str, Any]]
-    ) -> List[Dict[str, Any]]:
-        """
-        Combine Population+Comparator results with Outcomes results to create complete PICO entries.
-        """
-        combined_results = []
-        
-        pc_by_country = {result["Country"]: result for result in population_comparator_results}
-        outcomes_by_country = {result["Country"]: result for result in outcomes_results}
-        
-        all_countries = set(pc_by_country.keys()) | set(outcomes_by_country.keys())
-        
-        for country in all_countries:
-            pc_result = pc_by_country.get(country, {"PICOs": [], "Country": country, "ChunksUsed": 0, "ContextTokens": 0})
-            outcomes_result = outcomes_by_country.get(country, {"Outcomes": "", "Country": country, "ChunksUsed": 0, "ContextTokens": 0})
-            
-            pc_picos = pc_result.get("PICOs", [])
-            country_outcomes = outcomes_result.get("Outcomes", "")
-            
-            if not pc_picos and not country_outcomes:
-                continue
-            
-            if pc_picos:
-                for pico in pc_picos:
-                    pico["Outcomes"] = country_outcomes
-            else:
-                pc_picos = [{
-                    "Population": outcomes_result.get("Indication", ""),
-                    "Intervention": "Medicine X (under assessment)",
-                    "Comparator": "",
-                    "Outcomes": country_outcomes
-                }]
-            
-            combined_result = {
-                "Indication": pc_result.get("Indication") or outcomes_result.get("Indication", ""),
-                "Country": country,
-                "PICOs": pc_picos,
-                "ChunksUsed": pc_result.get("ChunksUsed", 0) + outcomes_result.get("ChunksUsed", 0),
-                "ContextTokens": pc_result.get("ContextTokens", 0) + outcomes_result.get("ContextTokens", 0)
-            }
-            
-            combined_results.append(combined_result)
-            
-            print(f"Combined {len(pc_picos)} PICOs for {country} with outcomes: {country_outcomes[:50]}...")
-        
-        return combined_results
-
-    def extract_picos(
-        self,
-        source_type: Optional[str] = None,
-        indication: Optional[str] = None,
-        model_override: Optional[Union[str, ChatOpenAI]] = None
-    ) -> List[Dict[str, Any]]:
-        """
-        Extract PICOs using split extraction approach (Population+Comparator separately from Outcomes).
-        """
-        source_type_to_use = source_type or self.source_type
-        
-        print(f"Starting PICO extraction for {source_type_to_use}")
-        
-        print("Step 1: Extracting Population + Comparator")
-        pc_results = self.extract_population_comparator(
-            source_type=source_type_to_use,
-            indication=indication,
-            model_override=model_override
-        )
-        
-        print("Step 2: Extracting Outcomes")
-        outcomes_results = self.extract_outcomes(
-            source_type=source_type_to_use,
-            indication=indication,
-            model_override=model_override
-        )
-        
-        print("Step 3: Combining results")
-        combined_results = self.combine_split_results(pc_results, outcomes_results)
-        
-        if combined_results:
-            indication_for_save = (combined_results[0].get("Indication") if combined_results else 
-                                 indication or "unknown indication")
-            self.save_extracted_picos(combined_results, source_type_to_use, indication_for_save)
-        
-        return combined_results
 
     def save_extracted_picos(
         self,
@@ -502,7 +423,7 @@ class PICOExtractor:
         indication: str
     ):
         """
-        Save extracted PICOs to JSON file in the PICO output directory.
+        Save extracted PICOs (Population and Comparator only) to JSON file.
         """
         timestamp = datetime.now().isoformat()
         
@@ -528,5 +449,40 @@ class PICOExtractor:
             json.dump(organized_data, f, indent=2, ensure_ascii=False)
         
         print(f"Saved organized PICOs to {filepath}")
+        
+        return filepath
+
+    def save_extracted_outcomes(
+        self,
+        extracted_outcomes: List[Dict[str, Any]],
+        source_type: str,
+        indication: str
+    ):
+        """
+        Save extracted Outcomes to JSON file.
+        """
+        timestamp = datetime.now().isoformat()
+        
+        organized_data = {
+            "extraction_metadata": {
+                "timestamp": timestamp,
+                "source_type": source_type,
+                "indication": indication,
+                "total_countries": len(extracted_outcomes)
+            },
+            "outcomes_by_country": {}
+        }
+        
+        for country_outcomes in extracted_outcomes:
+            country = country_outcomes.get("Country", "Unknown")
+            organized_data["outcomes_by_country"][country] = country_outcomes
+        
+        filename = f"{source_type}_outcomes.json"
+        filepath = os.path.join(self.outcomes_output_dir, filename)
+        
+        with open(filepath, "w", encoding="utf-8") as f:
+            json.dump(organized_data, f, indent=2, ensure_ascii=False)
+        
+        print(f"Saved organized Outcomes to {filepath}")
         
         return filepath

@@ -1,355 +1,49 @@
 {
   "extraction_metadata": {
-    "timestamp": "2025-09-29T12:04:58.881874",
+    "timestamp": "2025-09-29T13:11:05.077987",
     "source_type": "clinical_guideline",
     "indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
     "total_countries": 11,
-    "total_picos": 49
+    "total_picos": 55
   },
   "picos_by_country": {
-    "DK": {
-      "Indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
-      "Country": "DK",
-      "PICOs": [
-        {
-          "Population": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "",
-          "Outcomes": "long-term survival, perioperative mortality, morbidity, recurrence, leukaemia, postoperative softening, gallbladder abscess, complications, quality of life"
-        }
-      ],
-      "ChunksUsed": 32,
-      "ContextTokens": 4882
-    },
-    "IT": {
-      "Indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
-      "Country": "IT",
-      "PICOs": [
-        {
-          "Population": "cirrhotic (max Child-Pugh B) patients with unresectable M0 multi-nodular HCC, in the absence of portal thrombosis",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "TACE",
-          "Outcomes": "recurrence rate, disease progression, survival, overall survival, progression-free survival, mortality, disease progression not related to hepatocellular carcinoma, adverse events, marked impairment of hepatic function, increased carcinogenicity, objective responses, response rates, benefit/risk ratio, adverse events (general)"
-        }
-      ],
-      "ChunksUsed": 32,
-      "ContextTokens": 7740
-    },
-    "NL": {
-      "Indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
-      "Country": "NL",
-      "PICOs": [
-        {
-          "Population": "patients with (not locally treatable) HCC",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "atezolizumab with bevacizumab",
-          "Outcomes": "overall survival, progression-free survivorship, response rate, adverse events, adverse events (Grade ≥ 3), quality of life, overall survivability, tumour response rate, complications, serious adverse events, Functional Assessment of Cancer Therapy (FACT-G), Functional Assessment of Cancer Therapy - Hepatobiliary (FACT-Hep), EQ-5D, EQ-VAS, distress, physical complaints, psychological complaints, psychosocial problems, general complaints, early detection of local recurrence, early detection of de novo tumor, alpha-fetoprotein (AFP) for follow-up, pulmonary metastasis, lung metastasis"
-        },
-        {
-          "Population": "patients with (not locally treatable) HCC",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "transarterial radioembolization (TARE)",
-          "Outcomes": "overall survival, progression-free survivorship, response rate, adverse events, adverse events (Grade ≥ 3), quality of life, overall survivability, tumour response rate, complications, serious adverse events, Functional Assessment of Cancer Therapy (FACT-G), Functional Assessment of Cancer Therapy - Hepatobiliary (FACT-Hep), EQ-5D, EQ-VAS, distress, physical complaints, psychological complaints, psychosocial problems, general complaints, early detection of local recurrence, early detection of de novo tumor, alpha-fetoprotein (AFP) for follow-up, pulmonary metastasis, lung metastasis"
-        }
-      ],
-      "ChunksUsed": 32,
-      "ContextTokens": 7361
-    },
-    "SE": {
-      "Indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
-      "Country": "SE",
-      "PICOs": [
-        {
-          "Population": "patients with advanced or unresectable hepatocellular carcinoma with good functional status (WHO PS 0-1) with good liver function (Child Pugh A)",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "atezolizumab and bevacizumab",
-          "Outcomes": "survival, health-related quality of life, EORTC QLQ-C30, FACT-G, EORTC QLQ-HCC18, FACT-Hep, response rates (RECIST criteria), response rates (mRECIST criteria), overall response rate (mRECIST), tumour viability (mRECIST criteria), nutritional status, concentration difficulties, emotional impact, physical needs, psychological needs, social needs, existential needs, decompensation (varicose vein bleeding), decompensation (clinically detectable ascites), decompensation (hepatic encephalopathy, grade > 1 on the New Haven criteria)"
-        },
-        {
-          "Population": "patients with advanced or unresectable hepatocellular carcinoma with good functional status (WHO PS 0-1) with good liver function (Child Pugh A) when combination therapy is inappropriate",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "tremelimumab-durvalumab combination",
-          "Outcomes": "survival, health-related quality of life, EORTC QLQ-C30, FACT-G, EORTC QLQ-HCC18, FACT-Hep, response rates (RECIST criteria), response rates (mRECIST criteria), overall response rate (mRECIST), tumour viability (mRECIST criteria), nutritional status, concentration difficulties, emotional impact, physical needs, psychological needs, social needs, existential needs, decompensation (varicose vein bleeding), decompensation (clinically detectable ascites), decompensation (hepatic encephalopathy, grade > 1 on the New Haven criteria)"
-        },
-        {
-          "Population": "patients with advanced or unresectable hepatocellular carcinoma with good functional status (WHO PS 0-1) with good liver function (Child Pugh A) who cannot be offered atezolizumab, bevacizumab or tremelimumab",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "lenvatinib",
-          "Outcomes": "survival, health-related quality of life, EORTC QLQ-C30, FACT-G, EORTC QLQ-HCC18, FACT-Hep, response rates (RECIST criteria), response rates (mRECIST criteria), overall response rate (mRECIST), tumour viability (mRECIST criteria), nutritional status, concentration difficulties, emotional impact, physical needs, psychological needs, social needs, existential needs, decompensation (varicose vein bleeding), decompensation (clinically detectable ascites), decompensation (hepatic encephalopathy, grade > 1 on the New Haven criteria)"
-        },
-        {
-          "Population": "patients with advanced or unresectable hepatocellular carcinoma with good functional status (WHO PS 0-1) with good liver function (Child Pugh A) who cannot be offered atezolizumab, bevacizumab or tremelimumab",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "sorafenib",
-          "Outcomes": "survival, health-related quality of life, EORTC QLQ-C30, FACT-G, EORTC QLQ-HCC18, FACT-Hep, response rates (RECIST criteria), response rates (mRECIST criteria), overall response rate (mRECIST), tumour viability (mRECIST criteria), nutritional status, concentration difficulties, emotional impact, physical needs, psychological needs, social needs, existential needs, decompensation (varicose vein bleeding), decompensation (clinically detectable ascites), decompensation (hepatic encephalopathy, grade > 1 on the New Haven criteria)"
-        },
-        {
-          "Population": "patients with advanced or unresectable hepatocellular carcinoma following the progress of first line treatment with TKI",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "regorafenib",
-          "Outcomes": "survival, health-related quality of life, EORTC QLQ-C30, FACT-G, EORTC QLQ-HCC18, FACT-Hep, response rates (RECIST criteria), response rates (mRECIST criteria), overall response rate (mRECIST), tumour viability (mRECIST criteria), nutritional status, concentration difficulties, emotional impact, physical needs, psychological needs, social needs, existential needs, decompensation (varicose vein bleeding), decompensation (clinically detectable ascites), decompensation (hepatic encephalopathy, grade > 1 on the New Haven criteria)"
-        },
-        {
-          "Population": "patients with advanced or unresectable hepatocellular carcinoma following the progress of first line treatment with TKI",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "cabozantinib",
-          "Outcomes": "survival, health-related quality of life, EORTC QLQ-C30, FACT-G, EORTC QLQ-HCC18, FACT-Hep, response rates (RECIST criteria), response rates (mRECIST criteria), overall response rate (mRECIST), tumour viability (mRECIST criteria), nutritional status, concentration difficulties, emotional impact, physical needs, psychological needs, social needs, existential needs, decompensation (varicose vein bleeding), decompensation (clinically detectable ascites), decompensation (hepatic encephalopathy, grade > 1 on the New Haven criteria)"
-        },
-        {
-          "Population": "patients with advanced or unresectable hepatocellular carcinoma following the progress of first line treatment with TKI",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "ramucirumab",
-          "Outcomes": "survival, health-related quality of life, EORTC QLQ-C30, FACT-G, EORTC QLQ-HCC18, FACT-Hep, response rates (RECIST criteria), response rates (mRECIST criteria), overall response rate (mRECIST), tumour viability (mRECIST criteria), nutritional status, concentration difficulties, emotional impact, physical needs, psychological needs, social needs, existential needs, decompensation (varicose vein bleeding), decompensation (clinically detectable ascites), decompensation (hepatic encephalopathy, grade > 1 on the New Haven criteria)"
-        },
-        {
-          "Population": "patients with advanced or unresectable hepatocellular carcinoma in the second line after atezolizumab-bevacizumab",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "lenvatinib",
-          "Outcomes": "survival, health-related quality of life, EORTC QLQ-C30, FACT-G, EORTC QLQ-HCC18, FACT-Hep, response rates (RECIST criteria), response rates (mRECIST criteria), overall response rate (mRECIST), tumour viability (mRECIST criteria), nutritional status, concentration difficulties, emotional impact, physical needs, psychological needs, social needs, existential needs, decompensation (varicose vein bleeding), decompensation (clinically detectable ascites), decompensation (hepatic encephalopathy, grade > 1 on the New Haven criteria)"
-        },
-        {
-          "Population": "patients with advanced or unresectable hepatocellular carcinoma in the second line after atezolizumab-bevacizumab",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "sorafenib",
-          "Outcomes": "survival, health-related quality of life, EORTC QLQ-C30, FACT-G, EORTC QLQ-HCC18, FACT-Hep, response rates (RECIST criteria), response rates (mRECIST criteria), overall response rate (mRECIST), tumour viability (mRECIST criteria), nutritional status, concentration difficulties, emotional impact, physical needs, psychological needs, social needs, existential needs, decompensation (varicose vein bleeding), decompensation (clinically detectable ascites), decompensation (hepatic encephalopathy, grade > 1 on the New Haven criteria)"
-        },
-        {
-          "Population": "patients with advanced or unresectable hepatocellular carcinoma in the second line after atezolizumab-bevacizumab",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "regorafenib",
-          "Outcomes": "survival, health-related quality of life, EORTC QLQ-C30, FACT-G, EORTC QLQ-HCC18, FACT-Hep, response rates (RECIST criteria), response rates (mRECIST criteria), overall response rate (mRECIST), tumour viability (mRECIST criteria), nutritional status, concentration difficulties, emotional impact, physical needs, psychological needs, social needs, existential needs, decompensation (varicose vein bleeding), decompensation (clinically detectable ascites), decompensation (hepatic encephalopathy, grade > 1 on the New Haven criteria)"
-        },
-        {
-          "Population": "patients with advanced or unresectable hepatocellular carcinoma in the second line after atezolizumab-bevacizumab",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "cabozantinib",
-          "Outcomes": "survival, health-related quality of life, EORTC QLQ-C30, FACT-G, EORTC QLQ-HCC18, FACT-Hep, response rates (RECIST criteria), response rates (mRECIST criteria), overall response rate (mRECIST), tumour viability (mRECIST criteria), nutritional status, concentration difficulties, emotional impact, physical needs, psychological needs, social needs, existential needs, decompensation (varicose vein bleeding), decompensation (clinically detectable ascites), decompensation (hepatic encephalopathy, grade > 1 on the New Haven criteria)"
-        },
-        {
-          "Population": "patients with advanced or unresectable hepatocellular carcinoma in the second line after atezolizumab-bevacizumab",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "ramucirumab",
-          "Outcomes": "survival, health-related quality of life, EORTC QLQ-C30, FACT-G, EORTC QLQ-HCC18, FACT-Hep, response rates (RECIST criteria), response rates (mRECIST criteria), overall response rate (mRECIST), tumour viability (mRECIST criteria), nutritional status, concentration difficulties, emotional impact, physical needs, psychological needs, social needs, existential needs, decompensation (varicose vein bleeding), decompensation (clinically detectable ascites), decompensation (hepatic encephalopathy, grade > 1 on the New Haven criteria)"
-        }
-      ],
-      "ChunksUsed": 32,
-      "ContextTokens": 5607
-    },
-    "ES": {
-      "Indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
-      "Country": "ES",
-      "PICOs": [
-        {
-          "Population": "advanced disease, systemic treatment should be offered to patients with ECOG/PS 0-1 and Child–Pugh class A",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "BSC best supportive care",
-          "Outcomes": "survival, prognosis (BCLC staging system), adverse events, long-term treatment-related complications, therapeutic efficacy, early detection of recurrences"
-        }
-      ],
-      "ChunksUsed": 32,
-      "ContextTokens": 7088
-    },
-    "FR": {
-      "Indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
-      "Country": "FR",
-      "PICOs": [
-        {
-          "Population": "patients with unresectable hepatocellular carcinoma",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "sorafenib",
-          "Outcomes": "overall survival, progression-free survival, time-to-progression, objective response rate (modified RECIST criteria), objective response rate (RECIST criteria), adverse events, diarrhoea, fatigue, nausea, neutropenia, anaemia, headache, rash, liver and biliary damages, EORTC QLQ-C30, EORTC QLQ-LC13, EQ-5D-5L, SF-36, visual analogue scale"
-        },
-        {
-          "Population": "patients with unresectable hepatocellular carcinoma",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "lenvatinib",
-          "Outcomes": "overall survival, progression-free survival, time-to-progression, objective response rate (modified RECIST criteria), objective response rate (RECIST criteria), adverse events, diarrhoea, fatigue, nausea, neutropenia, anaemia, headache, rash, liver and biliary damages, EORTC QLQ-C30, EORTC QLQ-LC13, EQ-5D-5L, SF-36, visual analogue scale"
-        },
-        {
-          "Population": "patients with unresectable hepatocellular carcinoma",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "atezolizumab plus bevacizumab",
-          "Outcomes": "overall survival, progression-free survival, time-to-progression, objective response rate (modified RECIST criteria), objective response rate (RECIST criteria), adverse events, diarrhoea, fatigue, nausea, neutropenia, anaemia, headache, rash, liver and biliary damages, EORTC QLQ-C30, EORTC QLQ-LC13, EQ-5D-5L, SF-36, visual analogue scale"
-        },
-        {
-          "Population": "patients with unresectable hepatocellular carcinoma",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "selective internal radiation therapy (SIRT) with yttrium-90 resin microspheres",
-          "Outcomes": "overall survival, progression-free survival, time-to-progression, objective response rate (modified RECIST criteria), objective response rate (RECIST criteria), adverse events, diarrhoea, fatigue, nausea, neutropenia, anaemia, headache, rash, liver and biliary damages, EORTC QLQ-C30, EORTC QLQ-LC13, EQ-5D-5L, SF-36, visual analogue scale"
-        },
-        {
-          "Population": "patients with unresectable hepatocellular carcinoma",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "radioembolization with TheraSphere Yttrium-90 glass microspheres",
-          "Outcomes": "overall survival, progression-free survival, time-to-progression, objective response rate (modified RECIST criteria), objective response rate (RECIST criteria), adverse events, diarrhoea, fatigue, nausea, neutropenia, anaemia, headache, rash, liver and biliary damages, EORTC QLQ-C30, EORTC QLQ-LC13, EQ-5D-5L, SF-36, visual analogue scale"
-        },
-        {
-          "Population": "patients with advanced hepatocellular carcinoma previously treated with sorafenib",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "regorafenib",
-          "Outcomes": "overall survival, progression-free survival, time-to-progression, objective response rate (modified RECIST criteria), objective response rate (RECIST criteria), adverse events, diarrhoea, fatigue, nausea, neutropenia, anaemia, headache, rash, liver and biliary damages, EORTC QLQ-C30, EORTC QLQ-LC13, EQ-5D-5L, SF-36, visual analogue scale"
-        },
-        {
-          "Population": "patients with advanced hepatocellular carcinoma previously treated with sorafenib",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "cabozantinib",
-          "Outcomes": "overall survival, progression-free survival, time-to-progression, objective response rate (modified RECIST criteria), objective response rate (RECIST criteria), adverse events, diarrhoea, fatigue, nausea, neutropenia, anaemia, headache, rash, liver and biliary damages, EORTC QLQ-C30, EORTC QLQ-LC13, EQ-5D-5L, SF-36, visual analogue scale"
-        },
-        {
-          "Population": "patients with advanced hepatocellular carcinoma previously treated with sorafenib",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "ramucirumab",
-          "Outcomes": "overall survival, progression-free survival, time-to-progression, objective response rate (modified RECIST criteria), objective response rate (RECIST criteria), adverse events, diarrhoea, fatigue, nausea, neutropenia, anaemia, headache, rash, liver and biliary damages, EORTC QLQ-C30, EORTC QLQ-LC13, EQ-5D-5L, SF-36, visual analogue scale"
-        },
-        {
-          "Population": "patients with advanced hepatocellular carcinoma previously treated with sorafenib",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "nivolumab plus ipilimumab",
-          "Outcomes": "overall survival, progression-free survival, time-to-progression, objective response rate (modified RECIST criteria), objective response rate (RECIST criteria), adverse events, diarrhoea, fatigue, nausea, neutropenia, anaemia, headache, rash, liver and biliary damages, EORTC QLQ-C30, EORTC QLQ-LC13, EQ-5D-5L, SF-36, visual analogue scale"
-        },
-        {
-          "Population": "patients with advanced hepatocellular carcinoma and elevated alpha-fetoprotein (AFP) following first-line sorafenib",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "ramucirumab",
-          "Outcomes": "overall survival, progression-free survival, time-to-progression, objective response rate (modified RECIST criteria), objective response rate (RECIST criteria), adverse events, diarrhoea, fatigue, nausea, neutropenia, anaemia, headache, rash, liver and biliary damages, EORTC QLQ-C30, EORTC QLQ-LC13, EQ-5D-5L, SF-36, visual analogue scale"
-        },
-        {
-          "Population": "patients with advanced hepatocellular carcinoma and baseline AFP over 400 ng/mL, previously treated with sorafenib",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "ramucirumab",
-          "Outcomes": "overall survival, progression-free survival, time-to-progression, objective response rate (modified RECIST criteria), objective response rate (RECIST criteria), adverse events, diarrhoea, fatigue, nausea, neutropenia, anaemia, headache, rash, liver and biliary damages, EORTC QLQ-C30, EORTC QLQ-LC13, EQ-5D-5L, SF-36, visual analogue scale"
-        },
-        {
-          "Population": "patients with advanced hepatocellular carcinoma previously treated with sorafenib",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "best supportive care",
-          "Outcomes": "overall survival, progression-free survival, time-to-progression, objective response rate (modified RECIST criteria), objective response rate (RECIST criteria), adverse events, diarrhoea, fatigue, nausea, neutropenia, anaemia, headache, rash, liver and biliary damages, EORTC QLQ-C30, EORTC QLQ-LC13, EQ-5D-5L, SF-36, visual analogue scale"
-        }
-      ],
-      "ChunksUsed": 32,
-      "ContextTokens": 9487
-    },
-    "DE": {
-      "Indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
-      "Country": "DE",
-      "PICOs": [
-        {
-          "Population": "patients with HCC with evidence of a survival benefit from TACE versus supportive therapy (BSC)",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "TACE",
-          "Outcomes": "overall survival, progression-free survival, response (CR, PR, mRECIST), partial response, complete remission, time to progression of the tumor, time to deterioration, intraoperative complications, mortality, morbidity, recurrence risk, adverse events, neurotoxicity, disease progression, EORTC QLQ-C30, EORTC QLQ-LC13, EQ-5D-5L, SF-36, visual analogue scale"
-        },
-        {
-          "Population": "patients with HCC with evidence of a survival benefit from TACE versus supportive therapy (BSC)",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "best supportive care",
-          "Outcomes": "overall survival, progression-free survival, response (CR, PR, mRECIST), partial response, complete remission, time to progression of the tumor, time to deterioration, intraoperative complications, mortality, morbidity, recurrence risk, adverse events, neurotoxicity, disease progression, EORTC QLQ-C30, EORTC QLQ-LC13, EQ-5D-5L, SF-36, visual analogue scale"
-        },
-        {
-          "Population": "patients with HCC in whom conventional TACE and drug-eluting TACE can be considered as equivalent procedures",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "conventional TACE",
-          "Outcomes": "overall survival, progression-free survival, response (CR, PR, mRECIST), partial response, complete remission, time to progression of the tumor, time to deterioration, intraoperative complications, mortality, morbidity, recurrence risk, adverse events, neurotoxicity, disease progression, EORTC QLQ-C30, EORTC QLQ-LC13, EQ-5D-5L, SF-36, visual analogue scale"
-        },
-        {
-          "Population": "patients with HCC in whom conventional TACE and drug-eluting TACE can be considered as equivalent procedures",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "drug-eluting TACE",
-          "Outcomes": "overall survival, progression-free survival, response (CR, PR, mRECIST), partial response, complete remission, time to progression of the tumor, time to deterioration, intraoperative complications, mortality, morbidity, recurrence risk, adverse events, neurotoxicity, disease progression, EORTC QLQ-C30, EORTC QLQ-LC13, EQ-5D-5L, SF-36, visual analogue scale"
-        },
-        {
-          "Population": "patients with tumour localization that cannot be locally controlled or resected and with an ECOG status of 0 1 points",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "Sorafenib",
-          "Outcomes": "overall survival, progression-free survival, response (CR, PR, mRECIST), partial response, complete remission, time to progression of the tumor, time to deterioration, intraoperative complications, mortality, morbidity, recurrence risk, adverse events, neurotoxicity, disease progression, EORTC QLQ-C30, EORTC QLQ-LC13, EQ-5D-5L, SF-36, visual analogue scale"
-        }
-      ],
-      "ChunksUsed": 32,
-      "ContextTokens": 7843
-    },
-    "PO": {
-      "Indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
-      "Country": "PO",
-      "PICOs": [
-        {
-          "Population": "patients previously treated with Sorafenib with AFP ≥ 400 ng/ ml",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "ramucyrumab",
-          "Outcomes": "overall survival, response rates (RECIST criteria), response rates (mRECIST), response rates (RECIS), perioperative mortality, adverse events, progression grading, time to progression, completeness of ablation (multiphase computed tomography with contrast), completeness of ablation (magnetic resonance imaging with contrast), effectiveness of ablation (magnetic resonance imaging), effectiveness of ablation (multiphase computed tomography), effectiveness of ablation (not ultrasonography), adverse events (general), liver function (Child and Pugh scale), tumour characteristics, disease status, histological parameters, immunohistochemical confirmation, genetic diagnosis, radiological features (contrast imaging), pathomorphological evaluation, ECOG performance status, quality of life (no specific instrument named)"
-        },
-        {
-          "Population": "patients who are well tolerant of sorafenib",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "regorafenib",
-          "Outcomes": "overall survival, response rates (RECIST criteria), response rates (mRECIST), response rates (RECIS), perioperative mortality, adverse events, progression grading, time to progression, completeness of ablation (multiphase computed tomography with contrast), completeness of ablation (magnetic resonance imaging with contrast), effectiveness of ablation (magnetic resonance imaging), effectiveness of ablation (multiphase computed tomography), effectiveness of ablation (not ultrasonography), adverse events (general), liver function (Child and Pugh scale), tumour characteristics, disease status, histological parameters, immunohistochemical confirmation, genetic diagnosis, radiological features (contrast imaging), pathomorphological evaluation, ECOG performance status, quality of life (no specific instrument named)"
-        },
-        {
-          "Population": "second-line patients who have previously received bevacizumab with atezolizumab",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "sorafenib",
-          "Outcomes": "overall survival, response rates (RECIST criteria), response rates (mRECIST), response rates (RECIS), perioperative mortality, adverse events, progression grading, time to progression, completeness of ablation (multiphase computed tomography with contrast), completeness of ablation (magnetic resonance imaging with contrast), effectiveness of ablation (magnetic resonance imaging), effectiveness of ablation (multiphase computed tomography), effectiveness of ablation (not ultrasonography), adverse events (general), liver function (Child and Pugh scale), tumour characteristics, disease status, histological parameters, immunohistochemical confirmation, genetic diagnosis, radiological features (contrast imaging), pathomorphological evaluation, ECOG performance status, quality of life (no specific instrument named)"
-        },
-        {
-          "Population": "second-line patients who have previously received bevacizumab with atezolizumab",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "leninivat",
-          "Outcomes": "overall survival, response rates (RECIST criteria), response rates (mRECIST), response rates (RECIS), perioperative mortality, adverse events, progression grading, time to progression, completeness of ablation (multiphase computed tomography with contrast), completeness of ablation (magnetic resonance imaging with contrast), effectiveness of ablation (magnetic resonance imaging), effectiveness of ablation (multiphase computed tomography), effectiveness of ablation (not ultrasonography), adverse events (general), liver function (Child and Pugh scale), tumour characteristics, disease status, histological parameters, immunohistochemical confirmation, genetic diagnosis, radiological features (contrast imaging), pathomorphological evaluation, ECOG performance status, quality of life (no specific instrument named)"
-        },
-        {
-          "Population": "second-line patients who have previously received bevacizumab with atezolizumab",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "cabozantinib",
-          "Outcomes": "overall survival, response rates (RECIST criteria), response rates (mRECIST), response rates (RECIS), perioperative mortality, adverse events, progression grading, time to progression, completeness of ablation (multiphase computed tomography with contrast), completeness of ablation (magnetic resonance imaging with contrast), effectiveness of ablation (magnetic resonance imaging), effectiveness of ablation (multiphase computed tomography), effectiveness of ablation (not ultrasonography), adverse events (general), liver function (Child and Pugh scale), tumour characteristics, disease status, histological parameters, immunohistochemical confirmation, genetic diagnosis, radiological features (contrast imaging), pathomorphological evaluation, ECOG performance status, quality of life (no specific instrument named)"
-        }
-      ],
-      "ChunksUsed": 27,
-      "ContextTokens": 6104
-    },
     "AT": {
       "Indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
       "Country": "AT",
       "PICOs": [
         {
-          "Population": "patients with HCC with evidence of a survival benefit from TACE versus supportive therapy (BSC)",
+          "Population": "patients with advanced or unresectable hepatocellular carcinoma",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "atezolizumab and bevacizumab",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients with advanced or unresectable hepatocellular carcinoma",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "durvalumab with tremelimumab",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients with advanced or unresectable hepatocellular carcinoma",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "sorafenib",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients with advanced or unresectable hepatocellular carcinoma",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "lenvatinib",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients with advanced or unresectable hepatocellular carcinoma",
           "Intervention": "Medicine X (under assessment)",
           "Comparator": "best supportive care",
-          "Outcomes": "overall survival, progression-free survival, response (CR, PR, mRECIST), partial response, complete remission, time to progression of the tumor, time to deterioration, intraoperative complications, mortality, morbidity, recurrence risk, adverse events, neurotoxicity, disease progression, EORTC QLQ-C30, EORTC QLQ-LC13, EQ-5D-5L, SF-36, visual analogue scale"
-        },
-        {
-          "Population": "patients with HCC with evidence of a survival benefit from TACE versus supportive therapy (BSC)",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "conventional TACE",
-          "Outcomes": "overall survival, progression-free survival, response (CR, PR, mRECIST), partial response, complete remission, time to progression of the tumor, time to deterioration, intraoperative complications, mortality, morbidity, recurrence risk, adverse events, neurotoxicity, disease progression, EORTC QLQ-C30, EORTC QLQ-LC13, EQ-5D-5L, SF-36, visual analogue scale"
-        },
-        {
-          "Population": "patients with HCC with evidence of a survival benefit from TACE versus supportive therapy (BSC)",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "drug-eluting TACE",
-          "Outcomes": "overall survival, progression-free survival, response (CR, PR, mRECIST), partial response, complete remission, time to progression of the tumor, time to deterioration, intraoperative complications, mortality, morbidity, recurrence risk, adverse events, neurotoxicity, disease progression, EORTC QLQ-C30, EORTC QLQ-LC13, EQ-5D-5L, SF-36, visual analogue scale"
-        },
-        {
-          "Population": "patients with advanced or unresectable hepatocellular carcinoma or a tumour localization that cannot be locally controlled or resected and with an ECOG status of 0 1 points",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "Sorafenib",
-          "Outcomes": "overall survival, progression-free survival, response (CR, PR, mRECIST), partial response, complete remission, time to progression of the tumor, time to deterioration, intraoperative complications, mortality, morbidity, recurrence risk, adverse events, neurotoxicity, disease progression, EORTC QLQ-C30, EORTC QLQ-LC13, EQ-5D-5L, SF-36, visual analogue scale"
+          "Outcomes": ""
         }
       ],
-      "ChunksUsed": 32,
-      "ContextTokens": 7843
-    },
-    "EU": {
-      "Indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
-      "Country": "EU",
-      "PICOs": [
-        {
-          "Population": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "",
-          "Outcomes": "bleeding, tumour seeding, side-effects (general)"
-        }
-      ],
-      "ChunksUsed": 22,
-      "ContextTokens": 5548
+      "ChunksUsed": 25,
+      "ContextTokens": 5764
     },
     "BE": {
       "Indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
@@ -359,35 +53,376 @@
           "Population": "patients with unresectable HCC",
           "Intervention": "Medicine X (under assessment)",
           "Comparator": "arterial chemoembolization",
-          "Outcomes": "partial response, survival, objective response, liver failure, pain, fever, serious complications, portal vein thrombosis, recurrence, adverse events (general)"
+          "Outcomes": ""
         },
         {
           "Population": "patients with unresectable HCC",
           "Intervention": "Medicine X (under assessment)",
           "Comparator": "radioactive Iodine 131 treatment",
-          "Outcomes": "partial response, survival, objective response, liver failure, pain, fever, serious complications, portal vein thrombosis, recurrence, adverse events (general)"
+          "Outcomes": ""
         },
         {
           "Population": "patients with unresectable HCC",
           "Intervention": "Medicine X (under assessment)",
           "Comparator": "systemic chemotherapy (doxorubicin or cisplatin)",
-          "Outcomes": "partial response, survival, objective response, liver failure, pain, fever, serious complications, portal vein thrombosis, recurrence, adverse events (general)"
-        },
-        {
-          "Population": "patients with unresectable HCC",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "hormonal therapy with tamoxifen",
-          "Outcomes": "partial response, survival, objective response, liver failure, pain, fever, serious complications, portal vein thrombosis, recurrence, adverse events (general)"
+          "Outcomes": ""
         },
         {
           "Population": "patients with unresectable HCC",
           "Intervention": "Medicine X (under assessment)",
           "Comparator": "subcutaneous octreotide therapy",
-          "Outcomes": "partial response, survival, objective response, liver failure, pain, fever, serious complications, portal vein thrombosis, recurrence, adverse events (general)"
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients with unresectable HCC",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "hormonal therapy with tamoxifen",
+          "Outcomes": ""
         }
       ],
-      "ChunksUsed": 32,
-      "ContextTokens": 7461
+      "ChunksUsed": 25,
+      "ContextTokens": 5682
+    },
+    "DE": {
+      "Indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
+      "Country": "DE",
+      "PICOs": [
+        {
+          "Population": "patients with chronic liver disease (C Child-Pough stage A); and for patients with renal metastatic liver disease who have not been treated locally or who cannot be localised locally",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "atezolizumab and bevacizumab",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients with chronic liver disease (C Child-Pough stage A); and for patients with renal metastatic liver disease who have not been treated locally or who cannot be localised locally",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "durvalumab with tremelimumab",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients with chronic liver disease (C Child-Pough stage A); and for patients with renal metastatic liver disease who have not been treated locally or who cannot be localised locally",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "sorafenib",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients with chronic liver disease (C Child-Pough stage A); and for patients with renal metastatic liver disease who have not been treated locally or who cannot be localised locally",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "lenvatinib",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients in the first line who have not received durvalumab",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "pembrolizumab",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients with HCC with evidence of a survival benefit from TACE versus supportive therapy (BSC)",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "TACE",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients with HCC with evidence of a survival benefit from TACE versus supportive therapy (BSC)",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "best supportive care",
+          "Outcomes": ""
+        }
+      ],
+      "ChunksUsed": 25,
+      "ContextTokens": 5764
+    },
+    "DK": {
+      "Indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
+      "Country": "DK",
+      "PICOs": [
+        {
+          "Population": "patients treated with SIRT",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "sorafenib",
+          "Outcomes": ""
+        }
+      ],
+      "ChunksUsed": 25,
+      "ContextTokens": 3686
+    },
+    "ES": {
+      "Indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
+      "Country": "ES",
+      "PICOs": [
+        {
+          "Population": "patients with advanced disease, systemic treatment should be offered to patients with ECOG/PS 0-1 and Child–Pugh class A",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "BSC best supportive care",
+          "Outcomes": ""
+        }
+      ],
+      "ChunksUsed": 20,
+      "ContextTokens": 4528
+    },
+    "EU": {
+      "Indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
+      "Country": "EU",
+      "PICOs": [],
+      "ChunksUsed": 11,
+      "ContextTokens": 2774
+    },
+    "FR": {
+      "Indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
+      "Country": "FR",
+      "PICOs": [
+        {
+          "Population": "patients with advanced or unresectable hepatocellular carcinoma",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "sorafenib",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients with advanced or unresectable hepatocellular carcinoma",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "lenvatinib",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients with advanced or unresectable hepatocellular carcinoma",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "atezolizumab plus bevacizumab",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients with advanced or unresectable hepatocellular carcinoma",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "regorafenib",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients with advanced or unresectable hepatocellular carcinoma",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "cabozantinib",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients with advanced or unresectable hepatocellular carcinoma and increased alpha-fetoprotein concentrations",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "ramucirumab",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients with advanced or unresectable hepatocellular carcinoma previously treated with sorafenib",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "nivolumab plus ipilimumab",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients with advanced or unresectable hepatocellular carcinoma",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "selective internal radiation therapy (SIRT)",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients with advanced or unresectable hepatocellular carcinoma",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "transarterial chemoembolization (TACE)",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients with advanced or unresectable hepatocellular carcinoma",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "best supportive care",
+          "Outcomes": ""
+        }
+      ],
+      "ChunksUsed": 25,
+      "ContextTokens": 7317
+    },
+    "IT": {
+      "Indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
+      "Country": "IT",
+      "PICOs": [
+        {
+          "Population": "cirrhotic (max Child-Pugh B) patients with unresectable M0 multi-nodular HCC, in the absence of portal thrombosis",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "TACE",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients with advanced HCC, who have failed or are not eligible for local-regional therapy, with impaired hepatic function (Child-Pugh B)",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "sorafenib",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients with advanced and/or unresectable HCC",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "FOLFOX4",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients with advanced and/or unresectable HCC",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "doxorubicin",
+          "Outcomes": ""
+        }
+      ],
+      "ChunksUsed": 25,
+      "ContextTokens": 5569
+    },
+    "NL": {
+      "Indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
+      "Country": "NL",
+      "PICOs": [
+        {
+          "Population": "patients with advanced hepatocellular carcinoma who had not received previous systemic therapy",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "atezolizumab with bevacizumab",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients with advanced hepatocellular carcinoma who had not received previous systemic therapy",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "sorafenib",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients with advanced hepatocellular carcinoma who had not received previous systemic therapy",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "lenvatinib",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients with advanced or unresectable hepatocellular carcinoma who have progressed on or are intolerant to first-line therapy",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "regorafenib",
+          "Outcomes": ""
+        }
+      ],
+      "ChunksUsed": 25,
+      "ContextTokens": 6031
+    },
+    "PO": {
+      "Indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
+      "Country": "PO",
+      "PICOs": [
+        {
+          "Population": "patients with non-surgical hepatocellular carcinoma in good general condition and with good liver function (Child and Pugha Class A)",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "combination of bevacizumab and atezolizumab",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients previously treated with Sorafenib with AFP ≥ 400 ng/ ml",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "ramucyrumab",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients who are well tolerant of sorafenib",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "regorafenib",
+          "Outcomes": ""
+        },
+        {
+          "Population": "second-line patients who have previously received bevacizumab with atezolizumab",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "sorafenib",
+          "Outcomes": ""
+        },
+        {
+          "Population": "second-line patients who have previously received bevacizumab with atezolizumab",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "leninivat",
+          "Outcomes": ""
+        },
+        {
+          "Population": "second-line patients who have previously received bevacizumab with atezolizumab",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "cabozantinib",
+          "Outcomes": ""
+        }
+      ],
+      "ChunksUsed": 15,
+      "ContextTokens": 3401
+    },
+    "SE": {
+      "Indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
+      "Country": "SE",
+      "PICOs": [
+        {
+          "Population": "patients with advanced or unresectable hepatocellular carcinoma with good functional status (WHO PS 0-1) with good liver function (Child Pugh A) without contraindications to the medicinal products",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "atezolizumab and bevacizumab",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients with advanced or unresectable hepatocellular carcinoma with good functional status (WHO PS 0-1) with good liver function (Child Pugh A) when combination therapy is inappropriate",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "tremelimumab-durvalumab",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients with advanced or unresectable hepatocellular carcinoma with good functional status (WHO PS 0-1) with good liver function (Child Pugh A) who cannot be offered atezolizumab, bevacizumab or tremelimumab",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "lenvatinib",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients with advanced or unresectable hepatocellular carcinoma with good functional status (WHO PS 0-1) with good liver function (Child Pugh A) who cannot be offered atezolizumab, bevacizumab or tremelimumab",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "sorafenib",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients with advanced or unresectable hepatocellular carcinoma following progression on first line treatment with tyrosine kinase inhibitor",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "regorafenib",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients with advanced or unresectable hepatocellular carcinoma following progression on first line treatment with tyrosine kinase inhibitor",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "cabozantinib",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients with advanced or unresectable hepatocellular carcinoma following progression on first line treatment with tyrosine kinase inhibitor",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "ramucirumab",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients with advanced or unresectable hepatocellular carcinoma in the second line after first line atezolizumab-bevacizumab",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "lenvatinib",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients with advanced or unresectable hepatocellular carcinoma in the second line after first line atezolizumab-bevacizumab",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "sorafenib",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients with advanced or unresectable hepatocellular carcinoma in the second line after first line atezolizumab-bevacizumab",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "regorafenib",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients with advanced or unresectable hepatocellular carcinoma in the second line after first line atezolizumab-bevacizumab",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "cabozantinib",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients with advanced or unresectable hepatocellular carcinoma in the second line after first line atezolizumab-bevacizumab",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "ramucirumab",
+          "Outcomes": ""
+        }
+      ],
+      "ChunksUsed": 25,
+      "ContextTokens": 4290
     }
   }
 }

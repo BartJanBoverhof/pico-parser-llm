@@ -1,15 +1,13 @@
 Country,Population,Intervention,Guideline Comparators,HTA Comparators,Source Types
-AT,patients with advanced HCC,Medicine X (under assessment),"Sorafenib, TACE, best supportive care, conventional TACE,...","TACE, TACE + Sorafenib, acetic acid injection, alcohol in...","Clinical Guideline, Hta Submission"
+AT,Child-Pugh A patients with unresectable HCC,Medicine X (under assessment),"atezolizumab and bevacizumab, best supportive care, durva...","TACE, TACE + sorafenib, placebo, sorafenib","Clinical Guideline, Hta Submission"
 BE,patients with unresectable HCC,Medicine X (under assessment),"arterial chemoembolization, hormonal therapy with tamoxif...",-,Clinical Guideline
-CZ,treatment of patients with advanced or unresectable hepatocellular carcinoma,Medicine X (under assessment),,,"Clinical Guideline, Hta Submission"
-DE,patients with advanced HCC,Medicine X (under assessment),"TACE, best supportive care","TACE, TACE + Sorafenib, best supportive care, sorafenib","Clinical Guideline, Hta Submission"
-DK,"treatment naive adult (aged ≥18 years) patients with advanced, unresectable o...",Medicine X (under assessment),,sorafenib,"Clinical Guideline, Hta Submission"
-EN,most patients with advanced hepatocellular carcinoma,Medicine X (under assessment),-,"best supportive care, lenvatinib, sorafenib",Hta Submission
-ES,"patients with advanced disease, systemic treatment should be offered to patie...",Medicine X (under assessment),BSC best supportive care,"atezolizumab plus bevacizumab, lenvatinib, placebo, soraf...","Clinical Guideline, Hta Submission"
-EU,treatment of patients with advanced or unresectable hepatocellular carcinoma,Medicine X (under assessment),,-,Clinical Guideline
-FR,patients with advanced or unresectable hepatocellular carcinoma (HCC) (stage ...,Medicine X (under assessment),,", sorafenib","Clinical Guideline, Hta Submission"
-IT,"cirrhotic (max Child-Pugh B) patients with unresectable M0 multi-nodular HCC,...",Medicine X (under assessment),TACE,-,Clinical Guideline
-NL,patients with hepatocellular carcinoma in whom initiation of curative treatme...,Medicine X (under assessment),atezolizumab with bevacizumab,"best care regimen available, placebo","Clinical Guideline, Hta Submission"
-PO,second-line patients who have previously received bevacizumab with atezolizumab,Medicine X (under assessment),", cabozantinib, leninivat, ramucyrumab, regorafenib, sora...",,"Clinical Guideline, Hta Submission"
-PT,patients with unresectable HCC,Medicine X (under assessment),-,sorafenib,Hta Submission
-SE,patients with advanced or unresectable hepatocellular carcinoma with good fun...,Medicine X (under assessment),"atezolizumab and bevacizumab, cabozantinib, lenvatinib, r...","Lenvima (lenvatinib), Tecentriq (atezolizumab) plus bevac...","Clinical Guideline, Hta Submission"
+DE,Child-Pugh A patients with unresectable HCC,Medicine X (under assessment),"TACE, atezolizumab and bevacizumab, best supportive care,...","TACE, TACE + sorafenib, arterial embolization, placebo, s...","Clinical Guideline, Hta Submission"
+DK,Adult patients with advanced HCC and adult patients with inoperable HCC.,Medicine X (under assessment),sorafenib,sorafenib,"Clinical Guideline, Hta Submission"
+EN,adults with advanced or unresectable HCC with Child-Pugh grade A liver impair...,Medicine X (under assessment),-,"lenvatinib, sorafenib",Hta Submission
+ES,adult patients with advanced or unresectable hepatocellular carcinoma who hav...,Medicine X (under assessment),BSC best supportive care,"lenvatinib, placebo, sorafenib","Clinical Guideline, Hta Submission"
+FR,patients with advanced or unresectable hepatocellular carcinoma (HCC) (stage ...,Medicine X (under assessment),"atezolizumab plus bevacizumab, best supportive care, cabo...",sorafenib,"Clinical Guideline, Hta Submission"
+IT,"patients with advanced HCC, who have failed or are not eligible for local-reg...",Medicine X (under assessment),"FOLFOX4, TACE, doxorubicin, sorafenib",-,Clinical Guideline
+NL,patients with advanced hepatocellular carcinoma who had not received previous...,Medicine X (under assessment),"atezolizumab with bevacizumab, lenvatinib, regorafenib, s...","best care regimen available, placebo","Clinical Guideline, Hta Submission"
+PO,patients previously treated with Sorafenib with AFP ≥ 400 ng/ ml,Medicine X (under assessment),"cabozantinib, combination of bevacizumab and atezolizumab...",-,Clinical Guideline
+PT,adult patients with advanced or non-resectable hepatocellular carcinoma (HCC)...,Medicine X (under assessment),-,sorafenib,Hta Submission
+SE,patients with HCC with non-viral etiologies,Medicine X (under assessment),"atezolizumab and bevacizumab, cabozantinib, lenvatinib, r...","Lenvima (lenvatinib), Tecentriq (atezolizumab) plus bevac...","Clinical Guideline, Hta Submission"

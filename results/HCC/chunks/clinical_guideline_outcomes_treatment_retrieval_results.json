@@ -1,6 +1,6 @@
 {
   "retrieval_metadata": {
-    "timestamp": "2025-09-29T11:58:00.753660",
+    "timestamp": "2025-09-29T13:04:31.219018",
     "source_type": "clinical_guideline",
     "retrieval_type": "outcomes",
     "query": "Find treatment recommendations with outcome information relevant to: treatment of patients with advanced or unresectable hepatocellular carcinoma.\n        Prefer content that describes:\n        - Expected clinical benefits and efficacy outcomes\n        - Safety considerations and adverse event profiles\n        - Quality of life impacts and patient-reported outcomes (including any specific instruments like EORTC QLQ, EQ-5D, SF-36)\n        - Evidence strength/level and recommendation grades if provided\n        - Response rates and survival outcomes\n        - Exploratory or additional endpoints (e.g. time to next treatment/PFS2, progression of brain metastases, time to deterioration) if reported\n        Focus on outcome expectations and evidence quality assessments.",
@@ -69,11 +69,11 @@
             "split_index": 1,
             "text_length": 1345,
             "potential_comparators": [
-              "Pseudoencapsulation",
-              "Retrospective",
+              "Tumor",
               "Hepatocellular",
-              "Long",
-              "Tumor"
+              "Retrospective",
+              "Pseudoencapsulation",
+              "Long"
             ]
           }
         },
@@ -141,12 +141,12 @@
             "split_index": "0_0_0",
             "text_length": 920,
             "potential_comparators": [
-              "These",
               "pemigatinib",
-              "Due",
               "Hepatocellular",
-              "Long",
-              "futibatinib"
+              "These",
+              "futibatinib",
+              "Due",
+              "Long"
             ]
           }
         },
@@ -164,8 +164,8 @@
             "split_index": 0,
             "text_length": 1154,
             "potential_comparators": [
-              "Long",
               "However",
+              "Long",
               "Hepatocellular"
             ]
           }
@@ -236,9 +236,9 @@
             "split_index": 0,
             "text_length": 1597,
             "potential_comparators": [
+              "Contraindications",
               "Long",
-              "Hepatocellular",
-              "Contraindications"
+              "Hepatocellular"
             ]
           }
         },
@@ -256,9 +256,9 @@
             "split_index": 9,
             "text_length": 764,
             "potential_comparators": [
-              "Accordingly",
               "Patients",
-              "APRI"
+              "APRI",
+              "Accordingly"
             ]
           }
         },
@@ -313,10 +313,10 @@
             "split_index": 6,
             "text_length": 1315,
             "potential_comparators": [
-              "As",
-              "Consensus-based",
+              "Regardless",
               "Clinical",
-              "Regardless"
+              "As",
+              "Consensus-based"
             ]
           }
         },
@@ -334,18 +334,18 @@
             "split_index": 0,
             "text_length": 790,
             "potential_comparators": [
-              "Management",
-              "Kanwal",
-              "Bruix",
-              "PIVKA-II",
-              "BMC",
-              "Gastroenterology",
-              "Feng",
-              "AGA",
               "URL",
-              "Loomba",
+              "BMC",
+              "Kanwal",
+              "AGA",
+              "Bruix",
               "Hepatology",
-              "Risk"
+              "Loomba",
+              "PIVKA-II",
+              "Management",
+              "Risk",
+              "Gastroenterology",
+              "Feng"
             ]
           }
         },
@@ -363,13 +363,13 @@
             "split_index": 8,
             "text_length": 813,
             "potential_comparators": [
-              "Baur",
-              "Leitlinienprogramm",
-              "Hepat",
-              "Entwicklung",
               "URL",
+              "Hepat",
               "Transarterial",
-              "Impressive"
+              "Impressive",
+              "Baur",
+              "Entwicklung",
+              "Leitlinienprogramm"
             ]
           }
         },
@@ -387,10 +387,10 @@
             "split_index": 2,
             "text_length": 1271,
             "potential_comparators": [
-              "Long",
               "Patients",
-              "Hepatocellular",
-              "If"
+              "If",
+              "Long",
+              "Hepatocellular"
             ]
           }
         },
@@ -408,9 +408,9 @@
             "split_index": "8_0_0",
             "text_length": 968,
             "potential_comparators": [
-              "Hepatocyte",
               "Other",
-              "AFP"
+              "AFP",
+              "Hepatocyte"
             ]
           }
         }
@@ -459,12 +459,12 @@
             "split_index": 1,
             "text_length": 944,
             "potential_comparators": [
+              "Arterial",
+              "Patients",
               "Overall",
               "There",
-              "Serious",
               "Portal",
-              "Arterial",
-              "Patients"
+              "Serious"
             ]
           }
         },
@@ -482,10 +482,10 @@
             "split_index": 1,
             "text_length": 994,
             "potential_comparators": [
-              "Treatment",
-              "However,these",
+              "But",
               "Therefore",
-              "But"
+              "Treatment",
+              "However,these"
             ]
           }
         },
@@ -503,15 +503,15 @@
             "split_index": 3,
             "text_length": 1434,
             "potential_comparators": [
-              "It",
-              "Interferon",
-              "As",
-              "Epidemiology",
-              "Cirrhotics",
-              "Noncirrhotics",
-              "Virologic",
               "Another",
-              "Subgroup"
+              "As",
+              "Noncirrhotics",
+              "It",
+              "Cirrhotics",
+              "Subgroup",
+              "Virologic",
+              "Interferon",
+              "Epidemiology"
             ]
           }
         },
@@ -529,9 +529,9 @@
             "split_index": 0,
             "text_length": 1084,
             "potential_comparators": [
-              "It",
+              "Needle",
               "HCC",
-              "Needle"
+              "It"
             ]
           }
         },
@@ -549,9 +549,9 @@
             "split_index": 0,
             "text_length": 864,
             "potential_comparators": [
-              "However,side",
+              "Recommendations",
               "Radioactive",
-              "Recommendations"
+              "However,side"
             ]
           }
         },
@@ -569,13 +569,13 @@
             "split_index": 3,
             "text_length": 742,
             "potential_comparators": [
-              "Cancer,1996,78:977-985",
-              "Engl",
+              "Gastroenterology,2002,122:1609-19",
               "Hepatocellular",
               "Med.,1991,325:6",
-              "Gastroenterology,2002,122:1609-19",
-              "Prospective",
-              "Efficiency"
+              "Efficiency",
+              "Cancer,1996,78:977-985",
+              "Engl",
+              "Prospective"
             ]
           }
         },
@@ -593,10 +593,10 @@
             "split_index": 0,
             "text_length": 925,
             "potential_comparators": [
+              "There",
               "Llovet",
-              "Therapies",
               "Arterial",
-              "There"
+              "Therapies"
             ]
           }
         },
@@ -614,16 +614,16 @@
             "split_index": 4,
             "text_length": 1136,
             "potential_comparators": [
+              "Asymptomatic",
+              "Gastroenterology,2002,122:1609-19",
               "Hepatology,2001,33:62-65",
               "Clinical",
-              "European",
-              "Cancer",
-              "Asymptomatic",
-              "Conclusions",
+              "Gastroenterology,1989,96:1566-1571",
               "Trends",
-              "Eur",
-              "Gastroenterology,2002,122:1609-19",
-              "Gastroenterology,1989,96:1566-1571"
+              "Cancer",
+              "Conclusions",
+              "European",
+              "Eur"
             ]
           }
         },
@@ -641,8 +641,8 @@
             "split_index": 0,
             "text_length": 682,
             "potential_comparators": [
-              "Evaluation",
-              "CT"
+              "CT",
+              "Evaluation"
             ]
           }
         },
@@ -660,11 +660,11 @@
             "split_index": 8,
             "text_length": 742,
             "potential_comparators": [
-              "Cancer,1993,67:773-5",
-              "Gut,2003,52(Suppl",
-              "Semin",
+              "Gastroenterology,2002,122:1609-19",
               "Liver",
-              "Gastroenterology,2002,122:1609-19"
+              "Semin",
+              "Gut,2003,52(Suppl",
+              "Cancer,1993,67:773-5"
             ]
           }
         },
@@ -701,15 +701,15 @@
             "split_index": 2,
             "text_length": 1117,
             "potential_comparators": [
-              "Cancer,1985,56:912-928",
-              "Hepatology,1990",
-              "Hepatology,1994,19:61-66",
-              "Hepatology,1993,18:47-53",
-              "Comparison",
-              "Hepato-Gastroenterol.,1998,45:1221-1225",
-              "Hepatol.,2001,37:603-",
               "Gastroenterology,2002,122:1609-19",
-              "Prospective"
+              "Prospective",
+              "Hepatology,1993,18:47-53",
+              "Cancer,1985,56:912-928",
+              "Hepato-Gastroenterol.,1998,45:1221-1225",
+              "Hepatology,1994,19:61-66",
+              "Hepatology,1990",
+              "Hepatol.,2001,37:603-",
+              "Comparison"
             ]
           }
         },
@@ -727,11 +727,11 @@
             "split_index": 4,
             "text_length": 887,
             "potential_comparators": [
-              "Interferon",
-              "Epidemiology",
-              "Treatment",
               "Noncirrhotics",
-              "Cirrhotics"
+              "Treatment",
+              "Cirrhotics",
+              "Interferon",
+              "Epidemiology"
             ]
           }
         },
@@ -768,11 +768,11 @@
             "split_index": "6_0_0",
             "text_length": 1261,
             "potential_comparators": [
-              "It",
               "Universal",
-              "Epidemiology",
               "Because",
-              "Prospective"
+              "It",
+              "Prospective",
+              "Epidemiology"
             ]
           }
         },
@@ -790,21 +790,21 @@
             "split_index": 2,
             "text_length": 987,
             "potential_comparators": [
-              "Sprengers",
-              "Michielsen,F",
               "E-mail:hans.vanvlierberghe@ugent.be",
-              "Effective",
-              "Reynaert",
-              "Epidemiology",
-              "Bourgeois,I",
-              "Horsmans,P",
-              "Nevens,H",
               "Prevention",
-              "Treatment",
-              "Correspondence:Hans",
+              "Bourgeois,I",
+              "Sprengers",
               "Colle,C",
+              "Nevens,H",
+              "Treatment",
+              "Hernion,Y",
+              "Effective",
+              "Horsmans,P",
+              "Michielsen,F",
               "Delwaide,J",
-              "Hernion,Y"
+              "Reynaert",
+              "Correspondence:Hans",
+              "Epidemiology"
             ]
           }
         },
@@ -839,12 +839,12 @@
             "text_length": 762,
             "potential_comparators": [
               "Second,the",
-              "There",
-              "Four",
-              "Furthermore",
-              "Epidemiology",
+              "First",
               "Both",
-              "First"
+              "There",
+              "Furthermore",
+              "Four",
+              "Epidemiology"
             ]
           }
         },
@@ -940,11 +940,11 @@
             "split_index": 1,
             "text_length": 1345,
             "potential_comparators": [
-              "Pseudoencapsulation",
-              "Retrospective",
+              "Tumor",
               "Hepatocellular",
-              "Long",
-              "Tumor"
+              "Retrospective",
+              "Pseudoencapsulation",
+              "Long"
             ]
           }
         },
@@ -1012,12 +1012,12 @@
             "split_index": "0_0_0",
             "text_length": 920,
             "potential_comparators": [
-              "These",
               "pemigatinib",
-              "Due",
               "Hepatocellular",
-              "Long",
-              "futibatinib"
+              "These",
+              "futibatinib",
+              "Due",
+              "Long"
             ]
           }
         },
@@ -1035,8 +1035,8 @@
             "split_index": 0,
             "text_length": 1154,
             "potential_comparators": [
-              "Long",
               "However",
+              "Long",
               "Hepatocellular"
             ]
           }
@@ -1107,9 +1107,9 @@
             "split_index": 0,
             "text_length": 1597,
             "potential_comparators": [
+              "Contraindications",
               "Long",
-              "Hepatocellular",
-              "Contraindications"
+              "Hepatocellular"
             ]
           }
         },
@@ -1127,9 +1127,9 @@
             "split_index": 9,
             "text_length": 764,
             "potential_comparators": [
-              "Accordingly",
               "Patients",
-              "APRI"
+              "APRI",
+              "Accordingly"
             ]
           }
         },
@@ -1184,10 +1184,10 @@
             "split_index": 6,
             "text_length": 1315,
             "potential_comparators": [
-              "As",
-              "Consensus-based",
+              "Regardless",
               "Clinical",
-              "Regardless"
+              "As",
+              "Consensus-based"
             ]
           }
         },
@@ -1205,18 +1205,18 @@
             "split_index": 0,
             "text_length": 790,
             "potential_comparators": [
-              "Management",
-              "Kanwal",
-              "Bruix",
-              "PIVKA-II",
-              "BMC",
-              "Gastroenterology",
-              "Feng",
-              "AGA",
               "URL",
-              "Loomba",
+              "BMC",
+              "Kanwal",
+              "AGA",
+              "Bruix",
               "Hepatology",
-              "Risk"
+              "Loomba",
+              "PIVKA-II",
+              "Management",
+              "Risk",
+              "Gastroenterology",
+              "Feng"
             ]
           }
         },
@@ -1234,13 +1234,13 @@
             "split_index": 8,
             "text_length": 813,
             "potential_comparators": [
-              "Baur",
-              "Leitlinienprogramm",
-              "Hepat",
-              "Entwicklung",
               "URL",
+              "Hepat",
               "Transarterial",
-              "Impressive"
+              "Impressive",
+              "Baur",
+              "Entwicklung",
+              "Leitlinienprogramm"
             ]
           }
         },
@@ -1258,10 +1258,10 @@
             "split_index": 2,
             "text_length": 1271,
             "potential_comparators": [
-              "Long",
               "Patients",
-              "Hepatocellular",
-              "If"
+              "If",
+              "Long",
+              "Hepatocellular"
             ]
           }
         },
@@ -1279,9 +1279,9 @@
             "split_index": "8_0_0",
             "text_length": 968,
             "potential_comparators": [
-              "Hepatocyte",
               "Other",
-              "AFP"
+              "AFP",
+              "Hepatocyte"
             ]
           }
         }
@@ -1310,12 +1310,12 @@
             "split_index": 0,
             "text_length": 1138,
             "potential_comparators": [
-              "Microinvasion",
-              "There",
               "Prognosis",
-              "However",
               "Liver",
-              "Other"
+              "However",
+              "There",
+              "Other",
+              "Microinvasion"
             ]
           }
         },
@@ -1333,14 +1333,14 @@
             "split_index": 0,
             "text_length": 668,
             "potential_comparators": [
-              "Referencer",
-              "Imaging",
               "Hepatocellullary",
+              "Imaging",
               "EASL",
               "Balci",
-              "Danish",
               "Gastroenterology",
-              "Evidence"
+              "Referencer",
+              "Evidence",
+              "Danish"
             ]
           }
         },
@@ -1358,8 +1358,8 @@
             "split_index": 0,
             "text_length": 788,
             "potential_comparators": [
-              "Bilobary",
-              "Liver"
+              "Liver",
+              "Bilobary"
             ]
           }
         },
@@ -1377,16 +1377,16 @@
             "split_index": 1,
             "text_length": 640,
             "potential_comparators": [
-              "Introduction",
-              "Basics",
-              "Non-curative",
-              "Systemic",
-              "Monitoring",
-              "Recommendations",
               "Diagnosis",
+              "Introduction",
               "Liver",
-              "Radiotherapy",
-              "Ablation"
+              "Recommendations",
+              "Systemic",
+              "Non-curative",
+              "Monitoring",
+              "Basics",
+              "Ablation",
+              "Radiotherapy"
             ]
           }
         },
@@ -1456,10 +1456,10 @@
             "split_index": 0,
             "text_length": 1042,
             "potential_comparators": [
-              "Diagnosis",
-              "Objectives",
               "HCC",
-              "Patient"
+              "Patient",
+              "Objectives",
+              "Diagnosis"
             ]
           }
         },
@@ -1525,13 +1525,13 @@
             "split_index": 0,
             "text_length": 1191,
             "potential_comparators": [
-              "Prerequisite",
+              "Patient",
               "Rationale",
-              "SIRT",
               "Comments",
               "sorafenib",
               "Very",
-              "Patient"
+              "Prerequisite",
+              "SIRT"
             ]
           }
         },
@@ -1650,9 +1650,9 @@
             "text_length": 1198,
             "potential_comparators": [
               "Morphological",
-              "Most",
-              "Additionally",
               "All",
+              "Additionally",
+              "Most",
               "Special"
             ]
           }
@@ -1708,8 +1708,8 @@
             "split_index": "5_1_0",
             "text_length": 1188,
             "potential_comparators": [
-              "Strong",
               "Insufficient",
+              "Strong",
               "Moderate"
             ]
           }
@@ -1728,10 +1728,10 @@
             "split_index": "0_0_0",
             "text_length": 1035,
             "potential_comparators": [
-              "Surveillance",
+              "Managing",
               "Accurate",
               "Keywords",
-              "Managing",
+              "Surveillance",
               "Surgery"
             ]
           }
@@ -1752,8 +1752,8 @@
             "potential_comparators": [
               "AFP",
               "BCLC",
-              "Clin",
-              "Liver"
+              "Liver",
+              "Clin"
             ]
           }
         },
@@ -1792,10 +1792,10 @@
             "split_index": 10,
             "text_length": 874,
             "potential_comparators": [
+              "BGP",
+              "Summary",
               "HCC",
               "Clin",
-              "Summary",
-              "BGP",
               "Conflict"
             ]
           }
@@ -1814,13 +1814,13 @@
             "split_index": 12,
             "text_length": 691,
             "potential_comparators": [
-              "Speaker",
-              "Merck",
-              "MCC",
-              "Ultrasonographic",
               "Randomized",
+              "Merck",
+              "Hepatology",
               "Trinchet",
-              "Hepatology"
+              "Ultrasonographic",
+              "MCC",
+              "Speaker"
             ]
           }
         },
@@ -1838,12 +1838,12 @@
             "split_index": 13,
             "text_length": 691,
             "potential_comparators": [
-              "Surveillance",
-              "Parikh",
-              "Am",
-              "Gastroenterology",
               "Tzartzeva",
-              "Cost-effectiveness"
+              "Cost-effectiveness",
+              "Gastroenterology",
+              "Parikh",
+              "Surveillance",
+              "Am"
             ]
           }
         },
@@ -1862,8 +1862,8 @@
             "text_length": 696,
             "potential_comparators": [
               "Recommendations",
-              "Despite",
               "Ongoing",
+              "Despite",
               "Recent"
             ]
           }
@@ -1882,12 +1882,12 @@
             "split_index": "6_1_0",
             "text_length": 1517,
             "potential_comparators": [
-              "Furthermore",
               "MYC",
-              "However",
-              "One",
               "Furthercell",
-              "Many"
+              "However",
+              "Many",
+              "Furthermore",
+              "One"
             ]
           }
         },
@@ -1923,8 +1923,8 @@
             "split_index": "0_1_0",
             "text_length": 929,
             "potential_comparators": [
-              "More",
-              "Rates"
+              "Rates",
+              "More"
             ]
           }
         },
@@ -1942,9 +1942,9 @@
             "split_index": 4,
             "text_length": 1062,
             "potential_comparators": [
-              "Only",
               "There",
-              "Individuals"
+              "Individuals",
+              "Only"
             ]
           }
         },
@@ -1962,15 +1962,15 @@
             "split_index": 17,
             "text_length": 718,
             "potential_comparators": [
-              "Llovet",
-              "Immunization",
-              "International",
               "Nat",
-              "World",
-              "Accessed",
               "Di",
               "Hepatocellular",
-              "Hepatology"
+              "Hepatology",
+              "Immunization",
+              "Accessed",
+              "World",
+              "International",
+              "Llovet"
             ]
           }
         },
@@ -2040,13 +2040,13 @@
             "split_index": 15,
             "text_length": 860,
             "potential_comparators": [
-              "Singal",
+              "If",
+              "Hepatology",
               "Imaging",
               "Roberts",
-              "AASLD",
               "Hepatolpermitted",
-              "Hepatology",
-              "If"
+              "Singal",
+              "AASLD"
             ]
           }
         },
@@ -2064,11 +2064,11 @@
             "split_index": "6_0_0",
             "text_length": 1497,
             "potential_comparators": [
-              "International",
-              "Recent",
               "Telomerase",
+              "Recent",
               "Usual",
-              "Several"
+              "Several",
+              "International"
             ]
           }
         },
@@ -2086,13 +2086,13 @@
             "split_index": 11,
             "text_length": 729,
             "potential_comparators": [
-              "RPC",
-              "Clin",
-              "Incidence",
               "Hoffmann-La",
+              "Clin",
+              "RPC",
+              "Incidence",
               "Speaker—Grant",
-              "Speaker—Other",
-              "Orci"
+              "Orci",
+              "Speaker—Other"
             ]
           }
         },
@@ -2110,8 +2110,8 @@
             "split_index": 1,
             "text_length": 1199,
             "potential_comparators": [
-              "Incidence",
-              "Subjects"
+              "Subjects",
+              "Incidence"
             ]
           }
         }
@@ -2140,8 +2140,8 @@
             "split_index": 3,
             "text_length": 1549,
             "potential_comparators": [
-              "CT",
-              "Published"
+              "Published",
+              "CT"
             ]
           }
         },
@@ -2177,9 +2177,9 @@
             "split_index": "5_1_1",
             "text_length": 939,
             "potential_comparators": [
+              "It",
               "RB1",
-              "Any",
-              "It"
+              "Any"
             ]
           }
         },
@@ -2197,14 +2197,14 @@
             "split_index": "0_0_0",
             "text_length": 318,
             "potential_comparators": [
-              "Sapisochin16,V.Vilgrain17,18",
-              "Llovet8,9,10,T",
-              "Meyer11,12",
-              "Kelley7",
-              "Rimassa14,15",
-              "Dawson5,6",
               "Chan4",
-              "Ricke13"
+              "Llovet8,9,10,T",
+              "Ricke13",
+              "Rimassa14,15",
+              "Sapisochin16,V.Vilgrain17,18",
+              "Dawson5,6",
+              "Kelley7",
+              "Meyer11,12"
             ]
           }
         },
@@ -2296,9 +2296,9 @@
             "split_index": "5_0_1",
             "text_length": 775,
             "potential_comparators": [
-              "Patients",
               "DIAGNOSIS",
-              "Paired"
+              "Paired",
+              "Patients"
             ]
           }
         },
@@ -2361,13 +2361,13 @@
             "split_index": 9,
             "text_length": 1286,
             "potential_comparators": [
-              "sirvenib",
-              "Radioembolization",
-              "Efﬁcacy",
               "Lancet",
+              "Radioembolization",
               "Gastroenterology",
               "sorafenib",
+              "sirvenib",
               "SIRveNIB",
+              "Efﬁcacy",
               "Ann"
             ]
           }
@@ -2386,12 +2386,12 @@
             "split_index": 10,
             "text_length": 811,
             "potential_comparators": [
+              "Selective",
               "Intra-Arterial",
-              "Eur",
-              "Sorafenib",
               "sorafenib",
               "JMIR",
-              "Selective"
+              "Sorafenib",
+              "Eur"
             ]
           }
         },
@@ -2409,14 +2409,14 @@
             "split_index": 14,
             "text_length": 1178,
             "potential_comparators": [
-              "pembrolizumab",
-              "CheckMate",
+              "Nivolumab",
               "Lancet",
-              "nivolumab",
-              "sorafenib",
+              "pembrolizumab",
               "Pembrolizumab",
-              "Ann",
-              "Nivolumab"
+              "sorafenib",
+              "nivolumab",
+              "CheckMate",
+              "Ann"
             ]
           }
         },
@@ -2434,11 +2434,11 @@
             "split_index": 13,
             "text_length": 776,
             "potential_comparators": [
-              "ramucirumab",
               "Lancet",
-              "Ramucirumab",
+              "ramucirumab",
               "sorafenib",
-              "Ann"
+              "Ann",
+              "Ramucirumab"
             ]
           }
         },
@@ -2456,10 +2456,10 @@
             "split_index": 2,
             "text_length": 697,
             "potential_comparators": [
+              "Cochrane",
+              "Radiology",
               "Management",
               "Large",
-              "Radiology",
-              "Cochrane",
               "Comparison"
             ]
           }
@@ -2478,11 +2478,11 @@
             "split_index": 15,
             "text_length": 778,
             "potential_comparators": [
+              "Nivolumab",
+              "Advancement",
               "nivolumab",
               "ipilimumab",
-              "Advancement",
-              "Design",
-              "Nivolumab"
+              "Design"
             ]
           }
         },
@@ -2500,17 +2500,17 @@
             "split_index": 11,
             "text_length": 1124,
             "potential_comparators": [
+              "Lenvatinib",
               "bevacizumab",
-              "Gastroenterol",
               "Results",
-              "Use",
+              "lenvatinib",
+              "Ate-",
               "pravastatin",
               "Groupe",
-              "Lenvatinib",
-              "lenvatinib",
-              "sorafenib",
               "zolizumab",
-              "Ate-"
+              "sorafenib",
+              "Use",
+              "Gastroenterol"
             ]
           }
         },
@@ -2528,12 +2528,12 @@
             "split_index": 8,
             "text_length": 957,
             "potential_comparators": [
-              "Transplantation",
-              "Small",
+              "Liver",
+              "Abdom",
               "Radiology",
               "Gastroenterology",
-              "Liver",
-              "Abdom"
+              "Small",
+              "Transplantation"
             ]
           }
         },
@@ -2551,14 +2551,14 @@
             "split_index": 12,
             "text_length": 886,
             "potential_comparators": [
-              "ramucirumab",
-              "Cabozantinib",
               "Lancet",
+              "Cabozantinib",
+              "regorafenib",
+              "ramucirumab",
+              "sorafenib",
               "Regorafenib",
               "cabozantinib",
-              "Ramucirumab",
-              "sorafenib",
-              "regorafenib"
+              "Ramucirumab"
             ]
           }
         },
@@ -2577,9 +2577,9 @@
             "text_length": 1097,
             "potential_comparators": [
               "Recommendations",
-              "Intermediate",
+              "Conclusion",
               "HCCs",
-              "Conclusion"
+              "Intermediate"
             ]
           }
         },
@@ -2613,11 +2613,11 @@
             "split_index": 4,
             "text_length": 1089,
             "potential_comparators": [
-              "Lack",
-              "Gastroenterology",
               "Hepatocellular",
+              "Risk",
+              "Gastroenterology",
               "Unexpected",
-              "Risk"
+              "Lack"
             ]
           }
         },
@@ -2635,15 +2635,15 @@
             "split_index": 10,
             "text_length": 1136,
             "potential_comparators": [
-              "Positron",
-              "Abdom",
-              "Asian",
               "LI-RADS",
-              "Genetic",
-              "Gas-",
               "Hepatocellular",
               "Diagnosis",
-              "Ann"
+              "Abdom",
+              "Genetic",
+              "Gas-",
+              "Ann",
+              "Positron",
+              "Asian"
             ]
           }
         },
@@ -2661,12 +2661,12 @@
             "split_index": 8,
             "text_length": 828,
             "potential_comparators": [
-              "Sorafenib",
               "brivanib",
-              "sorafenib",
               "Brivanib",
               "Liver",
+              "sorafenib",
               "Eur",
+              "Sorafenib",
               "Hepatol"
             ]
           }
@@ -2687,10 +2687,10 @@
             "potential_comparators": [
               "Br",
               "Liver",
-              "Hepatol",
               "Is",
               "Ann",
-              "Systematic"
+              "Systematic",
+              "Hepatol"
             ]
           }
         },
@@ -2708,13 +2708,13 @@
             "split_index": "1_0_0",
             "text_length": 1565,
             "potential_comparators": [
+              "Among",
+              "Radiofrequency",
+              "How-",
+              "sorafenib",
               "Most",
               "Ideally",
-              "Biliodigestive",
-              "Radiofrequency",
-              "Among",
-              "sorafenib",
-              "How-"
+              "Biliodigestive"
             ]
           }
         },
@@ -2732,13 +2732,13 @@
             "split_index": "5_1_0",
             "text_length": 1043,
             "potential_comparators": [
-              "Improvement",
-              "Cancer",
               "Med",
               "Multicentre",
+              "Cancer",
               "Eur",
-              "Hepatol",
-              "Systematic"
+              "Improvement",
+              "Systematic",
+              "Hepatol"
             ]
           }
         },
@@ -2776,11 +2776,11 @@
             "split_index": 9,
             "text_length": 923,
             "potential_comparators": [
-              "EASL",
-              "Elec-",
-              "Cholangiocarcinoma",
-              "Accuracy",
               "Hepatol",
+              "EASL",
+              "Cholangiocarcinoma",
+              "Elec-",
+              "Accuracy",
               "Am"
             ]
           }
@@ -2800,9 +2800,9 @@
             "text_length": 814,
             "potential_comparators": [
               "Lenvatinib",
+              "sorafenib",
               "PFS",
-              "lenvatinib",
-              "sorafenib"
+              "lenvatinib"
             ]
           }
         }
@@ -2831,14 +2831,14 @@
             "split_index": 3,
             "text_length": 1233,
             "potential_comparators": [
-              "Singal",
-              "Influence",
+              "Liaw",
+              "Hepatology",
               "Clin",
               "Hepatogastroenterology",
-              "Durand",
-              "Liaw",
               "Ripoli",
-              "Hepatology"
+              "Singal",
+              "Durand",
+              "Influence"
             ]
           }
         },
@@ -2856,12 +2856,12 @@
             "split_index": 10,
             "text_length": 869,
             "potential_comparators": [
-              "Mazzaferro",
-              "Gastroenterology",
               "Hepatology",
               "Liver",
+              "Salem",
+              "Gastroenterology",
               "Hilgard",
-              "Salem"
+              "Mazzaferro"
             ]
           }
         },
@@ -2879,8 +2879,8 @@
             "split_index": 0,
             "text_length": 1625,
             "potential_comparators": [
-              "Several",
               "However",
+              "Several",
               "Advanced"
             ]
           }
@@ -2899,16 +2899,16 @@
             "split_index": 12,
             "text_length": 1208,
             "potential_comparators": [
-              "Abou-Alfa",
-              "Worns",
-              "World",
+              "Miao",
               "Pinter",
-              "Cochrane",
-              "Oncologist",
               "Lancet",
+              "Cochrane",
+              "Abou-Alfa",
               "sorafenib",
-              "Cheng",
-              "Miao"
+              "World",
+              "Oncologist",
+              "Worns",
+              "Cheng"
             ]
           }
         },
@@ -2962,14 +2962,14 @@
             "split_index": 8,
             "text_length": 1034,
             "potential_comparators": [
-              "Llovet",
-              "Oliveri",
-              "Cochrane",
-              "Lancet",
-              "Lo",
               "Cardiovasc",
-              "Lammer",
-              "Hepatology"
+              "Lancet",
+              "Cochrane",
+              "Hepatology",
+              "Lo",
+              "Oliveri",
+              "Llovet",
+              "Lammer"
             ]
           }
         },
@@ -3003,17 +3003,17 @@
             "split_index": 4,
             "text_length": 1534,
             "potential_comparators": [
-              "Seminars",
+              "Yao",
+              "Lancet",
+              "Gut",
+              "Hepatology",
+              "Germani",
+              "Ann",
+              "Barone",
               "Mazzaferro",
               "Llovet",
-              "Gut",
-              "Yao",
-              "Barone",
-              "Lancet",
-              "Germani",
-              "Hepatology",
-              "Am",
-              "Ann"
+              "Seminars",
+              "Am"
             ]
           }
         },
@@ -3031,11 +3031,11 @@
             "split_index": 9,
             "text_length": 808,
             "potential_comparators": [
+              "Hepatology",
+              "sorafenib",
               "Raoul",
               "Llovet",
-              "Groupe",
-              "sorafenib",
-              "Hepatology"
+              "Groupe"
             ]
           }
         },
@@ -3053,12 +3053,12 @@
             "split_index": 5,
             "text_length": 822,
             "potential_comparators": [
-              "Ravaioli",
-              "Gastroenterology",
-              "Ghobrial",
-              "Siegler",
-              "Liver",
               "Hepatology",
+              "Siegler",
+              "Ravaioli",
+              "Liver",
+              "Ghobrial",
+              "Gastroenterology",
               "Am"
             ]
           }
@@ -3095,11 +3095,11 @@
             "split_index": 2,
             "text_length": 852,
             "potential_comparators": [
-              "Clin",
-              "International",
-              "Di",
               "Anatomic",
-              "Hepatology"
+              "Di",
+              "Hepatology",
+              "Clin",
+              "International"
             ]
           }
         },
@@ -3151,13 +3151,13 @@
             "split_index": 0,
             "text_length": 721,
             "potential_comparators": [
+              "Diagnosis",
               "Screening",
-              "Prevalence",
-              "Eziology",
-              "Epidemiology",
               "Treatment",
               "Staging",
-              "Diagnosis"
+              "Prevalence",
+              "Eziology",
+              "Epidemiology"
             ]
           }
         },
@@ -3175,14 +3175,14 @@
             "split_index": 1,
             "text_length": 989,
             "potential_comparators": [
-              "Forner",
-              "Daniele",
-              "Gut",
-              "Bolondi",
               "Roskams",
-              "Gastroenterology",
+              "Gut",
+              "Hepatology",
+              "Daniele",
               "Semin",
-              "Hepatology"
+              "Gastroenterology",
+              "Forner",
+              "Bolondi"
             ]
           }
         },
@@ -3236,8 +3236,8 @@
             "text_length": 1137,
             "potential_comparators": [
               "It",
-              "Overall",
-              "of 50 mg"
+              "of 50 mg",
+              "Overall"
             ]
           }
         }
@@ -3266,10 +3266,10 @@
             "split_index": "57_1_0",
             "text_length": 1069,
             "potential_comparators": [
-              "Data-synthesis",
+              "PICO",
               "Progression-free",
               "Select",
-              "PICO"
+              "Data-synthesis"
             ]
           }
         },
@@ -3287,10 +3287,10 @@
             "split_index": 0,
             "text_length": 1092,
             "potential_comparators": [
-              "It",
+              "Who",
               "How",
-              "Scope",
-              "Who"
+              "It",
+              "Scope"
             ]
           }
         },
@@ -3308,16 +3308,16 @@
             "split_index": 0,
             "text_length": 1381,
             "potential_comparators": [
+              "Survival",
               "bevacizumab",
-              "atezolizumab",
-              "Row",
+              "soravenib",
+              "Lenvantib",
+              "regorafenib",
+              "sorafenib",
               "regoraffenib",
               "Due",
-              "sorafenib",
-              "regorafenib",
-              "soravenib",
-              "Survival",
-              "Lenvantib"
+              "Row",
+              "atezolizumab"
             ]
           }
         },
@@ -3335,10 +3335,10 @@
             "split_index": 1,
             "text_length": 1189,
             "potential_comparators": [
-              "It",
-              "Row",
+              "Expert",
               "If",
-              "Expert"
+              "Row",
+              "It"
             ]
           }
         },
@@ -3356,8 +3356,8 @@
             "split_index": 0,
             "text_length": 748,
             "potential_comparators": [
-              "It",
-              "Row"
+              "Row",
+              "It"
             ]
           }
         },
@@ -3375,10 +3375,10 @@
             "split_index": 2,
             "text_length": 1538,
             "potential_comparators": [
-              "Row",
               "Clinically",
-              "Importantly",
-              "Each"
+              "Row",
+              "Each",
+              "Importantly"
             ]
           }
         },
@@ -3396,9 +3396,9 @@
             "split_index": 29,
             "text_length": 841,
             "potential_comparators": [
-              "Midterm",
               "sorafenib",
-              "Recommendation"
+              "Recommendation",
+              "Midterm"
             ]
           }
         },
@@ -3416,8 +3416,8 @@
             "split_index": "2_1_0",
             "text_length": 952,
             "potential_comparators": [
-              "Row",
-              "However"
+              "However",
+              "Row"
             ]
           }
         },
@@ -3436,11 +3436,11 @@
             "text_length": 884,
             "potential_comparators": [
               "bevacizumab",
-              "atezolizumab",
-              "Row",
+              "Personal",
               "lenvatinib",
               "sorafenib",
-              "Personal"
+              "Row",
+              "atezolizumab"
             ]
           }
         },
@@ -3458,11 +3458,11 @@
             "split_index": 23,
             "text_length": 543,
             "potential_comparators": [
-              "EASL",
-              "European",
-              "Epub",
+              "PMID",
               "Hepatocellular",
-              "PMID"
+              "EASL",
+              "Epub",
+              "European"
             ]
           }
         },
@@ -3480,11 +3480,11 @@
             "split_index": "0_0_0",
             "text_length": 1420,
             "potential_comparators": [
-              "Report",
               "Considerations",
+              "Report",
               "These",
-              "General",
-              "Recommendation"
+              "Recommendation",
+              "General"
             ]
           }
         },
@@ -3503,10 +3503,10 @@
             "text_length": 1356,
             "potential_comparators": [
               "bevacizumab",
-              "atezolizumab",
-              "Row",
               "However",
-              "sorafenib"
+              "sorafenib",
+              "Row",
+              "atezolizumab"
             ]
           }
         },
@@ -3542,13 +3542,13 @@
             "split_index": "57_0_0",
             "text_length": 964,
             "potential_comparators": [
-              "Level",
-              "Quality",
               "Therefore,the",
               "Therefore",
-              "regorafenib",
               "No",
-              "Seek"
+              "regorafenib",
+              "Quality",
+              "Seek",
+              "Level"
             ]
           }
         },
@@ -3585,12 +3585,12 @@
             "split_index": 49,
             "text_length": 1254,
             "potential_comparators": [
-              "Llovet",
               "Subquestion",
-              "Regorafenib",
-              "sorafenib",
+              "No",
               "regorafenib",
-              "No"
+              "sorafenib",
+              "Regorafenib",
+              "Llovet"
             ]
           }
         },
@@ -3624,8 +3624,8 @@
             "split_index": 0,
             "text_length": 855,
             "potential_comparators": [
-              "Row",
-              "Recommendations"
+              "Recommendations",
+              "Row"
             ]
           }
         },
@@ -3643,9 +3643,9 @@
             "split_index": 2,
             "text_length": 802,
             "potential_comparators": [
+              "Three",
               "Observational",
               "Studies",
-              "Three",
               "Twenty"
             ]
           }
@@ -3694,9 +3694,9 @@
             "split_index": 6,
             "text_length": 1369,
             "potential_comparators": [
-              "Patients",
+              "There",
               "II",
-              "There"
+              "Patients"
             ]
           }
         },
@@ -3714,8 +3714,8 @@
             "split_index": 7,
             "text_length": 1123,
             "potential_comparators": [
-              "Liver",
-              "Additional"
+              "Additional",
+              "Liver"
             ]
           }
         },
@@ -3733,14 +3733,14 @@
             "split_index": 11,
             "text_length": 664,
             "potential_comparators": [
-              "bevacizumab",
-              "atezolizumab",
-              "cabozantinib",
-              "Optimal",
               "Chemotherapy",
-              "sorafenib",
+              "bevacizumab",
+              "Optimal",
               "regorafenib",
-              "ramucyrumab"
+              "sorafenib",
+              "ramucyrumab",
+              "cabozantinib",
+              "atezolizumab"
             ]
           }
         },
@@ -3758,9 +3758,9 @@
             "split_index": 1,
             "text_length": 1350,
             "potential_comparators": [
-              "Row",
               "Recommended",
-              "Resection"
+              "Resection",
+              "Row"
             ]
           }
         },
@@ -3797,8 +3797,8 @@
             "split_index": 2,
             "text_length": 775,
             "potential_comparators": [
-              "Transplantation",
-              "Liver"
+              "Liver",
+              "Transplantation"
             ]
           }
         },
@@ -3816,10 +3816,10 @@
             "split_index": "8_1_0",
             "text_length": 990,
             "potential_comparators": [
-              "Both",
-              "Ultrasonography",
+              "Microwave",
               "These",
-              "Microwave"
+              "Both",
+              "Ultrasonography"
             ]
           }
         },
@@ -3905,12 +3905,12 @@
             "split_index": 0,
             "text_length": 1315,
             "potential_comparators": [
-              "Transplantation",
-              "Thermoablation",
-              "Row",
               "Both",
               "Microwave",
-              "Thermoblasts"
+              "Thermoablation",
+              "Thermoblasts",
+              "Row",
+              "Transplantation"
             ]
           }
         },
@@ -3946,8 +3946,8 @@
             "split_index": 10,
             "text_length": 688,
             "potential_comparators": [
-              "Systemic",
               "bevacizumab",
+              "Systemic",
               "atezolizumab"
             ]
           }
@@ -4006,8 +4006,8 @@
             "split_index": 1,
             "text_length": 710,
             "potential_comparators": [
-              "Examples",
-              "Regular"
+              "Regular",
+              "Examples"
             ]
           }
         },
@@ -4025,22 +4025,22 @@
             "split_index": 0,
             "text_length": 1526,
             "potential_comparators": [
-              "regoraphenib",
-              "bevacizumab",
-              "tremelimumab",
-              "ramucirumab",
-              "atezolizumab",
-              "durabulumab",
               "tremelitumab",
-              "cabozantinib",
-              "Recommendations",
+              "atezolidumab",
+              "bevacizumab",
               "ramicumab",
-              "sorafenib",
-              "zantabenib",
-              "bevazizumab",
-              "regorafenib",
               "lenvatinib",
-              "atezolidumab"
+              "regoraphenib",
+              "durabulumab",
+              "regorafenib",
+              "Recommendations",
+              "ramucirumab",
+              "sorafenib",
+              "tremelimumab",
+              "atezolizumab",
+              "bevazizumab",
+              "cabozantinib",
+              "zantabenib"
             ]
           }
         },
@@ -4058,8 +4058,8 @@
             "split_index": 0,
             "text_length": 802,
             "potential_comparators": [
-              "When",
               "Patients",
+              "When",
               "Diagnosis"
             ]
           }
@@ -4078,10 +4078,10 @@
             "split_index": 2,
             "text_length": 1272,
             "potential_comparators": [
-              "Transarterial",
-              "Systemic",
               "However",
-              "Transarteral"
+              "Systemic",
+              "Transarteral",
+              "Transarterial"
             ]
           }
         },
@@ -4187,9 +4187,9 @@
             "split_index": 1,
             "text_length": 932,
             "potential_comparators": [
-              "REGION",
+              "Stratified",
               "Responsible",
-              "Stratified"
+              "REGION"
             ]
           }
         },
@@ -4209,8 +4209,8 @@
             "potential_comparators": [
               "Exceptions",
               "Therefore",
-              "Monitoring",
-              "Consideration"
+              "Consideration",
+              "Monitoring"
             ]
           }
         },
@@ -4313,12 +4313,12 @@
             "split_index": 2,
             "text_length": 676,
             "potential_comparators": [
-              "Prediction",
-              "Primary",
-              "Supplementation",
+              "Static",
               "Role",
+              "Prediction",
               "Standards",
-              "Static"
+              "Supplementation",
+              "Primary"
             ]
           }
         },
@@ -4337,9 +4337,9 @@
             "text_length": 1298,
             "potential_comparators": [
               "Instead",
-              "However",
+              "Radiological",
               "Tumor",
-              "Radiological"
+              "However"
             ]
           }
         },
@@ -4357,8 +4357,8 @@
             "split_index": 0,
             "text_length": 512,
             "potential_comparators": [
-              "Target",
-              "Five-year"
+              "Five-year",
+              "Target"
             ]
           }
         },

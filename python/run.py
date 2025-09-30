@@ -84,6 +84,7 @@ class RagPipeline:
         self.path_results = results_path
         self.path_chunks = os.path.join(results_path, "chunks")
         self.path_pico = os.path.join(results_path, "PICO")
+        self.path_outcomes = os.path.join(results_path, "outcomes")
         self.path_consolidated = os.path.join(results_path, "consolidated")
         self.chunk_size = chunk_size
         self.chunk_overlap = chunk_overlap
@@ -91,16 +92,17 @@ class RagPipeline:
         self.vectorstore_type = vectorstore_type
         self.case = case
 
-        # Add case to results path if specified
         if self.case:
             self.path_results = os.path.join(results_path, self.case)
             self.path_chunks = os.path.join(self.path_results, "chunks")
             self.path_pico = os.path.join(self.path_results, "PICO")
+            self.path_outcomes = os.path.join(self.path_results, "outcomes")
             self.path_consolidated = os.path.join(self.path_results, "consolidated")
 
         os.makedirs(self.path_results, exist_ok=True)
         os.makedirs(self.path_chunks, exist_ok=True)
         os.makedirs(self.path_pico, exist_ok=True)
+        os.makedirs(self.path_outcomes, exist_ok=True)
         os.makedirs(self.path_consolidated, exist_ok=True)
 
         self.openai = OpenAI()
@@ -108,7 +110,6 @@ class RagPipeline:
         self.translator = None
         self.chunker = None
         
-        # Case-based vectorizers and vectorstores
         self.vectoriser_openai = None
         self.vectoriser_biobert = None
         self.vectorstore_openai = None
@@ -274,7 +275,6 @@ class RagPipeline:
             
         case_info = f" for case '{case}'" if case else ""
         
-        # Load the appropriate case-based vectorstore
         if vectorstore_type.lower() == "openai":
             vectoriser = Vectoriser(
                 chunked_folder_path=self.path_chunked,
@@ -353,7 +353,6 @@ class RagPipeline:
         for item in os.listdir(self.path_vectorstore):
             item_path = os.path.join(self.path_vectorstore, item)
             if os.path.isdir(item_path):
-                # Parse vectorstore name to extract case and embedding type
                 if "biobert" in item.lower():
                     embedding_type = "BioBERT"
                     case = item.replace("_biobert_vectorstore", "").replace("biobert_vectorstore", "default")
@@ -459,7 +458,6 @@ class RagPipeline:
             print("Retriever not initialized. Please run initialize_retriever first.")
             return None
         
-        # Handle "ALL" countries by automatically detecting available countries
         if any(country == "ALL" for country in countries):
             all_countries = self.get_all_countries()
             if not all_countries:
@@ -540,7 +538,6 @@ class RagPipeline:
             print("Retriever not initialized. Please run initialize_retriever first.")
             return None
         
-        # Handle "ALL" countries by automatically detecting available countries
         if any(country == "ALL" for country in countries):
             all_countries = self.get_all_countries()
             if not all_countries:
@@ -608,12 +605,12 @@ class RagPipeline:
         countries: Optional[List[str]] = None
     ):
         """
-        Run PICO extraction for a specific source type using the most recent retrieval results.
+        Run PICO extraction (Population & Comparator only) for a specific source type.
         
         Args:
             source_type: Source type to extract PICOs for
             indication: Medical indication
-            countries: List of countries (optional, will use available data if not specified)
+            countries: List of countries (optional)
             
         Returns:
             Dictionary with extraction results
@@ -634,35 +631,71 @@ class RagPipeline:
             print(f"Unsupported source type: {source_type}")
             return None
         
-        # Find the most recent retrieval files for this source type
-        population_comparator_file = None
-        outcomes_file = None
-        
-        # Look for population/comparator retrieval files
-        pattern = f"{source_type}_population_comparator_*_retrieval_results.json"
         import glob
+        pattern = f"{source_type}_population_comparator_*_retrieval_results.json"
         pc_files = glob.glob(os.path.join(self.path_chunks, pattern))
-        if pc_files:
-            population_comparator_file = max(pc_files, key=os.path.getmtime)
         
-        # Look for outcomes retrieval files
-        pattern = f"{source_type}_outcomes_*_retrieval_results.json"
-        outcomes_files = glob.glob(os.path.join(self.path_chunks, pattern))
-        if outcomes_files:
-            outcomes_file = max(outcomes_files, key=os.path.getmtime)
-        
-        if not population_comparator_file and not outcomes_file:
-            print(f"No retrieval result files found for {source_type}{case_info}. Please run retrieval first.")
+        if not pc_files:
+            print(f"No population/comparator retrieval result files found for {source_type}{case_info}. Please run retrieval first.")
             return None
             
+        population_comparator_file = max(pc_files, key=os.path.getmtime)
         print(f"Extracting PICOs from {source_type}{case_info}...")
-        if population_comparator_file:
-            print(f"Using population/comparator data from: {os.path.basename(population_comparator_file)}")
-        if outcomes_file:
-            print(f"Using outcomes data from: {os.path.basename(outcomes_file)}")
+        print(f"Using population/comparator data from: {os.path.basename(population_comparator_file)}")
         
-        # Run the extraction
-        results = extractor.extract_picos(
+        results = extractor.extract_population_comparator(
+            source_type=source_type,
+            indication=indication
+        )
+        
+        return results
+
+    def run_outcomes_extraction_for_source_type(
+        self,
+        source_type: str,
+        indication: str,
+        countries: Optional[List[str]] = None
+    ):
+        """
+        Run Outcomes extraction for a specific source type.
+        
+        Args:
+            source_type: Source type to extract outcomes for
+            indication: Medical indication
+            countries: List of countries (optional)
+            
+        Returns:
+            Dictionary with extraction results
+        """
+        case_info = f" for case '{self.case}'" if self.case else ""
+        
+        if source_type == "hta_submission":
+            if self.pico_extractor_hta is None:
+                print(f"HTA PICO extractor not initialized{case_info}. Please run initialize_pico_extractors first.")
+                return None
+            extractor = self.pico_extractor_hta
+        elif source_type == "clinical_guideline":
+            if self.pico_extractor_clinical is None:
+                print(f"Clinical guideline PICO extractor not initialized{case_info}. Please run initialize_pico_extractors first.")
+                return None
+            extractor = self.pico_extractor_clinical
+        else:
+            print(f"Unsupported source type: {source_type}")
+            return None
+        
+        import glob
+        pattern = f"{source_type}_outcomes_*_retrieval_results.json"
+        outcomes_files = glob.glob(os.path.join(self.path_chunks, pattern))
+        
+        if not outcomes_files:
+            print(f"No outcomes retrieval result files found for {source_type}{case_info}. Please run retrieval first.")
+            return None
+            
+        outcomes_file = max(outcomes_files, key=os.path.getmtime)
+        print(f"Extracting Outcomes from {source_type}{case_info}...")
+        print(f"Using outcomes data from: {os.path.basename(outcomes_file)}")
+        
+        results = extractor.extract_outcomes(
             source_type=source_type,
             indication=indication
         )
@@ -694,21 +727,28 @@ class RagPipeline:
         case_info = f" for case '{self.case}'" if self.case else ""
         print(f"Running PICO and outcomes consolidation across {len(source_types)} source types{case_info} ({split_name} set)...")
         
-        # Check if PICO files exist for the requested source types
         existing_source_types = []
         for source_type in source_types:
             pico_file = os.path.join(self.path_pico, f"{source_type}_picos.json")
-            if os.path.exists(pico_file):
-                existing_source_types.append(source_type)
+            outcomes_file = os.path.join(self.path_outcomes, f"{source_type}_outcomes.json")
+            
+            has_pico = os.path.exists(pico_file)
+            has_outcomes = os.path.exists(outcomes_file)
+            
+            if has_pico:
                 print(f"Found PICO file for {source_type}: {os.path.basename(pico_file)}")
+            if has_outcomes:
+                print(f"Found Outcomes file for {source_type}: {os.path.basename(outcomes_file)}")
+            
+            if has_pico or has_outcomes:
+                existing_source_types.append(source_type)
             else:
-                print(f"Warning: No PICO extraction file found for {source_type} at {pico_file}")
+                print(f"Warning: No extraction files found for {source_type}")
         
         if not existing_source_types:
-            print(f"No PICO extraction files found for consolidation{case_info}. Please run PICO extraction first.")
+            print(f"No extraction files found for consolidation{case_info}. Please run extraction first.")
             return None
         
-        # Run consolidation using the consolidate_all method with test_set parameter
         results = self.pico_consolidator.consolidate_all(
             source_types=existing_source_types,
             test_set=test_set
@@ -743,7 +783,6 @@ class RagPipeline:
         Returns:
             Dictionary with extraction results
         """
-        # Run Population & Comparator retrieval
         self.run_population_comparator_retrieval_for_source_type(
             source_type="hta_submission",
             countries=countries,
@@ -754,7 +793,6 @@ class RagPipeline:
             mutation_boost_terms=mutation_boost_terms
         )
         
-        # Run Outcomes retrieval
         self.run_outcomes_retrieval_for_source_type(
             source_type="hta_submission",
             countries=countries,
@@ -765,12 +803,22 @@ class RagPipeline:
             mutation_boost_terms=mutation_boost_terms
         )
         
-        # Run PICO extraction
-        return self.run_pico_extraction_for_source_type(
+        pico_results = self.run_pico_extraction_for_source_type(
             source_type="hta_submission",
             indication=indication,
             countries=countries
         )
+        
+        outcomes_results = self.run_outcomes_extraction_for_source_type(
+            source_type="hta_submission",
+            indication=indication,
+            countries=countries
+        )
+        
+        return {
+            "picos": pico_results,
+            "outcomes": outcomes_results
+        }
 
     def extract_picos_clinical_with_retrieval(
         self,
@@ -801,7 +849,6 @@ class RagPipeline:
         Returns:
             Dictionary with extraction results
         """
-        # Run Population & Comparator retrieval
         self.run_population_comparator_retrieval_for_source_type(
             source_type="clinical_guideline",
             countries=countries,
@@ -813,7 +860,6 @@ class RagPipeline:
             drug_keywords=drug_keywords
         )
         
-        # Run Outcomes retrieval
         self.run_outcomes_retrieval_for_source_type(
             source_type="clinical_guideline",
             countries=countries,
@@ -825,12 +871,22 @@ class RagPipeline:
             drug_keywords=drug_keywords
         )
         
-        # Run PICO extraction
-        return self.run_pico_extraction_for_source_type(
+        pico_results = self.run_pico_extraction_for_source_type(
             source_type="clinical_guideline",
             indication=indication,
             countries=countries
         )
+        
+        outcomes_results = self.run_outcomes_extraction_for_source_type(
+            source_type="clinical_guideline",
+            indication=indication,
+            countries=countries
+        )
+        
+        return {
+            "picos": pico_results,
+            "outcomes": outcomes_results
+        }
 
     def run_case_based_pipeline_with_retrieval(
         self,
@@ -870,18 +926,18 @@ class RagPipeline:
             Dictionary with extracted PICOs for each source type and consolidation results
         """
         if case is not None:
-            # Temporarily override the case for this pipeline run
             original_case = self.case
             self.case = case
-            # Update paths for this case
             self.path_results = os.path.join("results", self.case)
             self.path_chunks = os.path.join(self.path_results, "chunks")
             self.path_pico = os.path.join(self.path_results, "PICO")
+            self.path_outcomes = os.path.join(self.path_results, "outcomes")
             self.path_consolidated = os.path.join(self.path_results, "consolidated")
             
             os.makedirs(self.path_results, exist_ok=True)
             os.makedirs(self.path_chunks, exist_ok=True)
             os.makedirs(self.path_pico, exist_ok=True)
+            os.makedirs(self.path_outcomes, exist_ok=True)
             os.makedirs(self.path_consolidated, exist_ok=True)
         
         try:
@@ -915,7 +971,7 @@ class RagPipeline:
             results = {}
             for source_type in source_types:
                 if source_type == "hta_submission":
-                    extracted_picos = self.extract_picos_hta_with_retrieval(
+                    extracted_data = self.extract_picos_hta_with_retrieval(
                         countries=countries,
                         indication=indication,
                         initial_k_pc=initial_k_pc,
@@ -926,7 +982,7 @@ class RagPipeline:
                         mutation_boost_terms=mutation_boost_terms
                     )
                 elif source_type == "clinical_guideline":
-                    extracted_picos = self.extract_picos_clinical_with_retrieval(
+                    extracted_data = self.extract_picos_clinical_with_retrieval(
                         countries=countries,
                         indication=indication,
                         initial_k_pc=initial_k_pc,
@@ -941,9 +997,8 @@ class RagPipeline:
                     print(f"Unsupported source type: {source_type}")
                     continue
                     
-                results[source_type] = extracted_picos
+                results[source_type] = extracted_data
             
-            # Run consolidation if requested
             if run_consolidation:
                 split_name = "test" if test_set else "train"
                 print(f"\n=== Running PICO and Outcomes Consolidation for {split_name} set ===")
@@ -956,16 +1011,17 @@ class RagPipeline:
             return results
             
         finally:
-            # Restore original case if it was temporarily changed
             if case is not None:
                 self.case = original_case
                 if self.case:
                     self.path_results = os.path.join("results", self.case)
                     self.path_chunks = os.path.join(self.path_results, "chunks")
                     self.path_pico = os.path.join(self.path_results, "PICO")
+                    self.path_outcomes = os.path.join(self.path_results, "outcomes")
                     self.path_consolidated = os.path.join(self.path_results, "consolidated")
                 else:
                     self.path_results = "results"
                     self.path_chunks = os.path.join(self.path_results, "chunks")
                     self.path_pico = os.path.join(self.path_results, "PICO")
+                    self.path_outcomes = os.path.join(self.path_results, "outcomes")
                     self.path_consolidated = os.path.join(self.path_results, "consolidated")

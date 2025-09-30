@@ -1,6 +1,6 @@
 {
   "retrieval_metadata": {
-    "timestamp": "2025-09-29T11:57:57.853391",
+    "timestamp": "2025-09-29T13:04:24.282577",
     "source_type": "hta_submission",
     "retrieval_type": "outcomes",
     "query": "Find passages that specify clinical Outcomes and endpoints relevant to: treatment of patients with advanced or unresectable hepatocellular carcinoma.\n        Prefer sections that describe:\n        - Primary and secondary efficacy endpoints (OS, PFS, ORR, DoR, etc.)\n        - Safety outcomes and adverse events\n        - Quality of life measures and patient-reported outcomes (including any specific instruments like EORTC QLQ, EQ-5D, SF-36)\n        - Economic outcomes and utilities\n        - Exploratory or additional endpoints (e.g. time to next treatment/PFS2, progression of brain metastases, time to deterioration) if reported\n        - Statistical methods and analysis approaches\n        Focus on specific outcome definitions and measurement methodologies.",
@@ -33,8 +33,8 @@
             "text_length": 1074,
             "potential_comparators": [
               "Methodik",
-              "sorafenib",
-              "Fragestellung"
+              "Fragestellung",
+              "sorafenib"
             ]
           }
         },
@@ -52,11 +52,11 @@
             "split_index": 3,
             "text_length": 562,
             "potential_comparators": [
-              "Suchzeitraum",
+              "Population",
+              "TACE",
               "Fragestellung",
               "sorafenib",
-              "TACE",
-              "Population"
+              "Suchzeitraum"
             ]
           }
         },
@@ -75,13 +75,13 @@
             "text_length": 1150,
             "potential_comparators": [
               "KQ3",
-              "KQ1",
-              "What",
               "Local",
+              "What",
+              "KQ2",
+              "KQ1",
               "Fragestellung",
               "sorafenib",
-              "Fazit",
-              "KQ2"
+              "Fazit"
             ]
           }
         },
@@ -99,8 +99,8 @@
             "split_index": 0,
             "text_length": 818,
             "potential_comparators": [
-              "Population",
               "Fragestellung",
+              "Population",
               "Randomised"
             ]
           }
@@ -137,10 +137,10 @@
             "split_index": "1_1_0",
             "text_length": 1260,
             "potential_comparators": [
-              "sorafenib",
-              "Population",
               "Fragestellung",
-              "Additional"
+              "Additional",
+              "sorafenib",
+              "Population"
             ]
           }
         },
@@ -195,9 +195,9 @@
             "split_index": 0,
             "text_length": 856,
             "potential_comparators": [
-              "Fazit",
               "Despite",
-              "Survival"
+              "Survival",
+              "Fazit"
             ]
           }
         },
@@ -216,10 +216,10 @@
             "text_length": 1112,
             "potential_comparators": [
               "Health-related",
-              "Consequently",
+              "lenvatinib",
               "sorafenib",
               "Regarding",
-              "lenvatinib"
+              "Consequently"
             ]
           }
         },
@@ -237,14 +237,14 @@
             "split_index": 1,
             "text_length": 741,
             "potential_comparators": [
-              "Comparative",
-              "Registration",
-              "Oncology",
               "QF",
               "Diagnosis",
+              "Berlin",
+              "Oncology",
               "Bioluminescent",
-              "Long",
-              "Berlin"
+              "Comparative",
+              "Registration",
+              "Long"
             ]
           }
         },
@@ -263,8 +263,8 @@
             "text_length": 875,
             "potential_comparators": [
               "However",
-              "sorafenib",
-              "Efficacy"
+              "Efficacy",
+              "sorafenib"
             ]
           }
         },
@@ -300,9 +300,9 @@
             "split_index": 0,
             "text_length": 798,
             "potential_comparators": [
+              "sorafenib",
               "It",
-              "lenvatinib",
-              "sorafenib"
+              "lenvatinib"
             ]
           }
         },
@@ -376,9 +376,9 @@
             "split_index": 0,
             "text_length": 741,
             "potential_comparators": [
+              "JAMA",
               "Transarterial",
-              "United",
-              "JAMA"
+              "United"
             ]
           }
         },
@@ -396,9 +396,9 @@
             "split_index": 0,
             "text_length": 1269,
             "potential_comparators": [
+              "sorafenib",
               "It",
-              "lenvatinib",
-              "sorafenib"
+              "lenvatinib"
             ]
           }
         },
@@ -436,10 +436,10 @@
             "split_index": "4_1_0",
             "text_length": 972,
             "potential_comparators": [
+              "Fragestellung",
               "Therefore",
               "sorafenib",
-              "Population",
-              "Fragestellung"
+              "Population"
             ]
           }
         },
@@ -476,8 +476,8 @@
             "split_index": 6,
             "text_length": 1148,
             "potential_comparators": [
-              "Fazit",
-              "sorafenib"
+              "sorafenib",
+              "Fazit"
             ]
           }
         },
@@ -495,8 +495,8 @@
             "split_index": 0,
             "text_length": 787,
             "potential_comparators": [
-              "Morbidity",
               "sorafenib",
+              "Morbidity",
               "lenvatinib",
               "Consequently"
             ]
@@ -516,9 +516,9 @@
             "split_index": 1,
             "text_length": 731,
             "potential_comparators": [
-              "ACT",
+              "sorafenib",
               "lenvatinib",
-              "sorafenib"
+              "ACT"
             ]
           }
         }
@@ -558,8 +558,8 @@
             "text_length": 748,
             "potential_comparators": [
               "Cheung",
-              "sorafenib",
-              "If"
+              "If",
+              "sorafenib"
             ]
           }
         }
@@ -589,8 +589,8 @@
             "text_length": 1074,
             "potential_comparators": [
               "Methodik",
-              "sorafenib",
-              "Fragestellung"
+              "Fragestellung",
+              "sorafenib"
             ]
           }
         },
@@ -608,11 +608,11 @@
             "split_index": 3,
             "text_length": 562,
             "potential_comparators": [
-              "Suchzeitraum",
+              "Population",
+              "TACE",
               "Fragestellung",
               "sorafenib",
-              "TACE",
-              "Population"
+              "Suchzeitraum"
             ]
           }
         },
@@ -631,13 +631,13 @@
             "text_length": 1150,
             "potential_comparators": [
               "KQ3",
-              "KQ1",
-              "What",
               "Local",
+              "What",
+              "KQ2",
+              "KQ1",
               "Fragestellung",
               "sorafenib",
-              "Fazit",
-              "KQ2"
+              "Fazit"
             ]
           }
         },
@@ -655,8 +655,8 @@
             "split_index": 0,
             "text_length": 818,
             "potential_comparators": [
-              "Population",
               "Fragestellung",
+              "Population",
               "Randomised"
             ]
           }
@@ -675,10 +675,10 @@
             "split_index": "1_1_0",
             "text_length": 1260,
             "potential_comparators": [
-              "sorafenib",
-              "Population",
               "Fragestellung",
-              "Additional"
+              "Additional",
+              "sorafenib",
+              "Population"
             ]
           }
         },
@@ -733,9 +733,9 @@
             "split_index": 0,
             "text_length": 856,
             "potential_comparators": [
-              "Fazit",
               "Despite",
-              "Survival"
+              "Survival",
+              "Fazit"
             ]
           }
         },
@@ -754,10 +754,10 @@
             "text_length": 1112,
             "potential_comparators": [
               "Health-related",
-              "Consequently",
+              "lenvatinib",
               "sorafenib",
               "Regarding",
-              "lenvatinib"
+              "Consequently"
             ]
           }
         },
@@ -776,8 +776,8 @@
             "text_length": 875,
             "potential_comparators": [
               "However",
-              "sorafenib",
-              "Efficacy"
+              "Efficacy",
+              "sorafenib"
             ]
           }
         },
@@ -795,14 +795,14 @@
             "split_index": 1,
             "text_length": 741,
             "potential_comparators": [
-              "Comparative",
-              "Registration",
-              "Oncology",
               "QF",
               "Diagnosis",
+              "Berlin",
+              "Oncology",
               "Bioluminescent",
-              "Long",
-              "Berlin"
+              "Comparative",
+              "Registration",
+              "Long"
             ]
           }
         },
@@ -856,9 +856,9 @@
             "split_index": 0,
             "text_length": 798,
             "potential_comparators": [
+              "sorafenib",
               "It",
-              "lenvatinib",
-              "sorafenib"
+              "lenvatinib"
             ]
           }
         },
@@ -914,9 +914,9 @@
             "split_index": 0,
             "text_length": 741,
             "potential_comparators": [
+              "JAMA",
               "Transarterial",
-              "United",
-              "JAMA"
+              "United"
             ]
           }
         },
@@ -934,9 +934,9 @@
             "split_index": 0,
             "text_length": 1269,
             "potential_comparators": [
+              "sorafenib",
               "It",
-              "lenvatinib",
-              "sorafenib"
+              "lenvatinib"
             ]
           }
         },
@@ -974,10 +974,10 @@
             "split_index": "4_1_0",
             "text_length": 972,
             "potential_comparators": [
+              "Fragestellung",
               "Therefore",
               "sorafenib",
-              "Population",
-              "Fragestellung"
+              "Population"
             ]
           }
         },
@@ -1014,8 +1014,8 @@
             "split_index": 6,
             "text_length": 1148,
             "potential_comparators": [
-              "Fazit",
-              "sorafenib"
+              "sorafenib",
+              "Fazit"
             ]
           }
         },
@@ -1033,8 +1033,8 @@
             "split_index": 0,
             "text_length": 787,
             "potential_comparators": [
-              "Morbidity",
               "sorafenib",
+              "Morbidity",
               "lenvatinib",
               "Consequently"
             ]
@@ -1054,9 +1054,9 @@
             "split_index": 1,
             "text_length": 731,
             "potential_comparators": [
-              "ACT",
+              "sorafenib",
               "lenvatinib",
-              "sorafenib"
+              "ACT"
             ]
           }
         },
@@ -1075,8 +1075,8 @@
             "text_length": 571,
             "potential_comparators": [
               "Anzahl",
-              "Intervention",
-              "Qualitätsbewertung"
+              "Qualitätsbewertung",
+              "Intervention"
             ]
           }
         }
@@ -1105,8 +1105,8 @@
             "split_index": 1,
             "text_length": 776,
             "potential_comparators": [
-              "lenvatinib",
-              "Using"
+              "Using",
+              "lenvatinib"
             ]
           }
         },
@@ -1124,11 +1124,11 @@
             "split_index": "1_0_0",
             "text_length": 1295,
             "potential_comparators": [
-              "Differences",
-              "Page",
+              "lenvatinib",
               "Subject",
+              "Page",
               "Using",
-              "lenvatinib"
+              "Differences"
             ]
           }
         },
@@ -1146,8 +1146,8 @@
             "split_index": 0,
             "text_length": 985,
             "potential_comparators": [
-              "Eligibility",
               "Table",
+              "Eligibility",
               "lenvatinib"
             ]
           }
@@ -1182,8 +1182,8 @@
             "split_index": 1,
             "text_length": 652,
             "potential_comparators": [
-              "lenvatinib",
-              "sorafenib"
+              "sorafenib",
+              "lenvatinib"
             ]
           }
         },
@@ -1203,11 +1203,11 @@
             "potential_comparators": [
               "Follow-up",
               "Lancet",
-              "Comparator-controlled",
-              "sorafenib",
-              "Publications",
+              "lenvatinib",
               "Patients",
-              "lenvatinib"
+              "Publications",
+              "Comparator-controlled",
+              "sorafenib"
             ]
           }
         },
@@ -1243,10 +1243,10 @@
             "split_index": "2_0_0",
             "text_length": 1019,
             "potential_comparators": [
-              "lenvatinib",
               "Survival",
-              "sorafenib",
-              "TEAEs"
+              "TEAEs",
+              "lenvatinib",
+              "sorafenib"
             ]
           }
         },
@@ -1264,11 +1264,11 @@
             "split_index": 3,
             "text_length": 1195,
             "potential_comparators": [
+              "lenvatinib",
               "Results",
-              "Quality",
-              "sorafenib",
               "Medical",
-              "lenvatinib"
+              "Quality",
+              "sorafenib"
             ]
           }
         },
@@ -1286,12 +1286,12 @@
             "split_index": 1,
             "text_length": 1124,
             "potential_comparators": [
-              "During",
+              "lenvatinib",
               "Analysis",
-              "Following",
               "sorafenib",
+              "Following",
               "Baseline",
-              "lenvatinib"
+              "During"
             ]
           }
         },
@@ -1309,13 +1309,13 @@
             "split_index": "1_1_0",
             "text_length": 1328,
             "potential_comparators": [
-              "Two",
-              "Non-inferiority",
               "FIGURE",
-              "sorafenib",
-              "Since",
-              "No",
+              "Two",
               "lenvatinib",
+              "No",
+              "Since",
+              "Non-inferiority",
+              "sorafenib",
               "Superiority"
             ]
           }
@@ -1334,15 +1334,15 @@
             "split_index": 0,
             "text_length": 805,
             "potential_comparators": [
-              "J-C",
+              "Value",
+              "Conference",
+              "lenvatinib",
               "Journal",
               "Clinical",
-              "Value",
-              "sorafenib",
-              "Conference",
               "Time",
+              "sorafenib",
               "United",
-              "lenvatinib"
+              "J-C"
             ]
           }
         },
@@ -1360,8 +1360,8 @@
             "split_index": 0,
             "text_length": 249,
             "potential_comparators": [
-              "lenvatinib",
-              "sorafenib"
+              "sorafenib",
+              "lenvatinib"
             ]
           }
         },
@@ -1395,8 +1395,8 @@
             "split_index": 0,
             "text_length": 1091,
             "potential_comparators": [
-              "lenvatinib",
-              "sorafenib"
+              "sorafenib",
+              "lenvatinib"
             ]
           }
         },
@@ -1415,8 +1415,8 @@
             "text_length": 546,
             "potential_comparators": [
               "Follow-up",
-              "regorafenib",
               "Product",
+              "regorafenib",
               "Available",
               "Recommendation"
             ]
@@ -1437,9 +1437,9 @@
             "text_length": 1135,
             "potential_comparators": [
               "Compliance",
-              "During",
+              "Health-related",
               "lenvatinib",
-              "Health-related"
+              "During"
             ]
           }
         },
@@ -1457,10 +1457,10 @@
             "split_index": 0,
             "text_length": 630,
             "potential_comparators": [
-              "Systemic",
               "Journal",
-              "sorafenib",
-              "Expert"
+              "Systemic",
+              "Expert",
+              "sorafenib"
             ]
           }
         },
@@ -1478,8 +1478,8 @@
             "split_index": "0_0_0",
             "text_length": 868,
             "potential_comparators": [
-              "lenvatinib",
-              "sorafenib"
+              "sorafenib",
+              "lenvatinib"
             ]
           }
         },
@@ -1497,8 +1497,8 @@
             "split_index": 0,
             "text_length": 255,
             "potential_comparators": [
-              "lenvatinib",
-              "sorafenib"
+              "sorafenib",
+              "lenvatinib"
             ]
           }
         },
@@ -1516,12 +1516,12 @@
             "split_index": 1,
             "text_length": 720,
             "potential_comparators": [
-              "Median",
-              "These",
-              "Subsequent",
               "lenvatinib",
+              "Internet",
+              "Median",
+              "Subsequent",
               "Hazard",
-              "Internet"
+              "These"
             ]
           }
         },
@@ -1539,12 +1539,12 @@
             "split_index": 0,
             "text_length": 907,
             "potential_comparators": [
+              "Lenvatinib",
+              "lenvatinib",
+              "lenvatitinib",
               "Median",
               "Table",
-              "lenvatitinib",
-              "Lenvatinib",
-              "sorafenib",
-              "lenvatinib"
+              "sorafenib"
             ]
           }
         },
@@ -1580,11 +1580,11 @@
             "split_index": 0,
             "text_length": 1468,
             "potential_comparators": [
-              "Fewer",
               "As",
-              "vatinib",
+              "Fewer",
+              "lenvatinib",
               "sorafenib",
-              "lenvatinib"
+              "vatinib"
             ]
           }
         },
@@ -1602,10 +1602,10 @@
             "split_index": 0,
             "text_length": 1281,
             "potential_comparators": [
-              "Forko",
-              "Critical",
+              "Important",
               "lenvatinib",
-              "Important"
+              "Critical",
+              "Forko"
             ]
           }
         }
@@ -1634,9 +1634,9 @@
             "split_index": 3,
             "text_length": 291,
             "potential_comparators": [
-              "All",
               "bevacizumab",
               "Subject",
+              "All",
               "atezolizumab"
             ]
           }
@@ -1655,9 +1655,9 @@
             "split_index": "11_1_0",
             "text_length": 1138,
             "potential_comparators": [
-              "It",
               "sorafenib",
-              "Although"
+              "Although",
+              "It"
             ]
           }
         },
@@ -1675,22 +1675,22 @@
             "split_index": 0,
             "text_length": 724,
             "potential_comparators": [
-              "Indirect",
               "Modelling",
-              "Clinical",
               "Conclusion",
-              "atezolizumab",
-              "Innovation",
-              "NICE",
-              "Treatment",
-              "Subject",
-              "umab",
-              "Price",
-              "All",
-              "Exploratory",
-              "Dosage",
               "End",
-              "Cost-effectiveness"
+              "umab",
+              "Clinical",
+              "Indirect",
+              "Price",
+              "Treatment",
+              "Cost-effectiveness",
+              "Dosage",
+              "All",
+              "Subject",
+              "NICE",
+              "Exploratory",
+              "Innovation",
+              "atezolizumab"
             ]
           }
         },
@@ -1708,16 +1708,16 @@
             "split_index": 0,
             "text_length": 1048,
             "potential_comparators": [
-              "bevacizumab",
-              "Clinical",
-              "Results",
-              "atezolizumab",
-              "Therefore",
-              "sorafenib",
-              "But",
-              "Atezolizumab",
               "Despite",
-              "lenvatinib"
+              "bevacizumab",
+              "Atezolizumab",
+              "Results",
+              "lenvatinib",
+              "Clinical",
+              "Therefore",
+              "But",
+              "sorafenib",
+              "atezolizumab"
             ]
           }
         },
@@ -1735,8 +1735,8 @@
             "split_index": 4,
             "text_length": 1131,
             "potential_comparators": [
-              "Cost",
-              "sorafenib"
+              "sorafenib",
+              "Cost"
             ]
           }
         },
@@ -1754,9 +1754,9 @@
             "split_index": 1,
             "text_length": 1164,
             "potential_comparators": [
-              "All",
-              "sorafenib",
               "However",
+              "sorafenib",
+              "All",
               "They"
             ]
           }
@@ -1775,8 +1775,8 @@
             "split_index": "11_0_0",
             "text_length": 1032,
             "potential_comparators": [
-              "Subject",
-              "sorafenib"
+              "sorafenib",
+              "Subject"
             ]
           }
         },
@@ -1794,9 +1794,9 @@
             "split_index": 2,
             "text_length": 538,
             "potential_comparators": [
-              "All",
               "bevacizumab",
               "Subject",
+              "All",
               "atezolizumab"
             ]
           }
@@ -1853,8 +1853,8 @@
             "potential_comparators": [
               "Lenvatinib",
               "sorafenib",
-              "lenvatinib",
-              "They"
+              "They",
+              "lenvatinib"
             ]
           }
         },
@@ -1873,13 +1873,13 @@
             "text_length": 761,
             "potential_comparators": [
               "bevacizumab",
-              "atezolizumab",
-              "They",
+              "lenvatinib",
               "Prognosis",
               "Subject",
-              "sorafenib",
               "All",
-              "lenvatinib"
+              "They",
+              "sorafenib",
+              "atezolizumab"
             ]
           }
         },
@@ -1897,10 +1897,10 @@
             "split_index": 3,
             "text_length": 1272,
             "potential_comparators": [
-              "It",
               "However",
+              "sorafenib",
               "Subject",
-              "sorafenib"
+              "It"
             ]
           }
         },
@@ -1918,9 +1918,9 @@
             "split_index": 0,
             "text_length": 483,
             "potential_comparators": [
-              "atezolizumab",
               "bevacizumab",
-              "sorafenib"
+              "sorafenib",
+              "atezolizumab"
             ]
           }
         },
@@ -1938,8 +1938,8 @@
             "split_index": 0,
             "text_length": 1224,
             "potential_comparators": [
-              "It",
               "sorafenib",
+              "It",
               "They"
             ]
           }
@@ -1958,13 +1958,13 @@
             "split_index": 0,
             "text_length": 676,
             "potential_comparators": [
-              "It",
               "bevacizumab",
-              "Also",
-              "atezolizumab",
-              "Life",
+              "lenvatinib",
               "sorafenib",
-              "lenvatinib"
+              "It",
+              "Life",
+              "atezolizumab",
+              "Also"
             ]
           }
         },
@@ -1982,10 +1982,10 @@
             "split_index": 2,
             "text_length": 388,
             "potential_comparators": [
-              "All",
-              "afenib",
+              "sorafenib",
               "Subject",
-              "sorafenib"
+              "All",
+              "afenib"
             ]
           }
         },
@@ -2003,9 +2003,9 @@
             "split_index": 1,
             "text_length": 1413,
             "potential_comparators": [
-              "It",
               "However",
-              "sorafenib"
+              "sorafenib",
+              "It"
             ]
           }
         },
@@ -2024,10 +2024,10 @@
             "text_length": 303,
             "potential_comparators": [
               "bevacizumab",
-              "atezolizumab",
               "Subject",
+              "All",
               "sorafenib",
-              "All"
+              "atezolizumab"
             ]
           }
         },
@@ -2045,8 +2045,8 @@
             "split_index": 4,
             "text_length": 1538,
             "potential_comparators": [
-              "Subject",
-              "sorafenib"
+              "sorafenib",
+              "Subject"
             ]
           }
         },
@@ -2084,9 +2084,9 @@
             "split_index": 1,
             "text_length": 829,
             "potential_comparators": [
-              "Subject",
+              "Specifically",
               "sorafenib",
-              "Specifically"
+              "Subject"
             ]
           }
         },
@@ -2104,9 +2104,9 @@
             "split_index": "2_0_0",
             "text_length": 954,
             "potential_comparators": [
-              "All",
               "Subject",
               "sorafenib",
+              "All",
               "But"
             ]
           }
@@ -2145,11 +2145,11 @@
             "text_length": 933,
             "potential_comparators": [
               "bevacizumab",
-              "atezolizumab",
+              "lenvatinib",
               "Subject",
-              "sorafenib",
               "All",
-              "lenvatinib"
+              "sorafenib",
+              "atezolizumab"
             ]
           }
         }
@@ -2197,9 +2197,9 @@
             "split_index": 8,
             "text_length": 890,
             "potential_comparators": [
-              "atezolizumab",
               "bevacizumab",
-              "sorafenzumab"
+              "sorafenzumab",
+              "atezolizumab"
             ]
           }
         },
@@ -2217,9 +2217,9 @@
             "split_index": 0,
             "text_length": 1397,
             "potential_comparators": [
-              "atezolizumab",
               "bevacizumab",
-              "sorafenib"
+              "sorafenib",
+              "atezolizumab"
             ]
           }
         },
@@ -2237,15 +2237,15 @@
             "split_index": 3,
             "text_length": 1335,
             "potential_comparators": [
-              "soraphenib",
+              "Only",
               "lenvatinib",
-              "Similarly",
+              "soravenib",
               "levantinib",
               "sorafenib",
-              "lenvatanib",
-              "Only",
               "Following",
-              "soravenib",
+              "soraphenib",
+              "lenvatanib",
+              "Similarly",
               "After"
             ]
           }
@@ -2264,9 +2264,9 @@
             "split_index": 14,
             "text_length": 1131,
             "potential_comparators": [
-              "atezolizumab",
               "bevacizumab",
               "sorafenib",
+              "atezolizumab",
               "atezolizumabbevacizumab"
             ]
           }
@@ -2286,12 +2286,12 @@
             "text_length": 899,
             "potential_comparators": [
               "bevacizumab",
+              "Conclusion",
               "atezumab",
               "Overall",
-              "Conclusion",
-              "atezolizumab",
+              "vacizumab",
               "sorafenib",
-              "vacizumab"
+              "atezolizumab"
             ]
           }
         },
@@ -2327,10 +2327,10 @@
             "split_index": 11,
             "text_length": 802,
             "potential_comparators": [
-              "See",
               "DISCUSSION",
               "atezumab",
-              "sorafenib"
+              "sorafenib",
+              "See"
             ]
           }
         },
@@ -2350,10 +2350,10 @@
             "potential_comparators": [
               "bevacizumab",
               "Kudo",
-              "atezolizumab",
-              "atezolizeumab",
+              "sorafenib",
               "atezoizumab",
-              "sorafenib"
+              "atezolizumab",
+              "atezolizeumab"
             ]
           }
         },
@@ -2371,19 +2371,19 @@
             "split_index": 17,
             "text_length": 882,
             "potential_comparators": [
-              "Atelizumab",
-              "atelizumab",
               "CA",
-              "Mittal",
-              "Cancer",
+              "hepatozumab",
+              "lenvatinib",
+              "Hepatozumab",
               "Food",
               "Finn",
+              "Cancer",
               "sorafenib",
-              "hepatozumab",
+              "atelizumab",
+              "See",
               "Siegel",
-              "Hepatozumab",
-              "lenvatinib",
-              "See"
+              "Mittal",
+              "Atelizumab"
             ]
           }
         },
@@ -2401,10 +2401,10 @@
             "split_index": "18_1_0",
             "text_length": 942,
             "potential_comparators": [
-              "Posology 1200mg",
               "Table",
-              "atezolizum 15mg",
-              "atezolizumab"
+              "Posology 1200mg",
+              "atezolizumab",
+              "atezolizum 15mg"
             ]
           }
         },
@@ -2422,8 +2422,8 @@
             "split_index": 2,
             "text_length": 1437,
             "potential_comparators": [
-              "Stages",
               "They",
+              "Stages",
               "Stage"
             ]
           }
@@ -2442,15 +2442,15 @@
             "split_index": "18_0_0",
             "text_length": 911,
             "potential_comparators": [
-              "Worldwide",
               "bevacizumab",
-              "atezolizumab",
+              "Worldwide",
               "Digestive",
-              "Raul",
-              "European",
-              "Director",
               "All",
-              "Gomaa"
+              "Raul",
+              "Gomaa",
+              "Director",
+              "European",
+              "atezolizumab"
             ]
           }
         },
@@ -2468,14 +2468,14 @@
             "split_index": "10_0_0",
             "text_length": 957,
             "potential_comparators": [
-              "Diabetes",
               "bevacizumab",
               "atezumab",
-              "atezolizumab",
-              "atezoizumab",
-              "Notable",
+              "soravenib",
               "sorafenib",
-              "soravenib"
+              "Diabetes",
+              "Notable",
+              "atezoizumab",
+              "atezolizumab"
             ]
           }
         },
@@ -2493,9 +2493,9 @@
             "split_index": 12,
             "text_length": 803,
             "potential_comparators": [
+              "sorafenib",
               "lenvatinib",
-              "soraphenib",
-              "sorafenib"
+              "soraphenib"
             ]
           }
         },
@@ -2513,17 +2513,17 @@
             "split_index": 5,
             "text_length": 1332,
             "potential_comparators": [
-              "It",
-              "bevacizumab",
-              "Safety-effectiveness",
-              "atezolizumab",
-              "Pharmacology",
-              "atezoizumab",
-              "sorafenib",
-              "bevazizumab",
-              "No",
               "If",
-              "Efficacy"
+              "bevacizumab",
+              "No",
+              "sorafenib",
+              "It",
+              "Pharmacology",
+              "Safety-effectiveness",
+              "atezoizumab",
+              "Efficacy",
+              "atezolizumab",
+              "bevazizumab"
             ]
           }
         },
@@ -2558,15 +2558,15 @@
             "text_length": 1023,
             "potential_comparators": [
               "bevacizumab",
-              "Therapy",
-              "atezolizumab",
-              "Treatment",
-              "sorafenib",
-              "received 400 mg",
-              "Stratification",
-              "Patients",
               "Tumor",
-              "No"
+              "Patients",
+              "No",
+              "Treatment",
+              "Stratification",
+              "received 400 mg",
+              "sorafenib",
+              "Therapy",
+              "atezolizumab"
             ]
           }
         },
@@ -2584,10 +2584,10 @@
             "split_index": "9_0_0",
             "text_length": 781,
             "potential_comparators": [
-              "atezolizumab",
               "bevacizumab",
-              "atezlizimab",
-              "sorafenib"
+              "sorafenib",
+              "atezolizumab",
+              "atezlizimab"
             ]
           }
         },
@@ -2607,13 +2607,13 @@
             "potential_comparators": [
               "While",
               "bevacizumab",
-              "athezolizumab",
-              "lenfenib",
-              "sorafenib",
+              "lenvatinib",
               "All",
               "Stratification",
-              "Regarding",
-              "lenvatinib"
+              "athezolizumab",
+              "sorafenib",
+              "lenfenib",
+              "Regarding"
             ]
           }
         },
@@ -2632,9 +2632,9 @@
             "text_length": 791,
             "potential_comparators": [
               "bevacizumab",
-              "atezolizumab",
-              "sorafenib",
               "Grade",
+              "sorafenib",
+              "atezolizumab",
               "bevazizumab"
             ]
           }
@@ -2653,9 +2653,9 @@
             "split_index": 19,
             "text_length": 844,
             "potential_comparators": [
-              "atezolizumab",
               "Table",
               "sorafenib",
+              "atezolizumab",
               "vacizumab"
             ]
           }
@@ -2675,12 +2675,12 @@
             "text_length": 958,
             "potential_comparators": [
               "bevacizumab",
+              "dezolizumab",
+              "bavizumab",
               "Overall",
-              "atezolizumab",
               "Up",
               "sorafenib",
-              "dezolizumab",
-              "bavizumab"
+              "atezolizumab"
             ]
           }
         },
@@ -2698,13 +2698,13 @@
             "split_index": 4,
             "text_length": 1227,
             "potential_comparators": [
-              "atezuzumab",
-              "bevacizumab",
-              "atezolizumab",
-              "Finally",
-              "bevazizumab",
+              "atezolidumab",
               "Another",
-              "atezolidumab"
+              "bevacizumab",
+              "atezuzumab",
+              "Finally",
+              "atezolizumab",
+              "bevazizumab"
             ]
           }
         },
@@ -2722,12 +2722,12 @@
             "split_index": "10_1_0",
             "text_length": 844,
             "potential_comparators": [
+              "Dose",
               "bevacizumab",
-              "atezolizumab",
-              "atezozizumab",
-              "atezolizeumab",
               "No",
-              "Dose"
+              "atezozizumab",
+              "atezolizumab",
+              "atezolizeumab"
             ]
           }
         }
@@ -2766,11 +2766,11 @@
             "split_index": 2,
             "text_length": 1269,
             "potential_comparators": [
-              "lenvitinib",
-              "soraphenib",
+              "lenvatinib",
               "Finally",
               "sorafenib",
-              "lenvatinib"
+              "lenvitinib",
+              "soraphenib"
             ]
           }
         },
@@ -2788,12 +2788,12 @@
             "split_index": "5_1_0",
             "text_length": 1345,
             "potential_comparators": [
-              "lenvitinib",
               "lenvetinib",
+              "lenvatinib",
               "sorafeninib",
               "Taking",
               "sorafenib",
-              "lenvatinib"
+              "lenvitinib"
             ]
           }
         },
@@ -2830,11 +2830,11 @@
             "split_index": "4_0_0",
             "text_length": 909,
             "potential_comparators": [
-              "lenvitinib",
+              "lenvatinib",
               "sorafeninib",
               "sorafenib",
-              "lenvatnib",
-              "lenvatinib"
+              "lenvitinib",
+              "lenvatnib"
             ]
           }
         },
@@ -2852,12 +2852,12 @@
             "split_index": 5,
             "text_length": 1071,
             "potential_comparators": [
-              "sorafenib",
-              "Hazard",
-              "Using",
-              "lenvatinib",
               "If",
-              "Efficacy"
+              "lenvatinib",
+              "Hazard",
+              "sorafenib",
+              "Efficacy",
+              "Using"
             ]
           }
         },
@@ -2875,11 +2875,11 @@
             "split_index": 0,
             "text_length": 837,
             "potential_comparators": [
-              "November",
-              "Sorafenib",
               "Lancet",
+              "lenvatinib",
+              "November",
               "sorafenib",
-              "lenvatinib"
+              "Sorafenib"
             ]
           }
         },
@@ -2897,8 +2897,8 @@
             "split_index": 1,
             "text_length": 949,
             "potential_comparators": [
-              "lenvatinib",
-              "sorafenib"
+              "sorafenib",
+              "lenvatinib"
             ]
           }
         },
@@ -2916,9 +2916,9 @@
             "split_index": "3_1_0",
             "text_length": 978,
             "potential_comparators": [
-              "lenvatinib",
               "However",
-              "sorafenib"
+              "sorafenib",
+              "lenvatinib"
             ]
           }
         },
@@ -2936,11 +2936,11 @@
             "split_index": "4_1_0",
             "text_length": 893,
             "potential_comparators": [
-              "lenvitinib",
+              "lenvatinib",
               "pembrolizumab",
-              "nivolumab",
               "sorafenib",
-              "lenvatinib"
+              "nivolumab",
+              "lenvitinib"
             ]
           }
         },
@@ -2976,8 +2976,8 @@
             "split_index": 5,
             "text_length": 894,
             "potential_comparators": [
-              "lenvatinib",
-              "sorafenib"
+              "sorafenib",
+              "lenvatinib"
             ]
           }
         },
@@ -2995,15 +2995,15 @@
             "split_index": "5_0_0",
             "text_length": 1362,
             "potential_comparators": [
-              "lenvitinib",
-              "pembrolizaumab",
-              "PLACE",
-              "pembrolizumab",
-              "sorafennib",
-              "sorafeninib",
               "Lenvatinib",
+              "lenvatinib",
+              "pembrolizumab",
+              "sorafeninib",
+              "PLACE",
+              "pembrolizaumab",
               "sorafenib",
-              "lenvatinib"
+              "sorafennib",
+              "lenvitinib"
             ]
           }
         },
@@ -3021,9 +3021,9 @@
             "split_index": "3_0_0",
             "text_length": 991,
             "potential_comparators": [
-              "lenvatinib",
               "sorafenib",
-              "Arterial"
+              "Arterial",
+              "lenvatinib"
             ]
           }
         },
@@ -3041,8 +3041,8 @@
             "split_index": 3,
             "text_length": 966,
             "potential_comparators": [
-              "lenvatinib",
-              "sorafenib"
+              "sorafenib",
+              "lenvatinib"
             ]
           }
         },
@@ -3060,9 +3060,9 @@
             "split_index": 2,
             "text_length": 1049,
             "potential_comparators": [
+              "sorafenib",
               "lenvatinib",
-              "Main",
-              "sorafenib"
+              "Main"
             ]
           }
         },
@@ -3080,9 +3080,9 @@
             "split_index": "6_0_0",
             "text_length": 1033,
             "potential_comparators": [
+              "sorafenib",
               "No",
-              "soraphenib",
-              "sorafenib"
+              "soraphenib"
             ]
           }
         },
@@ -3101,9 +3101,9 @@
             "text_length": 704,
             "potential_comparators": [
               "lenvatnib",
+              "sorafenib",
               "Note",
-              "lenvatinib",
-              "sorafenib"
+              "lenvatinib"
             ]
           }
         },
@@ -3121,11 +3121,11 @@
             "split_index": "4_1_0",
             "text_length": 1383,
             "potential_comparators": [
-              "When",
-              "Unlike",
               "Therefore",
               "However",
-              "sorafenib"
+              "sorafenib",
+              "Unlike",
+              "When"
             ]
           }
         },
@@ -3143,15 +3143,15 @@
             "split_index": 3,
             "text_length": 953,
             "potential_comparators": [
-              "Treat",
-              "Toxicity",
-              "is 8 mg",
-              "one 4 mg",
-              "three 4 mg",
-              "lenvatinib",
               "Third 4 mg",
-              "two 4 mg",
-              "and 12 mg"
+              "lenvatinib",
+              "Toxicity",
+              "one 4 mg",
+              "and 12 mg",
+              "three 4 mg",
+              "is 8 mg",
+              "Treat",
+              "two 4 mg"
             ]
           }
         },
@@ -3187,11 +3187,11 @@
             "split_index": 4,
             "text_length": 1458,
             "potential_comparators": [
+              "Among",
+              "lenvatinib",
               "Table",
               "sorafenib",
-              "Among",
-              "lenvatnib",
-              "lenvatinib"
+              "lenvatnib"
             ]
           }
         },
@@ -3246,9 +3246,9 @@
             "text_length": 1093,
             "potential_comparators": [
               "sorafeninib",
-              "lenvatinib",
               "sorafenib",
-              "Taking"
+              "Taking",
+              "lenvatinib"
             ]
           }
         },
@@ -3266,10 +3266,10 @@
             "split_index": 0,
             "text_length": 1066,
             "potential_comparators": [
-              "Patients",
-              "lenvatinib",
+              "Time",
               "sorafenib",
-              "Time"
+              "lenvatinib",
+              "Patients"
             ]
           }
         }
@@ -3309,10 +3309,10 @@
             "text_length": 1097,
             "potential_comparators": [
               "sorafenb 400 mg",
-              "Table",
+              "to 400 mg",
               "Treatment",
-              "sorafenib",
-              "to 400 mg"
+              "Table",
+              "sorafenib"
             ]
           }
         },
@@ -3348,12 +3348,12 @@
             "split_index": 2,
             "text_length": 1262,
             "potential_comparators": [
-              "It",
-              "Clinical",
+              "Experience",
               "Conclusion",
               "As",
-              "Experience",
-              "sorafenib"
+              "Clinical",
+              "sorafenib",
+              "It"
             ]
           }
         },
@@ -3372,8 +3372,8 @@
             "text_length": 1132,
             "potential_comparators": [
               "sorafenib",
-              "Sorafenib",
-              "Conclusion"
+              "Conclusion",
+              "Sorafenib"
             ]
           }
         },
@@ -3427,10 +3427,10 @@
             "split_index": 0,
             "text_length": 539,
             "potential_comparators": [
-              "soravenib",
-              "Since",
+              "Based",
               "sorafenib",
-              "Based"
+              "soravenib",
+              "Since"
             ]
           }
         },
@@ -3448,8 +3448,8 @@
             "split_index": 0,
             "text_length": 257,
             "potential_comparators": [
-              "Literature",
-              "sorafenib"
+              "sorafenib",
+              "Literature"
             ]
           }
         },
@@ -3540,8 +3540,8 @@
             "split_index": 3,
             "text_length": 833,
             "potential_comparators": [
-              "Considerations",
-              "Regarding"
+              "Regarding",
+              "Considerations"
             ]
           }
         },
@@ -3559,9 +3559,9 @@
             "split_index": 4,
             "text_length": 969,
             "potential_comparators": [
-              "Hermans",
               "sorafenib",
-              "Pagina"
+              "Pagina",
+              "Hermans"
             ]
           }
         },
@@ -3580,8 +3580,8 @@
             "text_length": 864,
             "potential_comparators": [
               "Comparative",
-              "One",
-              "There"
+              "There",
+              "One"
             ]
           }
         },
@@ -3633,8 +3633,8 @@
             "split_index": 0,
             "text_length": 1014,
             "potential_comparators": [
-              "sorabenib",
-              "sorafenib"
+              "sorafenib",
+              "sorabenib"
             ]
           }
         },
@@ -3723,10 +3723,10 @@
             "text_length": 552,
             "potential_comparators": [
               "was 800 mg",
-              "Treatment",
               "of 710 mg",
-              "sorafenib",
-              "is 400 mg"
+              "Treatment",
+              "is 400 mg",
+              "sorafenib"
             ]
           }
         },
@@ -3744,9 +3744,9 @@
             "split_index": 1,
             "text_length": 1284,
             "potential_comparators": [
+              "CVZ",
               "Background",
               "sorafenib",
-              "CVZ",
               "You"
             ]
           }
@@ -3765,11 +3765,11 @@
             "split_index": 0,
             "text_length": 1039,
             "potential_comparators": [
-              "There",
-              "Scope",
               "Hepatocellular",
               "Several",
-              "Risk"
+              "Risk",
+              "There",
+              "Scope"
             ]
           }
         }
@@ -3853,11 +3853,11 @@
             "split_index": 0,
             "text_length": 1398,
             "potential_comparators": [
-              "It",
-              "AOTM-OT-4351-41/2014",
               "Then",
+              "Based",
               "sorafenib",
-              "Based"
+              "It",
+              "AOTM-OT-4351-41/2014"
             ]
           }
         },
@@ -3894,8 +3894,8 @@
             "split_index": 2,
             "text_length": 783,
             "potential_comparators": [
-              "It",
-              "sorafenib"
+              "sorafenib",
+              "It"
             ]
           }
         },
@@ -3913,10 +3913,10 @@
             "split_index": 3,
             "text_length": 1404,
             "potential_comparators": [
+              "Taking",
               "Ahmed",
-              "Answers",
               "All",
-              "Taking"
+              "Answers"
             ]
           }
         },
@@ -3953,10 +3953,10 @@
             "split_index": 4,
             "text_length": 1537,
             "potential_comparators": [
-              "It",
-              "Additionally",
               "However",
-              "sorafenib"
+              "sorafenib",
+              "It",
+              "Additionally"
             ]
           }
         },
@@ -3974,10 +3974,10 @@
             "split_index": "1_0_0",
             "text_length": 1182,
             "potential_comparators": [
-              "No",
-              "Aside",
+              "Hand-foot",
               "sorafenib",
-              "Hand-foot"
+              "No",
+              "Aside"
             ]
           }
         },
@@ -4050,9 +4050,9 @@
             "split_index": 1,
             "text_length": 810,
             "potential_comparators": [
+              "sorafenib",
               "It",
-              "Nevertheless",
-              "sorafenib"
+              "Nevertheless"
             ]
           }
         },
@@ -4070,11 +4070,11 @@
             "split_index": 2,
             "text_length": 1156,
             "potential_comparators": [
-              "Overall",
-              "Due",
               "Therefore",
+              "Overall",
               "However",
-              "sorafenib"
+              "sorafenib",
+              "Due"
             ]
           }
         },
@@ -4092,10 +4092,10 @@
             "split_index": 0,
             "text_length": 763,
             "potential_comparators": [
-              "OT.4331.62.2019",
               "Rep",
-              "Completion",
-              "Position"
+              "Position",
+              "OT.4331.62.2019",
+              "Completion"
             ]
           }
         },
@@ -4132,8 +4132,8 @@
             "text_length": 761,
             "potential_comparators": [
               "sorafenib",
-              "Statistically",
-              "Taking"
+              "Taking",
+              "Statistically"
             ]
           }
         },
@@ -4151,8 +4151,8 @@
             "split_index": 5,
             "text_length": 723,
             "potential_comparators": [
-              "Patients",
-              "Considering"
+              "Considering",
+              "Patients"
             ]
           }
         },
@@ -4188,8 +4188,8 @@
             "split_index": 1,
             "text_length": 1120,
             "potential_comparators": [
-              "According",
               "Discounting",
+              "According",
               "sorafenib"
             ]
           }
@@ -4208,8 +4208,8 @@
             "split_index": 10,
             "text_length": 884,
             "potential_comparators": [
-              "All",
               "sorafenib",
+              "All",
               "Review"
             ]
           }
@@ -4246,10 +4246,10 @@
             "split_index": 3,
             "text_length": 1570,
             "potential_comparators": [
-              "It",
               "Assuming",
               "sorafenib",
-              "Limitations"
+              "Limitations",
+              "It"
             ]
           }
         },
@@ -4294,9 +4294,9 @@
             "split_index": 2,
             "text_length": 805,
             "potential_comparators": [
-              "Patients",
               "Adverse",
-              "Safety"
+              "Safety",
+              "Patients"
             ]
           }
         },
@@ -4314,10 +4314,10 @@
             "split_index": 0,
             "text_length": 925,
             "potential_comparators": [
+              "There",
               "sorafenib",
               "lenvatinib",
-              "Evaluation",
-              "There"
+              "Evaluation"
             ]
           }
         },
@@ -4335,12 +4335,12 @@
             "split_index": 5,
             "text_length": 1022,
             "potential_comparators": [
-              "Adjusted",
+              "lenvatinib",
               "Adverse",
-              "Safety",
-              "sorafenib",
+              "Adjusted",
               "Time",
-              "lenvatinib"
+              "sorafenib",
+              "Safety"
             ]
           }
         },
@@ -4358,11 +4358,11 @@
             "split_index": 1,
             "text_length": 796,
             "potential_comparators": [
-              "lenvitinib",
+              "lenvatinib",
+              "Evaluation",
               "There",
               "sorafenib",
-              "lenvatinib",
-              "Evaluation"
+              "lenvitinib"
             ]
           }
         },
@@ -4396,9 +4396,9 @@
             "split_index": 3,
             "text_length": 815,
             "potential_comparators": [
-              "lenvatinib",
               "Secondary",
-              "sorafenib"
+              "sorafenib",
+              "lenvatinib"
             ]
           }
         },
@@ -4416,9 +4416,9 @@
             "split_index": 4,
             "text_length": 884,
             "potential_comparators": [
+              "sorafenib",
               "lenvitinib",
-              "lenvatinib",
-              "sorafenib"
+              "lenvatinib"
             ]
           }
         },
@@ -4436,10 +4436,10 @@
             "split_index": 0,
             "text_length": 1228,
             "potential_comparators": [
-              "sorafenib",
-              "lenvatinib",
+              "There",
               "Thus",
-              "There"
+              "sorafenib",
+              "lenvatinib"
             ]
           }
         },
@@ -4457,11 +4457,11 @@
             "split_index": 0,
             "text_length": 884,
             "potential_comparators": [
-              "Modified",
-              "sorafenib",
-              "Inclusion",
+              "lenvatinib",
               "Patients",
-              "lenvatinib"
+              "Inclusion",
+              "sorafenib",
+              "Modified"
             ]
           }
         },
@@ -4479,21 +4479,21 @@
             "split_index": 1,
             "text_length": 1361,
             "potential_comparators": [
+              "Dose",
+              "soravenib 400 mg",
+              "Thus",
+              "of 400 mg",
+              "lenvatinib",
+              "Patients",
+              "soravenib",
+              "All",
+              "Investigators",
+              "sorafenib",
+              "sorabenib",
               "lenvitinib",
               "and 4 mg",
               "or 4 mg",
-              "sorabenib",
-              "of 400 mg",
-              "or 8 mg",
-              "Dose",
-              "Investigators",
-              "Thus",
-              "sorafenib",
-              "All",
-              "Patients",
-              "soravenib",
-              "lenvatinib",
-              "soravenib 400 mg"
+              "or 8 mg"
             ]
           }
         },
@@ -4528,9 +4528,9 @@
             "text_length": 277,
             "potential_comparators": [
               "Lenvatinib",
-              "lenvatinib",
               "sorafenib",
-              "Lancet"
+              "Lancet",
+              "lenvatinib"
             ]
           }
         },
@@ -4567,8 +4567,8 @@
             "text_length": 523,
             "potential_comparators": [
               "sorafenib",
-              "lenvatinib",
-              "Added"
+              "Added",
+              "lenvatinib"
             ]
           }
         },
@@ -4586,8 +4586,8 @@
             "split_index": 0,
             "text_length": 301,
             "potential_comparators": [
-              "lenvatinib",
-              "What"
+              "What",
+              "lenvatinib"
             ]
           }
         },
@@ -4605,8 +4605,8 @@
             "split_index": 1,
             "text_length": 363,
             "potential_comparators": [
-              "lenvatinib",
-              "Considering"
+              "Considering",
+              "lenvatinib"
             ]
           }
         },
@@ -4624,8 +4624,8 @@
             "split_index": 0,
             "text_length": 455,
             "potential_comparators": [
-              "lenvatinib",
-              "sorafenib"
+              "sorafenib",
+              "lenvatinib"
             ]
           }
         },
@@ -4643,17 +4643,17 @@
             "split_index": 0,
             "text_length": 799,
             "potential_comparators": [
-              "of 800 mg",
-              "is 400 mg",
-              "is 8 mg",
-              "three 4 mg",
+              "Detailed",
+              "lenvatinib",
               "two 200 mg",
               "Treatment",
-              "lenvatinib",
+              "of 800 mg",
+              "is 400 mg",
+              "and 12 mg",
+              "three 4 mg",
+              "is 8 mg",
               "sorafenib",
-              "two 4 mg",
-              "Detailed",
-              "and 12 mg"
+              "two 4 mg"
             ]
           }
         },
@@ -4728,8 +4728,8 @@
             "split_index": 0,
             "text_length": 452,
             "potential_comparators": [
-              "lenvatinib",
-              "sorafenib"
+              "sorafenib",
+              "lenvatinib"
             ]
           }
         }
@@ -4758,10 +4758,10 @@
             "split_index": 0,
             "text_length": 866,
             "potential_comparators": [
-              "sorafenib",
-              "durvalumab",
               "tremelimumab",
-              "Additional"
+              "sorafenib",
+              "Additional",
+              "durvalumab"
             ]
           }
         },
@@ -4779,8 +4779,8 @@
             "split_index": 0,
             "text_length": 345,
             "potential_comparators": [
-              "bevacizumab",
-              "sorafenib"
+              "sorafenib",
+              "bevacizumab"
             ]
           }
         },
@@ -4800,9 +4800,9 @@
             "potential_comparators": [
               "Value",
               "As",
-              "sorafenib",
               "Brazier",
-              "TLV's"
+              "TLV's",
+              "sorafenib"
             ]
           }
         },
@@ -4821,14 +4821,14 @@
             "text_length": 1168,
             "potential_comparators": [
               "bevacizumab",
-              "tremelimumab",
-              "durvalumab",
-              "imudovumab",
-              "atezolizumab",
-              "sorabenib",
-              "sorafenib",
+              "lenvatinib",
               "Both",
-              "lenvatinib"
+              "imudovumab",
+              "sorafenib",
+              "sorabenib",
+              "tremelimumab",
+              "atezolizumab",
+              "durvalumab"
             ]
           }
         },
@@ -4847,10 +4847,10 @@
             "text_length": 1370,
             "potential_comparators": [
               "bevacizumab",
-              "atezolizumab",
-              "sorafenib",
               "STRIDE",
-              "Based"
+              "Based",
+              "sorafenib",
+              "atezolizumab"
             ]
           }
         },
@@ -4870,10 +4870,10 @@
             "potential_comparators": [
               "bevacizumab",
               "Section",
-              "Also",
-              "TLV",
+              "Patients",
               "sorafenib",
-              "Patients"
+              "TLV",
+              "Also"
             ]
           }
         },
@@ -4891,10 +4891,10 @@
             "split_index": 0,
             "text_length": 508,
             "potential_comparators": [
-              "soraphenib",
+              "sorafenib",
               "PFS",
-              "lenvatinib",
-              "sorafenib"
+              "soraphenib",
+              "lenvatinib"
             ]
           }
         },
@@ -4913,10 +4913,10 @@
             "text_length": 923,
             "potential_comparators": [
               "bevacizumab",
-              "atezolizumab",
-              "BCLC",
+              "Tumor",
               "Liver",
-              "Tumor"
+              "BCLC",
+              "atezolizumab"
             ]
           }
         },
@@ -4935,12 +4935,12 @@
             "text_length": 473,
             "potential_comparators": [
               "bevacizumab",
-              "tremelimumab",
-              "durvalumab",
-              "atezolizumab",
-              "World",
               "Finn",
-              "Available"
+              "Available",
+              "World",
+              "tremelimumab",
+              "atezolizumab",
+              "durvalumab"
             ]
           }
         },
@@ -4977,9 +4977,9 @@
             "split_index": 0,
             "text_length": 852,
             "potential_comparators": [
+              "sorafenib",
               "bevacizumab",
-              "TLV",
-              "sorafenib"
+              "TLV"
             ]
           }
         },
@@ -5015,10 +5015,10 @@
             "split_index": 1,
             "text_length": 806,
             "potential_comparators": [
-              "Additionally",
               "Without",
-              "sorafenib",
-              "Lenvima"
+              "Lenvima",
+              "Additionally",
+              "sorafenib"
             ]
           }
         },
@@ -5037,18 +5037,18 @@
             "text_length": 778,
             "potential_comparators": [
               "bevacizumab",
-              "Version",
-              "tremelimumab",
-              "durvalumab",
               "Regionala",
-              "atezolizumab",
+              "Available",
+              "Version",
               "Availabe",
-              "EMEA/H/C/006016/0000\"",
-              "Nationellt",
-              "NEJM",
               "sorafenib",
-              "Cheng",
-              "Available"
+              "EMEA/H/C/006016/0000\"",
+              "durvalumab",
+              "NEJM",
+              "Nationellt",
+              "tremelimumab",
+              "atezolizumab",
+              "Cheng"
             ]
           }
         },
@@ -5066,9 +5066,9 @@
             "split_index": 0,
             "text_length": 441,
             "potential_comparators": [
-              "atezolizumab",
               "bevacizumab",
               "atezozizumab",
+              "atezolizumab",
               "bevazizumab"
             ]
           }
@@ -5087,8 +5087,8 @@
             "split_index": 0,
             "text_length": 738,
             "potential_comparators": [
-              "bevacizumab",
               "According",
+              "bevacizumab",
               "sorafenib"
             ]
           }
@@ -5125,8 +5125,8 @@
             "split_index": 2,
             "text_length": 446,
             "potential_comparators": [
-              "Furthermore",
-              "Based"
+              "Based",
+              "Furthermore"
             ]
           }
         },
@@ -5145,8 +5145,8 @@
             "text_length": 944,
             "potential_comparators": [
               "Total",
-              "TLV",
-              "sorapenib"
+              "sorapenib",
+              "TLV"
             ]
           }
         },
@@ -5164,10 +5164,10 @@
             "split_index": 0,
             "text_length": 694,
             "potential_comparators": [
-              "Baseline",
-              "See",
+              "sorafenib",
               "PFS",
-              "sorafenib"
+              "Baseline",
+              "See"
             ]
           }
         },
@@ -5204,15 +5204,15 @@
             "text_length": 1482,
             "potential_comparators": [
               "bevacizumab",
-              "atezolizumab",
-              "Furthermore",
-              "bevaziumab",
-              "atezoizumab",
+              "lenvatinib",
               "However",
               "sorafenib",
-              "EMA",
               "sorefenib",
-              "lenvatinib"
+              "EMA",
+              "bevaziumab",
+              "atezoizumab",
+              "Furthermore",
+              "atezolizumab"
             ]
           }
         },
@@ -5230,14 +5230,14 @@
             "split_index": 3,
             "text_length": 919,
             "potential_comparators": [
-              "kabozantinib",
-              "ciramovirazumab",
-              "TLV",
-              "sorafenib",
-              "regorafenib",
-              "lenviimab",
               "kostfenib",
-              "Individual"
+              "lenviimab",
+              "Individual",
+              "regorafenib",
+              "ciramovirazumab",
+              "sorafenib",
+              "TLV",
+              "kabozantinib"
             ]
           }
         },
@@ -5255,8 +5255,8 @@
             "split_index": 0,
             "text_length": 952,
             "potential_comparators": [
-              "TLV",
-              "sorafenib"
+              "sorafenib",
+              "TLV"
             ]
           }
         },
@@ -5274,8 +5274,8 @@
             "split_index": 0,
             "text_length": 285,
             "potential_comparators": [
-              "atezolizumab",
-              "bevacizumab"
+              "bevacizumab",
+              "atezolizumab"
             ]
           }
         }

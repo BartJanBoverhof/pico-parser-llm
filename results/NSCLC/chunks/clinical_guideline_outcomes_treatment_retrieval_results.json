@@ -1,6 +1,6 @@
 {
   "retrieval_metadata": {
-    "timestamp": "2025-09-29T11:49:00.247977",
+    "timestamp": "2025-09-29T12:50:23.921797",
     "source_type": "clinical_guideline",
     "retrieval_type": "outcomes",
     "query": "Find treatment recommendations with outcome information relevant to: treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context.\n        Prefer content that describes:\n        - Expected clinical benefits and efficacy outcomes\n        - Safety considerations and adverse event profiles\n        - Quality of life impacts and patient-reported outcomes (including any specific instruments like EORTC QLQ, EQ-5D, SF-36)\n        - Evidence strength/level and recommendation grades if provided\n        - Response rates and survival outcomes\n        - Exploratory or additional endpoints (e.g. time to next treatment/PFS2, progression of brain metastases, time to deterioration) if reported\n        Focus on outcome expectations and evidence quality assessments.",
@@ -51,8 +51,8 @@
             "split_index": 0,
             "text_length": 1431,
             "potential_comparators": [
-              "As",
-              "Clinical"
+              "Clinical",
+              "As"
             ]
           }
         },
@@ -71,10 +71,10 @@
             "text_length": 1139,
             "potential_comparators": [
               "entrectinib",
-              "crizotinib",
+              "lorlatinib",
               "ceratinib",
-              "cabozantinib",
-              "lorlatinib"
+              "crizotinib",
+              "cabozantinib"
             ]
           }
         },
@@ -92,8 +92,8 @@
             "split_index": 0,
             "text_length": 758,
             "potential_comparators": [
-              "Data",
-              "Approved"
+              "Approved",
+              "Data"
             ]
           }
         },
@@ -111,10 +111,10 @@
             "split_index": 0,
             "text_length": 840,
             "potential_comparators": [
-              "It",
               "Early",
-              "ALK",
-              "If"
+              "If",
+              "It",
+              "ALK"
             ]
           }
         },
@@ -204,10 +204,10 @@
             "split_index": 3,
             "text_length": 980,
             "potential_comparators": [
-              "asimginib",
-              "Patients",
               "According",
-              "Testing"
+              "Testing",
+              "asimginib",
+              "Patients"
             ]
           }
         },
@@ -225,11 +225,11 @@
             "split_index": 3,
             "text_length": 1044,
             "potential_comparators": [
+              "Patients",
               "amivantamab",
-              "larotrectinib",
-              "trastuzumab",
               "entrectinib",
-              "Patients"
+              "larotrectinib",
+              "trastuzumab"
             ]
           }
         },
@@ -265,8 +265,8 @@
             "split_index": 1,
             "text_length": 1348,
             "potential_comparators": [
-              "Patients",
-              "Oncogene"
+              "Oncogene",
+              "Patients"
             ]
           }
         },
@@ -285,9 +285,9 @@
             "text_length": 707,
             "potential_comparators": [
               "IMMUNTERAPI",
+              "crizotinib",
               "Immunotherapy",
-              "Immunotarget",
-              "crizotinib"
+              "Immunotarget"
             ]
           }
         },
@@ -305,9 +305,9 @@
             "split_index": 2,
             "text_length": 790,
             "potential_comparators": [
-              "ntrectinib",
-              "larotrectinib",
               "amivantamab",
+              "larotrectinib",
+              "ntrectinib",
               "trastuzumab"
             ]
           }
@@ -326,14 +326,14 @@
             "split_index": 1,
             "text_length": 667,
             "potential_comparators": [
-              "ROS1",
               "NTRK",
-              "ERBB2",
-              "KRAS",
+              "ROS1",
               "Rebioparsing",
+              "BRAF",
               "ALK",
               "RET",
-              "BRAF",
+              "KRAS",
+              "ERBB2",
               "MET"
             ]
           }
@@ -352,10 +352,10 @@
             "split_index": "1_0_0",
             "text_length": 858,
             "potential_comparators": [
+              "Exon",
               "MAPK",
               "DOLG",
-              "Our",
-              "Exon"
+              "Our"
             ]
           }
         }
@@ -384,15 +384,15 @@
             "split_index": 3,
             "text_length": 1409,
             "potential_comparators": [
-              "arotrectinib",
               "Sotorasib",
-              "trastuzumab",
+              "Activated",
+              "arotrectinib",
+              "Entrectinib 600mg",
               "entrectinib",
               "KRAS",
-              "Entrectinib 600mg",
               "Additionally",
-              "arotrectinib 100mg",
-              "Activated"
+              "trastuzumab",
+              "arotrectinib 100mg"
             ]
           }
         }
@@ -421,22 +421,22 @@
             "split_index": 0,
             "text_length": 888,
             "potential_comparators": [
-              "Indirect",
               "Health-related",
-              "Clinical",
               "Conclusion",
-              "NICE",
-              "Cancer",
-              "Treatment",
-              "Assumptions",
-              "Subject",
-              "Price",
-              "Other",
-              "All",
-              "Anticipated",
-              "Dosage",
               "End",
-              "Cost-effectiveness"
+              "Clinical",
+              "Indirect",
+              "Price",
+              "Treatment",
+              "Cost-effectiveness",
+              "Dosage",
+              "Cancer",
+              "All",
+              "Other",
+              "Subject",
+              "Assumptions",
+              "NICE",
+              "Anticipated"
             ]
           }
         },
@@ -473,13 +473,13 @@
             "split_index": 0,
             "text_length": 1311,
             "potential_comparators": [
-              "Collecting",
               "Sotorasib",
+              "nintedanib",
+              "All",
               "Subject",
               "But",
-              "All",
-              "So",
-              "nintedanib"
+              "Collecting",
+              "So"
             ]
           }
         },
@@ -534,8 +534,8 @@
             "split_index": "4_1_0",
             "text_length": 944,
             "potential_comparators": [
-              "It",
               "However",
+              "It",
               "But"
             ]
           }
@@ -589,12 +589,12 @@
             "split_index": 0,
             "text_length": 1094,
             "potential_comparators": [
-              "Most",
               "Subject",
-              "People",
-              "of 120 mg",
               "All",
-              "took 960 mg"
+              "took 960 mg",
+              "of 120 mg",
+              "Most",
+              "People"
             ]
           }
         },
@@ -612,8 +612,8 @@
             "split_index": 1,
             "text_length": 270,
             "potential_comparators": [
-              "All",
-              "Subject"
+              "Subject",
+              "All"
             ]
           }
         },
@@ -631,8 +631,8 @@
             "split_index": 1,
             "text_length": 872,
             "potential_comparators": [
-              "Therefore",
               "nintedanib",
+              "Therefore",
               "Subject"
             ]
           }
@@ -651,8 +651,8 @@
             "split_index": 0,
             "text_length": 943,
             "potential_comparators": [
-              "All",
-              "Subject"
+              "Subject",
+              "All"
             ]
           }
         },
@@ -689,9 +689,9 @@
             "split_index": 0,
             "text_length": 1305,
             "potential_comparators": [
+              "Subject",
               "All",
               "Because",
-              "Subject",
               "However"
             ]
           }
@@ -710,8 +710,8 @@
             "split_index": 0,
             "text_length": 1109,
             "potential_comparators": [
-              "All",
-              "Subject"
+              "Subject",
+              "All"
             ]
           }
         },
@@ -745,8 +745,8 @@
             "split_index": 2,
             "text_length": 222,
             "potential_comparators": [
-              "See",
-              "Subject"
+              "Subject",
+              "See"
             ]
           }
         },
@@ -764,11 +764,11 @@
             "split_index": 0,
             "text_length": 1162,
             "potential_comparators": [
-              "selpercatinib",
               "July",
               "dabrafenib",
-              "trametinib",
-              "mobocertinib"
+              "selpercatinib",
+              "mobocertinib",
+              "trametinib"
             ]
           }
         },
@@ -786,9 +786,9 @@
             "split_index": 0,
             "text_length": 347,
             "potential_comparators": [
+              "Subject",
               "All",
-              "So",
-              "Subject"
+              "So"
             ]
           }
         },
@@ -806,8 +806,8 @@
             "split_index": 1,
             "text_length": 614,
             "potential_comparators": [
-              "All",
               "Subject",
+              "All",
               "Commissioners"
             ]
           }
@@ -947,8 +947,8 @@
             "split_index": 2,
             "text_length": 1518,
             "potential_comparators": [
-              "Research",
-              "These"
+              "These",
+              "Research"
             ]
           }
         },
@@ -966,12 +966,12 @@
             "split_index": "0_1_0",
             "text_length": 1046,
             "potential_comparators": [
-              "amivantamab",
-              "trastuzumab",
-              "poziotinib",
               "Note",
-              "tectinib",
-              "mobocertinib"
+              "poziotinib",
+              "amivantamab",
+              "mobocertinib",
+              "trastuzumab",
+              "tectinib"
             ]
           }
         },
@@ -989,8 +989,8 @@
             "split_index": "0_0_0",
             "text_length": 1129,
             "potential_comparators": [
-              "Progress",
               "Note",
+              "Progress",
               "Multigenic"
             ]
           }
@@ -1010,8 +1010,8 @@
             "text_length": 1253,
             "potential_comparators": [
               "amivantamab",
-              "Fusions",
-              "Multiplex"
+              "Multiplex",
+              "Fusions"
             ]
           }
         }
@@ -1090,9 +1090,9 @@
             "split_index": 1,
             "text_length": 1114,
             "potential_comparators": [
-              "tivantinib",
               "erlotinib",
-              "LOW"
+              "LOW",
+              "tivantinib"
             ]
           }
         },
@@ -1148,9 +1148,9 @@
             "split_index": "2_1_0",
             "text_length": 818,
             "potential_comparators": [
-              "After",
+              "Important",
               "Niet",
-              "Important"
+              "After"
             ]
           }
         },
@@ -1169,10 +1169,10 @@
             "text_length": 1261,
             "potential_comparators": [
               "Mutations",
-              "afatinib",
-              "Niet",
               "Tumor",
-              "NGS"
+              "NGS",
+              "afatinib",
+              "Niet"
             ]
           }
         }
@@ -1221,18 +1221,18 @@
             "split_index": 0,
             "text_length": 1504,
             "potential_comparators": [
-              "pralsetinib",
-              "These",
               "alektinib",
-              "vandetanib",
               "Intracranial",
-              "Selperkatinib",
+              "pralsetinib",
               "sunitinib",
+              "Selperkatinib",
+              "Pralsetinib",
+              "These",
+              "Based",
+              "RET",
               "sorafenib",
               "selperkatinib",
-              "Based",
-              "Pralsetinib",
-              "RET",
+              "vandetanib",
               "kabozantinib"
             ]
           }
