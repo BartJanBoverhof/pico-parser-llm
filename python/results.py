@@ -1050,7 +1050,6 @@ class DataVisualizer:
         print("Creating combined European PICO distribution map...")
         
         fig, axes = plt.subplots(2, 1, figsize=(14, 20))
-        fig.suptitle('European Distribution of PICO Evidence by Case', fontsize=16, fontweight='bold', y=0.995)
         
         for idx, pico_analyzer in enumerate(pico_analyzers):
             ax = axes[idx]
@@ -1058,18 +1057,20 @@ class DataVisualizer:
             
             if pico_analyzer.picos_df.empty or 'Country' not in pico_analyzer.picos_df.columns:
                 ax.text(0.5, 0.5, f'No {case_name} country data available', 
-                       ha='center', va='center', transform=ax.transAxes)
+                    ha='center', va='center', transform=ax.transAxes)
                 continue
             
             country_counts = pico_analyzer.picos_df['Country'].value_counts()
             
             self._plot_european_map(ax, country_counts, case_name)
         
-        plt.tight_layout()
+        axes[0].set_position([0.1, 0.53, 0.75, 0.40])
+        axes[1].set_position([0.1, 0.05, 0.75, 0.40])
+        
         plt.savefig(self.output_dir / 'combined_european_pico_heatmap.png', 
-                   dpi=300, bbox_inches='tight', facecolor='white')
+                dpi=300, bbox_inches='tight', facecolor='white')
         plt.show()
-    
+
     def _plot_european_map(self, ax, country_counts, case_name):
         if not GEOPANDAS_AVAILABLE:
             self._plot_simplified_european_map(ax, country_counts, case_name)
@@ -1098,8 +1099,6 @@ class DataVisualizer:
                 'LT': 'Lithuania', 'LV': 'Latvia', 'EE': 'Estonia'
             }
             
-            training_countries = ['PO', 'NL'] if case_name == 'NSCLC' else []
-            
             name_column = 'NAME' if 'NAME' in world.columns else 'name'
             if name_column not in world.columns:
                 for col in ['NAME_EN', 'NAME_LONG', 'ADMIN', 'Country']:
@@ -1111,9 +1110,11 @@ class DataVisualizer:
             for country_code, count in country_counts.items():
                 if country_code in country_mapping:
                     country_name = country_mapping[country_code]
-                    is_training = country_code in training_countries
-                    pico_data.append({name_column: country_name, 'pico_count': count, 
-                                    'code': country_code, 'is_training': is_training})
+                    pico_data.append({
+                        name_column: country_name, 
+                        'pico_count': count, 
+                        'code': country_code
+                    })
             
             pico_df = pd.DataFrame(pico_data)
             
@@ -1128,9 +1129,6 @@ class DataVisualizer:
             europe = world[world[name_column].isin(european_countries)].copy()
             europe = europe.merge(pico_df, on=name_column, how='left')
             europe['pico_count'] = europe['pico_count'].fillna(0).astype(int)
-            europe['is_training'] = europe['is_training'].fillna(False)
-            europe = europe.infer_objects(copy=False)
-            europe['is_training'] = europe['is_training'].astype(bool)
             
             ax.set_xlim(-12, 32)
             ax.set_ylim(35, 72)
@@ -1139,14 +1137,13 @@ class DataVisualizer:
             if not europe_no_data.empty:
                 europe_no_data.plot(ax=ax, color='#F0F0F0', edgecolor='white', linewidth=0.8)
             
-            europe_test_data = europe[(europe['pico_count'] > 0) & (europe['is_training'] == False)]
-            europe_train_data = europe[(europe['pico_count'] > 0) & (europe['is_training'] == True)]
+            europe_with_data = europe[europe['pico_count'] > 0].copy()
             
-            vmin = 1
-            vmax = europe[europe['pico_count'] > 0]['pico_count'].max()
-            
-            if not europe_test_data.empty:
-                europe_test_data.plot(
+            if not europe_with_data.empty:
+                vmin = 1
+                vmax = europe_with_data['pico_count'].max()
+                
+                europe_with_data.plot(
                     column='pico_count', 
                     ax=ax, 
                     cmap='YlOrRd',
@@ -1154,20 +1151,22 @@ class DataVisualizer:
                     edgecolor='white', 
                     linewidth=0.8,
                     vmin=vmin,
-                    vmax=vmax
+                    vmax=vmax,
+                    zorder=2
                 )
-            
-            if not europe_train_data.empty:
-                europe_train_data.plot(
-                    ax=ax,
-                    color=self.scientific_colors['dark_gray'],
-                    edgecolor='white',
-                    linewidth=0.8,
-                    zorder=3
-                )
-            
-            europe_with_data = europe[europe['pico_count'] > 0]
-            if not europe_with_data.empty:
+                
+                if case_name == 'NSCLC':
+                    training_countries_to_plot = ['Poland', 'Netherlands']
+                    europe_training = europe[europe[name_column].isin(training_countries_to_plot)]
+                    if not europe_training.empty:
+                        europe_training.plot(
+                            ax=ax,
+                            color=self.scientific_colors['dark_gray'],
+                            edgecolor='white',
+                            linewidth=0.8,
+                            zorder=4
+                        )
+                
                 for idx, row in europe_with_data.iterrows():
                     try:
                         centroid = row.geometry.centroid
@@ -1181,7 +1180,7 @@ class DataVisualizer:
                             f"{row['code']}\n({int(row['pico_count'])})",
                             xy=(x_pos, y_pos),
                             ha='center', va='center',
-                            fontsize=10, fontweight='bold',
+                            fontsize=12, fontweight='bold',
                             bbox=dict(boxstyle='round,pad=0.3', facecolor='white', 
                                     alpha=0.8, edgecolor='none'),
                             zorder=5
@@ -1189,22 +1188,23 @@ class DataVisualizer:
                     except Exception as e:
                         pass
                 
-                if not europe_test_data.empty:
-                    sm = plt.cm.ScalarMappable(cmap='YlOrRd', 
-                                             norm=plt.Normalize(vmin=vmin, vmax=vmax))
-                    sm.set_array([])
-                    cbar = plt.colorbar(sm, ax=ax, shrink=0.6, aspect=30)
-                    cbar.set_label('Number of PICOs', fontweight='bold', fontsize=12)
-                    cbar.ax.tick_params(labelsize=10)
+                sm = plt.cm.ScalarMappable(cmap='YlOrRd', 
+                                        norm=plt.Normalize(vmin=vmin, vmax=vmax))
+                sm.set_array([])
+                cbar = plt.colorbar(sm, ax=ax, shrink=0.6, aspect=30)
+                cbar.set_label('Number of PICOs', fontweight='bold', fontsize=14)
+                cbar.ax.tick_params(labelsize=12)
             
-            if training_countries:
+            if case_name == 'NSCLC':
                 legend_elements = [
                     plt.Rectangle((0,0),1,1, facecolor=self.scientific_colors['dark_gray'], 
                                 edgecolor='white', linewidth=0.8, label='Training Set')
                 ]
                 legend = ax.legend(handles=legend_elements, loc='upper left', 
-                         bbox_to_anchor=(0.02, 0.98), frameon=True, fancybox=True, shadow=True)
+                        bbox_to_anchor=(0.02, 0.98), frameon=True, fancybox=True, 
+                        shadow=True, fontsize=12, bbox_transform=ax.transAxes)
                 legend.set_zorder(10)
+                ax.add_artist(legend)
             
             ax.set_xticks([])
             ax.set_yticks([])
@@ -1212,14 +1212,15 @@ class DataVisualizer:
             ax.spines['right'].set_visible(False)
             ax.spines['bottom'].set_visible(False)
             ax.spines['left'].set_visible(False)
+            ax.set_aspect('equal', adjustable='box')
             
             ax.set_title(f'{case_name} - European Distribution ({len(country_counts)} countries)', 
-                        fontsize=14, fontweight='bold', pad=15)
+                        fontsize=16, fontweight='bold', pad=15)
             
         except Exception as e:
             print(f"Error creating European map for {case_name}: {str(e)}")
             self._plot_simplified_european_map(ax, country_counts, case_name)
-    
+
     def _plot_simplified_european_map(self, ax, country_counts, case_name):
         country_mapping = {
             'DE': 'Germany', 'DK': 'Denmark', 'EN': 'United Kingdom', 'FR': 'France',
@@ -1243,14 +1244,12 @@ class DataVisualizer:
             'Lithuania': (23.9, 55.3), 'Latvia': (24.0, 56.9), 'Estonia': (25.0, 58.6)
         }
         
-        training_countries = ['PO', 'NL'] if case_name == 'NSCLC' else []
-        
         ax.set_xlim(-12, 25)
         ax.set_ylim(35, 70)
         
         ax.add_patch(plt.Rectangle((-10, 35), 35, 35, 
-                                 facecolor='#F8F9FA', edgecolor='#E9ECEF', 
-                                 alpha=0.5, linewidth=1))
+                                facecolor='#F8F9FA', edgecolor='#E9ECEF', 
+                                alpha=0.5, linewidth=1))
         
         if len(country_counts) == 0:
             return
@@ -1264,8 +1263,6 @@ class DataVisualizer:
                 if country_name in european_positions:
                     lon, lat = european_positions[country_name]
                     
-                    is_training = country_code in training_countries
-                    
                     if max_count > min_count:
                         normalized_size = (count - min_count) / (max_count - min_count)
                     else:
@@ -1273,41 +1270,63 @@ class DataVisualizer:
                         
                     circle_size = 300 + normalized_size * 700
                     
-                    if is_training:
-                        color = self.scientific_colors['dark_gray']
-                    else:
-                        color_intensity = 0.3 + 0.7 * normalized_size
-                        color = plt.cm.YlOrRd(color_intensity)
+                    color_intensity = 0.3 + 0.7 * normalized_size
+                    color = plt.cm.YlOrRd(color_intensity)
                     
                     ax.scatter(lon, lat, s=circle_size, 
-                             color=color, 
-                             alpha=0.8, edgecolors='white', linewidth=2,
-                             zorder=5)
+                            color=color, 
+                            alpha=0.8, edgecolors='white', linewidth=2,
+                            zorder=5)
                     
-                    text_color = 'white' if (is_training or normalized_size > 0.5) else 'black'
+                    text_color = 'white' if normalized_size > 0.5 else 'black'
                     ax.annotate(f'{country_code}\n({count})', 
-                               (lon, lat), xytext=(0, 0), 
-                               textcoords='offset points',
-                               ha='center', va='center',
-                               fontsize=10, fontweight='bold',
-                               color=text_color,
-                               zorder=6)
+                            (lon, lat), xytext=(0, 0), 
+                            textcoords='offset points',
+                            ha='center', va='center',
+                            fontsize=12, fontweight='bold',
+                            color=text_color,
+                            zorder=6)
         
-        if training_countries:
+        if case_name == 'NSCLC':
+            training_country_codes = ['PO', 'NL']
+            for country_code in training_country_codes:
+                if country_code in country_mapping:
+                    country_name = country_mapping[country_code]
+                    if country_name in european_positions:
+                        lon, lat = european_positions[country_name]
+                        
+                        circle_size = 800
+                        
+                        ax.scatter(lon, lat, s=circle_size, 
+                                color=self.scientific_colors['dark_gray'], 
+                                alpha=0.8, edgecolors='white', linewidth=2,
+                                zorder=7)
+                        
+                        ax.annotate(f'{country_code}\n(Train)', 
+                                (lon, lat), xytext=(0, 0), 
+                                textcoords='offset points',
+                                ha='center', va='center',
+                                fontsize=12, fontweight='bold',
+                                color='white',
+                                zorder=8)
+            
             legend_elements = [
                 plt.Rectangle((0,0),1,1, facecolor=self.scientific_colors['dark_gray'], 
                             edgecolor='white', linewidth=2, alpha=0.8, label='Training Set')
             ]
             legend = ax.legend(handles=legend_elements, loc='upper left', 
-                     bbox_to_anchor=(0.02, 0.98), frameon=True, fancybox=True, shadow=True)
+                    bbox_to_anchor=(0.02, 0.98), frameon=True, fancybox=True, 
+                    shadow=True, fontsize=12, bbox_transform=ax.transAxes)
             legend.set_zorder(10)
+            ax.add_artist(legend)
         
-        ax.set_xlabel('Longitude', fontweight='bold')
-        ax.set_ylabel('Latitude', fontweight='bold')
+        ax.set_xlabel('Longitude', fontweight='bold', fontsize=12)
+        ax.set_ylabel('Latitude', fontweight='bold', fontsize=12)
+        ax.set_aspect('equal', adjustable='box')
         ax.set_title(f'{case_name} - European Distribution ({len(country_counts)} countries - Simplified View)', 
-                    fontsize=14, fontweight='bold', pad=15)
+                    fontsize=16, fontweight='bold', pad=15)
         ax.grid(True, alpha=0.3)
-    
+
     def create_combined_venn_diagram(self, pico_analyzers):
         if not VENN_AVAILABLE:
             print("Matplotlib-venn not available. Skipping Venn diagram.")
