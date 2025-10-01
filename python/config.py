@@ -470,9 +470,7 @@ CASE_CONFIGS = {
     "case_2_hcc_advanced_unresectable": {
         "indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
         "required_terms_clinical": [
-            # Group 1: HCC mentions (any one)
             [r"\bhcc\b", r"\bHCC\b", r"\bhepatocellular carcinoma\b", r"\bhepatocellular(?:[ -])?carcinoma\b"],
-            # Group 2: Unresectability mentions (any one)
             [
                 r"\bunresectable\b",
                 r"\bnon[- ]?resectable\b",
@@ -506,9 +504,9 @@ CONSOLIDATION_CONFIGS = {
     Core Grouping Policy (Exact-Match Only)
     - Define a grouping key as the tuple:
       key = (
-        Population_text_trimmed,  // original population text with only leading/trailing whitespace removed
+        Population_text_trimmed,
         Intervention_text_trimmed,
-        Comparator_text_trimmed    // may be empty; treat empty as a value
+        Comparator_text_trimmed
       )
     - Merge only records with the **same key** (byte-for-byte equality after trimming ends).
     - Do NOT perform any other normalization. Specifically, DO NOT:
@@ -557,19 +555,19 @@ CONSOLIDATION_CONFIGS = {
       "consolidation_metadata": {
         "timestamp": "ISO 8601",
         "total_consolidated_picos": <int>,
-        "source_countries": ["..."],           // union across inputs
-        "source_types": ["..."],               // union across inputs
-        "indication": "<free text if provided>"// e.g., 'HCC' or 'NSCLC'; otherwise omit or null
+        "source_countries": ["..."],
+        "source_types": ["..."],
+        "indication": "<free text if provided>"
       },
       "consolidated_picos": [
         {
           "Population": "<literal population text (trimmed ends only)>",
           "Intervention": "<literal intervention text (trimmed ends only)>",
           "Comparator": "<literal comparator text (trimmed ends only, possibly empty)>",
-          "Countries": ["..."],                // unique list for this key
-          "Source_Types": ["..."],             // unique list for this key
-          "Source_Refs": ["..."],              // optional; pass through if available
-          "Occurrence_Count": <int>,           // number of merged identical records
+          "Countries": ["..."],
+          "Source_Types": ["..."],
+          "Source_Refs": ["..."],
+          "Occurrence_Count": <int>,
           "Grouping_Key": {
             "population": "<exact>",
             "intervention": "<exact>",
@@ -688,4 +686,143 @@ CONSOLIDATION_CONFIGS = {
     - DO NOT summarize multiple items with phrases like "adverse events including diarrhoea, nausea, fatigue" - instead list "diarrhoea", "nausea", "fatigue" as separate array items
     - When in doubt about whether to merge, DO NOT MERGE - keep items separate
     """.strip()
+}
+
+# --------------------------------
+# Simulation configurations
+# --------------------------------
+SIMULATION_CONFIGS = {
+    "base": {
+        "name": "Baseline (Production Settings)",
+        "description": "Current production configuration serving as reference point",
+        "retrieval_params": {
+            "hta_submission": {
+                "population_comparator": {"initial_k": 80, "final_k": 30},
+                "outcomes": {"initial_k": 60, "final_k": 25}
+            },
+            "clinical_guideline": {
+                "population_comparator": {"initial_k": 100, "final_k": 25},
+                "outcomes": {"initial_k": 80, "final_k": 20}
+            }
+        },
+        "extraction_temperature": 0.3,
+        "chunk_params": {
+            "min_chunk_size": 600,
+            "max_chunk_size": 1500
+        }
+    },
+    "sim_1": {
+        "name": "Conservative Retrieval",
+        "description": "Tests minimum viable retrieval depth with 40% reduction",
+        "retrieval_params": {
+            "hta_submission": {
+                "population_comparator": {"initial_k": 48, "final_k": 18},
+                "outcomes": {"initial_k": 36, "final_k": 15}
+            },
+            "clinical_guideline": {
+                "population_comparator": {"initial_k": 60, "final_k": 15},
+                "outcomes": {"initial_k": 48, "final_k": 12}
+            }
+        },
+        "extraction_temperature": 0.3,
+        "chunk_params": {
+            "min_chunk_size": 600,
+            "max_chunk_size": 1500
+        }
+    },
+    "sim_2": {
+        "name": "Extensive Retrieval",
+        "description": "Tests information saturation point with 40% increase",
+        "retrieval_params": {
+            "hta_submission": {
+                "population_comparator": {"initial_k": 112, "final_k": 42},
+                "outcomes": {"initial_k": 84, "final_k": 35}
+            },
+            "clinical_guideline": {
+                "population_comparator": {"initial_k": 140, "final_k": 35},
+                "outcomes": {"initial_k": 112, "final_k": 28}
+            }
+        },
+        "extraction_temperature": 0.3,
+        "chunk_params": {
+            "min_chunk_size": 600,
+            "max_chunk_size": 1500
+        }
+    },
+    "sim_3": {
+        "name": "Deterministic Extraction",
+        "description": "Tests extraction consistency with reduced temperature",
+        "retrieval_params": {
+            "hta_submission": {
+                "population_comparator": {"initial_k": 80, "final_k": 30},
+                "outcomes": {"initial_k": 60, "final_k": 25}
+            },
+            "clinical_guideline": {
+                "population_comparator": {"initial_k": 100, "final_k": 25},
+                "outcomes": {"initial_k": 80, "final_k": 20}
+            }
+        },
+        "extraction_temperature": 0.1,
+        "chunk_params": {
+            "min_chunk_size": 600,
+            "max_chunk_size": 1500
+        }
+    },
+    "sim_4": {
+        "name": "Diverse Extraction",
+        "description": "Tests LLM with average temprature",
+        "retrieval_params": {
+            "hta_submission": {
+                "population_comparator": {"initial_k": 80, "final_k": 30},
+                "outcomes": {"initial_k": 60, "final_k": 25}
+            },
+            "clinical_guideline": {
+                "population_comparator": {"initial_k": 100, "final_k": 25},
+                "outcomes": {"initial_k": 80, "final_k": 20}
+            }
+        },
+        "extraction_temperature": 0.2,
+        "chunk_params": {
+            "min_chunk_size": 600,
+            "max_chunk_size": 1500
+        }
+    },
+    "sim_5": {
+        "name": "Fine-Grained Chunks",
+        "description": "Tests impact of smaller, more focused information units",
+        "retrieval_params": {
+            "hta_submission": {
+                "population_comparator": {"initial_k": 80, "final_k": 30},
+                "outcomes": {"initial_k": 60, "final_k": 25}
+            },
+            "clinical_guideline": {
+                "population_comparator": {"initial_k": 100, "final_k": 25},
+                "outcomes": {"initial_k": 80, "final_k": 20}
+            }
+        },
+        "extraction_temperature": 0.3,
+        "chunk_params": {
+            "min_chunk_size": 400,
+            "max_chunk_size": 1000
+        }
+    },
+    "sim_6": {
+        "name": "Comprehensive Chunks",
+        "description": "Tests impact of larger contextual windows",
+        "retrieval_params": {
+            "hta_submission": {
+                "population_comparator": {"initial_k": 80, "final_k": 30},
+                "outcomes": {"initial_k": 60, "final_k": 25}
+            },
+            "clinical_guideline": {
+                "population_comparator": {"initial_k": 100, "final_k": 25},
+                "outcomes": {"initial_k": 80, "final_k": 20}
+            }
+        },
+        "extraction_temperature": 0.3,
+        "chunk_params": {
+            "min_chunk_size": 800,
+            "max_chunk_size": 2000
+        }
+    }
 }

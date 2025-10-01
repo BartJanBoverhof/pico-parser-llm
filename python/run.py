@@ -365,37 +365,47 @@ class RagPipeline:
                     
                 print(f"  - Case: {case}, Embedding: {embedding_type}, Path: {item}")
 
-    def initialize_pico_extractors(self):
-        """Initialize separate PICO extractors for HTA and clinical guideline sources."""
-        if not self.source_type_configs:
-            print("Source type configurations not provided. Cannot initialize PICO extractors.")
-            return
+    def initialize_pico_extractors(self, temperature: Optional[float] = None):
+            """
+            Initialize separate PICO extractors for HTA and clinical guideline sources.
             
-        case_info = f" for case '{self.case}'" if self.case else ""
-        
-        if "hta_submission" in self.source_type_configs:
-            hta_config = self.source_type_configs["hta_submission"]
-            self.pico_extractor_hta = PICOExtractor(
-                system_prompt=hta_config.get("population_comparator_system_prompt", ""),
-                user_prompt_template=hta_config.get("population_comparator_user_prompt_template", ""),
-                source_type="hta_submission",
-                model_name=self.model,
-                results_output_dir=self.path_results,
-                source_type_config=hta_config
-            )
-        
-        if "clinical_guideline" in self.source_type_configs:
-            clinical_config = self.source_type_configs["clinical_guideline"]
-            self.pico_extractor_clinical = PICOExtractor(
-                system_prompt=clinical_config.get("population_comparator_system_prompt", ""),
-                user_prompt_template=clinical_config.get("population_comparator_user_prompt_template", ""),
-                source_type="clinical_guideline",
-                model_name=self.model,
-                results_output_dir=self.path_results,
-                source_type_config=clinical_config
-            )
-        
-        print(f"Initialized specialized PICO extractors for available source types with model {self.model}{case_info}")
+            Args:
+                temperature: LLM temperature for extraction. If None, uses 0.3 as default.
+            """
+            if not self.source_type_configs:
+                print("Source type configurations not provided. Cannot initialize PICO extractors.")
+                return
+            
+            if temperature is None:
+                temperature = 0.3
+                
+            case_info = f" for case '{self.case}'" if self.case else ""
+            
+            if "hta_submission" in self.source_type_configs:
+                hta_config = self.source_type_configs["hta_submission"]
+                self.pico_extractor_hta = PICOExtractor(
+                    system_prompt=hta_config.get("population_comparator_system_prompt", ""),
+                    user_prompt_template=hta_config.get("population_comparator_user_prompt_template", ""),
+                    source_type="hta_submission",
+                    model_name=self.model,
+                    results_output_dir=self.path_results,
+                    source_type_config=hta_config,
+                    temperature=temperature
+                )
+            
+            if "clinical_guideline" in self.source_type_configs:
+                clinical_config = self.source_type_configs["clinical_guideline"]
+                self.pico_extractor_clinical = PICOExtractor(
+                    system_prompt=clinical_config.get("population_comparator_system_prompt", ""),
+                    user_prompt_template=clinical_config.get("population_comparator_user_prompt_template", ""),
+                    source_type="clinical_guideline",
+                    model_name=self.model,
+                    results_output_dir=self.path_results,
+                    source_type_config=clinical_config,
+                    temperature=temperature
+                )
+            
+            print(f"Initialized specialized PICO extractors for available source types with model {self.model} and temperature {temperature}{case_info}")
 
     def initialize_pico_consolidator(self):
         """Initialize the PICO and outcomes consolidator."""
@@ -1025,3 +1035,210 @@ class RagPipeline:
                     self.path_pico = os.path.join(self.path_results, "PICO")
                     self.path_outcomes = os.path.join(self.path_results, "outcomes")
                     self.path_consolidated = os.path.join(self.path_results, "consolidated")
+
+
+class SimulationRunner:
+    """
+    Manages simulation execution by determining which paths need to be created
+    based on what differs from the baseline configuration.
+    """
+    
+    def __init__(
+        self,
+        simulation_id: str,
+        base_paths: Optional[Dict[str, str]] = None,
+        case: Optional[str] = None
+    ):
+        """
+        Initialize simulation runner.
+        
+        Args:
+            simulation_id: Simulation identifier (e.g., "base", "sim_1", "sim_2")
+            base_paths: Base directory paths for data storage
+            case: Medical case identifier (e.g., "nsclc", "hcc")
+        """
+        from python.config import SIMULATION_CONFIGS
+        
+        if simulation_id not in SIMULATION_CONFIGS:
+            raise ValueError(f"Unknown simulation_id: {simulation_id}. Available: {list(SIMULATION_CONFIGS.keys())}")
+        
+        self.simulation_id = simulation_id
+        self.case = case
+        self.config = SIMULATION_CONFIGS[simulation_id]
+        self.base_config = SIMULATION_CONFIGS["base"]
+        
+        if base_paths is None:
+            base_paths = {
+                "chunked": "data/text_chunked",
+                "vectorstore": "data/vectorstore",
+                "results": "results"
+            }
+        
+        self.base_paths = base_paths
+        self.paths = self._determine_paths()
+        
+    def _needs_new_vectorstore(self) -> bool:
+        """
+        Determines if this simulation needs a new vectorstore
+        (different chunk parameters from baseline).
+        """
+        return (
+            self.config["chunk_params"]["min_chunk_size"] != self.base_config["chunk_params"]["min_chunk_size"] or
+            self.config["chunk_params"]["max_chunk_size"] != self.base_config["chunk_params"]["max_chunk_size"]
+        )
+    
+    def _needs_new_chunks(self) -> bool:
+        """
+        Determines if this simulation needs new chunk retrieval
+        (different retrieval params or chunk params from baseline).
+        """
+        if self._needs_new_vectorstore():
+            return True
+            
+        base_retrieval = self.base_config["retrieval_params"]
+        sim_retrieval = self.config["retrieval_params"]
+        
+        for source_type in ["hta_submission", "clinical_guideline"]:
+            for retrieval_type in ["population_comparator", "outcomes"]:
+                if base_retrieval[source_type][retrieval_type] != sim_retrieval[source_type][retrieval_type]:
+                    return True
+        
+        return False
+    
+    def _needs_new_extraction(self) -> bool:
+        """
+        Determines if this simulation needs new PICO extraction
+        (different temperature, retrieval params, or chunk params from baseline).
+        """
+        if self._needs_new_chunks():
+            return True
+            
+        return self.config["extraction_temperature"] != self.base_config["extraction_temperature"]
+    
+    def _determine_paths(self) -> Dict[str, str]:
+        """
+        Determines which paths to use for this simulation.
+        Creates simulation-specific folders where needed.
+        """
+        paths = {}
+        
+        if self._needs_new_vectorstore():
+            if self.case:
+                paths["chunked"] = os.path.join(self.base_paths["chunked"], self.simulation_id, self.case)
+                paths["vectorstore"] = os.path.join(self.base_paths["vectorstore"], self.simulation_id)
+            else:
+                paths["chunked"] = os.path.join(self.base_paths["chunked"], self.simulation_id)
+                paths["vectorstore"] = os.path.join(self.base_paths["vectorstore"], self.simulation_id)
+        else:
+            if self.case:
+                paths["chunked"] = os.path.join(self.base_paths["chunked"], "base", self.case)
+                paths["vectorstore"] = os.path.join(self.base_paths["vectorstore"], "base")
+            else:
+                paths["chunked"] = os.path.join(self.base_paths["chunked"], "base")
+                paths["vectorstore"] = os.path.join(self.base_paths["vectorstore"], "base")
+        
+        if self.case:
+            if self._needs_new_extraction():
+                paths["results"] = os.path.join(self.base_paths["results"], self.simulation_id, self.case)
+            else:
+                paths["results"] = os.path.join(self.base_paths["results"], "base", self.case)
+        else:
+            if self._needs_new_extraction():
+                paths["results"] = os.path.join(self.base_paths["results"], self.simulation_id)
+            else:
+                paths["results"] = os.path.join(self.base_paths["results"], "base")
+        
+        return paths
+    
+    def create_folders(self):
+        """
+        Creates necessary top-level folder structure for this simulation.
+        Case-specific folders (PICO, chunks, outcomes, consolidated) are created
+        automatically by RagPipeline when case is specified.
+        """
+        os.makedirs(self.paths["chunked"], exist_ok=True)
+        os.makedirs(self.paths["vectorstore"], exist_ok=True)
+        os.makedirs(self.paths["results"], exist_ok=True)
+        
+        print(f"\n{'='*80}")
+        print(f"SIMULATION: {self.simulation_id}")
+        print(f"{'='*80}")
+        print(f"Name: {self.config['name']}")
+        print(f"Description: {self.config['description']}")
+        print(f"\nConfiguration:")
+        print(f"  Extraction Temperature: {self.config['extraction_temperature']}")
+        print(f"  Chunk Size: min={self.config['chunk_params']['min_chunk_size']}, max={self.config['chunk_params']['max_chunk_size']}")
+        print(f"\nRetrieval Parameters:")
+        for source_type, params in self.config['retrieval_params'].items():
+            print(f"  {source_type}:")
+            for retrieval_type, values in params.items():
+                print(f"    {retrieval_type}: initial_k={values['initial_k']}, final_k={values['final_k']}")
+        print(f"\nPath Configuration:")
+        print(f"  Needs new vectorstore: {self._needs_new_vectorstore()}")
+        print(f"  Needs new chunks: {self._needs_new_chunks()}")
+        print(f"  Needs new extraction: {self._needs_new_extraction()}")
+        print(f"  Chunked path: {self.paths['chunked']}")
+        print(f"  Vectorstore path: {self.paths['vectorstore']}")
+        print(f"  Results path: {self.paths['results']}")
+        print(f"{'='*80}\n")
+    
+    def get_paths(self) -> Dict[str, str]:
+        """
+        Returns the path configuration for this simulation.
+        """
+        return self.paths
+    
+    def get_chunk_params(self) -> Dict[str, int]:
+        """
+        Returns chunk parameters for this simulation.
+        """
+        return self.config["chunk_params"]
+    
+    def get_retrieval_params(self, source_type: str, retrieval_type: str) -> Dict[str, int]:
+        """
+        Returns retrieval parameters for a specific source and retrieval type.
+        
+        Args:
+            source_type: "hta_submission" or "clinical_guideline"
+            retrieval_type: "population_comparator" or "outcomes"
+        """
+        return self.config["retrieval_params"][source_type][retrieval_type]
+    
+    def get_extraction_temperature(self) -> float:
+        """
+        Returns extraction temperature for this simulation.
+        """
+        return self.config["extraction_temperature"]
+    
+    def print_summary(self):
+        """
+        Prints a summary of what this simulation will test.
+        """
+        print(f"\n{'='*80}")
+        print(f"SIMULATION SUMMARY: {self.simulation_id}")
+        print(f"{'='*80}")
+        print(f"{self.config['name']}")
+        print(f"\n{self.config['description']}")
+        
+        if self._needs_new_vectorstore():
+            print(f"\nVectorstore: NEW (different chunk sizes)")
+        else:
+            print(f"\nVectorstore: REUSING baseline")
+        
+        if self._needs_new_chunks():
+            if self._needs_new_vectorstore():
+                print(f"Retrieval: NEW (different vectorstore)")
+            else:
+                print(f"Retrieval: NEW (different retrieval parameters)")
+        else:
+            print(f"Retrieval: REUSING baseline")
+        
+        if self._needs_new_extraction():
+            if self._needs_new_chunks():
+                print(f"Extraction: NEW (different retrieval)")
+            else:
+                print(f"Extraction: NEW (different temperature)")
+        else:
+            print(f"Extraction: REUSING baseline")
+        
+        print(f"{'='*80}\n")

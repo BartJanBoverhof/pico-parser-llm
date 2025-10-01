@@ -21,7 +21,8 @@ class PICOExtractor:
         model_name: str = "gpt-4o-mini",
         results_output_dir: str = "results",
         max_tokens: int = 12000,
-        source_type_config: Optional[Dict[str, Any]] = None
+        source_type_config: Optional[Dict[str, Any]] = None,
+        temperature: float = 0.3
     ):
         self.system_prompt = system_prompt
         self.user_prompt_template = user_prompt_template
@@ -33,6 +34,7 @@ class PICOExtractor:
         self.pico_output_dir = os.path.join(results_output_dir, "PICO")
         self.outcomes_output_dir = os.path.join(results_output_dir, "outcomes")
         self.source_type_config = source_type_config or {}
+        self.temperature = temperature
         
         os.makedirs(self.pico_output_dir, exist_ok=True)
         os.makedirs(self.outcomes_output_dir, exist_ok=True)
@@ -187,7 +189,7 @@ class PICOExtractor:
                         {"role": "system", "content": system_prompt},
                         {"role": "user", "content": user_prompt}
                     ],
-                    temperature=0.3,
+                    temperature=self.temperature,
                     max_tokens=2000
                 )
                 result_text = response.choices[0].message.content
@@ -265,7 +267,7 @@ class PICOExtractor:
                         {"role": "system", "content": system_prompt},
                         {"role": "user", "content": user_prompt}
                     ],
-                    temperature=0.3,
+                    temperature=self.temperature,
                     max_tokens=2000
                 )
                 result_text = response.choices[0].message.content
@@ -433,7 +435,8 @@ class PICOExtractor:
                 "source_type": source_type,
                 "indication": indication,
                 "total_countries": len(extracted_picos),
-                "total_picos": sum(len(country.get("PICOs", [])) for country in extracted_picos)
+                "total_picos": sum(len(country.get("PICOs", [])) for country in extracted_picos),
+                "temperature": self.temperature
             },
             "picos_by_country": {}
         }
@@ -468,7 +471,8 @@ class PICOExtractor:
                 "timestamp": timestamp,
                 "source_type": source_type,
                 "indication": indication,
-                "total_countries": len(extracted_outcomes)
+                "total_countries": len(extracted_outcomes),
+                "temperature": self.temperature
             },
             "outcomes_by_country": {}
         }

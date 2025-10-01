@@ -1,21 +1,21 @@
 RAG PIPELINE ANALYSIS SUMMARY REPORT
 ==================================================
-Generated on: 2025-09-30 15:23:57
+Generated on: 2025-10-01 13:35:57
 
 NSCLC (Test Set) ANALYSIS:
 ------------------------------
-Total consolidated PICOs: 34
-Unique countries: 7
+Total consolidated PICOs: 30
+Unique countries: 6
 Most common country: DE
-Unique comparators: 24
+Unique comparators: 18
 Total outcome measures: 61
 Countries with outcomes: 7
 
 HCC (Test Set) ANALYSIS:
 ------------------------------
-Total consolidated PICOs: 83
-Unique countries: 12
-Most common country: SE
-Unique comparators: 35
+Total consolidated PICOs: 91
+Unique countries: 11
+Most common country: FR
+Unique comparators: 40
 Total outcome measures: 143
 Countries with outcomes: 14
