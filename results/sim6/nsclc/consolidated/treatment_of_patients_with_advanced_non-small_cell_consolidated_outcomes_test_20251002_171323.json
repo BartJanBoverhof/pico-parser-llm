@@ -1,0 +1,148 @@
+{
+  "outcomes_metadata": {
+    "timestamp": "2025-10-02T17:13:23.221186",
+    "indication": "treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context",
+    "consolidation_type": "outcomes",
+    "data_split": "test",
+    "total_unique_outcomes": 54,
+    "source_countries": [
+      "DE",
+      "DK",
+      "EN",
+      "EU",
+      "FR",
+      "PT",
+      "SE"
+    ],
+    "source_types": [
+      "clinical_guideline",
+      "hta_submission"
+    ]
+  },
+  "consolidated_outcomes": {
+    "efficacy": {
+      "survival_endpoints": [
+        "overall survival (OS)",
+        "progression-free survival (PFS; RECIST 1.1)",
+        "progression-free survival (PFS; RECIST v1.1)",
+        "progression-free survival (independent review panel, RECIST 1.1)",
+        "progression-free survival (PFS)",
+        "event-free survival",
+        "time to progression",
+        "time to next treatment",
+        "duration of treatment",
+        "survival"
+      ],
+      "response_measures": [
+        "objective response rate (ORR; RECIST 1.1, blinded independent central review)",
+        "objective response rate (ORR; RECIST 1.1)",
+        "objective response rate (ORR)",
+        "overall response rate",
+        "response rates",
+        "complete response (RECIST 1.1)",
+        "partial response (RECIST 1.1)",
+        "duration of response (DoR; RECIST 1.1)",
+        "duration of response (DoR)",
+        "disease control rate (complete, partial, or stable disease for at least 5 weeks)",
+        "disease control rate",
+        "time to response (from treatment initiation to first complete or partial response)",
+        "time to response"
+      ],
+      "progression_measures": [
+        "time to symptom deterioration",
+        "symptom control"
+      ]
+    },
+    "safety": {
+      "adverse_events": [
+        "adverse events (general)",
+        "adverse events (CTCAE v5.0)",
+        "adverse events (CTCAE v4.03)",
+        "adverse events (Common Terminology Criteria for Adverse Events, CTCAE v5.0)",
+        "adverse events (grade 3 or higher)",
+        "adverse events (grade 3-4)",
+        "side effects (PRO-CTCAE instrument)",
+        "serious side effects on the skin",
+        "interstitial lung disease (severe adverse event)",
+        "liver disorders (severe adverse event)",
+        "stomatitis (adverse event)",
+        "peripheral oedema (adverse event)",
+        "peripheral neuropathy (adverse event)",
+        "alopecia (adverse event)",
+        "blood and lymphatic system disorders (adverse event)",
+        "fatigue (adverse event)",
+        "fatigue",
+        "fever (adverse event)",
+        "fever",
+        "infections and infestations (adverse event)",
+        "diarrhoea",
+        "alanine aminotransferase increase",
+        "aspartate aminotransferase increase",
+        "neutropenia",
+        "febrile neutropenia",
+        "mortality-related toxicity"
+      ],
+      "serious_events": [
+        "serious adverse events (SAEs)",
+        "serious adverse events",
+        "serious adverse events (grade 3-4)",
+        "fatalities"
+      ],
+      "discontinuations": [
+        "discontinuation due to adverse events",
+        "treatment discontinuation due to adverse events (CTCAE v5.0)",
+        "treatment discontinuation due to adverse events (CTCAE v4.03)",
+        "dropout rate"
+      ]
+    },
+    "quality_of_life": {
+      "patient_reported_outcomes": [
+        "EORTC QLQ-C30",
+        "EORTC QLQ-LC13",
+        "BPI-SF",
+        "FACT-G GP5",
+        "PGI-C",
+        "PGIS",
+        "NSCLC-SAQ",
+        "PRO-CTCAE",
+        "EQ-5D-5L",
+        "EQ-5D visual analogue scale (EQ-5D VAS)",
+        "visual analogue scale (utility measurement)",
+        "health-related quality of life (EORTC QLQ-C30 functional scales)",
+        "health-related quality of life (measured by time to death)"
+      ],
+      "functional_status": [
+        "health status (EORTC QLQ-C30)",
+        "health status (EORTC QLQ-LC13)",
+        "health status (BPI-SF)",
+        "health status (FACT-G GP5)",
+        "health status (PGI-C)",
+        "preservation of quality of life"
+      ],
+      "symptom_measures": [
+        "symptomatology (EORTC QLQ-C30)",
+        "symptomatology (EORTC QLQ-LC13)",
+        "symptomatology (BPI-SF)",
+        "symptomatology (FACT-G GP5)",
+        "symptomatology (PGI-C)"
+      ]
+    },
+    "economic": {
+      "cost_effectiveness": [
+        "cost-effectiveness (incremental cost-effectiveness ratio, ICER)",
+        "cost-effectiveness (cost per QALY)"
+      ],
+      "utilities": [
+        "quality-adjusted life years (QALYs)",
+        "utility decrement per cycle (treatment-related disutility)"
+      ],
+      "resource_utilization": [
+        "duration of treatment"
+      ]
+    },
+    "other": {
+      "exploratory_endpoints": [],
+      "biomarkers": []
+    }
+  }
+}

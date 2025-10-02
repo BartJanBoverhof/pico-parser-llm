@@ -1,0 +1,1429 @@
+{
+  "doc_id": "bed240212_imjudo_4104-2022",
+  "chunks": [
+    {
+      "text": "Imjudo (treme binatio) Concentrate for solution for infusion 50 mg/ ml IMJUDO in combination with Imf lumab) is indicated for first lineable hepatocellular carcinoma (HCC ag: The Dental and Pharmaceutical Benefits Agency (TLV) carries out health economic assessments of selected clinical medicines, medicines used in closed care. Within the framework of this work, the TLV produces health economic evidence for decisions in the regions. The NT Council initiates which medicines and which indications the LTV is to evaluate.",
+      "metadata": {
+        "doc_id": "bed240212_imjudo_4104-2022",
+        "heading": "",
+        "start_page": 1,
+        "end_page": 1,
+        "created_date": "2024",
+        "country": "SE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/SE/bed240212_imjudo_4104-2022_cleaned.json",
+        "split_index": 0,
+        "merged": true
+      }
+    },
+    {
+      "text": "Price and cost In benefit Applied/fixed AUP Cost of reimbursement Costs of medicinal products Consumable Medicinal products Prescription pharmacies for Clinical medicinal product Contract price Company's price is a general term used by the TLV AIP or These terms are always indicated whether it is a price to be set by TLV or a price fixed by TL V. The term list price is not used. The term is used when the TLV refers to over-the-counter medicines as well as prescription medicines which are not included in the price list and which do not have a price fixed by it. The terms list price, public price, basic price or official price are not used.",
+      "metadata": {
+        "doc_id": "bed240212_imjudo_4104-2022",
+        "heading": "(ii) the following:",
+        "start_page": 3,
+        "end_page": 3,
+        "created_date": "2024",
+        "country": "SE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/SE/bed240212_imjudo_4104-2022_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "• Hepatocellular carcinoma (HCC) is the most common cancer occurring in the liver; the prognosis for patients with HCC depends on whether curative treatment can be given; however, when medical treatment alone can be offered, median survival is less than one year. • Imjudo (tremelimumab) in combination with Imfinzi (durvalumab), is indicated for the first-line treatment of adult patients with advanced or non-resettable HCC.",
+      "metadata": {
+        "doc_id": "bed240212_imjudo_4104-2022",
+        "heading": "Assessment and summary of the TLV",
+        "start_page": 4,
+        "end_page": 5,
+        "created_date": "2024",
+        "country": "SE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/SE/bed240212_imjudo_4104-2022_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "Both tremelimumab and durvalumab are so-called checkpoint inhibitors, which enhance the anti-tumour response of the immune system. • TLV considers that the relevant comparator alternative to Imjudo in combination with Imfinzi for the relevant patient population is the combination of Tecentriq (atezolizumab) plus bevacizumab, and when it is not appropriate, either sorafenib or Lenvima (lenvatinib). • Clinical efficacy and safety of Imudovumab in conjunction with Imzi has been compared with sorabenib in a randomised, open, phase III study (HIMALA) which had a higher overall survival rate (OS) but no progression in the outcome of immunosuppressive therapy.",
+      "metadata": {
+        "doc_id": "bed240212_imjudo_4104-2022",
+        "heading": "Assessment and summary of the TLV",
+        "start_page": 4,
+        "end_page": 5,
+        "created_date": "2024",
+        "country": "SE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/SE/bed240212_imjudo_4104-2022_cleaned.json",
+        "split_index": 1
+      }
+    },
+    {
+      "text": "• Imfeminumab has been shown to be statistically significantly more relevant for the long-term survival of Imfimac than the placebo-controlled combination of Imfenib and Pfizer in a comparative clinical trial. • The effect of Imfinimac on the survival and disease progression of Immunosuppressants has been demonstrated to be significantly higher than that of the indirectly comparable treatment effects of both Imfinib and IFS in a clinical study. However, TLV applies the OS data of the sorafenib-arm from HIMALAYA in the health safety analysis against Lenvima.",
+      "metadata": {
+        "doc_id": "bed240212_imjudo_4104-2022",
+        "heading": "Assessment and summary of the TLV",
+        "start_page": 4,
+        "end_page": 5,
+        "created_date": "2024",
+        "country": "SE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/SE/bed240212_imjudo_4104-2022_cleaned.json",
+        "split_index": 2
+      }
+    },
+    {
+      "text": "Regarding the PFS, it applies TLV results from the direct comparison study between soravenima and Lenfenib. • The recommended dose of Imjudo is 300 mg as a single dose administered in combination with Imfinzi 1 500 mg in 1 cycle over 1 day, followed by Imudo every 4 weeks as monotherapy. • Imfinsi comes in two packages. The reported price of Imjudo is SEK 251,527. • TLV is conducting three health economics analyses: a cost-benefit analysis with sorafenib as a comparator, a cost benefit analysis with Lenvima as comparator and a cost comparison with Tecentriq plus bevacizumab as the comparator. • In TLV' s baseline scenario, the cost per QALY gained is approximately SEK 2.4 million compared to Sorafenib and SEK 1.7 million in comparison to lenvima. • The",
+      "metadata": {
+        "doc_id": "bed240212_imjudo_4104-2022",
+        "heading": "Assessment and summary of the TLV",
+        "start_page": 4,
+        "end_page": 5,
+        "created_date": "2024",
+        "country": "SE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/SE/bed240212_imjudo_4104-2022_cleaned.json",
+        "split_index": "3_0_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "cost of TLV comparison is that the treatment costs for Imfinzi plus imjudo are around SEK 490,000 higher than the treatment cost for Tecentrq plus be vacizumaB. • TL V' s cost comparisons are based on the assumed comparable effect in PFS and OS which is assumed to be seasonal and [monthly]. • The uncertainty of Imfenib in the TLV and OS is assessed primarily by the extrapolarity of the outcome of the analysis, whereas the safety of Imfinsi plus sorafinzi is questionable. In the analysis where Imfinzi plus Imjudo is compared with Lenvima, the extrapolation of OS, PFS and TTD as well as the selection of quality of life weights are associated with very high uncertainty. Compared to Tecentriq plus bevacizumab, the assumption of comparable efficacy is very uncertain. (b) the impact of the baseline scenario on the evaluation of the results achieved by the Member States;",
+      "metadata": {
+        "doc_id": "bed240212_imjudo_4104-2022",
+        "heading": "Assessment and summary of the TLV",
+        "start_page": 4,
+        "end_page": 5,
+        "created_date": "2024",
+        "country": "SE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/SE/bed240212_imjudo_4104-2022_cleaned.json",
+        "split_index": "3_1_0",
+        "oversized_split": true,
+        "merged": true
+      }
+    },
+    {
+      "text": "This evaluation assessed the cost-effectiveness of Imfinzi as monotherapy for the treatment of locally advanced, non-resectable non-small cell lung cancer (NSCLC) in adults whose tumours express PD-L1 at ≥ 1% of tumour cells and whose disease has not progressed after platinum-based radiochemotherapy. The main risk factor for HCC is cirrhosis of the liver. More than two-thirds of HCC occurs in cirrhotic livers, but HCC can also occur in livers without cirrhomosis, especially in non-alcoholic fatty liver, chronic hepatitis B and porphyria. Risk factors to HCC are mainly viruses (hepatitis B and C), liver toxicity (alcohol and aflatoxin), and metabolic diseases (diabetes mellitus, hepatic fatty hepatitis, hemochromatosis, which affects the liver).",
+      "metadata": {
+        "doc_id": "bed240212_imjudo_4104-2022",
+        "heading": "1 Background of the case",
+        "start_page": 6,
+        "end_page": 6,
+        "created_date": "2024",
+        "country": "SE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/SE/bed240212_imjudo_4104-2022_cleaned.json",
+        "split_index": 0,
+        "merged": true
+      }
+    },
+    {
+      "text": "The survival rate of patients with hepatitis B or porphyry can be reduced by up to 3 months after treatment, depending on the medication used.[1] The median survival time for patients with liver palliative disease is 40 years, but the average survival is less than 3 years after treatment.[1] Imfinzi, a medicine containing the active substance durvalumab, received its first marketing authorisation in Europe on 21 September 2018 and the last indication was obtained on 14 April 2023. Imjudo, a medicinal product containing the Active Substance tremelimumab received its marketing authorisations in Europe as of 20 February 2023. Imjudo in combination with Imfinzi is indicated for the first-line treatment of adult patients with advanced or non-resectable hepatocellular carcinoma.",
+      "metadata": {
+        "doc_id": "bed240212_imjudo_4104-2022",
+        "heading": "Patients with hepatocellular carcinoma should be monitored closely.",
+        "start_page": 6,
+        "end_page": 6,
+        "created_date": "2024",
+        "country": "SE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/SE/bed240212_imjudo_4104-2022_cleaned.json",
+        "split_index": 1,
+        "merged": true
+      }
+    },
+    {
+      "text": "Tremelimumab and durvalumab are checkpoint inhibitors that enhance the anti-tumour response of the immune system. Tremelemumab exerts its function early in the immune response while durvelumab is expected to exert its effect later in the immunological response.[2] Tremelamumab, a human IgG2 monoclonal antibody, targets cytotoxic T-lymphocyte-associated antigen 4, CTLA-4, which is primarily expressed on the surface of T lymphocytes. Binding of CTLA-4 to the ligands CD80 and CD86 limits T cell activation. Imjudo is given as a single 300-milligram dose administered in combination with 1,500 milligrams of Imfinzi in Cycle 1 on Day 1, followed by Im finzi every four weeks as monotherapy until disease progression or unacceptable toxicity [3].",
+      "metadata": {
+        "doc_id": "bed240212_imjudo_4104-2022",
+        "heading": "Mechanism of action",
+        "start_page": 6,
+        "end_page": 7,
+        "created_date": "2024",
+        "country": "SE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/SE/bed240212_imjudo_4104-2022_cleaned.json",
+        "split_index": 0,
+        "merged": true
+      }
+    },
+    {
+      "text": "To evaluate optimal treatment, tumour spread, liver function, and the general condition of the patient are assessed. Tumor spread is described by size, number, and with information on vascular invasion and extrahepatic spread in accordance with the TNM1 system. Liver function is described with the Child-Pugh scale2 (CTP), and the overall condition is indicated according to ECOG PS3.[1] Barcelona Clinic Liver Cancer, BCLC, is a validated staging system that evaluates tumour prevalence, hepatic function and the patient's general condition. BCLC is also a treatment algorithm.",
+      "metadata": {
+        "doc_id": "bed240212_imjudo_4104-2022",
+        "heading": "Current treatment recommendations are as follows:",
+        "start_page": 7,
+        "end_page": 7,
+        "created_date": "2024",
+        "country": "SE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/SE/bed240212_imjudo_4104-2022_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "for HCC, advanced stage is classified as CTP up to seven, ECOG PS 0 or 1, and TNM with M1 or N1. for advanced stage first-line therapy, atezolizumab (Tecentriq, antibody to PD-L1) plus bevacizumab (antibody, angiogenesis inhibitor) is recommended. for patients who are not suitable for treatment with atezoizumab plus bewacizumabe, first- line therapy with lenvatinib (Lenvimaquin, protease inhibitor), or sorafe nib (protease inhibitors) is advised. routine use of these medicinal products is not recommended for patients with CTP B.[1] secondary treatment for advanced stages of HCC in some patients may be considered with regorafenib (Sargaquin, proteinase inhibitory), cabozantine (Cabometyx, proteaside inhibitor); or angiogenizumab, proteose inhibitor (Cambodiavir, angiotensin inhibitor).[1]",
+      "metadata": {
+        "doc_id": "bed240212_imjudo_4104-2022",
+        "heading": "Current treatment recommendations are as follows:",
+        "start_page": 7,
+        "end_page": 7,
+        "created_date": "2024",
+        "country": "SE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/SE/bed240212_imjudo_4104-2022_cleaned.json",
+        "split_index": 1
+      }
+    },
+    {
+      "text": "3 Eastern Cooperative Oncology Group Performance Status. a scale from zero to five. the higher the value, the greater the functional impairment. • Patients with HCC with non-viral etiologies • patients for whom treatment with atezoumab plus bevacizumab is inappropriate For these patient groups, the company presents the following comparison of relevant alternatives to STRIDE: STRIDE is approved for the first-line treatment of adult patients with advanced or unresectable HCC. According to TLV' s clinical expert, advanced and unresettable HCK are equated in Sweden and they are treated as advanced HCC; according to TL V' s medical expert, the national care programme is followed for first line treatment of advanced HCP. Thus, these patients are primarily treated with atezolizumab plus bevacizumab, but if this is not appropriate, the patients are treated with lenvatinib or sorafe.",
+      "metadata": {
+        "doc_id": "bed240212_imjudo_4104-2022",
+        "heading": "Options for comparison",
+        "start_page": 7,
+        "end_page": 8,
+        "created_date": "2024",
+        "country": "SE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/SE/bed240212_imjudo_4104-2022_cleaned.json",
+        "split_index": 0,
+        "merged": true
+      }
+    },
+    {
+      "text": "Patients with increased bleeding tendencies and patients unsuitable for immunotherapy are, according to the TL V ' s cliniical expert, not suitable for treatment with atezumab + bevazizumab. According the expert, 50 to 75 percent of patients are governed by their different dietary patterns when choosing between sorafenib and lenvatizin, and according to local expert traditions, the choice of treating with bevavizumab or sorafenid is also influenced by the local traditions of the patients. 50 to 75% of patients are treated with atezolizumab plus bevacizumab and 25 to 50% of patients with lenvatinib or sorafenib.",
+      "metadata": {
+        "doc_id": "bed240212_imjudo_4104-2022",
+        "heading": "Discussion by the TLV",
+        "start_page": 8,
+        "end_page": 8,
+        "created_date": "2024",
+        "country": "SE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/SE/bed240212_imjudo_4104-2022_cleaned.json",
+        "split_index": 1
+      }
+    },
+    {
+      "text": "TLV has not previously investigated the use of atezoizumab + bevazizumab, sorafenik or lenvatnib for the treatment of HCC but the NT Council recommends atezoazumab Plus bevavizumab for the current indication and both sorafenic and lenvatinig have general subsidy. The treatment of advanced HCC is not differentiated by whether the disease has a viral or non-viral etiology. According to TLV's clinical expert today, etiology is not taken into account in the selection of the treatment regimen. The expert believes that",
+      "metadata": {
+        "doc_id": "bed240212_imjudo_4104-2022",
+        "heading": "Discussion by the TLV",
+        "start_page": 8,
+        "end_page": 8,
+        "created_date": "2024",
+        "country": "SE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/SE/bed240212_imjudo_4104-2022_cleaned.json",
+        "split_index": "2_0_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "at present there is no evidence that etiology has any relevance for the response to treatment. I published the study from IM150 in which atezozizumab+ bevaxizumab was compared to bevajizumab as a treatment for HCC and no difference in efficacy was observed in patients with atherosclerosis (≥ 95%) in the subgroup of 1,05 to 1,68 patients with HCC plus sorafenil (≥ KIHRK1,63) [5]. According to the TLV clinical expert, this subgroup analysis can only be hypothetical and should be studied further. This interpretation is in line with the interpretation of the authors of the publication [5]. Furthermore, the expert has stated that there is a great need for treatment alternatives regardless of the etiology. Based on this, TLV considers that for this health-economic assessment, a division of the population into respective non-viral etiologies is not sufficiently justified.",
+      "metadata": {
+        "doc_id": "bed240212_imjudo_4104-2022",
+        "heading": "Discussion by the TLV",
+        "start_page": 8,
+        "end_page": 8,
+        "created_date": "2024",
+        "country": "SE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/SE/bed240212_imjudo_4104-2022_cleaned.json",
+        "split_index": "2_1_0",
+        "oversized_split": true,
+        "merged": true
+      }
+    },
+    {
+      "text": "STRIDE compared to sorafenib in the HIMALAYA study [6] Treatment with STRADE has been evaluated against sorafenb in the Phase 3 HIMALYA study with an estimated end date of August 2024 [7]. HIMALAYA is a randomised, open-label, multicentre, global phase III study designed to evaluate STRIDE and durvalumab in monotherapy against sorafenib in patients with non-prescription HCC without prior systemic therapy and not eligible for locoregional therapy. In both study arms, treatment could be continued after disease progression if the patient was judged to benefit from the treatment and met the criteria for continuation. A second treatment with tremelimumab after progression was allowed according to certain criteria. The primary endpoint of the study was overall survival (OS), defined as the time from randomization to death from any cause. Additional endpoints included progression-free survival, PFS, objective tumour response, time to tumour progression, and measured patient outcomes.",
+      "metadata": {
+        "doc_id": "bed240212_imjudo_4104-2022",
+        "heading": "Clinical efficacy and safety",
+        "start_page": 8,
+        "end_page": 8,
+        "created_date": "2024",
+        "country": "SE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/SE/bed240212_imjudo_4104-2022_cleaned.json",
+        "split_index": 0,
+        "merged": true
+      }
+    },
+    {
+      "text": "From October 2017 to June 2019, 1,950 patients were screened for participation in the study. 393 patients were randomized to the STRIDE arm and 389 patients were randomised to the sorafenib arm. Baseline characteristics are shown in Table 1.Data collection was performed on 27 August 2021, at which time the median follow-up was 33.2 months in the Stride arm and 32.2 months for the Sorafenib arms. See Figure 1 for Kaplan-Meier curves for OS and PFS. For the secondary efficacy endpoint PFS, the median was 3.8 months (95% CI 3.7-5.3) in the STRIDE arm compared to 4.1% (95% KI 3.8-5.5) in the sorafenib arm. PFS data were mature.",
+      "metadata": {
+        "doc_id": "bed240212_imjudo_4104-2022",
+        "heading": "Results obtained",
+        "start_page": 9,
+        "end_page": 13,
+        "created_date": "2024",
+        "country": "SE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/SE/bed240212_imjudo_4104-2022_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "The odds ratio was not statistically significantly less than 1 (0.90; 95% CI 0.77-1.05). 4 Fluid in abdominal cavity 5 Abdominal opening Table 1 Basic linear archaeology is shown in HIM LAALYA A FIGURE 1 Kapla Meieruma samples for OS and PFS , dated August 2021 Table 2 Treatment response, data extraction August 2021 Figure 2 Subgroup rate of OS, data collection August 2021 After secondary anticancer treatment, 40.7 percent of patients received STRIDs, respectively 45.0 percent of the duration of the study, but were treated with HIMALA from January 2023 (the last time the data were published was 23.6 percent). [6] Following the publication of the main article [6] from the HIMALAYA study, a subsequent data extraction has been carried out (on 23 January 2023).",
+      "metadata": {
+        "doc_id": "bed240212_imjudo_4104-2022",
+        "heading": "Results obtained",
+        "start_page": 9,
+        "end_page": 13,
+        "created_date": "2024",
+        "country": "SE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/SE/bed240212_imjudo_4104-2022_cleaned.json",
+        "split_index": 1
+      }
+    },
+    {
+      "text": "Based on this extraction, the company has presented a record in which primarily the OS was studied [8]. Figure 3 shows Kaplan-Meier curves for the OS from this data extract. Compared to the August 2021 data collection, in the January 2023 data collection the median value of the STRIDE and sorafenib OS was essentially unchanged, as well as the odds ratio and its confidence interval. Figure 3: Kaplan Meier curve for the Olympics, data extracted January 2023 [8] Adverse reactions leading to discontinuation of treatment occurred in 13.7% of patients in the STRIDE arm and 16.8% in the sorafenib arm.",
+      "metadata": {
+        "doc_id": "bed240212_imjudo_4104-2022",
+        "heading": "Results obtained",
+        "start_page": 9,
+        "end_page": 13,
+        "created_date": "2024",
+        "country": "SE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/SE/bed240212_imjudo_4104-2022_cleaned.json",
+        "split_index": 2,
+        "merged": true
+      }
+    },
+    {
+      "text": "The EMA assessed that baseline characteristics were well balanced across study arms, but notes that many of the patients in the study were of Asian origin and considers that the sum of alcohol consumption in this study population was lower than in the corresponding patient population in the EU. The TLV clinical expert considers that the study design, where a second course of STRIDE was possible for some patients, could be a treatment option for isolated patients in Sweden.",
+      "metadata": {
+        "doc_id": "bed240212_imjudo_4104-2022",
+        "heading": "Discussion by the TLV",
+        "start_page": 13,
+        "end_page": 14,
+        "created_date": "2024",
+        "country": "SE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/SE/bed240212_imjudo_4104-2022_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "In Sweden, patients are treated first-line with sorafenib or lenvatinib if atezolizumab plus bevacizumab is not appropriate. However, according to the TLV Clinical Expert, an equivalent efficacy of sorefenib/lenvatinib is expected irrespective of patients' suitability for atezoizumab + bevaziumab. EMA considers that the adverse reactions of STRIDE are significant, but that relatively few patients discontinue treatment and that most of the side effects are clinically manageable. EMA is of the opinion that the side effect profile of ST RIDE is not significantly worse than that of sorafenib.[2] TLV's clinical expert considers STRITE's side effects were expected and that they do not differ significantly from other studies with combined immunotherapy. Furthermore, the expert believes that the Grade 3 and 4 adverse effects were comparable in STRIDEs and sorabenibs, and that it was positive that STRIDA did not cause side effects.",
+      "metadata": {
+        "doc_id": "bed240212_imjudo_4104-2022",
+        "heading": "Discussion by the TLV",
+        "start_page": 13,
+        "end_page": 14,
+        "created_date": "2024",
+        "country": "SE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/SE/bed240212_imjudo_4104-2022_cleaned.json",
+        "split_index": 1
+      }
+    },
+    {
+      "text": "Based on the Kaplan-Meier data from January 2023, TLV has noted that the efficacy of Sorafenib has been relatively underestimated. TLV considers that treatment with STRIDE, compared to sorafenib, provides statistically significant and clinically relevant prolongation of overall survival in adult patients with non-resectable or advanced HCC without prior systemic therapy. the comparisons can be extrapolated over a longer period of time and if they are reliable at several points in time the company has investigated whether the assumption of proportional hazards holds.",
+      "metadata": {
+        "doc_id": "bed240212_imjudo_4104-2022",
+        "heading": "Discussion by the TLV",
+        "start_page": 13,
+        "end_page": 14,
+        "created_date": "2024",
+        "country": "SE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/SE/bed240212_imjudo_4104-2022_cleaned.json",
+        "split_index": 2,
+        "merged": true
+      }
+    },
+    {
+      "text": "Based on these investigations, the company assumes that the proportionate hazards assumption is not rejected for OS in HIMALAYA, OS in IMbrave150 and PFS in IM Brave150. For PPS in HIMALAYA the company considers that it is difficult to draw conclusive conclusions on the proportional risks assumption and therefore the results of the indirect comparison must be interpreted with caution. The company's indirect comparitions are anchored in MAIC6 analyses. 6 Matching-adjusted indirect comparisons 7 Treatment effect modifiers can be adjusted to the right edge of the table, a plus m to match Table 3 Baseline Characteristics of IMbrave150 and HIMALAYA (Reed is the weighted population) Figures are classified in accordance with Chapter 30 Section 23 of the Privacy and Confidentiality Act. STRIDE and atezolizumab in combination with bevacizumab, see Table 5. Due to the different follow-up times in the studies and the risk of disproportionate risks, the company also [--], see Table 6.",
+      "metadata": {
+        "doc_id": "bed240212_imjudo_4104-2022",
+        "heading": "Assessment by the TLV:",
+        "start_page": 14,
+        "end_page": 15,
+        "created_date": "2024",
+        "country": "SE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/SE/bed240212_imjudo_4104-2022_cleaned.json",
+        "split_index": 1,
+        "merged": true
+      }
+    },
+    {
+      "text": "The company has also conducted an indirect comparison between atezolizumab plus bevacizumab and STRIDE in the subgroup of patients with non-viral etiology. The data for atezozizumab + bevazizumab in this subgroups are based on the most recently reported sub-group analysis in IMbrave150 [5]. longer for atezolizumab plus bevacizumab than for STRIDE, see Table 7.",
+      "metadata": {
+        "doc_id": "bed240212_imjudo_4104-2022",
+        "heading": "Table 6 OS comparisons including",
+        "start_page": 15,
+        "end_page": 16,
+        "created_date": "2024",
+        "country": "SE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/SE/bed240212_imjudo_4104-2022_cleaned.json",
+        "split_index": 0,
+        "merged": true
+      }
+    },
+    {
+      "text": "In the absence of direct comparative studies between STRIDE and atezolizumab plus bevacizumab in patients with advanced or non-resettable HCC, the company has made indirect comparisons. The company has done an anchored MAIC because it had access to individual data from HIMALAYA but only aggregated data from IMbrave150. TLV considers that the method for the indirect comparison is reasonable, but results from indirect comparations imply a higher degree of uncertainty than results from well-conducted direct comparison studies.",
+      "metadata": {
+        "doc_id": "bed240212_imjudo_4104-2022",
+        "heading": "Discussion by the TLV",
+        "start_page": 16,
+        "end_page": 16,
+        "created_date": "2024",
+        "country": "SE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/SE/bed240212_imjudo_4104-2022_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "TLV has identified two published network meta-analyses [16, 17] in which current medicinal products for first-line treatment of HCC are compared with each other. and exclusion criteria in IMbrave150 were only possible for some criteria, and the company did not disclose how much the remaining differences affect the results. Furthermore, the follow-up time in the study material from IM Brave150 that the company uses was significantly shorter than in the HIMALAYA study material. The effective study population decreased when the patients in HIMALYA were weighted to achieve consistency in TEMs with IM brave150. In addition, in IMbrave150 there was a large difference between the median follow-up time of 8.6 months and that of the primary data sample.",
+      "metadata": {
+        "doc_id": "bed240212_imjudo_4104-2022",
+        "heading": "Discussion by the TLV",
+        "start_page": 16,
+        "end_page": 16,
+        "created_date": "2024",
+        "country": "SE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/SE/bed240212_imjudo_4104-2022_cleaned.json",
+        "split_index": 1,
+        "merged": true
+      }
+    },
+    {
+      "text": "atezolizumab plus bevacizumab based on the indirect comparison is uncertain. The health economics analysis that the company chose to do for STRIDE versus atezozizumab + bevazizumab is a cost comparison. A prerequisite for a cost-comparison to constitute a TLV health economic assessment is that it is reasonable to assume comparable efficacy for the treatment options. TLV assessment: Based on the company' s MAIC, TLV assesses that treatment with STRIDA is comparable to atezoizumab Plus bevavizumab for the overall survival effect measure. For PFS, the company ' s indirect comparisons suggest better outcomes for atezoazumab+ bevaxizumab. However, based on its cost-to-life comparison and the prevailing indirect uncertainty in the company comparison between STRIDEs and atezozumab, the TLV also assumes comparable effectiveness between TLVs for the PFS effect.",
+      "metadata": {
+        "doc_id": "bed240212_imjudo_4104-2022",
+        "heading": "PFS (HR 0.45 in favour of atezolizumab plus bevacizumab versus sorafenib) and the independent evaluation of PFS in favor of",
+        "start_page": 16,
+        "end_page": 17,
+        "created_date": "2024",
+        "country": "SE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/SE/bed240212_imjudo_4104-2022_cleaned.json",
+        "split_index": 0,
+        "merged": true
+      }
+    },
+    {
+      "text": "Efficacy and safety of lenvatinib compared to sorafenib have been studied in the Phase III non-inferiority study REFLECT [10], which showed comparable efficacy between the alternatives for efficacy measures OS. The company has indirectly compared STRIDE with lenvatitinib with an anchored MAIC based on the HIMALAYA and REFLECT studies, both of which had Sorafenib as a comparator. For PFS, there were differences in its definition in HIMALAYA and REFLECT. The hazard ratio for PFS for STRIDE compared to sorafenib after adjustments for the HIMALYA population was [--]. This is to be compared with the hazard rate for lenvatinib compared to Sorafenib in REFLEECT which was 0.65 (95% CI 0.560.77). Based on this, the risk ratio was calculated as follows:",
+      "metadata": {
+        "doc_id": "bed240212_imjudo_4104-2022",
+        "heading": "STRIDE compared with lenvatinib",
+        "start_page": 17,
+        "end_page": 17,
+        "created_date": "2024",
+        "country": "SE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/SE/bed240212_imjudo_4104-2022_cleaned.json",
+        "split_index": 0,
+        "merged": true
+      }
+    },
+    {
+      "text": "The primary efficacy endpoint in REFLECT was OS and a pre-defined requirement for non-inferiority in OS was pre-specified and met [10]. PFS was a secondary efficacy measure in REFLEECT and in the lenvatinib arm, the median PFS is 7.4 months compared to 3.7 months in the sorafenib arm (HR 0.66 95 % CI 0.57-0.77) [10]. The National Liver Cell Cancer Care Programme states that Lenvatinib has demonstrated similar efficacy to soraphenib [1].",
+      "metadata": {
+        "doc_id": "bed240212_imjudo_4104-2022",
+        "heading": "Discussion by the TLV",
+        "start_page": 17,
+        "end_page": 17,
+        "created_date": "2024",
+        "country": "SE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/SE/bed240212_imjudo_4104-2022_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "This shows a hazard ratio for STRIDE versus lenvatinib for OS [---] that is on a par with the hazard rate for ST RIDE vs sorafenib in HIMALAYA (0.78). Based on this, TLV considers it reasonable to rely on the OS data of sorafenig in HIMALAYA instead of applying the company's MAIC. However, for the efficacy measure PFS considers TLV that treatment with lenvatnib results in longer PFS compared to STRIDE in line with the company ' s indirect comparison. TLV assessment: TLV considers it appropriate to compare lenvatinib based on the FLECT comparison of lenvatin with sorafenib to make the health-economic analysis of STRIDE versus lower PFS for Lenvatinib than for Sorafenib.",
+      "metadata": {
+        "doc_id": "bed240212_imjudo_4104-2022",
+        "heading": "In the absence of direct comparative studies of STRIDE versus lenvatinib, the company made an anchored MAIC based on HIMALAYA and REFLECT, both of which contained sorafenib.",
+        "start_page": 17,
+        "end_page": 17,
+        "created_date": "2024",
+        "country": "SE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/SE/bed240212_imjudo_4104-2022_cleaned.json",
+        "split_index": 0,
+        "merged": true
+      }
+    },
+    {
+      "text": "The Health Economy Model is a partitioned survival model with three health conditions; progression-free survival, progressive illness and death. In the health economics model, all patients start in the progression free state and may then remain in the same state or be moved to progression illness or death. Patients who are progression freer may receive treatment with STRIDE or any of the comparison alternatives or no drug therapy.",
+      "metadata": {
+        "doc_id": "bed240212_imjudo_4104-2022",
+        "heading": "3 The health economy",
+        "start_page": 19,
+        "end_page": 19,
+        "created_date": "2024",
+        "country": "SE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/SE/bed240212_imjudo_4104-2022_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "Also, patients who have progressed may receive weekly drug therapy or non-drug therapy. For patients whose HCC has a non-viral etiology, the company reports an analysis comparing STRIDE with Tecentriq plus bevacizumab. The analysis is a cost-benefit analysis using the same type of model as compared to sorafenib and Lenvima respectively. Section 4.1.2 presents the result of the company' s comparison against Tecentrq plusbevacizumb for patients with HCC having a non viral etiology. TLV considers that it is reasonable to assume comparable efficacy between STRIDE and Tecentriq plus bevacizumab and therefore makes a cost comparison.",
+      "metadata": {
+        "doc_id": "bed240212_imjudo_4104-2022",
+        "heading": "3 The health economy",
+        "start_page": 19,
+        "end_page": 19,
+        "created_date": "2024",
+        "country": "SE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/SE/bed240212_imjudo_4104-2022_cleaned.json",
+        "split_index": 1
+      }
+    },
+    {
+      "text": "In the company' s health economics model, the OS and PFS for STRIDE and sorafenib are based on the HIMALAYA study. e effectiveness of Lenvima is based on its MAIC (see section 2.4.3). as the time horizon of the model exceeds the time available for study data, the company has used extrapolation to estimate the effect over time. e majority of parametric distributions10 have been adjusted to the observed KM estimates.",
+      "metadata": {
+        "doc_id": "bed240212_imjudo_4104-2022",
+        "heading": "Clinical effect",
+        "start_page": 19,
+        "end_page": 19,
+        "created_date": "2024",
+        "country": "SE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/SE/bed240212_imjudo_4104-2022_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "In the company' s baseline scenario, the OS for STRIDE is extrapolated with the distribution [--] The distribution [--] is used to extrapolate the OS of sorafenib. According to the company, the choice of the extrapolation distribution is based on a weighting of good statistical fit to KM- 8 Medicinal products containing Sorafenib are included in the periodic table of contents. 9 Bevacizumab-containing medicinal products are biologics and there are several biosimilars. 10 Exponential, Weibull, log-normal, log log-logistic, Gompertz, generalized gamma, Hazard 1 node, hazard 2 nodes, Hazart 3 node, Odds 1 node , Odds 2 node, odds 3 Node, Normal 1 node and Normal 2 node.",
+      "metadata": {
+        "doc_id": "bed240212_imjudo_4104-2022",
+        "heading": "Overall survival",
+        "start_page": 19,
+        "end_page": 20,
+        "created_date": "2024",
+        "country": "SE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/SE/bed240212_imjudo_4104-2022_cleaned.json",
+        "split_index": 0,
+        "merged": true
+      }
+    },
+    {
+      "text": "The company models the PFS with the distribution [--] for STRIDE and with the allocation [--] for sorafenib. The choice of allocation is based on good statistical fit to the KM estimate as measured by AIC and BIC and good visual fit. To model the Lenvima PFS, the company applies a constant hazard quotient of [---] (--[--]) to the Stride PFS curve. TLV estimates that there are uncertainties in the company' s modelling of OS and chooses to adjust the extrapolation of OS. This is described in the paragraphs below. In TLV' s baseline scenario, OS is extrapolated with the Hazard 1 distribution in both treatment arms. This means that a lower proportion of patients survive over time compared to the company ' s ex-trapolation. TLV presents susceptibility analyses in which OS is extrapolated to other distributions and presents a susceptability analysis in which the time horizon is shortened to ten years. In the TLV and the company' s extrapolation of OS, STRIDE has an efficacy advantage compared to sorafenib long-term follow-up in HIMALAYA. The company has shown that the risk of death in the respective STRIDES and phenibs during the subsequent follow up period is consistent with the KM estimate for the study comparison arm.",
+      "metadata": {
+        "doc_id": "bed240212_imjudo_4104-2022",
+        "heading": "Progression free survival",
+        "start_page": 20,
+        "end_page": 21,
+        "created_date": "2024",
+        "country": "SE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/SE/bed240212_imjudo_4104-2022_cleaned.json",
+        "split_index": 0,
+        "merged": true
+      }
+    },
+    {
+      "text": "At 10 years, the estimation of OS is in line with the expert estimate of approximately 03 percent. The company refers to several studies, including a systematic review study by Lin et al (2022) that compiled OSdata from 13 clinical trials of immunotherapy in non-small cell lung cancer, malignant melanoma and urothelial cancer [18]. The study shows that there is a difference in overall survival between patients treated with immunotherapies compared to chemotherapy for up to 60 months, and that the studies show support for long-term survival.",
+      "metadata": {
+        "doc_id": "bed240212_imjudo_4104-2022",
+        "heading": "Discussion by the TLV",
+        "start_page": 21,
+        "end_page": 24,
+        "created_date": "2024",
+        "country": "SE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/SE/bed240212_imjudo_4104-2022_cleaned.json",
+        "split_index": 1
+      }
+    },
+    {
+      "text": "TLV's clinical expert states that it is reasonable to expect that treatment with STRIDE in HCC may result in long survival for a proportion of patients. Based on the TLV expert's combined clinical studies and the company's pre-specification, the company assesses that TLV may be more reasonable for a certain proportion of STRIDS patients. TLV considers that it is reasonable to assume that the relative efficacy benefit of STRIDE compared to sorafenib begins to decrease gradually at 6 years. At 8",
+      "metadata": {
+        "doc_id": "bed240212_imjudo_4104-2022",
+        "heading": "Discussion by the TLV",
+        "start_page": 21,
+        "end_page": 24,
+        "created_date": "2024",
+        "country": "SE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/SE/bed240212_imjudo_4104-2022_cleaned.json",
+        "split_index": "2_0_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "years, the risk of death is assumed to be the same in both treatment arms (HR=1). At these time points, only a small proportion of patients are still progression-free and on treatment according to extrapolated PFS and TTD curves (TTD, Time on Treatment). Approximately 97 percent have progressed by 6 years and approximately 2 percent are on treatment with STRIDA. TLV presents sensitivity analyses to show how the outcome is affected by other assumptions. Progression-free survival in the comparison between STRIDE",
+      "metadata": {
+        "doc_id": "bed240212_imjudo_4104-2022",
+        "heading": "Discussion by the TLV",
+        "start_page": 21,
+        "end_page": 24,
+        "created_date": "2024",
+        "country": "SE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/SE/bed240212_imjudo_4104-2022_cleaned.json",
+        "split_index": "2_0_1",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "and sorafenib The company' s modelling of PFS implies that the risk of progressing is [--] for patients treated with STRIDE compared to sorapenib over a long period of time. TLV estimates that both the proportion of patients who are progression- free over time and the efficacy benefit assumed by the company may be overestimated. The company ' s modeling of the PFS and duration of treatment (TTD curve, see more in section 3.2.1) for STRIDA also imply that after a period, the percentage of patients are progress- free is [--]. TLV adjusts the extrapolated PFS curve to STRIDS by assuming the risk for progressing in both treatment cycles is the same at 35 months, which coincides with the 10th time point of the STRIDIE and KM curve (see KM Curve for PFS). Total survival and progression-free survival in the comparison between STRIDE and Lenvima TLV considers that there are uncertainties in the company' s modelling of OS and PFS for Lenvimi.",
+      "metadata": {
+        "doc_id": "bed240212_imjudo_4104-2022",
+        "heading": "Discussion by the TLV",
+        "start_page": 21,
+        "end_page": 24,
+        "created_date": "2024",
+        "country": "SE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/SE/bed240212_imjudo_4104-2022_cleaned.json",
+        "split_index": "2_1_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "TLV believes it is reasonable to assume a comparable efficacy between Lenimav and OS sorafenib since the baseline scenario of TLV is assumed to be the same as the extrapolated OS survival curve, see Figure 6. Regarding PFS, TLV considers that it is reasonable to assume that the efficacy of Lenvima is better than that of sorafenib. Therefore, in TLV's analysis, the PFS curve for Lenvema is extrapolated by applying a constant hazard quotient of 0,66 (from the RE-FLECT study [10]) to the extrapolled curve of",
+      "metadata": {
+        "doc_id": "bed240212_imjudo_4104-2022",
+        "heading": "Discussion by the TLV",
+        "start_page": 21,
+        "end_page": 24,
+        "created_date": "2024",
+        "country": "SE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/SE/bed240212_imjudo_4104-2022_cleaned.json",
+        "split_index": "3_0_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "sorabenib. Even with the aforementioned adjustments of OS and PFS for lenvima, the TLV assesses that there are uncertainties with the extrapolation as the data is based on the REFLECT TLV study. However, TL V considers the adjustments made make OS and pFS more consistent with the opinion of the FLECT study, the national healthcare and TLV programme experts on the effectiveness of LENVIMA in relation to the effect of soravenib. TLV' s assessment: TLV considers that the company' s modelling of OS and PFS is uncertain. TLV chooses to model OS for STRIDE and sorafenib with the Hazard 1 knot distribution and assumes that the efficacy benefit of STRIDES relative to OS decreases progressively between years 6 and 8.",
+      "metadata": {
+        "doc_id": "bed240212_imjudo_4104-2022",
+        "heading": "Discussion by the TLV",
+        "start_page": 21,
+        "end_page": 24,
+        "created_date": "2024",
+        "country": "SE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/SE/bed240212_imjudo_4104-2022_cleaned.json",
+        "split_index": "3_1_0",
+        "oversized_split": true,
+        "merged": true
+      }
+    },
+    {
+      "text": "Because the HIMALAYA study only includes data for patients treated with STRIDE or sorafenib, the company has made assumptions about the quality of life of patients treated by Lenvima. The company assumes that the quality-of-life is the same for patients who are treated with lenvima as sorafenik. In the company's analysis, the quality is assumed to be the same at different levels of treatment. The quality is also assumed [-- depending on the patient's survival. Sorafenib and Lenvima",
+      "metadata": {
+        "doc_id": "bed240212_imjudo_4104-2022",
+        "heading": "Health-related quality of life",
+        "start_page": 24,
+        "end_page": 24,
+        "created_date": "2024",
+        "country": "SE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/SE/bed240212_imjudo_4104-2022_cleaned.json",
+        "split_index": 0,
+        "merged": true
+      }
+    },
+    {
+      "text": "There are uncertainties with the quality of life weights used by the company in its analysis. The EMA considers that the patient-reported outcome data are not clinically relevant, due in part to the open design of the study [2]. The TLV also notes that the quality-of-life weights for all conditions in both treatment arms are higher than the quality Of-life in the normal population for the corresponding age and gender distribution11.",
+      "metadata": {
+        "doc_id": "bed240212_imjudo_4104-2022",
+        "heading": "Discussion by the TLV",
+        "start_page": 24,
+        "end_page": 25,
+        "created_date": "2024",
+        "country": "SE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/SE/bed240212_imjudo_4104-2022_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "At the request of the TLV, the company has reported quality-Of-Life weights based on data converted to EQ-5D-3L and with the tariff of Dolan [13]. The TL V has considered using the quality -of-Life weight from the NICE evaluation of Lenimav [14]. The quality- Of-Life Weight in NICE's evaluation is 0.745 in progression-free condition and 0.678 in the progressive condition. The Quality of Life Weights from the CLIL study are difficult to reasonably use, but appear to be more useful than those from NICE. the study appears to be somewhat high, but whether the quality of life weights used by NICE are more reasonable to use is difficult to",
+      "metadata": {
+        "doc_id": "bed240212_imjudo_4104-2022",
+        "heading": "Discussion by the TLV",
+        "start_page": 24,
+        "end_page": 25,
+        "created_date": "2024",
+        "country": "SE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/SE/bed240212_imjudo_4104-2022_cleaned.json",
+        "split_index": "1_0_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "determine. TLV chooses to apply the HIMALAYA quality-of-life weights as they are obtained through the clinical study; TLV uses the EQ-5D-3L-converted weights in combination with the Dolan tariff; in addition, TLV applies state-specific quality- Of-Life weights. In TLV's analysis, the quality- of-life weightings are 0.814 in the progression-free state and 0.788 in the progressed state; in the sensitivity analysis TLV shows how the outcome is affected by the use of the same quality-Of-Life Weights as used in NICE's evaluation of Lenima. In addition to the above-mentioned differences between companies and the assumptions of TLV, the company has preferred to use the different scenarios of the treatment of the TLV.",
+      "metadata": {
+        "doc_id": "bed240212_imjudo_4104-2022",
+        "heading": "Discussion by the TLV",
+        "start_page": 24,
+        "end_page": 25,
+        "created_date": "2024",
+        "country": "SE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/SE/bed240212_imjudo_4104-2022_cleaned.json",
+        "split_index": "1_1_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "the company has argued that the quality of life weights in the baseline TLV scenario should be different between the treatment arms in the progression-free state. This is based on the fact that the study quality of Life was [--] for patients treated with STRIDE, and also because adverse reactions of grade 3 or higher were more common among the patients who were treated with sorafenib in the study. As a consequence of the EMA's view that patient-reported outcome data are not clinically relevant and that the difference in serious adverse events is very small between 11 Ara, R. and J.E. Brazier, Populating an economic model with health state utility values: moving towards better practice. Value in Health, 2010. TLV's assessment: TLV adjusts the quality of life weights used by the company in its analysis.",
+      "metadata": {
+        "doc_id": "bed240212_imjudo_4104-2022",
+        "heading": "Discussion by the TLV",
+        "start_page": 24,
+        "end_page": 25,
+        "created_date": "2024",
+        "country": "SE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/SE/bed240212_imjudo_4104-2022_cleaned.json",
+        "split_index": 2,
+        "merged": true
+      }
+    },
+    {
+      "text": "The recommended dose of sorafenib is 400 mg (two 200 mg tablets) twice daily. Treatment continues as long as clinical benefit is obtained or until unacceptable side effects occur. The recommended dosage of Lenvima is 12 mg for patients weighing more than 60 kg and 8 mg for those under 60 kg. The prices for Imfinzi and Imjudo are from apoteket.se. Prices for sorafenib are from the company' s September 2023 list of items, and the price for Lenvima is from TLV' s price and decision database. Table 9 Price and pharmaceutical costs in the company' s analysis Strength Price per ad- Cost per 4 (package size-package-RDI Dose of administration supplements) case 50 mg/ ml; 2.4 ml (11,500 mg was 7 085 c. 98 86 526 c.",
+      "metadata": {
+        "doc_id": "bed240212_imjudo_4104-2022",
+        "heading": "Costs of the medicinal product",
+        "start_page": 25,
+        "end_page": 26,
+        "created_date": "2024",
+        "country": "SE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/SE/bed240212_imjudo_4104-2022_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "86 5 26 c. vial) fourth week Imfinzi 50 mg / ml; 10 ml (1 1,500 mg was 29 487 c. 98% 86 426 c. The cost presented in the table is the cost of a single dose **The company estimates the dose to be 10.7 mg per day.Treatment duration The company extrapolates the treatment duration from Time to Treatment Discontinuation (TTD) from the HIMALAYA study (see Figure 8).The distribution [--] is used to extrapolate the duration of treatment with STRIDE and the distribution [--] is used for sorafenib.In both treatment arms, patients are assumed to be able to remain on treatment after progression.",
+      "metadata": {
+        "doc_id": "bed240212_imjudo_4104-2022",
+        "heading": "Costs of the medicinal product",
+        "start_page": 25,
+        "end_page": 26,
+        "created_date": "2024",
+        "country": "SE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/SE/bed240212_imjudo_4104-2022_cleaned.json",
+        "split_index": 1
+      }
+    },
+    {
+      "text": "Administration costs The company includes a cost of administration for intravenous medicines. If two medicines are administered at the same time, only the cost of an intravenously administering ring is included. The cost of intravascular administration is SEK 6,448 in the company' s analysis and in the Southern Healthcare Region' s 2023 price list [15]. Follow-up treatment The choice of follow-up treatments and the proportion of patients who receive them are based on the HIMALAYA study, see Table 10.",
+      "metadata": {
+        "doc_id": "bed240212_imjudo_4104-2022",
+        "heading": "Costs of care and use of resources",
+        "start_page": 26,
+        "end_page": 27,
+        "created_date": "2024",
+        "country": "SE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/SE/bed240212_imjudo_4104-2022_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "Table 10 Distribution between follow-up treatments in the company' s analysis of STRIDE Sorafenib and Lenvim Tecentriq (atezolizumab) [---] % [--] % Opdivo (nivolumab), [--1-] % Keytruda (pembrolumab, [--2-] % Kapecitabine [- --] % Fluorouracil [-]% [-]) % Oxaliplatin [--] % Cabometyx (kabozantinib) [-%-] % Lenima [-00-] % Stivarga [--] % The rate of immediate chemotherapy-based follow-ups after changes in sorafenib [- 1--] % Bevacizumab [- 4--] % Optamide (pembrolizumac) ] is slightly increased for patients treated with Resveratrol compared to other patients monitored by our clinical monitoring team, as compared to the cost of treatment for patients receiving treatment with Stamipril and Stamivir. For sorafenib and Lenvima, the company relies on the NICE evaluation of lenvima [14] to estimate resource utilisation. Progression-free with progressive disease",
+      "metadata": {
+        "doc_id": "bed240212_imjudo_4104-2022",
+        "heading": "Costs of care and use of resources",
+        "start_page": 26,
+        "end_page": 27,
+        "created_date": "2024",
+        "country": "SE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/SE/bed240212_imjudo_4104-2022_cleaned.json",
+        "split_index": 1,
+        "merged": true
+      }
+    },
+    {
+      "text": "The company assumes a one-off cost of SEK 87 203,10 at the end of life regardless of treatment and refers to TLV's investigation of Tecentriq (no. 2440/2019). The company has inflation-adjusted the cost to correspond to the price level 2023. In addition, costs for side effects are included. These have a minor impact on the result and are therefore not presented in detail. Prices of sorafenib Sorafenib is included in the Periodical Product System. TLV adjusts the price of soraphenib to the average selling price of the product that is the periodical product12 over three months. The average price of periodical products during the months of October, November and December is $ 24,029.13 If TLV were based on the average price for periodical goods during the month of December, January and February, the average cost would be $ 21,171. This has only a small impact on the outcome.",
+      "metadata": {
+        "doc_id": "bed240212_imjudo_4104-2022",
+        "heading": "Other direct costs",
+        "start_page": 27,
+        "end_page": 27,
+        "created_date": "2024",
+        "country": "SE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/SE/bed240212_imjudo_4104-2022_cleaned.json",
+        "split_index": 0,
+        "merged": true
+      }
+    },
+    {
+      "text": "Dosage and RDI for Lenima TLV clinical expert indicates that patients may need to adjust their dose to the lower dose due to side effects. The company assumes that the RDI of Lenima is 100 percent. For other tumour groups, according to the expert, re-introduction of the combination of CTLA4 antibody and PD1 antibody occurs if the combination is judged to have provided clinical benefit. The expert indicates that in some cases it may be possible to add a treatment regimen also for STRIDE.",
+      "metadata": {
+        "doc_id": "bed240212_imjudo_4104-2022",
+        "heading": "Discussion by the TLV",
+        "start_page": 27,
+        "end_page": 31,
+        "created_date": "2024",
+        "country": "SE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/SE/bed240212_imjudo_4104-2022_cleaned.json",
+        "split_index": 1
+      }
+    },
+    {
+      "text": "Like the company, TLV chooses to assume that treatment with STRIDA as well as treatment with sorafenib may continue after progression in accordance with the study HIMALAYA. Unlike the company TLV assumes that a certain percentage (7.6 percent) receives an additional dose of Imuduj in combination with Imemberzi with sorafinib after progress, which is assumed to be consistent with the clinical trial HIMALYA. 12 TLV is based on the first published list of the progression period. It does not take into account any changes in the TLV's progression rates during the 117-month period from April 2023 to June 2023. TLV also assumes that treatment with Lenvima can be continued after progression.",
+      "metadata": {
+        "doc_id": "bed240212_imjudo_4104-2022",
+        "heading": "Discussion by the TLV",
+        "start_page": 27,
+        "end_page": 31,
+        "created_date": "2024",
+        "country": "SE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/SE/bed240212_imjudo_4104-2022_cleaned.json",
+        "split_index": 2
+      }
+    },
+    {
+      "text": "This assumption is made to ensure consistency between the analyses. TLV lacks the TTD curve for Lenvime and assumes the ratio of Lenvim and sorafenib's PFS (HR 0.66) can be applied to the treatment duration. To extrapolate Lenvim' s TTD Curve, TLV applies a constant hazard ratio of 0.66 to the extrapolated TTD of sorafenim. Figure 9 presents the TTDS curves in the TLV baseline scenario, and Figure 10 presents TTDS and PFS curves for STRIDE, sorafenigib and Lenvim respectively in separate figures. In the HIMALAYA study, more than 40 percent14 of patients received follow-up treatment.",
+      "metadata": {
+        "doc_id": "bed240212_imjudo_4104-2022",
+        "heading": "Discussion by the TLV",
+        "start_page": 27,
+        "end_page": 31,
+        "created_date": "2024",
+        "country": "SE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/SE/bed240212_imjudo_4104-2022_cleaned.json",
+        "split_index": 3
+      }
+    },
+    {
+      "text": "According to the TLV expert, between 30 50 percent of patients in Sweden are receiving follow up treatment. The expert estimates that there is currently no established treatment after first-line treatment with Tecentriq plus bevacizumab, but according to the expert, sorafenib or Lenvima are used. He estimates the same treatment options may become relevant after first line treatment with STRIDE, but that Tecentrq plus be vacizuma b could also be considered. For patients who were first-lined with sorafeneb or Lenviima, Stivarga (regorafenib) or Cabometyx (kabozantinib) are",
+      "metadata": {
+        "doc_id": "bed240212_imjudo_4104-2022",
+        "heading": "Discussion by the TLV",
+        "start_page": 27,
+        "end_page": 31,
+        "created_date": "2024",
+        "country": "SE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/SE/bed240212_imjudo_4104-2022_cleaned.json",
+        "split_index": "4_0_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "recommended as follow-ups according to TLV' s expert. Individual patients who have received AFP may be considered for treatment with Cyramovir (ciramovirazumab) after first Line treatment withTecentriq, or Kostfenib, or be monitored for differences between patients who are treated with Lenviimab and those who are being treated with Striide. TLV considers that the company' s assumption is uncertain and therefore chooses to assume that the costs of care visits and monitoring for patients treated with sorafenib or Lenvima are the same as for those treated with STRIDE.",
+      "metadata": {
+        "doc_id": "bed240212_imjudo_4104-2022",
+        "heading": "Discussion by the TLV",
+        "start_page": 27,
+        "end_page": 31,
+        "created_date": "2024",
+        "country": "SE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/SE/bed240212_imjudo_4104-2022_cleaned.json",
+        "split_index": "4_1_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "TLV' s assessment: In the clinical trial HIMALAYA received a small proportion of patients to a dose of Imudojudo progression. TLV assumes that Lenvima treatment can be continued after progression, which is the same as the assumption made for STRIDE and sorafenib. TLV assumed that 40 percent of patients receive follow-up treatment. After treatment with Stride, half of the patients are assumed to receive soraphenib and half of those patients are considered to be receiving sorafenima. Patients treated with first-line Lenven or Lenven are equally divided",
+      "metadata": {
+        "doc_id": "bed240212_imjudo_4104-2022",
+        "heading": "Discussion by the TLV",
+        "start_page": 27,
+        "end_page": 31,
+        "created_date": "2024",
+        "country": "SE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/SE/bed240212_imjudo_4104-2022_cleaned.json",
+        "split_index": "5_0_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "between Stivarga (regorafenib) and Cabometyx (kabozantinib). TLV presents sensitivity analyses with other assumptions about follow-on treatments. The Company reports a cost comparison between STRIDE and Tecentriq plus bevacizumab. The Company' s cost comparisons include drug and drug administration costs. Based on the indirect comparison reported by the Company (see section 2.4.2), it is assumed that treatment with Tecentrq + bevazizumab would result in a longer progression-free survival compared to STRIDES. Therefore, drug and medication administration costs are calculated according to the PFS curves for the respective treatments.",
+      "metadata": {
+        "doc_id": "bed240212_imjudo_4104-2022",
+        "heading": "Discussion by the TLV",
+        "start_page": 27,
+        "end_page": 31,
+        "created_date": "2024",
+        "country": "SE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/SE/bed240212_imjudo_4104-2022_cleaned.json",
+        "split_index": "5_1_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "The time horizon of this analysis is [---] months. Figure 11 PFS in the company' s cost comparison The figure is subject to confidentiality by virtue of Chapter 30, Section 23 of the Publicity and Privacy Act Costs and Dosage in the Cost Comparison Medicinal product cost and dosage for Imfinzi and Imjudo are presented in Section 3.2.1. The recommended dose for Tecentriq is either 840 mg administered intravenously every two weeks, 1 200 mg given intravascularly every three weeks, or 1 680 mg given intranasally every four weeks.",
+      "metadata": {
+        "doc_id": "bed240212_imjudo_4104-2022",
+        "heading": "Discussion by the TLV",
+        "start_page": 27,
+        "end_page": 31,
+        "created_date": "2024",
+        "country": "SE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/SE/bed240212_imjudo_4104-2022_cleaned.json",
+        "split_index": 6
+      }
+    },
+    {
+      "text": "The cost of administration is SEK 6,448 according to the Southern Healthcare Region Price List 2023 Figure 12.Price and pharmaceutical costs in the company' s analysis Strength Price per dose Cost per admin (pack size) pack stratification case Tecentriq 1200 mg (60 mg/ ml; 20 ml 43 336 SEK 1,200 mg every third weekly (vial) Bevacizumab 25 mg/ mL; 4 ml (violet) 963.50 SEK 15 mg/ kg every third monthly 11 562 SEK 25 mg / mL); 16 ml (viale) 3 4850 SEQ 10 451 Dose intensity is assumed to be 100 % TLV assessment: For PFS, the company ' s indirect comparison shows better results for atezolizumab plus bevacizumb.However, from a company cost perspective and the uncertainties inherent in the firm ' s ability to compare indirect prices and effects between STRIDE drugs, comparable effects are also assumed for PFS. TLV adjusts bevacizumab pharmaceutical costs on the basis of procurement prices based on sales data from the Concise portal; costs are discounted by 3 per cent in TLV's analysis",
+      "metadata": {
+        "doc_id": "bed240212_imjudo_4104-2022",
+        "heading": "Discussion by the TLV",
+        "start_page": 27,
+        "end_page": 31,
+        "created_date": "2024",
+        "country": "SE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/SE/bed240212_imjudo_4104-2022_cleaned.json",
+        "split_index": 7
+      }
+    },
+    {
+      "text": "Results in the company' s baseline scenario with sorafenib and Lenvima as comparator alternatives are presented in section 4.1; the same section also presents the company ' s comparison of STRIDE versus Tecentriq plus bevacizumab for patients whose HCC has non-viral etiology. Key assumptions in the company's health economics analysis are listed below. • The OS for STRIDE is extrapolated by the distribution [--] and the OS for sorafenib is extrapolled by the division [--]. • The PFS for ST RIDE is Extrapolated through the distribution ([--] and PFS of sorafenab is extrapolaed through the division ([--]) • The OSS and PSS for Lenvima are extrapolized with a constant hazard ratio after the extrapolation of the OS and the PSS curves of Imfinzi and Imjudos. • Quality of life data are from the HIMYAALA study and have been collected using the EQ-5D-5L form.",
+      "metadata": {
+        "doc_id": "bed240212_imjudo_4104-2022",
+        "heading": "4 Results and outcomes",
+        "start_page": 32,
+        "end_page": 32,
+        "created_date": "2024",
+        "country": "SE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/SE/bed240212_imjudo_4104-2022_cleaned.json",
+        "split_index": 0,
+        "merged": true
+      }
+    },
+    {
+      "text": "The Swedish tariff from Burström et al. has been used to translate the quality-of-life data. • It is assumed that the quality of life differs between the two interventions, but is also assumed to be comparable. Additionally, the quality of life is assumed to be [--] in the [--] as it is in [--]. Without [--], the Quality of Life (QoL) is taken as [--]. • The price of sorafenib is taken from the summer of the period for the month of September 2023. • The allocation [--] is used to extrapolate the Treatment Duration (TTD) with STRIDE and the allocation (RDI) is used for sorafenab. Lenvima treatment is taken [--). • The company assumes that the RDI for Lenvimi is 100 percent. • [--] who progresses is assuming to receive follow-up treatment. Follow-up therapy consists of multiple different treatments, which is based on the HIMALAYA study. • Resource utilization (treatment visits and monitoring) differs between the interventions and comparison margins.",
+      "metadata": {
+        "doc_id": "bed240212_imjudo_4104-2022",
+        "heading": "Assumptions in the base case scenario of the company",
+        "start_page": 32,
+        "end_page": 32,
+        "created_date": "2024",
+        "country": "SE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/SE/bed240212_imjudo_4104-2022_cleaned.json",
+        "split_index": 1,
+        "merged": true
+      }
+    },
+    {
+      "text": "In the comparison between STRIDE and sorafenib, the cost per QALY earned is approximately SEK 112 000. Table 12 Results in the company' s baseline scenario with sorafenb as a comparison option STRIDE Sorafenib Increase/ decrease Medication cost 1 413 354 SEK 204 461 SEK 1 208 893 Other costs 638 SEK 113 831 537, SEK 1953 -193 425 Costs, total 051 2 467 1 035 1 998 015 1 469 SEK Lead (LY) yearly (therapeutically) 4.1528 SEK Lifetime cost (discussed) 1.72 SEK per lifetime earned for STRIDAQ 13.02 (discounted) 3.02 1.72 Cost per life-years gained for",
+      "metadata": {
+        "doc_id": "bed240212_imjudo_4104-2022",
+        "heading": "The result in the company's baseline scenario",
+        "start_page": 32,
+        "end_page": 33,
+        "created_date": "2024",
+        "country": "SE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/SE/bed240212_imjudo_4104-2022_cleaned.json",
+        "split_index": "0_0_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "STRIDE Cost per QALY earned for ST RIDE Table 13 Results in the company' s baseline scenario with Lenvima as a comparator STRIDE LenVima Drug cost $1,413,354 $1,088,911 Other costs $1,113,869,746 Costs, total $2,051,467 $1,958,657 Life years (LY) (non-discounted) $4,282,96 QALYS (discountable) $3,022,19 Cost per lifetime gained Cost per year gained QALy Results of the company ' s analysis of the group of patients whose HCC is not probable The company reports a comparison of ST Ride Tecentriq plus those whose etiology is non-viral to HCC. The company presents the results of its analysis in Table 14. Results in the company' s analysis present Table 14 Results of the company ' s baseline scenario in the analysis of patients whose HC STRIDE Tecentriq + bevacizumab Medication cost [--] kr [--] kr Other costs [--] kr Cost, total 2 366 307 kr 1 998 641 kr Life years (LY) (discounted) 3.65 2.13 QALYs (disconted) 2.70 1.70 Cost per year of life gained Cost per QALy gained",
+      "metadata": {
+        "doc_id": "bed240212_imjudo_4104-2022",
+        "heading": "The result in the company's baseline scenario",
+        "start_page": 32,
+        "end_page": 33,
+        "created_date": "2024",
+        "country": "SE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/SE/bed240212_imjudo_4104-2022_cleaned.json",
+        "split_index": "0_1_0",
+        "oversized_split": true,
+        "merged": true
+      }
+    },
+    {
+      "text": "The company reports several different sensitivity analyses in Table 15 and a selection of these in Table 15.Sensitivity Analyses with sorafenib as a comparison alternative Sensitivity Analyzes +/- Costs +/- QAL Baseline Scenario 1015 469 kr 1.29 Time horizon 20 years 1 002 763 kr 1.14 Discounting 0 percent 1074 057 kr 1.77 5 percent 986 152 kr 1.08 Quality of life Weights not adjusted for age and gender 1015469 kr 1.38. See also Table 14 for the etiology of vacizumab in patients with non-viral etiol Increase/decrease [--] Table 16 for the cost/quality of treatment.",
+      "metadata": {
+        "doc_id": "bed240212_imjudo_4104-2022",
+        "heading": "Sensitivity analyses of the company",
+        "start_page": 33,
+        "end_page": 36,
+        "created_date": "2024",
+        "country": "SE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/SE/bed240212_imjudo_4104-2022_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "The basic scenarios Time horizon Discounting Quality of life 4.2 TLV: Below is a comparison of the native cost of final weights Final weights Total weights Including deductions for bi- 1 015 469 effects [--] for 1 004 217 effects STRIDE [--] for sorafe- 973 213 analytes with Lenvima as comparison alternatives GST analyses +/- Costs 92 809 20 years 159 920 0 percent -110 908 182 5 percent 454 Not adjusted by age 92 and 809 by sex Weights percentage of body weight [-- 8092 909 80 weight [--- 92 80 weight of body] Cost of life adjustments for cost of bi- 499 367 996 367 367 cost of life analyses Especially adjusted for weight in the analysis of HCC 3366 667 667 368 367 655",
+      "metadata": {
+        "doc_id": "bed240212_imjudo_4104-2022",
+        "heading": "Sensitivity analyses of the company",
+        "start_page": 33,
+        "end_page": 36,
+        "created_date": "2024",
+        "country": "SE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/SE/bed240212_imjudo_4104-2022_cleaned.json",
+        "split_index": "1_0_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "367 966 368 Table 18 reports and Table 19 presents the result with r gained QALY is approximately 2.4 million active +/- QAL ar non-viral +/-QAL as result of Lenvim or in equivalency LYs al etiol LY's at a cost of approximately 781 379 kr 923 443 kr 856 484 kr Cost/QALY 112 345 kr 214 260 kr Dominant 257 394 kr 106 204 kr 114 386 kr 119 532 kr 110 907 kr 262 kr 818 kr Logistic cost/qALY 369 kr 480 359 kr 642 kr 332 kr 327 kr 399 kr 360 360 kr plus 160 371 kr compared to an alternator such as YRYzumab plus sorafenib. Important assumptions in the TLV health economics analyses with sorafenib and Lenvima as comparator alternatives are listed below.",
+      "metadata": {
+        "doc_id": "bed240212_imjudo_4104-2022",
+        "heading": "Sensitivity analyses of the company",
+        "start_page": 33,
+        "end_page": 36,
+        "created_date": "2024",
+        "country": "SE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/SE/bed240212_imjudo_4104-2022_cleaned.json",
+        "split_index": "1_1_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "• The OS for STRIDE and Sorafenib are extrapolated using the Hazard 1 knot distribution. • Stride' s efficacy benefit with respect to OS decreases progressively between years 6 and 8. • The mortality risk is the same (HR=1) in the treatment arms. • Progression risk is assumed to be the same in the 35 month treatment arms after 35 months. • OVs for LENVIMA are assumed comparable to those for sorafenik and the OS curve is adjusted accordingly. • Lenvima OS is assumed to be comparable to sorafenib and",
+      "metadata": {
+        "doc_id": "bed240212_imjudo_4104-2022",
+        "heading": "Sensitivity analyses of the company",
+        "start_page": 33,
+        "end_page": 36,
+        "created_date": "2024",
+        "country": "SE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/SE/bed240212_imjudo_4104-2022_cleaned.json",
+        "split_index": "2_0_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "the OS curve is adjusted accordingly. • PFS for LenVima is assuming to be better than PFS of sorafenab and the PFS curve has been extrapolated by applying a constant hazard quotient to the extrapolled PFS-curve of Sorafenib. • TLV uses quality of life data converted to EQ-5D-3L and the tariff from Dolan has been used to translate the data into quality-of-life weights. • Quality of life is assumes to be the same in all treatment arms and is assumated to differ between the progression-free state and the progressive state.",
+      "metadata": {
+        "doc_id": "bed240212_imjudo_4104-2022",
+        "heading": "Sensitivity analyses of the company",
+        "start_page": 33,
+        "end_page": 36,
+        "created_date": "2024",
+        "country": "SE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/SE/bed240212_imjudo_4104-2022_cleaned.json",
+        "split_index": "2_1_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "• The cost of sorabenib is the average percentage of the price during the months of October, November and December. • A small proportion of patients may receive a combination dose of Imfedifin with the Imfedin progression curve. • Treatment with Redifenib has been converted into EQ-3L, and the Dolan tariff has been utilized to convert the data to quality- of-life weightings. After treatment with sorafenib or Lenvima, patients receive Stivarga or Cabometyx as follow-up treatment. • Resource utilization is assumed to be the same in all treatment arms, and the cost of care visits and monitoring is therefore the same for all therapy arms.",
+      "metadata": {
+        "doc_id": "bed240212_imjudo_4104-2022",
+        "heading": "Sensitivity analyses of the company",
+        "start_page": 33,
+        "end_page": 36,
+        "created_date": "2024",
+        "country": "SE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/SE/bed240212_imjudo_4104-2022_cleaned.json",
+        "split_index": 3
+      }
+    },
+    {
+      "text": "• Table 18. 0.89 QALYs (discounted) 2.12 1.54 0.59 Cost per year of life gained Cost per QALy gained Table 19 Results in the TLV baseline scenario with Lenvima as comparator age STRIDE lenvima Pharmaceutical cost 1 413 354 kr 636 486 kr Other costs 472 492 kr 303 328 kr Costs, total 1 885 846 kr 939 814 kr Lifetime (LY) (unadjusted) 2,97 2.08 QALys (disconted) 2 12 1,55 Cost per lifetime gained Costs per QAly gains",
+      "metadata": {
+        "doc_id": "bed240212_imjudo_4104-2022",
+        "heading": "Sensitivity analyses of the company",
+        "start_page": 33,
+        "end_page": 36,
+        "created_date": "2024",
+        "country": "SE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/SE/bed240212_imjudo_4104-2022_cleaned.json",
+        "split_index": 4
+      }
+    },
+    {
+      "text": "The analyses that have the greatest impact on the outcome are extrapolation of mortality risk assumed to be the same, adjustment of the time horizon, life expectancy rings assuming treatment duration (TTD). Sensitivity analyses with sorafenib as a comparison option Sensitivity analyses +/- Costs +/- QAL Baseline scenario 1 419 254 kr 0.59 OR OR modelled with log 1 418 771 kr 0.57 normal (both arms) OR modeled with 1 411 360 kr 0.46 gamma (b both arms) or modelled by wei- 1 412 614 kr 0.48 bull (b Both arms) HR converges to 1 1 4 18 144 kr 0.58 between 6 and 7 years of age HR converged to 1 421 071 kr 0.62 between 6 years and 10 years old No assumption if HR1 = 1 432 230 kr 0.80 HR = 1 year after 6 years old 1 413 772 kr 0.49 PFS Sorafenib'",
+      "metadata": {
+        "doc_id": "bed240212_imjudo_4104-2022",
+        "heading": "In Table 20 and Table 21 the TLV sensitivity analyses are presented in",
+        "start_page": 36,
+        "end_page": 38,
+        "created_date": "2024",
+        "country": "SE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/SE/bed240212_imjudo_4104-2022_cleaned.json",
+        "split_index": "0_0_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "s PFS curve approaches 1 4 12 047 0.58 kr After the same interventions are taken as PFS HR curves Assuming 1 1 429 kr = 1 529 for normal and 5 296 kr for bullet weights in the first 10 years of life No assumptions may be applied for treatment of 1 1 1 241 144 144 144 kr. 946 032 kr 1 062 802 kr 1 653 570 kr comparisons with OS, timing of minority weights as well as LYs Cost/QALY 2 422 275 kr 2 480 539 kr 3 042 481 kr 2 961 345 kr 2 500 541 kr 305 404 kr 1 793 444 kr 2 870 656 kr 2 434 399 kr 2 411 388 kr 2 737 293 kr 2 401 430 kr 2 459 561kr 2 692 185 kr 2 675 936 kr additional dose of Imjudo Discount Table 21.",
+      "metadata": {
+        "doc_id": "bed240212_imjudo_4104-2022",
+        "heading": "In Table 20 and Table 21 the TLV sensitivity analyses are presented in",
+        "start_page": 36,
+        "end_page": 38,
+        "created_date": "2024",
+        "country": "SE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/SE/bed240212_imjudo_4104-2022_cleaned.json",
+        "split_index": "0_1_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "Results i for STRIDE Tecentriq plus bevaciz Difference No patients receiving an additional dose of Imjudo after progression 0 percent 5 percent assays with Lenvima as geth assays OR extrapolated with log normal (both arms) OR extrapolations with gamma (b both arms) or extrapolates with wei bull (b Both arms) HR converges to 1 between years 6 and 7 HR converged to 1 from years 6 to 10 No assumption about HR=1 HR = 1 after 6 years Sorafenib' s PFS curve is assumed to be the same as interventricular PFS) Curve Assumption of HR= 1 if STRIDA is not applied Life expectancy of 0.745 and 0.678 percent respectively before progression Deductions",
+      "metadata": {
+        "doc_id": "bed240212_imjudo_4104-2022",
+        "heading": "In Table 20 and Table 21 the TLV sensitivity analyses are presented in",
+        "start_page": 36,
+        "end_page": 38,
+        "created_date": "2024",
+        "country": "SE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/SE/bed240212_imjudo_4104-2022_cleaned.json",
+        "split_index": "1_0_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "for side effects after 20 percent are applied with Tecentrq plus Bevacizumab, 10 percent may be obtained with Lenvenib and 10 percent h may be achieved with Wei Bull (b two arms) Normal HR converging to 1 at 6 to 7 years HR converting to 1 by 6 to 6 years HR is expected to be 1 at 10 years No assumptions about HR=\"1 HR=2 HR1 HR1 after six years\" Sorapenib's PFS-PFS-curve curve are presumed to be equal to those of PFS in the ventricular intervals) HR1 curve assumption If HR=170=1 is not implemented for STRIDE, then the life expectancies of 0,7455 percent and 0,67875 percent of Lenvimous Lenvime are not applied respectively.",
+      "metadata": {
+        "doc_id": "bed240212_imjudo_4104-2022",
+        "heading": "In Table 20 and Table 21 the TLV sensitivity analyses are presented in",
+        "start_page": 36,
+        "end_page": 38,
+        "created_date": "2024",
+        "country": "SE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/SE/bed240212_imjudo_4104-2022_cleaned.json",
+        "split_index": "1_1_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "The following table compares the total cost of administering sorafenib for 1 year with the annual cost of 1 year of treatment for 1 month of treatment with another medicine (Table 1), where the cost of treatment is equal to or greater than 1 year: 1 TL = 1 TL 583 792 756 757 751 752 751 651 661 751 672 753 751 681 753 851 758 751 572 752 951 626 751 861 653 570 1 648 951 2 966 2 114 313 1 697 701 1 224 1 994 1 964 1 844 1 659 1 033 1 649 1 685 1 675 1 795 1 632 1 751 1 753 1 761 1 791 871 1 626 1 613 1 792 1 793 1 871 2 791 1 961 1 691 1 799 1 941 1 843 1 658 1 6433 1 985 1 975 1 695 1 765 1 962 1 971 1 762 1 963 1 968 1 966 1 967 1 9680 1 9612 1 9610 1 9600 1 9611 1 9613 1 9614 1 9616 1 9621 The result of the TLV cost comparison where STRIDE is compared with Tecen is presented in Table 23. • Costs for both treatment arms are calculated on the basis of the Im curve. • The costs are discounted by 3 percent annually. • TLV presents results where purchased prices are used for be Table 23.",
+      "metadata": {
+        "doc_id": "bed240212_imjudo_4104-2022",
+        "heading": "In Table 20 and Table 21 the TLV sensitivity analyses are presented in",
+        "start_page": 36,
+        "end_page": 38,
+        "created_date": "2024",
+        "country": "SE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/SE/bed240212_imjudo_4104-2022_cleaned.json",
+        "split_index": 2
+      }
+    },
+    {
+      "text": "Table 24 and Table 25 present the cost per QALY gained from Imfinzi and Imjudo at different price levels. This table refers to the comparison between STRIDE and sorafenib. (Dom = dominant) Percentage (%) of the company price of Imfinzi P ro 80 2.33 2.13 1.93 1.74 1.54 1.34 1.14 0.94 c e n 70 2.28 2.09 1.89 1.49 1.29 1.09 0.90 ) t 60 2.24 2.04 1.84 1.64 1.44 1.25 1.05 0.85 a v 50 2.19 1.99 1.79 1.60 1.40 1.20 1.00 0.80 p ris 40 2.15 1.95 1.75 1.55 1.35 1.15 0.96 p Im 30 10 2.90 1.70 1.50 1.31 1.11 0.91 0.71 ju d 20 2.05 1.85 1.66 1.46 1.26 1.06 0.66 oxozumab plus bevacizumab comparison. mfinzi + imfinzi produced by PFSevaci.zumab.",
+      "metadata": {
+        "doc_id": "bed240212_imjudo_4104-2022",
+        "heading": "Cost per QALY earned at different price levels",
+        "start_page": 38,
+        "end_page": 38,
+        "created_date": "2024",
+        "country": "SE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/SE/bed240212_imjudo_4104-2022_cleaned.json",
+        "split_index": 0,
+        "merged": true
+      }
+    },
+    {
+      "text": "total duration 1 475 486 486 30 cost per month Imfinz is based on the number of doses administered and the weight of each dose. This table refers to the comparison between STRIDE and Lenvima. (Dom = dominant). Percentage (%) of the company's price of Imfinzi 100 1.65 1.45 1.25 1.04 0.84 0.64 0.44 0.23 0.03 Dom P 90 1.61 1.40 1.20 1.00 0.79 0.59 0.39 0.18 Dom Dom ro Dom c 80 1.56 1.36 1.15 0.95 0.75 0.54 0.34 Dom e Dom t 70 1.51 1.31 1.11 0.90 0.70 0.50 0.09 Dom Dom) Dom 60 1.46 1.06 1.86 0.65 0.45 0.04 Dom v 50 1.42 1.21 1.01 0.81 0.40 Dom Dom 40 1.37 1.76 0.56 0.15 0.35 Dom Dom Dom 30 1.12 0.51 0.72 0.62 0.57 Dom Dom 10 1.67 0.62 1.07 Dom 1 0.71 0.82 0.72 Dom 101.07 0.32 Dom 102.07 0.72 1.72 0.72",
+      "metadata": {
+        "doc_id": "bed240212_imjudo_4104-2022",
+        "heading": "Table 24: Cost per QALY earned at different price levels (million SEK) by IM",
+        "start_page": 38,
+        "end_page": 39,
+        "created_date": "2024",
+        "country": "SE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/SE/bed240212_imjudo_4104-2022_cleaned.json",
+        "split_index": 1
+      }
+    },
+    {
+      "text": "The results of the Health Economics Analysis with Lenvima and Tecentriq plus bevacizumab as comparator alternatives are considered by the TLV to be very high uncertainty. This is mainly due to the fact that the analyses are not based on direct comparative studies with STRIDE. In the LenvIMA analysis, in particular, the extrapolation of OS, PFS and TTD and the choice of quality of life weights are associated with a very high level of uncertainties and this has a major impact on the result. In this analysis, the assumption of the STRIDE plus melzumab and the selection of the quality-of-life weights is very comparable. The company assumes that [---] patients could be eligible for treatment with STRIDE annually, corresponding to a maximum sales of [--] SEK.",
+      "metadata": {
+        "doc_id": "bed240212_imjudo_4104-2022",
+        "heading": "Uncertainty of the results",
+        "start_page": 39,
+        "end_page": 39,
+        "created_date": "2024",
+        "country": "SE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/SE/bed240212_imjudo_4104-2022_cleaned.json",
+        "split_index": 0,
+        "merged": true
+      }
+    },
+    {
+      "text": "TLV has performed a health economics analysis of STRIDE for the treatment of adult patients with advanced or unresectable HCC. TLV compares STRIDA with the three comparator alternatives sorafenib, Lenvima and Tecentriq plus bevacizumab. In TLV' s baseline scenario with sorafenig as comparator, the cost per QALY is approximately SEK 2.4 million. In the comparison with Lenvimi, the costs per QAlY are about SEK 1.7 million. The TLV cost comparison between STRIDE and Te centriq plus Bevacizumb shows that the high cost of treatment for STRIDI is approximately $490,000 higher than the cost of the comparator alternative. The result in TLV: cost comparator is based on the assumption of comparable efficacy in OS and PFS and the time horizon is assumed to be [---] months.",
+      "metadata": {
+        "doc_id": "bed240212_imjudo_4104-2022",
+        "heading": "Overall assessment of the results",
+        "start_page": 39,
+        "end_page": 39,
+        "created_date": "2024",
+        "country": "SE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/SE/bed240212_imjudo_4104-2022_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "In the comparisons between STRIDE and Lenvima and Tecentriq plus bevacizumab respectively, TLV considers the uncertainty to be very high. This is mainly due to the fact that the analyses are not based on direct comparative studies with STRIDA. In particular, in the comparison with LenvIMA, the extrapolation of OS, PFS and TTD and the selection of quality of life weights are associated with very high uncertainties, and in the compared with Tecentrq plus be vacizumaB, the assumption of comparable efficacy is very uncertable.",
+      "metadata": {
+        "doc_id": "bed240212_imjudo_4104-2022",
+        "heading": "Overall assessment of the results",
+        "start_page": 39,
+        "end_page": 39,
+        "created_date": "2024",
+        "country": "SE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/SE/bed240212_imjudo_4104-2022_cleaned.json",
+        "split_index": 1
+      }
+    },
+    {
+      "text": "[1] \"Levercellscancer. Nationellt vårdprogram. Version: 3.0. Regionala cancercentrum i\nsamverkan 2022-04-05. Available:\n[2] \"EMA, \"Assessment report Imjudo Procedure No. EMEA/H/C/006016/0000\",\nEMA/CHMP/17771/2023, Available:\n[3] \"EMA, \"Imjudo, EPAR - Produktinformation\", 2023. Availabe:\n[4] \"EMA, \"Imfinzi, EPAR - Produktinformation\", 2023. Availabe:\n[5] A. L. Cheng et al., \"Updated efficacy and safety data from IMbrave150: Atezolizumab\nplus bevacizumab vs. sorafenib for unresectable hepatocellular carcinoma,\" J Hepatol,\nvol. 76, no.",
+      "metadata": {
+        "doc_id": "bed240212_imjudo_4104-2022",
+        "heading": "5 references",
+        "start_page": 41,
+        "end_page": 41,
+        "created_date": "2024",
+        "country": "SE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/SE/bed240212_imjudo_4104-2022_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "4, pp. 862-873, Apr 2022, doi: 10.1016/j.jhep.2021.11.030. [6] \"Abou-Alfa, G.K., et al., Tremelimumab plus Durvalumab in Unresectable\nHepatocellular Carcinoma. NEJM Evidence, 2022. 1(8).\". [7] \"ClinicalTrials. (29 augusti 2023). \"Study of Durvalumab and Tremelimumab as Firstline Treatment in Patients With Advanced Hepatocellular Carcinoma (HIMALAYA)\". Available:\n[8] \"Sangro B et. al. 4-year Updated OS in HIMALAYA. World GI 2023.\"\n[9] R. S. Finn et al., \"Atezolizumab plus Bevacizumab in Unresectable Hepatocellular\nCarcinoma,\" N Engl J Med, vol. 382, no. 20, pp. 1894-1905, May 14 2020, doi:",
+      "metadata": {
+        "doc_id": "bed240212_imjudo_4104-2022",
+        "heading": "5 references",
+        "start_page": 41,
+        "end_page": 41,
+        "created_date": "2024",
+        "country": "SE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/SE/bed240212_imjudo_4104-2022_cleaned.json",
+        "split_index": 1,
+        "merged": true
+      }
+    },
+    {
+      "text": "The table contains the following columns: Column_1, Strength, Price per, Column _4, column_5, Cost per ad, Columna_7 Row 1: Column__7: Cost per 4 Row 2: Strengths: (Package size, Cost per: package, Colonna_4: RDI, Colunna_5: Dosage, and Cost per Ad: administration to the patient, Colonne_7: weekly, Colonn_4: weekly), Price per dose, and Costs per ad: cases Row 5: Columns_1: Imfinzi, Styrene: 50 mg/ ml; 2.4 ml (1 vial), per: 7 085 mg, Colonel_1: 98%, Colon_5: 1 500 mg four times a week, cost per week: 86- 526 mg, and Column_-7: 86 weekly: 826 mg/ week (Strength: 10 mg), Cost per vial (1 487 mg, 29% cost per day), Column: 1 300 mg, 250 mg twice a day, 100",
+      "metadata": {
+        "doc_id": "bed240212_imjudo_4104-2022",
+        "heading": "Table 1 on page 25",
+        "start_page": 25,
+        "end_page": 25,
+        "created_date": "2024",
+        "country": "SE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/SE/bed240212_imjudo_4104-2022_cleaned.json",
+        "split_index": "0_0_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "mg once daily, 200 mg twice daily, 500 mg once a day Column:: column: 258 and column:: 266, Column 25: 250 mg, 300 mg once every day, column 7: 58: 25%, Column:. ad-: 372 kr, and Column_7: 20 811 kr Row 9: Column__1: Lenvima, Strength: 4 mg (per tablet) (30 tablets), Price per: 16 180.61 kr, Column___4: 100%, Col column_5: 12 mg per day, Cost per ad-:: 1 618 kr, or Column_: 45 306 kr Row 10: Column_: 8 mg per daily, Cost for each ad-:- 1 079 kr, but Column_: 30 204 kr Row 11: Column __: 10.7 mg per days**, Cost of each ad -:: 1 443 kr, Or Column _ 7: 40 398 kr Table contains the following columns: Column_1, STRIDE, Sorafenib and Lenvima Row 1:\nColumn _1: Progression-free, STRADE: [--] kr, and Soraphenib and lenvima: [-] kr Row 2:\nColumn __: Progressive disease, ST RIDE: [---] kr. and Sorafenab and LenVima:",
+      "metadata": {
+        "doc_id": "bed240212_imjudo_4104-2022",
+        "heading": "Table 1 on page 25",
+        "start_page": 25,
+        "end_page": 25,
+        "created_date": "2024",
+        "country": "SE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/SE/bed240212_imjudo_4104-2022_cleaned.json",
+        "split_index": "0_1_0",
+        "oversized_split": true,
+        "merged": true
+      }
+    },
+    {
+      "text": "Table contains the following columns: Life years (LY) (non-discounted), 4,28, 2,15, 2,13 Row 1:\nLifetime years (LI) (not discounted): QALYs (discontended), 4,28: 3,02, 2,15: 1,72, and 2,13: 1,29 Row 2:\nLifetime Years (LY), (non -discounted): Cost per year of life earned for STRIDE and 2.13: 477 200 kr Row 3:\nLifetime ages (LY, non-discountable): Cost of life years earned per QALy earned Table contains the following columns: Column_1, STRIDE, Column _3, Tecentriq +, Columna_5, Increase/ Decrease Row 1:\nTecentrq +: bevacizumab Row 2:\nColumn__1: Costs of medicinal products, STRITE: [--] kr, Colonne_3: [--]] kr, and Increases/ Decreases: [-] kr Row 3:\nColumn___1: Other costs, STride: [---] kr.",
+      "metadata": {
+        "doc_id": "bed240212_imjudo_4104-2022",
+        "heading": "Table 1 on page 33",
+        "start_page": 33,
+        "end_page": 33,
+        "created_date": "2024",
+        "country": "SE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/SE/bed240212_imjudo_4104-2022_cleaned.json",
+        "split_index": 0,
+        "merged": true
+      }
+    },
+    {
+      "text": "Table contains the following columns: Sensitivity analyses, Column_2, +/- Costs, +/- QALYs, Cost/QALY Row 1:\nSensitivity analyses: Baseline scenario, $1,015 469 and $1,29, and Costs/QALLY: 784 449 Row 2:\nSensitivities: Time horizon, column_2: 20 years, $0,02 763, $1,14, and cost/QAllY: 879 425 Row 3:\nSensitivations: Discounting, columna_2: 0%, +/- costs, $ 1,07 475, $ 1,77 and $ 1,605 Row 4:\nColumn _2: $ 5,98 $ 1528, and costs/QallY: Costs of sensitivity analysis: time horizon. The weightings for quality of life are [--- -- -- +/- Costs: 1 015 469 kr, +/- QALYs: 1,25, and Cost/QALY: 811 727 kr The table contains the following columns: Column_1, --, Column _3, Column__4, Column___5 Row 1:\n--: Include deductions for side effects, column_3: DKK 1 015 469, column 4 1.30, and column 5 781 379 row 2: column 1 OS: DKK 1,004 217 for STRIDE, and Column 5 923 443 row 3: DKK 973 213 for sorafe nib.",
+      "metadata": {
+        "doc_id": "bed240212_imjudo_4104-2022",
+        "heading": "Table 4 on page 33",
+        "start_page": 33,
+        "end_page": 33,
+        "created_date": "2024",
+        "country": "SE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/SE/bed240212_imjudo_4104-2022_cleaned.json",
+        "split_index": 0,
+        "merged": true
+      }
+    },
+    {
+      "text": "Table contains the following columns: Sensitivity analyses, Column_2, +/- Costs, +/- QALYs, Cost/QALY Row 1:\nSensitivity analyses: Baseline scenario, $92,809 and $0.83, and Cost/qaly: $112,345 and Cost of life adjustments: $0.70, and $1.04 -- Column 7: Life adjustment costs are $0.99, and Column 6: Life adjustments for weight loss: $1.01, and $2.02: Life adjusted for gender -- Column 8 -- QALQ: $6.02, and Row 6:\nLifetime adjustments are $7.04, and Row 7:\nLifestyle adjustments by gender: $9.02, Column 9 --_ In the case of STRIDE, the costs are: 92 809 kr, +/- QALYs: 0.78, and Cost/QALY: 119 532 kr Row 8:\nColumn_2: Include deductions for adverse reactions,",
+      "metadata": {
+        "doc_id": "bed240212_imjudo_4104-2022",
+        "heading": "Table 2 on page 34",
+        "start_page": 34,
+        "end_page": 34,
+        "created_date": "2024",
+        "country": "SE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/SE/bed240212_imjudo_4104-2022_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "Table contains the following columns: Sensitivity analyses, Column_2, +/- Costs, +/- QALYs, Cost/QALY Row 1:\nSensitivity analyses: Baseline scenario, $367,666, +/- qALys: 1.00, and Cost/qaly: $369,480, Cost of sensitivity analysis: Time horizon, column_2: 20 years, $337,355 and $349,642 in row 3: Discounting, colon_2: 0%, +/- cost: $4167,655, $1.25, and $332,327. The weightings for quality of life are [--- -- --] , +/- Costs: 367 666 kr, +/- QALYs: 0.99, and Cost/QALY: 371 160 kr",
+      "metadata": {
+        "doc_id": "bed240212_imjudo_4104-2022",
+        "heading": "Table 3 on page 34",
+        "start_page": 34,
+        "end_page": 34,
+        "created_date": "2024",
+        "country": "SE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/SE/bed240212_imjudo_4104-2022_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "Table contains the following columns: Sensitivity analyses, Column_2, +/- Costs, +/- QALYs, Cost/QALY Row 1: Sensitivity analyses: Baseline scenario, +./ Costs: kr 1 419 254, +/- qALys: 0.59, and Cost/qaly: 2 422 275 Row 2: Sensitivities: OS, column_2: Models with log normal (both arms), +/- costs: kr1 418 771, +/- quals: 0.57, and cost/qally: 2 480 539 Row 3: Column _2: OS models with gamma (two arms), plus/- cost: kr 411 360 +/- qials: 0.46, and cost / qaly: 3 042 1 Column 4: row 4: 48_ costs: OS with bulls-eye with normal arm, plus/- costs between kr 1 441 and kr 1 642 QALYS, and column: 1 yearly convergence between 1 HRQ and 1 QALYA: 1 hr = kr 1 541 and 1 hr: 2 years, respectively: kr 018 and kr 044 1 year, vs. 1 432 230 kr, +/- QALYs: 0.80, and Cost/QALY: 1 793 444 kr Row 8: Column_2: HR = 1 after 6 years, &/- Costs: 1 413 772 kr, +1 /- QALys: 0.49, and",
+      "metadata": {
+        "doc_id": "bed240212_imjudo_4104-2022",
+        "heading": "Table 3 on page 36",
+        "start_page": 36,
+        "end_page": 36,
+        "created_date": "2024",
+        "country": "SE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/SE/bed240212_imjudo_4104-2022_cleaned.json",
+        "split_index": "0_0_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "Cost /QALy: 2 870 656 kr Row 9: Sensitivity analyses: PFS, Column _2: Sorafenib' s PFS curve is assumed to be the same as the PFS of the inter-ventilation arm, +// Costs:1 412 047 kr, plus/- QAlys: 0.58, and cost/QAlY: 2 434 399 kr Row 10: Assuming HR= 1 for STRIDE is not applied, then +/- Cost: 1 426 529 kr, minus/- QAYS: 0.59, and +/- KALY 2 411 388 kr The cost of the cost of sensitivity analysis is considered to be equal to that of the life-cycle PFS-curve of the intravenous fluid, respectively, and the following: The following table lists the most commonly used medicines in combination with sorafenib and 10% of Lenvima, +/- Cost: DKK 1 441 100, +/- QALYs: 0.59, and Cost/QALY: 2 459 561 Row 14: Sensitivity analyses: time horizon, Column_2: 10 years, +./ Cost: 1 400 913 DKK, +// QALys: 0.52, and Cost / QALy: 2 692 185 DKK Row 15: sensitivity analysis: TTD STRIDE, Columna_2: Normal 1 knuckle, +//- Costs: 1 567 878",
+      "metadata": {
+        "doc_id": "bed240212_imjudo_4104-2022",
+        "heading": "Table 3 on page 36",
+        "start_page": 36,
+        "end_page": 36,
+        "created_date": "2024",
+        "country": "SE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/SE/bed240212_imjudo_4104-2022_cleaned.json",
+        "split_index": "0_1_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "Table contains the following columns: Additional dose of Imjudo, No patients receiving an additional dose after progression, $1,400, $138, $0.59, $2,389, $650 Table contains the following columns: Sensitivity analyses, Column_2, +/- Costs, +/- QALYs, Costs/QALY Row 1: Sensitivity analyses: Baseline scenario, +/- Costs: 946 032 kr, +// QALys: 0.57, and Cost/ QALy: 1 653 570 kr Costs and Costs Row 2: sensitivity analysis: OS (adjustments of extrapolation of OS for STRIDE and sorafenib*), Column _ OS2: extrapolated with normal log (both arms), +/- Cost: 917 086 kr, plus/- QAlys: 0.56, and Cost / QALYS: 1 648 958 kr Column 3: OS_2: extrapolated with gamma (b both arms), plus/- CosTS: 988 kr, minus/- 309 kr, QALyes: 304 and cost: 0.5, respectively Column 1 and Column 2 are converted to 1 yearly extrapolating",
+      "metadata": {
+        "doc_id": "bed240212_imjudo_4104-2022",
+        "heading": "Table 1 on page 37",
+        "start_page": 37,
+        "end_page": 37,
+        "created_date": "2024",
+        "country": "SE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/SE/bed240212_imjudo_4104-2022_cleaned.json",
+        "split_index": 0,
+        "merged": true
+      }
+    },
+    {
+      "text": "of OS: 2 KR/ YY for both STRIDES and Sorafenib) Column: 1 842 OS: extrapolarization of OS extrapolization of STRIDA and sorabenib* with both arms, column_OS: 1 962 extrapolar analyses with normal Log (b) 572 917 Row 7: Column_2: No assumption if HR=1, +/- Cost: 959 008 kr, +/- QALYs: 0.78, and Cost/QALY: 1 221 994 kr Row 8: Column _2: Assumption of HR = 1 after 6 years; +/- Costs: 940 550 kr, plus/- QAlys: 0.48, and cost/QAly: 1 964 849 kr Row 9: Sensitivity adjustments: PFS (adjustments of extrapolation of PFS for STRIDE and sorafenib*), Column 02: Sorafenib' s PFS curve is assumed to be the same as",
+      "metadata": {
+        "doc_id": "bed240212_imjudo_4104-2022",
+        "heading": "Table 2 on page 37",
+        "start_page": 37,
+        "end_page": 37,
+        "created_date": "2024",
+        "country": "SE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/SE/bed240212_imjudo_4104-2022_cleaned.json",
+        "split_index": "0_0_1",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "that of the inter-ventilators PFS-curve, plus/minus Cost: 939 405 kr, minus or minus QAL Ys: 0.57, and Costs/Qaly: 1 658 033 kr Row 10: Assuming of HR=1 After 6 years, plus or minus Cost: $940 550, +/- /minus QALYS: 0.58, +/- 1 966 943 kr/K Row 13: Life cycle analysis is not applied, and after 10 years of life, respectively: 1 953 KALYYs +/- 0.32 KQAL/Q: 0.8 and after 12 years of treatment: 06/09/10 Sensitivity analyses: Follow-up treatment in the STRIDE arm, Column_2: 20% received Tecentriq plus bevacizumab, 10% received sorafenib and 10% received Lenvima, +/- Cost: 967 878 kr, QALYs: 0.57, and Cost/QALY: 1 691 755 kr: Costs of",
+      "metadata": {
+        "doc_id": "bed240212_imjudo_4104-2022",
+        "heading": "Table 2 on page 37",
+        "start_page": 37,
+        "end_page": 37,
+        "created_date": "2024",
+        "country": "SE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/SE/bed240212_imjudo_4104-2022_cleaned.json",
+        "split_index": "0_1_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "TTD analyses, Immunoassays: row 14: Time horizon, Columna_2: 10 years, +// Cost: 952 354 kr, +/ QALy' s: 0.51, and Costs/QAly: 1 876 663 kr: row 15: Sensitivities: TTD STRIDES, Colum_2: Normal: 1 knuckle; +/- Costs: 1 094 656 kr, //- QALys: 0.57%, and Cost: 1 913 1 351 kr: Cost of TSD analysis, Immunoassays is not included in the first dose, and No additional costs: 1 996 Knuckles after a single dose, no extra costs: 795 knucks, no additional costs for patients, and no additional doses: 1 795 Knucks after 1 dose, PQALYS: 0.25 and no extra doses. For the purposes of this Decision, the following definitions shall apply:",
+      "metadata": {
+        "doc_id": "bed240212_imjudo_4104-2022",
+        "heading": "Table 2 on page 37",
+        "start_page": 37,
+        "end_page": 37,
+        "created_date": "2024",
+        "country": "SE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/SE/bed240212_imjudo_4104-2022_cleaned.json",
+        "split_index": "0_1_1",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "Table contains the following columns: Column_1, Costs of medicines, Administrative costs, Total cost Row 1:\nCosts for Imfinzi + Imjudo: DKK 1 233 872, Administration costs: 71 604, and Total cost: DKr 1 305 476 Row 2:\nCosts to be paid for Imcinzi and Medicines: 982 346 Row 3:\nCosts on Imjido and Medicinal products: 251 527 DKK Row 4:\nCosts with Tecentriq + bevacizumab: 723 197, Administrational costs: 94 130 DKK, and Total costs: 817 327 Row 5:\nCosts at Tecentrigi and Imjudos: 632 630 Column 6: Costs in column 61: Costs associated with Imflizumab: 908 DKK 568 - 625 DKK 491, Total costs of administration and administration: 510 525 - 622 DKK 488, PRO KONTROLU LÉČIV 100 41 Praha 10 Fax: +420 271 732 377 Web: Public evaluation report LENVIMA is indicated as monotherapy for the treatment of adult patients with advanced or non-resectable hepatocellular carcinoma (HCC) and who have not received any previous systemic therapy. What Lenvatinib looks like and contents of the pack",
+      "metadata": {
+        "doc_id": "bed240212_imjudo_4104-2022",
+        "heading": "Table 1 on page 38",
+        "start_page": 38,
+        "end_page": 38,
+        "created_date": "2024",
+        "country": "SE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/SE/bed240212_imjudo_4104-2022_cleaned.json",
+        "split_index": 0,
+        "merged": true
+      }
+    }
+  ]
+}

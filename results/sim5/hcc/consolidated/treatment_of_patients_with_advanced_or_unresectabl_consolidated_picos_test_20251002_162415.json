@@ -1,0 +1,937 @@
+{
+  "consolidation_metadata": {
+    "timestamp": "2025-10-02T16:23:53.997636",
+    "indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
+    "consolidation_type": "picos",
+    "data_split": "test",
+    "total_consolidated_picos": 55,
+    "source_countries": [
+      "AT",
+      "BE",
+      "DE",
+      "DK",
+      "EN",
+      "ES",
+      "EU",
+      "FR",
+      "IT",
+      "NL",
+      "PO",
+      "PT",
+      "SE"
+    ],
+    "source_types": [
+      "clinical_guideline",
+      "hta_submission"
+    ]
+  },
+  "consolidated_picos": [
+    {
+      "Population": "Adult patients with advanced or inoperable hepatocellular carcinoma (HCC) who have not yet received systemic therapy:  with Child-Pugh A or no hepatic cirrhosis",
+      "Intervention": "Medicine X (under assessment)",
+      "Comparator": "Sorafenib",
+      "Countries": [
+        "AT",
+        "DE"
+      ],
+      "Source_Types": [
+        "hta_submission"
+      ],
+      "Source_Refs": [],
+      "Occurrence_Count": 2,
+      "Grouping_Key": {
+        "population": "Adult patients with advanced or inoperable hepatocellular carcinoma (HCC) who have not yet received systemic therapy:  with Child-Pugh A or no hepatic cirrhosis",
+        "intervention": "Medicine X (under assessment)",
+        "comparator": "Sorafenib"
+      }
+    },
+    {
+      "Population": "Adult patients with advanced or inoperable hepatocellular carcinoma (HCC) who have not yet received systemic therapy:  with Child-Pugh B",
+      "Intervention": "Medicine X (under assessment)",
+      "Comparator": "BSC",
+      "Countries": [
+        "AT",
+        "DE"
+      ],
+      "Source_Types": [
+        "hta_submission"
+      ],
+      "Source_Refs": [],
+      "Occurrence_Count": 2,
+      "Grouping_Key": {
+        "population": "Adult patients with advanced or inoperable hepatocellular carcinoma (HCC) who have not yet received systemic therapy:  with Child-Pugh B",
+        "intervention": "Medicine X (under assessment)",
+        "comparator": "BSC"
+      }
+    },
+    {
+      "Population": "patients with advanced HCC",
+      "Intervention": "Medicine X (under assessment)",
+      "Comparator": "TACE + Sorafenib",
+      "Countries": [
+        "AT",
+        "DE"
+      ],
+      "Source_Types": [
+        "hta_submission"
+      ],
+      "Source_Refs": [],
+      "Occurrence_Count": 2,
+      "Grouping_Key": {
+        "population": "patients with advanced HCC",
+        "intervention": "Medicine X (under assessment)",
+        "comparator": "TACE + Sorafenib"
+      }
+    },
+    {
+      "Population": "patients with advanced HCC",
+      "Intervention": "Medicine X (under assessment)",
+      "Comparator": "TACE",
+      "Countries": [
+        "AT",
+        "DE"
+      ],
+      "Source_Types": [
+        "hta_submission"
+      ],
+      "Source_Refs": [],
+      "Occurrence_Count": 2,
+      "Grouping_Key": {
+        "population": "patients with advanced HCC",
+        "intervention": "Medicine X (under assessment)",
+        "comparator": "TACE"
+      }
+    },
+    {
+      "Population": "adults with HCC in Barcelona Clinic Liver Cancer (BCLC) stage B or C who did not receive any prior systemic therapy for the advanced or inoperable disease. Hepatic cirrhosis of any aetiology was not an exclusion criterion. Patients in BCLC stage B had to be ineligible for transarterial chemoembolization (TACE). Further inclusion criteria were Child-Pugh stage A and an Eastern Cooperative Oncology Group – Performance Status (ECOG-PS) score of 0 or 1.",
+      "Intervention": "Medicine X (under assessment)",
+      "Comparator": "Sorafenib",
+      "Countries": [
+        "AT",
+        "DE"
+      ],
+      "Source_Types": [
+        "hta_submission"
+      ],
+      "Source_Refs": [],
+      "Occurrence_Count": 2,
+      "Grouping_Key": {
+        "population": "adults with HCC in Barcelona Clinic Liver Cancer (BCLC) stage B or C who did not receive any prior systemic therapy for the advanced or inoperable disease. Hepatic cirrhosis of any aetiology was not an exclusion criterion. Patients in BCLC stage B had to be ineligible for transarterial chemoembolization (TACE). Further inclusion criteria were Child-Pugh stage A and an Eastern Cooperative Oncology Group – Performance Status (ECOG-PS) score of 0 or 1.",
+        "intervention": "Medicine X (under assessment)",
+        "comparator": "Sorafenib"
+      }
+    },
+    {
+      "Population": "patients with advanced hepatocellular carcinoma who had not received previous systemic treatment",
+      "Intervention": "Medicine X (under assessment)",
+      "Comparator": "placebo plus best supportive care",
+      "Countries": [
+        "AT"
+      ],
+      "Source_Types": [
+        "hta_submission"
+      ],
+      "Source_Refs": [],
+      "Occurrence_Count": 1,
+      "Grouping_Key": {
+        "population": "patients with advanced hepatocellular carcinoma who had not received previous systemic treatment",
+        "intervention": "Medicine X (under assessment)",
+        "comparator": "placebo plus best supportive care"
+      }
+    },
+    {
+      "Population": "treatment naive adult (aged ≥18 years) patients with advanced, unresectable or metastatic hepatocellular carcinoma",
+      "Intervention": "Medicine X (under assessment)",
+      "Comparator": "sorafenib",
+      "Countries": [
+        "DK"
+      ],
+      "Source_Types": [
+        "hta_submission"
+      ],
+      "Source_Refs": [],
+      "Occurrence_Count": 1,
+      "Grouping_Key": {
+        "population": "treatment naive adult (aged ≥18 years) patients with advanced, unresectable or metastatic hepatocellular carcinoma",
+        "intervention": "Medicine X (under assessment)",
+        "comparator": "sorafenib"
+      }
+    },
+    {
+      "Population": "adults with advanced or unresectable hepatocellular carcinoma (HCC) who have not had previous systemic treatment, only if: • they have Child-Pugh grade A liver impairment and an Eastern Cooperative Oncology Group (ECOG) performance status of 0 or 1",
+      "Intervention": "Medicine X (under assessment)",
+      "Comparator": "sorafenib",
+      "Countries": [
+        "EN"
+      ],
+      "Source_Types": [
+        "hta_submission"
+      ],
+      "Source_Refs": [],
+      "Occurrence_Count": 1,
+      "Grouping_Key": {
+        "population": "adults with advanced or unresectable hepatocellular carcinoma (HCC) who have not had previous systemic treatment, only if: • they have Child-Pugh grade A liver impairment and an Eastern Cooperative Oncology Group (ECOG) performance status of 0 or 1",
+        "intervention": "Medicine X (under assessment)",
+        "comparator": "sorafenib"
+      }
+    },
+    {
+      "Population": "adults with advanced or unresectable hepatocellular carcinoma (HCC) who have not had previous systemic treatment, only if: • they have Child-Pugh grade A liver impairment and an Eastern Cooperative Oncology Group (ECOG) performance status of 0 or 1",
+      "Intervention": "Medicine X (under assessment)",
+      "Comparator": "lenvatinib",
+      "Countries": [
+        "EN"
+      ],
+      "Source_Types": [
+        "hta_submission"
+      ],
+      "Source_Refs": [],
+      "Occurrence_Count": 1,
+      "Grouping_Key": {
+        "population": "adults with advanced or unresectable hepatocellular carcinoma (HCC) who have not had previous systemic treatment, only if: • they have Child-Pugh grade A liver impairment and an Eastern Cooperative Oncology Group (ECOG) performance status of 0 or 1",
+        "intervention": "Medicine X (under assessment)",
+        "comparator": "lenvatinib"
+      }
+    },
+    {
+      "Population": "patients with advanced and/ or unresectable hepatocarcinoma, Child-Pugh EMI, in the absence of grade 0 or grade 3-4",
+      "Intervention": "Medicine X (under assessment)",
+      "Comparator": "sorafenib",
+      "Countries": [
+        "ES"
+      ],
+      "Source_Types": [
+        "hta_submission"
+      ],
+      "Source_Refs": [],
+      "Occurrence_Count": 1,
+      "Grouping_Key": {
+        "population": "patients with advanced and/ or unresectable hepatocarcinoma, Child-Pugh EMI, in the absence of grade 0 or grade 3-4",
+        "intervention": "Medicine X (under assessment)",
+        "comparator": "sorafenib"
+      }
+    },
+    {
+      "Population": "patients with advanced or unresectable hepatocellular carcinoma who have not received prior systemic therapy, with hepatic function (Child-Pugh carcinomas: a phase III randomised, double-blind, stage A), an ECOG score of 0 or 1",
+      "Intervention": "Medicine X (under assessment)",
+      "Comparator": "sorafenib",
+      "Countries": [
+        "ES"
+      ],
+      "Source_Types": [
+        "hta_submission"
+      ],
+      "Source_Refs": [],
+      "Occurrence_Count": 1,
+      "Grouping_Key": {
+        "population": "patients with advanced or unresectable hepatocellular carcinoma who have not received prior systemic therapy, with hepatic function (Child-Pugh carcinomas: a phase III randomised, double-blind, stage A), an ECOG score of 0 or 1",
+        "intervention": "Medicine X (under assessment)",
+        "comparator": "sorafenib"
+      }
+    },
+    {
+      "Population": "all patients had locally advanced, unresectable or metastatic CHC, for which they had not received prior systemic therapy",
+      "Intervention": "Medicine X (under assessment)",
+      "Comparator": "lenvatinib",
+      "Countries": [
+        "ES"
+      ],
+      "Source_Types": [
+        "hta_submission"
+      ],
+      "Source_Refs": [],
+      "Occurrence_Count": 1,
+      "Grouping_Key": {
+        "population": "all patients had locally advanced, unresectable or metastatic CHC, for which they had not received prior systemic therapy",
+        "intervention": "Medicine X (under assessment)",
+        "comparator": "lenvatinib"
+      }
+    },
+    {
+      "Population": "adult patients with advanced or unresectable hepatocellular carcinoma (HCC) (stage BCLC B or C) who have not received prior systemic therapy",
+      "Intervention": "Medicine X (under assessment)",
+      "Comparator": "sorafenib",
+      "Countries": [
+        "FR"
+      ],
+      "Source_Types": [
+        "hta_submission"
+      ],
+      "Source_Refs": [],
+      "Occurrence_Count": 1,
+      "Grouping_Key": {
+        "population": "adult patients with advanced or unresectable hepatocellular carcinoma (HCC) (stage BCLC B or C) who have not received prior systemic therapy",
+        "intervention": "Medicine X (under assessment)",
+        "comparator": "sorafenib"
+      }
+    },
+    {
+      "Population": "patients with unresecable liver cell carcinomas",
+      "Intervention": "Medicine X (under assessment)",
+      "Comparator": "sorafenib",
+      "Countries": [
+        "FR"
+      ],
+      "Source_Types": [
+        "hta_submission"
+      ],
+      "Source_Refs": [],
+      "Occurrence_Count": 1,
+      "Grouping_Key": {
+        "population": "patients with unresecable liver cell carcinomas",
+        "intervention": "Medicine X (under assessment)",
+        "comparator": "sorafenib"
+      }
+    },
+    {
+      "Population": "patients with hepatocellular carcinoma for whom initiation of curative treatment or (continuation of) locoregional or local palliative treatment is not possible or is not considered medically appropriate",
+      "Intervention": "Medicine X (under assessment)",
+      "Comparator": "placebo",
+      "Countries": [
+        "NL"
+      ],
+      "Source_Types": [
+        "hta_submission"
+      ],
+      "Source_Refs": [],
+      "Occurrence_Count": 1,
+      "Grouping_Key": {
+        "population": "patients with hepatocellular carcinoma for whom initiation of curative treatment or (continuation of) locoregional or local palliative treatment is not possible or is not considered medically appropriate",
+        "intervention": "Medicine X (under assessment)",
+        "comparator": "placebo"
+      }
+    },
+    {
+      "Population": "patients with hepatocellular carcinoma for whom initiation of curative treatment or (continuation of) locoregional or local palliative treatment is not possible or is not considered medically appropriate",
+      "Intervention": "Medicine X (under assessment)",
+      "Comparator": "best care regimen available",
+      "Countries": [
+        "NL"
+      ],
+      "Source_Types": [
+        "hta_submission"
+      ],
+      "Source_Refs": [],
+      "Occurrence_Count": 1,
+      "Grouping_Key": {
+        "population": "patients with hepatocellular carcinoma for whom initiation of curative treatment or (continuation of) locoregional or local palliative treatment is not possible or is not considered medically appropriate",
+        "intervention": "Medicine X (under assessment)",
+        "comparator": "best care regimen available"
+      }
+    },
+    {
+      "Population": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
+      "Intervention": "Medicine X (under assessment)",
+      "Comparator": "sorafenib",
+      "Countries": [
+        "PO"
+      ],
+      "Source_Types": [
+        "hta_submission"
+      ],
+      "Source_Refs": [],
+      "Occurrence_Count": 1,
+      "Grouping_Key": {
+        "population": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
+        "intervention": "Medicine X (under assessment)",
+        "comparator": "sorafenib"
+      }
+    },
+    {
+      "Population": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
+      "Intervention": "Medicine X (under assessment)",
+      "Comparator": "lenvatinib",
+      "Countries": [
+        "PO"
+      ],
+      "Source_Types": [
+        "hta_submission"
+      ],
+      "Source_Refs": [],
+      "Occurrence_Count": 1,
+      "Grouping_Key": {
+        "population": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
+        "intervention": "Medicine X (under assessment)",
+        "comparator": "lenvatinib"
+      }
+    },
+    {
+      "Population": "patients with unresectable HCC",
+      "Intervention": "Medicine X (under assessment)",
+      "Comparator": "sorafenib",
+      "Countries": [
+        "PT"
+      ],
+      "Source_Types": [
+        "hta_submission"
+      ],
+      "Source_Refs": [],
+      "Occurrence_Count": 1,
+      "Grouping_Key": {
+        "population": "patients with unresectable HCC",
+        "intervention": "Medicine X (under assessment)",
+        "comparator": "sorafenib"
+      }
+    },
+    {
+      "Population": "first-line treatment of adult patients with advanced or unresectable HCC",
+      "Intervention": "Medicine X (under assessment)",
+      "Comparator": "atezolizumab plus bevacizumab",
+      "Countries": [
+        "SE"
+      ],
+      "Source_Types": [
+        "hta_submission"
+      ],
+      "Source_Refs": [],
+      "Occurrence_Count": 1,
+      "Grouping_Key": {
+        "population": "first-line treatment of adult patients with advanced or unresectable HCC",
+        "intervention": "Medicine X (under assessment)",
+        "comparator": "atezolizumab plus bevacizumab"
+      }
+    },
+    {
+      "Population": "first-line treatment of adult patients with advanced or unresectable HCC for whom treatment with atezolizumab plus bevacizumab is inappropriate",
+      "Intervention": "Medicine X (under assessment)",
+      "Comparator": "lenvatinib",
+      "Countries": [
+        "SE"
+      ],
+      "Source_Types": [
+        "hta_submission"
+      ],
+      "Source_Refs": [],
+      "Occurrence_Count": 1,
+      "Grouping_Key": {
+        "population": "first-line treatment of adult patients with advanced or unresectable HCC for whom treatment with atezolizumab plus bevacizumab is inappropriate",
+        "intervention": "Medicine X (under assessment)",
+        "comparator": "lenvatinib"
+      }
+    },
+    {
+      "Population": "first-line treatment of adult patients with advanced or unresectable HCC for whom treatment with atezolizumab plus bevacizumab is inappropriate",
+      "Intervention": "Medicine X (under assessment)",
+      "Comparator": "sorafenib",
+      "Countries": [
+        "SE"
+      ],
+      "Source_Types": [
+        "hta_submission"
+      ],
+      "Source_Refs": [],
+      "Occurrence_Count": 1,
+      "Grouping_Key": {
+        "population": "first-line treatment of adult patients with advanced or unresectable HCC for whom treatment with atezolizumab plus bevacizumab is inappropriate",
+        "intervention": "Medicine X (under assessment)",
+        "comparator": "sorafenib"
+      }
+    },
+    {
+      "Population": "patients whose HCC has non-viral etiology",
+      "Intervention": "Medicine X (under assessment)",
+      "Comparator": "atezolizumab plus bevacizumab",
+      "Countries": [
+        "SE"
+      ],
+      "Source_Types": [
+        "hta_submission"
+      ],
+      "Source_Refs": [],
+      "Occurrence_Count": 1,
+      "Grouping_Key": {
+        "population": "patients whose HCC has non-viral etiology",
+        "intervention": "Medicine X (under assessment)",
+        "comparator": "atezolizumab plus bevacizumab"
+      }
+    },
+    {
+      "Population": "patients with advanced or unresectable hepatocellular carcinoma and with an ECOG status of 0 1 points",
+      "Intervention": "Medicine X (under assessment)",
+      "Comparator": "Sorafenib",
+      "Countries": [
+        "AT",
+        "DE"
+      ],
+      "Source_Types": [
+        "clinical_guideline"
+      ],
+      "Source_Refs": [],
+      "Occurrence_Count": 2,
+      "Grouping_Key": {
+        "population": "patients with advanced or unresectable hepatocellular carcinoma and with an ECOG status of 0 1 points",
+        "intervention": "Medicine X (under assessment)",
+        "comparator": "Sorafenib"
+      }
+    },
+    {
+      "Population": "patients with advanced or unresectable hepatocellular carcinoma",
+      "Intervention": "Medicine X (under assessment)",
+      "Comparator": "best supportive care",
+      "Countries": [
+        "AT",
+        "DE"
+      ],
+      "Source_Types": [
+        "clinical_guideline"
+      ],
+      "Source_Refs": [],
+      "Occurrence_Count": 2,
+      "Grouping_Key": {
+        "population": "patients with advanced or unresectable hepatocellular carcinoma",
+        "intervention": "Medicine X (under assessment)",
+        "comparator": "best supportive care"
+      }
+    },
+    {
+      "Population": "patients with unresectable HCC",
+      "Intervention": "Medicine X (under assessment)",
+      "Comparator": "arterial chemoembolization",
+      "Countries": [
+        "BE"
+      ],
+      "Source_Types": [
+        "clinical_guideline"
+      ],
+      "Source_Refs": [],
+      "Occurrence_Count": 1,
+      "Grouping_Key": {
+        "population": "patients with unresectable HCC",
+        "intervention": "Medicine X (under assessment)",
+        "comparator": "arterial chemoembolization"
+      }
+    },
+    {
+      "Population": "patients with unresectable HCC",
+      "Intervention": "Medicine X (under assessment)",
+      "Comparator": "radioactive Iodine 131 treatment",
+      "Countries": [
+        "BE"
+      ],
+      "Source_Types": [
+        "clinical_guideline"
+      ],
+      "Source_Refs": [],
+      "Occurrence_Count": 1,
+      "Grouping_Key": {
+        "population": "patients with unresectable HCC",
+        "intervention": "Medicine X (under assessment)",
+        "comparator": "radioactive Iodine 131 treatment"
+      }
+    },
+    {
+      "Population": "patients with preserved hepatic function and in good general condition where resection, transplantation, ablation or TACE/ SIRT cannot be performed or are not expected to have an effect, or for patients with additional hepatic disease",
+      "Intervention": "Medicine X (under assessment)",
+      "Comparator": "Atezolizumab and bevacizumab",
+      "Countries": [
+        "DK"
+      ],
+      "Source_Types": [
+        "clinical_guideline"
+      ],
+      "Source_Refs": [],
+      "Occurrence_Count": 1,
+      "Grouping_Key": {
+        "population": "patients with preserved hepatic function and in good general condition where resection, transplantation, ablation or TACE/ SIRT cannot be performed or are not expected to have an effect, or for patients with additional hepatic disease",
+        "intervention": "Medicine X (under assessment)",
+        "comparator": "Atezolizumab and bevacizumab"
+      }
+    },
+    {
+      "Population": "patients treated with SIRT",
+      "Intervention": "Medicine X (under assessment)",
+      "Comparator": "sorafenib",
+      "Countries": [
+        "DK"
+      ],
+      "Source_Types": [
+        "clinical_guideline"
+      ],
+      "Source_Refs": [],
+      "Occurrence_Count": 1,
+      "Grouping_Key": {
+        "population": "patients treated with SIRT",
+        "intervention": "Medicine X (under assessment)",
+        "comparator": "sorafenib"
+      }
+    },
+    {
+      "Population": "advanced disease, systemic treatment should be offered to patients with ECOG/PS 0-1 and Child–Pugh class A",
+      "Intervention": "Medicine X (under assessment)",
+      "Comparator": "BSC",
+      "Countries": [
+        "ES"
+      ],
+      "Source_Types": [
+        "clinical_guideline"
+      ],
+      "Source_Refs": [],
+      "Occurrence_Count": 1,
+      "Grouping_Key": {
+        "population": "advanced disease, systemic treatment should be offered to patients with ECOG/PS 0-1 and Child–Pugh class A",
+        "intervention": "Medicine X (under assessment)",
+        "comparator": "BSC"
+      }
+    },
+    {
+      "Population": "patients with advanced or unresectable hepatocellular carcinoma",
+      "Intervention": "Medicine X (under assessment)",
+      "Comparator": "sorafenib",
+      "Countries": [
+        "FR"
+      ],
+      "Source_Types": [
+        "clinical_guideline"
+      ],
+      "Source_Refs": [],
+      "Occurrence_Count": 1,
+      "Grouping_Key": {
+        "population": "patients with advanced or unresectable hepatocellular carcinoma",
+        "intervention": "Medicine X (under assessment)",
+        "comparator": "sorafenib"
+      }
+    },
+    {
+      "Population": "patients with advanced or unresectable hepatocellular carcinoma",
+      "Intervention": "Medicine X (under assessment)",
+      "Comparator": "lenvatinib",
+      "Countries": [
+        "FR"
+      ],
+      "Source_Types": [
+        "clinical_guideline"
+      ],
+      "Source_Refs": [],
+      "Occurrence_Count": 1,
+      "Grouping_Key": {
+        "population": "patients with advanced or unresectable hepatocellular carcinoma",
+        "intervention": "Medicine X (under assessment)",
+        "comparator": "lenvatinib"
+      }
+    },
+    {
+      "Population": "patients with advanced or unresectable hepatocellular carcinoma",
+      "Intervention": "Medicine X (under assessment)",
+      "Comparator": "atezolizumab plus bevacizumab",
+      "Countries": [
+        "FR"
+      ],
+      "Source_Types": [
+        "clinical_guideline"
+      ],
+      "Source_Refs": [],
+      "Occurrence_Count": 1,
+      "Grouping_Key": {
+        "population": "patients with advanced or unresectable hepatocellular carcinoma",
+        "intervention": "Medicine X (under assessment)",
+        "comparator": "atezolizumab plus bevacizumab"
+      }
+    },
+    {
+      "Population": "patients with advanced or unresectable hepatocellular carcinoma",
+      "Intervention": "Medicine X (under assessment)",
+      "Comparator": "selective internal radiation therapy (SIRT) with yttrium-90 resin microspheres",
+      "Countries": [
+        "FR"
+      ],
+      "Source_Types": [
+        "clinical_guideline"
+      ],
+      "Source_Refs": [],
+      "Occurrence_Count": 1,
+      "Grouping_Key": {
+        "population": "patients with advanced or unresectable hepatocellular carcinoma",
+        "intervention": "Medicine X (under assessment)",
+        "comparator": "selective internal radiation therapy (SIRT) with yttrium-90 resin microspheres"
+      }
+    },
+    {
+      "Population": "patients with advanced or unresectable hepatocellular carcinoma",
+      "Intervention": "Medicine X (under assessment)",
+      "Comparator": "ramucirumab",
+      "Countries": [
+        "FR"
+      ],
+      "Source_Types": [
+        "clinical_guideline"
+      ],
+      "Source_Refs": [],
+      "Occurrence_Count": 1,
+      "Grouping_Key": {
+        "population": "patients with advanced or unresectable hepatocellular carcinoma",
+        "intervention": "Medicine X (under assessment)",
+        "comparator": "ramucirumab"
+      }
+    },
+    {
+      "Population": "patients with advanced or unresectable hepatocellular carcinoma",
+      "Intervention": "Medicine X (under assessment)",
+      "Comparator": "nivolumab plus ipilimumab",
+      "Countries": [
+        "FR"
+      ],
+      "Source_Types": [
+        "clinical_guideline"
+      ],
+      "Source_Refs": [],
+      "Occurrence_Count": 1,
+      "Grouping_Key": {
+        "population": "patients with advanced or unresectable hepatocellular carcinoma",
+        "intervention": "Medicine X (under assessment)",
+        "comparator": "nivolumab plus ipilimumab"
+      }
+    },
+    {
+      "Population": "patients with advanced or unresectable hepatocellular carcinoma",
+      "Intervention": "Medicine X (under assessment)",
+      "Comparator": "pravastatin",
+      "Countries": [
+        "FR"
+      ],
+      "Source_Types": [
+        "clinical_guideline"
+      ],
+      "Source_Refs": [],
+      "Occurrence_Count": 1,
+      "Grouping_Key": {
+        "population": "patients with advanced or unresectable hepatocellular carcinoma",
+        "intervention": "Medicine X (under assessment)",
+        "comparator": "pravastatin"
+      }
+    },
+    {
+      "Population": "patients with advanced or unresectable hepatocellular carcinoma in CHILD B cirrhotic patients",
+      "Intervention": "Medicine X (under assessment)",
+      "Comparator": "best supportive care",
+      "Countries": [
+        "FR"
+      ],
+      "Source_Types": [
+        "clinical_guideline"
+      ],
+      "Source_Refs": [],
+      "Occurrence_Count": 1,
+      "Grouping_Key": {
+        "population": "patients with advanced or unresectable hepatocellular carcinoma in CHILD B cirrhotic patients",
+        "intervention": "Medicine X (under assessment)",
+        "comparator": "best supportive care"
+      }
+    },
+    {
+      "Population": "patients with advanced and/ or unresectable HCC",
+      "Intervention": "Medicine X (under assessment)",
+      "Comparator": "FOLVOX4",
+      "Countries": [
+        "IT"
+      ],
+      "Source_Types": [
+        "clinical_guideline"
+      ],
+      "Source_Refs": [],
+      "Occurrence_Count": 1,
+      "Grouping_Key": {
+        "population": "patients with advanced and/ or unresectable HCC",
+        "intervention": "Medicine X (under assessment)",
+        "comparator": "FOLVOX4"
+      }
+    },
+    {
+      "Population": "patients with advanced and/ or unresectable HCC",
+      "Intervention": "Medicine X (under assessment)",
+      "Comparator": "doxorubicine",
+      "Countries": [
+        "IT"
+      ],
+      "Source_Types": [
+        "clinical_guideline"
+      ],
+      "Source_Refs": [],
+      "Occurrence_Count": 1,
+      "Grouping_Key": {
+        "population": "patients with advanced and/ or unresectable HCC",
+        "intervention": "Medicine X (under assessment)",
+        "comparator": "doxorubicine"
+      }
+    },
+    {
+      "Population": "patients with (not locally treatable) HCC",
+      "Intervention": "Medicine X (under assessment)",
+      "Comparator": "atezolizumab with bevacizumab",
+      "Countries": [
+        "NL"
+      ],
+      "Source_Types": [
+        "clinical_guideline"
+      ],
+      "Source_Refs": [],
+      "Occurrence_Count": 1,
+      "Grouping_Key": {
+        "population": "patients with (not locally treatable) HCC",
+        "intervention": "Medicine X (under assessment)",
+        "comparator": "atezolizumab with bevacizumab"
+      }
+    },
+    {
+      "Population": "patients with (not locally treatable) HCC",
+      "Intervention": "Medicine X (under assessment)",
+      "Comparator": "sorafenib",
+      "Countries": [
+        "NL"
+      ],
+      "Source_Types": [
+        "clinical_guideline"
+      ],
+      "Source_Refs": [],
+      "Occurrence_Count": 1,
+      "Grouping_Key": {
+        "population": "patients with (not locally treatable) HCC",
+        "intervention": "Medicine X (under assessment)",
+        "comparator": "sorafenib"
+      }
+    },
+    {
+      "Population": "patients with (not locally treatable) HCC",
+      "Intervention": "Medicine X (under assessment)",
+      "Comparator": "transarterial radioembolization (TARE)",
+      "Countries": [
+        "NL"
+      ],
+      "Source_Types": [
+        "clinical_guideline"
+      ],
+      "Source_Refs": [],
+      "Occurrence_Count": 1,
+      "Grouping_Key": {
+        "population": "patients with (not locally treatable) HCC",
+        "intervention": "Medicine X (under assessment)",
+        "comparator": "transarterial radioembolization (TARE)"
+      }
+    },
+    {
+      "Population": "patients with non-surgical hepatocellular carcinoma in good general condition and with good liver function (Child and Pugha Class A)",
+      "Intervention": "Medicine X (under assessment)",
+      "Comparator": "combination of bevacizumab and atezolizumab",
+      "Countries": [
+        "PO"
+      ],
+      "Source_Types": [
+        "clinical_guideline"
+      ],
+      "Source_Refs": [],
+      "Occurrence_Count": 1,
+      "Grouping_Key": {
+        "population": "patients with non-surgical hepatocellular carcinoma in good general condition and with good liver function (Child and Pugha Class A)",
+        "intervention": "Medicine X (under assessment)",
+        "comparator": "combination of bevacizumab and atezolizumab"
+      }
+    },
+    {
+      "Population": "patients previously treated with Sorafenib with AFP ≥ 400 ng/ ml",
+      "Intervention": "Medicine X (under assessment)",
+      "Comparator": "ramucyrumab",
+      "Countries": [
+        "PO"
+      ],
+      "Source_Types": [
+        "clinical_guideline"
+      ],
+      "Source_Refs": [],
+      "Occurrence_Count": 1,
+      "Grouping_Key": {
+        "population": "patients previously treated with Sorafenib with AFP ≥ 400 ng/ ml",
+        "intervention": "Medicine X (under assessment)",
+        "comparator": "ramucyrumab"
+      }
+    },
+    {
+      "Population": "patients who are well tolerant of sorafenib",
+      "Intervention": "Medicine X (under assessment)",
+      "Comparator": "regorafenib",
+      "Countries": [
+        "PO"
+      ],
+      "Source_Types": [
+        "clinical_guideline"
+      ],
+      "Source_Refs": [],
+      "Occurrence_Count": 1,
+      "Grouping_Key": {
+        "population": "patients who are well tolerant of sorafenib",
+        "intervention": "Medicine X (under assessment)",
+        "comparator": "regorafenib"
+      }
+    },
+    {
+      "Population": "second-line patients who have previously received bevacizumab with atezolizumab",
+      "Intervention": "Medicine X (under assessment)",
+      "Comparator": "sorafenib",
+      "Countries": [
+        "PO"
+      ],
+      "Source_Types": [
+        "clinical_guideline"
+      ],
+      "Source_Refs": [],
+      "Occurrence_Count": 1,
+      "Grouping_Key": {
+        "population": "second-line patients who have previously received bevacizumab with atezolizumab",
+        "intervention": "Medicine X (under assessment)",
+        "comparator": "sorafenib"
+      }
+    },
+    {
+      "Population": "second-line patients who have previously received bevacizumab with atezolizumab",
+      "Intervention": "Medicine X (under assessment)",
+      "Comparator": "leninivat",
+      "Countries": [
+        "PO"
+      ],
+      "Source_Types": [
+        "clinical_guideline"
+      ],
+      "Source_Refs": [],
+      "Occurrence_Count": 1,
+      "Grouping_Key": {
+        "population": "second-line patients who have previously received bevacizumab with atezolizumab",
+        "intervention": "Medicine X (under assessment)",
+        "comparator": "leninivat"
+      }
+    },
+    {
+      "Population": "second-line patients who have previously received bevacizumab with atezolizumab",
+      "Intervention": "Medicine X (under assessment)",
+      "Comparator": "cabozantinib",
+      "Countries": [
+        "PO"
+      ],
+      "Source_Types": [
+        "clinical_guideline"
+      ],
+      "Source_Refs": [],
+      "Occurrence_Count": 1,
+      "Grouping_Key": {
+        "population": "second-line patients who have previously received bevacizumab with atezolizumab",
+        "intervention": "Medicine X (under assessment)",
+        "comparator": "cabozantinib"
+      }
+    },
+    {
+      "Population": "patients with advanced HCC",
+      "Intervention": "Medicine X (under assessment)",
+      "Comparator": "systemic oncological treatment",
+      "Countries": [
+        "SE"
+      ],
+      "Source_Types": [
+        "clinical_guideline"
+      ],
+      "Source_Refs": [],
+      "Occurrence_Count": 1,
+      "Grouping_Key": {
+        "population": "patients with advanced HCC",
+        "intervention": "Medicine X (under assessment)",
+        "comparator": "systemic oncological treatment"
+      }
+    }
+  ]
+}

@@ -692,7 +692,7 @@ CONSOLIDATION_CONFIGS = {
 # Simulation configurations
 # --------------------------------
 SIMULATION_CONFIGS = {
-    "sim1": {
+    "base": {
         "name": "Base",
         "description": "Tests impact of larger contextual windows",
         "retrieval_params": {
@@ -711,7 +711,7 @@ SIMULATION_CONFIGS = {
             "max_chunk_size": 1500
         }
     },
-    "sim2": {
+    "sim1": {
         "name": "Lower Temperature",
         "description": "Tests impact of lower temperature (0.01) for more deterministic extraction",
         "retrieval_params": {
@@ -730,7 +730,7 @@ SIMULATION_CONFIGS = {
             "max_chunk_size": 1500
         }
     },
-    "sim3": {
+    "sim2": {
         "name": "Higher Temperature",
         "description": "Tests impact of higher temperature (0.3) for more varied extraction",
         "retrieval_params": {
@@ -749,7 +749,7 @@ SIMULATION_CONFIGS = {
             "max_chunk_size": 1500
         }
     },
-    "sim4": {
+    "sim3": {
         "name": "Reduced Retrieval",
         "description": "Tests impact of reduced retrieval parameters",
         "retrieval_params": {
@@ -768,7 +768,7 @@ SIMULATION_CONFIGS = {
             "max_chunk_size": 1500
         }
     },
-    "sim5": {
+    "sim4": {
         "name": "Reduced Retrieval (Replicate)",
         "description": "Replicates sim4 to test consistency with reduced retrieval parameters",
         "retrieval_params": {
@@ -787,9 +787,28 @@ SIMULATION_CONFIGS = {
             "max_chunk_size": 1500
         }
     },
+    "sim5": {
+        "name": "Fine grained Chunks",
+        "description": "Tests impact of larger contextual windows",
+        "retrieval_params": {
+            "hta_submission": {
+                "population_comparator": {"initial_k": 60, "final_k": 15},
+                "outcomes": {"initial_k": 60, "final_k": 15}
+            },
+            "clinical_guideline": {
+                "population_comparator": {"initial_k": 50, "final_k": 12},
+                "outcomes": {"initial_k": 60, "final_k": 12}
+            }
+        },
+        "extraction_temperature": 0.1,
+        "chunk_params": {
+            "min_chunk_size": 400,
+            "max_chunk_size": 1000
+        }
+    },
     "sim6": {
-        "name": "Larger Chunks",
-        "description": "Tests impact of larger chunk sizes",
+        "name": "Comprehensive Chunks",
+        "description": "Tests impact of larger contextual windows",
         "retrieval_params": {
             "hta_submission": {
                 "population_comparator": {"initial_k": 60, "final_k": 15},
@@ -804,25 +823,6 @@ SIMULATION_CONFIGS = {
         "chunk_params": {
             "min_chunk_size": 800,
             "max_chunk_size": 2000
-        }
-    },
-    "sim7": {
-        "name": "Base Chunks (Replicate)",
-        "description": "Replicates baseline chunk parameters for control comparison",
-        "retrieval_params": {
-            "hta_submission": {
-                "population_comparator": {"initial_k": 60, "final_k": 15},
-                "outcomes": {"initial_k": 60, "final_k": 15}
-            },
-            "clinical_guideline": {
-                "population_comparator": {"initial_k": 50, "final_k": 12},
-                "outcomes": {"initial_k": 60, "final_k": 12}
-            }
-        },
-        "extraction_temperature": 0.1,
-        "chunk_params": {
-            "min_chunk_size": 600,
-            "max_chunk_size": 1500
         }
     }
 }

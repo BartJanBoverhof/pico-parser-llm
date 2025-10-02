@@ -1,0 +1,1993 @@
+{
+  "retrieval_metadata": {
+    "timestamp": "2025-10-02T14:48:54.217802",
+    "source_type": "clinical_guideline",
+    "retrieval_type": "outcomes",
+    "query": "Find treatment recommendations with outcome information relevant to: treatment of patients with advanced or unresectable hepatocellular carcinoma.\n        Prefer content that describes:\n        - Expected clinical benefits and efficacy outcomes\n        - Safety considerations and adverse event profiles\n        - Quality of life impacts and patient-reported outcomes (including any specific instruments like EORTC QLQ, EQ-5D, SF-36)\n        - Evidence strength/level and recommendation grades if provided\n        - Response rates and survival outcomes\n        - Exploratory or additional endpoints (e.g. time to next treatment/PFS2, progression of brain metastases, time to deterioration) if reported\n        Focus on outcome expectations and evidence quality assessments.",
+    "indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
+    "total_countries": 14,
+    "total_chunks": 88
+  },
+  "results_by_country": {
+    "AT": {
+      "country_metadata": {
+        "country_code": "AT",
+        "chunk_count": 8,
+        "total_text_length": 9250,
+        "unique_documents": 1,
+        "unique_headings": 5
+      },
+      "chunks": [
+        {
+          "text": "**Heading:** Strong consensus on oncology. Hepatocellular carcinoma and biliary carcinomas. Long version - 4.0 August 2023 This is a list of all known human cancers. **Source Type:** clinical_guideline\n\nTable 20: Prospective randomised controlled trials in patients with HCC with evidence of a survival benefit from TACE versus supportive therapy (BSC), Table 21: Comparative studies of conventional TACE and supportative therapy, Table 22: Results of conventions TACE in portal vein infiltration HCC at defined levels, Table 23: Results from prospective randomized controlled studies 3.4 Ope recommendation level o erative report of evidepro Comparative studies between conventional TACE and DEB TACE in HCC Transarterial radio-embolization (TARE) is the most commonly used method of radiation therapy. This one.",
+          "metadata": {
+            "heading": "Strong consensus on oncology. Hepatocellular carcinoma and biliary carcinomas. Long version - 4.0 August 2023 This is a list of all known human cancers.",
+            "doc_id": "LL_Hepatozelluläres_Karzinom_und_biliäre_Karzinome_Langversion_4.0",
+            "country": "AT",
+            "source_type": "clinical_guideline",
+            "start_page": 82,
+            "end_page": 85,
+            "created_date": "2023",
+            "folder_path": "clinical guidelines/AT",
+            "split_index": 5,
+            "text_length": 813,
+            "potential_comparators": [
+              "Hepatocellular",
+              "Long"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** In patients at risk of HBV infection or cirrhosis and as a marker of tumour relapse after therapy [83], [84], [85], [86]. **Source Type:** clinical_guideline\n\nfacilitate the selection of patients suitable for surgical resection or liver transplantation [129], [130]. In the treatment of hepatocellular carcinoma consensus-based recommendation The staging of an HCC should include a contrast-enhanced scan. If the contrast-augmented MRI of the entire abdomen is to be supplemented only by a native CT-thorax Consensus ogram Oncology  Hepatocell carcinomas and biliary cancer of the HCC that assess a critical rzinoma (HCC).  Diagnostically examined 2023 CT tests of the thorax and abdomen  Long-term evidence-based testing  Version 4.0  August 2023 3.3 Imaging imaging diagnostic diagnostic algorithm  Malignancy suspected heart images should be clarified in a more immediate manner  They should also be diagnosed with a suspicious HCC-like CT scan.  Patients should be monitored for their risk of developing cardiomyopathy (required at diagnosis stage 1  July 2023  Levels of liver cancer  Hepatitis C  Carcinoma  B13  Cancer  Stage 3  High-levelspecification  Recommendation for the development of a biomarker-based diagnostic diagnostic protocol  Targeted therapeually controlled clinical and diagnostic screening of patients should be established in accordance with the latest available evidence. The advantages of CEUS are its rapid availability and the absence of contraindications (no nephrotoxicity, no restriction in thyroid dysfunction, fewer KM allergic reactions).",
+          "metadata": {
+            "heading": "In patients at risk of HBV infection or cirrhosis and as a marker of tumour relapse after therapy [83], [84], [85], [86].",
+            "doc_id": "LL_Hepatozelluläres_Karzinom_und_biliäre_Karzinome_Langversion_4.0",
+            "country": "AT",
+            "source_type": "clinical_guideline",
+            "start_page": 46,
+            "end_page": 57,
+            "created_date": "2023",
+            "folder_path": "clinical guidelines/AT",
+            "split_index": 14,
+            "text_length": 1606,
+            "potential_comparators": [
+              "If"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Strong consensus on oncology. Hepatocellular carcinoma and biliary carcinomas. Long version - 4.0 August 2023 This is a list of all known human cancers. **Source Type:** clinical_guideline\n\nTACE is a possible treatment option for patients who, after adequate information, do not want other treatment options. Retrospective analyses have shown that TACE outcomes in terms of overall survival and progression-free survival can be improved by further differentiating the indication within the criteria of BC BLC stage. In particular, the size and number of tumour cores and the severity of the dysfunction are of minor importance. The vascularisation of the tumour core plays an important role in the outcome of TACE. Pseudoencapsulation suggests better outcomes than in poorly vascularized and diffuse arterially supplied tumours. Tumor sites at the 'water gap' between arterial supply territories also present increased demands on the interventional treatment technique. This involves high quality intraprocedural imaging, possibly including cone beam CT under arterial perfusion to clarify selective vascularisation. The greater the selectivity of transarterial therapy and the more pronounced and comprehensive the devascularizing effect of the embolization measures, the better the efficacy of TACE and the lesser the side-effect.",
+          "metadata": {
+            "heading": "Strong consensus on oncology. Hepatocellular carcinoma and biliary carcinomas. Long version - 4.0 August 2023 This is a list of all known human cancers.",
+            "doc_id": "LL_Hepatozelluläres_Karzinom_und_biliäre_Karzinome_Langversion_4.0",
+            "country": "AT",
+            "source_type": "clinical_guideline",
+            "start_page": 82,
+            "end_page": 85,
+            "created_date": "2023",
+            "folder_path": "clinical guidelines/AT",
+            "split_index": 1,
+            "text_length": 1345,
+            "potential_comparators": [
+              "Pseudoencapsulation",
+              "Retrospective",
+              "Tumor",
+              "Hepatocellular",
+              "Long"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Table 3: Experts involved **Source Type:** clinical_guideline\n\noutcomes progressive primary disease sclerosis  primary biliary cirrhosis  preoperative biliary drainage  periodic cholangiocarcinoma progressive illness  photodynamical treatment  endoscopial gastroscopy  ethanoinjection ethanoinjecting  positrons emission-tomography  progression free survival  comparative population intervention  remisons partial partial and partial withdrawn partial response  radiotherapeutic disease  non-induceduced cardiac syndrome  radioactive cancer  neurotoxicity  disease Self-expanding metallic grids Spanish Society of Medical Oncology Subjective Global Assessment Social Code Standardized incidence rate selective internal radiotherapy Systematic review ongoing vaccination commission of the Rober Substained Virological Response Transarterial chemoembolisation Transartery embolism Transarteral radioembolism System for classification of the anatomical tumor (T), regional lymph node Time to deterioration Time to progression of the tumor oncology Hepatocellular carcinoma dorsal tumor rt-Koch Institute for mixed expanse ten (N) and distant m and biliary cancer it n metastatic malignancies e gner T (Mng Tumour) M - 4 or sion Prion with a",
+          "metadata": {
+            "heading": "Table 3: Experts involved",
+            "doc_id": "LL_Hepatozelluläres_Karzinom_und_biliäre_Karzinome_Langversion_4.0",
+            "country": "AT",
+            "source_type": "clinical_guideline",
+            "start_page": 15,
+            "end_page": 29,
+            "created_date": "2023",
+            "folder_path": "clinical guidelines/AT",
+            "split_index": "4_1_0",
+            "text_length": 1265,
+            "potential_comparators": []
+          }
+        },
+        {
+          "text": "**Heading:** Table 13: Indicators of quality **Source Type:** clinical_guideline\n\n© Guidance Programme on oncology  Hepatocellular carcinomas and biliary carcinomes Evidence Informed rcinoma La  Understanding of treatment / follow-up - 4.0  August 2023 6.1 Literature Reference Table Agop Ashoo Beal Fica Boteo Casca Finken first literature reviews Chapter e 14: Literature review - Part of the study included Retro 360 retrospective 36 retro 178 on retro 57 retro elective 11 retro 174 on retroperitoneal drop-in program 3.4 Surgical bridging of interstitial arterial arteries TAFA + TACEL TAFA 10 TACET No m- Increased incidence of intraoperative complications after TACE with no effect on mortality/ morbidity Acceptable OS for HCC outside of Milan criteria, within half UptosevenCriteria according to LRT Neoadj. LRT with good OS/DFS in HCC-PtrotroPtroCLC at intermediate stage 4.0 - 4.3 Aug 2023 6.1 Reference Literature Gabriele Habib Lihi Nicoli Luigi Sandour speculates over the reticulocyte count in the rectum with no association with worse outcome",
+          "metadata": {
+            "heading": "Table 13: Indicators of quality",
+            "doc_id": "LL_Hepatozelluläres_Karzinom_und_biliäre_Karzinome_Langversion_4.0",
+            "country": "AT",
+            "source_type": "clinical_guideline",
+            "start_page": 165,
+            "end_page": 170,
+            "created_date": "2023",
+            "folder_path": "clinical guidelines/AT",
+            "split_index": 2,
+            "text_length": 1061,
+            "potential_comparators": [
+              "LRT"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Major changes in the guideline on the diagnosis and treatment of hepatocellular carcinoma **Source Type:** clinical_guideline\n\n• Treatment should be evaluated as a combination of systemic therapy and long-term therapy. • Intraclinical and complementary therapies: Athexavalent therapy is recommended as a last resort. o Due to the good response rates to systemic therapy, especially the combination therapies, secondary resectability should also be considered primarily as non-curative tumours. o Immunotherapy in the Child-B situation can now be recommended following systematic research, and if no approved therapy options are available and no immunotherapy has been done so far, an immune therapy can be recommended. o As part of this update, a new systemic study of immune therapy in HCC/ ACCA was recommended and no systemic recommendation could be made on the basis of this recommendation for the absence of systemic inflammation from mixed systemic HCCA. On the basis of this systematic research, no recommendation could be made due to the lack of available studies.",
+          "metadata": {
+            "heading": "Major changes in the guideline on the diagnosis and treatment of hepatocellular carcinoma",
+            "doc_id": "LL_Hepatozelluläres_Karzinom_und_biliäre_Karzinome_Langversion_4.0",
+            "country": "AT",
+            "source_type": "clinical_guideline",
+            "start_page": 2,
+            "end_page": 3,
+            "created_date": "2023",
+            "folder_path": "clinical guidelines/AT",
+            "split_index": 1,
+            "text_length": 1086,
+            "potential_comparators": []
+          }
+        },
+        {
+          "text": "**Heading:** Strong consensus on oncology. Hepatocellular carcinoma and biliary carcinomas. Long version - 4.0 August 2023 This is a list of all known human cancers. **Source Type:** clinical_guideline\n\nThe approval of pemigatinib is based on the single-arm Phase II study FIGHT-202 [763]; as the primary endpoint, 40 out of 108 patients (37%) responded to tumour therapy, including 36 patients with partial and 4 patients with complete remission [762]. These additional studies highlight the importance of the FGFR2 signalling pathway for a subset of cholangiocarcinomas with FGfr2 fusion or rearrangement (see also background to Recommendation 4.46). Due to the good response rates, a strong recommendation was made here at a Level of Evidence 3. In addition to the abovementioned studies, numerous other clinical data from the first group of substances have been obtained for futibatinib. In addition to fusion genes,",
+          "metadata": {
+            "heading": "Strong consensus on oncology. Hepatocellular carcinoma and biliary carcinomas. Long version - 4.0 August 2023 This is a list of all known human cancers.",
+            "doc_id": "LL_Hepatozelluläres_Karzinom_und_biliäre_Karzinome_Langversion_4.0",
+            "country": "AT",
+            "source_type": "clinical_guideline",
+            "start_page": 161,
+            "end_page": 162,
+            "created_date": "2023",
+            "folder_path": "clinical guidelines/AT",
+            "split_index": "0_0_0",
+            "text_length": 920,
+            "potential_comparators": [
+              "Due",
+              "These",
+              "futibatinib",
+              "pemigatinib",
+              "Hepatocellular",
+              "Long"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Strong consensus on oncology. Hepatocellular carcinoma and biliary carcinomas. Long version - 4.0 August 2023 This is a list of all known human cancers. **Source Type:** clinical_guideline\n\nIn the randomised Phase III study ABC-06, a modified FOLFOX regimen was compared to symptom-oriented therapy alone, and a moderate improvement in overall median survival from 5.3 months to 6.2 months with mother-to-child therapy was achieved (FOFOH: 0.69; CI: 0.5097; p=0.032) [77]. The primary endpoint of survival at 6 months was 54% for mFOLFOX and 44% for mLFOLFIRI, the difference was not statistically significant [778].The combination of irinotecan and capecitabine resulted in a prolongation of mOS (10.1 vs 7.3 months) at a 9-month survival rate of 60.9% vs 32% [779] in a randomized Phase II study from China of 60 patients after progression on gemcitabine and cisplatin compared to irinotecin monotherapy in a nine-month study from South Korea of 59 patients in each arm.These results were confirmed by the NIFTY study in South Korea in 178 patients. However, these results could not be confirmed in the NALIRICC study conducted in Germany.",
+          "metadata": {
+            "heading": "Strong consensus on oncology. Hepatocellular carcinoma and biliary carcinomas. Long version - 4.0 August 2023 This is a list of all known human cancers.",
+            "doc_id": "LL_Hepatozelluläres_Karzinom_und_biliäre_Karzinome_Langversion_4.0",
+            "country": "AT",
+            "source_type": "clinical_guideline",
+            "start_page": 163,
+            "end_page": 164,
+            "created_date": "2023",
+            "folder_path": "clinical guidelines/AT",
+            "split_index": 0,
+            "text_length": 1154,
+            "potential_comparators": [
+              "However",
+              "Hepatocellular",
+              "Long"
+            ]
+          }
+        }
+      ]
+    },
+    "BE": {
+      "country_metadata": {
+        "country_code": "BE",
+        "chunk_count": 8,
+        "total_text_length": 7992,
+        "unique_documents": 1,
+        "unique_headings": 5
+      },
+      "chunks": [
+        {
+          "text": "**Heading:** 10. Arterial chemoembolization, chemotherapy **Source Type:** clinical_guideline\n\nThere is no available evidence (69) to withhold or to give other palliative interventions and therefore the following interventions should only be offered to the\npatients in the context of well-designed clinical trials:\n– Systemic chemotherapy has been studied in 9\nRCTs (45). The best single agents are doxorubicin and\ncisplatin,with partial responses in 5-15% of cases. Only\n2studies had a no-treatment arm,but showed no survival benefit. – A small RCT of subcutaneous octreotide therapy has suggested a survival benefit in HCC. However, a\nsubsequent study of 70 patients treated with long acting octreotide showed no benefit. • Chemoembolization (with doxorubicin or cisplatin)\nprolongs life in a subset of patients (preserved liver function) with unresectable HCC in controlled clinical trials . • Hormonal therapy with tamoxifen has shown no survival benefit in controlled trials and is not recom-\nmended.",
+          "metadata": {
+            "heading": "10. Arterial chemoembolization, chemotherapy",
+            "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+            "country": "BE",
+            "source_type": "clinical_guideline",
+            "start_page": 8,
+            "end_page": 8,
+            "created_date": "1993",
+            "folder_path": "clinical guidelines/BE",
+            "split_index": 2,
+            "text_length": 1005,
+            "potential_comparators": [
+              "Only",
+              "Arterial",
+              "However"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** 10. Arterial chemoembolization, chemotherapy **Source Type:** clinical_guideline\n\n27%). There was\na significant benefit of chemoembolization with cisplatin or doxorubicin but none with embolization alone. Overall, treatment induced objective responses in 35% of patients (range,16%-61%). The side effects of this chemoembolization procedures include those of the chemotherapeutic agent and the complications of arterial embolization (liver failure,\npain,fever). Serious complications arise in up to 5% of\npatients and there are no studies evaluating quality of life. Portal vein thrombosis is a contra-indication for\nembolization. Patients with well-preserved liver function (Child-Pugh A) and multinodular HCC without vas-\ncular invasion or extrahepatic spread,seem the best target population. – Tamoxifen showed no antitumoral effect and no effect on survival,and only low-quality trials suggested\n1-year improvement in survival.",
+          "metadata": {
+            "heading": "10. Arterial chemoembolization, chemotherapy",
+            "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+            "country": "BE",
+            "source_type": "clinical_guideline",
+            "start_page": 8,
+            "end_page": 8,
+            "created_date": "1993",
+            "folder_path": "clinical guidelines/BE",
+            "split_index": 1,
+            "text_length": 944,
+            "potential_comparators": [
+              "Patients",
+              "Arterial",
+              "Serious",
+              "Portal",
+              "Overall",
+              "There"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** probably the treatment of choice during the waiting list **Source Type:** clinical_guideline\n\n12. Treatment of early hepatocellular carcino- ma in patients on the waiting list for liver trans- plantation Liver transplantation is the therapy of choice for cir- rhotic patients with early hepatocellular carcinoma (HCC). The optimal candidates for liver transplantation (single nodule < 5 cm or up to 3 nodules < 3 cm) achieve a 70% 5-year survival rate, with recurrence rate below 15% (59). The prognosis after transplantation is there- fore the same as for a similar underlying disease without HCC. However,these excellent results were obtained at a time when the average waiting time for liver trans- plantation was less than 6 months. But the tumour dou- bling time in asymptomatic HCC less than 5 cm was estimated to be around 4 months (71). Therefore, the delay between diagnosis and transplantation can allow the tumour to grow to stages that contraindicate trans- plantation.",
+          "metadata": {
+            "heading": "probably the treatment of choice during the waiting list",
+            "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+            "country": "BE",
+            "source_type": "clinical_guideline",
+            "start_page": 9,
+            "end_page": 9,
+            "created_date": "1993",
+            "folder_path": "clinical guidelines/BE",
+            "split_index": 1,
+            "text_length": 994,
+            "potential_comparators": [
+              "Therefore",
+              "However,these",
+              "But",
+              "Treatment"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** 2. Epidemiology **Source Type:** clinical_guideline\n\nTreatment with interferon\n3.2.1.1.1. Noncirrhotics\nIn patients with chronic hepatitis B, clearance of the\nHBeAg after treatment with interferon-alpha is associated with improved clinical outcome in terms of survival and development of complications of cirrhosis (7). Another study confirmed these results and showed a reduction of HCC in the responders (8). As most of these\npatients were noncirrhotics at entry of the study,the prophylactic effect of interferon on development of HCC can be explained by prevention of cirrhosis development. 3.2.1.1.2. Cirrhotics\nSeveral studies have investigated the effect of interferon treatment on development of HCC in patients with already established cirrhosis. A meta-analysis was performed on these studies (9). Interferon seemingly\ndecreased the rate of HCC in all trials,while significant difference was observed in 2 studies. Virologic response\nwas strongly associated with reduced risk for HCC in some studies,indicating that arrest of viral replication is\na critical factor. Subgroup analysis in relation to ethnic\norigin of patients (European, Oriental) showed no preventive effect of interferon on the development of HCC in the European patients. It should be noted that the\nstudies are very heterogeneous and that none of them were randomised controlled trials, so that the results\nshould be interpreted with caution.",
+          "metadata": {
+            "heading": "2. Epidemiology",
+            "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+            "country": "BE",
+            "source_type": "clinical_guideline",
+            "start_page": 1,
+            "end_page": 3,
+            "created_date": "1993",
+            "folder_path": "clinical guidelines/BE",
+            "split_index": 3,
+            "text_length": 1434,
+            "potential_comparators": [
+              "Cirrhotics",
+              "Virologic",
+              "It",
+              "As",
+              "Noncirrhotics",
+              "Subgroup",
+              "Another",
+              "Epidemiology",
+              "Interferon"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** 6. The risk of needle tract seeding after liver **Source Type:** clinical_guideline\n\nsis. It is also of use in the evaluation of treatment results. biopsy from HCC\nIn oncology, the prognosis of patients with solid tumours is solely related to tumour stage. HCC consti-\nThe puncture of a hepatocellular carcinoma,either in tutes a particular neoplasm. The cirrhosis that is present\nthe context of a diagnostic procedure or a therapeutic in most cases determines the applicability and efficacy\nintervention (e.g. percutaneous radiofrequency ablation\nof treatment and hence has an important influence on\n(RFA) or ethanol injection (PEI)), carries a substantial prognosis. risk of needle tract seeding. The incidence of needle\nAccording to the EASL panel of experts (43), progtract seeding was 1.6% in 122 patients who had ultra-\nnosis of HCC is determined by the tumour stage, the sound guided diagnostic biopsy in a HCC before they\ngeneral health of the patient, the liver function of the underwent surgery (46). Needle tract seeding was\npatient and the treatment efficacy.",
+          "metadata": {
+            "heading": "6. The risk of needle tract seeding after liver",
+            "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+            "country": "BE",
+            "source_type": "clinical_guideline",
+            "start_page": 5,
+            "end_page": 6,
+            "created_date": "1993",
+            "folder_path": "clinical guidelines/BE",
+            "split_index": 0,
+            "text_length": 1084,
+            "potential_comparators": [
+              "It",
+              "Needle",
+              "HCC"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** probably the treatment of choice during the waiting list **Source Type:** clinical_guideline\n\nTable Title: probably the treatment of choice during the waiting list\nTable contains the following columns: BASLguidelines 9, Column_2, Column_3\nBASLguidelines 9: benefit in survival. A larger trial comparing arterial chemoembolization and radioactive Iodine 131 treat- ment did not show any difference in survival between the two groups. However,side effects were significantly lower in the group receiving radioactive Iodine 131treatment. Radioactive Iodine 131 treatment was also used in a adjuvant setting in patients resected for HCC without detectable residual disease. A longer delay of recurrence was observed in the treated group (70). Recommendations The use of radioactive Iodine 131 treatment can be used as an alternative for chemoembolization.",
+          "metadata": {
+            "heading": "probably the treatment of choice during the waiting list",
+            "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+            "country": "BE",
+            "source_type": "clinical_guideline",
+            "start_page": 9,
+            "end_page": 9,
+            "created_date": "1993",
+            "folder_path": "clinical guidelines/BE",
+            "split_index": 0,
+            "text_length": 864,
+            "potential_comparators": [
+              "Recommendations",
+              "However,side",
+              "Radioactive"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** 605. and treatment. Gastroenterology,2002,122:1609-19. **Source Type:** clinical_guideline\n\nAnticancer Research,2001,21: 2979-2982. 37.ZOLI M., MAGALOTTI D., GUELLI C., MARCHESINI G., PISI E. Efficiency of a surveillance program for early detection of hepatocellular carcinoma. Cancer,1996,78:977-985. 38.COLOMBO M.,DE FRANCHIS R.,DEL NINNO E.,SANGIOVANNI A., DE FAZIO C.,TOMMASINI M.,DONATO F.,PIVA A.,DI CARLO V., DIOGUARDI N. Hepatocellular carcinoma in Italian patients with cirrhosis. N. Engl. J. Med.,1991,325:6. 39.PATERON D., GANNE N., TRINCHET J-C., AUROUSSEAU M-H., MALF.,MEICLER C.,CODERC E.,REBOULLET P.,BEAUGRAND M. Prospective study of screening for hepatocellular carcinoma in Caucasian patients with cirrhosis. J.",
+          "metadata": {
+            "heading": "605. and treatment. Gastroenterology,2002,122:1609-19.",
+            "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+            "country": "BE",
+            "source_type": "clinical_guideline",
+            "start_page": 11,
+            "end_page": 11,
+            "created_date": "1993",
+            "folder_path": "clinical guidelines/BE",
+            "split_index": 3,
+            "text_length": 742,
+            "potential_comparators": [
+              "Cancer,1996,78:977-985",
+              "Engl",
+              "Efficiency",
+              "Med.,1991,325:6",
+              "Prospective",
+              "Hepatocellular",
+              "Gastroenterology,2002,122:1609-19"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** 10. Arterial chemoembolization, chemotherapy **Source Type:** clinical_guideline\n\nand hormonal therapy\nMost patients with HCC are diagnosed at advanced stages. There is no standard treatment for patients with\nunresectable HCC, despite the availability of many prospective trials during the last 25 years. Therapies\ninclude single interventions or combinations of systemic chemotherapy, intra-arterial chemotherapy, arterial\ndevascularization (embolization) and hormonal manipulation (tamoxifen,octreotide). Llovet et al. (69) recently reviewed 61 small RCTs\ndealing with primary treatment of HCC and could per-\nform a reliable meta-analysis for only two types of intervention: embolization/chemoembolization (7 trials,\n545 patients) and tamoxifen (7 trials, 898 patients). From their meta-analysis,they concluded the following:\n– Arterial chemoembolization improved 2-year survival compared with control (41% vs.",
+          "metadata": {
+            "heading": "10. Arterial chemoembolization, chemotherapy",
+            "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+            "country": "BE",
+            "source_type": "clinical_guideline",
+            "start_page": 8,
+            "end_page": 8,
+            "created_date": "1993",
+            "folder_path": "clinical guidelines/BE",
+            "split_index": 0,
+            "text_length": 925,
+            "potential_comparators": [
+              "Therapies",
+              "Arterial",
+              "Llovet",
+              "There"
+            ]
+          }
+        }
+      ]
+    },
+    "CZ": {
+      "country_metadata": {
+        "country_code": "CZ",
+        "chunk_count": 0,
+        "total_text_length": 0,
+        "unique_documents": 0,
+        "unique_headings": 0
+      },
+      "chunks": []
+    },
+    "DE": {
+      "country_metadata": {
+        "country_code": "DE",
+        "chunk_count": 8,
+        "total_text_length": 9250,
+        "unique_documents": 1,
+        "unique_headings": 5
+      },
+      "chunks": [
+        {
+          "text": "**Heading:** Strong consensus on oncology. Hepatocellular carcinoma and biliary carcinomas. Long version - 4.0 August 2023 This is a list of all known human cancers. **Source Type:** clinical_guideline\n\nTable 20: Prospective randomised controlled trials in patients with HCC with evidence of a survival benefit from TACE versus supportive therapy (BSC), Table 21: Comparative studies of conventional TACE and supportative therapy, Table 22: Results of conventions TACE in portal vein infiltration HCC at defined levels, Table 23: Results from prospective randomized controlled studies 3.4 Ope recommendation level o erative report of evidepro Comparative studies between conventional TACE and DEB TACE in HCC Transarterial radio-embolization (TARE) is the most commonly used method of radiation therapy. This one.",
+          "metadata": {
+            "heading": "Strong consensus on oncology. Hepatocellular carcinoma and biliary carcinomas. Long version - 4.0 August 2023 This is a list of all known human cancers.",
+            "doc_id": "LL_Hepatozelluläres_Karzinom_und_biliäre_Karzinome_Langversion_4.0",
+            "country": "DE",
+            "source_type": "clinical_guideline",
+            "start_page": 82,
+            "end_page": 85,
+            "created_date": "2023",
+            "folder_path": "clinical guidelines/DE",
+            "split_index": 5,
+            "text_length": 813,
+            "potential_comparators": [
+              "Hepatocellular",
+              "Long"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** In patients at risk of HBV infection or cirrhosis and as a marker of tumour relapse after therapy [83], [84], [85], [86]. **Source Type:** clinical_guideline\n\nfacilitate the selection of patients suitable for surgical resection or liver transplantation [129], [130]. In the treatment of hepatocellular carcinoma consensus-based recommendation The staging of an HCC should include a contrast-enhanced scan. If the contrast-augmented MRI of the entire abdomen is to be supplemented only by a native CT-thorax Consensus ogram Oncology  Hepatocell carcinomas and biliary cancer of the HCC that assess a critical rzinoma (HCC).  Diagnostically examined 2023 CT tests of the thorax and abdomen  Long-term evidence-based testing  Version 4.0  August 2023 3.3 Imaging imaging diagnostic diagnostic algorithm  Malignancy suspected heart images should be clarified in a more immediate manner  They should also be diagnosed with a suspicious HCC-like CT scan.  Patients should be monitored for their risk of developing cardiomyopathy (required at diagnosis stage 1  July 2023  Levels of liver cancer  Hepatitis C  Carcinoma  B13  Cancer  Stage 3  High-levelspecification  Recommendation for the development of a biomarker-based diagnostic diagnostic protocol  Targeted therapeually controlled clinical and diagnostic screening of patients should be established in accordance with the latest available evidence. The advantages of CEUS are its rapid availability and the absence of contraindications (no nephrotoxicity, no restriction in thyroid dysfunction, fewer KM allergic reactions).",
+          "metadata": {
+            "heading": "In patients at risk of HBV infection or cirrhosis and as a marker of tumour relapse after therapy [83], [84], [85], [86].",
+            "doc_id": "LL_Hepatozelluläres_Karzinom_und_biliäre_Karzinome_Langversion_4.0",
+            "country": "DE",
+            "source_type": "clinical_guideline",
+            "start_page": 46,
+            "end_page": 57,
+            "created_date": "2023",
+            "folder_path": "clinical guidelines/DE",
+            "split_index": 14,
+            "text_length": 1606,
+            "potential_comparators": [
+              "If"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Strong consensus on oncology. Hepatocellular carcinoma and biliary carcinomas. Long version - 4.0 August 2023 This is a list of all known human cancers. **Source Type:** clinical_guideline\n\nTACE is a possible treatment option for patients who, after adequate information, do not want other treatment options. Retrospective analyses have shown that TACE outcomes in terms of overall survival and progression-free survival can be improved by further differentiating the indication within the criteria of BC BLC stage. In particular, the size and number of tumour cores and the severity of the dysfunction are of minor importance. The vascularisation of the tumour core plays an important role in the outcome of TACE. Pseudoencapsulation suggests better outcomes than in poorly vascularized and diffuse arterially supplied tumours. Tumor sites at the 'water gap' between arterial supply territories also present increased demands on the interventional treatment technique. This involves high quality intraprocedural imaging, possibly including cone beam CT under arterial perfusion to clarify selective vascularisation. The greater the selectivity of transarterial therapy and the more pronounced and comprehensive the devascularizing effect of the embolization measures, the better the efficacy of TACE and the lesser the side-effect.",
+          "metadata": {
+            "heading": "Strong consensus on oncology. Hepatocellular carcinoma and biliary carcinomas. Long version - 4.0 August 2023 This is a list of all known human cancers.",
+            "doc_id": "LL_Hepatozelluläres_Karzinom_und_biliäre_Karzinome_Langversion_4.0",
+            "country": "DE",
+            "source_type": "clinical_guideline",
+            "start_page": 82,
+            "end_page": 85,
+            "created_date": "2023",
+            "folder_path": "clinical guidelines/DE",
+            "split_index": 1,
+            "text_length": 1345,
+            "potential_comparators": [
+              "Pseudoencapsulation",
+              "Retrospective",
+              "Tumor",
+              "Hepatocellular",
+              "Long"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Table 3: Experts involved **Source Type:** clinical_guideline\n\noutcomes progressive primary disease sclerosis  primary biliary cirrhosis  preoperative biliary drainage  periodic cholangiocarcinoma progressive illness  photodynamical treatment  endoscopial gastroscopy  ethanoinjection ethanoinjecting  positrons emission-tomography  progression free survival  comparative population intervention  remisons partial partial and partial withdrawn partial response  radiotherapeutic disease  non-induceduced cardiac syndrome  radioactive cancer  neurotoxicity  disease Self-expanding metallic grids Spanish Society of Medical Oncology Subjective Global Assessment Social Code Standardized incidence rate selective internal radiotherapy Systematic review ongoing vaccination commission of the Rober Substained Virological Response Transarterial chemoembolisation Transartery embolism Transarteral radioembolism System for classification of the anatomical tumor (T), regional lymph node Time to deterioration Time to progression of the tumor oncology Hepatocellular carcinoma dorsal tumor rt-Koch Institute for mixed expanse ten (N) and distant m and biliary cancer it n metastatic malignancies e gner T (Mng Tumour) M - 4 or sion Prion with a",
+          "metadata": {
+            "heading": "Table 3: Experts involved",
+            "doc_id": "LL_Hepatozelluläres_Karzinom_und_biliäre_Karzinome_Langversion_4.0",
+            "country": "DE",
+            "source_type": "clinical_guideline",
+            "start_page": 15,
+            "end_page": 29,
+            "created_date": "2023",
+            "folder_path": "clinical guidelines/DE",
+            "split_index": "4_1_0",
+            "text_length": 1265,
+            "potential_comparators": []
+          }
+        },
+        {
+          "text": "**Heading:** Table 13: Indicators of quality **Source Type:** clinical_guideline\n\n© Guidance Programme on oncology  Hepatocellular carcinomas and biliary carcinomes Evidence Informed rcinoma La  Understanding of treatment / follow-up - 4.0  August 2023 6.1 Literature Reference Table Agop Ashoo Beal Fica Boteo Casca Finken first literature reviews Chapter e 14: Literature review - Part of the study included Retro 360 retrospective 36 retro 178 on retro 57 retro elective 11 retro 174 on retroperitoneal drop-in program 3.4 Surgical bridging of interstitial arterial arteries TAFA + TACEL TAFA 10 TACET No m- Increased incidence of intraoperative complications after TACE with no effect on mortality/ morbidity Acceptable OS for HCC outside of Milan criteria, within half UptosevenCriteria according to LRT Neoadj. LRT with good OS/DFS in HCC-PtrotroPtroCLC at intermediate stage 4.0 - 4.3 Aug 2023 6.1 Reference Literature Gabriele Habib Lihi Nicoli Luigi Sandour speculates over the reticulocyte count in the rectum with no association with worse outcome",
+          "metadata": {
+            "heading": "Table 13: Indicators of quality",
+            "doc_id": "LL_Hepatozelluläres_Karzinom_und_biliäre_Karzinome_Langversion_4.0",
+            "country": "DE",
+            "source_type": "clinical_guideline",
+            "start_page": 165,
+            "end_page": 170,
+            "created_date": "2023",
+            "folder_path": "clinical guidelines/DE",
+            "split_index": 2,
+            "text_length": 1061,
+            "potential_comparators": [
+              "LRT"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Major changes in the guideline on the diagnosis and treatment of hepatocellular carcinoma **Source Type:** clinical_guideline\n\n• Treatment should be evaluated as a combination of systemic therapy and long-term therapy. • Intraclinical and complementary therapies: Athexavalent therapy is recommended as a last resort. o Due to the good response rates to systemic therapy, especially the combination therapies, secondary resectability should also be considered primarily as non-curative tumours. o Immunotherapy in the Child-B situation can now be recommended following systematic research, and if no approved therapy options are available and no immunotherapy has been done so far, an immune therapy can be recommended. o As part of this update, a new systemic study of immune therapy in HCC/ ACCA was recommended and no systemic recommendation could be made on the basis of this recommendation for the absence of systemic inflammation from mixed systemic HCCA. On the basis of this systematic research, no recommendation could be made due to the lack of available studies.",
+          "metadata": {
+            "heading": "Major changes in the guideline on the diagnosis and treatment of hepatocellular carcinoma",
+            "doc_id": "LL_Hepatozelluläres_Karzinom_und_biliäre_Karzinome_Langversion_4.0",
+            "country": "DE",
+            "source_type": "clinical_guideline",
+            "start_page": 2,
+            "end_page": 3,
+            "created_date": "2023",
+            "folder_path": "clinical guidelines/DE",
+            "split_index": 1,
+            "text_length": 1086,
+            "potential_comparators": []
+          }
+        },
+        {
+          "text": "**Heading:** Strong consensus on oncology. Hepatocellular carcinoma and biliary carcinomas. Long version - 4.0 August 2023 This is a list of all known human cancers. **Source Type:** clinical_guideline\n\nThe approval of pemigatinib is based on the single-arm Phase II study FIGHT-202 [763]; as the primary endpoint, 40 out of 108 patients (37%) responded to tumour therapy, including 36 patients with partial and 4 patients with complete remission [762]. These additional studies highlight the importance of the FGFR2 signalling pathway for a subset of cholangiocarcinomas with FGfr2 fusion or rearrangement (see also background to Recommendation 4.46). Due to the good response rates, a strong recommendation was made here at a Level of Evidence 3. In addition to the abovementioned studies, numerous other clinical data from the first group of substances have been obtained for futibatinib. In addition to fusion genes,",
+          "metadata": {
+            "heading": "Strong consensus on oncology. Hepatocellular carcinoma and biliary carcinomas. Long version - 4.0 August 2023 This is a list of all known human cancers.",
+            "doc_id": "LL_Hepatozelluläres_Karzinom_und_biliäre_Karzinome_Langversion_4.0",
+            "country": "DE",
+            "source_type": "clinical_guideline",
+            "start_page": 161,
+            "end_page": 162,
+            "created_date": "2023",
+            "folder_path": "clinical guidelines/DE",
+            "split_index": "0_0_0",
+            "text_length": 920,
+            "potential_comparators": [
+              "Due",
+              "These",
+              "futibatinib",
+              "pemigatinib",
+              "Hepatocellular",
+              "Long"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Strong consensus on oncology. Hepatocellular carcinoma and biliary carcinomas. Long version - 4.0 August 2023 This is a list of all known human cancers. **Source Type:** clinical_guideline\n\nIn the randomised Phase III study ABC-06, a modified FOLFOX regimen was compared to symptom-oriented therapy alone, and a moderate improvement in overall median survival from 5.3 months to 6.2 months with mother-to-child therapy was achieved (FOFOH: 0.69; CI: 0.5097; p=0.032) [77]. The primary endpoint of survival at 6 months was 54% for mFOLFOX and 44% for mLFOLFIRI, the difference was not statistically significant [778].The combination of irinotecan and capecitabine resulted in a prolongation of mOS (10.1 vs 7.3 months) at a 9-month survival rate of 60.9% vs 32% [779] in a randomized Phase II study from China of 60 patients after progression on gemcitabine and cisplatin compared to irinotecin monotherapy in a nine-month study from South Korea of 59 patients in each arm.These results were confirmed by the NIFTY study in South Korea in 178 patients. However, these results could not be confirmed in the NALIRICC study conducted in Germany.",
+          "metadata": {
+            "heading": "Strong consensus on oncology. Hepatocellular carcinoma and biliary carcinomas. Long version - 4.0 August 2023 This is a list of all known human cancers.",
+            "doc_id": "LL_Hepatozelluläres_Karzinom_und_biliäre_Karzinome_Langversion_4.0",
+            "country": "DE",
+            "source_type": "clinical_guideline",
+            "start_page": 163,
+            "end_page": 164,
+            "created_date": "2023",
+            "folder_path": "clinical guidelines/DE",
+            "split_index": 0,
+            "text_length": 1154,
+            "potential_comparators": [
+              "However",
+              "Hepatocellular",
+              "Long"
+            ]
+          }
+        }
+      ]
+    },
+    "DK": {
+      "country_metadata": {
+        "country_code": "DK",
+        "chunk_count": 8,
+        "total_text_length": 6309,
+        "unique_documents": 1,
+        "unique_headings": 7
+      },
+      "chunks": [
+        {
+          "text": "**Heading:** Adjuvant systemic therapy following liver transplantation is not indicated (C) **Source Type:** clinical_guideline\n\nThe following is a summary of Recommendations for liver transplantation for hepatocellular carcinoma: an international consensus conference report (71). Other recent key references (72, 73). Liver transplantation should be reserved for patients with 5-year survival comparable to that of non-HCC patients, i.e. approximately 70%. Prognosis is assessed primarily on the basis of the diameter of the largest tumour and the number of tumours in the liver. There must be no extrahepatic tumour. Microinvasion is a very poor prognostic sign and there is some correlation to tumour size and number as well as certain biomarkers; however, there are no reliable, either radiological or biomarker methods to detect microinvision, which is why microbial invasion is not yet included in the selection of liver transplants. However, if one could use multiple criteria to validate the prognosis of patients with micro-transplantation, we will be able to use a better prognosis for those patients with non-AFPs (see below).",
+          "metadata": {
+            "heading": "Adjuvant systemic therapy following liver transplantation is not indicated (C)",
+            "doc_id": "dlgcg_hepatocellulart-carcinom_v.3.0_admgodk_181224",
+            "country": "DK",
+            "source_type": "clinical_guideline",
+            "start_page": 21,
+            "end_page": 21,
+            "created_date": "2024",
+            "folder_path": "clinical guidelines/DK",
+            "split_index": 0,
+            "text_length": 1138,
+            "potential_comparators": [
+              "However",
+              "Other",
+              "Microinvasion",
+              "Prognosis",
+              "Liver",
+              "There"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** 4. Referencer **Source Type:** clinical_guideline\n\nRisk of hepatocellular carcinoma in Danish outpatients with alcohol-related cirrhosis. J Hepatol. 2020;735): 1030-6. 3. Danish Society of Gastroenterology and Hepatology. Hepatocellullary carcinom [Available from: 4. Evidence that normal liver regeneration does not induce AFP synthesis. Gastroenterology. 1978;74(5 Pt 1):856-8. 7. EASL Clinical Practice Guidelines: Management of hepatocellular carcinoma. J Hepatol. 19. Balci NC, Befeler AS, Leiva P, Pilgram TK, Havlioglu N. Imaging of liver disease: Comparison between quadruple-phase multidetector computed tomography and magnetic resonance imaging.",
+          "metadata": {
+            "heading": "4. Referencer",
+            "doc_id": "dlgcg_hepatocellulart-carcinom_v.3.0_admgodk_181224",
+            "country": "DK",
+            "source_type": "clinical_guideline",
+            "start_page": 30,
+            "end_page": 37,
+            "created_date": "2024",
+            "folder_path": "clinical guidelines/DK",
+            "split_index": 0,
+            "text_length": 668,
+            "potential_comparators": [
+              "Hepatocellullary",
+              "EASL",
+              "Danish",
+              "Balci",
+              "Gastroenterology",
+              "Referencer",
+              "Imaging",
+              "Evidence"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Clinical Guideline │Cancer DLGCG is resected radically with good long-term survival (60). **Source Type:** clinical_guideline\n\nThe presence of multiple tumours as well as tumour invasion in larger portal branches worsens the prognosis, but does not preclude radical resection and in selected patients this treatment gives the best chance of long-term survival (62, 63). Bilobary HCC can also be treated with resection, possibly in combination with RFA (64). The existence of distant metastases, thrombosis of the venae portae or vena cavae main stem are absolute contraindications to resection or other topical treatment. Liver resection for HCC is accompanied by a perioperative mortality of less than 5% and a morbidity of 30-40%, depending on the patient's liver function.",
+          "metadata": {
+            "heading": "Clinical Guideline │Cancer DLGCG is resected radically with good long-term survival (60).",
+            "doc_id": "dlgcg_hepatocellulart-carcinom_v.3.0_admgodk_181224",
+            "country": "DK",
+            "source_type": "clinical_guideline",
+            "start_page": 20,
+            "end_page": 20,
+            "created_date": "2024",
+            "folder_path": "clinical guidelines/DK",
+            "split_index": 0,
+            "text_length": 788,
+            "potential_comparators": [
+              "Liver",
+              "Bilobary"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Recommendation 28-30 is amended as follows: **Source Type:** clinical_guideline\n\nIn the comment field with its respective PM ID numbers Clinical Guideline │Cancer Table of Contents New since last (amendment log) . 1. Recommendations (Quick guide) . Monitoring . Diagnosis . Liver resection . Liver transplantation . Ablation . Radiotherapy . Non-curative treatment . Systemic treatment in children and adolescents with HCC . 2. Introduction . . 3. Basics ... Monitoring . Systemic treatment of HCC in children and adolescents 4.References 5.Method 6.Monitoring 7.Annex 8.For the purpose of this clinical guideline see D DLGC CG",
+          "metadata": {
+            "heading": "Recommendation 28-30 is amended as follows:",
+            "doc_id": "dlgcg_hepatocellulart-carcinom_v.3.0_admgodk_181224",
+            "country": "DK",
+            "source_type": "clinical_guideline",
+            "start_page": 2,
+            "end_page": 4,
+            "created_date": "2024",
+            "folder_path": "clinical guidelines/DK",
+            "split_index": 1,
+            "text_length": 640,
+            "potential_comparators": [
+              "Recommendations",
+              "Radiotherapy",
+              "Introduction",
+              "Basics",
+              "Non-curative",
+              "Systemic",
+              "Ablation",
+              "Monitoring",
+              "Liver",
+              "Diagnosis"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Liver resection is a potentially curative treatment for solitary or multifocal liver disease. **Source Type:** clinical_guideline\n\nHCC in which there is no extrahepatic metastasis, liver function is good and R0resection can be performed with sufficient liver tissue remaining to maintain normal liver function (B) 10.Adjuvant systemic therapy after radical liver resection is not indicated (B).11 Monitoring should be performed by CT or MRI examinations 3,6,9,12,18,24, 36, 48 and 60 months after treatment (C) Literature and evidence review Stage Staging of HCCs in patients with chronic tumour liver disease The prognosis for solid tumours is generally related to the tumour stage at diagnosis, the severity of any underlying liver disease and the patient' s performance status. There is no international consensus on which HCC staging system should be used. 5457 European guideline: Clinical Guideline │",
+          "metadata": {
+            "heading": "Liver resection is a potentially curative treatment for solitary or multifocal liver disease.",
+            "doc_id": "dlgcg_hepatocellulart-carcinom_v.3.0_admgodk_181224",
+            "country": "DK",
+            "source_type": "clinical_guideline",
+            "start_page": 18,
+            "end_page": 19,
+            "created_date": "2024",
+            "folder_path": "clinical guidelines/DK",
+            "split_index": 0,
+            "text_length": 919,
+            "potential_comparators": [
+              "There"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** The following table summarizes the data: **Source Type:** clinical_guideline\n\nDLGCG, Hepatocellular carcinoma, liver cancer, diagnosis and treatment Clinical Update Update Retnin Recommended Retni as recommended by the v ngslin linger ingsli the version of injection │ n si on section 2 │Cancer",
+          "metadata": {
+            "heading": "The following table summarizes the data:",
+            "doc_id": "dlgcg_hepatocellulart-carcinom_v.3.0_admgodk_181224",
+            "country": "DK",
+            "source_type": "clinical_guideline",
+            "start_page": 1,
+            "end_page": 2,
+            "created_date": "2024",
+            "folder_path": "clinical guidelines/DK",
+            "split_index": 0,
+            "text_length": 307,
+            "potential_comparators": []
+          }
+        },
+        {
+          "text": "**Heading:** Clinical Guideline │Cancer DLGCG is resected radically with good long-term survival (60). **Source Type:** clinical_guideline\n\nSerious complications such as leukaemia, postoperative softening and gallbladder abscess constitute less than 5%. Note, however, that the incidence of complications and mortality is many times lower at the peripheral end of the tumour than during laparoscopy and should be taken into account, especially in patients who have undergone hepatic ablation in recent years. The 5-year survival after resection for HCC is 35-50% in newer large cohorts (66). The long-term survival for small solitary HCC < 5 cm in diameter is close to 70% (67, 68). The risk of recurrence during the first 5 years after radical resection of HCC, for example, is in the order of 50-80% (69).",
+          "metadata": {
+            "heading": "Clinical Guideline │Cancer DLGCG is resected radically with good long-term survival (60).",
+            "doc_id": "dlgcg_hepatocellulart-carcinom_v.3.0_admgodk_181224",
+            "country": "DK",
+            "source_type": "clinical_guideline",
+            "start_page": 20,
+            "end_page": 20,
+            "created_date": "2024",
+            "folder_path": "clinical guidelines/DK",
+            "split_index": 1,
+            "text_length": 807,
+            "potential_comparators": [
+              "Note"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** The second part of the introduction **Source Type:** clinical_guideline\n\nIn Denmark, the incidence of hepatocellular carcinoma (HCC) is about 450 per year, with a slightly increasing trend, most pronounced in men > 60 years (1, 2). HCC occurs in 70-80% of cases in a cirrhotic liver. Objectives The overall aim of the guideline is to support an evidence-based cancer intervention of high and uniform quality across Denmark. Patient group The most common cause of cirrhosis (about 65%) in Denmark is alcohol consumption (2). The incidence and prevalence of cirrosis is relatively stable, but the underlying causes are changing in these years as alcohol-related cirrhomosis and Hep B+C decline, while fat-related Cirrhomoses have an increasing trend. Diagnosis and treatment of HCC involve physicians from different specialties, including medics with internal hepatological expertise (hereinafter referred to as hepato-implantation surgeons), HP/transplantation surgists, oncologists, radiologists, and interventional pathologists.",
+          "metadata": {
+            "heading": "The second part of the introduction",
+            "doc_id": "dlgcg_hepatocellulart-carcinom_v.3.0_admgodk_181224",
+            "country": "DK",
+            "source_type": "clinical_guideline",
+            "start_page": 9,
+            "end_page": 9,
+            "created_date": "2024",
+            "folder_path": "clinical guidelines/DK",
+            "split_index": 0,
+            "text_length": 1042,
+            "potential_comparators": [
+              "Diagnosis",
+              "Patient",
+              "HCC",
+              "Objectives"
+            ]
+          }
+        }
+      ]
+    },
+    "EN": {
+      "country_metadata": {
+        "country_code": "EN",
+        "chunk_count": 0,
+        "total_text_length": 0,
+        "unique_documents": 0,
+        "unique_headings": 0
+      },
+      "chunks": []
+    },
+    "ES": {
+      "country_metadata": {
+        "country_code": "ES",
+        "chunk_count": 8,
+        "total_text_length": 7335,
+        "unique_documents": 1,
+        "unique_headings": 1
+      },
+      "chunks": [
+        {
+          "text": "**Heading:** Abstract **Source Type:** clinical_guideline\n\na substantial clinical benefit; strongly recommended B. Strong or moderate evidence for efficacy, but with limited clinical benefit; generally recommended C. Insufficient evidence of efficacy or benefit does not outweigh the risk or the disadvantages (adverse events, costs,); optional D. Moderate evidence against efficacy or for adverse outcome; generally, not recommended E. Strong evidence against efficacy or for adverse outcome; never recommended Clinical and Translational Oncology of HCC cases arise in cirrhotic livers and different subtypes • Multiphasic CT or dynamic contrast-enhanced MRI enahave been associated with specific molecular and cytoge- bles a non-invasive radiological diagnosis to be established netic abnormalities: the scirrhous subtype with TSC1/TSC2 in cirrhotic patients with specific imaging criteria (II, A). mutations, the steatohepatitic subtype with frequent IL6/ • In the absence of cirrhosis or at-risk chronic HBV JAK/STAT activation, the macrotrabecular massive subtype infection, HCC diagnosis should be confirmed by biopsy possessed TP53 mutation and FGF19 amplification, and the (I, A).",
+          "metadata": {
+            "heading": "Abstract",
+            "doc_id": "CTO_-_SEOM-GEMCAD-TTD_CLINICAL_GUIDELINE_MANAGEMENT_HEPATOCARCINOMA_2023",
+            "country": "ES",
+            "source_type": "clinical_guideline",
+            "start_page": 1,
+            "end_page": 12,
+            "created_date": "2023",
+            "folder_path": "clinical guidelines/ES",
+            "split_index": "5_1_0",
+            "text_length": 1188,
+            "potential_comparators": [
+              "Moderate",
+              "Insufficient",
+              "Strong"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Abstract **Source Type:** clinical_guideline\n\nHepatocellular carcinoma (HCC) is the most common primary malignancy in the liver and is the third cause of cancer-related death worldwide. Surveillance with abdominal ultrasound should be offered to individuals at high risk for developing HCC. Accurate diagnosis, staging, and liver function are crucial when determining the optimal therapeutic approach. The BCLC staging system is widely endorsed in Western countries. Managing this pathology requires a multidisciplinary, personalized approach, generally with a multimodal strategy. Surgery remains the only curative option, albeit local and systemic therapy may also increase survival when surgery is not suitable. In advanced disease, systemic treatment should be offered to patients with ECOG/PS 0-1 and Child–Pugh class A. Keywords Hepatocellular carcinoma · Guidelines · Diagnostic · Staging · Treatment Incidence and epidemiology in Western Europe, North America, and Japan, HCV infection is he predominant cause [3].",
+          "metadata": {
+            "heading": "Abstract",
+            "doc_id": "CTO_-_SEOM-GEMCAD-TTD_CLINICAL_GUIDELINE_MANAGEMENT_HEPATOCARCINOMA_2023",
+            "country": "ES",
+            "source_type": "clinical_guideline",
+            "start_page": 1,
+            "end_page": 12,
+            "created_date": "2023",
+            "folder_path": "clinical guidelines/ES",
+            "split_index": "0_0_0",
+            "text_length": 1035,
+            "potential_comparators": [
+              "Accurate",
+              "Managing",
+              "Surgery",
+              "Keywords",
+              "Surveillance"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Abstract **Source Type:** clinical_guideline\n\net al. J Hepatol. 2022 Mar;76(3):681– beyond the conventional Child–Pugh staging. AFP alpha-fetopro-\n693. BCLC staging and treatment strategy for HCC in 2022. The tein, ALBI albumin-bilirubin, BCLC Barcelona Clinic Liver Cancer,\nBCLC system establishes prognosis according to the five stages BSC best supportive care, ECOG-PS Eastern Cooperative Oncology linked to first-line treatment recommendations. The expected out- Group-performance status, LT liver transplantation, MELD model of\ncome is expressed as median survival of each HCC stage based on end-stage liver disease, TACE transarterial chemoembolization the available scientific evidence. Liver function should be evaluated\nFig. 2 Modified from Addissie et al. (Clin Liver Dis. 2015; 19: 277– lulaire, MELD model for end-stage liver disease, ALBI, albumin-bil-\nUniversitario Fundación Jiménez Díaz, Madrid, Spain) and Dr Roberto\nDíaz Beveridge (Hospital Universitario y Politécnico la Fe, Valencia,\nPost-treatment follow-up plays an essential role in cancer\nSpain) for the review of the guidelines and validation of the level of care to assess therapeutic efficacy, detect recurrences early,\nevidence and grade of recommendations. and identify long-term treatment-related complications.",
+          "metadata": {
+            "heading": "Abstract",
+            "doc_id": "CTO_-_SEOM-GEMCAD-TTD_CLINICAL_GUIDELINE_MANAGEMENT_HEPATOCARCINOMA_2023",
+            "country": "ES",
+            "source_type": "clinical_guideline",
+            "start_page": 1,
+            "end_page": 12,
+            "created_date": "2023",
+            "folder_path": "clinical guidelines/ES",
+            "split_index": 9,
+            "text_length": 1304,
+            "potential_comparators": [
+              "Liver",
+              "BCLC",
+              "AFP",
+              "Clin"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Abstract **Source Type:** clinical_guideline\n\nMRI\nInfectious Diseases Society of America–US Public Health has demonstrated somewhat greater sensitivity than and\nService Grading System for Ranking Recommendations similar specificity as CT [17]. The Liver Imaging Reporting\nin Clinical Guidelines has been used to assign levels of and Data System (LI-RADS) is the most widely accepted evidence and grades of recommendation [9] (Table 1). system to standardize and increase HCC diagnostic accuracy\n[18]. Serum biomarkers alone, including AFP, do not have\nsufficient accuracy to establish the diagnosis. Most lesions < 1 cm are not HCC. Closer follow-up with\nDiagnosis, pathology, and molecular biology US every three months for 24 months is recommended. If\nthe lesion remains stable, it is safe to return to semi-annual\nSurveillance surveillance.",
+          "metadata": {
+            "heading": "Abstract",
+            "doc_id": "CTO_-_SEOM-GEMCAD-TTD_CLINICAL_GUIDELINE_MANAGEMENT_HEPATOCARCINOMA_2023",
+            "country": "ES",
+            "source_type": "clinical_guideline",
+            "start_page": 1,
+            "end_page": 12,
+            "created_date": "2023",
+            "folder_path": "clinical guidelines/ES",
+            "split_index": 3,
+            "text_length": 856,
+            "potential_comparators": [
+              "Most",
+              "Serum",
+              "If",
+              "Closer"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Abstract **Source Type:** clinical_guideline\n\nIn contrast to the robust evidence supporting primary Data availability Not Applicable. HCC screening in patients with chronic liver disease, there\nDeclarations\nis insufficient evidence to inform the optimal frequency and modality of HCC surveillance after curative treatment. Conflict of interest CLL reports Advisory Board—Speaker from Lilly,\nTherefore, recommendations are based on the general Roche, AstraZeneca, Bayer, Eisai, Ipsen MSD and BMS. BGP reports\nAdvisory Board—Speaker from Roche Farma, Eisai and Advanced Blood and Marrow Transplantation. Summary of the guidelines\nAccelerator Applications; Speaker from BMS, Bayer and Lilly; Ad- for preventing opportunistic infections among hematopoietic stem\nvisory Board—Speaker—Other from MSD, Amgen and Servier and cell transplant recipients. Clin Infect Dis.",
+          "metadata": {
+            "heading": "Abstract",
+            "doc_id": "CTO_-_SEOM-GEMCAD-TTD_CLINICAL_GUIDELINE_MANAGEMENT_HEPATOCARCINOMA_2023",
+            "country": "ES",
+            "source_type": "clinical_guideline",
+            "start_page": 1,
+            "end_page": 12,
+            "created_date": "2023",
+            "folder_path": "clinical guidelines/ES",
+            "split_index": 10,
+            "text_length": 874,
+            "potential_comparators": [
+              "Summary",
+              "Clin",
+              "HCC",
+              "Conflict",
+              "BGP"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Abstract **Source Type:** clinical_guideline\n\nZhang BH, Yang BH, Tang ZY. Randomized controlled trial of\nJF reports Advisory Board from Roche Pharma, AstraZeneca, Eisai, screening for hepatocellular carcinoma. J Cancer Res Clin Oncol. Merck, Viatris and Baxter; Advisory Board—Grant from Amgen and 2004;130:417–22. Speaker from Servier. MCC, JJC, CGM, AML, JS, RY have nothing 12. Trinchet JC, Chaffaut C, Bourcier V, Degos F, Henrion J, Fontaine\nto disclose. H, et al. Ultrasonographic surveillance of hepatocellular carcinoma in cirrhosis: a randomized trial comparing 3- and 6-month\nEthical statement The current study has been performed in accord- periodicities. Hepatology.",
+          "metadata": {
+            "heading": "Abstract",
+            "doc_id": "CTO_-_SEOM-GEMCAD-TTD_CLINICAL_GUIDELINE_MANAGEMENT_HEPATOCARCINOMA_2023",
+            "country": "ES",
+            "source_type": "clinical_guideline",
+            "start_page": 1,
+            "end_page": 12,
+            "created_date": "2023",
+            "folder_path": "clinical guidelines/ES",
+            "split_index": 12,
+            "text_length": 691,
+            "potential_comparators": [
+              "MCC",
+              "Speaker",
+              "Trinchet",
+              "Randomized",
+              "Ultrasonographic",
+              "Merck",
+              "Hepatology"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Abstract **Source Type:** clinical_guideline\n\n2011;54:1987–97. ance with the ethical standards laid down in the 1964 Declaration of 13. Tzartzeva K, Obi J, Rich NE, Parikh ND, Marrero JA, Yopp A,\nHelsinki and its later amendments. et al. Surveillance imaging and alpha fetoprotein for early detection of hepatocellular carcinoma in patients with cirrhosis: a meta-\nInformed consent Not applicable. analysis. Gastroenterology. 2018;154:1706–18. 14. Parikh ND, Singal AG, Hutton DW, Tapper EB. Cost-effectiveness\nof hepatocellular carcinoma surveillance: an assessment of ben-\nOpen Access This article is licensed under a Creative Commons Attriefits and harms. Am J Gastroenterol.",
+          "metadata": {
+            "heading": "Abstract",
+            "doc_id": "CTO_-_SEOM-GEMCAD-TTD_CLINICAL_GUIDELINE_MANAGEMENT_HEPATOCARCINOMA_2023",
+            "country": "ES",
+            "source_type": "clinical_guideline",
+            "start_page": 1,
+            "end_page": 12,
+            "created_date": "2023",
+            "folder_path": "clinical guidelines/ES",
+            "split_index": 13,
+            "text_length": 691,
+            "potential_comparators": [
+              "Cost-effectiveness",
+              "Parikh",
+              "Gastroenterology",
+              "Surveillance",
+              "Tzartzeva",
+              "Am"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Abstract **Source Type:** clinical_guideline\n\nfrequent TERT promoter mutations. Despite the inroads made, updates and refinements of both staging and molecular classification systems are still needed. Recent data on therapies, transplantation criteria, Recommendations and viral hepatitis treatment must be incorporated into such revisions. Ongoing developments in HCC research and • Surveillance should be offered to high-risk patients treatment should continue to drive the constant updating of if liver function and comorbidities allow for active these systems. treatment (I, A). Recommendations • Abdominal US every 6 months is the most appropriate screening technique (II, A). •",
+          "metadata": {
+            "heading": "Abstract",
+            "doc_id": "CTO_-_SEOM-GEMCAD-TTD_CLINICAL_GUIDELINE_MANAGEMENT_HEPATOCARCINOMA_2023",
+            "country": "ES",
+            "source_type": "clinical_guideline",
+            "start_page": 1,
+            "end_page": 12,
+            "created_date": "2023",
+            "folder_path": "clinical guidelines/ES",
+            "split_index": "8_0_0",
+            "text_length": 696,
+            "potential_comparators": [
+              "Despite",
+              "Recommendations",
+              "Recent",
+              "Ongoing"
+            ]
+          }
+        }
+      ]
+    },
+    "EU": {
+      "country_metadata": {
+        "country_code": "EU",
+        "chunk_count": 8,
+        "total_text_length": 8633,
+        "unique_documents": 1,
+        "unique_headings": 1
+      },
+      "chunks": [
+        {
+          "text": "**Heading:** SPECIAL ARTICLE **Source Type:** clinical_guideline\n\nfibrosis remain at increased risk for HCC even after\nachieving sustained virological response following antiviral\n5Note:ApprovedbytheESMOGuidelinesCommittee:October2018,last\nupdate February 2025.This publication supersedes thepreviously published treatment and should, therefore, remain in a surveillance\nversiondAnnOncol.2018;29(suppl4):IV238-IV255. programme.9\n0923-7534/©2025EuropeanSociety forMedicalOncology. Published by\nLiver ultrasound (US) is a standard tool for HCC surveil-\nElsevierLtd.Allrightsarereserved,includingthosefortextanddatamining,AI\ntraining,andsimilartechnologies. lance but has limited sensitivity and specificity, particularly\nVolume36 - Issue 5 - 2025 491\nin livers with significant steatosis.10 In Western countries MR contrast agents is mediated by organic anionic transand less experienced centres, the sensitivity of US for porting polypeptides expressed on the sinusoidal mem-\nidentifying early-stage HCC is considerably lower than in brane of functional hepatocytes and loss of hepatocellular moreexperiencedcentres.11Addingmeasurementofserum function occurs early during hepatocarcinogenesis, before\na -fetoprotein (AFP) to US can provide an improvement in tumour neoangiogenesis.16 If imaging criteria are not met\nthe early HCC detection rate, but at the price of false- on the first imaging examination (e.g. CT), repeat imaging\npositive results.12 Cell-free DNA-based liquid biopsies have can be considered after 3 months for lesions (cid:4)1 cm.",
+          "metadata": {
+            "heading": "SPECIAL ARTICLE",
+            "doc_id": "PIIS0923753425000730",
+            "country": "EU",
+            "source_type": "clinical_guideline",
+            "start_page": 1,
+            "end_page": 2,
+            "created_date": "20",
+            "folder_path": "clinical guidelines/EU",
+            "split_index": 3,
+            "text_length": 1549,
+            "potential_comparators": [
+              "CT",
+              "Published"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** SPECIAL ARTICLE **Source Type:** clinical_guideline\n\nSurveillance for HCC can be\nconsideredwhentheannualriskofHCCis>1%peryearin\nRecommendations\npatientswithcirrhosisand>0.2%peryearinthosewithout\n(cid:3) DuetotheassociationofHCCwithchronicliverdisease,\ncirrhosis.6 In Asian patients, serum HBV DNA >10 000\nuniversal vaccination at birth against hepatitis B virus copies/ml has been associated with a higher annual riskof\n(HBV) [II, A] and early antiviral treatment for HBV and\nHCC compared with patients with a lower viral load.7 The\nhepatitis C virus (HCV) [III, A] are recommended. PAGE-B score estimates the risk of HCC in patients with chronic HBVreceiving entecavir or tenofovir, based on age,\n*Correspondence to: ESMO Guidelines Committee, ESMO Head Office, Via sex and platelet count.8 Patients with HCV and advanced\nGinevra4,CH-6900Lugano,Switzerland\nE-mail:clinicalguidelines@esmo.org(ESMOGuidelinesCommittee).",
+          "metadata": {
+            "heading": "SPECIAL ARTICLE",
+            "doc_id": "PIIS0923753425000730",
+            "country": "EU",
+            "source_type": "clinical_guideline",
+            "start_page": 1,
+            "end_page": 2,
+            "created_date": "20",
+            "folder_path": "clinical guidelines/EU",
+            "split_index": 2,
+            "text_length": 931,
+            "potential_comparators": [
+              "PAGE-B"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** SPECIAL ARTICLE **Source Type:** clinical_guideline\n\nMolecular classifica- For diagnosis of HCC, multiphasic CT and MRI follow the tions have shown that the varied natural history at the technical recommendations of the CT and MRI Liver Imag- origin of each subtype can be identified by mutations in ing Reporting and Data System (LI-RADS)® v2018. Any cancerdrivergenes,includingTERT,TP53,CTNNB1,ARID1A, magnetic resonance (MR) contrast agent may be used. RB1, FGF19 and CCND1.20 These oncogenic defects are Multiphasic MRI offers several advantages over CT, translated in molecular classification, enabling categoincludingdepictionofmoreancillaryfeaturesfavouringthe risationofHCCinmorehomogeneoussubgroupsaccording diagnosisofHCCorothermalignancies,suchasfatinmass, to their specific proliferative rate, level of differentiation moderate T2 hyperintensity and restricted diffusion. It also and signalling pathway activation.",
+          "metadata": {
+            "heading": "SPECIAL ARTICLE",
+            "doc_id": "PIIS0923753425000730",
+            "country": "EU",
+            "source_type": "clinical_guideline",
+            "start_page": 1,
+            "end_page": 2,
+            "created_date": "20",
+            "folder_path": "clinical guidelines/EU",
+            "split_index": "5_1_1",
+            "text_length": 939,
+            "potential_comparators": [
+              "It",
+              "RB1",
+              "Any"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** SPECIAL ARTICLE **Source Type:** clinical_guideline\n\nHepatocellular carcinoma: ESMO Clinical Practice Guideline for diagnosis, treatment and follow-up A.Vogel1,2,3, S. L. Chan4, L. A. Dawson5,6, R. K. Kelley7, J. M. Llovet8,9,10,T. Meyer11,12, J. Ricke13, L. Rimassa14,15, G. Sapisochin16,V.Vilgrain17,18,",
+          "metadata": {
+            "heading": "SPECIAL ARTICLE",
+            "doc_id": "PIIS0923753425000730",
+            "country": "EU",
+            "source_type": "clinical_guideline",
+            "start_page": 1,
+            "end_page": 2,
+            "created_date": "20",
+            "folder_path": "clinical guidelines/EU",
+            "split_index": "0_0_0",
+            "text_length": 318,
+            "potential_comparators": [
+              "Sapisochin16,V.Vilgrain17,18",
+              "Llovet8,9,10,T",
+              "Dawson5,6",
+              "Meyer11,12",
+              "Rimassa14,15",
+              "Kelley7",
+              "Chan4",
+              "Ricke13"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** SPECIAL ARTICLE **Source Type:** clinical_guideline\n\nFor\nshown encouraging preliminary results for the early detec- largerlesions,imagingshouldberepeatedusingadifferent tion of HCC but remain to be prospectively validated.13 A modality (e.g. MRI) or a biopsy should be carried out. randomised controlled trial (RCT) compared surveillance Further details on diagnostic imaging for HCC are available\n(USandserumAFPmeasurementsevery6months)withno inSupplementaryMaterialSection2andTableS2,available surveillance in Chinese patients with chronic HBV infec- at\ntion.14 Despite low compliance with the surveillance programme (55%), HCC-related mortality was reduced by 37% Pathology\nin the surveillance arm. Regarding the most appropriate\nThe increasing number of HCCs related to metabolic surveillance interval, a randomised studycomparing 3- and\ndysfunction-associatedsteatoticliverdiseaseintheabsence\n6-month schedules did not report any differences in of cirrhosis can make diagnosis challenging, as it can be\ndetection of early HCC.15\ndifficult to discriminate between HCC and other liver tumours, particularly less common primary malignant liver\nRecommendations\ntumours such as cholangiocarcinoma, combined hep-\n(cid:3) SurveillanceforHCCisrecommendedinallpatientswith atocholangiocarcinoma and fibrolamellar HCC.17 Furthercirrhosis,irrespectiveofitsaetiology,ifliverfunctionand more, differential diagnosis between HCC and benign\ncomorbidities allow tumour treatment [II, A].",
+          "metadata": {
+            "heading": "SPECIAL ARTICLE",
+            "doc_id": "PIIS0923753425000730",
+            "country": "EU",
+            "source_type": "clinical_guideline",
+            "start_page": 1,
+            "end_page": 2,
+            "created_date": "20",
+            "folder_path": "clinical guidelines/EU",
+            "split_index": 4,
+            "text_length": 1489,
+            "potential_comparators": [
+              "Regarding",
+              "MRI"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** SPECIAL ARTICLE **Source Type:** clinical_guideline\n\n(HCC), imaging, treatment INCIDENCE AND EPIDEMIOLOGY (cid:3) Antiviral therapy is recommended in all patients with active HBV who are diagnosed with HCC [II, A]. Livercanceristhesixthmostcommoncancerandthethird leading cause of cancer deaths globally.1,2 Hepatocellular (cid:3) Direct-actingantiviraltherapyisgenerallyrecommended for patients with active HCV who are diagnosed with cancer (HCC) accounts for 80% of the global liver cancer burden,with>900000newcasesandanage-standardised HCC, but the timing should be individualised [IV, B].",
+          "metadata": {
+            "heading": "SPECIAL ARTICLE",
+            "doc_id": "PIIS0923753425000730",
+            "country": "EU",
+            "source_type": "clinical_guideline",
+            "start_page": 1,
+            "end_page": 2,
+            "created_date": "20",
+            "folder_path": "clinical guidelines/EU",
+            "split_index": "0_1_0",
+            "text_length": 606,
+            "potential_comparators": [
+              "Livercanceristhesixthmostcommoncancerandthethird"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** SPECIAL ARTICLE **Source Type:** clinical_guideline\n\nJ. Zucman-Rossi19 & M. Ducreux20,21, on behalf of the ESMO Guidelines Committee(cid:1) 1DepartmentofGastroenterology,HepatologyandEndocrinology,HannoverMedicalSchool,Hannover,Germany;2DivisionofHepatology,TorontoGeneralHospital, Toronto;3DivisionofMedicalOncology,PrincessMargaretCancerCentre,Toronto,Canada;4StateKeyLaboratoryofTranslationalOncology,DepartmentofClinical Oncology,SirYKPaoCentreforCancer,PrinceofWalesHospital,TheChineseUniversityofHongKong,HongKong,China;5RadiationMedicineProgram,Princess MargaretCancerCentre,UniversityHealthNetwork,Toronto;6DepartmentofRadiationOncology,UniversityofToronto,Toronto,Canada;7HelenDillerFamily ComprehensiveCancerCenter,UniversityofCalifornia,SanFrancisco;8MountSinaiLiverCancerProgram,DivisionofLiverDiseases,IcahnSchoolofMedicineat MountSinai,NewYork,USA;9LiverCancerTranslationalResearchGroup,LiverUnit,Institutd’InvestigacionsBiomèdiquesAugustPiiSunyer(IDIBAPS),HospitalClínic, UniversitatdeBarcelona,Barcelona;10InstitucióCatalanadeRecercaiEstudisAvançats(ICREA),Barcelona,Spain;11DepartmentofOncology,RoyalFreeHospital, London;12UCLCancerInstitute,UniversityCollegeLondon,London,UK;13KlinikundPoliklinikfürRadiologie,Ludwig-Maximilians-UniversitätMünchen,Munich, Germany;14DepartmentofBiomedicalSciences,HumanitasUniversity,PieveEmanuele,Milan;15MedicalOncologyandHematologyUnit,HumanitasCancerCenter, IRCCSHumanitasResearchHospital,Rozzano,Milan,Italy;16DepartmentofSurgery,UniversityofToronto,Toronto,Canada;17CentredeRecherchesurl’Inflammation U1149,UniversitéParisCité,Paris;18DepartmentofRadiology,BeaujonHospital,APHPNord,Clichy;19CentredeRecherchedesCordeliers,UniversitéParisCité, SorbonneUniversité,INSERM,Paris;20INSERMU1279,UniversitéParis-Saclay,Villejuif;21DepartmentofCancerMedicine,GustaveRoussy,Villejuif,France Availableonline20February2025 Key words: diagnosis, guideline, hepatocellular carcinoma",
+          "metadata": {
+            "heading": "SPECIAL ARTICLE",
+            "doc_id": "PIIS0923753425000730",
+            "country": "EU",
+            "source_type": "clinical_guideline",
+            "start_page": 1,
+            "end_page": 2,
+            "created_date": "20",
+            "folder_path": "clinical guidelines/EU",
+            "split_index": "0_0_1",
+            "text_length": 1939,
+            "potential_comparators": [
+              "Ducreux20,21",
+              "Zucman-Rossi19"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** SPECIAL ARTICLE **Source Type:** clinical_guideline\n\nnodules may be difficult and pathological examination is (cid:3) HCC surveillance is recommended for patients with required to rule out high- or low-grade cirrhotic dysplastic chronic HBV infection and a moderate or high HCC risk nodules and hepatocellular adenoma, particularly for lescore (e.g. PAGE-B) at the onset of nucleoside analogue sions that are difficult to resect.18 A precise differential therapy [II, A]. diagnosis is, therefore, important since non-HCC patients (cid:3) HCCsurveillanceshouldincludeabdominalUS(ormulti- require specific management and therapeutic strategies. phase cross-sectional imaging if available) every InthecaseofspecificriskfactorsforHCC,abiopsyofthe 6 months, with or without AFP evaluation [II, A]. non-tumour liver tissue and/or specialised molecular and",
+          "metadata": {
+            "heading": "SPECIAL ARTICLE",
+            "doc_id": "PIIS0923753425000730",
+            "country": "EU",
+            "source_type": "clinical_guideline",
+            "start_page": 1,
+            "end_page": 2,
+            "created_date": "20",
+            "folder_path": "clinical guidelines/EU",
+            "split_index": "5_0_0",
+            "text_length": 862,
+            "potential_comparators": [
+              "PAGE-B"
+            ]
+          }
+        }
+      ]
+    },
+    "FR": {
+      "country_metadata": {
+        "country_code": "FR",
+        "chunk_count": 8,
+        "total_text_length": 7607,
+        "unique_documents": 1,
+        "unique_headings": 2
+      },
+      "chunks": [
+        {
+          "text": "**Heading:** Section starting on page 14 **Source Type:** clinical_guideline\n\n[74] Salem R, Lewandowski RJ, Kulik L, Wang E, Riaz A, Ryu RK, et al. Radioembolization results in longer time-to-progression and reduced toxicity compared with chemoembolization in patients with hepatocellular carcinoma. Gastroenterology 2011;140(2):497—507, e2. févr. [75] Vilgrain V, Pereira H, Assenat E, Guiu B, Ilonca AD, Pageaux G- P, et al. Efﬁcacy and safety of selective internal radiotherapy with yttrium-90 resin microspheres compared with sorafenib in locally advanced and inoperable hepatocellular carcinoma (SARAH): an open-label randomised controlled phase 3 trial. Lancet Oncol 2017;18(12):1624—36. [76] Chow PKH, Gandhi M, Tan S-B, Khin MW, Khasbazar A, Ong J, et al. SIRveNIB: Selective Internal Radiation Therapy Versus Sorafenib in Asia-Paciﬁc Patients With Hepatocel- lular Carcinoma. J Clin Oncol Off J Am Soc Clin Oncol 2018;36(19):1913—21, 01. [77] Ricke J, Sangro B, Amthauer H, Bargellini I, Bartenstein P, De Toni E, et al. The impact of combining Selective Inter- nal Radiation Therapy (SIRT) with sorafenib on overall survival in patients with advanced hepatocellular carcinoma: The SORAMIC trial palliative cohort. Ann Oncol Off J Eur Soc Med Oncol 2018;29(Suppl 5):v110, juin.",
+          "metadata": {
+            "heading": "Section starting on page 14",
+            "doc_id": "1-s2.0-S2210740120303569-main",
+            "country": "FR",
+            "source_type": "clinical_guideline",
+            "start_page": 14,
+            "end_page": 15,
+            "created_date": "2021",
+            "folder_path": "clinical guidelines/FR",
+            "split_index": 9,
+            "text_length": 1286,
+            "potential_comparators": [
+              "SIRveNIB",
+              "Ann",
+              "sorafenib",
+              "Gastroenterology",
+              "Radioembolization",
+              "Lancet",
+              "Efﬁcacy",
+              "sirvenib"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Section starting on page 14 **Source Type:** clinical_guideline\n\n[78] Chauhan N, Bukovcan J, Boucher E, Cosgrove D, Edeline J, Hamilton B, et al. Intra-Arterial TheraSphere Yttrium- 90 Glass Microspheres in the Treatment of Patients With Unresectable Hepatocellular Carcinoma: Protocol for the STOP- HCC Phase 3 Randomized Controlled Trial. JMIR Res Protoc 2018;7(8):e11234, 15 août. [79] Edeline J, Crouzet L, Campillo-Gimenez B, Rolland Y, Pracht M, Guillygomarc’h A, et al. Selective internal radiation ther- apy compared with sorafenib for hepatocellular carcinoma with portal vein thrombosis. Eur J Nucl Med Mol Imaging 2016;43(4):635—43, avr. [80] Llovet JM, Hilgard P, de Oliveira AC, Forner A, Zeuzem S, Galle PR, et al. Sorafenib in Advanced Hepatocellular Carcinoma. N Engl J Med 2008:13.",
+          "metadata": {
+            "heading": "Section starting on page 14",
+            "doc_id": "1-s2.0-S2210740120303569-main",
+            "country": "FR",
+            "source_type": "clinical_guideline",
+            "start_page": 14,
+            "end_page": 15,
+            "created_date": "2021",
+            "folder_path": "clinical guidelines/FR",
+            "split_index": 10,
+            "text_length": 811,
+            "potential_comparators": [
+              "sorafenib",
+              "Sorafenib",
+              "Selective",
+              "Eur",
+              "Intra-Arterial",
+              "JMIR"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Section starting on page 14 **Source Type:** clinical_guideline\n\n[90] El-Khoueiry AB, Sangro B, Yau T, Crocenzi TS, Kudo M, Hsu C, et al. Nivolumab in patients with advanced hepatocellular carcinoma (CheckMate 040): an open-label, non-comparative, phase 1/2 dose escalation and expansion trial. Lancet Lond Engl 2017;389(10088):2492—502, 24 juin. [91] Zhu AX, Finn RS, Edeline J, Cattan S, Ogasawara S, Palmer D, et al. Pembrolizumab in patients with advanced hepatocellular carcinoma previously treated with sorafenib (KEYNOTE-224): a non-randomised, open-label phase 2 trial. Lancet Oncol 2018;19(7):940—52. [92] Finn RS, Ryoo B-Y , Merle P, Kudo M, Bouattour M, Lim HY , et al. Pembrolizumab As Second-Line Therapy in Patients With Advanced Hepatocellular Carcinoma in KEYNOTE-240: A Randomized, Double-Blind, Phase III Trial. J Clin Oncol 2019;38(3):193—202, 2 déc. [93] Yau T, Park JW, Finn RS, Cheng A-L, Mathurin P, Edeline J, et al. CheckMate 459: A randomized, multi-center phase III study of nivolumab (NIVO) vs sorafenib (SOR) as ﬁrst-line (1L) treat- ment in patients (pts) with advanced hepatocellular carcinoma (aHCC). Ann Oncol 2019;30:v874—5, 1 oct.",
+          "metadata": {
+            "heading": "Section starting on page 14",
+            "doc_id": "1-s2.0-S2210740120303569-main",
+            "country": "FR",
+            "source_type": "clinical_guideline",
+            "start_page": 14,
+            "end_page": 15,
+            "created_date": "2021",
+            "folder_path": "clinical guidelines/FR",
+            "split_index": 14,
+            "text_length": 1178,
+            "potential_comparators": [
+              "Ann",
+              "sorafenib",
+              "Pembrolizumab",
+              "pembrolizumab",
+              "Lancet",
+              "Nivolumab",
+              "CheckMate",
+              "nivolumab"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Section starting on page 14 **Source Type:** clinical_guideline\n\n[88] Zhu AX, Kang Y-K, Yen C-J, Finn RS, Galle PR, Llovet JM, et al. Ramucirumab after sorafenib in patients with advanced hepatocellular carcinoma and increased /H9251-fetoprotein con- centrations (REACH-2): a randomised, double-blind, placebo- controlled, phase 3 trial. Lancet Oncol 2019;20(2):282—96, 1 févr. [89] Zhu A, Finn R, Galle P, Llovet J, Blanc JF , Okusaka T, et al. Ramucirumab as second-line treatment in patients with advanced hepatocellular carcinoma (HCC) and elevated alpha- fetoprotein (AFP) following ﬁrst-line sorafenib: Pooled efﬁcacy and safety across two global randomized Phase 3 studies (REACH-2 and REACH). Ann Oncol Off J Eur Soc Med Oncol 2018;29(Suppl 5):v122, juin.",
+          "metadata": {
+            "heading": "Section starting on page 14",
+            "doc_id": "1-s2.0-S2210740120303569-main",
+            "country": "FR",
+            "source_type": "clinical_guideline",
+            "start_page": 14,
+            "end_page": 15,
+            "created_date": "2021",
+            "folder_path": "clinical guidelines/FR",
+            "split_index": 13,
+            "text_length": 776,
+            "potential_comparators": [
+              "Ann",
+              "sorafenib",
+              "ramucirumab",
+              "Ramucirumab",
+              "Lancet"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Section starting on page 14 **Source Type:** clinical_guideline\n\n[49] Majumdar A, Roccarina D, Thorburn D, Davidson BR, Tsochatzis E, Gurusamy KS. Management of people with early- or very early-stage hepatocellular carcinoma: an attempted network meta-analysis. Cochrane Database Syst Rev 2017;3:CD011650, 28 mars. [50] Seror O, N’Kontchou G, Ibraheem M, Ajavon Y, Barrucand C, Ganne N, et al. Large (>or=5.0-cm) HCCs: multipolar RF abla- tion with three internally cooled bipolar electrodes— –initial experience in 26 patients. Radiology 2008;248(1):288—96, juill. [51] Hocquelet A, Aubé C, Rode A, Cartier V, Sutter O, Mani- chon AF , et al. Comparison of no-touch multi-bipolar vs.",
+          "metadata": {
+            "heading": "Section starting on page 14",
+            "doc_id": "1-s2.0-S2210740120303569-main",
+            "country": "FR",
+            "source_type": "clinical_guideline",
+            "start_page": 14,
+            "end_page": 15,
+            "created_date": "2021",
+            "folder_path": "clinical guidelines/FR",
+            "split_index": 2,
+            "text_length": 697,
+            "potential_comparators": [
+              "Comparison",
+              "Large",
+              "Cochrane",
+              "Radiology",
+              "Management"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Section starting on page 14 **Source Type:** clinical_guideline\n\n[94] Yau T, Kang Y-K, Kim T-Y, El-Khoueiry AB, Santoro A, Sangro B, et al. Nivolumab (NIVO) + ipilimumab (IPI) combination therapy in patients (pts) with advanced hepatocellular car- cinoma (aHCC): Results from CheckMate 040. J Clin Oncol 2019;37(15 suppl), 20 mai. 4012—4012. [95] Llovet JM, Di Bisceglie AM, Bruix J, Kramer BS, Lencioni R, Zhu AX, et al. Design and endpoints of clinical trials in hepatocel- lular carcinoma. J Natl Cancer Inst 2008;100(10):698—711, 21 mai. [96] Vilgrain V. Advancement in HCC imaging: diagnosis, staging and treatment efﬁcacy assessments: hepatocellular carcinoma: imaging in assessing treatment efﬁcacy. J Hepato-Biliary- Pancreat Sci 2010;17(4):374—9, juill. 15",
+          "metadata": {
+            "heading": "Section starting on page 14",
+            "doc_id": "1-s2.0-S2210740120303569-main",
+            "country": "FR",
+            "source_type": "clinical_guideline",
+            "start_page": 14,
+            "end_page": 15,
+            "created_date": "2021",
+            "folder_path": "clinical guidelines/FR",
+            "split_index": 15,
+            "text_length": 778,
+            "potential_comparators": [
+              "Design",
+              "Nivolumab",
+              "Advancement",
+              "nivolumab",
+              "ipilimumab"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Section starting on page 14 **Source Type:** clinical_guideline\n\n[81] Boige V, Barbare J-C, Rosmorduc O. Groupe de travail carcinome hépatocellulaire Prodige-Afef. [Use of sorafenib (Nexavar) in the treatment of hepatocellular carcinoma: PRODIGE AFEF recommendations]. Gastroenterol Clin Biol 2008;32(1 Pt. 1):3—7, janv. [82] Blanc J-F , Khemissa F, Bronowicki J-P , Monterymard C, Perar- nau J-M, Bourgeois V, et al. Results of the Phase II randomized French trial PRODIGE 21 comparing sorafenib vs pravastatin vs sorafenib and pravastatin vs best supportive care for the pallia- tive treatment of HCC in CHILD B cirrhotic patients. J Hepatol 2018;68:S195, 1 avr. [83] Kudo M, Finn RS, Qin S, Han K-H, Ikeda K, Piscaglia F, et al. Lenvatinib versus sorafenib in ﬁrst-line treatmentof patients with unresectable hepatocellular carcinoma: a randomised phase 3 non-inferiority trial. The Lancet 2018;391(10126):1163—73, 24 mars. [84] Finn RS, Qin S, Ikeda M, Galle PR, Ducreux M, Kim T-Y, et al. Ate- zolizumab plus Bevacizumab in Unresectable Hepatocellular Carcinoma. N Engl J Med 2020;382(20):1894—905, 14 mai.",
+          "metadata": {
+            "heading": "Section starting on page 14",
+            "doc_id": "1-s2.0-S2210740120303569-main",
+            "country": "FR",
+            "source_type": "clinical_guideline",
+            "start_page": 14,
+            "end_page": 15,
+            "created_date": "2021",
+            "folder_path": "clinical guidelines/FR",
+            "split_index": 11,
+            "text_length": 1124,
+            "potential_comparators": [
+              "Lenvatinib",
+              "lenvatinib",
+              "pravastatin",
+              "sorafenib",
+              "bevacizumab",
+              "Gastroenterol",
+              "Ate-",
+              "Results",
+              "Use",
+              "Groupe",
+              "zolizumab"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** 9 **Source Type:** clinical_guideline\n\nCompliance With Hepatocellular Carcinoma Surveillance Guidelines Associated With Increased Lead-Time Adjusted Survival of Patients With Compensated Viral Cirrhosis: A Multi-Center Cohort Study. Gastroenterology 2018;155(2), 431-442.e10. [2] Compagnon P, Grandadam S, Lorho R, Turlin B, Camus C, Jianrong Y, et al. Liver transplantation for hepatocellular car- cinoma without preoperative tumor biopsy. Transplantation 2008;86(8):1068—76, 27 oct. [3] Mendiratta-Lala M, Park H, Kolicaj N, Mendiratta V, Bassi D. Small intrahepatic peripheral cholangiocarcinomas as mimics of hepatocellular carcinoma in multiphasic CT . Abdom Radiol N Y 2017;42(1):171—8. [4] Huang B, Wu L, Lu X-Y , Xu F, Liu C-F , Shen W-F, et al. Small Intra- hepatic Cholangiocarcinoma and Hepatocellular Carcinoma in Cirrhotic Livers May Share Similar Enhancement Patterns at Multiphase Dynamic MR Imaging. Radiology 2016;281(1):150—7.",
+          "metadata": {
+            "heading": "9",
+            "doc_id": "1-s2.0-S2210740120303569-main",
+            "country": "FR",
+            "source_type": "clinical_guideline",
+            "start_page": 9,
+            "end_page": 13,
+            "created_date": "2021",
+            "folder_path": "clinical guidelines/FR",
+            "split_index": 8,
+            "text_length": 957,
+            "potential_comparators": [
+              "Small",
+              "Radiology",
+              "Gastroenterology",
+              "Abdom",
+              "Transplantation",
+              "Liver"
+            ]
+          }
+        }
+      ]
+    },
+    "IT": {
+      "country_metadata": {
+        "country_code": "IT",
+        "chunk_count": 8,
+        "total_text_length": 7543,
+        "unique_documents": 1,
+        "unique_headings": 5
+      },
+      "chunks": [
+        {
+          "text": "**Heading:** 9 List of publications **Source Type:** clinical_guideline\n\nGuy J, Kelley RK, Roberts J, et al: Multidisciplinary Management of Hepatocellular Carcinoma. Clin\nGastroenterol Hepatol 10:354-62, 2012\n18. Durand F, Valla D: Assessment of the prognosis of cirrhosis: Child-Pugh versul MELD. J Hepatol 42:S110-\nS107, 2005\n19. Ripoli C, Genescà J, Araujo IK, et al: Rebleeding prophylaxis improves outcomes in patients with hepatocellular\ncarcinoma. A multicenter case-control study. Hepatology 2013\n20. Influence of high risk esophageal varices on outcomes in hepatocellular carcinoma patients: benefits of\nprophylactic endoscopic therapies. Hepatogastroenterology 59:2557-63, 2012\n21. Liaw YF, Sung JJ, Chow WC, et al: Lamivudine for patients with chronic hepatitis B and advanced liver disease. N Engl J Med 351:1521-31, 2004\n22. Singal AG, Volk ML, Jensen D, et al: A sustained viral response is associated with reduced liver-related\nmorbidity and mortality in patients with hepatitis C virus. Clin Gastroenterol Hepatol 8:280-8, 2010\n23. A new prognostic system for hepatocellular carcinoma: a retrospective study of 435 patients: the Cancer of the\nLiver Italian Program (CLIP) investigators. Hepatology 28:751-5, 1998\n24.",
+          "metadata": {
+            "heading": "9 List of publications",
+            "doc_id": "2013_LG_AIOM_Epatocarcinoma_W11_26.9.13",
+            "country": "IT",
+            "source_type": "clinical_guideline",
+            "start_page": 35,
+            "end_page": 39,
+            "created_date": "2013",
+            "folder_path": "clinical guidelines/IT",
+            "split_index": 3,
+            "text_length": 1233,
+            "potential_comparators": [
+              "Ripoli",
+              "Hepatogastroenterology",
+              "Clin",
+              "Singal",
+              "Influence",
+              "Durand",
+              "Liaw",
+              "Hepatology"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** 9 List of publications **Source Type:** clinical_guideline\n\nKulik LM, Carr BI, Mulcahy MF, et al: Safety and efficacy of 90Y radiotherapy for hepatocellular carcinoma\nwith and without portal vein thrombosis. Hepatology 47:71-81, 2008\n55. Salem R, Lewandowski RJ, Mulcahy MF, et al: Radioembolization for hepatocellular carcinoma using Yttrium-\n90 microspheres: a comprehensive report of long-term outcomes. Gastroenterology 138:52-64, 2010\n56. Hilgard P, Hamami M, Fouly AE, et al: Radioembolization with yttrium-90 glass microspheres in hepatocellular\ncarcinoma: European experience on safety and long-term survival. Hepatology 52:1741-9, 2010\n57. Mazzaferro V, Bhoori S, Sposito C, et al: Milan criteria in liver transplantation for hepatocellular carcinoma: an\nevidence-based analysis of 15 years of experience. Liver Transpl 17 Suppl 2:S44-57, 2011\n58.",
+          "metadata": {
+            "heading": "9 List of publications",
+            "doc_id": "2013_LG_AIOM_Epatocarcinoma_W11_26.9.13",
+            "country": "IT",
+            "source_type": "clinical_guideline",
+            "start_page": 35,
+            "end_page": 39,
+            "created_date": "2013",
+            "folder_path": "clinical guidelines/IT",
+            "split_index": 10,
+            "text_length": 869,
+            "potential_comparators": [
+              "Mazzaferro",
+              "Salem",
+              "Hilgard",
+              "Gastroenterology",
+              "Liver",
+              "Hepatology"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** HEPATOCARCINOME GUIDELINE satisfactory cost-benefit ratio when the incidence of the disease in the population undergoing treatment is less than or **Source Type:** clinical_guideline\n\nThere is only one large Chinese prospective randomized trial that reports data in favour of earlier diagnosis and improved survival in subjects with chronic hepatitis B virus (HBV) infection under surveillance, even though the drop-out rate in the study is significant3 (Level of evidence 1+). Several observational studies, including some Italian ones, have given results consistent with the Asian data, confirming that half-yearly surveillance4 (level of evidence 2++) is effective in cirrhotic patients (considered at risk for annual incidence of HCC at around 2-45.6%) (Class of Evidence 2++). Advanced age (over 70-75) is not in itself a reason not to recommend periodic monitoring, as it does not preclude subsequent treatment8 (Level of Evidence 2+). The addition of periodic alpha-fetoprotein dosing to ultrasound surveillance does not substantially increase (approximately 6%) the rate of recognition of HCC at an early stage and significantly worsens the cost-effectiveness of surveillance, increasing the number of false positives (Leval of Evidences 2+) However, monitoring of the semihyperfetoma may not reduce the patient's risk of hypersensitivity to monitoring, except in the absence of available instruments. However, it remains an indicator of the risk of developing HCC and should be dosed at the time of detection of a focal liver lesion on cirrhosis to contribute to the diagnostic and prognostic framework.",
+          "metadata": {
+            "heading": "HEPATOCARCINOME GUIDELINE satisfactory cost-benefit ratio when the incidence of the disease in the population undergoing treatment is less than or",
+            "doc_id": "2013_LG_AIOM_Epatocarcinoma_W11_26.9.13",
+            "country": "IT",
+            "source_type": "clinical_guideline",
+            "start_page": 8,
+            "end_page": 8,
+            "created_date": "2013",
+            "folder_path": "clinical guidelines/IT",
+            "split_index": 0,
+            "text_length": 1625,
+            "potential_comparators": [
+              "Several",
+              "Advanced",
+              "However"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** 9 List of publications **Source Type:** clinical_guideline\n\nSamuel M, Chow PK, Chan Shih-Yen E, et al: Neoadjuvant and adjuvant therapy for surgical resection of\nhepatocellular carcinoma. Cochrane Database Syst Rev:CD001199, 2009\n63. Miao RY, Zhao HT, Yang HY, et al: Postoperative adjuvant antiviral therapy for hepatitis B/C virus-related\nhepatocellular carcinoma: a meta-analysis. World J Gastroenterol 16:2931-42, 2010\n64. Cheng AL, Kang YK, Chen Z, et al: Efficacy and safety of sorafenib in patients in the Asia-Pacific region with\nadvanced hepatocellular carcinoma: a phase III randomised, double-blind, placebo-controlled trial. Lancet Oncol\n65. Abou-Alfa GK, Schwartz L, Ricci S, et al: Phase II study of sorafenib in patients with advanced hepatocellular\ncarcinoma. J Clin Oncol 24:4293-300, 2006\n66. Pinter M, Sieghart W, Graziadei I, et al: Sorafenib in unresectable hepatocellular carcinoma from mild to\nadvanced stage liver cirrhosis. Oncologist 14:70-6, 2009\n67. Worns MA, Weinmann A, Pfingst K, et al: Safety and efficacy of sorafenib in patients with advanced\nhepatocellular carcinoma in consideration of concomitant stage of liver cirrhosis. J Clin Gastroenterol 43:489-95,\n68.",
+          "metadata": {
+            "heading": "9 List of publications",
+            "doc_id": "2013_LG_AIOM_Epatocarcinoma_W11_26.9.13",
+            "country": "IT",
+            "source_type": "clinical_guideline",
+            "start_page": 35,
+            "end_page": 39,
+            "created_date": "2013",
+            "folder_path": "clinical guidelines/IT",
+            "split_index": 12,
+            "text_length": 1208,
+            "potential_comparators": [
+              "sorafenib",
+              "Worns",
+              "Cochrane",
+              "Miao",
+              "Cheng",
+              "Lancet",
+              "Pinter",
+              "World",
+              "Oncologist",
+              "Abou-Alfa"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Some centres prefer the use of TACE-DEB on the basis of a comparison of the number of patients in each treatment group. **Source Type:** clinical_guideline\n\nIt should be recalled that sorafenib has been approved by the European Medicines Agency (EMA) for the treatment of HCCC also in patients with Child-Pugh B liver cirrhosis. At present, some phase IV60 observational studies suggest that a subgroup of patients with advanced HCC and Child-Pugh B liver cirrhosis may tolerate sorafenib treatment (Level of Evidence 2++), while a definitive demonstration of the efficacy of Sorafenib in this population continues to be lacking60 Degree of Strength of Recommendation Clinical recommendation clinical SIGN Percutaneous ablative treatments represent the A treatment of choice for patients with Child- Pugh B deficiency and severe Positive HCC entering the Milan criteria, but not transplantable.",
+          "metadata": {
+            "heading": "Some centres prefer the use of TACE-DEB on the basis of a comparison of the number of patients in each treatment group.",
+            "doc_id": "2013_LG_AIOM_Epatocarcinoma_W11_26.9.13",
+            "country": "IT",
+            "source_type": "clinical_guideline",
+            "start_page": 20,
+            "end_page": 20,
+            "created_date": "2013",
+            "folder_path": "clinical guidelines/IT",
+            "split_index": 0,
+            "text_length": 907,
+            "potential_comparators": [
+              "sorafenib"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** This Decision shall enter into force on the day following that of its publication in the Official Journal of the European Union. **Source Type:** clinical_guideline\n\nQuestion: Should Transcatheter arterial chemoembolization (TACE) PLUS a drug-eluting bead (DC Bead) vs TACE be used for treatment of hepatocellular carcinoma (HCC)? Settings: M0 Multi-nodular unresectable HCC",
+          "metadata": {
+            "heading": "This Decision shall enter into force on the day following that of its publication in the Official Journal of the European Union.",
+            "doc_id": "2013_LG_AIOM_Epatocarcinoma_W11_26.9.13",
+            "country": "IT",
+            "source_type": "clinical_guideline",
+            "start_page": 39,
+            "end_page": 39,
+            "created_date": "2013",
+            "folder_path": "clinical guidelines/IT",
+            "split_index": 0,
+            "text_length": 387,
+            "potential_comparators": [
+              "Settings"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** 9 List of publications **Source Type:** clinical_guideline\n\nHepatology 49:453-9, 2009\n45. Llovet JM, Real MI, Montana X, et al: Arterial embolisation or chemoembolisation versus symptomatic\ntreatment in patients with unresectable hepatocellular carcinoma: a randomised controlled trial. Lancet\n46. Lo CM, Ngan H, Tso WK, et al: Randomized controlled trial of transarterial lipiodol chemoembolization for\nunresectable hepatocellular carcinoma. Hepatology 35:1164-71, 2002\n47. Llovet JM, Bruix J: Systematic review of randomized trials for unresectable hepatocellular carcinoma:\nChemoembolization improves survival. Hepatology 37:429-42, 2003\n48. Oliveri RS, Wetterslev J, Gluud C: Transarterial (chemo)embolisation for unresectable hepatocellular carcinoma. Cochrane Database Syst Rev:CD004787, 2011\n49. Lammer J, Malagari K, Vogl T, et al: Prospective randomized study of doxorubicin-eluting-bead embolization in\nthe treatment of hepatocellular carcinoma: results of the PRECISION V study. Cardiovasc Intervent Radiol\n50.",
+          "metadata": {
+            "heading": "9 List of publications",
+            "doc_id": "2013_LG_AIOM_Epatocarcinoma_W11_26.9.13",
+            "country": "IT",
+            "source_type": "clinical_guideline",
+            "start_page": 35,
+            "end_page": 39,
+            "created_date": "2013",
+            "folder_path": "clinical guidelines/IT",
+            "split_index": 8,
+            "text_length": 1034,
+            "potential_comparators": [
+              "Cochrane",
+              "Lammer",
+              "Oliveri",
+              "Lancet",
+              "Cardiovasc",
+              "Lo",
+              "Llovet",
+              "Hepatology"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Recommendations produced by the GRADE methodology **Source Type:** clinical_guideline\n\nQUESTION 1: In cirrhotic (max Child-Pugh B) patients with unresectable M0 multi-nodular HCC, in the absence of portal thrombosis is TACE combined with DC beads recommended vs TACE?",
+          "metadata": {
+            "heading": "Recommendations produced by the GRADE methodology",
+            "doc_id": "2013_LG_AIOM_Epatocarcinoma_W11_26.9.13",
+            "country": "IT",
+            "source_type": "clinical_guideline",
+            "start_page": 34,
+            "end_page": 34,
+            "created_date": "2013",
+            "folder_path": "clinical guidelines/IT",
+            "split_index": 0,
+            "text_length": 280,
+            "potential_comparators": []
+          }
+        }
+      ]
+    },
+    "NL": {
+      "country_metadata": {
+        "country_code": "NL",
+        "chunk_count": 8,
+        "total_text_length": 8810,
+        "unique_documents": 1,
+        "unique_headings": 7
+      },
+      "chunks": [
+        {
+          "text": "**Heading:** Radio embolization **Source Type:** clinical_guideline\n\nwith HCC? Select A systematic review of the literature was performed to answer the following question: Which treatment is to be advised for patients with (unresectable) HCC? PICO P: Non-locally-treatable patients with a diagnosis of hepatocellular carcinoma; I: Systemic therapy; C: Other systemic therapy or placebo; O: Overall survival, progression-free survivorship, response rate, adverse events, quality of life. Progression-free Time from randomisation or initiation of treatment to the occurrence of di survival (PFS) progression or death, with a minimum follow-up of 1 year Tumour response rate Adverse events (AE) Grade ≥ 3 Quality of life (QLo) Overall QoL, measured with a validated and reliable instrumentally Clinically relevant difference The guideline development group defined the outcome measures as follows: Overall survivability (OS) Adverse events: < 25% difference. Data-synthesis Results from RCTs studies were described and synthesized (preferably by meta-analysis) separately.",
+          "metadata": {
+            "heading": "Radio embolization",
+            "doc_id": "Hepatocellulair_carcinoom",
+            "country": "NL",
+            "source_type": "clinical_guideline",
+            "start_page": 75,
+            "end_page": 135,
+            "created_date": "2012",
+            "folder_path": "clinical guidelines/NL",
+            "split_index": "57_1_0",
+            "text_length": 1069,
+            "potential_comparators": [
+              "Progression-free",
+              "PICO",
+              "Data-synthesis",
+              "Select"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Hepatocellular carcinoma (HCC) is the most common type of liver cancer. **Source Type:** clinical_guideline\n\nWhat is this Directive about? This Directive focuses on what is the best care for patients with hepatocellular carcinoma (HCC) according to current standards. It covers the following topics: Surveillance, diagnosis, stereotactic radiotherapy, palliative system therapy, radiation embolization, surgery, follow-up and aftercare. Who is this directive aimed at? The Directive applies to all adult patients with HCC and to adult patients at increased risk of HCC who need to be included in a surveillance programme. The Directive is limited to patients with advanced fibrosis or cirrhosis where this is indicated. Scope The Directive addresses all professionals involved in second or third line surveillance, diagnosis and treatment and counselling of patients with Hepatocellulare carcinomas. For hepatocell carcinom patients, this Directive is a care system in the form of surgical diagnosis, treatment and how to deal with liver cancer. How did the directive come about?",
+          "metadata": {
+            "heading": "Hepatocellular carcinoma (HCC) is the most common type of liver cancer.",
+            "doc_id": "Hepatocellulair_carcinoom",
+            "country": "NL",
+            "source_type": "clinical_guideline",
+            "start_page": 3,
+            "end_page": 3,
+            "created_date": "2012",
+            "folder_path": "clinical guidelines/NL",
+            "split_index": 0,
+            "text_length": 1092,
+            "potential_comparators": [
+              "It",
+              "Scope",
+              "Who",
+              "How"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Table 1 on page 117 **Source Type:** clinical_guideline\n\nTable contains the following columns: Hepatocellular carcinoma, Column_2, Column _ 3 Row 1:\nHepatocell carcinomas: treatment with atezolizumab + bevacizumab compared to sorafenib. Lenvantib is non-inferior to soravenib. The overall robustness of the literature within the first-line treatments was rated as low and very low. This is related to the inaccuracy of the findings (small number of studies) and limitations in study design (risk or bias). Row 2:\nHepato cellular cancer: For the second-line treatment, one RCT was found, comparing regorafenib with placebo (Bruix, 2017). The systematic literature analysis shows that treatment with regoraffenib could have positive effects on risk and overall survival. Due to the outcome of tumour responses, complications, and lack of evidence based on clinical findings, the overall literature findings were considered to be inaccurate due to the low quality of life. Survival gains from these groups together were statistically significant but did not meet the old PASKWIL criteria (OS of 10.2 versus 8.0 months; Δ 2.2 months, HR: 0.76; 95%-BI: 0.63 to 0.92; P = 0.005). Row 3:\nHepatocellular carcinoma: All included Phase III studies included patients with Child-Pugh A (except Cheng, 2009) leaving no judgement to be made on patients with a basis of Child Pugh B.",
+          "metadata": {
+            "heading": "Table 1 on page 117",
+            "doc_id": "Hepatocellulair_carcinoom",
+            "country": "NL",
+            "source_type": "clinical_guideline",
+            "start_page": 117,
+            "end_page": 117,
+            "created_date": "2012",
+            "folder_path": "clinical guidelines/NL",
+            "split_index": 0,
+            "text_length": 1381,
+            "potential_comparators": [
+              "atezolizumab",
+              "soravenib",
+              "regorafenib",
+              "sorafenib",
+              "bevacizumab",
+              "regoraffenib",
+              "Survival",
+              "Lenvantib",
+              "Row",
+              "Due"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Table 1 on page 144 **Source Type:** clinical_guideline\n\nDepending on the presentation of the recurrence, the condition and age of the patient will be further determined in a multidisciplinary policy consultation. It is up to the multidiscipline consultation to determine whether additional treatment can be carried out without reducing the Quality of Life and increasing the burden of disease. Row 16:\nHepatocellular carcinoma: Uka study (2007) shows that of the 995 patients diagnosed with HCC, 151 patients developed metastases. 68 patients (45%) developed metasts at presentation at the time of HCC and 83 patients (55%) metastasized during follow-up with the largest proportion involving pulmonary metastasis (47%) (Uka, 2007). Expert evaluation of the literature and translation to sound judgment is required. Row 19:\nHepatocellular carcinoma: For patients who have undergone treatment for HCC, early detection of a local recurrence or de novo tumor is meaningful, as small tumors can be treated locally. If the primary HCC was accompanied by an elevated alpha-fetoprotein (AFP), AFP may be used in follow-up. Row 20:\nHepatocell cancer: PDF created on 13-05-2025 144/155",
+          "metadata": {
+            "heading": "Table 1 on page 144",
+            "doc_id": "Hepatocellulair_carcinoom",
+            "country": "NL",
+            "source_type": "clinical_guideline",
+            "start_page": 144,
+            "end_page": 144,
+            "created_date": "2012",
+            "folder_path": "clinical guidelines/NL",
+            "split_index": 1,
+            "text_length": 1189,
+            "potential_comparators": [
+              "Row",
+              "It",
+              "If",
+              "Expert"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Table 1 on page 146 **Source Type:** clinical_guideline\n\nTable contains the following columns: Hepatocellular carcinoma, Column_2 Row 1:\nHepatocellulose: Background Row 2:\nHepato cellular carcinooma: Early detection of the development of recurrent HCC may be meaningful for patients who have undergone treatment for HCC. It may lead to gains in quality of life or survival time. This detection should take place via a follow-up schedule. Row 4:\nHepato cellulose carcinom: Search and select 5: Hepato Cellular carcineoma: No systematic literature analysis has been performed for this question. The recommendations are based on expert opinion of the expert group, which may be backed up with literature submitted by expert group members.",
+          "metadata": {
+            "heading": "Table 1 on page 146",
+            "doc_id": "Hepatocellulair_carcinoom",
+            "country": "NL",
+            "source_type": "clinical_guideline",
+            "start_page": 146,
+            "end_page": 146,
+            "created_date": "2012",
+            "folder_path": "clinical guidelines/NL",
+            "split_index": 0,
+            "text_length": 748,
+            "potential_comparators": [
+              "Row",
+              "It"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Table 1 on page 76 **Source Type:** clinical_guideline\n\nA response was found in 62% of patients, with a median survival of 20.3 months (95% CI = 16.7 to 26.4 months) ((Lam, 2022). Row 3:\nHepatocellular carcinoma: In the presented studies, different products were used in both arms, i.e. conventional TACE or DEB-TACE versus resin or glass yttrium-90 (90Y) -TARE. Each product was used in two of the four studies and thus crossovers were compared. Importantly, this is also to be expected from resin versus glass 90Y-TARE, however, there have never been head-to-head studies performed. In the daily routine, the available products will be used by each other, including also holmium-166 (166TARE) -Reinders (E2022) -Houtniks. Row 4:\nHepatocellular carcinoma: In conclusion, the four included studies show evidence of a possible positive effect of TARE on local tumour control, response and success rate (downstaging/bridging) compared to TACE. Clinically relevant differences were found for several outcome measures, but the overall strength of the evidence is insufficient to draw a definitive conclusion here. Row 5:\nHepatocell carcinomas: Advantages and disadvantages of the intervention (TARE) Row 6:\nHepato cell carcinomes: TACE is considered the arm control in the analysis, as this is currently the standard (international) of care for patients with irrespective BCLC 0 in patients who are not treated with portable cell techniques. Row 7:\nHepatocells: unlike TACE, patients with hepatocell cancer are treated in a vein.",
+          "metadata": {
+            "heading": "Table 1 on page 76",
+            "doc_id": "Hepatocellulair_carcinoom",
+            "country": "NL",
+            "source_type": "clinical_guideline",
+            "start_page": 76,
+            "end_page": 76,
+            "created_date": "2012",
+            "folder_path": "clinical guidelines/NL",
+            "split_index": 2,
+            "text_length": 1538,
+            "potential_comparators": [
+              "Row",
+              "Each",
+              "Importantly",
+              "Clinically"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Radio embolization **Source Type:** clinical_guideline\n\nAug. 2014;26:44) Morimoto M, Numata K, Kondou M, Nozaki A, Morita S, Tanaka K. Midterm outcomes in patients with intermediate-sized hepatocellular carcinoma: a randomized controlled trial for determining the efficacy of radiofrequency ablation combined with transcatheter arterial chemoembolization. Recommendation Decide whether multidisciplinary TARE or palliative systemic therapy is preferred in a centre with expertise in the treatment of HCC (as described in SONCOS guidelines 2023) in the context of patients with (locally) advanced hepatocellular carcinoma, where no resection, ablation or TACE is possible. and the quality of the evidence A literature review was conducted on the differences in clinical outcomes between treatment with TARE compared to sorafenib.",
+          "metadata": {
+            "heading": "Radio embolization",
+            "doc_id": "Hepatocellulair_carcinoom",
+            "country": "NL",
+            "source_type": "clinical_guideline",
+            "start_page": 75,
+            "end_page": 135,
+            "created_date": "2012",
+            "folder_path": "clinical guidelines/NL",
+            "split_index": 29,
+            "text_length": 841,
+            "potential_comparators": [
+              "Midterm",
+              "sorafenib",
+              "Recommendation"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Table 1 on page 90 **Source Type:** clinical_guideline\n\nRow 5: Hepatocell carcinomas: Underpinning 6: Hepatocele carcinom: Background: Row 7: Hepatoceles carcinome: For a hepatocellicular carcinooma (HCC) up to 2 cm is preferred because of the efficacy of tumor resection comparable to that of ablation. However, ablation outcomes have steadily improved in recent years due to improvements in ablation methods and needle positioning. In addition, a significant proportion of patients with a tumor >2 cm are not candidates for resection, due to cirrhosis with portal hypertension, old age, co-morbidity and/or an unfavourable location of the tumor. Row 8: Hepatocellular carcinoma: To increase the effectiveness of ablation in larger tumors, several trials have been performed in which ablation is combined with transcervical chemoembolism (TACE). The combination with ablation with TACE is possible only in patients with hepatocell cancer.",
+          "metadata": {
+            "heading": "Table 1 on page 90",
+            "doc_id": "Hepatocellulair_carcinoom",
+            "country": "NL",
+            "source_type": "clinical_guideline",
+            "start_page": 90,
+            "end_page": 90,
+            "created_date": "2012",
+            "folder_path": "clinical guidelines/NL",
+            "split_index": "2_1_0",
+            "text_length": 952,
+            "potential_comparators": [
+              "Row",
+              "However"
+            ]
+          }
+        }
+      ]
+    },
+    "PO": {
+      "country_metadata": {
+        "country_code": "PO",
+        "chunk_count": 8,
+        "total_text_length": 7794,
+        "unique_documents": 1,
+        "unique_headings": 1
+      },
+      "chunks": [
+        {
+          "text": "**Source Type:** clinical_guideline\n\n6.6 Algorithm of action (progression grading and treatment regimen alignment) 6.1 Progression assessment systems for clinical decision-making in HCC II and A should simultaneously take into account the characteristics of the tumour, liver function and overall disease status. 6.2 The BCLC assessment system (diagnosis 2) has been validated repeatedly and individually, and is continuously improved on the basis of scientific evidence. levels of scientific evidence for different types of treatment according to their strength and magnitude of clinical benefit (Figure 3). 6.3. There is a concept of migration between different stages of III,B disease progression, which may result in changes in the selection of the optimal treatment. 6.4. Patients should be discussed in multidisciplinary teams so that III,A takes into account all changes in clinical status and dynamically adapts treatment options in an individualized manner. 6.5. The assessment of response to treatment in hepatocellular cancer should be II, A based on RECIST criteria in case of locoregional therapies. II, B In case of systemic therapy, mRECIST or RECIS systems are recommended. 6.6 For the assessment of response after resection, locoregional or systemic therapy II, multiphase computed tomography or magnetic resonance imaging with contrast is recommended.",
+          "metadata": {
+            "heading": "",
+            "doc_id": "rak-watrobowokomorkowy-podsumowanie-zalecen",
+            "country": "PO",
+            "source_type": "clinical_guideline",
+            "start_page": 1,
+            "end_page": 6,
+            "created_date": "unknown_year",
+            "folder_path": "clinical guidelines/PO",
+            "split_index": 6,
+            "text_length": 1369,
+            "potential_comparators": [
+              "There",
+              "Patients",
+              "II"
+            ]
+          }
+        },
+        {
+          "text": "**Source Type:** clinical_guideline\n\n7.7 Surgical treatment 7.1. Liver resection 7.1.1 Primary hepatocellular carcinoma resection is the treatment of choice in patients with a single tumour, Child and Pugh A-scale liver function, absence of hypertension, normal bilirubin, platelet count > 100 000/ mm3, or a significant HbA-free hepatic pressure gradient of approximately 10 mm2. 7.1.2 Anatomical resections segment ectomy, III bisegment ectome, C including the area of arterial and portal vasculature are recommended. 7.1.3. The perioperative mortality of patients with cirrhosis of the liver II A should not exceed 23%. 7.1.4. Additional recommendations for resection of III, B multicenter hepatocellular cancers or single tumors in patients with portal hypertension and/ or in the Child and Pugh B groups, but beyond the scope of the transitional treatment plan, should be based on comparative positive outcomes with the post-treatment groups of intracranial cancer III A and intraregional cancer in the affected areas. 1540% III, A and extra-hepatic 5060%) affects approximately 70% of patients after tumour resection.",
+          "metadata": {
+            "heading": "",
+            "doc_id": "rak-watrobowokomorkowy-podsumowanie-zalecen",
+            "country": "PO",
+            "source_type": "clinical_guideline",
+            "start_page": 1,
+            "end_page": 6,
+            "created_date": "unknown_year",
+            "folder_path": "clinical guidelines/PO",
+            "split_index": 7,
+            "text_length": 1123,
+            "potential_comparators": [
+              "Additional",
+              "Liver"
+            ]
+          }
+        },
+        {
+          "text": "**Source Type:** clinical_guideline\n\nRegorafenib has only been studied in patients who are well tolerant of sorafenib I, B 9.7. In patients previously treated with Sorafenib with AFP ≥ 400 ng/ ml I, ramucyrumab C slightly prolongs overall survival. 9.8. Optimal systemic treatment has not been established for second-line III, B patients who have previously received bevacizumab with atezolizumab (however, patients may benefit from the use of sorafenib, leninivat or cabozantinib). 9.9. The value of stand-alone immunotherapy with controls at points I and B is not established. 9.10. Chemotherapy should not be used in advanced hepatocellular carcinoma I B. 9.11.",
+          "metadata": {
+            "heading": "",
+            "doc_id": "rak-watrobowokomorkowy-podsumowanie-zalecen",
+            "country": "PO",
+            "source_type": "clinical_guideline",
+            "start_page": 1,
+            "end_page": 6,
+            "created_date": "unknown_year",
+            "folder_path": "clinical guidelines/PO",
+            "split_index": 11,
+            "text_length": 664,
+            "potential_comparators": [
+              "atezolizumab",
+              "regorafenib",
+              "Optimal",
+              "sorafenib",
+              "Chemotherapy",
+              "bevacizumab",
+              "cabozantinib",
+              "ramucyrumab"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Medical Table 1 on page 4 **Source Type:** clinical_guideline\n\nLiver resection Row 6 contains: '7.1.1. Resection of primary hepatocellular carcinoma is the treatment of choice in patients with a single tumour, good liver function according to the Child and Pugh A-scale, no portal hypertension, normal bilirubin concentration, platelet count > 100/ 000mm3 or hepatocyte pressure gradient of approximately 10 mm Hg, without penetration of significant vascular structures in the liver.' Row 7 contains: \"7.1. Recommended anatomical resections are ectomy, bisegmental resection including arterial aneurysm and rectum\". Row 83:\nMortality rate in patients with CHILD and PUGHA A, absence of peripheral hypertension. Row A7 contains: operation in the marrow segment should not exceed 94.3%\". Row II, A7, contains: The introduction of additional recommendations for resection of multifocal hepatocellular cancers or single tumours in patients with portal hypertension and/or in the Child and Pugh B group, but outside the scope of transplantation therapy, should be based on a comparison of the results of prospective studies with a group of patients with locoregional methods\"., \"III, B\" Row 10 contains: \"7.1.5. The treatment strategy should then depend on a reassessment in the progression classification.', 'III, A' Row 11 contains: '7.1.6.",
+          "metadata": {
+            "heading": "Medical Table 1 on page 4",
+            "doc_id": "rak-watrobowokomorkowy-podsumowanie-zalecen",
+            "country": "PO",
+            "source_type": "clinical_guideline",
+            "start_page": 4,
+            "end_page": 4,
+            "created_date": "unknown_year",
+            "folder_path": "clinical guidelines/PO",
+            "split_index": 1,
+            "text_length": 1350,
+            "potential_comparators": [
+              "Row",
+              "Recommended",
+              "Resection"
+            ]
+          }
+        },
+        {
+          "text": "**Source Type:** clinical_guideline\n\n5.5. The microscopic detection of cancer should include all possible histological and prognostic parameters from the histological stage of the cancer to the type, IV and A. 5.6. Immunohistochemical confirmation of hepatocytic origin IV, A is necessary in all G3 and selected G2 cancers. 5.8 Differential diagnosis of early and large grade III dysplastic tumour A requires the use of a panel of immuno-historical markers involving cancer, HSP70 and glypican GS-3.5.9 Diagnosis of highly mature hepatocellular carcinomas in non-marginal hepatocytes A, IV with differential growths in hepatic and non-globular tumours 5.10. Genetic diagnosis may help to identify certain II/III, B subtypes of hepatocellular carcinoma, but it still plays a limited role in the selection of targeted therapy.",
+          "metadata": {
+            "heading": "",
+            "doc_id": "rak-watrobowokomorkowy-podsumowanie-zalecen",
+            "country": "PO",
+            "source_type": "clinical_guideline",
+            "start_page": 1,
+            "end_page": 6,
+            "created_date": "unknown_year",
+            "folder_path": "clinical guidelines/PO",
+            "split_index": 5,
+            "text_length": 824,
+            "potential_comparators": [
+              "Immunohistochemical",
+              "Genetic"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Medical Table 1 on page 4 **Source Type:** clinical_guideline\n\nPresently, the use of pre- and post-operative complementary treatment in patients undergoing resection is not recommended.', 'I, A', Row 12 contains: \"7.1.7. In experienced centres, hepatic resections for hepatocellular carcinoma should be performed laparoscopically\"., ' III, A,' Row 13:\n7.2. Transplantation of a liver Row 14 contains: '.2.1. Liver transplantation is considered the best method of treatment for patients meeting the mediolateral criteria (single tumours up to 5 cm in diameter or no more than 3 foci of tumours with a diameter of up to 3 cm) who are not amenable to resection. The perioperative mortality should not exceed 3% and the annual 10%.'; 'II, A' Row 15 contains: '7.2.2.",
+          "metadata": {
+            "heading": "Medical Table 1 on page 4",
+            "doc_id": "rak-watrobowokomorkowy-podsumowanie-zalecen",
+            "country": "PO",
+            "source_type": "clinical_guideline",
+            "start_page": 4,
+            "end_page": 4,
+            "created_date": "unknown_year",
+            "folder_path": "clinical guidelines/PO",
+            "split_index": 2,
+            "text_length": 775,
+            "potential_comparators": [
+              "Liver",
+              "Transplantation"
+            ]
+          }
+        },
+        {
+          "text": "**Source Type:** clinical_guideline\n\nis recommended for the treatment of patients with 2 to 3 tumours of I, A up to 3 cm diameter who are not eligible for transplantation. 8.1.5. Both methods of thermoblation (using radiofrequency waves or microwave III, A) can be successfully used to treat patients with hepatocellular carcinoma. Microwave thermoablation has an advantage in treating lesions > 3 cm in diameter and tumours located close to large blood vessels. 8.1.8 Immediately after thermoablation, multiphase III, A computed tomography with contrast should be performed to assess the completeness of the procedure. 8.1.9 The follow-up examination after ablation is magnetic resonance imaging (preferred II, A method) or multiphasic computed Tomography. These should be done on a schedule of 4-6 weeks post-operation, then every 3 months for 1 year and every 6 months for 3 consecutive years. Ultrasonography is not an appropriate method to monitor the effectiveness of ablation 8.10.1.",
+          "metadata": {
+            "heading": "",
+            "doc_id": "rak-watrobowokomorkowy-podsumowanie-zalecen",
+            "country": "PO",
+            "source_type": "clinical_guideline",
+            "start_page": 1,
+            "end_page": 6,
+            "created_date": "unknown_year",
+            "folder_path": "clinical guidelines/PO",
+            "split_index": "8_1_0",
+            "text_length": 990,
+            "potential_comparators": [
+              "Ultrasonography",
+              "These",
+              "Microwave",
+              "Both"
+            ]
+          }
+        },
+        {
+          "text": "**Source Type:** clinical_guideline\n\nMicroscopic diagnosis of hepatocellular carcinoma is not IV, and the absolute requirement for treatment should be limited to cases specified in the diagnostic procedure algorithms. 5.2. The clinician should provide the pathomorphologist with all relevant IV, A information regarding the patient, with particular regard to the oncological profile and data regarding liver disease and previously performed diagnostic and therapeutic procedures. 5.3. The liver biopsy should include tissue (non-cellular) material. IV,A 5.4. The content of the patomorphological report is dependent on the type of material provided for evaluation (IV,A vs. post-operative material).",
+          "metadata": {
+            "heading": "",
+            "doc_id": "rak-watrobowokomorkowy-podsumowanie-zalecen",
+            "country": "PO",
+            "source_type": "clinical_guideline",
+            "start_page": 1,
+            "end_page": 6,
+            "created_date": "unknown_year",
+            "folder_path": "clinical guidelines/PO",
+            "split_index": 4,
+            "text_length": 699,
+            "potential_comparators": [
+              "IV,A"
+            ]
+          }
+        }
+      ]
+    },
+    "PT": {
+      "country_metadata": {
+        "country_code": "PT",
+        "chunk_count": 0,
+        "total_text_length": 0,
+        "unique_documents": 0,
+        "unique_headings": 0
+      },
+      "chunks": []
+    },
+    "SE": {
+      "country_metadata": {
+        "country_code": "SE",
+        "chunk_count": 8,
+        "total_text_length": 6854,
+        "unique_documents": 1,
+        "unique_headings": 7
+      },
+      "chunks": [
+        {
+          "text": "**Heading:** 14.6.1 Health-related quality of life **Source Type:** clinical_guideline\n\nIt is also important to evaluate the health status of people suffering from cancer. Examples of questionnaires are the EORTC QLQ-30 (European Organization for Research and Treatment of Cancer Quality of Life Questionnaire) and the FACT-G (Functional Assessment of cancer Therapy-General), both of which have disease-specific modules for HCC to assess specific symptoms. The disease-Specific Modules of HCC are EorTC QlQ-HCC18 and FACt-Hep [427-429]. Regular measurements can be very helpful in guiding healthcare staff to evaluate treatments, to individualize care and to enable the measurement and management of symptoms.",
+          "metadata": {
+            "heading": "14.6.1 Health-related quality of life",
+            "doc_id": "nationellt-vardprogram-levercellscancer",
+            "country": "SE",
+            "source_type": "clinical_guideline",
+            "start_page": 112,
+            "end_page": 113,
+            "created_date": "2024",
+            "folder_path": "clinical guidelines/SE",
+            "split_index": 1,
+            "text_length": 710,
+            "potential_comparators": [
+              "Regular",
+              "Examples"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Recommendations for the use of adjuvant therapy **Source Type:** clinical_guideline\n\n• In the context of clinical trials where there is a lack of evidence for adjuvant systemic therapy and/ or radiotherapy Recommendations 11.6.3 First-line palliative systemic treatment • In hepatocellular carcinoma, palliatives systemic treatments should be offered to patients with good functional status (WHO PS 0-1) with good liver function (Child Pugh A). • Combination therapy with atezolizumab and bevacizumab is recommended as first-line treatment to patients without contraindications to the medicinal products. • When combination therapy is inappropriate as described above, first line treatment with tremelimumab-durabulumab combination is recommended. • Single therapy with tyrosine kinase inhibitors lenvatinib or sorafenib should be provided to patients in the first line who cannot be offered atezolidumab, bevazizumab or tremelitumab. Recommendations 11.6.4 Oncological treatment after the first line • Three preparations are available following the progress of first line treatment with TKI, regorafenib, cabozantinib and ramucirumab, all studied after the progress on sorafenib. • Evidence for second line treatment after atezolizumab-bevacizumab is lacking, but based on first line studies and the above studies of the andraline line, singletreatment with either lenvatinib, sorafenik, regoraphenib, zantabenib or ramicumab may be considered in the second line. • There is no evidence for third line treatment.",
+          "metadata": {
+            "heading": "Recommendations for the use of adjuvant therapy",
+            "doc_id": "nationellt-vardprogram-levercellscancer",
+            "country": "SE",
+            "source_type": "clinical_guideline",
+            "start_page": 69,
+            "end_page": 69,
+            "created_date": "2024",
+            "folder_path": "clinical guidelines/SE",
+            "split_index": 0,
+            "text_length": 1526,
+            "potential_comparators": [
+              "atezolizumab",
+              "Recommendations",
+              "lenvatinib",
+              "sorafenib",
+              "bevacizumab",
+              "bevazizumab",
+              "regorafenib",
+              "cabozantinib",
+              "ramucirumab",
+              "ramicumab",
+              "tremelimumab",
+              "zantabenib",
+              "regoraphenib",
+              "atezolidumab",
+              "tremelitumab",
+              "durabulumab"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Regional Cancer Centre together with more recent recommendations made after **Source Type:** clinical_guideline\n\nHCC is a heterogeneous condition, some patients undergo curative treatments, others may have a long survival and good quality of life with palliative treatment, while some are severely ill with a short expected survival. Diagnosis and treatment of portal hypertension and cirrhosis complications should be viewed and conducted in the perspective of the individual patient's entire disease. When diagnosed with HCC, 70 to 80% of patients have cirrhotic liver disease, which is not infrequently unknown and compensated, where HCC may be the first symptom of a previously unknown cirrosis. Patients should undergo standardised examination to clarify the genesis of liver disease.",
+          "metadata": {
+            "heading": "Regional Cancer Centre together with more recent recommendations made after",
+            "doc_id": "nationellt-vardprogram-levercellscancer",
+            "country": "SE",
+            "source_type": "clinical_guideline",
+            "start_page": 48,
+            "end_page": 48,
+            "created_date": "2024",
+            "folder_path": "clinical guidelines/SE",
+            "split_index": 0,
+            "text_length": 802,
+            "potential_comparators": [
+              "When",
+              "Patients",
+              "Diagnosis"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** 11.1.1.3 Significance of tumour size and number **Source Type:** clinical_guideline\n\nRegistry data, evidence and experience suggest that curative intention may be offered for a selected group, which may be assessed in the context of MDK. 11.1.2 For indications and indications for transitional systems and hosterial treatment in HCC with advanced tumour function, and for patients with advanced tumor burden, treatment can be offered provided provided that there is general agreement that treatment is acceptable. Transarterial therapies (see section 11.5 Transartery Locoregional Therapy) presuppose, as do curative treatments, that the tumour burden is confined to the liver, but may be given in multifocal tumour disease. Transarteral treatments are not considered to be curative treatment alone, even if a complete response can be achieved. However, transartery therapy may also be used for the purpose of tumour suppression pending liver transplantation or first downging. Systemic oncological therapy (see Section 11.6 Systemic treatment) may be used in advanced HCC, such as metastasis or malignancy, taking into account overall cardiac function, liver disease and co-morbidity. In addition, there are some limitations with regard to portal thrombosis.",
+          "metadata": {
+            "heading": "11.1.1.3 Significance of tumour size and number",
+            "doc_id": "nationellt-vardprogram-levercellscancer",
+            "country": "SE",
+            "source_type": "clinical_guideline",
+            "start_page": 71,
+            "end_page": 72,
+            "created_date": "2024",
+            "folder_path": "clinical guidelines/SE",
+            "split_index": 2,
+            "text_length": 1272,
+            "potential_comparators": [
+              "Transarterial",
+              "However",
+              "Transarteral",
+              "Systemic"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** The following table summarises the information to be provided by the manufacturer: **Source Type:** clinical_guideline\n\nTwo randomised trials [295, 299] have shown an increase in survival with cTACE in patients with intermediate HCC, Chi Pugh A liver function and good function status (ECOG 0) [295 , 299-304].",
+          "metadata": {
+            "heading": "The following table summarises the information to be provided by the manufacturer:",
+            "doc_id": "nationellt-vardprogram-levercellscancer",
+            "country": "SE",
+            "source_type": "clinical_guideline",
+            "start_page": 83,
+            "end_page": 83,
+            "created_date": "2024",
+            "folder_path": "clinical guidelines/SE",
+            "split_index": 0,
+            "text_length": 323,
+            "potential_comparators": []
+          }
+        },
+        {
+          "text": "**Heading:** 4.2.2 Prognosis and survival **Source Type:** clinical_guideline\n\nThe prognosis for patients with HCC is dependent on whether curative treatment can be given, which in turn depends on tumour burden, liver function and general condition [16].Individuals with early detection of HCC who may be susceptible to potentially curative treatments (liver transplantation, resection or local ablative therapy) have a 5-year survival of 40 to 80%.The median survival for patients receiving palliative treatment varies between 8 months and 3 years.In up to 40% of all newly detected cases of hCC, it is not possible to offer any active antitumor treatment at all.In these cases, the life expectancy is approximately 3 to 6 months and the 1-year survivorship is less than 20% [16).",
+          "metadata": {
+            "heading": "4.2.2 Prognosis and survival",
+            "doc_id": "nationellt-vardprogram-levercellscancer",
+            "country": "SE",
+            "source_type": "clinical_guideline",
+            "start_page": 18,
+            "end_page": 18,
+            "created_date": "2024",
+            "folder_path": "clinical guidelines/SE",
+            "split_index": 0,
+            "text_length": 781,
+            "potential_comparators": []
+          }
+        },
+        {
+          "text": "**Heading:** Regional Cancer Centre together with more recent recommendations made after **Source Type:** clinical_guideline\n\nSome conditions are treatable and adequate management of these conditions may improve the prognosis of HCC. The diagnosis can be based on clinical evaluation, combined with radiography, biology, and endoscopic findings. It is important to realize that there are situations in which radiology cannot confirm or exclude the presence of liver cirrhosis! Compensated cirrho­sis has a relatively good prognosis, the 10-year survival rate is about 80%. After first decompensation, the 5-year surviv­ability drops to 30-50%. The concept of decompensation is well defined and presupposes one or more of the following: • varicose vein bleeding • clinically detectable ascites • clear hepatic encephalopathy, grade > 1 on the New Haven criteria. The development of decompensation presupposes clinicall­inally significant portal hypertension.",
+          "metadata": {
+            "heading": "Regional Cancer Centre together with more recent recommendations made after",
+            "doc_id": "nationellt-vardprogram-levercellscancer",
+            "country": "SE",
+            "source_type": "clinical_guideline",
+            "start_page": 48,
+            "end_page": 48,
+            "created_date": "2024",
+            "folder_path": "clinical guidelines/SE",
+            "split_index": 1,
+            "text_length": 957,
+            "potential_comparators": [
+              "It",
+              "After",
+              "Compensated"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** 7.2 Entry into standardised care **Source Type:** clinical_guideline\n\nThe following description of the standardised treatment of liver cancer is also available via the Knowledge Bank: Standardised treatment for liver cancer: HCC should be suspected if: • palpable lump in the upper abdomen liver disease • imaging findings in the liver where cancer is suspected, such as in Suspicion shall lead to relevant tests and simultaneous referral to DT or MRI (filter function).",
+          "metadata": {
+            "heading": "7.2 Entry into standardised care",
+            "doc_id": "nationellt-vardprogram-levercellscancer",
+            "country": "SE",
+            "source_type": "clinical_guideline",
+            "start_page": 35,
+            "end_page": 35,
+            "created_date": "2024",
+            "folder_path": "clinical guidelines/SE",
+            "split_index": 0,
+            "text_length": 483,
+            "potential_comparators": []
+          }
+        }
+      ]
+    }
+  }
+}

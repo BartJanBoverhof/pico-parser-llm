@@ -1,0 +1,67 @@
+{
+  "extraction_metadata": {
+    "timestamp": "2025-10-02T16:09:17.669986",
+    "source_type": "hta_submission",
+    "indication": "treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context",
+    "total_countries": 8,
+    "temperature": 0.1
+  },
+  "outcomes_by_country": {
+    "DE": {
+      "Indication": "treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context",
+      "Country": "DE",
+      "Outcomes": "progression-free survival (blinded independent central review), overall survival, symptomatology, health status, EORTC QLQ-C30, EORTC QLQ-LC13, BPI-SF, FACT-G GP5, PGI-C, side effects",
+      "ChunksUsed": 15,
+      "ContextTokens": 2846
+    },
+    "DK": {
+      "Indication": "treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context",
+      "Country": "DK",
+      "Outcomes": "overall survival (OS), progression-free survival (PFS; RECIST v1.1), investigator-assessed progression-free survival, centrally-assessed progression-free survival, objective response rate (ORR), duration of response (DoR), time to progression (TTP), time to next treatment (TTNT), progression after next line of therapy (PFS2), event-free survival, adverse events (CTCAE v5.0), EORTC QLQ-C30, EORTC QLQ-LC13, NSCLC Symptom Assessment Questionnaire (NSCLC SAQ), Patient Global Impression of Change (PGIC), Patient Global Impression of Severity (PGIS), EQ-5D-5L",
+      "ChunksUsed": 15,
+      "ContextTokens": 3447
+    },
+    "EN": {
+      "Indication": "treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context",
+      "Country": "EN",
+      "Outcomes": "overall survival, progression-free survival, objective response rate (RECIST 1.1), health-related quality of life, adverse events, health-state utilities, time-to-death utilities, disutility for intravenous treatment",
+      "ChunksUsed": 15,
+      "ContextTokens": 2513
+    },
+    "FR": {
+      "Indication": "treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context",
+      "Country": "FR",
+      "Outcomes": "objective response rate (independent review panel), progression-free survival (independent, blinded review panel; RECIST 1.1), duration of response (delay between first partial or complete response and first relapse or progression; RECIST 1.1 or death from any cause), disease control rate (proportion of patients with complete, partial, or stable disease response ≥ 5 weeks), delay to response time (delay from initiation of treatment to first complete or partial response), adverse events, vision loss, intolerance, need for alternative therapy, adverse drug reactions",
+      "ChunksUsed": 15,
+      "ContextTokens": 2761
+    },
+    "IT": {
+      "Indication": "treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context",
+      "Country": "IT",
+      "Outcomes": "",
+      "ChunksUsed": 10,
+      "ContextTokens": 1685
+    },
+    "PO": {
+      "Indication": "treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context",
+      "Country": "PO",
+      "Outcomes": "progression-free survival (PFS), overall response rate (ORR), disease control rate (DCR), overall survival (OS), EORTC QLQ-C30, EORTC QLQ-LC13, anaemia, headache, cough, shortness of breath, diarrhoea, nausea, vomiting, constipation, abdominal pain, joint pain, back pain, fatigue, fever, increased asparaginase aminotransferase activity, increased alanine aminotransferase activity",
+      "ChunksUsed": 15,
+      "ContextTokens": 2970
+    },
+    "PT": {
+      "Indication": "treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context",
+      "Country": "PT",
+      "Outcomes": "overall survival (OS), progression-free survival (PFS), eventless survival, time to progression, time to next treatment, objective response rate (ORR), response rate, rate of disease control, duration of response (DoR), duration of treatment, adverse events (Common Terminology Criteria for Adverse Events, CTCAE v5.0), adverse event rate, adverse event rate grade 3-4, dropout rate, mortality-related toxicity, time to deterioration of overall health status, quality of life",
+      "ChunksUsed": 15,
+      "ContextTokens": 2718
+    },
+    "SE": {
+      "Indication": "treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context",
+      "Country": "SE",
+      "Outcomes": "progression-free survival (PFS), overall survival (OS), health-related quality of life (measured by time to death), quality-adjusted life years (QALYs), cost per QALY achieved",
+      "ChunksUsed": 15,
+      "ContextTokens": 2330
+    }
+  }
+}

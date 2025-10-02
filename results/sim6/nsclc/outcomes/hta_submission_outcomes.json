@@ -1,0 +1,67 @@
+{
+  "extraction_metadata": {
+    "timestamp": "2025-10-02T17:06:55.446371",
+    "source_type": "hta_submission",
+    "indication": "treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context",
+    "total_countries": 8,
+    "temperature": 0.1
+  },
+  "outcomes_by_country": {
+    "DE": {
+      "Indication": "treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context",
+      "Country": "DE",
+      "Outcomes": "progression-free survival (PFS; RECIST 1.1), overall survival (OS), symptomatology (EORTC QLQ-C30), symptomatology (EORTC QLQ-LC13), symptomatology (BPI-SF), symptomatology (FACT-G GP5), symptomatology (PGI-C), health status (EORTC QLQ-C30), health status (EORTC QLQ-LC13), health status (BPI-SF), health status (FACT-G GP5), health status (PGI-C), EQ-5D visual analogue scale (EQ-5D VAS), health-related quality of life (EORTC QLQ-C30 functional scales), adverse events (general), serious adverse events (SAEs), severe adverse events, discontinuation due to adverse events, interstitial lung disease (severe adverse event), liver disorders (severe adverse event), stomatitis (adverse event), peripheral oedema (adverse event), peripheral neuropathy (adverse event), alopecia (adverse event), blood and lymphatic system disorders (adverse event), fatigue (adverse event), fever (adverse event), infections and infestations (adverse event), side effects (PRO-CTCAE instrument)",
+      "ChunksUsed": 15,
+      "ContextTokens": 5039
+    },
+    "DK": {
+      "Indication": "treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context",
+      "Country": "DK",
+      "Outcomes": "progression-free survival (PFS; RECIST v1.1), overall survival (OS), objective response rate (ORR), duration of response (DoR), time to response, disease control rate, adverse events (CTCAE v5.0), adverse events (CTCAE v4.03), EORTC QLQ-C30, EORTC QLQ-LC13, NSCLC-SAQ, PGIS, PGIC, PRO-CTCAE, FACT-G (item GP5), EQ-5D-5L, treatment discontinuation due to adverse events (CTCAE v5.0), treatment discontinuation due to adverse events (CTCAE v4.03), time to symptom deterioration",
+      "ChunksUsed": 15,
+      "ContextTokens": 5679
+    },
+    "EN": {
+      "Indication": "treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context",
+      "Country": "EN",
+      "Outcomes": "objective response rate (ORR; RECIST 1.1, blinded independent central review), complete response (RECIST 1.1), partial response (RECIST 1.1), overall survival (OS), progression-free survival (PFS), health-related quality of life, visual analogue scale (utility measurement), utility decrement per cycle (treatment-related disutility), quality-adjusted life years (QALYs), cost-effectiveness (incremental cost-effectiveness ratio, ICER)",
+      "ChunksUsed": 15,
+      "ContextTokens": 5271
+    },
+    "FR": {
+      "Indication": "treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context",
+      "Country": "FR",
+      "Outcomes": "progression-free survival (independent review panel, RECIST 1.1), objective response rate (independent review panel, RECIST 1.1), duration of response (RECIST 1.1), overall survival, disease control rate (complete, partial, or stable disease for at least 5 weeks), time to response (from treatment initiation to first complete or partial response), adverse events (general), serious adverse events, EORTC QLQ-C30, EORTC QLQ-LC13",
+      "ChunksUsed": 15,
+      "ContextTokens": 5476
+    },
+    "IT": {
+      "Indication": "treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context",
+      "Country": "IT",
+      "Outcomes": "",
+      "ChunksUsed": 5,
+      "ContextTokens": 1715
+    },
+    "PO": {
+      "Indication": "treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context",
+      "Country": "PO",
+      "Outcomes": "progression-free survival (PFS), overall response rate (ORR), disease control rate (DCR), overall survival (OS), time to deterioration, serious adverse events (SAEs), adverse events (general), diarrhoea, nausea, vomiting, constipation, abdominal pain, joint pain, back pain, fatigue, fever, anaemia, headache, cough, shortness of breath, increased asparaginase aminotransferase activity, increased alanine aminotransferase activity, increased ALT, increased AST, weight loss, oral cavity blockage, asthenia, neutropenia, peripheral neuropathy, peripheral oedema, decreased appetite, alopecia, EORTC QLQ-C30, EORTC QLQ-LC13, quality-adjusted life years (QALYs), life years gained (LYG), cost-effectiveness (incremental cost-effectiveness ratio, ICER), cost-utility analysis (CUA), budget impact analysis",
+      "ChunksUsed": 15,
+      "ContextTokens": 5770
+    },
+    "PT": {
+      "Indication": "treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context",
+      "Country": "PT",
+      "Outcomes": "overall survival (OS), progression-free survival (PFS; RECIST v1.1), objective response rate (ORR), duration of response (DoR), disease control rate, time to response, event-free survival, time to progression, time to next treatment, duration of treatment, adverse events (Common Terminology Criteria for Adverse Events, CTCAE v5.0), serious adverse events (grade 3-4), fatalities, dropout rate, mortality-related toxicity, quality of life, EORTC QLQ-C30, EORTC QLQ-LC13, EQ-5D-5L",
+      "ChunksUsed": 15,
+      "ContextTokens": 5339
+    },
+    "SE": {
+      "Indication": "treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context",
+      "Country": "SE",
+      "Outcomes": "progression-free survival (PFS), overall survival (OS), quality-adjusted life years (QALYs), cost-effectiveness (cost per QALY), adverse events (general), health-related quality of life (measured by time to death)",
+      "ChunksUsed": 15,
+      "ContextTokens": 4393
+    }
+  }
+}

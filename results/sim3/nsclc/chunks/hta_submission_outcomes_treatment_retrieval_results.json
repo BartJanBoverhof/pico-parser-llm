@@ -1,0 +1,1612 @@
+{
+  "retrieval_metadata": {
+    "timestamp": "2025-10-02T14:23:19.091446",
+    "source_type": "hta_submission",
+    "retrieval_type": "outcomes",
+    "query": "Find passages that specify clinical Outcomes and endpoints relevant to: treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context.\n        Prefer sections that describe:\n        - Primary and secondary efficacy endpoints (OS, PFS, ORR, DoR, etc.)\n        - Safety outcomes and adverse events\n        - Quality of life measures and patient-reported outcomes (including any specific instruments like EORTC QLQ, EQ-5D, SF-36)\n        - Economic outcomes and utilities\n        - Exploratory or additional endpoints (e.g. time to next treatment/PFS2, progression of brain metastases, time to deterioration) if reported\n        - Statistical methods and analysis approaches\n        Focus on specific outcome definitions and measurement methodologies.",
+    "indication": "treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context",
+    "total_countries": 15,
+    "total_chunks": 76
+  },
+  "results_by_country": {
+    "AT": {
+      "country_metadata": {
+        "country_code": "AT",
+        "chunk_count": 0,
+        "total_text_length": 0,
+        "unique_documents": 0,
+        "unique_headings": 0
+      },
+      "chunks": []
+    },
+    "DE": {
+      "country_metadata": {
+        "country_code": "DE",
+        "chunk_count": 10,
+        "total_text_length": 10332,
+        "unique_documents": 1,
+        "unique_headings": 3
+      },
+      "chunks": [
+        {
+          "text": "**Heading:** 2.1.3 Extent and probability of the additional benefit **Source Type:** hta_submission\n\nTreatment with study medication continued until disease progression, intolerance of\ntreatment, initiation of new anti-cancer therapy, withdrawal of consent, lost to follow-up or death. If certain criteria were met according to the principal investigator's assessment, further\ntreatment with sotorasib or docetaxel was possible even after disease progression. Under\ncertain conditions, e.g. the patients were not allowed to have started any other cancer\ntherapy, a change of therapy from docetaxel to sotorasib was possible at the doctor's discretion. The primary endpoint of the study was progression-free survival according to a blinded, independent central review. Other patient-relevant endpoints included overall survival and\nendpoints on symptomatology and health status.",
+          "metadata": {
+            "heading": "2.1.3 Extent and probability of the additional benefit",
+            "doc_id": "HTA_submission_sotosorib_DE",
+            "country": "DE",
+            "source_type": "hta_submission",
+            "start_page": 9,
+            "end_page": 15,
+            "created_date": "2023",
+            "folder_path": "HTA submissions/DE",
+            "split_index": 2,
+            "text_length": 877,
+            "potential_comparators": [
+              "If",
+              "Under",
+              "Other"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** 2.1.3 Extent and probability of the additional benefit **Source Type:** hta_submission\n\nIn addition, endpoints of the categories\nhealth-related quality of life and side effects were collected. The pharmaceutical company presents results of the 1st data cut-off from 02.08.2022. Implementation of the appropriate comparator therapy\nThe CodeBreak 200 study presented is a single-comparator study in which all patients in the comparator arm received docetaxel as monotherapy. Thus, the CodeBreak 200 study does\nnot implement the appropriate comparator therapy, which provides for a patient-individual selection from several named treatment options. In the submitted dossier and in the context\nof the statement, the pharmaceutical company justifies the choice of docetaxel with advantages over the other options of the appropriate comparator therapy, in particular\ndocetaxel in combination with ramucirumab or docetaxel in combination with nintedanib, and additionally cites the lack of global availability of individual therapy options. Within the framework of the written statement procedure, the scientific-medical societies describe the therapy of pretreated NSCLC with docetaxel as a particularly relevant therapeutic\nalternative in view of the previous therapy for patients without contraindications. The other\ntherapy options included in the appropriate comparator therapy play a particularly relevant therapeutic alternative.",
+          "metadata": {
+            "heading": "2.1.3 Extent and probability of the additional benefit",
+            "doc_id": "HTA_submission_sotosorib_DE",
+            "country": "DE",
+            "source_type": "hta_submission",
+            "start_page": 9,
+            "end_page": 15,
+            "created_date": "2023",
+            "folder_path": "HTA submissions/DE",
+            "split_index": 3,
+            "text_length": 1442,
+            "potential_comparators": [
+              "Thus",
+              "nintedanib",
+              "ramucirumab",
+              "Within",
+              "Implementation"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** 2.1.2 Appropriate comparator therapy **Source Type:** hta_submission\n\nThe appropriate comparator therapy was determined as follows: 1 General Methods, version 6.1 from 24.01.2022. Institute for Quality and Efficiency in Health Care (IQWiG), Cologne. b) Adults with advanced non-small cell lung cancer (NSCLC) with KRAS p.G12C mutat after first-line therapy with cytotoxic chemotherapy Appropriate comparator therapy for sotorasib as monotherapy: − Docetaxel (only for patients with PD-L1 negative tumours) or − Pemetrexed (only for patients with PD-L1 negative tumours and except in cas predominantly squamous histology) or − Nivolumab or − Pembrolizumab (only for patients with PD-L1 expressing tumours (PD-L1 expr ≥ 1% of tumour cells)) or − Atezolizumab or − Docetaxel in combination with nintedanib (only for patients with PD-L1 negat tumours and adenocarcinoma histology) c) Adults with advanced non-small cell lung cancer (NSCLC) with KRAS p.G12C",
+          "metadata": {
+            "heading": "2.1.2 Appropriate comparator therapy",
+            "doc_id": "HTA_submission_sotosorib_DE",
+            "country": "DE",
+            "source_type": "hta_submission",
+            "start_page": 3,
+            "end_page": 8,
+            "created_date": "2023",
+            "folder_path": "HTA submissions/DE",
+            "split_index": "0_0_0",
+            "text_length": 965,
+            "potential_comparators": [
+              "atezolizumab",
+              "nintedanib",
+              "Institute",
+              "pembrolizumab",
+              "nivolumab"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** 2.1.4 Summary of the assessment **Source Type:** hta_submission\n\nAn additional benefit\nis therefore not proven. c) Adults with advanced non-small cell lung cancer (NSCLC) with KRAS p.G12C mutation after\nfirst-line therapy with an anti-PD-1/PD-L1 in combination with platinum-containing chemotherapy or after sequential therapy with an anti-PD-1/PD-L1 and platinumcontaining chemotherapy\nThe appropriate comparator therapy comprises patient-individual therapy with a choice of afatinib, pemetrexed, erlotinib, docetaxel, docetaxel in combination with ramucirumab,\ndocetaxel in combination with nintedanib and vinorelbine, taking into account prior therapy and histology. For the benefit assessment, the pharmaceutical company presents data from the randomised, controlled, open-label phase III CodeBreak 200 study comparing sotorasib versus docetaxel.",
+          "metadata": {
+            "heading": "2.1.4 Summary of the assessment",
+            "doc_id": "HTA_submission_sotosorib_DE",
+            "country": "DE",
+            "source_type": "hta_submission",
+            "start_page": 15,
+            "end_page": 16,
+            "created_date": "2023",
+            "folder_path": "HTA submissions/DE",
+            "split_index": 1,
+            "text_length": 863,
+            "potential_comparators": [
+              "afatinib",
+              "nintedanib",
+              "erlotinib",
+              "ramucirumab"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** 2.1.3 Extent and probability of the additional benefit **Source Type:** hta_submission\n\nPatients without previous CNS disease\nor with first-time occurrence of CNS metastases were not included in the evaluation. Cross-endpoint assessment of patient-reported endpoints (PRO) data:\nWith regard to the endpoints assessed in the CodeBreak 200 study using the EORTC QLQ-C30,\nEORTC QLQ-LC13, BPI-SF, FACT-G GP5, and PGI-C questionnaires, IQWiG noted in the addendum to the dossier assessment that there was a differential percentage of patients\nincluded in the evaluation between the treatment arms for all corresponding endpoints of >\n15 percentage points each, which is why IQWiG assessed the data as unsuitable overall. For\nthe present assessment, the results for the respective endpoints, in particular the effect estimator, the confidence interval and the percentage of patients included in the evaluation\nin the treatment arms, are also taken into account in order to assess the extent to which these data are suitable or completely unsuitable for deriving statements on the additional benefit.",
+          "metadata": {
+            "heading": "2.1.3 Extent and probability of the additional benefit",
+            "doc_id": "HTA_submission_sotosorib_DE",
+            "country": "DE",
+            "source_type": "hta_submission",
+            "start_page": 9,
+            "end_page": 15,
+            "created_date": "2023",
+            "folder_path": "HTA submissions/DE",
+            "split_index": 7,
+            "text_length": 1106,
+            "potential_comparators": [
+              "Cross-endpoint"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** 2.1.3 Extent and probability of the additional benefit **Source Type:** hta_submission\n\nc2) Adults for whom a therapy other than docetaxel is the appropriate patient-individual therapy\nAn additional benefit is not proven. Justification\nFor the sub-population of adults with advanced non-small cell lung cancer (NSCLC) with KRAS p.G12C mutation after first-line therapy with an anti-PD-1/PD-L1 in combination with\nplatinum-containing chemotherapy or after sequential therapy with an anti-PD-1/PD-L1 and platinum-containing chemotherapy and for whom a therapy other than docetaxel is the\nappropriate patient-individual therapy, no statements on the additional benefit can be made taking into account the CodeBreak 200 study. Since only results with a comparison to\ndocetaxel were presented for the benefit assessment, no usable data are available overall. An\nadditional benefit of sotorasib is therefore not proven for sub-population c2).",
+          "metadata": {
+            "heading": "2.1.3 Extent and probability of the additional benefit",
+            "doc_id": "HTA_submission_sotosorib_DE",
+            "country": "DE",
+            "source_type": "hta_submission",
+            "start_page": 9,
+            "end_page": 15,
+            "created_date": "2023",
+            "folder_path": "HTA submissions/DE",
+            "split_index": 15,
+            "text_length": 949,
+            "potential_comparators": [
+              "Justification",
+              "Since"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** 2.1.3 Extent and probability of the additional benefit **Source Type:** hta_submission\n\nThe study has been conducted in 148 study sites in Asia, Australia, Europe and North and South America since 2020. The study enrolled adult patients with locally advanced and unresectable or metastatic NSCLC with molecularly diagnosed KRAS G12C mutation. Patients had to have disease progression during or after at least 1 prior systemic therapy for advanced or unresectable stage of the disease. Prior therapy should include combined or sequential platinum-containing combination chemotherapy and an anti-PD-1/PD-L1. A total of 334 (96.8%) patients in the study received prior treatment with PD-1/PD-L1 inhibitor and platinum-containing chemotherapy (in combination or sequentially). For enrolment in the study, patients should have a general condition according to Eastern Cooperative Oncology Group Performance Status (ECOG-PS) ≤ 1, no relevant limitations in",
+          "metadata": {
+            "heading": "2.1.3 Extent and probability of the additional benefit",
+            "doc_id": "HTA_submission_sotosorib_DE",
+            "country": "DE",
+            "source_type": "hta_submission",
+            "start_page": 9,
+            "end_page": 15,
+            "created_date": "2023",
+            "folder_path": "HTA submissions/DE",
+            "split_index": "1_0_0",
+            "text_length": 963,
+            "potential_comparators": [
+              "Prior",
+              "Patients"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** 2.1.2 Appropriate comparator therapy **Source Type:** hta_submission\n\nAccording to the marketing authorisation for the present therapeutic indication, pembrolizumab is only indicated for patients with PD-L1 expressing tumours (TPS ≥ 1%). Nivolumab, pembrolizumab and atezolizumab each lead to a significant prolongation in overall survival compared with docetaxel and also to a significant reduction in side effects. Accordingly, the guidelines regularly prefer immune checkpoint inhibitors over cytotoxic chemotherapeutic agents. However, PD-L1 negative tumours are a fundamental exception. In these cases, the guidelines predominantly do not recommend a regular preference of immune checkpoint inhibitors over cytotoxic chemotherapy. Therefore, in PD-L1 negative tumours, alternative cytotoxic chemotherapeutic agents are also determined as an appropriate comparator therapy for the immune checkpoint inhibitors. For ramucirumab in combination with docetaxel, no additional benefit was shown",
+          "metadata": {
+            "heading": "2.1.2 Appropriate comparator therapy",
+            "doc_id": "HTA_submission_sotosorib_DE",
+            "country": "DE",
+            "source_type": "hta_submission",
+            "start_page": 3,
+            "end_page": 8,
+            "created_date": "2023",
+            "folder_path": "HTA submissions/DE",
+            "split_index": "5_0_0",
+            "text_length": 1006,
+            "potential_comparators": [
+              "atezolizumab",
+              "ramucirumab",
+              "However",
+              "Therefore",
+              "Accordingly",
+              "pembrolizumab",
+              "Nivolumab",
+              "nivolumab"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** 2.1.3 Extent and probability of the additional benefit **Source Type:** hta_submission\n\nExtent and probability of the additional benefit c1) Adults for whom docetaxel is the appropriate patient-individual therapy\nHint for a non-quantifiable additional benefit\nMortality\nThe endpoint of overall survival was defined in the CodeBreak 200 study as the time from the date of randomisation to death from any cause. There is no statistically significant difference\nbetween the treatment arms here. With regard to overall survival, an additional benefit of sotorasib compared to docetaxel is therefore not proven. Morbidity\nProgression-free survival (PFS)\nProgression-free survival (PFS) is defined in the study as the time from the date of randomisation until disease progression or death from any cause, whichever occurred first. For the PFS, there is a statistically significant difference to the advantage of sotorasib compared to docetaxel. The PFS endpoint is a combined endpoint composed of endpoints of the mortality and morbidity categories.",
+          "metadata": {
+            "heading": "2.1.3 Extent and probability of the additional benefit",
+            "doc_id": "HTA_submission_sotosorib_DE",
+            "country": "DE",
+            "source_type": "hta_submission",
+            "start_page": 9,
+            "end_page": 15,
+            "created_date": "2023",
+            "folder_path": "HTA submissions/DE",
+            "split_index": 5,
+            "text_length": 1056,
+            "potential_comparators": [
+              "There",
+              "Morbidity"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** 2.1.2 Appropriate comparator therapy **Source Type:** hta_submission\n\ntreatment options are available on the basis of the available evidence with the cytotoxic chemotherapeutic agents docetaxel and pemetrexed, in each case as monotherapy, docetaxel in combination with nintedanib and the immune checkpoint inhibitors nivolumab, pembrolizumab and atezolizumab, partly only under certain conditions. With docetaxel and pemetrexed, both as monotherapy, two established chemotherapeutic agents are available for second-line chemotherapy, although pemetrexed is unsuitable for predominantly squamous histology. For the combination of docetaxel and nintedanib, which is indicated for adenocarcinoma histology, an indication of a minor additional benefit was identified in the benefit assessment compared to docetaxel monotherapy (resolution of 18 June 2015). In the guidelines, docetaxel in combination with nintedanib is recommended alongside the other chemotherapy options, but is not regularly preferred over them. Based on the available evidence and corresponding therapy recommendations in the",
+          "metadata": {
+            "heading": "2.1.2 Appropriate comparator therapy",
+            "doc_id": "HTA_submission_sotosorib_DE",
+            "country": "DE",
+            "source_type": "hta_submission",
+            "start_page": 3,
+            "end_page": 8,
+            "created_date": "2023",
+            "folder_path": "HTA submissions/DE",
+            "split_index": "4_1_0",
+            "text_length": 1105,
+            "potential_comparators": [
+              "atezolizumab",
+              "nintedanib",
+              "pembrolizumab",
+              "Based",
+              "nivolumab"
+            ]
+          }
+        }
+      ]
+    },
+    "DK": {
+      "country_metadata": {
+        "country_code": "DK",
+        "chunk_count": 10,
+        "total_text_length": 9266,
+        "unique_documents": 1,
+        "unique_headings": 10
+      },
+      "chunks": [
+        {
+          "text": "**Heading:** endpoints **Source Type:** hta_submission\n\nInvestigator-assessed PFS;\nOS\nKey: ECOG, Eastern cooperative oncology group; KRAS, MEK, mitogen activated protein kinase; NSCLC, non-small cell\nlung cancer; ORR, objective response rate; OS, overall survival; PFS, progression-free survival; VEGFR, vascular\nendothelial growth factor receptor; WHO, World Health Organization\nCodeBreak 100 and SELECT-1 were both multicentre studies that recruited patients with confirmed locally advanced or metastatic NSCLC (Stage IIIB – IV) who had failed prior therapy. CodeBreak 100 specifically enrolled\npatients with KRAS G12C mutations, whereas SELECT-1 enrolled patients with KRAS mutations at codon 12, 13 or 61 (131).",
+          "metadata": {
+            "heading": "endpoints",
+            "doc_id": "bilag-til-medicinradets-anbefaling-vedr-sotorasib-til-nsclc-med-kras-g12c-vers-1-0-xx",
+            "country": "DK",
+            "source_type": "hta_submission",
+            "start_page": 189,
+            "end_page": 189,
+            "created_date": "unknown_year",
+            "folder_path": "HTA submissions/DK",
+            "split_index": 0,
+            "text_length": 715,
+            "potential_comparators": [
+              "CodeBreak"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** 12. references **Source Type:** hta_submission\n\nIIIB-IV) NSCLC who had received at least 1 prior systemic therapy were eligible for inclusion. Outcomes of interest include overall survival (OS), progression-free survival (PFS) and event-free survival (65), time to progression (TTP), time to next treatment (TTNT), response rates, disease control rate, treatment duration and adverse events. Studies were identified by searching electronic databases, reference lists of relevant articles, conference proceedings and other supplementary sources. The SLR conformed to published guidelines issued by the Cochrane Collaboration (1) and the Centre for Reviews & Dissemination (CRD; York, UK) and followed the methodological requirements of the National Institute for Health and Care Excellence (NICE), UK, the Preferred Reporting Items for Systematic Reviews and Meta-Analyses (66), and the Consolidated Standards of Reporting Trials (CONSORT) and statements (66-70). The SLR search was conducted in June 2020.",
+          "metadata": {
+            "heading": "12. references",
+            "doc_id": "bilag-til-medicinradets-anbefaling-vedr-sotorasib-til-nsclc-med-kras-g12c-vers-1-0-xx",
+            "country": "DK",
+            "source_type": "hta_submission",
+            "start_page": 92,
+            "end_page": 98,
+            "created_date": "unknown_year",
+            "folder_path": "HTA submissions/DK",
+            "split_index": "4_1_0",
+            "text_length": 1018,
+            "potential_comparators": [
+              "Outcomes",
+              "Studies"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Eligibility Inclusion Criteria Exclusion Criteria criteria **Source Type:** hta_submission\n\nPopulation Patients with NSCLC (any stage, any line of Tumor types other than NSCLC treatment) carrying a KRAS G12C mutation or\nany other KRAS mutation (KRASm)\nInterventions Sotorasib Radiotherapy or surgery (unless a relevant comparator arm)\nComparator Docetaxel All other comparators not used in\nDenmark\nOutcomes Outcome reported by KRASm mutation status\nClinical evidence\n• Overall survival\n• Progression-free survival\n• Adverse events\nHRQoL evidence\nNote, search strings were limited by outcomes and do not include HRQoL terms. Study design RCT or single-arm trials Exclude animal/in vitro studies, case\n(experimental/interventional) studies and case reports\nLanguage English language restrictions\nSide 147/237\nMedicinrådet Dampfærgevej 27-29, 3.",
+          "metadata": {
+            "heading": "Eligibility Inclusion Criteria Exclusion Criteria criteria",
+            "doc_id": "bilag-til-medicinradets-anbefaling-vedr-sotorasib-til-nsclc-med-kras-g12c-vers-1-0-xx",
+            "country": "DK",
+            "source_type": "hta_submission",
+            "start_page": 153,
+            "end_page": 154,
+            "created_date": "unknown_year",
+            "folder_path": "HTA submissions/DK",
+            "split_index": 0,
+            "text_length": 855,
+            "potential_comparators": [
+              "Study"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** • Time to next treatment (TTNT) **Source Type:** hta_submission\n\nof treatment administered in adjuvant setting • Treatment naïve patients Column_1: Intervention/comparator, Column_4: Any therapies licensed in the United States or European Union for the second or later line treatment of patients with NSCLC Retreatment with Immuno-oncology therapies will be considered as is in scope even if not a specified retreatment post progression on an anti PD-(L)1, and Column_7: Treatments specifically targeting EGFR/ALK or ROS 1 mutations Or other targetable mutation Column_1: Outcomes, Column_4: Efficacy • Overall survival (OS)§ • Progression-free survival (PFS)§ • Progression after next line of therapy (PFS2) § • Time to progression (TTP)§ • Time to next treatment (TTNT) • Event-free survival§, and Column_7: Non-clinical outcomes",
+          "metadata": {
+            "heading": "• Time to next treatment (TTNT)",
+            "doc_id": "bilag-til-medicinradets-anbefaling-vedr-sotorasib-til-nsclc-med-kras-g12c-vers-1-0-xx",
+            "country": "DK",
+            "source_type": "hta_submission",
+            "start_page": 118,
+            "end_page": 118,
+            "created_date": "unknown_year",
+            "folder_path": "HTA submissions/DK",
+            "split_index": "0_1_0",
+            "text_length": 844,
+            "potential_comparators": []
+          }
+        },
+        {
+          "text": "**Heading:** This report details the methods and results of analyses to estimate EQ-5D-5L health state utility values using data collected in the phase 2 NSCLC cohort of Study 20170543, to inform the economic models of sotorasib **Source Type:** hta_submission\n\n(AMG 510) in subjects with previously treated advanced NSCLC with KRAS G12C Mutation. The analyses\ndescribed in this report are based on the 15th March 2021 data cut. Phase 2 of Study 20170543 was a single-arm clinical trial (with AMG 510 as monotherapy), where quality of life data was collected from subjects using the following patient-reported outcome measures (PROMs): EORTC QLQ-",
+          "metadata": {
+            "heading": "This report details the methods and results of analyses to estimate EQ-5D-5L health state utility values using data collected in the phase 2 NSCLC cohort of Study 20170543, to inform the economic models of sotorasib",
+            "doc_id": "bilag-til-medicinradets-anbefaling-vedr-sotorasib-til-nsclc-med-kras-g12c-vers-1-0-xx",
+            "country": "DK",
+            "source_type": "hta_submission",
+            "start_page": 239,
+            "end_page": 239,
+            "created_date": "unknown_year",
+            "folder_path": "HTA submissions/DK",
+            "split_index": 0,
+            "text_length": 646,
+            "potential_comparators": [
+              "Phase"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Other relevant information None **Source Type:** hta_submission\n\nBICR, blinded independent central review; ECOG, Eastern Cooperative Oncology Group; KRAS, Kirsten rat sarcoma viral oncogene\nhomolog; MEK: mitogen activated protein kinase; NSCLC, non-small cell lung cancer; ORR, objective response rate; PFS, progressionfree survival; PS, performance status; RECIST, Response Evaluation Criteria in Solid Tumors; WHO, World Health Organization. Source: Amgen data on file [CodeBreaK 100 CSR] (117); Jänne, van den Heuvel (118); Amgen data on file [0014] (119)\nSide 157/237\nMedicinrådet Dampfærgevej 27-29, 3. th. DK-2100 København Ø +45 70 10 36 00 medicinraadet@medicinraadet.dk\nAmgen Proprietary - For Internal Use Only\nAppendix C - Baseline characteristics of patients in studie comparative analysis of efficacy and safety\nTable 42 Baseline characteristics of patients in studies included for the comparative analysis of e\nSotorasib\nBaseline characteristics a (CodeBreak 100)\nN = 126\nAge (mean) 62.9\nGender (% female) 50%\nBrain metastases (%) 21%\nECOG (% PS 1 [vs PS 0]) 70%\nRace (% white) 82%c\n% KRAS-G12C 100%\nAnti-PD-(L)1 in prior line(s) 91%\nNumber of prior lines (% with 1/2/3 prior lines) 43%/35%/22%\nMetastatic disease stage at baseline (% IIIB [vs IV]) 97%\nHistology (% Non-squamous) 99%\nSmoking status (% ever smoker) 93%e\nOther targetable mutations (EGFR, ALK, BRAF, ROS-1) 3%\nPD-L1 protein expression level (<5% [vs. ≥5%]) 48%\nKey: ECOG, European Co-operative Oncology Group.",
+          "metadata": {
+            "heading": "Other relevant information None",
+            "doc_id": "bilag-til-medicinradets-anbefaling-vedr-sotorasib-til-nsclc-med-kras-g12c-vers-1-0-xx",
+            "country": "DK",
+            "source_type": "hta_submission",
+            "start_page": 163,
+            "end_page": 164,
+            "created_date": "unknown_year",
+            "folder_path": "HTA submissions/DK",
+            "split_index": 2,
+            "text_length": 1501,
+            "potential_comparators": [
+              "DK-2100",
+              "Source"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** 12.1.1.1 Sources of the data **Source Type:** hta_submission\n\nThe SELECT-1 trial itself\nshowed that survival outcomes were highly consistent for those with KRAS G12C-mutated and those with other\nKRAS-mutated NSCLC (129). On this basis, the PFS and OS data for docetaxel from the SELECT-1 trial in patients\nwith KRAS-mutant NSCLC (including G12C and non-G12C mutations) is considered to be sufficiently reflective of\nPFS and OS in patients with KRAS G12C-mutated NSCLC who receive placebo plus docetaxel. The SELECT-1 trial\nwas therefore considered to be a candidate to provide comparator data for the primary comparison of sotorasib vs. placebo plus docetaxel. This approach was agreed as reasonable by the five UK clinical experts attending an\nAmgen advisory board meeting in February 2021 for the NICE submission (130).",
+          "metadata": {
+            "heading": "12.1.1.1 Sources of the data",
+            "doc_id": "bilag-til-medicinradets-anbefaling-vedr-sotorasib-til-nsclc-med-kras-g12c-vers-1-0-xx",
+            "country": "DK",
+            "source_type": "hta_submission",
+            "start_page": 188,
+            "end_page": 188,
+            "created_date": "unknown_year",
+            "folder_path": "HTA submissions/DK",
+            "split_index": 1,
+            "text_length": 834,
+            "potential_comparators": []
+          }
+        },
+        {
+          "text": "**Heading:** Definition, validity, and clinical relevance of included outcome measures **Source Type:** hta_submission\n\nR., Manegold, C., &\ntreatment until death Schmid-Bindert, G. from any cause (2012). Statistical\nconsiderations and endpoints for clinical lung\ncancer studies: Can\nprogression free survival\n(PFS) substitute overall survival (OS) as a valid\nendpoint in clinical trials for advanced non-smallcell lung cancer?.(120)\nCodeBreak 100: Time from Used in prior DMC\nue the first dose of treatment submission for NSCLC and until discontinuation due for treatment guideline\nto AEs according to the protocol (7). CTCAE v.5.0 (73). SELECT-1: Time from the\nfirst dose of treatment until discontinuation due\nto AEs according to the\nCTCAE v.4.03 (72). CodeBreak 100: All AEs Used in prior DMC\nafter the first dose of submission for NSCLC and study treatment according for treatment guideline\nto the CTCAE v.5.0 (73). protocol (7). SELECT-1: AEs were\ncollected from the time of informed consent until 30\ndays (±7) after the last dose of the last study\ntreatment according to the CTCAE v.4.03 (72). Time to symptom Groenvold, M., Klee, M.",
+          "metadata": {
+            "heading": "Definition, validity, and clinical relevance of included outcome measures",
+            "doc_id": "bilag-til-medicinradets-anbefaling-vedr-sotorasib-til-nsclc-med-kras-g12c-vers-1-0-xx",
+            "country": "DK",
+            "source_type": "hta_submission",
+            "start_page": 164,
+            "end_page": 166,
+            "created_date": "unknown_year",
+            "folder_path": "HTA submissions/DK",
+            "split_index": 1,
+            "text_length": 1139,
+            "potential_comparators": [
+              "SELECT-1",
+              "CodeBreak",
+              "Time",
+              "Statistical",
+              "CTCAE"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** DBS, SNI **Source Type:** hta_submission\n\n6. Literature search and identification of efficacy and safety st\n6.1 Identification and selection of relevant studies . 6.2 List of relevant studies . 7. Efficacy and safety . 7.1 Efficacy and safety of sotorasib versus docetaxel in previousl\nline) with KRAS G12C-mutated NSCLC . 7.1.1 Relevant studies . 7.1.2 Efficacy and safety – results per study . 7.2 Comparative analyses of efficacy and safety . 7.2.1 MAIC for OS and PFS . 7.2.2 Safety . 7.2.3 Conclusion for comparative analyses between sotorasib and\n8. Health economic analysis . Confidential General Busines\nmparat\ntudies\nly trea\ndocet\nss\ntor(s) . s .",
+          "metadata": {
+            "heading": "DBS, SNI",
+            "doc_id": "bilag-til-medicinradets-anbefaling-vedr-sotorasib-til-nsclc-med-kras-g12c-vers-1-0-xx",
+            "country": "DK",
+            "source_type": "hta_submission",
+            "start_page": 5,
+            "end_page": 11,
+            "created_date": "unknown_year",
+            "folder_path": "HTA submissions/DK",
+            "split_index": 4,
+            "text_length": 668,
+            "potential_comparators": [
+              "Efficacy",
+              "Confidential",
+              "Literature",
+              "Health"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Packaging – types, sizes/n units, and concentrations **Source Type:** hta_submission\n\nNon-small cell lung cancer Neurotrophic receptor tyrosine kinase 1 gen Objective response rate Overall survival Programmed death cell protein-1 Programmed death-ligand 1 Positron emission tomography- computed to Progression-free survival Partial response Preferred Reporting Items for Systematic Re Performance status Probabilistic sensitivity analysis Quality-adjusted life-year Randomized controlled trial Response Evaluation Criteria in Solid Tumors Rearranged during transfection C-ros oncogene 1 Stable disease Surveillance, Epidemiology, and End Results Systematic literature review Summary of Product Characteristics Tumor-Node-Metastasis Treatment-related adverse events Time to treatment discontinuation Time to next treatment Confidential General Busin ence ne omog eview s ness e (UK grap ws an K) phy nd Meta-Analyses TTP UK WT Tim Un Wi me to prog nited Kingd ild-type gression dom Conf n Pag fidentia ge 11 of 237 al General Business",
+          "metadata": {
+            "heading": "Packaging – types, sizes/n units, and concentrations",
+            "doc_id": "bilag-til-medicinradets-anbefaling-vedr-sotorasib-til-nsclc-med-kras-g12c-vers-1-0-xx",
+            "country": "DK",
+            "source_type": "hta_submission",
+            "start_page": 13,
+            "end_page": 17,
+            "created_date": "unknown_year",
+            "folder_path": "HTA submissions/DK",
+            "split_index": "0_1_1",
+            "text_length": 1046,
+            "potential_comparators": []
+          }
+        }
+      ]
+    },
+    "EL": {
+      "country_metadata": {
+        "country_code": "EL",
+        "chunk_count": 0,
+        "total_text_length": 0,
+        "unique_documents": 0,
+        "unique_headings": 0
+      },
+      "chunks": []
+    },
+    "EN": {
+      "country_metadata": {
+        "country_code": "EN",
+        "chunk_count": 10,
+        "total_text_length": 9124,
+        "unique_documents": 1,
+        "unique_headings": 8
+      },
+      "chunks": [
+        {
+          "text": "**Heading:** Contents **Source Type:** hta_submission\n\n1 Recommendations . 2 Information about sotorasib . Anticipated marketing authorisation indication . Dosage in the marketing authorisation . Price . 3 Committee discussion . The condition . Treatment pathway . Clinical evidence . Indirect treatment comparison . Assumptions in the economic model . Health-related quality of life . End of life . Cost-effectiveness estimates . Cancer Drugs Fund . Other factors . Conclusion . 4 Implementation . 5 Appraisal committee members and NICE proje\nAppraisal committee members . NICE project team . © NICE 2024. All rights reserved. Subject to Notice of rig\nutatio\nect te\nghts (h\non-po\neam . https:/\nositive\n//www\ne adv\nw.nice\nvanc\ne.org.u\nced no\nuk/term\non-s\nms-an\nsmall. nd- P\n-cell\nSotorasib for previously treated KRAS G12C mutation-positive advanced non-small-cell lung cancer (TA781)",
+          "metadata": {
+            "heading": "Contents",
+            "doc_id": "HTA_submission_sotosorib_EN",
+            "country": "EN",
+            "source_type": "hta_submission",
+            "start_page": 3,
+            "end_page": 4,
+            "created_date": "20",
+            "folder_path": "HTA submissions/EN",
+            "split_index": 0,
+            "text_length": 884,
+            "potential_comparators": [
+              "Cost-effectiveness",
+              "Clinical",
+              "Dosage",
+              "Health-related",
+              "Assumptions",
+              "Conclusion",
+              "Subject",
+              "Other",
+              "Treatment",
+              "Anticipated",
+              "Price",
+              "Cancer",
+              "NICE",
+              "Indirect",
+              "All",
+              "End"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** uncertainty may be addressed by collecting data on sotorasib through the Cancer Drugs Fund. The company explained that the phase 3 **Source Type:** hta_submission\n\nCodeBreaK200 trial, comparing sotorasib with docetaxel in a KRAS G12C mutation-positive population, is currently ongoing. It stated that this trial\nwill measure overall and progression-free survival, and health-related quality of life. It will also collect data from people with previously treated\ndisease. The committee agreed that some uncertainty may be resolved\nwith data from the CodeBreak200 trial. The committee recalled its\nconclusion that the current cost-effectiveness results were highly uncertain. It agreed that, with longer follow-up data from CodeBreaK100\non mean overall and progression-free survival, and direct comparative evidence with docetaxel from CodeBreaK200, sotorasib has the potential\nto be cost effective. Also, that additional evidence may change the\npreferred modelling assumptions outlined in section 3.13. The committee",
+          "metadata": {
+            "heading": "uncertainty may be addressed by collecting data on sotorasib through the Cancer Drugs Fund. The company explained that the phase 3",
+            "doc_id": "HTA_submission_sotosorib_EN",
+            "country": "EN",
+            "source_type": "hta_submission",
+            "start_page": 17,
+            "end_page": 17,
+            "created_date": "20",
+            "folder_path": "HTA submissions/EN",
+            "split_index": 0,
+            "text_length": 1028,
+            "potential_comparators": [
+              "It",
+              "Also"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Indirect treatment comparison **Source Type:** hta_submission\n\nmutation status would be informative. But, it acknowledged the company's reasoning that overall survival and progression-free survival are similar in the absence of targeted therapies in the overall KRAS and KRAS G12C-specific population. However, it explained that it could have been possible to select KRAS G12C mutation data from SELECT-1 data. The ERG considered that the company's supplementary analysis using a PSWA may be less biased than the MAIC. It explained that the Amgen Flatiron Health real-world evidence data was adjusted to make it more comparable to the CodeBreaK100 population, and that there was little difference in the effective sample size compared with the MAIC. It also noted that the PSWA was adjusted for 13 covariates including brain metastases. However, the ERG highlighted that there remains considerable uncertainty in this approach.",
+          "metadata": {
+            "heading": "Indirect treatment comparison",
+            "doc_id": "HTA_submission_sotosorib_EN",
+            "country": "EN",
+            "source_type": "hta_submission",
+            "start_page": 8,
+            "end_page": 11,
+            "created_date": "20",
+            "folder_path": "HTA submissions/EN",
+            "split_index": "4_1_0",
+            "text_length": 940,
+            "potential_comparators": [
+              "It",
+              "But",
+              "However"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Health-related quality of life **Source Type:** hta_submission\n\nIt is more tolerable and less\nresource intensive than chemotherapy. The clinical expert described the\nissues associated with intravenous treatments, such as adverse events and delays in treatment because of capacity issues in chemotherapy\nunits, particularly during the COVID-19 pandemic. The clinical expert\nhighlighted the benefits of oral treatment from an NHS and patient perspective, and the preference for it. The patient expert described the\nbenefits of having treatment at home and reducing inpatient time at the hospital. The company applied a utility decrement of 0.025 per cycle of\ntreatment to account for the cytotoxicity and intravenous administration of docetaxel and nintedanib. This was based on a study comparing\n© NICE 2024.",
+          "metadata": {
+            "heading": "Health-related quality of life",
+            "doc_id": "HTA_submission_sotosorib_EN",
+            "country": "EN",
+            "source_type": "hta_submission",
+            "start_page": 12,
+            "end_page": 15,
+            "created_date": "20",
+            "folder_path": "HTA submissions/EN",
+            "split_index": 2,
+            "text_length": 820,
+            "potential_comparators": [
+              "nintedanib"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Health-related quality of life **Source Type:** hta_submission\n\nAll rights reserved. Subject to Notice of rights P\na\ne\nerlotinib with docetaxel in advanced NSCLC (Lewis et al., 2010). The\nutilities in that study were derived through a visual analogue scale in the progression-free health state. The ERG noted that the utilities (0.451 and\n0.426 for oral and intravenous therapy, respectively) in that study were\nlower than in CodeBreaK100 (0.734). The ERG said it was not opposed to\na treatment-related disutility for intravenous administration but highlighted the lack of justification for the size of disutility. It also\nconsidered the exclusion of any potential disutility associated with sotorasib dosing and frequency as an issue.",
+          "metadata": {
+            "heading": "Health-related quality of life",
+            "doc_id": "HTA_submission_sotosorib_EN",
+            "country": "EN",
+            "source_type": "hta_submission",
+            "start_page": 12,
+            "end_page": 15,
+            "created_date": "20",
+            "folder_path": "HTA submissions/EN",
+            "split_index": 3,
+            "text_length": 748,
+            "potential_comparators": [
+              "It",
+              "erlotinib",
+              "Subject"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Why the committee made these recommendations **Source Type:** hta_submission\n\nCurrent treatment for previously treated KRAS G12C mutation-positive, locally advanced or metastatic non-small-cell lung cancer includes docetaxel or docetaxel plus nintedanib. Sotorasib is a targeted treatment for the KRAS G12C mutation. Sotorasib has only been indirectly compared with current treatment. The results suggest\nthat, after platinum-based chemotherapy, sotorasib increases the time before the cancer gets worse and how long people live compared with current treatment. Sotorasib likely meets NICE's criteria to be a life-extending treatment at the end of life. But\nthere is uncertainty in the clinical evidence. Sotorasib has the potential to be cost\neffective, but more evidence is needed to address the uncertainties before it can be recommended for routine use. The evidence on sotorasib is promising. But, more data is being collected from the primary\nclinical trial and from an ongoing randomised controlled trial comparing sotorasib with docetaxel. Collecting additional data through the Cancer Drugs Fund may resolve some\nuncertainty in the clinical evidence. So, sotorasib is recommended for use in the Cancer\nDrugs Fund. © NICE 2024. All rights reserved. Subject to Notice of rights Page 4 of",
+          "metadata": {
+            "heading": "Why the committee made these recommendations",
+            "doc_id": "HTA_submission_sotosorib_EN",
+            "country": "EN",
+            "source_type": "hta_submission",
+            "start_page": 4,
+            "end_page": 4,
+            "created_date": "20",
+            "folder_path": "HTA submissions/EN",
+            "split_index": 0,
+            "text_length": 1307,
+            "potential_comparators": [
+              "nintedanib",
+              "Collecting",
+              "Subject",
+              "But",
+              "All",
+              "So",
+              "Sotorasib"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Anticipated marketing authorisation indication **Source Type:** hta_submission\n\n2.1 Sotorasib (Lumykras, Amgen) is indicated 'as monotherapy for the\ntreatment of adult patients with KRAS G12C-mutated locally advanced or metastatic non-small-cell lung cancer (NSCLC), who have progressed on,\nor are intolerant to, platinum-based chemotherapy and/or anti-PD-1/\nPD-L1 immunotherapy'. 2.2 The dosage schedule is available in the summary of product\ncharacteristics for sotorasib.",
+          "metadata": {
+            "heading": "Anticipated marketing authorisation indication",
+            "doc_id": "HTA_submission_sotosorib_EN",
+            "country": "EN",
+            "source_type": "hta_submission",
+            "start_page": 5,
+            "end_page": 5,
+            "created_date": "20",
+            "folder_path": "HTA submissions/EN",
+            "split_index": 0,
+            "text_length": 487,
+            "potential_comparators": []
+          }
+        },
+        {
+          "text": "**Heading:** Indirect treatment comparison **Source Type:** hta_submission\n\nThe company modelled docetaxel and nintedanib in line with NICE's technology appraisal on nintedanib for previously treated locally © NICE 2024. All rights reserved. Subject to Notice of rights P ing a advanced, metastatic, or locally recurrent non-small-cell lung cancer. This was because a company-sourced UK advisory board confirmed that a MAIC was 'unlikely to be appropriate'. The ERG highlighted the uncertainty with not applying adjustments to ECOG, WHO or smoking status when these differed in SELECT-1 and LUME-Lung 1. It also mentioned that the model's overall survival curve was not in line with the Kaplan–Meier curve in LUME-Lung 1, with an unlikely major increase in mortality in the first 6 months. That is, the modelling implied a worse survival for docetaxel plus nintedanib compared with docetaxel alone. The Kaplan–Meier curve",
+          "metadata": {
+            "heading": "Indirect treatment comparison",
+            "doc_id": "HTA_submission_sotosorib_EN",
+            "country": "EN",
+            "source_type": "hta_submission",
+            "start_page": 8,
+            "end_page": 11,
+            "created_date": "20",
+            "folder_path": "HTA submissions/EN",
+            "split_index": "6_0_0",
+            "text_length": 921,
+            "potential_comparators": [
+              "It",
+              "nintedanib",
+              "All",
+              "Subject"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** 4 Implementation **Source Type:** hta_submission\n\nThe NHS England and\nNHS Improvement Cancer Drugs Fund list provides up-to-date information on all cancer treatments recommended by NICE since 2016. This includes whether they have received a marketing authorisation and been launched in the UK. 4.3 The Welsh ministers have issued directions to the NHS in Wales on\nimplementing NICE technology appraisal guidance when the drug or treatment, or other technology, is approved for use within the Cancer\nDrugs Fund. When a NICE technology appraisal recommends the use of a\ndrug or treatment, or other technology, for use within the Cancer Drugs\nFund, the NHS in Wales must usually provide funding and resources for it within 2 months of the first publication of the final appraisal document or\nagreement of a managed access agreement by the NHS in Wales, whichever is the later. © NICE 2024.",
+          "metadata": {
+            "heading": "4 Implementation",
+            "doc_id": "HTA_submission_sotosorib_EN",
+            "country": "EN",
+            "source_type": "hta_submission",
+            "start_page": 19,
+            "end_page": 20,
+            "created_date": "20",
+            "folder_path": "HTA submissions/EN",
+            "split_index": 2,
+            "text_length": 899,
+            "potential_comparators": [
+              "When"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** 3.3 The clinical effectiveness evidence for sotorasib is from the **Source Type:** hta_submission\n\n© NICE 2024. All rights reserved. Subject to Notice of rights\nsmall\napy,\nmpar\ncer\ned\nn,\nus\nat\ny,\n0, a and-\n, so rators\nSotorasib for previously treated KRAS G12C mutation-positive advanced non-s lung cancer (TA781)\nCodeBreaK100 trial. This is a phase 2, single-arm, multicentre, open lab\ntrial in 250 adults with KRAS G12C mutation-positive advanced tumours\n126 participants had NSCLC. People in the trial previously had 1 (43%),\n(35%) or 3 lines (22%) of anticancer therapy, measurable disease per\nRECIST 1.1 criteria and an Eastern Cooperative Oncology Group (ECOG)\nperformance status of 0 or 1. Most people (90%) had previously had\nplatinum-doublet chemotherapy (see section 3.2). People took 960 mg\nsotorasib (8 tablets of 120 mg) once a day until disease progression, treatment discontinuation or the end of the study. The primary outcome\nof the trial was an objective response rate of 37.1% (95% confidence\ninterval 28.6 to 46.2), with the latest data-cut from March 2021.",
+          "metadata": {
+            "heading": "3.3 The clinical effectiveness evidence for sotorasib is from the",
+            "doc_id": "HTA_submission_sotosorib_EN",
+            "country": "EN",
+            "source_type": "hta_submission",
+            "start_page": 7,
+            "end_page": 8,
+            "created_date": "20",
+            "folder_path": "HTA submissions/EN",
+            "split_index": 0,
+            "text_length": 1090,
+            "potential_comparators": [
+              "Subject",
+              "All",
+              "of 120 mg",
+              "Most",
+              "took 960 mg",
+              "People"
+            ]
+          }
+        }
+      ]
+    },
+    "ES": {
+      "country_metadata": {
+        "country_code": "ES",
+        "chunk_count": 0,
+        "total_text_length": 0,
+        "unique_documents": 0,
+        "unique_headings": 0
+      },
+      "chunks": []
+    },
+    "EU": {
+      "country_metadata": {
+        "country_code": "EU",
+        "chunk_count": 0,
+        "total_text_length": 0,
+        "unique_documents": 0,
+        "unique_headings": 0
+      },
+      "chunks": []
+    },
+    "FR": {
+      "country_metadata": {
+        "country_code": "FR",
+        "chunk_count": 10,
+        "total_text_length": 10299,
+        "unique_documents": 2,
+        "unique_headings": 10
+      },
+      "chunks": [
+        {
+          "text": "**Heading:** Criteria for judging **Source Type:** hta_submission\n\nThe primary endpoint was progression-free survival as assessed by an independent, blinded review panel. Progression-less survival was defined as the time between randomization and occurrence of progression according to RECIST 1.1 criteria, or death from any cause. Note that patients who started a new anti-cancer therapy before progression or death were screened at the last assessment date prior to initiation. A sensitivity analysis was performed considering these initiations as a progression free survival event. The following outcome criteria were controlled for multiple testing (unilateral alpha risk control at 0.025) using the Maurer-Bretz procedure: ‒ Progression-free survival as assessed by the Independent Review Committee, blinded (principal criterion, see above) ‒ Objective response rate as evaluated by the independent review committee, Blinded, and defined as the proportion of patients who had a complete or partial response according to RECIST 1.1 (secondary criterion); ‒ Overall survival, defined as time between randomization and date of death from any cause (subcriterion) In all cases of statistical significance; multiplicity of the 3 analyses above was adjusted to the proposed median survival for certain quality of life dimensions. planned after the occurrence of approximately 160 events or if recruitment was completed and all patients were followed for at least 6 weeks.",
+          "metadata": {
+            "heading": "Criteria for judging",
+            "doc_id": "CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189",
+            "country": "FR",
+            "source_type": "hta_submission",
+            "start_page": 9,
+            "end_page": 10,
+            "created_date": "2023",
+            "folder_path": "HTA submissions/FR",
+            "split_index": 0,
+            "text_length": 1470,
+            "potential_comparators": [
+              "Note",
+              "Progression-less"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Results of the study: **Source Type:** hta_submission\n\nA total of 224 patients were enrolled in this trial: 126 with NSCLC, 62 with colorectal cancer and 36 with other types of cancer. Data from 01/09/2020: corresponding to the main efficacy analysis of the study. From 01/12/2020 and 15/03/2021: corresponds to the follow-up, exploratory data Number of previous lines, n (%) Type of previous treatment*, n%) Total chemotherapy was 115 (91%) Immunotherapy 116 (92%) Targeted therapy (24%) Initial Stage linclusion, III (%) n 5 (46%) 121 (96%) Histology, n (1%) Epidermoid (199%) Independent (125%) Mutations in the bone marrow*, 126%) N (123%) METERRIBULAR (25%) Tuberculosis (100%) at the end of the main study (12%) At the time of the evaluation by the ECHR Committee (12/1/2020), there were fewer than 100 patients (21%) who could not be assessed as a repeat patient (10%) at any stage of the primary study (61%), because of a combination of the following criteria: The median follow-up was 9.3 months (min-max: 1.1-12.2); a confirmed complete or partial response was observed in 46 patients, representing an objective response rate of 37% [95% CI: 29-47]. The lower bound of the 95% CI is higher than the a priori limit of 23%.",
+          "metadata": {
+            "heading": "Results of the study:",
+            "doc_id": "HTA_submission_sotosorib_FR",
+            "country": "FR",
+            "source_type": "hta_submission",
+            "start_page": 11,
+            "end_page": 13,
+            "created_date": "2022",
+            "folder_path": "HTA submissions/FR",
+            "split_index": 0,
+            "text_length": 1244,
+            "potential_comparators": [
+              "Data"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Not less than € 5 **Source Type:** hta_submission\n\nISP Place in Therapeutic Strategy Population HAS - Directi Opini version xame defined as Targeted for inclusion as monotherapy in the treatment of adult patients with advanced non-small cell bronchial cancer (NSCBC) with the KRAS G12C mutation whose disease has progressed after at least one prior systemic line of therapy FAIL This opinion is conditional on re-evaluation of this specialty within a maximum of one year based on the results of the Phase III study conducted in previously treated patients with NSCBC with KRASG12C Mutation (CodeBreak 200). - the poor quality of the demonstration of efficacy of LUMYKRAS (sotorasib), based on data from a non-comparative Phase I/ II study; - the ill-defined nature of the prognostic and predictive value of the KRAS G12C mutation in the CBNPC; - uncertainty about the relative efficacy, considering the absence of a direct comparison and the weak methodology of the indirect comparison provided, in a context where a straightforward comparison to an available therapeutic alternative with a robust methodology is possible; - a considered tolerability profile, marked by an incidence of serious undesirable effects (IUI) in more than two-thirds of patients (≥ 65%) and a reported serious adverse event (EI) in over half of patients (51%)",
+          "metadata": {
+            "heading": "Not less than € 5",
+            "doc_id": "HTA_submission_sotosorib_FR",
+            "country": "FR",
+            "source_type": "hta_submission",
+            "start_page": 3,
+            "end_page": 3,
+            "created_date": "2022",
+            "folder_path": "HTA submissions/FR",
+            "split_index": 0,
+            "text_length": 1349,
+            "potential_comparators": []
+          }
+        },
+        {
+          "text": "**Heading:** Scheme of the study **Source Type:** hta_submission\n\nPatients received LUMYKRAS (sotorasib) orally (tablets), 960 mg once daily. Treatment was continued until disease progression, Treatments studied patient discontinuation, death, vision loss, sponsor decision, non-compliance, pregnancy, adverse event, intolerance, need for alternative therapy. - Duration of response: delay between first partial or complete response and first relapse or progression (RECIST criteria 1.1) or death from any cause Main criteria - Disease control rate: proportion of patients with complete, partial, or stable disease judgement response ≥ 5 secondary weeks - Delay to response time: delay from initiation of treatment to first complete or partial response time - Progression-free survival time, as assessed by an independent review panel using the RECIST 1.1 criteria This response time had to be confirmed by a second imaging study at least 4 weeks later. - Response duration: time from first partially or full response time to first relapses or progress (RESIST criteria 1.1.) or death by any cause Key criteria - Control of disease rate: percentage of patients who had a complete, partly or stable judgment response time ≥ 5 weeks secondary time - Time to response: time between start of treatment and first",
+          "metadata": {
+            "heading": "Scheme of the study",
+            "doc_id": "HTA_submission_sotosorib_FR",
+            "country": "FR",
+            "source_type": "hta_submission",
+            "start_page": 10,
+            "end_page": 11,
+            "created_date": "2022",
+            "folder_path": "HTA submissions/FR",
+            "split_index": "0_0_0",
+            "text_length": 1307,
+            "potential_comparators": [
+              "Treatment"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** The results of the observational study IFCT-2102 Lung KG12Ci **Source Type:** hta_submission\n\nThis retrospective observational study was designed to include patients with Stage IV NSCLC with KRAS G12C mutation who received at least one dose of sotorasib as part of the ATU. The main objective was to evaluate the so-called progression-free survival in real life. A total of 106 patients who started treatment with sotoratib between 15/03/2021 and 15/04/2022 were included in this study. It should be noted that these patients were already included in the description of the cohort ATU (paragraph 3.4.1).",
+          "metadata": {
+            "heading": "The results of the observational study IFCT-2102 Lung KG12Ci",
+            "doc_id": "CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189",
+            "country": "FR",
+            "source_type": "hta_submission",
+            "start_page": 15,
+            "end_page": 15,
+            "created_date": "2023",
+            "folder_path": "HTA submissions/FR",
+            "split_index": 0,
+            "text_length": 616,
+            "potential_comparators": [
+              "It"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** 7.1.1 The CodeBreak 100 study was carried out in the United Kingdom. **Source Type:** hta_submission\n\nA Phase 1/2, Open-label Study Evaluating the Safety, Tolerability, Pharmacokinetics, Pharmacodynamics, and Efficacy of AMG 510 Reference Monotherapy in Subjects With Advanced Solid Tumors With KRAS p. G12C Mutation and AMG 5110 Combination Therapy in subjects with advanced NSCLC With KR AS p.G12C mutation Clinicaltrials.gov Registration No: NCT03600883 Primary objective to estimate the objective response rate, as assessed by an independent review panel, in adults with advanced solid tumour with KRAS G12 C mutation Baseline Phase I/II, non-comparative study Type: Patient 1 Date: 13/08/2019 Date of last patient included: 05/02/2020 and Date of duration of combination therapy Patients with a previously known anti-HCOS mutation or with a history of cluster headaemia (included in the main clinical trials) Age: ≥ 18 years CRISPR - 19 Cerebral palsy - Epidemic syndrome (including CFS) - CFS - EH1",
+          "metadata": {
+            "heading": "7.1.1 The CodeBreak 100 study was carried out in the United Kingdom.",
+            "doc_id": "HTA_submission_sotosorib_FR",
+            "country": "FR",
+            "source_type": "hta_submission",
+            "start_page": 10,
+            "end_page": 10,
+            "created_date": "2022",
+            "folder_path": "HTA submissions/FR",
+            "split_index": 0,
+            "text_length": 1017,
+            "potential_comparators": [
+              "G12C"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** The debate is closed. **Source Type:** hta_submission\n\nThis opinion concerns the re-evaluation of LUMYKRAS (sotorasib) as a monotherapy indication for the treatment of adult patients with advanced non-small cell bronchial cancer (NSCBC) with the KRAS G12C mutation whose disease has progressed after at least one prior systemic line of therapy. In the absence of direct comparative data, whereas clinically relevant comparators were available, and of major methodological limitations of the indirect comparison provided, the Commission considered that the data did not allow a relatively unbiased assessment of the contribution of LUMYKRAS (sotorasib) in the claimed indication, relative to the clinical relevance of the comparators. In support of its request for re-evaluation, the laboratory provided the results of the Phase III study requested by the Commission in its initial opinion. e laboratory also provided additional data from the ATUc Final Report, the 1st Early Access Synthesis Report and an observational study based on the ATuc.",
+          "metadata": {
+            "heading": "The debate is closed.",
+            "doc_id": "CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189",
+            "country": "FR",
+            "source_type": "hta_submission",
+            "start_page": 16,
+            "end_page": 17,
+            "created_date": "2023",
+            "folder_path": "HTA submissions/FR",
+            "split_index": "0_0_0",
+            "text_length": 1057,
+            "potential_comparators": []
+          }
+        },
+        {
+          "text": "**Heading:** 7.3.4 Data from the CPR **Source Type:** hta_submission\n\nStudy programme in the CBNPC Study name Availability Schedule Phase III randomised, open-label, docetaxel-versus-tested data in CodeBbreak End 2022 - early adult patients with advanced CRBC with the 2023 KRAS G12C mutation, previously treated in IFCT-2012 Retrospective observational study including End 2022 Lung patients treated under the KATUc K12C PLACE IN THE THERAPY STRATEGY Systematic search for the KRAS mutation is recommended before initiating line 1 treatment of the CBnPC. At the metastatic stage (IV), it is recommended that second-line therapy be offered systematically, whether or not patients have responded to a first metastasis line.",
+          "metadata": {
+            "heading": "7.3.4 Data from the CPR",
+            "doc_id": "HTA_submission_sotosorib_FR",
+            "country": "FR",
+            "source_type": "hta_submission",
+            "start_page": 15,
+            "end_page": 19,
+            "created_date": "2022",
+            "folder_path": "HTA submissions/FR",
+            "split_index": 3,
+            "text_length": 722,
+            "potential_comparators": []
+          }
+        },
+        {
+          "text": "**Heading:** Improving Medical Services **Source Type:** hta_submission\n\nLUMYKRAS (sotorasib) demonstrated statistically significant superiority in terms of progression-free survival and objective response rate as assessed by an independent review panel in an open-label randomised phase 3 study compared to docetaxel; however, this result is limited by: ‒ the absence of clinical relevance of the absolute difference in the progression free survival medians, of approximately 1 month; ‒ open label conduct of the study, which resulted in possible evaluation biases, including treatment decisions;  the uncertain reproducibility of the progressions-free survivability measure in this study;  the lack of evidence of an effect on overall survival, at an advanced stage with an unfavourable prognosis; the absences of objective clinical pertinence of this concomitant median survival rate, of about 1 month, compared with docetaxil; ◦ the absency of a positive clinical relationship between the results of this study and those of the clinical trial, which led to possible evaluative biases including treatment decision-making;",
+          "metadata": {
+            "heading": "Improving Medical Services",
+            "doc_id": "CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189",
+            "country": "FR",
+            "source_type": "hta_submission",
+            "start_page": 18,
+            "end_page": 19,
+            "created_date": "2023",
+            "folder_path": "HTA submissions/FR",
+            "split_index": 0,
+            "text_length": 1126,
+            "potential_comparators": []
+          }
+        },
+        {
+          "text": "**Heading:** Summary **Source Type:** hta_submission\n\nEarly post-MCA access authorised (granted 28/04/2022, start date 07/06/2022) in the following indication, identical to MCA: as monotherapy for the treatment of adult patients with advanced non-small cell bronchial cancer (NSCBC) with the KRAS G12C mutation, whose disease has progressed after at least one prior systemic line of therapy.",
+          "metadata": {
+            "heading": "Summary",
+            "doc_id": "CT-20189_LUMYKRAS_PIC_REEV_AvisDef_CT20189",
+            "country": "FR",
+            "source_type": "hta_submission",
+            "start_page": 3,
+            "end_page": 5,
+            "created_date": "2023",
+            "folder_path": "HTA submissions/FR",
+            "split_index": 1,
+            "text_length": 391,
+            "potential_comparators": []
+          }
+        }
+      ]
+    },
+    "HR": {
+      "country_metadata": {
+        "country_code": "HR",
+        "chunk_count": 0,
+        "total_text_length": 0,
+        "unique_documents": 0,
+        "unique_headings": 0
+      },
+      "chunks": []
+    },
+    "IE": {
+      "country_metadata": {
+        "country_code": "IE",
+        "chunk_count": 0,
+        "total_text_length": 0,
+        "unique_documents": 0,
+        "unique_headings": 0
+      },
+      "chunks": []
+    },
+    "IT": {
+      "country_metadata": {
+        "country_code": "IT",
+        "chunk_count": 6,
+        "total_text_length": 6845,
+        "unique_documents": 1,
+        "unique_headings": 1
+      },
+      "chunks": [
+        {
+          "text": "**Heading:** Article 48 of Decree-Law No 269 of 30 September 2003 is amended as follows: **Source Type:** hta_submission\n\nNo 049858020/E (based on 10) - reimbursability class: C. Mandatory discount on the ex-factory price, to be applied to public health facilities, including private health facilities accredited with the National Health Service, as from negotiated conditions. The company, without prejudice to the provisions on the disposal of stocks, in accordance with Article 13 of Decree-Law No 35 of 30 April 2019, converted, with amendments, into Law No 60 of 25 June 2019, undertakes to maintain a constant supply adequate to the needs of the national health service. Contract validity: twenty-four months. For the purpose of prescribing and dispensing the medicinal product, physicians and pharmacists associated with the user centres specifically identified by the regions will be required to complete the computerised data collection sheet available for access through the institutional website of the AIFA, at the following address: The classification Lumykras (sort of medical prescription for sale to the public specialists - onco This publication will be notified at the time of entry into force in Rome, 17 May association for the purposes of supply ione for the purpose of supply d rasib) and the following: medicinal product ica limitativa, to be renewed only on prescription from hospitals (RNRL).",
+          "metadata": {
+            "heading": "Article 48 of Decree-Law No 269 of 30 September 2003 is amended as follows:",
+            "doc_id": "Determina_33-2024_Lumykras",
+            "country": "IT",
+            "source_type": "hta_submission",
+            "start_page": 1,
+            "end_page": 5,
+            "created_date": "2024",
+            "folder_path": "HTA submissions/IT",
+            "split_index": 3,
+            "text_length": 1417,
+            "potential_comparators": [
+              "Mandatory",
+              "Contract"
+            ]
+          }
+        },
+        {
+          "text": "**Source Type:** hta_submission\n\nAG FA DET Ricl dell (Det (GU Vi reca cor modi l'Ag disp Serv Vi salu dell sull farm sett nove genn Mini pubb genn Vi dell pubb Gazz GENZIA ITALIANA DEL ARMACO TERMINATED 17 May 2024 classification of the medicinal product for human use Lumykras, within the meaning of Article 8 (10) of the Law of 24 December 1993, No 537. which terminates at No 33/2024). (24A02603) U No 121 of 25-5-2024)",
+          "metadata": {
+            "heading": "",
+            "doc_id": "Determina_33-2024_Lumykras",
+            "country": "IT",
+            "source_type": "hta_submission",
+            "start_page": 1,
+            "end_page": 1,
+            "created_date": "2024",
+            "folder_path": "HTA submissions/IT",
+            "split_index": 0,
+            "text_length": 422,
+            "potential_comparators": []
+          }
+        },
+        {
+          "text": "**Heading:** Article 48 of Decree-Law No 269 of 30 September 2003 is amended as follows: **Source Type:** hta_submission\n\nRobert Giovanni Nistico' as Chairman of the Board of Directors of the Italian Medicines Agency, pursuant to Article 7 of the aforementioned Decree of 20 September 2004, No 245 and its subsequent amendments; Having regard in particular to the Decree by the Minister for Health of 9 February 2024 on the appointment of Dr. Pierluigi Russo as Technical and Scientific Director of the Agenzia Italiana del Farmaco, in accordance with Article 10-bis of the above-mentioned Decree, No 245, dated 28 May 2020, by which the position of Director General No 643 was conferred on Dr. Having regard to the Decision of the Director-General No 643 of 28 May 2020 appointing Dr Francesco Trotta as Head of the HTA and Pharmaceutical Economy Sector, and in particular Article 8 (10) thereof, on the classification of medicinal products which may be administered by the National Health Service, and to Regulation (EC) No 1394/2007 of the European Parliament and of the Council of 13 November 2007 amending Directive 2001/83/EC on advanced therapy medicines; Having regard to Regulation",
+          "metadata": {
+            "heading": "Article 48 of Decree-Law No 269 of 30 September 2003 is amended as follows:",
+            "doc_id": "Determina_33-2024_Lumykras",
+            "country": "IT",
+            "source_type": "hta_submission",
+            "start_page": 1,
+            "end_page": 5,
+            "created_date": "2024",
+            "folder_path": "HTA submissions/IT",
+            "split_index": "1_0_0",
+            "text_length": 1190,
+            "potential_comparators": [
+              "Having",
+              "Pierluigi"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Article 48 of Decree-Law No 269 of 30 September 2003 is amended as follows: **Source Type:** hta_submission\n\n(EC) No 726/2004 of the European Parliament and of the Council of 31 March 2004 laying down Community procedures for the authorisation and supervision of medicinal products for human and veterinary use and establishing a European Medicines Agency; having regard to Legislative Decree No 219 of 24 April 2006 implementing Directive 2001/83/EC (and subsequent amending directives) on a Community code relating to medicinal Products for Human Use; having regards to the Decree of the Minister for Health of 2 August 2019 establishing Criteria and modalities according to which the Italian Agency for Medicines determines, by negotiation, the prices of medicines reimbursed by the Servizio Sanitario Nazionale, published in the Gazzetta Ufficiale della Repubblica Italiana - Serie Generale n. 185 of 24 July 2012; having considered Articles 11 and 12 of Decree-Law No 138-D of 15 September 2012 on the Reimbursement of Medicinal Products, with subsequent amendments to the Emergency Refunds Law of 18 August 2003, converted into a Law on the Promotion of Competition and Protection of the National Health Care Market (Leg.",
+          "metadata": {
+            "heading": "Article 48 of Decree-Law No 269 of 30 September 2003 is amended as follows:",
+            "doc_id": "Determina_33-2024_Lumykras",
+            "country": "IT",
+            "source_type": "hta_submission",
+            "start_page": 1,
+            "end_page": 5,
+            "created_date": "2024",
+            "folder_path": "HTA submissions/IT",
+            "split_index": "1_1_0",
+            "text_length": 1240,
+            "potential_comparators": []
+          }
+        },
+        {
+          "text": "**Heading:** Article 48 of Decree-Law No 269 of 30 September 2003 is amended as follows: **Source Type:** hta_submission\n\n326 (Prontuario Farmaceutico Nazionale 2006) , published in the Official Journal of the Italian Republic - General Series - No 156 of 7 July 2006; Having regard to the AIFA determination of 27 September 2006 Manoeuvre for the governance of conventional and non-conventional pharmaceutical expenditure requested by the Vistagen B.V. European Pharmaceutical Classification Service, issued in the OJ R.S. - General series - No 227 of 29 September 2006; having regard to AIFA decision No 49/2022 of 1 April 2022, published on 11 May 2022 Classification according to Article 12 (5) of Law No 189 of 8 November 2012 of the medicinal product for human use 'Lykumras', approved by a centralised procedure; Packs: (PVC/ PE/ PVDC/ alu) 240 tablets - A.I.C. No 049858018/ E (based on base 10) - reimbursement class: H - ex-factory price (excluding VAT) € 7,368.00 - retail price (including VAT), € 12,160.24; 120 mg - film-coated tablet - oral use - bottle (HDPE) of 240 (2 × 120) tablets, 0498032/ E (in - base 10) retail price: tablets (multipack) - A.I.C.",
+          "metadata": {
+            "heading": "Article 48 of Decree-Law No 269 of 30 September 2003 is amended as follows:",
+            "doc_id": "Determina_33-2024_Lumykras",
+            "country": "IT",
+            "source_type": "hta_submission",
+            "start_page": 1,
+            "end_page": 5,
+            "created_date": "2024",
+            "folder_path": "HTA submissions/IT",
+            "split_index": 2,
+            "text_length": 1169,
+            "potential_comparators": [
+              "No",
+              "European"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Article 48 of Decree-Law No 269 of 30 September 2003 is amended as follows: **Source Type:** hta_submission\n\nante Urgent provisions to facilitate the development and repair of public accounts, converted, with amendments, into Law No 326 of 24 November 2003 establishing the Italian Pharmaceutical Agency and, in particular, paragraph 33, which provides for price negotiation for products reimbursed by the National Health Service between the Agency and manufacturers; this is Decree No 245 of 20 September 2004 of the Minister of Health, in consultation with the Ministers of the Public Service and Economy and Finance, containing Regulation laying down the rules for the organisation and functioning of the Italian Food Agency, pursuant to Article 48, paragraph 13, of Decree-Law No 269 of 30 November 2003, converted with modifications, by Act of 24 April 2003 No 326, as last amended by Decree of 8 January 2024, No 3 of the Ministry of Health with regard to the staff of the National Pharmacy Agency, and the function of the General Health Service and the general budget of the Republic of Italy; widowed on the official website of the same institution (Original publication date: 17 April 2024 - Series A/B/A/5), with the date of publication of the Official Gazette No. 1/5 Having regard to the decree of the Minister of Health of 5 April 2024 appointing, with effect from that date, Prof.",
+          "metadata": {
+            "heading": "Article 48 of Decree-Law No 269 of 30 September 2003 is amended as follows:",
+            "doc_id": "Determina_33-2024_Lumykras",
+            "country": "IT",
+            "source_type": "hta_submission",
+            "start_page": 1,
+            "end_page": 5,
+            "created_date": "2024",
+            "folder_path": "HTA submissions/IT",
+            "split_index": 0,
+            "text_length": 1407,
+            "potential_comparators": []
+          }
+        }
+      ]
+    },
+    "NL": {
+      "country_metadata": {
+        "country_code": "NL",
+        "chunk_count": 0,
+        "total_text_length": 0,
+        "unique_documents": 0,
+        "unique_headings": 0
+      },
+      "chunks": []
+    },
+    "PO": {
+      "country_metadata": {
+        "country_code": "PO",
+        "chunk_count": 10,
+        "total_text_length": 9486,
+        "unique_documents": 1,
+        "unique_headings": 4
+      },
+      "chunks": [
+        {
+          "text": "**Heading:** Justification for the recommendation **Source Type:** hta_submission\n\nThe evaluation relates to the reimbursement of sotorasib for the treatment of II and subsequent lines of patients with non-small cell lung cancer (NDRP) with the presence of a p.G12C mutation in the KRAS gene (Kirsten rat viral oncogene homolog) after failure of at least one prior line of treatment in an existing drug regimen B.6 Treatment of patients suffering from lung cancer, ICD-10: C34, and interstitial lung disease, ICD-10: Based on the results of the clinical analysis, the use of sotorasib in patients with NDRP and the KRAS mutation may be more effective compared to DOC in terms of, inter alia, progression-free survival (PFS), overall response rate (ORR), disease control rate (DCR) or quality of life. However, no statistically significant differences between therapies were demonstrated in overall survival (OS).",
+          "metadata": {
+            "heading": "Justification for the recommendation",
+            "doc_id": "HTA_submission_sotosorib_PO",
+            "country": "PO",
+            "source_type": "hta_submission",
+            "start_page": 1,
+            "end_page": 2,
+            "created_date": "2023",
+            "folder_path": "HTA submissions/PO",
+            "split_index": 0,
+            "text_length": 912,
+            "potential_comparators": [
+              "However"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Description of the claimed benefit **Source Type:** hta_submission\n\nHigher scores indicate better quality of the study. 3 European Organization for Research and Treatment of Cancer Quality of Life Questionnaire Cancer quality of life questionnaire. A higher score for functional means deterioration of functioning and for general health improvement in quality of living. 4 European Organisation for research and treatment of cancer Quality of life question module Lung Cancer Module Frequency of observation of symptoms and problems associated with lung cancer (such as pain, swelling of the lung, difficulty breathing, loss of hair, bleeding in the chest, and cough). Recommendation 41/2023 of the President of the AOTMiT dated 14 April No statistically significant differences were observed between groups for e. g.: • overall survival, • other endpoints in the EORTC QLQ-C30 and EORTSQ-QLC13 questionnaires for worsening of",
+          "metadata": {
+            "heading": "Description of the claimed benefit",
+            "doc_id": "HTA_submission_sotosorib_PO",
+            "country": "PO",
+            "source_type": "hta_submission",
+            "start_page": 3,
+            "end_page": 10,
+            "created_date": "2023",
+            "folder_path": "HTA submissions/PO",
+            "split_index": "4_0_0",
+            "text_length": 939,
+            "potential_comparators": [
+              "Recommendation"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Justification for the recommendation **Source Type:** hta_submission\n\nClinical analysis does not provide evidence for direct comparison of the evaluated technology with the majority of comparators, i. e. nintedanib in combination with docetaxel (NIN+DOC), two-drug platinum-derived chemotherapy (P-CTH), pemetrexed (PMX), which are currently re-evaluated therapeutic options in this indication. In addition, results for sotorasib are derived from the uncompleted CodeBreaK 200 and 100 studies. According to the estimates of the economic analysis, the incremental cost-effectiveness ratio (ICUR) from the NFZ perspective is at the threshold of profitability It is also noted that according to the budgetary impact analysis estimates, the reimbursement of Lumikras could result in public expenditure in the first and second year of reimbursing respectively. evaluations by other HTAs indicate uncertainty in the efficacy of the drug and cost-effectiveness estimates, therefore final study results are required.",
+          "metadata": {
+            "heading": "Justification for the recommendation",
+            "doc_id": "HTA_submission_sotosorib_PO",
+            "country": "PO",
+            "source_type": "hta_submission",
+            "start_page": 1,
+            "end_page": 2,
+            "created_date": "2023",
+            "folder_path": "HTA submissions/PO",
+            "split_index": 1,
+            "text_length": 1021,
+            "potential_comparators": [
+              "nintedanib",
+              "According"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Notes for the Package Leaflet **Source Type:** hta_submission\n\nthe second-line treatment of patients with NDRP with a KRAS G12C mutation indicates the possibility of using either sotorasib or adagrasib (following at least one prior therapy targeting the KRAS g12c mutation). According to the PTOK 2022 guidelines, the course of the second line treatment for patients with generalised non-small cell lung cancer depends on the clinico-pathomorphological characteristics, the effects of prior systemic therapy, and the molecular characteristics of the tumour. In this group, consideration may be given to the use of chemotherapy (dosectaxel or pemetrexed), docetaxel in combination with nintedanib, EGFR inhibitors in patients who have not received these medicines in the first line, or osymertinib in patients previously treated with first or second generation EGFR blockers, ALK inhibitors if ALK gene rearrangement, immunity (nivolumab or atezolizumab), palliative radiotherapy or symptomatic progression are observed. The positive NICE 2022 recommendation restricts the use of Lumykras to the Cancer Drugs Fund only.",
+          "metadata": {
+            "heading": "Notes for the Package Leaflet",
+            "doc_id": "HTA_submission_sotosorib_PO",
+            "country": "PO",
+            "source_type": "hta_submission",
+            "start_page": 13,
+            "end_page": 14,
+            "created_date": "2023",
+            "folder_path": "HTA submissions/PO",
+            "split_index": "0_1_0",
+            "text_length": 1131,
+            "potential_comparators": [
+              "atezolizumab",
+              "osymertinib",
+              "nintedanib",
+              "According",
+              "nivolumab"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Proposals for risk-sharing instruments **Source Type:** hta_submission\n\nThe above values have been based on, inter alia, the opinion of clinical experts. The actual number of patients with the presence of the p.G12C mutation in the KRAS gene is unknown at the current frequency of genetic testing among patients with non-small cell lung cancer (NDRP). The cost of additional genetic testing in case of reimbursement of the drug will also affect the public payer's expenditure. The limited reliability is also affected by the limitations of the clinical and economic analysis. The consideration of the proposed risk-sharing instrument should be considered as an insufficient solution for the assessment of the risk associated with the potential financing of the technology.",
+          "metadata": {
+            "heading": "Proposals for risk-sharing instruments",
+            "doc_id": "HTA_submission_sotosorib_PO",
+            "country": "PO",
+            "source_type": "hta_submission",
+            "start_page": 10,
+            "end_page": 13,
+            "created_date": "2023",
+            "folder_path": "HTA submissions/PO",
+            "split_index": 4,
+            "text_length": 785,
+            "potential_comparators": []
+          }
+        },
+        {
+          "text": "**Heading:** Description of the claimed benefit **Source Type:** hta_submission\n\n100 Phase I/ II, non-randomised, efficacy and safety evaluation of sotorasib (SOT; number of patients: phase I 48, phase II 126; median follow-up: phase II: 15.3 months (1.1 to 18.4); phase I/II: 24.9 months. • LUME-Lung1 randomised phase III, efficality and safety assessment of nintedanib in combination with docetaxel (NIN + C) as compared to docetaxal (DOC). • July 2021 - retrospective study, 89 previously treated patients with metastatic NDPR with the presence of KRAS p.G12C mutation • August 2022 - two prospective trials, patients with locally advanced non-resectable or transurethral NPDR with presence of the KRAS P.G 12C mutations, with ECOG status ≤ 2, brain metastases (treated or untreated), for whom other standard of care options have been exhausted (Based on 436 92 442 452 patients) • Cadran study, 2022 patients with a previously discontinued systemic therapy, 679 patients with KRAS n.G.C. mutation.",
+          "metadata": {
+            "heading": "Description of the claimed benefit",
+            "doc_id": "HTA_submission_sotosorib_PO",
+            "country": "PO",
+            "source_type": "hta_submission",
+            "start_page": 3,
+            "end_page": 10,
+            "created_date": "2023",
+            "folder_path": "HTA submissions/PO",
+            "split_index": "1_1_0",
+            "text_length": 1002,
+            "potential_comparators": [
+              "nintedanib"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Description of the claimed benefit **Source Type:** hta_submission\n\nchest pain. • Individual groups using SOT obtained IS outcomes for survival from DOC-free subjects in the subpopulation after two previous treatment lines: 5.7 months of SOT vs 4.8 months of ECOT vs 0.9 months of HRT. • 2.8 vs 0.61 months of CI in the SOG sub-population. 0.61 (0.40; 0.92) • in the functional subpopulation ECOG 1: SOT vs. DOC 4.4 months vs. 2.8 months HR (95% CI) = 0.61 (0,44; 0.84) • with or without metastases to the liver: SOT versus DOC 4.2 months vs 1.9 months HR (CI 95%)= 0.47 (0.26; 0.85 without metestases SOT v. DO C 5.9 months vs 5.6 months HR (> 95% CI) > 0.67 (0.49; 0.90) • in a bone metastasis (start of the study) or DOC-metastases sub Population: SOt vs.",
+          "metadata": {
+            "heading": "Description of the claimed benefit",
+            "doc_id": "HTA_submission_sotosorib_PO",
+            "country": "PO",
+            "source_type": "hta_submission",
+            "start_page": 3,
+            "end_page": 10,
+            "created_date": "2023",
+            "folder_path": "HTA submissions/PO",
+            "split_index": "4_1_0",
+            "text_length": 771,
+            "potential_comparators": [
+              "DO",
+              "DOC"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Description of the claimed benefit **Source Type:** hta_submission\n\n≥ 10% of patients with NDRP with the KRAS p.G12C mutation, the following were observed: • IS increased relative risk: diarrhoea, increased ALT and increased AST; • IS decreased relative risk of fatigue, fever and peripheral oedema. 24%), shortness of breath (19% vs 19%), cough (13% vs 15%), vomiting (13% versus 17%), decreased appetite (23% vs 22%). Patients using SOT were more likely to experience constipation (13% v 5%) and anaemia (17% v 5%), and less commonly: fatigue (16% v 30%), increased asparagine aminotransferase (11% v 26%), increased alanine amintransferase concentrations (11% vs 29%), alopecia (2% v 16%) neutropenia (2% vs 14%) and fever (7% v 13%). In Awad 2022, treatment-related adverse events were reported in 65% of patients, treatment- related adverse reactions ≥ 3rd degree in 23% of patients; treatment- associated adverse experiences leading to discontinuation of therapy in 7% of patients and dose modification-related ADRs in 26% of patients with treatment-associated AEs resulting in death in 1% (1 death due to pneumonia) of patients.",
+          "metadata": {
+            "heading": "Description of the claimed benefit",
+            "doc_id": "HTA_submission_sotosorib_PO",
+            "country": "PO",
+            "source_type": "hta_submission",
+            "start_page": 3,
+            "end_page": 10,
+            "created_date": "2023",
+            "folder_path": "HTA submissions/PO",
+            "split_index": "8_1_0",
+            "text_length": 1148,
+            "potential_comparators": [
+              "Patients"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Notes for the Package Leaflet **Source Type:** hta_submission\n\nIt is proposed to add to the program an assessment of the quality of life of patients in order to obtain real data from Polish clinical practice. One of the experts pointed out that the decision not to include a patient in the drug program due to the co-existence of other cancers should belong to the doctor. The provision on the exclusion of co-occurrence of other tumors is one of the eligibility criteria for the analyzed drug program. 3 clinical recommendations related to the proposed indication were found by: • Polish Society of Clinical Oncology (PTOK 2022); • National Comprehensive Cancer Network (NCCN 2023 v2);• European Society for Medical Oncography (ESMO 2023). In accordance with the ESMO 2023 guidelines, in line II treatment of patients with NDRP with the KRASC G12 mutation, sotorasi is recommended for use in patients who have not responded to previous treatment. The NCCN 2023 guideline for",
+          "metadata": {
+            "heading": "Notes for the Package Leaflet",
+            "doc_id": "HTA_submission_sotosorib_PO",
+            "country": "PO",
+            "source_type": "hta_submission",
+            "start_page": 13,
+            "end_page": 14,
+            "created_date": "2023",
+            "folder_path": "HTA submissions/PO",
+            "split_index": "0_0_0",
+            "text_length": 988,
+            "potential_comparators": [
+              "One"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Description of the claimed benefit **Source Type:** hta_submission\n\nEfficacy studies No median follow-up periods were reported in the trials and patients were characterised by various ECOG fitness states: • EECOG 0-1 (July 2021 72%, Trial 436 ECEOG 0: 13%, ECEGG 1: 61%, Trials 442 ECECG 0: 27%, EECGG 1: 62%, Cadranel 2022 ECEGC 0: 20%, ECCOG 1: 61%), • ECEBG ≥ 2 (June 2021: no data; Trial 436: ECEGT 2: 26%; Trials 440 ECEGL 2: 11%; 2022 Cadranels: 17%; ECECL 2: 2%). In the studies in the general population, the median PFS was as follows: • Julve 2021 - 6.1 months (95% CI: 5.6; not reached), • Study 436 (Awad 2022) - 6.7 months (95%, CI: 4.6; 8.3), with ECOG 0: 6.4 months (95, CI: 2.7; 12.8), with EECOG 1: 7.1 months (95%, CI: 3.6; 9.0), with ECEO 2: 6.5 months (95%.",
+          "metadata": {
+            "heading": "Description of the claimed benefit",
+            "doc_id": "HTA_submission_sotosorib_PO",
+            "country": "PO",
+            "source_type": "hta_submission",
+            "start_page": 3,
+            "end_page": 10,
+            "created_date": "2023",
+            "folder_path": "HTA submissions/PO",
+            "split_index": 7,
+            "text_length": 789,
+            "potential_comparators": []
+          }
+        }
+      ]
+    },
+    "PT": {
+      "country_metadata": {
+        "country_code": "PT",
+        "chunk_count": 10,
+        "total_text_length": 10729,
+        "unique_documents": 1,
+        "unique_headings": 4
+      },
+      "chunks": [
+        {
+          "text": "**Heading:** 5.Description of the studies evaluated **Source Type:** hta_submission\n\nTAIM submitted an ongoing multicentre, open-label, single-arm phase I/ II study (CodeBreaK 100), a systematic review of the literature, an indirect comparison study of soto with docetaxel, and a phase 3 clinical trial for comparison of AMG 510 with docetxel in doe with CPNPC mutated KRAS p. G12C (CodebreaK 200 study). The main exclusion criteria were: number of prior treatment lines greater than three, presence of active brain metastases. Patients were allocated to a single subcutaneous treatment arm at a dose of 960 mg per day. This treatment was maintained until primary disease development, indicative of progressive disease, and the rate of intolerance or consensual toxicity (TRO) was withdrawn. The primary efficacy endpoint was the objective response rate (ORR). Secondary endpoints were duration of response (DR); disease control (CD); time to",
+          "metadata": {
+            "heading": "5.Description of the studies evaluated",
+            "doc_id": "Relatório de avaliação de financiamento público  de Lumykras (sotorasib)",
+            "country": "PT",
+            "source_type": "hta_submission",
+            "start_page": 9,
+            "end_page": 22,
+            "created_date": "2015",
+            "folder_path": "HTA submissions/PT",
+            "split_index": "0_0_0",
+            "text_length": 942,
+            "potential_comparators": [
+              "Secondary",
+              "of 960 mg",
+              "Patients",
+              "G12C"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** 8. Evaluation and comments on the evidence submitted **Source Type:** hta_submission\n\nThe additional benefit of Lumykras (sotorasib) was assessed in the indication for the treatment of adult patients with advanced non-small cell lung cancer (NSCLC) with mutated KRAS G12C who have progressed after at least one prior systemic line of therapy. In terms of comparative efficacy, data from the interim analysis of the Phase III clinical trial indicate that treatment with sotorasib resulted in an improvement in progression-free survival of 1.1 months and a 34% reduction in the likelihood of progression or death compared to docetaxel (HR 0.66 [95% CI: 0.51, 0.86], p-value = 0.002), with improvement at 12-month progression assessment (24.8% vs 10.1%) and objective response rate (28.1% [95%CI: 21.5, 35.4] vs 13.2% [95% IC: 8.6, 19.2] Additionally, there was a delay in time to deterioration of overall health status (HR 0,694, 95%",
+          "metadata": {
+            "heading": "8. Evaluation and comments on the evidence submitted",
+            "doc_id": "Relatório de avaliação de financiamento público  de Lumykras (sotorasib)",
+            "country": "PT",
+            "source_type": "hta_submission",
+            "start_page": 27,
+            "end_page": 29,
+            "created_date": "2015",
+            "folder_path": "HTA submissions/PT",
+            "split_index": "0_0_0",
+            "text_length": 944,
+            "potential_comparators": [
+              "Evaluation"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** 5.Description of the studies evaluated **Source Type:** hta_submission\n\nThe diagram describing the flow of patients in the CodeBreak 100 study is shown in Figure 1. and unresectable or metastatic (Phase IIIB-IV) patients who received at least 1 prior systemic therapy were eligible for inclusion. Study outcomes included survival (including overall survival, progression-free survival and eventless survival), time to progression, time to next treatment, response rates, rate of disease control, duration of treatment and adverse events. The studies were identified by searching electronic databases, relevant article reference lists, conference proceedings and other supplementary sources. RSL met the published guidelines issued by the Cochrane Collaboration and Centre for Reviews & Dissemination (DPR; York, UK) and was in compliance with the methodological requirements set out in the UK National Institute of Health Excellence (NICE), Consolidated Statements for Health Metrics and Standards (CONSMA) and Preferred Reporting Systems (CRIS). Product: AMG 510 SLR Protocol Number: 20200340 Figure Date: 16 2 Mar 2021 Flow of publications 2 included and excluded from the systematic review and 16 f 6 systematic 3 Figure 1: Study flow of included and excluuded pub lications † The publication identified in the 2021 update search, superseded a co nference abstract id entified in the origina se l arch, therefore total included studies are less than the total of the original an update search.",
+          "metadata": {
+            "heading": "5.Description of the studies evaluated",
+            "doc_id": "Relatório de avaliação de financiamento público  de Lumykras (sotorasib)",
+            "country": "PT",
+            "source_type": "hta_submission",
+            "start_page": 9,
+            "end_page": 22,
+            "created_date": "2015",
+            "folder_path": "HTA submissions/PT",
+            "split_index": 1,
+            "text_length": 1509,
+            "potential_comparators": [
+              "Product",
+              "RSL",
+              "Study"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Indications and comparators selected for evaluation **Source Type:** hta_submission\n\nThe application to evaluate the added therapeutic value of Sotorasib for the treatment of adult patients with advanced non-small cell lung cancer (NSCLC) with mutated KRAS G12C and who have progressed after at least one prior systemic line of therapy was reviewed. Table 1: Population, intervention and selected comparators Adults with cancer from Sotorasib docetaxel, Used routinely in non-small cell lung clinical practice; Docetaxel + nintedanib * advanced (CPNPC) cells It is validated for their mutated KRAS G12C and Lumykras (Sotorasib) indication/ population that have progressed after at least one prior systemic therapy line. *Adenocarcinoma; ** Separate Terms of Comparison Table 2: Terms Of Comparation Medicinal Products in Non-compact Tumour Assessment ** Scientific evidence regarding nivolumab and its efficacy and safety; ** Pembrolizumab is predominantly marketed as a treatment for patients with chronic disease, with a reported toxicity of ≥ 120 mg/ day, or twice the recommended daily dose of Tuberculosis, which is up to 120 mg per day. *** In the CODE BREAK 200 trial, in the sotorasib group, the median duration of treatment was 19.86 (0.4, 101.3) weeks administered in 7.0 (1.34) cycles, and the relative dose intensity was 100%.",
+          "metadata": {
+            "heading": "Indications and comparators selected for evaluation",
+            "doc_id": "Relatório de avaliação de financiamento público  de Lumykras (sotorasib)",
+            "country": "PT",
+            "source_type": "hta_submission",
+            "start_page": 6,
+            "end_page": 9,
+            "created_date": "2015",
+            "folder_path": "HTA submissions/PT",
+            "split_index": 0,
+            "text_length": 1351,
+            "potential_comparators": [
+              "nintedanib",
+              "Table",
+              "pembrolizumab",
+              "to 120 mg",
+              "nivolumab"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** 5.Description of the studies evaluated **Source Type:** hta_submission\n\nnervous system; ECOG, EECG, Eastern Cooperative Oncology Group; HR, HR, hazard ratio; PD-L1, PD-l1, programmed death; PFS, PFS-1; ligand-1; Ponte, 200B; survival of the study is free from progression Code: FFS [1]. Source: Source: Report Report of the CodeBreak 200 study [1] [2] Main secondary endpoint Primary secondary Endpoint overall survival Overall survival Rate As of the date of the Cut-off Response cut-off of the Objective data, data, 203 203 (BICR) events of OS OS had occurred, including 109 patients (64% (64% in the sotorasib group) and 94 94 patients (54% in docetaxel group) [1] The median median OS response was 10.6 months (CI 95%: 10.6 (IC: 8.9; 14.9; 14.0) for patients treated with sotorisib and 11.3 months (response 95%: 9.0 (ICIC: 9.9) for those treated with docetaxil) and 14.9 months (ICI: 9.0) for participants treated with Docetaxel.[1] The HR for OS between sotorasib and docetaxel was 1.010 (95% CI: 0.77; 1.33, p = 0.53) with docetaxil.[1] The HR of OS between SotorasiB and docettaxel was 1.01 (IC 95%: 0.77; 1.33, P = 0.53).46) and was calculated from the group of sotorashib, independently and in 23 participants to the existence of existence (all of crossover with or or partial therapeutic response) of subsequent subsequent therapy in the group with co-inhibitors KRAS p.G.12C, as provided in protocol.[1] The estimates of Kaplan-Meier (KM) to the 12 KRAS inhibitors p.",
+          "metadata": {
+            "heading": "5.Description of the studies evaluated",
+            "doc_id": "Relatório de avaliação de financiamento público  de Lumykras (sotorasib)",
+            "country": "PT",
+            "source_type": "hta_submission",
+            "start_page": 9,
+            "end_page": 22,
+            "created_date": "2015",
+            "folder_path": "HTA submissions/PT",
+            "split_index": "9_1_0",
+            "text_length": 1492,
+            "potential_comparators": [
+              "Source"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Indications and comparators selected for evaluation **Source Type:** hta_submission\n\n234/2015 - Journal of the Republic No. 153/2015, Series I of 2015-08-07 Administration of Steroids in hospital requiring dislocation to the institution and requiring hospitalization in accordance with the protocol for anticoagulants and corticosteroids. See also Ordinance No. 234/2015 - Official Journal No. 153/2015, Series I of 2015-08-07 4.Benefit and harm assessment measures and classification of importance The defined benefit and harm evaluation measures (outcome measures) are found in Table 3.These outcome measures have been classified by degree of importance into critical and important but not critical.Table 3: Outcome measures and ranking of their importance Evaluation measures Score* Classification of the importance of the measures* Measures of efficacy and overall survival 9 Critical Progression-free survival 6 Important Response rate 5 Important Quality of life 9 Safety measures Rate of adverse events 6 Significant adverse event rate G3-4 7 Critical Dropout rate 8 Critical mortality-related toxicity Critical medication 9",
+          "metadata": {
+            "heading": "Indications and comparators selected for evaluation",
+            "doc_id": "Relatório de avaliação de financiamento público  de Lumykras (sotorasib)",
+            "country": "PT",
+            "source_type": "hta_submission",
+            "start_page": 6,
+            "end_page": 9,
+            "created_date": "2015",
+            "folder_path": "HTA submissions/PT",
+            "split_index": 2,
+            "text_length": 1144,
+            "potential_comparators": [
+              "See"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** 5.Description of the studies evaluated **Source Type:** hta_submission\n\nresponse; progression-free survival (PFS); overall survivorship (GS). Safety was assessed with an Adverse Event (AE) rate based on version 5 of the Common Terminology Criteria for Adverse Events. This pre-specified value of 23% was removed from the objective response observed in the ramucirumab treatment arm, in combination with docetaxel, in the Phase III REVEL study. The study was monitored for futility with continuous analyses using Bayana predictive probability, starting after 25 subjects completed 7 weeks of the trial, and additional 10 subjects continued to be assessed after each Phase II CodeBreaK 100 study to obtain a 90% power in detecting an objective response (primary indicator) greater than 23%, with a significance level of 5%. The intervals for the SG and SLP targets were summarised using Kaplan-Meier estimates and 95% confidence intervals.",
+          "metadata": {
+            "heading": "5.Description of the studies evaluated",
+            "doc_id": "Relatório de avaliação de financiamento público  de Lumykras (sotorasib)",
+            "country": "PT",
+            "source_type": "hta_submission",
+            "start_page": 9,
+            "end_page": 22,
+            "created_date": "2015",
+            "folder_path": "HTA submissions/PT",
+            "split_index": "0_1_0",
+            "text_length": 950,
+            "potential_comparators": [
+              "Safety",
+              "ramucirumab"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Evaluation of evidence by outcome **Source Type:** hta_submission\n\ndecrease in the risk of progression or mortality (HR 0.442, 95% IC 0.342-0.571) with an extension of 3.5 months in the median time to event. • The objective response rate was better in the sotorasib group (28.1% [95% CI: 21.5, 35.4] vs 13.2% [95%CI: 8.6, 19.2], respectively; p< 0.001) • Overall health status/ quality of life was stable in subjects on sotorashib, while there was a deterioration in the docetaxel group, with a change in mean squared minimums from baseline to week 12 of 6.93 (95% IC: 3.66, 10.19), with delayed time to deteriorating overall health status of 0.69% (HRIC: 0.534, 0.623, 0.581, 0.599) and physical functioning of 0.95% (HRIK: 0.593, 0.629, 0.580, 0.591); In the phase III clinical trial, the incidence of Grade 3-4 serious adverse events and fatalities was higher in the sotorasib-treated group.",
+          "metadata": {
+            "heading": "Evaluation of evidence by outcome",
+            "doc_id": "Relatório de avaliação de financiamento público  de Lumykras (sotorasib)",
+            "country": "PT",
+            "source_type": "hta_submission",
+            "start_page": 25,
+            "end_page": 27,
+            "created_date": "2015",
+            "folder_path": "HTA submissions/PT",
+            "split_index": "0_1_0",
+            "text_length": 907,
+            "potential_comparators": []
+          }
+        },
+        {
+          "text": "**Heading:** Evaluation of evidence by outcome **Source Type:** hta_submission\n\nThe additional benefit of Sotorasib was analysed against the available comparator alternatives for each outcome measure. The initial evaluation matrix defined comparators as docetaxel, docetaxil + nitendanib (for adenocarcinomas), pemetrexed (if histology is not predominantly scaly), nivolumab, pembrolizumab (for tumours expressing PD-L1 with a TPS >=1%), atezolizumab, platinum doublet. or KRAS G12C) and the absence of Kaplan-Meier curves of the OS and PFS indicators in the population of interest. Thus, the systematic review only yielded data allowing indirect comparison of Sotorasib with docetaxel, and this analysis was performed using non-anchored MAICs. In terms of comparative efficacy, the indirect comparative data based on the MAIC methodology provided suggest that sotorasib is associated with a 39% reduction in risk of death (HR=0.611; 95% CI 0.451-0.829) and an extension in median survival time of 7.2 months; and a 56%",
+          "metadata": {
+            "heading": "Evaluation of evidence by outcome",
+            "doc_id": "Relatório de avaliação de financiamento público  de Lumykras (sotorasib)",
+            "country": "PT",
+            "source_type": "hta_submission",
+            "start_page": 25,
+            "end_page": 27,
+            "created_date": "2015",
+            "folder_path": "HTA submissions/PT",
+            "split_index": "0_0_0",
+            "text_length": 1019,
+            "potential_comparators": [
+              "Thus",
+              "atezolizumab",
+              "nitendanib",
+              "pembrolizumab",
+              "nivolumab"
+            ]
+          }
+        },
+        {
+          "text": "**Source Type:** hta_submission\n\nRE LUM Treatment advances therapeutic evaluation under MYKRAS (SOTORASIB) public laboratory evaluation of adult patients with non-small cell lung cancer (NSCLC) of the mutated KRAS G12C and who have progressed after at least one line of systemic prior to funding under Decree-Law No 97/2015, of 1 June, in its current wording. RMED, I.P. Health Technologies Assessment Directorate (DATS) What Sotorasib looks like and contents of the pack",
+          "metadata": {
+            "heading": "",
+            "doc_id": "Relatório de avaliação de financiamento público  de Lumykras (sotorasib)",
+            "country": "PT",
+            "source_type": "hta_submission",
+            "start_page": 1,
+            "end_page": 1,
+            "created_date": "2015",
+            "folder_path": "HTA submissions/PT",
+            "split_index": 0,
+            "text_length": 471,
+            "potential_comparators": [
+              "Health",
+              "RMED"
+            ]
+          }
+        }
+      ]
+    },
+    "SE": {
+      "country_metadata": {
+        "country_code": "SE",
+        "chunk_count": 10,
+        "total_text_length": 11032,
+        "unique_documents": 2,
+        "unique_headings": 6
+      },
+      "chunks": [
+        {
+          "text": "**Heading:** 4 (9) that **Source Type:** hta_submission\n\nThe measure of effectiveness in the analysis is progression-free survival and overall survival. The company has in its baseline scenario an analysis in which lumykras arms are modelled directly from CodeBreaK 200, but in which total survival with docetaxil is adjusted to the worse ratio of equal to the crossover-adjusted outcome in Code BreaK 200 in order to mimic more registry data from the Swedish lung cancer registry. The effect of Docetaxel is modelled with a constant hazard ratio, which means that the probability of survival at a given point in time is always lower than that of those who have been treated with LUMYKRA and the likelihood is decreased over the entire time horizon. In a scenario analysis, the company uses data from CodeBreaK 200 where the docetaxel alarm is cross-adjusted but not further down-graded. The indirect comparison which was the basis for the subsidy decision (i.",
+          "metadata": {
+            "heading": "4 (9) that",
+            "doc_id": "bes240416_lumykras_865-2023",
+            "country": "SE",
+            "source_type": "hta_submission",
+            "start_page": 4,
+            "end_page": 5,
+            "created_date": "2024",
+            "folder_path": "HTA submissions/SE",
+            "split_index": 1,
+            "text_length": 960,
+            "potential_comparators": []
+          }
+        },
+        {
+          "text": "**Heading:** TLV makes the following assessment: **Source Type:** hta_submission\n\nits efficacy against the entire duration of therapy with Lumykra in patients treated with docetaxil over the course of the entire treatment cycle (> 10 years) assuming that there is a greater likelihood of patients being treated with the drug during each cycle. TLV further objects to the company' s method of measuring health-related quality of life by time to death. This means that patients already at the start of treatment have a poorer health- related Quality of Life in the docetaxel arms than in the Lumykras arms, as more patients in the former are predicted to die within a certain period of time. This violates a fundamental modelling principle that the starting point of the model analysis should be as close as possible to the patient.",
+          "metadata": {
+            "heading": "TLV makes the following assessment:",
+            "doc_id": "bes220825_lumykras_141_2022",
+            "country": "SE",
+            "source_type": "hta_submission",
+            "start_page": 3,
+            "end_page": 5,
+            "created_date": "2022",
+            "folder_path": "HTA submissions/SE",
+            "split_index": "0_1_0",
+            "text_length": 830,
+            "potential_comparators": [
+              "TLV"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** 5 (9) re **Source Type:** hta_submission\n\nHowever, overall survival and progression-free survival may be lower in both treatment arms and are adjusted in the health economics analysis. According to results from the indirect comparison, patients treated with sotorasib have a decreased risk of disease progression and death compared to those included in the best supportive care. However, the Health Economics Analysis of the current patient population assumes that the TLV of sotorase has a better outcome than the best supporting treatment. Overall, the TLV assesses that the cost per QALY achieved for Lumykras is below the level TLV would normally assess as reasonable for a very high severity condition in patients with advanced non-small cell lung cancer (NSCLC) with the KRAS G12C mutation who have progressed after at least one prior line of systemic therapy and who have been treated with docetaxel or who are not medically suitable for treatment with Docetaxel. In a sensitivity analysis, the company shortens median OS in the Lumykras arm by one month and also shortens survival in the best supportive care arms to a small extent.",
+          "metadata": {
+            "heading": "5 (9) re",
+            "doc_id": "bes240416_lumykras_865-2023",
+            "country": "SE",
+            "source_type": "hta_submission",
+            "start_page": 5,
+            "end_page": 8,
+            "created_date": "2024",
+            "folder_path": "HTA submissions/SE",
+            "split_index": 1,
+            "text_length": 1153,
+            "potential_comparators": [
+              "Overall",
+              "However",
+              "According"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Examination of the matter **Source Type:** hta_submission\n\nLumykras as monotherapy is intended for the treatment of adult patients with advanced non-small cell lung cancer (NSCLC) with a KRAS G12C mutation, in case of progression after at least one previous line of systemic therapy. In NSCLC, there are several different molecular changes that drive the growth of cancer cells. One of these changes is the KRAS g12c mutation. The company states that docetaxel monotherapy is a relevant comparative alternative to Lumykra monotherapies in adult patients with advanced NSCLC with a KRAS G12C mutation, following progression from at least one prior line of systemic therapy, and justifies this as follows: according to clinical expertise referenced by the company, the majority of patients receive pemetrexed in the first line of therapy; since re-treatment with the same medicinal product is not recommended, docetaxal is the remaining treatment option for most patients with tumour progression. The indirect comparison shows a longer progression-free survival (PFS) and overall survivorship (OS) with sotorasib compared to docetaxel.",
+          "metadata": {
+            "heading": "Examination of the matter",
+            "doc_id": "bes220825_lumykras_141_2022",
+            "country": "SE",
+            "source_type": "hta_submission",
+            "start_page": 2,
+            "end_page": 3,
+            "created_date": "2022",
+            "folder_path": "HTA submissions/SE",
+            "split_index": 0,
+            "text_length": 1146,
+            "potential_comparators": [
+              "One"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** The medicine Lumykras **Source Type:** hta_submission\n\nAccording to TLV' s general advice (TLVAR 2003:2) on economic evaluations, the most cost-effective of the available and clinically relevant treatment options in Sweden should be the comparator alternative. Docetaxel or other chemotherapy is not always judged as medically appropriate. This may be, for example, in case of poor general condition, significant adverse reactions to previous chemotherapies, or insufficient or short-term disease control with previous therapy. There are no specific treatment recommendations for the more limited patient population. Once all treatment options have been exhausted, generally the best supportive treatment remains for these patients. The relative efficacy between Lumicras and docetaxel is considered to be overestimated and should be reviewed: the overall assessment of TLV based on clinical data is adjusted to reflect the overestimation of the clinical trial data and the analysis should be compared with the over-estimation from the previous health registry (docetaxel 141/ 202) which was assessed to have exceeded the survival rate. A direct comparative study between Lumykras and docetaxel has subsequently been published, in which the efficacy and safety of sotorasib compared to docetaxil in patients with KRAS G12C-mutated advanced NSCLC following progression on prior platinum-based chemotherapy and immunotherapy has been evaluated in an open-label, randomised Phase III study, CodeBreaK 200.",
+          "metadata": {
+            "heading": "The medicine Lumykras",
+            "doc_id": "bes240416_lumykras_865-2023",
+            "country": "SE",
+            "source_type": "hta_submission",
+            "start_page": 3,
+            "end_page": 4,
+            "created_date": "2024",
+            "folder_path": "HTA submissions/SE",
+            "split_index": 2,
+            "text_length": 1515,
+            "potential_comparators": [
+              "Once",
+              "Docetaxel",
+              "There"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** TLV makes the following assessment: **Source Type:** hta_submission\n\nTLV assesses the severity of the disease as very high as the condition is associated with progressive disease progression, lack of cure and short expected survival. TLV, like the company, assesses, based on the treatment recommendations and TLV' s clinical expert, that docetaxel monotherapy is a relevant comparative alternative to Lumykras. In general TLV considers that indirect comparisons have a lower evidence value than direct comparison studies because they are associated with greater uncertainties. Despite the uncertainty associated with the indirect comparison, TLV estimates, based upon the existing evidence, that sotorasib has an efficacy advantage compared to docetaxal with respect to PFS and OS. TL V has made two changes to the company' s health care policy and performed a sensitivity analysis beyond the assumptions. TLW assesses",
+          "metadata": {
+            "heading": "TLV makes the following assessment:",
+            "doc_id": "bes220825_lumykras_141_2022",
+            "country": "SE",
+            "source_type": "hta_submission",
+            "start_page": 3,
+            "end_page": 5,
+            "created_date": "2022",
+            "folder_path": "HTA submissions/SE",
+            "split_index": "0_0_0",
+            "text_length": 932,
+            "potential_comparators": [
+              "TL",
+              "Despite",
+              "TLV",
+              "TLW"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** What is the background? **Source Type:** hta_submission\n\nAt the time of the decision, there were no results from direct comparative studies between sotorasib and relevant comparator alternatives in the relevant patient population. The company chose to compare the relative efficacy between the data from the study (data from the sotorazib study) and those from the SECTRA Code 100 (code 100) study (documented by an indirect comparison) in the SICMA-1 Code 100. from the CodeBreaK 100 study) and docetaxel (data from the SELECT-1 study) in a Matched Adjusted Indirect Comparison (MAIC). The indirect comparison showed a longer progression-free survival (PFS) and overall survivorship (OS) with sotorasib compared to docetaxil. The subsidy decision was based on the data available at that time. Since the decision was taken, results from the direct comparative study Code BreaK 200 have been published. The results from this study show an efficacy advantage for sotorashib over docetaxal with regard to progression free survival. No difference is reported in terms of overall survival; therefore, the TLV considers it appropriate to investigate whether the costs of using Lumykras are reasonable in relation to the benefit established and if the conditions of the Pharmacovigilance Act (2002:160) on medicinal products are still met.",
+          "metadata": {
+            "heading": "What is the background?",
+            "doc_id": "bes240416_lumykras_865-2023",
+            "country": "SE",
+            "source_type": "hta_submission",
+            "start_page": 2,
+            "end_page": 2,
+            "created_date": "2024",
+            "folder_path": "HTA submissions/SE",
+            "split_index": 1,
+            "text_length": 1345,
+            "potential_comparators": [
+              "Since",
+              "No"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** The medicine Lumykras **Source Type:** hta_submission\n\npopulation subject to current benefit restriction and the other a more limited patient population. For the patients subject to present benefit restriction (patients with advanced non-small cell lung cancer (CNSLC) with KRAS G12C mutation that has progressed after at least one prior systemic treatment), the TLV remains relevant in the previous assessment (docetaxel 141/2022) because the comparator alternative is now considered as another reason to make a different assessment. For the more limited patient population (patients with advanced non-small cell lung cancer (NSCLC) with a KRAS G12C mutation that has progressed after at least one prior systemic therapy and who have been treated with docetaxel or who are not medically suitable for treatment with Docetaxel), the TLV considers best supportive care to be the relevant comparator because there are no specific treatment recommendations and other treatment alternatives. This means that the cost of the evaluated drug must be related to a comparator option.",
+          "metadata": {
+            "heading": "The medicine Lumykras",
+            "doc_id": "bes240416_lumykras_865-2023",
+            "country": "SE",
+            "source_type": "hta_submission",
+            "start_page": 3,
+            "end_page": 4,
+            "created_date": "2024",
+            "folder_path": "HTA submissions/SE",
+            "split_index": "1_1_0",
+            "text_length": 1086,
+            "potential_comparators": []
+          }
+        },
+        {
+          "text": "**Heading:** 4 (9) that **Source Type:** hta_submission\n\ne. 141/2022) is also used by the company as scenario analysis. Regarding overall survival, TLV considers that there is no reason to assume constant treatment effect versus docetaxil. The OS curves do not show constant treatment effects during the follow-up period. Up to month 5 there is a lower risk of death in Lumykras cycles. Then, if there is any, a reverse trend. A modelling without treatment effect of total survival for Lumykra in relation to docetaxal at 5 months and docetaxyl at 6 months, therefore no difference could be established between this and the conservative scenario, with no statistical effect.",
+          "metadata": {
+            "heading": "4 (9) that",
+            "doc_id": "bes240416_lumykras_865-2023",
+            "country": "SE",
+            "source_type": "hta_submission",
+            "start_page": 4,
+            "end_page": 5,
+            "created_date": "2024",
+            "folder_path": "HTA submissions/SE",
+            "split_index": 2,
+            "text_length": 674,
+            "potential_comparators": [
+              "Then",
+              "Regarding",
+              "Up"
+            ]
+          }
+        },
+        {
+          "text": "**Heading:** Examination of the matter **Source Type:** hta_submission\n\nThe drug cost of Lumykras is SEK 61,000 per month at the recommended dose (960 mg/ day). The corresponding cost for docetaxil is less than SEK 1,000 per month. There is an additional cost for intravenous administration every three weeks. docetaxel measured in quality-adjusted life years (QALYs) is weighted against the cost difference in the measure of cost per QALY achieved. The analysis is performed from a lifetime perspective, which means that PFS and OS are extrapolated beyond the time horizon of the respective studies. According to the company, clinical experts consulted by the company have assessed that the survival rate in the extrapolations for docetaxil is clinically reasonable at year 5 and that a small proportion can even live beyond 10 years. According the company t a on a, the same clinical expert assessed the extrapolation that gives poorer results showed short survival. However, a Swedish clinical specialist consulted with the company has indicated that the modelled survival at docetax years 5 and 10 may be exaggerated in the company' s baseline scenario. The company uses a statistical model of the health cycle of the patient based on the analysis of the LumBore estimate of the time of death of 100 patients at different health intervals compared to the estimated duration of treatment.",
+          "metadata": {
+            "heading": "Examination of the matter",
+            "doc_id": "bes220825_lumykras_141_2022",
+            "country": "SE",
+            "source_type": "hta_submission",
+            "start_page": 2,
+            "end_page": 3,
+            "created_date": "2022",
+            "folder_path": "HTA submissions/SE",
+            "split_index": 1,
+            "text_length": 1391,
+            "potential_comparators": [
+              "There",
+              "However",
+              "According"
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
