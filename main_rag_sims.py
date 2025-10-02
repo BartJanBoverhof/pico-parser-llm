@@ -39,25 +39,6 @@ def run_simulation_pipeline(
     countries=COUNTRIES,
     cases=CASES
 ):
-    """
-    Execute the complete simulation pipeline from preprocessing through consolidation.
-    
-    Args:
-        sim_runner: SimulationRunner instance
-        chunked_path: Path to chunked documents
-        vectorstore_path: Path to vectorstore
-        results_path: Path to results
-        chunk_params: Chunk size parameters
-        extraction_temperature: LLM temperature for extraction
-        pdf_path: Path to PDF documents
-        clean_path: Path to cleaned text
-        translated_path: Path to translated text
-        post_cleaned_path: Path to post-cleaned text
-        vectorstore_type: Type of vectorstore to use
-        model: OpenAI model name
-        countries: List of countries to process
-        cases: List of medical cases to process
-    """
     tree = FolderTree(root_path=".")
     tree.generate()
     
@@ -65,27 +46,6 @@ def run_simulation_pipeline(
         print("\n" + "="*80)
         print("SIMULATION-SPECIFIC PREPROCESSING")
         print("="*80)
-        
-        print("\n=== Step 1: Processing PDFs ===")
-        PDFProcessor.process_pdfs(
-            input_dir=pdf_path,
-            output_dir=clean_path
-        )
-        
-        print("\n=== Step 2: Translating Documents ===")
-        translator = Translator(
-            input_dir=clean_path,
-            output_dir=translated_path
-        )
-        translator.translate_documents()
-        
-        print("\n=== Step 3: Post-Cleaning Translated Documents ===")
-        cleaner = PostCleaner(
-            input_dir=translated_path,
-            output_dir=post_cleaned_path,
-            maintain_folder_structure=True
-        )
-        cleaner.clean_all_documents()
         
         print("\n=== Step 4: Chunking Documents ===")
         chunker = Chunker(
@@ -233,21 +193,13 @@ def run_simulation_pipeline(
             test_set=True
         )
     
-    results_runner = RunResults(
-        translated_path=translated_path,
-        results_path=results_path
-    )
-    
-    results_runner.run_all()
-    
     print("\n" + "="*80)
     print(f"SIMULATION {sim_runner.simulation_id} COMPLETED")
     print("="*80)
 
-# RUN 
 validate_api_key()
 
-simulation_ids = ["sim_2"] #, "sim_3", "sim_4", "sim_5", "sim_6"]
+simulation_ids = ["sim_6"]
 
 for simulation_id in simulation_ids:
     print("\n" + "="*80)
@@ -293,3 +245,15 @@ print("ALL SIMULATIONS COMPLETED")
 print("="*80)
 print(f"Completed {len(simulation_ids)} simulations: {', '.join(simulation_ids)}")
 print("="*80)
+
+print("\n" + "="*80)
+print("GENERATING CONSOLIDATED RESULTS ACROSS ALL SIMULATIONS")
+print("="*80)
+
+results_runner = RunResults(
+    translated_path=TRANSLATED_PATH,
+    results_path=RESULTS_PATH_BASE,
+    mode="consolidated_only"
+)
+
+results_runner.run_all()

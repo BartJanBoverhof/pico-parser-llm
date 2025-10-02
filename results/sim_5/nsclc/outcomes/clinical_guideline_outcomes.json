@@ -1,0 +1,88 @@
+{
+  "extraction_metadata": {
+    "timestamp": "2025-10-01T15:19:10.316561",
+    "source_type": "clinical_guideline",
+    "indication": "treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context",
+    "total_countries": 11,
+    "temperature": 0.3
+  },
+  "outcomes_by_country": {
+    "AT": {
+      "Indication": "treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context",
+      "Country": "AT",
+      "Outcomes": "diarrhoea, dilation, nausea, transaminase increase, creatinine increase, QTc time prolongation, response rate, progression-free survival",
+      "ChunksUsed": 7,
+      "ContextTokens": 1630
+    },
+    "DE": {
+      "Indication": "treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context",
+      "Country": "DE",
+      "Outcomes": "overall survival, response rates, progression-free survival, adverse events, Karnofsky performance status, ECOG performance status",
+      "ChunksUsed": 2,
+      "ContextTokens": 346
+    },
+    "DK": {
+      "Indication": "treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context",
+      "Country": "DK",
+      "Outcomes": "overall response rate, progression-free survival, overall survival, diarrhoea, ALT increase, AST increase, neutropenia, fatigue, febrile neutropenia",
+      "ChunksUsed": 8,
+      "ContextTokens": 1556
+    },
+    "EL": {
+      "Indication": "treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context",
+      "Country": "EL",
+      "Outcomes": "progression-free survival, overall survival, safety data",
+      "ChunksUsed": 1,
+      "ContextTokens": 210
+    },
+    "EN": {
+      "Indication": "treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context",
+      "Country": "EN",
+      "Outcomes": "overall survival, progression-free survival, objective response rate (RECIST 1.1), health-related quality of life, adverse effects, physical benefits, psychological benefits",
+      "ChunksUsed": 20,
+      "ContextTokens": 3853
+    },
+    "ES": {
+      "Indication": "treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context",
+      "Country": "ES",
+      "Outcomes": "",
+      "ChunksUsed": 1,
+      "ContextTokens": 252
+    },
+    "EU": {
+      "Indication": "treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context",
+      "Country": "EU",
+      "Outcomes": "",
+      "ChunksUsed": 1,
+      "ContextTokens": 159
+    },
+    "FR": {
+      "Indication": "treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context",
+      "Country": "FR",
+      "Outcomes": "serious side effects on the skin",
+      "ChunksUsed": 7,
+      "ContextTokens": 1391
+    },
+    "IT": {
+      "Indication": "treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context",
+      "Country": "IT",
+      "Outcomes": "benefits of combination of locoregional treatment with systemic therapy, harms of combination of locoregional treatment with systemic therapy",
+      "ChunksUsed": 1,
+      "ContextTokens": 202
+    },
+    "NL": {
+      "Indication": "treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context",
+      "Country": "NL",
+      "Outcomes": "overall survival, progression free survival, objective response rate, overall response rate, adverse events, quality of life",
+      "ChunksUsed": 4,
+      "ContextTokens": 708
+    },
+    "SE": {
+      "Indication": "treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context",
+      "Country": "SE",
+      "Outcomes": "symptom control, preservation of quality of life, prolonged survival, pain, anxiety, ulceration",
+      "ChunksUsed": 5,
+      "ContextTokens": 970
+    }
+  }
+}

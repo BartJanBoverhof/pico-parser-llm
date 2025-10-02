@@ -1535,11 +1535,34 @@ def run_complete_analysis(pico_file_path, outcome_file_path, output_suffix=""):
 
 class RunResults:
     
-    def __init__(self, translated_path="data/text_translated", results_path="results"):
+    def __init__(self, translated_path="data/text_translated", results_path="results", mode="full"):
+        """
+        Initialize the RunResults analyzer.
+        
+        Args:
+            translated_path: Path to translated documents
+            results_path: Path to results directory
+            mode: Analysis mode - "full" for complete analysis with visualizations,
+                  "consolidated_only" for consolidated results only
+        """
         self.translated_path = translated_path
         self.results_path = results_path
-        self.cases = ["NSCLC", "HCC"]
+        self.mode = mode
         
+    def _get_case_folders(self):
+        """Detect available case folders regardless of case sensitivity."""
+        if not os.path.exists(self.results_path):
+            return []
+        
+        case_folders = []
+        for item in os.listdir(self.results_path):
+            item_path = os.path.join(self.results_path, item)
+            if os.path.isdir(item_path):
+                if item.upper() in ["NSCLC", "HCC", "SCLC", "BREAST", "LUNG"]:
+                    case_folders.append(item)
+        
+        return case_folders
+    
     def run_translation_analysis(self):
         print("\n" + "="*100)
         print("TRANSLATION QUALITY ANALYSIS")
@@ -1563,8 +1586,10 @@ class RunResults:
         all_pico_files_test = []
         all_outcome_files_test = []
         
-        for case in self.cases:
-            case_dir = Path(f"{self.results_path}/{case}/consolidated")
+        case_folders = self._get_case_folders()
+        
+        for case_folder in case_folders:
+            case_dir = Path(f"{self.results_path}/{case_folder}/consolidated")
             if case_dir.exists():
                 train_pico_files = list(case_dir.glob("*consolidated_picos_train*.json"))
                 train_outcome_files = list(case_dir.glob("*consolidated_outcomes_train*.json"))
@@ -1573,12 +1598,12 @@ class RunResults:
                 test_outcome_files = list(case_dir.glob("*consolidated_outcomes_test*.json"))
                 
                 if train_pico_files and train_outcome_files:
-                    all_pico_files_train.extend([(max(train_pico_files, key=os.path.getmtime), case)])
-                    all_outcome_files_train.extend([(max(train_outcome_files, key=os.path.getmtime), case)])
+                    all_pico_files_train.extend([(max(train_pico_files, key=os.path.getmtime), case_folder.upper())])
+                    all_outcome_files_train.extend([(max(train_outcome_files, key=os.path.getmtime), case_folder.upper())])
                 
                 if test_pico_files and test_outcome_files:
-                    all_pico_files_test.extend([(max(test_pico_files, key=os.path.getmtime), case)])
-                    all_outcome_files_test.extend([(max(test_outcome_files, key=os.path.getmtime), case)])
+                    all_pico_files_test.extend([(max(test_pico_files, key=os.path.getmtime), case_folder.upper())])
+                    all_outcome_files_test.extend([(max(test_outcome_files, key=os.path.getmtime), case_folder.upper())])
         
         if all_pico_files_train and all_outcome_files_train:
             print("\n--- Generating Training Set Overview ---")
@@ -1596,17 +1621,17 @@ class RunResults:
                 output_suffix="_test"
             )
     
-    def run_case_analysis(self, case_name, splits=["train", "test"]):
-        print(f"\n=== {case_name.upper()} DETAILED ANALYSIS ===")
+    def run_case_analysis(self, case_folder, splits=["train", "test"]):
+        print(f"\n=== {case_folder.upper()} DETAILED ANALYSIS ===")
         
-        consolidated_dir = Path(f"{self.results_path}/{case_name}/consolidated")
+        consolidated_dir = Path(f"{self.results_path}/{case_folder}/consolidated")
         if not consolidated_dir.exists():
-            print(f"Warning: {self.results_path}/{case_name}/consolidated directory not found.")
+            print(f"Warning: {self.results_path}/{case_folder}/consolidated directory not found.")
             return
         
         analyzers = []
         for split in splits:
-            print(f"\n--- {case_name} {split.title()} Set Analysis ---")
+            print(f"\n--- {case_folder.upper()} {split.title()} Set Analysis ---")
             
             pico_files = list(consolidated_dir.glob(f"*consolidated_picos_{split}*.json"))
             outcome_files = list(consolidated_dir.glob(f"*consolidated_outcomes_{split}*.json"))
@@ -1615,8 +1640,8 @@ class RunResults:
                 pico_file = max(pico_files, key=os.path.getmtime)
                 outcome_file = max(outcome_files, key=os.path.getmtime)
                 
-                print(f"Analyzing {case_name} {split.title()} PICO data from: {pico_file}")
-                print(f"Analyzing {case_name} {split.title()} Outcomes data from: {outcome_file}")
+                print(f"Analyzing {case_folder.upper()} {split.title()} PICO data from: {pico_file}")
+                print(f"Analyzing {case_folder.upper()} {split.title()} Outcomes data from: {outcome_file}")
                 print()
                 
                 try:
@@ -1627,13 +1652,13 @@ class RunResults:
                     )
                     if pico_analyzer and outcome_analyzer:
                         analyzers.append((pico_analyzer, outcome_analyzer))
-                    print(f"{case_name} {split} set analysis completed successfully!")
+                    print(f"{case_folder.upper()} {split} set analysis completed successfully!")
                 except Exception as e:
-                    print(f"Error in {case_name} {split} set analysis: {e}")
+                    print(f"Error in {case_folder.upper()} {split} set analysis: {e}")
                     import traceback
                     traceback.print_exc()
             else:
-                print(f"Warning: Could not find {case_name} {split} set consolidated files.")
+                print(f"Warning: Could not find {case_folder.upper()} {split} set consolidated files.")
         
         return analyzers
     
@@ -1642,16 +1667,18 @@ class RunResults:
         print("TRAIN/TEST SPLIT SUMMARY")
         print("="*100)
         
-        for case_name in self.cases:
-            consolidated_dir = Path(f"{self.results_path}/{case_name}/consolidated")
+        case_folders = self._get_case_folders()
+        
+        for case_folder in case_folders:
+            consolidated_dir = Path(f"{self.results_path}/{case_folder}/consolidated")
             if not consolidated_dir.exists():
-                print(f"{case_name}: No consolidated directory found")
+                print(f"{case_folder.upper()}: No consolidated directory found")
                 continue
             
             train_files = len(list(consolidated_dir.glob("*_train_*.json")))
             test_files = len(list(consolidated_dir.glob("*_test_*.json")))
             
-            print(f"{case_name}:")
+            print(f"{case_folder.upper()}:")
             print(f"  Training files: {train_files}")
             print(f"  Test files: {test_files}")
             
@@ -1678,41 +1705,135 @@ class RunResults:
             
             print()
     
-    def run_all(self):
-        self.run_translation_analysis()
-        
-        self.run_comprehensive_overview()
-        
+    def run_consolidated_analysis(self):
+        """Print consolidated PICOs and outcomes for all simulations across all cases."""
         print("\n" + "="*100)
-        print("RUNNING INDIVIDUAL CASE ANALYSES")
+        print("CONSOLIDATED RESULTS ANALYSIS - ALL SIMULATIONS")
         print("="*100)
         
-        all_pico_analyzers = []
-        all_outcome_analyzers = []
+        results_path_obj = Path(self.results_path)
         
-        for case_name in self.cases:
-            if case_name == "NSCLC":
-                analyzers = self.run_case_analysis(case_name, splits=["train", "test"])
-            else:
-                analyzers = self.run_case_analysis(case_name, splits=["test"])
+        if results_path_obj.name in ["base"] or results_path_obj.name.startswith("sim_"):
+            parent_results_path = results_path_obj.parent
+        else:
+            parent_results_path = results_path_obj
+        
+        simulation_folders = []
+        if parent_results_path.exists():
+            for item in sorted(os.listdir(parent_results_path)):
+                item_path = os.path.join(parent_results_path, item)
+                if os.path.isdir(item_path) and (item == "base" or item.startswith("sim_")):
+                    simulation_folders.append(item)
+        
+        if not simulation_folders:
+            print("No simulation folders found.")
+            return
+        
+        print(f"\nDetected {len(simulation_folders)} simulation(s): {', '.join(simulation_folders)}")
+        
+        case_types = ["nsclc", "hcc"]
+        
+        for case_type in case_types:
+            print(f"\n{'#'*100}")
+            print(f"# {case_type.upper()} RESULTS ACROSS ALL SIMULATIONS")
+            print(f"{'#'*100}")
             
-            if analyzers:
-                for pico_analyzer, outcome_analyzer in analyzers:
-                    all_pico_analyzers.append(pico_analyzer)
-                    all_outcome_analyzers.append(outcome_analyzer)
-        
-        if all_pico_analyzers and all_outcome_analyzers:
+            if case_type.upper() == "NSCLC":
+                splits = ["test"]
+            else:
+                splits = ["test"]
+            
+            for split in splits:
+                print(f"\n{'='*100}")
+                print(f"{case_type.upper()} - {split.upper()} SET - ALL SIMULATIONS")
+                print(f"{'='*100}")
+                
+                for sim_folder in simulation_folders:
+                    sim_results_path = os.path.join(parent_results_path, sim_folder)
+                    
+                    case_folders = []
+                    if os.path.exists(sim_results_path):
+                        for item in os.listdir(sim_results_path):
+                            item_path = os.path.join(sim_results_path, item)
+                            if os.path.isdir(item_path) and item.lower() == case_type.lower():
+                                case_folders.append(item)
+                    
+                    if not case_folders:
+                        print(f"\n[{sim_folder.upper()}] - No {case_type.upper()} folder found")
+                        continue
+                    
+                    case_folder = case_folders[0]
+                    consolidated_dir = Path(f"{sim_results_path}/{case_folder}/consolidated")
+                    
+                    if not consolidated_dir.exists():
+                        print(f"\n[{sim_folder.upper()}] - No consolidated directory found")
+                        continue
+                    
+                    pico_files = list(consolidated_dir.glob(f"*consolidated_picos_{split}*.json"))
+                    outcome_files = list(consolidated_dir.glob(f"*consolidated_outcomes_{split}*.json"))
+                    
+                    if pico_files and outcome_files:
+                        pico_file = max(pico_files, key=os.path.getmtime)
+                        outcome_file = max(outcome_files, key=os.path.getmtime)
+                        
+                        try:
+                            pico_analyzer = PICOAnalyzer(str(pico_file))
+                            outcome_analyzer = OutcomeAnalyzer(str(outcome_file))
+                            
+                            print(f"\n{'*'*100}")
+                            print(f"SIMULATION: {sim_folder.upper()}")
+                            print(f"{'*'*100}")
+                            
+                            pico_analyzer.print_unique_picos_overview()
+                            outcome_analyzer.print_unique_outcomes_overview()
+                            
+                        except Exception as e:
+                            print(f"\n[{sim_folder.upper()}] - Error analyzing: {e}")
+                            import traceback
+                            traceback.print_exc()
+                    else:
+                        print(f"\n[{sim_folder.upper()}] - No consolidated files found for {split} set")
+    
+    def run_all(self):
+        if self.mode == "consolidated_only":
+            self.run_consolidated_analysis()
+        else:
+            self.run_translation_analysis()
+            
+            self.run_comprehensive_overview()
+            
             print("\n" + "="*100)
-            print("GENERATING COMBINED VISUALIZATIONS")
+            print("RUNNING INDIVIDUAL CASE ANALYSES")
             print("="*100)
             
-            visualizer = DataVisualizer()
+            all_pico_analyzers = []
+            all_outcome_analyzers = []
             
-            visualizer.create_combined_european_map(all_pico_analyzers)
-            visualizer.create_combined_venn_diagram(all_pico_analyzers)
-            visualizer.create_combined_source_type_comparison(all_pico_analyzers, all_outcome_analyzers)
-            visualizer.generate_summary_report(all_pico_analyzers, all_outcome_analyzers)
+            case_folders = self._get_case_folders()
             
-            print(f"\nAll combined visualizations saved to {visualizer.output_dir}/")
-        
-        self.print_split_summary()
+            for case_folder in case_folders:
+                if case_folder.upper() == "NSCLC":
+                    analyzers = self.run_case_analysis(case_folder, splits=["train", "test"])
+                else:
+                    analyzers = self.run_case_analysis(case_folder, splits=["test"])
+                
+                if analyzers:
+                    for pico_analyzer, outcome_analyzer in analyzers:
+                        all_pico_analyzers.append(pico_analyzer)
+                        all_outcome_analyzers.append(outcome_analyzer)
+            
+            if all_pico_analyzers and all_outcome_analyzers:
+                print("\n" + "="*100)
+                print("GENERATING COMBINED VISUALIZATIONS")
+                print("="*100)
+                
+                visualizer = DataVisualizer()
+                
+                visualizer.create_combined_european_map(all_pico_analyzers)
+                visualizer.create_combined_venn_diagram(all_pico_analyzers)
+                visualizer.create_combined_source_type_comparison(all_pico_analyzers, all_outcome_analyzers)
+                visualizer.generate_summary_report(all_pico_analyzers, all_outcome_analyzers)
+                
+                print(f"\nAll combined visualizations saved to {visualizer.output_dir}/")
+            
+            self.print_split_summary()

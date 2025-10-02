@@ -1,0 +1,159 @@
+{
+  "outcomes_metadata": {
+    "timestamp": "2025-10-01T15:22:56.298139",
+    "indication": "treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context",
+    "consolidation_type": "outcomes",
+    "data_split": "test",
+    "total_unique_outcomes": 54,
+    "source_countries": [
+      "DE",
+      "DK",
+      "EN",
+      "EU",
+      "FR",
+      "PT",
+      "SE"
+    ],
+    "source_types": [
+      "clinical_guideline",
+      "hta_submission"
+    ]
+  },
+  "consolidated_outcomes": {
+    "efficacy": {
+      "survival_endpoints": [
+        "overall survival (OS)",
+        "overall survival",
+        "prolonged survival",
+        "event-free survival",
+        "eventless survival",
+        "progression-free survival (PFS)",
+        "progression-free survival (blinded independent central review)",
+        "progression-free survival (RECIST v1.1)",
+        "progression-free survival (PFS; RECIST v1.1)",
+        "progression-free survival (independent, blinded review panel; RECIST 1.1)",
+        "progression-free survival (centrally-assessed)",
+        "progression-free survival (investigator-assessed)",
+        "progression-free survival",
+        "progression after next line of therapy (PFS2)"
+      ],
+      "response_measures": [
+        "objective response rate (ORR)",
+        "objective response rate (RECIST 1.1, blinded independent central review)",
+        "objective response rate (independent review panel)",
+        "objective response rate (RECIST 1.1)",
+        "overall response rate",
+        "response rates",
+        "complete response (RECIST 1.1, blinded independent central review)",
+        "partial response (RECIST 1.1, blinded independent central review)",
+        "disease control rate",
+        "rate of disease control",
+        "time to response"
+      ],
+      "progression_measures": [
+        "time to progression (TTP)",
+        "time to progression",
+        "duration of response (DoR)",
+        "duration of response (RECIST 1.1)",
+        "duration of treatment",
+        "time to next treatment (TTNT)",
+        "time to next treatment"
+      ]
+    },
+    "safety": {
+      "adverse_events": [
+        "adverse events (general)",
+        "adverse events (CTCAE v5.0)",
+        "adverse events (grade ≥3; CTCAE v5.0)",
+        "adverse events",
+        "adverse effects",
+        "adverse event rate",
+        "significant adverse event rate (grade 3-4)",
+        "tolerability",
+        "susceptibility",
+        "mortality-related toxicity",
+        "treatment-related disutility for intravenous administration",
+        "diarrhoea",
+        "ALT increase",
+        "AST increase",
+        "neutropenia",
+        "fatigue",
+        "febrile neutropenia",
+        "serious side effects on the skin",
+        "pain",
+        "ulceration"
+      ],
+      "serious_events": [
+        "serious adverse events (grade ≥3)",
+        "serious side effects on the skin"
+      ],
+      "discontinuations": [
+        "treatment discontinuation due to adverse events",
+        "dropout rate"
+      ]
+    },
+    "quality_of_life": {
+      "patient_reported_outcomes": [
+        "EORTC QLQ-C30",
+        "EORTC QLQ-LC13",
+        "EQ-5D-5L",
+        "EQ-5D VAS",
+        "visual analogue scale (progression-free health state)",
+        "BPI-SF",
+        "FACT-G GP5",
+        "PGI-C",
+        "Patient Global Impression of Change (PGIC)",
+        "Patient Global Impression of Severity (PGIS)",
+        "NSCLC Symptom Assessment Questionnaire (NSCLC SAQ)"
+      ],
+      "functional_status": [
+        "Karnofsky performance status",
+        "ECOG performance status"
+      ],
+      "symptom_measures": [
+        "symptomatology (EORTC QLQ-C30)",
+        "symptomatology (EORTC QLQ-LC13)",
+        "symptomatology (BPI-SF)",
+        "symptomatology (FACT-G GP5)",
+        "symptomatology (PGI-C)",
+        "symptom control",
+        "pain",
+        "anxiety",
+        "physical benefits",
+        "psychological benefits",
+        "preservation of quality of life",
+        "health status (EORTC QLQ-C30)",
+        "health status (EORTC QLQ-LC13)",
+        "health status (BPI-SF)",
+        "health status (FACT-G GP5)",
+        "health status (PGI-C)",
+        "health-related quality of life (HRQoL)",
+        "health-related quality of life",
+        "quality of life",
+        "health-related quality of life (measured by time to death)"
+      ]
+    },
+    "economic": {
+      "cost_effectiveness": [
+        "cost-effectiveness (incremental cost-effectiveness ratio, ICER)",
+        "cost-effectiveness (cost per QALY)"
+      ],
+      "utilities": [
+        "quality-adjusted life years (QALYs)",
+        "utility decrement per cycle of treatment",
+        "health-state utilities"
+      ],
+      "resource_utilization": [
+        "treatment-related disutility for intravenous administration"
+      ]
+    },
+    "other": {
+      "exploratory_endpoints": [
+        "eventless survival",
+        "physical benefits",
+        "psychological benefits"
+      ],
+      "biomarkers": []
+    }
+  }
+}

@@ -1,0 +1,326 @@
+{
+  "extraction_metadata": {
+    "timestamp": "2025-10-01T15:26:14.056165",
+    "source_type": "hta_submission",
+    "indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
+    "total_countries": 10,
+    "total_picos": 39,
+    "temperature": 0.3
+  },
+  "picos_by_country": {
+    "AT": {
+      "Indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
+      "Country": "AT",
+      "PICOs": [
+        {
+          "Population": "Adult patients with advanced or inoperable hepatocellular carcinoma (HCC) who have not yet received systemic therapy:  with Child-Pugh A or no hepatic cirrhosis",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "Sorafenib",
+          "Outcomes": ""
+        },
+        {
+          "Population": "Adult patients with advanced or inoperable hepatocellular carcinoma (HCC) who have not yet received systemic therapy:  with Child-Pugh B",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "BSC",
+          "Outcomes": ""
+        },
+        {
+          "Population": "adults with HCC in Barcelona Clinic Liver Cancer (BCLC) stage B or C who did not receive any prior systemic therapy for the advanced or inoperable disease. Hepatic cirrhosis of any aetiology was not an exclusion criterion. Patients in BCLC stage B had to be ineligible for transarterial chemoembolization (TACE). Further inclusion criteria were Child-Pugh stage A and an Eastern Cooperative Oncology Group – Performance Status (ECOG-PS) score of 0 or 1.",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "sorafenib",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients with advanced HCC",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "TACE",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients with advanced HCC",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "TACE + Sorafenib",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients with advanced HCC",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "arterial embolization",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients with advanced hepatocellular carcinoma",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "best supportive care",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients with advanced hepatocellular carcinoma",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "placebo",
+          "Outcomes": ""
+        }
+      ],
+      "ChunksUsed": 30,
+      "ContextTokens": 6189
+    },
+    "DE": {
+      "Indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
+      "Country": "DE",
+      "PICOs": [
+        {
+          "Population": "Adult patients with advanced or inoperable hepatocellular carcinoma (HCC) who have not yet received systemic therapy:  with Child-Pugh A or no hepatic cirrhosis",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "Sorafenib",
+          "Outcomes": ""
+        },
+        {
+          "Population": "Adult patients with advanced or inoperable hepatocellular carcinoma (HCC) who have not yet received systemic therapy:  with Child-Pugh B",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "BSC",
+          "Outcomes": ""
+        },
+        {
+          "Population": "adults with HCC in Barcelona Clinic Liver Cancer (BCLC) stage B or C who did not receive any prior systemic therapy for the advanced or inoperable disease. Hepatic cirrhosis of any aetiology was not an exclusion criterion. Patients in BCLC stage B had to be ineligible for transarterial chemoembolization (TACE). Further inclusion criteria were Child-Pugh stage A and an Eastern Cooperative Oncology Group – Performance Status (ECOG-PS) score of 0 or 1.",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "sorafenib",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients with advanced HCC",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "TACE",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients with advanced HCC",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "TACE + Sorafenib",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients with advanced HCC",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "arterial embolization",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients with advanced HCC",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "Placebo",
+          "Outcomes": ""
+        }
+      ],
+      "ChunksUsed": 30,
+      "ContextTokens": 6414
+    },
+    "DK": {
+      "Indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
+      "Country": "DK",
+      "PICOs": [
+        {
+          "Population": "treatment naive adult (aged ≥18 years) patients with advanced, unresectable or metastatic hepatocellular carcinoma",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "sorafenib",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients with unresectable hepatocellular carcinoma",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "sorafenib",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients with advanced HCC and in adults with inoperable HCC not previously treated systemically",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "sorafenib",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients with HCC",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "sorafenib",
+          "Outcomes": ""
+        }
+      ],
+      "ChunksUsed": 30,
+      "ContextTokens": 6225
+    },
+    "EN": {
+      "Indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
+      "Country": "EN",
+      "PICOs": [
+        {
+          "Population": "adults with advanced or unresectable HCC who have not had previous systemic treatment, only if: • they have Child-Pugh grade A liver impairment and an Eastern Cooperative Oncology Group (ECOG) performance status of 0 or 1",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "sorafenib",
+          "Outcomes": ""
+        },
+        {
+          "Population": "adults with advanced or unresectable HCC who have not had previous systemic treatment, only if: • they have Child-Pugh grade A liver impairment and an Eastern Cooperative Oncology Group (ECOG) performance status of 0 or 1",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "lenvatinib",
+          "Outcomes": ""
+        }
+      ],
+      "ChunksUsed": 30,
+      "ContextTokens": 5200
+    },
+    "ES": {
+      "Indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
+      "Country": "ES",
+      "PICOs": [
+        {
+          "Population": "patients with advanced and/ or unresectable hepatocarcinoma, Child-Pugh EMI, in the absence of grade 0 or grade 3-4",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "sorafenib",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients with advanced or unresectable hepatocellular carcinoma who have not received prior systemic therapy, with hepatic function (Child-Pugh carcinomas: a phase III randomised, double-blind, stage A), an ECOG score of 0 or 1, in the absence of a placebo-controlled trial",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "sorafenib",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients with unresectable hepatocellular carcinoma",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "lenvatinib",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients with advanced or unresectable hepatocellular carcinoma",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "placebo",
+          "Outcomes": ""
+        }
+      ],
+      "ChunksUsed": 30,
+      "ContextTokens": 6095
+    },
+    "FR": {
+      "Indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
+      "Country": "FR",
+      "PICOs": [
+        {
+          "Population": "adult patients with advanced or unresectable hepatocellular carcinoma (HCC) who have not received prior systemic therapy",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "sorafenib",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients with advanced or unresectable hepatocellular carcinoma (HCC) (stage BCLC B or C) who have not received prior systemic therapy",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "sorafenib",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients with a preserved general condition (ECOG 0-2) and good hepatic function (Child-Pugh A), ineligibility for TACE or in the presence of vascular invasion and/ or extrahepatic impairment (stage BCLC C)",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "sorafenib",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients with preserved hepatic function (Child Pugh stage A)",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "NEXAVAR (sorafenib)",
+          "Outcomes": ""
+        }
+      ],
+      "ChunksUsed": 30,
+      "ContextTokens": 6035
+    },
+    "NL": {
+      "Indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
+      "Country": "NL",
+      "PICOs": [
+        {
+          "Population": "patients with hepatocellular carcinoma for whom initiation of curative treatment or (continuation of) locoregional or local palliative treatment is not possible or is not considered medically appropriate",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "placebo",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients with hepatocellular carcinoma for whom initiation of curative treatment or (continuation of) locoregional or local palliative treatment is not possible or is not considered medically appropriate",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "best care regimen available",
+          "Outcomes": ""
+        }
+      ],
+      "ChunksUsed": 26,
+      "ContextTokens": 4485
+    },
+    "PO": {
+      "Indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
+      "Country": "PO",
+      "PICOs": [
+        {
+          "Population": "patients with hepatocellular carcinoma",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "best supportive care (BSC)",
+          "Outcomes": ""
+        }
+      ],
+      "ChunksUsed": 30,
+      "ContextTokens": 5369
+    },
+    "PT": {
+      "Indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
+      "Country": "PT",
+      "PICOs": [
+        {
+          "Population": "patients with unresectable HCC",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "sorafenib",
+          "Outcomes": ""
+        },
+        {
+          "Population": "adult patients with advanced or unresettable CHC",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "sorafenib",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients with advanced or unresectable hepatocellular carcinoma",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "sorafenib",
+          "Outcomes": ""
+        }
+      ],
+      "ChunksUsed": 18,
+      "ContextTokens": 3381
+    },
+    "SE": {
+      "Indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
+      "Country": "SE",
+      "PICOs": [
+        {
+          "Population": "first-line treatment of adult patients with advanced or unresectable HCC",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "atezolizumab plus bevacizumab",
+          "Outcomes": ""
+        },
+        {
+          "Population": "first-line treatment of adult patients with advanced or unresectable HCC",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "sorafenib",
+          "Outcomes": ""
+        },
+        {
+          "Population": "first-line treatment of adult patients with advanced or unresectable HCC",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "lenvatinib",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients with HCC with non-viral etiologies",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "atezolizumab plus bevacizumab",
+          "Outcomes": ""
+        }
+      ],
+      "ChunksUsed": 30,
+      "ContextTokens": 5652
+    }
+  }
+}

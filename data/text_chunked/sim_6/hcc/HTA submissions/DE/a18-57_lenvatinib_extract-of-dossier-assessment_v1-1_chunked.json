@@ -1,0 +1,224 @@
+{
+  "doc_id": "a18-57_lenvatinib_extract-of-dossier-assessment_v1-1",
+  "chunks": [
+    {
+      "text": " Henning Schulze-Bergkamen, Marien-Hospit\nIQWiG thanks the medical and scientific advisor f\nHowever, the advisor was not involved in the actu responsibility for the contents of the dossier asses\nIQWiG employees involved in the dossier asses\n Dajana Parganlija\n Christiane Balg\n Judith Gibbert\n Ulrich Grouven\n Michaela Florina Kerekes\n Ulrike Lampert\n Volker Vervölgyi\n Natalia Wolfram\nKeywords: lenvatinib, carcinoma – hepatocellula\nInstitute for Quality and Efficiency in Health Car\ntal Wesel, Wes for his contribu\nual preparation ssment lies sol\nssment:\nar, benefit asse re (IQWiG)\nVers\n13 Februa sel, Germany\nution to the dossier asse n of the dossier assessme\nlely with IQWiG. essment, NCT01761266\nsion 1.1\nary 2019 essment. ent. The\n- ii - In accordance with §35a Social Code Book (SBG) V, the Federal Joint Committee (G-BA) commissioned the Institute for Quality and Efficiency in Health Care (IQWiG) to assess the\nbenefit of the drug lenvatinib. The assessment is based on a dossier compiled by the\npharmaceutical company (hereinafter referred to as the “company”). The dossier was sent to\nIQWiG on 19 September 2018. The aim of this report is to assess the added benefit of lenvatinib in comparison with the appropriate comparator therapy (ACT) in adult patients with advanced or inoperable\nhepatocellular carcinoma (HCC) who have not received prior systemic therapy. In the therapeutic indication of lenvatinib, the G-BA differentiated between 2 patient populations and specified different ACTs for them. For the benefit assessment of lenvatinib,\nthis results in 2 research questions, which are presented in Table 2.",
+      "metadata": {
+        "doc_id": "a18-57_lenvatinib_extract-of-dossier-assessment_v1-1",
+        "heading": "Medical and scientific advice:",
+        "start_page": 3,
+        "end_page": 3,
+        "created_date": "2019",
+        "country": "DE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/DE/a18-57_lenvatinib_extract-of-dossier-assessment_v1-1_cleaned.json",
+        "split_index": 0,
+        "merged": true
+      }
+    },
+    {
+      "text": "Research Indicationa ACT b question\n1 Adult patients with advanced or inoperable hepatocellular carcinoma Sorafenib\n(HCC) who have not yet received systemic therapy:\n with Child-Pugh A or no hepatic cirrhosis\n2 Adult patients with advanced or inoperable hepatocellular carcinoma BSCc\n(HCC) who have not yet received systemic therapy:\n with Child-Pugh B a: For this therapeutic indication, it is assumed that neither curative treatment (for BLCL stages 0 and A) nor\nlocoregional therapy in BLCL stage B, particularly transarterial (chemo)embolization (TACE or TAE), is an option (any longer). It is also assumed that patients in BCLC stage D are ineligible for lenvatinib treatment. b: Presentation of the respective ACT specified by the G-BA. c: BSC is considered the therapy that ensures the best possible, individually optimized supportive care to\nalleviate symptoms and improve the quality of life. ACT: appropriate comparator therapy; BCLC: Barcelona Clinic Liver Cancer; BSC: best supportive care;\nG-BA: Federal Joint Committee; TACE: transarterial chemoembolization; TAE: transarterial embolization\nThe company deviates from the G-BA’s specification of the ACT by not differentiating between the research questions and using sorafenib as the ACT for all therapeutic indications of\nlenvatinib.",
+      "metadata": {
+        "doc_id": "a18-57_lenvatinib_extract-of-dossier-assessment_v1-1",
+        "heading": "Table 22: Research questions of the benefit assessment of lenvatinib",
+        "start_page": 4,
+        "end_page": 6,
+        "created_date": "2019",
+        "country": "DE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/DE/a18-57_lenvatinib_extract-of-dossier-assessment_v1-1_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "2 Table numbers start with “2” as numbering follows that of the full dossier assessment. The assessment was conducted by means of patient-relevant outcomes on the basis of the data provided by the company in the dossier. Randomized controlled trials (RCTs) were used for\nderiving an added benefit. Research question 1: patients with Child-Pugh A or no hepatic cirrhosis\nDescription of the included study 304\nThe REFLECT study (E7080-G000-304, short name 304) was used for the benefit assessment of lenvatinib in comparison with sorafenib in the treatment of adults with HCC and Child-Pugh\nA or without hepatic cirrhosis. The 304 study is an open-label RCT comparing lenvatinib with sorafenib. The study included\nadults with HCC in Barcelona Clinic Liver Cancer (BCLC) stage B or C who did not receive any prior systemic therapy for the advanced or inoperable disease. Hepatic cirrhosis of any\naetiology was not an exclusion criterion. Patients in BCLC stage B had to be ineligible for\ntransarterial chemoembolization (TACE). Further inclusion criteria were Child-Pugh stage A\nand an Eastern Cooperative Oncology Group – Performance Status (ECOG-PS) score of 0 or 1. Overall, 478 patients were placed in the lenvatinib arm and 476 in the sorafenib arm of the study. Randomization was stratified by the criteria of region (Asia-Pacific/Western regions),\nECOG-PS (0/1), body weight (<60 kg/≥60 kg) and the presence of macroscopic portal vein invasion (MPVI) and/or extrahepatic spread (ES) (yes/no). The 304 study had a total of 3 study phases: a pre-randomization phase, a randomization phase\nconsisting of a treatment phase and a follow-up phase, and an analogously designed extension phase.",
+      "metadata": {
+        "doc_id": "a18-57_lenvatinib_extract-of-dossier-assessment_v1-1",
+        "heading": "Table 22: Research questions of the benefit assessment of lenvatinib",
+        "start_page": 4,
+        "end_page": 6,
+        "created_date": "2019",
+        "country": "DE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/DE/a18-57_lenvatinib_extract-of-dossier-assessment_v1-1_cleaned.json",
+        "split_index": 1
+      }
+    },
+    {
+      "text": "The randomization phase started at the randomization time point and ended on 13 November\n2016, after a total of 700 deaths occurred in the two study arms, which corresponded to the predefined data cut-off for the primary outcome of overall survival. The treatment was\ncontinued until one of the following criteria was met: objectively confirmed disease\nprogression, unacceptable toxicity, participant’s decision to discontinue, revocation of consent, or study termination by the sponsor. In both study arms, the treatment and any dose adjustments\nwere performed in accordance with the current Summary of Product Characteristics [SPC]. The randomization phase was followed by an extension phase, in which patients either continued to receive the study medication in accordance with the original allocation or were\nfollowed up if treatment was discontinued during the randomization phase. In terms of their\ndesign, there was no technical difference between the randomization and extension phases. The\nextension phase is still ongoing. After discontinuation of the study medication, it was possible to administer drug and non-drug follow-on therapies. There was no planned treatment switch from the control to the\nexperimental intervention. After discontinuation of the study medication, a total of 25.5% of\nLenvatinib (hepatocellular carcinoma) 13 February 2019 patients in the lenvatinib arm and 27.3% in the sorafenib arm received a surgical or other\nmedical intervention, of which TACE was the most common at about 15% (of the total population). About 31% of patients received subsequent systemic therapy, most commonly\nsorafenib, at 25% in the lenvatinib arm and 12% in the sorafenib arm. The primary outcome of the study was overall survival.",
+      "metadata": {
+        "doc_id": "a18-57_lenvatinib_extract-of-dossier-assessment_v1-1",
+        "heading": "Table 22: Research questions of the benefit assessment of lenvatinib",
+        "start_page": 4,
+        "end_page": 6,
+        "created_date": "2019",
+        "country": "DE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/DE/a18-57_lenvatinib_extract-of-dossier-assessment_v1-1_cleaned.json",
+        "split_index": 2
+      }
+    },
+    {
+      "text": "Patient-relevant secondary outcomes\nwere outcomes on symptoms, health status, health-related quality of life, and adverse events\n(AEs). The 304 study is still ongoing. Given its active status, data exclusively from the randomization\nphase were presented in the company’s dossier and used for the assessment. The risk of bias for the 304 study at study level was rated as low. At outcome level, the risk of\nbias was rated as low for overall survival and as high for all other outcomes for which usable data are available.",
+      "metadata": {
+        "doc_id": "a18-57_lenvatinib_extract-of-dossier-assessment_v1-1",
+        "heading": "Table 22: Research questions of the benefit assessment of lenvatinib",
+        "start_page": 4,
+        "end_page": 6,
+        "created_date": "2019",
+        "country": "DE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/DE/a18-57_lenvatinib_extract-of-dossier-assessment_v1-1_cleaned.json",
+        "split_index": 3,
+        "merged": true
+      }
+    },
+    {
+      "text": "Mortality  Overall survival For the outcome of overall survival, no statistically significant difference between treatment groups was found. Consequently, there is no hint of an added benefit of lenvatinib in comparison with sorafenib; an added benefit is therefore not proven. Morbidity  Symptoms Outcomes on symptoms were surveyed using the symptom scales of the European Organization for Research and Treatment of Cancer Quality of Life Questionnaire (EORTC QLQ-C30) and the disease-specific European Organization for Research and Treatment of Cancer HCCspecific Quality of Life Questionnaire (EORTC QLQ-HCC18). In both cases, time to deterioration, defined as a score increase by at least 10 points over baseline, was examined. For symptoms surveyed by means of the EORTC QLQ-C30, no statistically significant difference between treatment groups was found for either fatigue, nausea and vomiting, dyspnoea, insomnia, appetite loss, or constipation. Consequently, for each of these outcomes, there is no hint of added benefit of lenvatinib in comparison with sorafenib; an added benefit is therefore not proven for these outcomes. For the outcome of pain, surveyed using the EORTC QLQ-C30, there is a statistically significant difference in favour of lenvatinib. However, this effect is at most marginal. For the outcome of pain, this results in no hint of added benefit of lenvatinib in comparison with sorafenib. A statistically significant difference in favour",
+      "metadata": {
+        "doc_id": "a18-57_lenvatinib_extract-of-dossier-assessment_v1-1",
+        "heading": "Results",
+        "start_page": 6,
+        "end_page": 10,
+        "created_date": "2019",
+        "country": "DE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/DE/a18-57_lenvatinib_extract-of-dossier-assessment_v1-1_cleaned.json",
+        "split_index": "0_0_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "of lenvatinib was also found for the outcome of diarrhoea, for which there is an effect modification by the attribute of age. Overall, this results in a hint of added benefit of lenvatinib in comparison with sorafenib for the outcome of diarrhoea in patients under 75 years of age. For patients aged 75 years or older, there is no hint of added benefit of lenvatinib in comparison with sorafenib for the outcome of diarrhoea; therefore, there is no proof of added benefit for this outcome in this patient group. Regarding the outcomes of fatigue, pain, jaundice, fever, and abdominal swelling, which were surveyed using EORTC QLQ-HCC18, there were no statistically significant differences between treatment groups for the total study population. For these outcomes, this results in no hint of added benefit of lenvatinib in comparison with sorafenib.  Health status For health status surveyed using the European Quality of Life – 5 Dimensions Visual Analogue Scale (EQ-5D VAS), no usable data are available. Consequently, there is no hint of added benefit of lenvatinib in comparison with sorafenib for the outcome of health status; an added benefit is therefore not proven. Health-related quality of life Global health status, the function scales of EORTC QLQ-C30, and the function scales of EORTC QLQ-HCC18 were used to assess health-related quality of life.",
+      "metadata": {
+        "doc_id": "a18-57_lenvatinib_extract-of-dossier-assessment_v1-1",
+        "heading": "Results",
+        "start_page": 6,
+        "end_page": 10,
+        "created_date": "2019",
+        "country": "DE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/DE/a18-57_lenvatinib_extract-of-dossier-assessment_v1-1_cleaned.json",
+        "split_index": "0_1_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "In each case, time to\ndeterioration, defined as a score decrease (EORTC QLQ-C30) or score increase (EORTC QLQ-\nHCC18) by at least 10 points over baseline, was examined. For health status and each of the EORTC QLQ-C30 function scales for physical, emotional, and social functioning, no statistically significant differences between treatment groups were\nfound. Consequently, for each of these outcomes, there is no hint of added benefit of lenvatinib\nin comparison with sorafenib; an added benefit is therefore not proven for these outcomes. For the outcome of cognitive functioning, no statistically significant difference between treatment groups was found in the total population. Simultaneously, this outcome exhibited a\nstatistically significant interaction with the attribute of region. Since the German health care\nsetting is better reflected by patients from Western countries, the subgroup Asia-Pacific was not further examined. For patients from Western countries, there was a hint of lesser benefit of\nlenvatinib in comparison with sorafenib for the outcome of cognitive functioning.",
+      "metadata": {
+        "doc_id": "a18-57_lenvatinib_extract-of-dossier-assessment_v1-1",
+        "heading": "Results",
+        "start_page": 6,
+        "end_page": 10,
+        "created_date": "2019",
+        "country": "DE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/DE/a18-57_lenvatinib_extract-of-dossier-assessment_v1-1_cleaned.json",
+        "split_index": 1
+      }
+    },
+    {
+      "text": "For role functioning, there was a statistically significant difference between groups in favour of lenvatinib. Given the high risk of bias at outcome level, this results in a hint of added benefit of\nlenvatinib. Under the EORTC QLQ-HCC18 functional scales, statistically significant differences between treatment groups, each in favour of lenvatinib, were found for the outcomes of body\nimage and nutrition, whereas no statistically significant difference between groups was found\nLenvatinib (hepatocellular carcinoma) 13 February 2019 for the functional scale of sex life. Given the high risk of bias at outcome level, this results in a\nhint of added benefit of lenvatinib in comparison with sorafenib for each of the outcomes of body image and nutrition. For the outcome of sex life, there is no hint of added benefit of\nlenvatinib in comparison with sorafenib; an added benefit is therefore not proven for this\noutcome. Adverse events\n Serious AEs (SAEs)\nFor the outcome of SAEs, a hazard ratio (HR) of 1.24 with a considerable reduction in median\ntime to event under lenvatinib in comparison with sorafenib (13.5 months under lenvatinib\nversus 23.3 months under sorafenib) was found, but this difference is not statistically\nsignificant. Consequently, there is no hint of greater or lesser harm of lenvatinib in comparison\nwith sorafenib; greater or lesser harm is therefore not proven.",
+      "metadata": {
+        "doc_id": "a18-57_lenvatinib_extract-of-dossier-assessment_v1-1",
+        "heading": "Results",
+        "start_page": 6,
+        "end_page": 10,
+        "created_date": "2019",
+        "country": "DE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/DE/a18-57_lenvatinib_extract-of-dossier-assessment_v1-1_cleaned.json",
+        "split_index": 2
+      }
+    },
+    {
+      "text": " Severe AEs (Common Terminology Criteria for Adverse Events [CTCAE] grade ≥ 3) For the outcome of severe AEs (CTCAE grade ≥ 3), there was no statistically significant difference between treatment groups. Consequently, there is no hint of greater or lesser harm of lenvatinib in comparison with sorafenib; greater or lesser harm is therefore not proven.  Discontinuation due to AEs For the outcome of discontinuation due to AEs, no statistically significant difference between treatment groups was found. Consequently, there is no hint of greater or lesser harm of lenvatinib in comparison with sorafenib; greater or lesser harm is therefore not proven.  Specific AEs For the selection and assessment of specific AEs, no usable data were available. In Module 4 B, the company also included event time analyses for a selection of severe AEs of grade 3 or 4 on the level of preferred terms (PTs) of the Medical Dictionary for Regulatory Activities (MedDRA), but these were incomplete. Suitable event time analyses for common AEs",
+      "metadata": {
+        "doc_id": "a18-57_lenvatinib_extract-of-dossier-assessment_v1-1",
+        "heading": "Results",
+        "start_page": 6,
+        "end_page": 10,
+        "created_date": "2019",
+        "country": "DE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/DE/a18-57_lenvatinib_extract-of-dossier-assessment_v1-1_cleaned.json",
+        "split_index": "3_0_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "and SAEs were completely missing. Research question 2: patients with Child-Pugh B No data are available for the assessment of lenvatinib in patients with Child-Pugh B. In its dossier, the company did not differentiate between research questions 1 and 2 but searched generally for studies comparing lenvatinib with sorafenib in systemic treatment-naïve adults with advanced or inoperable HCC. The Institute’s information retrieval did not find any relevant study for research question 2. Probability and extent of added benefit, patient groups with therapeutically important added benefit3 On the basis of the results presented, the probability and extent of the added benefit of the drug lenvatinib compared with the ACT is assessed as follows: For research question 1, the final results analysis from the 304 study, in part on the subgroup level, revealed both positive and negative effects of lenvatinib. On the positive effects side, there was a hint of minor added benefit of lenvatinib for individual dimensions of health-related quality of life (role functioning, body image, and nutrition).",
+      "metadata": {
+        "doc_id": "a18-57_lenvatinib_extract-of-dossier-assessment_v1-1",
+        "heading": "Results",
+        "start_page": 6,
+        "end_page": 10,
+        "created_date": "2019",
+        "country": "DE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/DE/a18-57_lenvatinib_extract-of-dossier-assessment_v1-1_cleaned.json",
+        "split_index": "3_1_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "A\npositive effect of a greater extent (considerable) was found for the outcome of diarrhoea in patients < 75 years of age. By contrast, there was a hint of lesser benefit for the cognitive\nfunctioning dimension of health-related quality of life. Furthermore, it must be noted that no usable data are available for the selection of specific AEs. In this situation, it is conceivable that the overall conclusion on added benefit may change materially if the missing information became available, since the presented event rates also\nreveal potential disadvantages of lenvatinib. For this reason, it is not possible to adequately\nweigh all positive and negative effects of lenvatinib. For research question 1, an added benefit\nof lenvatinib is therefore not proven. No relevant study was found for research question 2. An added benefit of lenvatinib is\ntherefore not proven for this research question. Table 3 presents a summary of the probability and extent of the added benefit of lenvatinib. 3 On the basis of the scientific data analysed, IQWiG draws conclusions on the (added) benefit or harm of an intervention for each patient-relevant outcome. Depending on the number of studies analysed, the certainty of\ntheir results, and the direction and statistical significance of treatment effects, conclusions on the probability of\n(added) benefit or harm are graded into 4 categories: (1) “proof”, (2) “indication”, (3) “hint”, or (4) none of the\nfirst 3 categories applies (i.e., no data available or conclusions 1 to 3 cannot be drawn from the available data). The extent of added benefit or harm is graded into 3 categories: (1) major, (2) considerable, (3) minor (in\naddition, 3 further categories may apply: non-quantifiable extent of added benefit, added benefit not proven, or\nless benefit).",
+      "metadata": {
+        "doc_id": "a18-57_lenvatinib_extract-of-dossier-assessment_v1-1",
+        "heading": "Results",
+        "start_page": 6,
+        "end_page": 10,
+        "created_date": "2019",
+        "country": "DE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/DE/a18-57_lenvatinib_extract-of-dossier-assessment_v1-1_cleaned.json",
+        "split_index": 4
+      }
+    },
+    {
+      "text": "For further details see [1,2]. Table 3: Lenvatinib – probability and extent of added benefit\nResearch Indicationa ACT b Probability and extent of question added benefit\n1 Adult patients with advanced or inoperable Sorafenib Added benefit not provend hepatocellular carcinoma (HCC) who have\nnot yet received systemic therapy:\n with Child-Pugh A or no hepatic cirrhosis\n2 Adult patients with advanced or inoperable BSCc Added benefit not proven hepatocellular carcinoma (HCC) who have\nnot yet received systemic therapy:\n with Child-Pugh B a: For this therapeutic indication, it is assumed that neither curative treatment (for BLCL stages 0 and A) nor\nlocoregional therapy in BLCL stage B, particularly transarterial (chemo)embolization (TACE or TAE), is an option (any longer). It is also assumed that patients in BCLC stage D are ineligible for lenvatinib treatment. b: Presentation of the respective ACT specified by the G-BA. c: BSC is considered the therapy that ensures the best possible, individually optimized supportive care to\nalleviate symptoms and improve the quality of life. d: Only patients with an ECOG-PS of 0 or 1 were included in the study. ACT: appropriate comparator therapy; BCLC: Barcelona Clinic Liver Cancer; BSC: Best Supportive Care;\nECOG-PS: Eastern Cooperative Oncology Group Performance Status; G-BA: Federal Joint Committee; TACE:\ntransarterial chemoembolization; TAE: transarterial embolization\nThe approach for deriving the overall conclusion on added benefit is a suggestion from IQWiG. The G-BA decides on the added benefit. An addendum (A19-15) to dossier assessment A18-57 has been published. Extract of dossier assessment A18-57 Vers\nLenvatinib (hepatocellular carcinoma) 13 Februa Please see full dossier assessment for full reference list. 1. Institute for Quality and Efficiency in Health Care. General methods: version 5.0 [on\n10 July 2017 [Accessed: 4 June 2018]. URL:\nMethods_Version-5-0.pdf.",
+      "metadata": {
+        "doc_id": "a18-57_lenvatinib_extract-of-dossier-assessment_v1-1",
+        "heading": "Results",
+        "start_page": 6,
+        "end_page": 10,
+        "created_date": "2019",
+        "country": "DE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/DE/a18-57_lenvatinib_extract-of-dossier-assessment_v1-1_cleaned.json",
+        "split_index": 5,
+        "merged": true
+      }
+    },
+    {
+      "text": "Table Title: ACT: appropriate comparator therapy; BCLC: Barcelona Clinic Liver Cancer; BSC: best supportive care;\nTable contains the following columns: Research question, Indicationa, ACT b\nResearch question: 1, Indicationa: Adult patients with advanced or inoperable hepatocellular carcinoma (HCC) who have not yet received systemic therapy:  with Child-Pugh A or no hepatic cirrhosis, and ACT b: Sorafenib\nResearch question: 2, Indicationa: Adult patients with advanced or inoperable hepatocellular carcinoma (HCC) who have not yet received systemic therapy:  with Child-Pugh B, and ACT b: BSCc\nResearch question: a: For this therapeutic indication, it is assumed that neither curative treatment (for BLCL stages 0 and A) nor locoregional therapy in BLCL stage B, particularly transarterial (chemo)embolization (TACE or TAE), is an option (any longer). It is also assumed that patients in BCLC stage D are ineligible for lenvatinib treatment. b: Presentation of the respective ACT specified by the G-BA. c: BSC is considered the therapy that ensures the best possible, individually optimized supportive care to alleviate symptoms and improve the quality of life. ACT: appropriate comparator therapy; BCLC: Barcelona Clinic Liver Cancer; BSC: best supportive care; G-BA: Federal Joint Committee; TACE: transarterial chemoembolization; TAE: transarterial embolization",
+      "metadata": {
+        "doc_id": "a18-57_lenvatinib_extract-of-dossier-assessment_v1-1",
+        "heading": "ACT: appropriate comparator therapy; BCLC: Barcelona Clinic Liver Cancer; BSC: best supportive care;",
+        "start_page": 4,
+        "end_page": 4,
+        "created_date": "2019",
+        "country": "DE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/DE/a18-57_lenvatinib_extract-of-dossier-assessment_v1-1_cleaned.json",
+        "split_index": 0,
+        "merged": true
+      }
+    },
+    {
+      "text": "Table Title: ACT: appropriate comparator therapy; BCLC: Barcelona Clinic Liver Cancer; BSC: Best Supportive Care;\nTable contains the following columns: Research question, Indicationa, ACT b, Probability and extent of added benefit\nResearch question: 1, Indicationa: Adult patients with advanced or inoperable hepatocellular carcinoma (HCC) who have not yet received systemic therapy:  with Child-Pugh A or no hepatic cirrhosis, ACT b: Sorafenib, and Probability and extent of added benefit: Added benefit not provend\nResearch question: 2, Indicationa: Adult patients with advanced or inoperable hepatocellular carcinoma (HCC) who have not yet received systemic therapy:  with Child-Pugh B, ACT b: BSCc, and Probability and extent of added benefit: Added benefit not proven\nResearch question: a: For this therapeutic indication, it is assumed that neither curative treatment (for BLCL stages 0 and A) nor locoregional therapy in BLCL stage B, particularly transarterial (chemo)embolization (TACE or TAE), is an option (any longer). It is also assumed that patients in BCLC stage D are ineligible for lenvatinib treatment. b: Presentation of the respective ACT specified by the G-BA. c: BSC is considered the therapy that ensures the best possible, individually optimized supportive care to alleviate symptoms and improve the quality of life. d: Only patients with an ECOG-PS of 0 or 1 were included in the study. ACT: appropriate comparator therapy; BCLC: Barcelona Clinic Liver Cancer; BSC: Best Supportive Care; ECOG-PS: Eastern Cooperative Oncology Group Performance Status; G-BA: Federal Joint Committee; TACE: transarterial chemoembolization; TAE: transarterial embolization Criteria to be fulfilled Research on the second stage of the SGB V operation: the best therapeutic approach g: 2017-Bmber 2017 timing of the second synopsis of the evidence comparator-221 Lenvatinib [for the treatment of hepatocellular carcinoma]",
+      "metadata": {
+        "doc_id": "a18-57_lenvatinib_extract-of-dossier-assessment_v1-1",
+        "heading": "ACT: appropriate comparator therapy; BCLC: Barcelona Clinic Liver Cancer; BSC: Best Supportive Care;",
+        "start_page": 10,
+        "end_page": 10,
+        "created_date": "2019",
+        "country": "DE",
+        "source_type": "hta_submission",
+        "original_file_path": "hcc/HTA submissions/DE/a18-57_lenvatinib_extract-of-dossier-assessment_v1-1_cleaned.json",
+        "split_index": 0,
+        "merged": true
+      }
+    }
+  ]
+}

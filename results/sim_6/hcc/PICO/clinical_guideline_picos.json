@@ -1,0 +1,411 @@
+{
+  "extraction_metadata": {
+    "timestamp": "2025-10-01T17:09:05.936125",
+    "source_type": "clinical_guideline",
+    "indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
+    "total_countries": 11,
+    "total_picos": 52,
+    "temperature": 0.3
+  },
+  "picos_by_country": {
+    "AT": {
+      "Indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
+      "Country": "AT",
+      "PICOs": [
+        {
+          "Population": "HCCP patients with Child-Pugh stage A and BC or BLC, with remote tumor measurements or localization that cannot be re-regionised or resected",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "atezolizumab and bevacizumab",
+          "Outcomes": ""
+        },
+        {
+          "Population": "HCCP patients with Child-Pugh stage A and BC or BLC, with remote tumor measurements or localization that cannot be re-regionised or resected",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "durumavalumab plus tremelimumab",
+          "Outcomes": ""
+        },
+        {
+          "Population": "Patients with contraindications for A+B and D+T",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "one of the two tyrosine kinase biliary carcinomas",
+          "Outcomes": ""
+        },
+        {
+          "Population": "individual Child Pugh Stage B HCC patients (up to 8 points), with long-term metastasis or tumour localization that is not locally monitored or resectable, and an ECOG status of 0 - 1",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "immunotherapy with an anti-PD-1 antibody",
+          "Outcomes": ""
+        }
+      ],
+      "ChunksUsed": 25,
+      "ContextTokens": 8426
+    },
+    "BE": {
+      "Indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
+      "Country": "BE",
+      "PICOs": [
+        {
+          "Population": "patients with unresectable HCC",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "arterial chemoembolization",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients with unresectable HCC",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "radioactive Iodine 131 treatment",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients with unresectable HCC",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "systemic chemotherapy (doxorubicin or cisplatin)",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients with unresectable HCC",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "hormonal therapy with tamoxifen",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients with unresectable HCC",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "octreotide",
+          "Outcomes": ""
+        }
+      ],
+      "ChunksUsed": 25,
+      "ContextTokens": 8281
+    },
+    "DE": {
+      "Indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
+      "Country": "DE",
+      "PICOs": [
+        {
+          "Population": "patients with advanced or unresectable hepatocellular carcinoma",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "conventional TACE",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients with advanced or unresectable hepatocellular carcinoma",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "drug-eluting bead TACE",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients with advanced or unresectable hepatocellular carcinoma",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "transarterial radio-embolization (TARE)",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients with advanced or unresectable hepatocellular carcinoma",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "best supportive care",
+          "Outcomes": ""
+        }
+      ],
+      "ChunksUsed": 25,
+      "ContextTokens": 8542
+    },
+    "DK": {
+      "Indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
+      "Country": "DK",
+      "PICOs": [
+        {
+          "Population": "patients with advanced or unresectable hepatocellular carcinoma with preserved hepatic function and in good general condition where resection, transplantation, ablation or TACE/SIRT cannot be performed or are not expected to have an effect, or for patients with additional hepatic disease",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "atezolizumab and bevacizumab",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients with advanced or unresectable hepatocellular carcinoma with preserved hepatic function and in good general condition where resection, transplantation, ablation or TACE/SIRT cannot be performed or are not expected to have an effect, or for patients with additional hepatic disease",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "sorafenib",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients with advanced or unresectable hepatocellular carcinoma with preserved hepatic function and in good general condition where resection, transplantation, ablation or TACE/SIRT cannot be performed or are not expected to have an effect, or for patients with additional hepatic disease",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "lenvatinib",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients with advanced or unresectable hepatocellular carcinoma with preserved hepatic function who have tolerated and subsequently progressed to second-line therapy",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "regorafenib",
+          "Outcomes": ""
+        }
+      ],
+      "ChunksUsed": 25,
+      "ContextTokens": 8869
+    },
+    "ES": {
+      "Indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
+      "Country": "ES",
+      "PICOs": [
+        {
+          "Population": "advanced disease, systemic treatment should be offered to patients with ECOG/PS 0-1 and Child–Pugh class A",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "BSC",
+          "Outcomes": ""
+        }
+      ],
+      "ChunksUsed": 17,
+      "ContextTokens": 5125
+    },
+    "EU": {
+      "Indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
+      "Country": "EU",
+      "PICOs": [],
+      "ChunksUsed": 6,
+      "ContextTokens": 2666
+    },
+    "FR": {
+      "Indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
+      "Country": "FR",
+      "PICOs": [
+        {
+          "Population": "patients with compensated cirrhosis (Child-Pugh score A), in good general condition (PS 0-2), and advanced HCC (BCLC C or B not eligible for TACE)",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "sorafenib",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients with compensated cirrhosis (Child-Pugh score A), in good general condition (PS 0-2), and advanced HCC (BCLC C or B not eligible for TACE)",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "lenvatinib",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients with advanced HCC previously treated with sorafenib",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "regorafenib",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients with advanced HCC previously treated with sorafenib",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "cabozantinib",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients with advanced hepatocellular carcinoma and increased alpha-fetoprotein concentrations (AFP > 400 ng/mL) after sorafenib",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "ramucirumab",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients with advanced hepatocellular carcinoma previously treated with sorafenib",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "nivolumab plus ipilimumab",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients with advanced hepatocellular carcinoma with portal vein thrombosis, in good PS, Child-Pugh A and ineligible (or after failure) to sorafenib",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "SIRT with Therasphere",
+          "Outcomes": ""
+        }
+      ],
+      "ChunksUsed": 25,
+      "ContextTokens": 9620
+    },
+    "IT": {
+      "Indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
+      "Country": "IT",
+      "PICOs": [
+        {
+          "Population": "patients with advanced HCC who have failed or are not eligible for local-regional therapy, with impaired hepatic function (Child-Pugh B)",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "sorafenib",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients with advanced HCC and Child-Pugh B liver cirrhosis",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "sorafenib",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients with advanced HCC and Child-Pugh C liver cirrhosis",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "best supportive therapy",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients with advanced stage of HCC",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "FOLFOX4",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients with advanced stage of HCC",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "doxorubicin",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients with advanced HCC, not eligible for any loco-regional treatment (either at diagnosis or after failure of any previous treatments), with good liver function (Child-Pugh)",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "sorafenib",
+          "Outcomes": ""
+        }
+      ],
+      "ChunksUsed": 25,
+      "ContextTokens": 9155
+    },
+    "NL": {
+      "Indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
+      "Country": "NL",
+      "PICOs": [
+        {
+          "Population": "patients with (locally) advanced hepatocellular carcinoma, where no resection, ablation or TACE is possible",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "Transarterial radioembolization (TARE)",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients with (locally) advanced hepatocellular carcinoma, where no resection, ablation or TACE is possible",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "sorafenib",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients with (locally) advanced hepatocellular carcinoma, where no resection, ablation or TACE is possible",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "atezolizumab plus bevacizumab",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients with (locally) advanced hepatocellular carcinoma, where no resection, ablation or TACE is possible",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "lenvatinib",
+          "Outcomes": ""
+        }
+      ],
+      "ChunksUsed": 25,
+      "ContextTokens": 7502
+    },
+    "PO": {
+      "Indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
+      "Country": "PO",
+      "PICOs": [
+        {
+          "Population": "patients with non-surgical hepatocellular carcinoma in good general condition and with good liver function (Child and Pugha Class A)",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "combination of bevacizumab and atezolizumab",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients previously treated with Sorafenib with AFP ≥ 400 ng/ ml",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "ramucyrumab",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients who have previously received bevacizumab with atezolizumab",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "sorafenib",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients who have previously received bevacizumab with atezolizumab",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "leninivat",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients who have previously received bevacizumab with atezolizumab",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "cabozantinib",
+          "Outcomes": ""
+        }
+      ],
+      "ChunksUsed": 12,
+      "ContextTokens": 3639
+    },
+    "SE": {
+      "Indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
+      "Country": "SE",
+      "PICOs": [
+        {
+          "Population": "patients with advanced or unresectable hepatocellular carcinoma with good functional status (WHO PS 0-1) with good liver function (Child Pugh A)",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "atezolizumab and bevacizumab",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients with advanced or unresectable hepatocellular carcinoma with good functional status (WHO PS 0-1) with good liver function (Child Pugh A) when combination therapy is inappropriate",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "tremelimumab-durvalumab combination",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients with advanced or unresectable hepatocellular carcinoma with good functional status (WHO PS 0-1) with good liver function (Child Pugh A) who cannot be offered atezolizumab, bevacizumab or tremelimumab",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "lenvatinib",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients with advanced or unresectable hepatocellular carcinoma with good functional status (WHO PS 0-1) with good liver function (Child Pugh A) who cannot be offered atezolizumab, bevacizumab or tremelimumab",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "sorafenib",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients with advanced or unresectable hepatocellular carcinoma following progression on first line treatment with tyrosine kinase inhibitor",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "regorafenib",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients with advanced or unresectable hepatocellular carcinoma following progression on first line treatment with tyrosine kinase inhibitor",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "cabozantinib",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients with advanced or unresectable hepatocellular carcinoma following progression on first line treatment with tyrosine kinase inhibitor",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "ramucirumab",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients with advanced or unresectable hepatocellular carcinoma after first line treatment with atezolizumab-bevacizumab",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "lenvatinib",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients with advanced or unresectable hepatocellular carcinoma after first line treatment with atezolizumab-bevacizumab",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "sorafenib",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients with advanced or unresectable hepatocellular carcinoma after first line treatment with atezolizumab-bevacizumab",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "regorafenib",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients with advanced or unresectable hepatocellular carcinoma after first line treatment with atezolizumab-bevacizumab",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "cabozantinib",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients with advanced or unresectable hepatocellular carcinoma after first line treatment with atezolizumab-bevacizumab",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "ramucirumab",
+          "Outcomes": ""
+        }
+      ],
+      "ChunksUsed": 25,
+      "ContextTokens": 8362
+    }
+  }
+}

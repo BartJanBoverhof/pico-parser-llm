@@ -1,0 +1,177 @@
+{
+  "outcomes_metadata": {
+    "timestamp": "2025-10-01T16:58:47.710002",
+    "indication": "treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context",
+    "consolidation_type": "outcomes",
+    "data_split": "test",
+    "total_unique_outcomes": 64,
+    "source_countries": [
+      "DE",
+      "DK",
+      "EN",
+      "EU",
+      "FR",
+      "PT",
+      "SE"
+    ],
+    "source_types": [
+      "clinical_guideline",
+      "hta_submission"
+    ]
+  },
+  "consolidated_outcomes": {
+    "efficacy": {
+      "survival_endpoints": [
+        "overall survival (OS; time from randomisation to death from any cause)",
+        "overall survival (OS)",
+        "overall survival",
+        "survival advantage",
+        "progression-free survival (PFS; RECIST 1.1; time from randomisation until disease progression or death from any cause)",
+        "progression-free survival (PFS; RECIST v1.1)",
+        "progression-free survival (independent review panel; RECIST 1.1)",
+        "progression-free survival (PFS)",
+        "progression-free survival",
+        "prolonged progression-free survival",
+        "event-free survival",
+        "time to progression",
+        "time to next treatment",
+        "duration of treatment",
+        "dropout rate",
+        "mortality-related toxicity",
+        "morbidity and mortality associated with clinical events"
+      ],
+      "response_measures": [
+        "objective response rate (ORR; RECIST 1.1, blinded independent central review)",
+        "objective response rate (ORR; RECIST 1.1)",
+        "objective response rate (ORR)",
+        "overall response rate",
+        "response rate",
+        "response rates",
+        "complete response (RECIST 1.1)",
+        "complete response (RECIST 1.1 criteria)",
+        "partial response (RECIST 1.1)",
+        "partial response (RECIST 1.1 criteria)",
+        "disease control rate",
+        "duration of response (DoR)",
+        "duration of response (RECIST 1.1)",
+        "duration of response",
+        "time to response"
+      ],
+      "progression_measures": [
+        "dose modifications",
+        "time to deterioration of overall health status",
+        "time to deterioration of physical functioning",
+        "symptom control",
+        "physical benefits",
+        "psychological benefits",
+        "preservation of quality of life"
+      ]
+    },
+    "safety": {
+      "adverse_events": [
+        "adverse events (AEs; total)",
+        "adverse events (CTCAE v5.0)",
+        "adverse events (CTCAE v4.03)",
+        "adverse events (Common Terminology Criteria for Adverse Events, CTCAE v5.0)",
+        "adverse events (general)",
+        "adverse events",
+        "side effects (PRO-CTCAE instrument)",
+        "serious side effects on the skin",
+        "serious adverse events (SAEs)",
+        "serious adverse events",
+        "adverse events grade ≥3",
+        "grade 3 or higher adverse events",
+        "serious adverse events (grade 3-4)",
+        "severe adverse events",
+        "severe adverse events (interstitial lung disease)",
+        "liver disorders (severe AE)",
+        "stomatitis (AE)",
+        "peripheral oedema (AE)",
+        "peripheral neuropathy (AE)",
+        "alopecia (AE)",
+        "blood and lymphatic system disorders (AE)",
+        "fatigue (AE)",
+        "fatigue",
+        "fever (AE)",
+        "fever",
+        "infections and infestations (AE)",
+        "chest pain",
+        "dyspnoea",
+        "cough",
+        "diarrhoea",
+        "alanine aminotransferase increase",
+        "aspartate aminotransferase increase",
+        "neutropenia",
+        "febrile neutropenia",
+        "treatment discontinuation due to adverse events",
+        "discontinuation due to adverse events",
+        "adverse event rate"
+      ],
+      "serious_events": [
+        "serious adverse events (SAEs)",
+        "serious adverse events",
+        "serious adverse events (grade 3-4)",
+        "adverse events grade ≥3",
+        "grade 3 or higher adverse events",
+        "severe adverse events",
+        "mortality-related toxicity",
+        "morbidity and mortality associated with clinical events"
+      ],
+      "discontinuations": [
+        "treatment discontinuation due to adverse events",
+        "discontinuation due to adverse events",
+        "dropout rate"
+      ]
+    },
+    "quality_of_life": {
+      "patient_reported_outcomes": [
+        "EORTC QLQ-C30",
+        "EORTC QLQ-LC13",
+        "BPI-SF",
+        "FACT-G GP5",
+        "item GP5 of the FACT-G",
+        "PGI-C",
+        "PGIC",
+        "PGIS",
+        "NSCLC-SAQ",
+        "PRO-CTCAE",
+        "EQ-5D-5L",
+        "EQ-5D VAS",
+        "visual analogue scale",
+        "health-related quality of life (EORTC QLQ-C30 functional scales)",
+        "health-related quality of life (measured by time to death)"
+      ],
+      "functional_status": [
+        "physical functioning",
+        "overall health status",
+        "time to deterioration of overall health status",
+        "time to deterioration of physical functioning"
+      ],
+      "symptom_measures": [
+        "symptomatology (EORTC QLQ-C30, EORTC QLQ-LC13, BPI-SF, FACT-G GP5, PGI-C)",
+        "symptom control"
+      ]
+    },
+    "economic": {
+      "cost_effectiveness": [
+        "cost-effectiveness (incremental cost-effectiveness ratio, ICER)",
+        "cost-effectiveness (cost per QALY)"
+      ],
+      "utilities": [
+        "quality-adjusted life years (QALYs)",
+        "disutility for intravenous administration",
+        "time-to-death utilities",
+        "health-state utilities"
+      ],
+      "resource_utilization": [
+        "duration of treatment"
+      ]
+    },
+    "other": {
+      "exploratory_endpoints": [
+        "dose modifications"
+      ],
+      "biomarkers": []
+    }
+  }
+}

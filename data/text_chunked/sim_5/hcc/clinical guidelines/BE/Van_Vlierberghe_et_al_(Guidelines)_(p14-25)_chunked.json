@@ -1,0 +1,1408 @@
+{
+  "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+  "chunks": [
+    {
+      "text": "GUIDELINES\nBASL guidelines for the surveillance, carcinoma\nHans Van Vlierberghe1,Ivan Borbath2,Jean Delwaide3,J working group) and the BASL steering committee*\n(1) Dpt of Gastroenterology, Ghent University Hospital, Gent, Belgium; (\nGastroenterology,CHU,Sart Tilman,Liège,Belgium; (4) Dpt of Gastroenterol\nHospital,Antwerp,Belgium; (6) Dpt of Hepatology,University Hospital Gasth\nKey words:hepatocellular carcinoma,guidelines,surveillance,diagnosis,treatment. 1.",
+      "metadata": {
+        "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+        "heading": "",
+        "start_page": 1,
+        "end_page": 1,
+        "created_date": "1993",
+        "country": "BE",
+        "source_type": "clinical_guideline",
+        "original_file_path": "hcc/clinical guidelines/BE/Van_Vlierberghe_et_al_(Guidelines)_(p14-25)_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "Introduction\nHepatocellular carcinoma (HCC) is a primary tumour of the liver. Its behaviour is rather peculiar with prognosis made out not only by the tumoural disease but also\nby the severity of the underlying liver disease. Worldwide it is a major problem. In the West,however,\nthe prevalence is lower than in developing countries. However due to a rise in HCV induced liver cirrhosis,\nHCC becomes more prevalent in Belgium. In the\nHepCar registry (a Belgian registry where on a voluntary basis, patients with HCC are reported), 70 patients\n(51 male / 19 female) were reported between January\n2003 and September 2003. Median age was 62 years ±\n12.",
+      "metadata": {
+        "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+        "heading": "",
+        "start_page": 1,
+        "end_page": 1,
+        "created_date": "1993",
+        "country": "BE",
+        "source_type": "clinical_guideline",
+        "original_file_path": "hcc/clinical guidelines/BE/Van_Vlierberghe_et_al_(Guidelines)_(p14-25)_cleaned.json",
+        "split_index": 1
+      }
+    },
+    {
+      "text": "Underlying liver disease was HCV in 29 patients,\nHBV in 14 patients,alcoholic liver disease in 16 patients and miscellaneous in 12 patients. Diagnosis was made\nby surveillance in 27 patients. There was a clear tendency for incidental diagnosis in patients with alcoholic\nliver disease. Due to this changing pattern of HCC in Belgium, a\nBASL working group was founded to discuss and report on guidelines in epidemiology,screening,diagnosis and\ntreatment of HCC. These guidelines are a result of a discussion between the different members of the working\ngroup reflecting data published in literature and taking into account the specific Belgian situation. Expert opinion should be based on scientific studies and on evidence\ncoming from well performed clinical trials. Recommendations contained herein are based on the best avail-\nable data or,when these are lacking,the collective experience of the members of the writing committee. Agreement or consensus was not always reached.",
+      "metadata": {
+        "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+        "heading": "",
+        "start_page": 1,
+        "end_page": 1,
+        "created_date": "1993",
+        "country": "BE",
+        "source_type": "clinical_guideline",
+        "original_file_path": "hcc/clinical guidelines/BE/Van_Vlierberghe_et_al_(Guidelines)_(p14-25)_cleaned.json",
+        "split_index": 2
+      }
+    },
+    {
+      "text": "Primary liver cancer is obviously an important public health problem in Far East and Sub-Saharan Africa\nwhere it accounts for one of the most frequent cancers due to endemic hepatitis B infection. In these regions,\ndiagnosis and treatment of hepatocellular\nJean Henrion4,Peter Michielsen5,Chris Verslype6(BASL HCC\n(2) Dpt of Gastroenterology, Hôpital St Luc, UCL, Brussels, Belgium; (3) Dpt of\nlogy,Jolimont Hospital,Haine St Paul,Belgium; (5) Dpt of Gastroenterology,University\nhuisberg,Leuven,Belgium.",
+      "metadata": {
+        "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+        "heading": "2. Epidemiology",
+        "start_page": 1,
+        "end_page": 3,
+        "created_date": "1993",
+        "country": "BE",
+        "source_type": "clinical_guideline",
+        "original_file_path": "hcc/clinical guidelines/BE/Van_Vlierberghe_et_al_(Guidelines)_(p14-25)_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "- the mortality by HCC is about 100 per 100 000 habitants(1,2). Conversely,HCC is a hitherto relatively rare cancer in western countries. In Belgium, statistics from de\nNational Cancer registry for the 1993-1995 period showed that the annual incidence of cancer classified as\nr ICD 155 (International Classification of Disease – 7th\n- revision) including primary liver, gallbladder and bile\no duct cancers was 4.9/100 000 in men and 5.2/100 000 in\n. women.",
+      "metadata": {
+        "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+        "heading": "2. Epidemiology",
+        "start_page": 1,
+        "end_page": 3,
+        "created_date": "1993",
+        "country": "BE",
+        "source_type": "clinical_guideline",
+        "original_file_path": "hcc/clinical guidelines/BE/Van_Vlierberghe_et_al_(Guidelines)_(p14-25)_cleaned.json",
+        "split_index": 1
+      }
+    },
+    {
+      "text": "According to these statistics, the annual inci, dence of HCC is in a range of 2-3 per 100 000 habitants . making of Belgium a low-incidence area for HCC. At , first glance, it seems therefore not justified to launch e large and costly programs of surveillance for HCC in y Belgium. However it is likely that the increase in the s incidence of HCC follows the epidemic of hepatitis C y virus infection that occurred in late sixties and early ± seventies. In the United States, the incidence of histo, logically proven hepatocellular carcinoma increased s from 1.4 per 100 000 for the period 1976-1980 to 2.4 per e 100 000 for the period",
+      "metadata": {
+        "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+        "heading": "2. Epidemiology",
+        "start_page": 1,
+        "end_page": 3,
+        "created_date": "1993",
+        "country": "BE",
+        "source_type": "clinical_guideline",
+        "original_file_path": "hcc/clinical guidelines/BE/Van_Vlierberghe_et_al_(Guidelines)_(p14-25)_cleaned.json",
+        "split_index": "2_0_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "1991-1995 (3). Epidemiological - analyses have shown that hepatitis C virus infection c accounted for most of this increase, while the rates of primary liver cancer associated with alcoholic cirrhosis a and hepatitis B infection remained stable (4). t d 3. Prevention of hepatocellular carcinoma - (HCC) g g 3.1. Primary prevention The prevention of the development of liver diseases e and of their progression to cirrhosis is the most effective way to prevent HCC: - • Hepatitis B:the main cause of HCC in the world,can . effectively be prevented by vaccination. Vaccination in children in Taiwan has led to a drastic decrease in the incidence of HCC (5,6). c ———————— * BASL steering committee:R.",
+      "metadata": {
+        "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+        "heading": "2. Epidemiology",
+        "start_page": 1,
+        "end_page": 3,
+        "created_date": "1993",
+        "country": "BE",
+        "source_type": "clinical_guideline",
+        "original_file_path": "hcc/clinical guidelines/BE/Van_Vlierberghe_et_al_(Guidelines)_(p14-25)_cleaned.json",
+        "split_index": "2_1_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "Brenard,N. Bourgeois,I. Colle,C. de Galocsy,\na J. Delwaide,J. Hernion,Y. Horsmans,P. Michielsen,F. Nevens,H. Reynaert,\ns G.Robaeys,D. Sprengers. Correspondence:Hans Van Vlierberghe,M.D.,Ph.D.,Dpt of Gastroenterology,\n, De Pintelaan 185,9000 Gent,Belgium. E-mail:hans.vanvlierberghe@ugent.be. • Hepatitis C: Unfortunately, up to now there is no\nvaccine against hepatitis C. The only effective\nmethod to prevent its transmission is the avoidance of contamination with infective blood products. • Prevention and early detection of alcohol abuse.",
+      "metadata": {
+        "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+        "heading": "2. Epidemiology",
+        "start_page": 1,
+        "end_page": 3,
+        "created_date": "1993",
+        "country": "BE",
+        "source_type": "clinical_guideline",
+        "original_file_path": "hcc/clinical guidelines/BE/Van_Vlierberghe_et_al_(Guidelines)_(p14-25)_cleaned.json",
+        "split_index": 3
+      }
+    },
+    {
+      "text": "• Screening and treatment of haemochromatosis. 3.2. Prevention of HCC in patients with previously\nacquired risk\nChronic viral carriage is one of the main risk factors for the development of HCC. Effective antiviral treatments have been developed in recent years and this has\nchanged the management of viral infection. 3.2.1. Treatment in HBV patients and HCC prevention\n3.2.1.1. Treatment with interferon\n3.2.1.1.1. Noncirrhotics\nIn patients with chronic hepatitis B, clearance of the\nHBeAg after treatment with interferon-alpha is associated with improved clinical outcome in terms of survival and development of complications of cirrhosis (7). Another study confirmed these results and showed a reduction of HCC in the responders (8). As most of these\npatients were noncirrhotics at entry of the study,the prophylactic effect of interferon on development of HCC can be explained by prevention of cirrhosis development. 3.2.1.1.2.",
+      "metadata": {
+        "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+        "heading": "2. Epidemiology",
+        "start_page": 1,
+        "end_page": 3,
+        "created_date": "1993",
+        "country": "BE",
+        "source_type": "clinical_guideline",
+        "original_file_path": "hcc/clinical guidelines/BE/Van_Vlierberghe_et_al_(Guidelines)_(p14-25)_cleaned.json",
+        "split_index": 4
+      }
+    },
+    {
+      "text": "Cirrhotics\nSeveral studies have investigated the effect of interferon treatment on development of HCC in patients with already established cirrhosis. A meta-analysis was performed on these studies (9). Interferon seemingly\ndecreased the rate of HCC in all trials,while significant difference was observed in 2 studies. Virologic response\nwas strongly associated with reduced risk for HCC in some studies,indicating that arrest of viral replication is\na critical factor. Subgroup analysis in relation to ethnic\norigin of patients (European, Oriental) showed no preventive effect of interferon on the development of HCC in the European patients. It should be noted that the\nstudies are very heterogeneous and that none of them were randomised controlled trials, so that the results\nshould be interpreted with caution.",
+      "metadata": {
+        "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+        "heading": "2. Epidemiology",
+        "start_page": 1,
+        "end_page": 3,
+        "created_date": "1993",
+        "country": "BE",
+        "source_type": "clinical_guideline",
+        "original_file_path": "hcc/clinical guidelines/BE/Van_Vlierberghe_et_al_(Guidelines)_(p14-25)_cleaned.json",
+        "split_index": 5
+      }
+    },
+    {
+      "text": "3.2.1.2. Treatment with nucleoside/nucleotide analogues\nUp to now, there are no data published in full paper, on the effect of these antivirals on the prevention of\nHCC in chronic hepatitis B. 3.2.2. Interferon treatment in HCV patients and HCC\nprevention\n3.2.2.1. Noncirrhotics\nPooling of incidence of HCC in noncirrhotic patients with chronic hepatitis C from 3 studies showed a lower\no incidence in patients with sustained virologic response e (SVR) than in nonresponders (10-12). f\n3.2.2.2. Cirrhotics\nCammà et al.(9) performed a meta-analysis of 3 randomised and 11 nonrandomised studies on hepatitis C\ncirrhosis. In 13 of these studies, interferon reduced the\ny incidence of HCC with a statistical significance in\n10 studies. The effect was more beneficial in patients\nwho achieved a sustained biochemical response.",
+      "metadata": {
+        "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+        "heading": "2. Epidemiology",
+        "start_page": 1,
+        "end_page": 3,
+        "created_date": "1993",
+        "country": "BE",
+        "source_type": "clinical_guideline",
+        "original_file_path": "hcc/clinical guidelines/BE/Van_Vlierberghe_et_al_(Guidelines)_(p14-25)_cleaned.json",
+        "split_index": 6
+      }
+    },
+    {
+      "text": "The\ns\noverall result was largely influenced by three Japanese studies. Four European studies failed to document a sig-\ns\nnificant reduction in risk of developing HCC. There are various explanations for the differences in the result of these studies. First, in Japan, the sustained\nvirological response rate (SVR) to interferon monotherapy is higher than observed in Europe or the US. Second,the incidence of HCC is much higher in Japan.",
+      "metadata": {
+        "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+        "heading": "2. Epidemiology",
+        "start_page": 1,
+        "end_page": 3,
+        "created_date": "1993",
+        "country": "BE",
+        "source_type": "clinical_guideline",
+        "original_file_path": "hcc/clinical guidelines/BE/Van_Vlierberghe_et_al_(Guidelines)_(p14-25)_cleaned.json",
+        "split_index": 7
+      }
+    },
+    {
+      "text": "Both factors make it easier to show a preventive effect of e therapy. Furthermore, there are important methodologi- cal questions. The majority of the studies are retrospecl tive and nonrandomised,introducing a bias in the selec. tion of patients for therapy. Also,different definitions of a response (biochemical, virological) are used. The still e unanswered question is whether interferon therapy can be beneficial in biochemical responders but virological C non responders. Because of potential biases in the published trials, it is premature to advocate the use of interferon as established therapy in HCV infected patients to prevent HCC. Prospective randomised controlled trials should repro- duce",
+      "metadata": {
+        "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+        "heading": "2. Epidemiology",
+        "start_page": 1,
+        "end_page": 3,
+        "created_date": "1993",
+        "country": "BE",
+        "source_type": "clinical_guideline",
+        "original_file_path": "hcc/clinical guidelines/BE/Van_Vlierberghe_et_al_(Guidelines)_(p14-25)_cleaned.json",
+        "split_index": "8_0_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "the findings in large numbers of patients before a h definitive conclusion on the long-term effects of inter- feron in HCV cirrhosis can be established. It should also y be investigated in prospective trials if more performant t treatment regimens with peginterferons and combination e of (peg)interferon and ribavirin will also favourably n influence the incidence of HCC. s c C • The most effective tool to prevent HCC is avoidance e of risk factors such as viral infection. Universal vacm cination against hepatitis B virus should be a health s priority. • In patients with chronic hepatitis B or C, interferon treatment",
+      "metadata": {
+        "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+        "heading": "2. Epidemiology",
+        "start_page": 1,
+        "end_page": 3,
+        "created_date": "1993",
+        "country": "BE",
+        "source_type": "clinical_guideline",
+        "original_file_path": "hcc/clinical guidelines/BE/Van_Vlierberghe_et_al_(Guidelines)_(p14-25)_cleaned.json",
+        "split_index": "8_0_1",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "in a non cirrhotic stage is protective for HCC development in responders, probably by prevention of cirrhosis development. , • As most studies are not randomised controlled trials, f no definitive conclusions on the long-term effect of interferon-alpha in HBV or HCV cirrhosis can be established. C – For cirrhosis due to hepatitis B,a protective effect of interferon treatment was only demonstrated in Oriental,but not in European patients. s – For cirrhosis due to hepatitis C, interferon treatr ment showed to be protective in some studies, BASLguidelines 3 especially Japanese with high incidence of HCC in In Belgium, surveillance for HCC addresses almost",
+      "metadata": {
+        "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+        "heading": "2. Epidemiology",
+        "start_page": 1,
+        "end_page": 3,
+        "created_date": "1993",
+        "country": "BE",
+        "source_type": "clinical_guideline",
+        "original_file_path": "hcc/clinical guidelines/BE/Van_Vlierberghe_et_al_(Guidelines)_(p14-25)_cleaned.json",
+        "split_index": "8_1_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "untreated patients. exclusively patients with cirrhosis. – Further prospective studies should be performed in It is widely accepted that in Belgium, as in other chronic hepatitis B and C. Furthermore,in chronic countries from central and northern Europe, the main hepatitis C, the use of the more potent reference aetiological factor of cirrhosis and HCC remains excestreatments namely the combination of peginterfer- sive alcohol consumption . In a recent cohort of 411 con- on and ribavirin,should be investigated. secutive Belgian patients with cirrhosis, the main aetiologies of cirrhosis were alcohol abuse in 63% and chronic hepatitis C virus infection in 20% (26). The fact",
+      "metadata": {
+        "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+        "heading": "2. Epidemiology",
+        "start_page": 1,
+        "end_page": 3,
+        "created_date": "1993",
+        "country": "BE",
+        "source_type": "clinical_guideline",
+        "original_file_path": "hcc/clinical guidelines/BE/Van_Vlierberghe_et_al_(Guidelines)_(p14-25)_cleaned.json",
+        "split_index": "8_1_1",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "that alcohol is the main aetiology of cirrhosis in Belgium is not without consequence for the success of a surveil- Surveillance for HCC in high-risk populations has lance program. Indeed,patients with alcoholic cirrhosis become a popular clinical practice in western countries. are obviously less observant than patients with cirrhosis Nevertheless, it has up to now not been fully demonof viral origin (27). Although alcohol abuse remains strated that primary liver cancer ideally fulfils the the main cause of cirrhosis in Belgium, the role",
+      "metadata": {
+        "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+        "heading": "4. Screening and surveillance",
+        "start_page": 3,
+        "end_page": 5,
+        "created_date": "1993",
+        "country": "BE",
+        "source_type": "clinical_guideline",
+        "original_file_path": "hcc/clinical guidelines/BE/Van_Vlierberghe_et_al_(Guidelines)_(p14-25)_cleaned.json",
+        "split_index": "0_0_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "of accepted rules justifying surveillance. According to the hepatitis C virus infection in the emergence of HCC World Health Organisation (13,14), surveillance proclearly becomes more important in recent years. In the grams should fulfil the following criteria: same study of 411 Belgian patients with cirrhosis main- 1. The disease is recognised as an important public ly of alcoholic origin (63%), the main risk factor in health problem. 57 consecutive cases of HCC was hepatitis C virus 2. Populations of high-risk patients can be identified.",
+      "metadata": {
+        "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+        "heading": "4. Screening and surveillance",
+        "start_page": 3,
+        "end_page": 5,
+        "created_date": "1993",
+        "country": "BE",
+        "source_type": "clinical_guideline",
+        "original_file_path": "hcc/clinical guidelines/BE/Van_Vlierberghe_et_al_(Guidelines)_(p14-25)_cleaned.json",
+        "split_index": "0_1_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "infection in 44% followed by alcohol in 33% (26). These\n3. The clinical stage of the disease is preceded by a peri- results must be compared with the figure observed in a\nod of latency when the disease is detectable. previous Belgian series of HCC where the main risk fac-\n4. Effective, safe and financially acceptable tools of tor was abusive alcohol consumption in 77% of the\nearly detection are available. cases(28).",
+      "metadata": {
+        "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+        "heading": "4. Screening and surveillance",
+        "start_page": 3,
+        "end_page": 5,
+        "created_date": "1993",
+        "country": "BE",
+        "source_type": "clinical_guideline",
+        "original_file_path": "hcc/clinical guidelines/BE/Van_Vlierberghe_et_al_(Guidelines)_(p14-25)_cleaned.json",
+        "split_index": 1
+      }
+    },
+    {
+      "text": "5. Curative treatment exists at an early stage resulting in\nsurvival improvement. 4.2. The clinical stage of the disease is preceded by a\nperiod of latency when the disease is already detectable\nIf it is widely accepted that surveillance for HCC fulfils the first 4 criteria, the last one, however, remains Primary liver cancer enters its clinical phase at a size hotly debated. of about 10 cm. From this moment on, the prognosis is\ndreadful with a median survival less than 4 months\n4.1.",
+      "metadata": {
+        "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+        "heading": "4. Screening and surveillance",
+        "start_page": 3,
+        "end_page": 5,
+        "created_date": "1993",
+        "country": "BE",
+        "source_type": "clinical_guideline",
+        "original_file_path": "hcc/clinical guidelines/BE/Van_Vlierberghe_et_al_(Guidelines)_(p14-25)_cleaned.json",
+        "split_index": 2
+      }
+    },
+    {
+      "text": "Populations of high-risk patients can be identified (16,29,30). Before reaching the clinical phase,HCC has a relatively slow-growing pattern at least for the so- Risk factors for HCC have been clearly identified: called encapsulated and expending type that is frequent cirrhosis regardless of the aetiology, chronic HBV and in European patients (31). The doubling time of small HCV infections,aflatoxin exposure,haemochromatosis, nodules of HCC has been assessed in several studies and hereditary tyrosinaemia. Hepatocarcinoma typically ranged between 3",
+      "metadata": {
+        "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+        "heading": "4. Screening and surveillance",
+        "start_page": 3,
+        "end_page": 5,
+        "created_date": "1993",
+        "country": "BE",
+        "source_type": "clinical_guideline",
+        "original_file_path": "hcc/clinical guidelines/BE/Van_Vlierberghe_et_al_(Guidelines)_(p14-25)_cleaned.json",
+        "split_index": "3_0_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "and 6 months placing HCC in the does not occur in the absence of cirrhosis. Cirrhosis is slow-growing group of tumours. present in more than 80% of the cases in most series of HCC (15) and exceeds 90% in frequently quoted studies 4.3. Effective, safe and financially acceptable tools of aimed at determining the prognosis of HCC (16,17). The early detection are available annual incidence of HCC in patients with cirrhosis is estimated to be around 3%.",
+      "metadata": {
+        "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+        "heading": "4. Screening and surveillance",
+        "start_page": 3,
+        "end_page": 5,
+        "created_date": "1993",
+        "country": "BE",
+        "source_type": "clinical_guideline",
+        "original_file_path": "hcc/clinical guidelines/BE/Van_Vlierberghe_et_al_(Guidelines)_(p14-25)_cleaned.json",
+        "split_index": "3_0_1",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "In chronic viral hepatitis Serum alfa-foetoprotein (aFP) and liver ultrasonograwithout cirrhosis, the annual incidence of HCC is less phy (US) are the usual tools of the surveillance for pri- than 1% for chronic hepatitis B (20-23) and about 1.5% mary liver cancer in at-risk patients. It is now admitted for chronic hepatitis C (22,24). Studies suggest that in that aFP is not an ideal tumour marker for the early chronic hepatitis C,HCC develops only at a stage of cir- detection of small HCC. Indeed, for the detection of a rhosis or extensive fibrosis whereas in chronic hepatitis small HCC not exceeding 3 cm in diameter, a slightly B,the occurrence of HCC is possible without extensive elevated level of aFP about 20 ng/ml has a sensitivity in fibrosis suggesting an oncogenic potential of the a range 30-60%, a specificity in a range 70-90% and a virus(18). low positive predictive value of about 20% (32,33).",
+      "metadata": {
+        "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+        "heading": "4. Screening and surveillance",
+        "start_page": 3,
+        "end_page": 5,
+        "created_date": "1993",
+        "country": "BE",
+        "source_type": "clinical_guideline",
+        "original_file_path": "hcc/clinical guidelines/BE/Van_Vlierberghe_et_al_(Guidelines)_(p14-25)_cleaned.json",
+        "split_index": "3_1_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "Finally,it must be pointed out that the combination of Conversely,a higher value about 200 ng/ml has a better different risk factors has a cumulative impact on the specificity but a low sensitivity in a range 10-25% (32). incidence of primary liver cancer: HBV and HCV co- However, even if aFP is not useful for the diagnosis of\ninfection in European patients (31), HBV and HCV small HCC,it remains the most powerful predictive facinfections in alcoholic cirrhosis (19). For chronic hepati- tor of further emergence of HCC and is interesting for\ntis B, familial clustering (25) and positivity for HBe determining the periodicity of screening in the surveil-\nAg(23) are associated with a greater risk of HCC.",
+      "metadata": {
+        "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+        "heading": "4. Screening and surveillance",
+        "start_page": 3,
+        "end_page": 5,
+        "created_date": "1993",
+        "country": "BE",
+        "source_type": "clinical_guideline",
+        "original_file_path": "hcc/clinical guidelines/BE/Van_Vlierberghe_et_al_(Guidelines)_(p14-25)_cleaned.json",
+        "split_index": 4
+      }
+    },
+    {
+      "text": "lance program. An interval screening not exceeding 3months should be recommended when aFP is slightly elevated (34,35). Liver US is the most appropriate tool for surveillance of cirrhosis and early detection of small HCC. It is effective in this particular field, it is a non-invasive, non- expensive imaging technique and it is convenient for the patient. Liver US may detect hepatic nodules at a threshold of about 1 cm diameter and, in experienced hands, should detect the vast majority of HCC nodules at a size less than 3 cm in diameter (36). The importance of",
+      "metadata": {
+        "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+        "heading": "4. Screening and surveillance",
+        "start_page": 3,
+        "end_page": 5,
+        "created_date": "1993",
+        "country": "BE",
+        "source_type": "clinical_guideline",
+        "original_file_path": "hcc/clinical guidelines/BE/Van_Vlierberghe_et_al_(Guidelines)_(p14-25)_cleaned.json",
+        "split_index": "5_0_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "the quality of the US examinations performed by the same, experienced operator has been pointed out by investigators who reported good results (27,37). 4.4. Curative treatments exist at an early stage resulting in survival improvement Several surveillance studies were disappointing showing a low rate (around 10-20%) of resectability for small HCC identified during surveillance due to poor liver function, co-morbid medical conditions or technical reasons such as a tumour deeply placed or close to vital structures (37,38,39). Moreover, in some of these studies,when a HCC was detected,survival was not different between untreated and surgically treated patients(38,40).",
+      "metadata": {
+        "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+        "heading": "4. Screening and surveillance",
+        "start_page": 3,
+        "end_page": 5,
+        "created_date": "1993",
+        "country": "BE",
+        "source_type": "clinical_guideline",
+        "original_file_path": "hcc/clinical guidelines/BE/Van_Vlierberghe_et_al_(Guidelines)_(p14-25)_cleaned.json",
+        "split_index": "5_1_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "Trends in HCC survival in Europe (41)\nand in US (42) have shown a small improvement comparing the late seventies and early nineties with a 1-year survival improving from 8% to 18% (41) and 14 to 23%\n(42) respectively, but this could be attributed to the\n“lead-time bias” i.e. an artificial survival period corresponding to the interval from the point of detection by\nscreening to the usual point of detection in the absence of screening (106).",
+      "metadata": {
+        "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+        "heading": "4. Screening and surveillance",
+        "start_page": 3,
+        "end_page": 5,
+        "created_date": "1993",
+        "country": "BE",
+        "source_type": "clinical_guideline",
+        "original_file_path": "hcc/clinical guidelines/BE/Van_Vlierberghe_et_al_(Guidelines)_(p14-25)_cleaned.json",
+        "split_index": 6
+      }
+    },
+    {
+      "text": "Nevertheless, a growing body of evidences strongly suggests that surveillance of patients with cirrhosis for the early detection of HCC could be effective in terms of survival prolongation at least in well selected cases. Moreover it seems unlikely that new randomised controlled trials will be put up to solve this issue. In Belgium, surveillance for HCC addresses almost exclusively patients with cirrhosis regardless of the aetiology, patients with chronic hepatitis C with extensive fibrosis of F3 stage",
+      "metadata": {
+        "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+        "heading": "4. Screening and surveillance",
+        "start_page": 3,
+        "end_page": 5,
+        "created_date": "1993",
+        "country": "BE",
+        "source_type": "clinical_guideline",
+        "original_file_path": "hcc/clinical guidelines/BE/Van_Vlierberghe_et_al_(Guidelines)_(p14-25)_cleaned.json",
+        "split_index": "7_0_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "in the METAVIR classification and HbsAg carriers. In these at-risk patients, surveillance should be reserved to those manifesting their willingness to attend the surveillance program and exhibiting a life expectancy of at least 5 years. Alcoholic patients unable to stop drinking and patients with poor liver function (Child’s C cirrhosis) – except when transplantation is considered – and severe co-morbid medical conditions should not be included. • The pivotal tool for surveillance is liver US. aFP is useless",
+      "metadata": {
+        "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+        "heading": "4. Screening and surveillance",
+        "start_page": 3,
+        "end_page": 5,
+        "created_date": "1993",
+        "country": "BE",
+        "source_type": "clinical_guideline",
+        "original_file_path": "hcc/clinical guidelines/BE/Van_Vlierberghe_et_al_(Guidelines)_(p14-25)_cleaned.json",
+        "split_index": "7_0_1",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "for the diagnosis of small HCC but is of great interest for determining the interval between screen- ings. Ideally, the US should be performed by the same,experienced operator • The schedule of the surveillance program could be as follows: – For patients with compensated cirrhosis, liver US should be performed every 6 months or every 3months when a-FP is above 20 ng/ml. – For patients with chronic hepatitis C and F3 fibrosis, and for patients with chronic hepatitis B, the surveillance interval should be 6 months. – For inactive HBs carrier, the surveillance interval should be 12 months or 6 months in case of familial history of HCC. 5. Diagnosis of HCC Hepatocellular carcinoma (HCC) develops in 80% on a cirrhotic liver,whatever the cause,which is more often hepatitis C (HCV) virus and alcohol in Belgium; more rarely on HBV or HCV carriers without cirrhosis, and exceptionally on normal liver. Therefore,liver status has to be assessed.",
+      "metadata": {
+        "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+        "heading": "4. Screening and surveillance",
+        "start_page": 3,
+        "end_page": 5,
+        "created_date": "1993",
+        "country": "BE",
+        "source_type": "clinical_guideline",
+        "original_file_path": "hcc/clinical guidelines/BE/Van_Vlierberghe_et_al_(Guidelines)_(p14-25)_cleaned.json",
+        "split_index": "7_1_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "If HCC is suspected and no proof of cirrhosis is made by non-invasive investigations, a biopsy\nof the non-tumoural liver is mandatory. 5.1. Cirrhosis present:\na. Characteristic tumour (arterial hypervascularization)\nof ≥ 2 cm on US or CT or Magnetic Resonance\nImaging (MRI) and aFP level above 400 ng/mL:\nDiagnosis of HCC(43) b. Characteristic tumour (arterial hypervascularization)\nof ≥2 cm,assessed by two concordant imaging techniques (contrast enhanced US and/or CT and/or\nMRI):Diagnosis of HCC(43)\nc. Suspect tumour between 1-2 cm on US: Probable\nHCC diagnosis (44), to be confirmed by raised aFP or CT/MRI and consider option d) in cases of doubt. d.",
+      "metadata": {
+        "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+        "heading": "4. Screening and surveillance",
+        "start_page": 3,
+        "end_page": 5,
+        "created_date": "1993",
+        "country": "BE",
+        "source_type": "clinical_guideline",
+        "original_file_path": "hcc/clinical guidelines/BE/Van_Vlierberghe_et_al_(Guidelines)_(p14-25)_cleaned.json",
+        "split_index": 8
+      }
+    },
+    {
+      "text": "Other situation:two options are possible:\n– biopsy for diagnosis with a fine needle biopsy technique. In this approach it should be taken into\naccount that a small, but definite risk of seeding exists. This risk could be diminished by the use of\na fine needle biopsy (i.e. outer diameter ≤0.9 mm\nor ≥ 19G). However, the rate of false negatives\ncould be higher by the use of this technique where a smaller tissue sample is preserved. – Repeat imaging (CT or MRI)/AFP every\n3 months : if raised aFP and growing lesion:\nHighly Probable HCC diagnosis(45) . However the decision of which option is the best in each individual case, should be discussed in a multidisciplinary approach.",
+      "metadata": {
+        "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+        "heading": "4. Screening and surveillance",
+        "start_page": 3,
+        "end_page": 5,
+        "created_date": "1993",
+        "country": "BE",
+        "source_type": "clinical_guideline",
+        "original_file_path": "hcc/clinical guidelines/BE/Van_Vlierberghe_et_al_(Guidelines)_(p14-25)_cleaned.json",
+        "split_index": 9
+      }
+    },
+    {
+      "text": "Table 1.— The Barcelona-Clinic Liver Cancer staging system (54)\nStage Performance status Tumor stage Liver function\nStage A:early HCC\nA1 0 Single,< 5 cm No portal HTNand normal bilirubin\nA2 0 Single,< 5 cm Portal HTNand normal bilirubin\nA3 0 Single,< 5cm Portal HTNand elevated bilirubin\nA4 0 3 tumors < 3 cm Child-Pugh class A-B\nStage B:intermediate HCC 0 Large multinodular Child-Pugh class A-B\nStage C:advanced HCC 1-2a Vascular invasion or extrahepatic spreada Child-Pugh class A-B\nStage D:end-stage HCC 3-4b Any Child Cb\nNOTE.Stage A and B:all criteria should be fulfilled. HTN,hypertension.",
+      "metadata": {
+        "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+        "heading": "4. Screening and surveillance",
+        "start_page": 3,
+        "end_page": 5,
+        "created_date": "1993",
+        "country": "BE",
+        "source_type": "clinical_guideline",
+        "original_file_path": "hcc/clinical guidelines/BE/Van_Vlierberghe_et_al_(Guidelines)_(p14-25)_cleaned.json",
+        "split_index": 10
+      }
+    },
+    {
+      "text": "aStage C:At least 1 criteria should be fulfilled. bStage D:At least 1criteria should be fulfilled. 5.2. Cirrhosis absent: However the rate of false negatives could be higher by\nthe use of this technique where a smaller tissue sample a. Characteristic tumour (arterial hypervascularisation)\nis preserved. The risk of needle tract seeding should be\non US or CT or MRI and aFP level above balanced against the risk of an unnecessary treatment. 400ng/mL:Diagnosis of HCC(45)\nb. Other situation:biopsy. However a biopsy should be avoided in a potential curable patient considering the risk of needle tract seeding. Cancer staging should serve to select the appropriate primary and adjuvant therapy and to estimate the progno-",
+      "metadata": {
+        "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+        "heading": "4. Screening and surveillance",
+        "start_page": 3,
+        "end_page": 5,
+        "created_date": "1993",
+        "country": "BE",
+        "source_type": "clinical_guideline",
+        "original_file_path": "hcc/clinical guidelines/BE/Van_Vlierberghe_et_al_(Guidelines)_(p14-25)_cleaned.json",
+        "split_index": 11,
+        "merged": true
+      }
+    },
+    {
+      "text": "sis. It is also of use in the evaluation of treatment results. biopsy from HCC\nIn oncology, the prognosis of patients with solid tumours is solely related to tumour stage. HCC consti-\nThe puncture of a hepatocellular carcinoma,either in tutes a particular neoplasm. The cirrhosis that is present\nthe context of a diagnostic procedure or a therapeutic in most cases determines the applicability and efficacy\nintervention (e.g. percutaneous radiofrequency ablation\nof treatment and hence has an important influence on\n(RFA) or ethanol injection (PEI)), carries a substantial prognosis.",
+      "metadata": {
+        "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+        "heading": "6. The risk of needle tract seeding after liver",
+        "start_page": 5,
+        "end_page": 6,
+        "created_date": "1993",
+        "country": "BE",
+        "source_type": "clinical_guideline",
+        "original_file_path": "hcc/clinical guidelines/BE/Van_Vlierberghe_et_al_(Guidelines)_(p14-25)_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "risk of needle tract seeding. The incidence of needle\nAccording to the EASL panel of experts (43), progtract seeding was 1.6% in 122 patients who had ultra-\nnosis of HCC is determined by the tumour stage, the sound guided diagnostic biopsy in a HCC before they\ngeneral health of the patient, the liver function of the underwent surgery (46). Needle tract seeding was\npatient and the treatment efficacy.",
+      "metadata": {
+        "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+        "heading": "6. The risk of needle tract seeding after liver",
+        "start_page": 5,
+        "end_page": 6,
+        "created_date": "1993",
+        "country": "BE",
+        "source_type": "clinical_guideline",
+        "original_file_path": "hcc/clinical guidelines/BE/Van_Vlierberghe_et_al_(Guidelines)_(p14-25)_cleaned.json",
+        "split_index": 1
+      }
+    },
+    {
+      "text": "Staging systems reported to be 3.4% (7 of 205 cases) by Kim et al.(47) assessing just one of these aspects such as the Child, and 5.1% (3 of 59 cases) by Takamori et al. (48). Pugh classification (51), TNM classification (52) and Tumour seeding after percutaneous RFA varied between performance status (53),have therefore only a marginal 0-12.5% in several series (49). These differences may usefulness. partly result from differences in follow-up time (as it Several staging systems for HCC have been develmay take 18 months before a metastasis in a needle tract oped, using two, three or four of the",
+      "metadata": {
+        "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+        "heading": "6. The risk of needle tract seeding after liver",
+        "start_page": 5,
+        "end_page": 6,
+        "created_date": "1993",
+        "country": "BE",
+        "source_type": "clinical_guideline",
+        "original_file_path": "hcc/clinical guidelines/BE/Van_Vlierberghe_et_al_(Guidelines)_(p14-25)_cleaned.json",
+        "split_index": "2_0_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "above mentioned is detected) and the use of different needles. In PEI and factors. There is no agreement on the best staging sysespecially RFA larger needles are used and multiple tem that can be recommended world-wide. punctures are applied,probably substantially enhancing The Barcelona-Clinic Liver Cancer (BCLC) staging the risk of seeding,in comparison to fine needle biopsy. system (54) uses variables related to tumour status, liver Thermocoagulation of the needle track at the end of functional status,physical status,and links the four stages treatment did not prevent needle track seeding in a case (Table 1) described with a treatment logarithm (fig. 1).",
+      "metadata": {
+        "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+        "heading": "6. The risk of needle tract seeding after liver",
+        "start_page": 5,
+        "end_page": 6,
+        "created_date": "1993",
+        "country": "BE",
+        "source_type": "clinical_guideline",
+        "original_file_path": "hcc/clinical guidelines/BE/Van_Vlierberghe_et_al_(Guidelines)_(p14-25)_cleaned.json",
+        "split_index": "2_1_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "It\nreport (50). has been suggested that the system is able to select earlystage patients that could benefit from curative thera-\nRecommendation: biopsy from HCC\npies(55). At present,it has no external validation. Whenever a curative lesion is present, biopsy of\nBefore any decision is made for treating a patient potentially operable lesions should be avoided because\nwith HCC, the following questions have to be of the risk of needle tract seeding. However in the indiaddressed:\nvidual case where a biopsy is needed, the following points should be taken into account:In this approach a • What is the status of the non-tumourous liver? small,but definite risk of seeding exists.",
+      "metadata": {
+        "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+        "heading": "6. The risk of needle tract seeding after liver",
+        "start_page": 5,
+        "end_page": 6,
+        "created_date": "1993",
+        "country": "BE",
+        "source_type": "clinical_guideline",
+        "original_file_path": "hcc/clinical guidelines/BE/Van_Vlierberghe_et_al_(Guidelines)_(p14-25)_cleaned.json",
+        "split_index": 3
+      }
+    },
+    {
+      "text": "This risk could • What is the size and extension of the tumour? be diminished by the use of a fine needle biopsy. • What is the general condition of the patient? Fig. 1. — Adapted to BCLC (Barcelona Clinic Liver Cancer) function of the patient, the extent of the tumour and staging system. PS = performance Scale (0: normal activity, the general condition of the patient. 1:symptoms but nearly fully ambulatory,2:some bed time, • It should be established whether the patient has underbut needs to be in bed in less than 50% of normal daytime, lying cirrhosis,and",
+      "metadata": {
+        "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+        "heading": "6. The risk of needle tract seeding after liver",
+        "start_page": 5,
+        "end_page": 6,
+        "created_date": "1993",
+        "country": "BE",
+        "source_type": "clinical_guideline",
+        "original_file_path": "hcc/clinical guidelines/BE/Van_Vlierberghe_et_al_(Guidelines)_(p14-25)_cleaned.json",
+        "split_index": "4_0_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "if so,what is the liver function. 3 : needs to be in bed greater than 50% of normal day time, • US,spiral CT and/or dynamic MRI of the liver should 4:Unable to get out of bed) [(reprinted from ‘Prognostic prebe used to evaluate tumour size,the presence of daugh- diction and treatment strategy in hepatocellular carcinoma’ ter nodules and the presence of portal vein thrombosis. Hepatology vol 35, 519-524, 2002 with permission from the Extrahepatic spread should be searched for by chest American Association for the Study of Liver Diseases and with thin section spiral CT and bone scintigraphy. permission from the authors (Bruix and Llovet)]. • The general condition of the patient should be evaluated using the Karnofsky index or performance status. • If liver transplantation is considered, assessment of\n7.1. Status of the non-tumourous liver\ncardiovascular and pulmonary function and other sys-",
+      "metadata": {
+        "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+        "heading": "6. The risk of needle tract seeding after liver",
+        "start_page": 5,
+        "end_page": 6,
+        "created_date": "1993",
+        "country": "BE",
+        "source_type": "clinical_guideline",
+        "original_file_path": "hcc/clinical guidelines/BE/Van_Vlierberghe_et_al_(Guidelines)_(p14-25)_cleaned.json",
+        "split_index": "4_1_0",
+        "oversized_split": true,
+        "merged": true
+      }
+    },
+    {
+      "text": "cirrhotic liver and most of the remaining have an underlying liver disease. 8. Transplantation or resection in patients with • Patient with non-cirrhotic liver are the best candidates\nfor resection or other therapeutic means that could non-cirrhotic liver or liver transplantation for patients eligible for any invasive (radiological or surgical) method. The first option here is liver transplantation.",
+      "metadata": {
+        "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+        "heading": "In Europe, 85-90% of patients with HCC have a temic conditions is essential.",
+        "start_page": 6,
+        "end_page": 6,
+        "created_date": "1993",
+        "country": "BE",
+        "source_type": "clinical_guideline",
+        "original_file_path": "hcc/clinical guidelines/BE/Van_Vlierberghe_et_al_(Guidelines)_(p14-25)_cleaned.json",
+        "split_index": 0,
+        "merged": true
+      }
+    },
+    {
+      "text": "7.2. Evaluation of tumour extension\n(56-59). In all of these cases extra hepatic metastases,\nEvaluation of tumour extension is necessary in all hilar lymph adenopathies and tumoural portal thrombocases and includes a search for the presence of daughter sis exclude the possibility for a curative option. nodules and/or portal vein thrombosis. This could be However, there are no randomised trials comparing the\ndone by US, spiral CT scan and/or MRI. CT should be outcome of surgical resection and liver transplantation slices without contrast and during the arterial, venous modalities in patients with cirrhosis have the disadvanand equilibrium phases of contrast administration. The tage that the remnant liver remains a premalignant con- scanning. The improvements in CT and MRI equipment have 8.1. Resection\nreduced the clinical usefulness of angiography. Hepatic resection is the first-line approach for non-",
+      "metadata": {
+        "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+        "heading": "small HCC (< 5 cm) or up to three lesions < 3 cm should be referred for assessment for these treatment modalities",
+        "start_page": 6,
+        "end_page": 6,
+        "created_date": "1993",
+        "country": "BE",
+        "source_type": "clinical_guideline",
+        "original_file_path": "hcc/clinical guidelines/BE/Van_Vlierberghe_et_al_(Guidelines)_(p14-25)_cleaned.json",
+        "split_index": 0,
+        "merged": true
+      }
+    },
+    {
+      "text": "searched for by thin section spiral CT of the chest and of the cases in the West and in Belgium (45). In the\nbone scintigraphy. The usefulness of positron emission 7.3. The patient’s general condition surgical resection of this tumour is less likely to produce The patient’s general condition must be assessed liver failure. In most of the series, liver resection before taking any therapeutic decision. This should be achieved similar results in survival and disease-free suranalysed by means of the Karnofsky index or perfor- vival as compared to transplantation. Liver resection remains the treatment of choice in those patients with fibrolamellar HCC in a non-cirrhotic liver. In cirrhotic patients, the poor selection of candidates for resection in the eighties led to unacceptable survival rates below 50%",
+      "metadata": {
+        "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+        "heading": "In selected cases, extrahepatic spread should be cirrhotic patients with HCC. This applies to less than 5%",
+        "start_page": 6,
+        "end_page": 6,
+        "created_date": "1993",
+        "country": "BE",
+        "source_type": "clinical_guideline",
+        "original_file_path": "hcc/clinical guidelines/BE/Van_Vlierberghe_et_al_(Guidelines)_(p14-25)_cleaned.json",
+        "split_index": 0,
+        "merged": true
+      }
+    },
+    {
+      "text": "at 3 years (60). To avoid these treatment-related complications such as post operative liver failure,selection has been refined to patients with a single HCC and a well preserved liver function (Child Pugh A) with a normal bilirubin level and the absence of portal hypertension (defined as the presence of oesophageal varices, platelet count of less than 100,000/µl or splenomegaly). Subjects without relevant portal hypertension and normal bilirubin levels achieved a 70% sur- vival at 5 years, whereas this decreased to 50% in patients with portal hypertension and to 25% in patients with portal hypertension and abnormal bilirubin levels(61).",
+      "metadata": {
+        "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+        "heading": "a very different biology in comparison with the HCC arising in a cirrhotic liver. In the absence of cirrhosis,",
+        "start_page": 6,
+        "end_page": 8,
+        "created_date": "1993",
+        "country": "BE",
+        "source_type": "clinical_guideline",
+        "original_file_path": "hcc/clinical guidelines/BE/Van_Vlierberghe_et_al_(Guidelines)_(p14-25)_cleaned.json",
+        "split_index": "0_1_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "‘Ideal’candidates constitute only a minority\nin Western countries. 8.2. Transplantation\nEarly results of liver transplantation for HCC were poor with 5 year survival rates below 50%, mainly due\nto tumour recurrence (60). This was the result of poor\nselection of patients for transplantation. It is well established that patients with single lesions of less than 5 cm\nor up to 3 lesions less than 3 cm in the absence of vascular invasion, have a low recurrence rate for HCC and the prognosis after transplantation is the same as for a\nsimilar underlying liver disease without HCC (57-59). Resection of HCC is a viable option, with short term survival rates similar to transplantation (61,62).",
+      "metadata": {
+        "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+        "heading": "a very different biology in comparison with the HCC arising in a cirrhotic liver. In the absence of cirrhosis,",
+        "start_page": 6,
+        "end_page": 8,
+        "created_date": "1993",
+        "country": "BE",
+        "source_type": "clinical_guideline",
+        "original_file_path": "hcc/clinical guidelines/BE/Van_Vlierberghe_et_al_(Guidelines)_(p14-25)_cleaned.json",
+        "split_index": 1
+      }
+    },
+    {
+      "text": "After\nthree years of follow up, there is a clear advantage for transplantation in terms of tumour free survival (62). At present, the shortage of donors led to extremely long waiting times. Programs in the United States,\nEurope and Belgium face a waiting time of over\n12months. The drop out rate on the waiting list is therefore great. This event is also common in patients listed\nwith HCC. In the United States,the UNOS have adopted\nthe Model for End-Stage Liver Disease (MELD) system to allocate grafts according a composite score, which\nincludes bilirubin, prothrombin activity and creatinine levels for non-cancer patients. This model answers to the\nprinciple: sickest patient first.",
+      "metadata": {
+        "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+        "heading": "a very different biology in comparison with the HCC arising in a cirrhotic liver. In the absence of cirrhosis,",
+        "start_page": 6,
+        "end_page": 8,
+        "created_date": "1993",
+        "country": "BE",
+        "source_type": "clinical_guideline",
+        "original_file_path": "hcc/clinical guidelines/BE/Van_Vlierberghe_et_al_(Guidelines)_(p14-25)_cleaned.json",
+        "split_index": 2
+      }
+    },
+    {
+      "text": "However patients with\nHCC frequently have a rather good liver function and a low MELD score. To avoid undesirable long waiting list\ntime in HCC patients a variable score between 24 and\n29points was given to these patients (63). Living donor liver transplantation (LDLT) has emerged as a feasible alternative to cadaveric transplantation. Decision analyses have shown that LDLT is cost-\neffective for early HCC in comparison to cadaveric transplantation when waiting time exceed 7 months (64). However,the absence of donor constraints is counteracted by the fact that the procedure is associated with a 0.5%\nmortality rate of the donor,and around 20% morbidity.",
+      "metadata": {
+        "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+        "heading": "a very different biology in comparison with the HCC arising in a cirrhotic liver. In the absence of cirrhosis,",
+        "start_page": 6,
+        "end_page": 8,
+        "created_date": "1993",
+        "country": "BE",
+        "source_type": "clinical_guideline",
+        "original_file_path": "hcc/clinical guidelines/BE/Van_Vlierberghe_et_al_(Guidelines)_(p14-25)_cleaned.json",
+        "split_index": 3
+      }
+    },
+    {
+      "text": "h The standard criteria (1 lesion less than 5 cm,\n3lesions each less than 3 cm) have recently been questioned with similar survival rates in patients with larger s tumours and even in the presence of intrahepatic portal\nl involvement. In the era of shortage of organs, these\n- ‘expanded criteria’should be considered as unfair until\nr more evidence is present about the long term outcome of\n- these patients. On the contrary,the principle of expandh ed criteria may apply to LDLT,considering the unlimit-\n- ed availability of this procedure as well as the almost\nl non-existent waiting time. A set of new expanded criter ria have been proposed and are expected to achieve 50%\n- 5 year survival rates in patients with either single\n- tumours < 7 cm,3 nodules < 5 cm,5 nodules < 3 cm,or\nn downstaging to conventional criteria after any therapy s lasting more than 6 months (65). However data at this\nn moment are small to conclude these criteria will become y the standard in patients waiting for LDLT.",
+      "metadata": {
+        "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+        "heading": "a very different biology in comparison with the HCC arising in a cirrhotic liver. In the absence of cirrhosis,",
+        "start_page": 6,
+        "end_page": 8,
+        "created_date": "1993",
+        "country": "BE",
+        "source_type": "clinical_guideline",
+        "original_file_path": "hcc/clinical guidelines/BE/Van_Vlierberghe_et_al_(Guidelines)_(p14-25)_cleaned.json",
+        "split_index": 4
+      }
+    },
+    {
+      "text": "The only proven potentially curative treatment for e HCC remains surgery, either hepatic resection for e patients with a HCC in a non-cirrhotic liver or liver r transplantation for patients with a HCC in a cirrhotic - liver. Patients with single small HCC (< 5 cm) or up to m three lesions should be referred for these treatment - modalities. Surgical resection and percutaneous treatd ment modalities in patients with cirrhosis have the dis- a advantage that the remnant liver remains a premalignant . condition with the potential to develop new HCC lesions m in this part of the liver. r • Liver transplantation should be considered in any r patient with cirrhosis",
+      "metadata": {
+        "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+        "heading": "a very different biology in comparison with the HCC arising in a cirrhotic liver. In the absence of cirrhosis,",
+        "start_page": 6,
+        "end_page": 8,
+        "created_date": "1993",
+        "country": "BE",
+        "source_type": "clinical_guideline",
+        "original_file_path": "hcc/clinical guidelines/BE/Van_Vlierberghe_et_al_(Guidelines)_(p14-25)_cleaned.json",
+        "split_index": "5_0_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "and a small (5cm or less single nodule or up to three lesions of 3 cm or less) HCC. y • Hepatic resection should be considered as primary therapy in any patient with HCC and a non-cirrhotic r liver (including fibrolamellar variant). • Resection can be carried out in highly selected d patients with hepatic cirrhosis and well preserved d hepatic function (Child Pugh A). Such surgery carries m a high risk of postoperative decompensation and h should be undertaken in units with expertise in hepate ic resection and management of liver failure. e • If surgery or transplantation is not possible, percutah neous treatment modalities can be used as an alternaa tive.",
+      "metadata": {
+        "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+        "heading": "a very different biology in comparison with the HCC arising in a cirrhotic liver. In the absence of cirrhosis,",
+        "start_page": 6,
+        "end_page": 8,
+        "created_date": "1993",
+        "country": "BE",
+        "source_type": "clinical_guideline",
+        "original_file_path": "hcc/clinical guidelines/BE/Van_Vlierberghe_et_al_(Guidelines)_(p14-25)_cleaned.json",
+        "split_index": "5_1_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "t\nd\n9. Percutaneous treatments\ns\n- Percutaneous treatments are considered as minimally\n- invasive procedures that constitute the best medical\n- option for non-surgical HCC. Tumour ablation is\n. achieved by using chemical substances (alcohol, acetic\n- acid),or by modifying the temperature of the neoplastic\n% cells (radiofrequency, microwave, laser, and cryoablation) (45). Percutaneous ethanol injection (PEI) achieves complete responses of 70% in HCC < 3 cm, and is consid- ered the gold standard percutaneous treatment (65). Child Pugh A patients with complete responses achieve\n5 year survival rates of 50%.",
+      "metadata": {
+        "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+        "heading": "a very different biology in comparison with the HCC arising in a cirrhotic liver. In the absence of cirrhosis,",
+        "start_page": 6,
+        "end_page": 8,
+        "created_date": "1993",
+        "country": "BE",
+        "source_type": "clinical_guideline",
+        "original_file_path": "hcc/clinical guidelines/BE/Van_Vlierberghe_et_al_(Guidelines)_(p14-25)_cleaned.json",
+        "split_index": 6
+      }
+    },
+    {
+      "text": "Outcome is worse in Child B and C patients (66). Radiofrequency ablation (RFA) is the most extensively used alternative to PEI, either trough single or multiple cooled-tip electrodes,or single electrode associated with J-hook needles, according to different engines available. It can also be used during laparotomy or during laparascopy. RFA may provide marginal anti-tumoural effects in tumours larger than 3 cm in diameter where PEI is unable to disrupt the intratumoural septa (45). At present the 5 year survival rate estimate from a cohort",
+      "metadata": {
+        "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+        "heading": "a very different biology in comparison with the HCC arising in a cirrhotic liver. In the absence of cirrhosis,",
+        "start_page": 6,
+        "end_page": 8,
+        "created_date": "1993",
+        "country": "BE",
+        "source_type": "clinical_guideline",
+        "original_file_path": "hcc/clinical guidelines/BE/Van_Vlierberghe_et_al_(Guidelines)_(p14-25)_cleaned.json",
+        "split_index": "7_0_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "of 88 patients with tumours smaller than 3.5 cm treated by RFA is 33% (67). A recent randomised controlled trial of 102 patients with cirrhosis and either single HCC 5 cm in diameter or smaller or as many as 3 HCCs each 3 cm or smaller randomly tretad with RFA or PEI showed superiority of RFA treatment with respect to local recurrence-free survival rates (68). There is a need for further randomised trials comparing the efficacy of the cheaper PEI versus the more expensive RFA.",
+      "metadata": {
+        "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+        "heading": "a very different biology in comparison with the HCC arising in a cirrhotic liver. In the absence of cirrhosis,",
+        "start_page": 6,
+        "end_page": 8,
+        "created_date": "1993",
+        "country": "BE",
+        "source_type": "clinical_guideline",
+        "original_file_path": "hcc/clinical guidelines/BE/Van_Vlierberghe_et_al_(Guidelines)_(p14-25)_cleaned.json",
+        "split_index": "7_1_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "The assessment of treatment response is important. The EASL panel of experts of HCC proposed a modification of the WHO criteria: 1) assessment of response\nby spiral CT or MRI 4 weeks after treatment, 2) measurements of the diameter refer to the viable tumour\n(identified by the area enhanced during spiral CT), rather than changes in the overall diameter and 3) local\nrecurrences should be defined as treatment failures (43). • Percutaneous ethanol injection has been shown to\nproduce necrosis of small HCC. It is best suited to\nperipheral lesions,less than 3 cm in diameter. Radiofrequency ablation may be a good alternative ablative\ntherapy but data are limited. • Percutaneous treatment modalities in patients with\ncirrhosis have the disadvantage that the remnant liver remains a premalignant condition with the potential\nto develop new HCC lesions in this part of the liver.",
+      "metadata": {
+        "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+        "heading": "a very different biology in comparison with the HCC arising in a cirrhotic liver. In the absence of cirrhosis,",
+        "start_page": 6,
+        "end_page": 8,
+        "created_date": "1993",
+        "country": "BE",
+        "source_type": "clinical_guideline",
+        "original_file_path": "hcc/clinical guidelines/BE/Van_Vlierberghe_et_al_(Guidelines)_(p14-25)_cleaned.json",
+        "split_index": 8,
+        "merged": true
+      }
+    },
+    {
+      "text": "and hormonal therapy\nMost patients with HCC are diagnosed at advanced stages. There is no standard treatment for patients with\nunresectable HCC, despite the availability of many prospective trials during the last 25 years. Therapies\ninclude single interventions or combinations of systemic chemotherapy, intra-arterial chemotherapy, arterial\ndevascularization (embolization) and hormonal manipulation (tamoxifen,octreotide). Llovet et al. (69) recently reviewed 61 small RCTs\ndealing with primary treatment of HCC and could per-\nform a reliable meta-analysis for only two types of intervention: embolization/chemoembolization (7 trials,\n545 patients) and tamoxifen (7 trials, 898 patients). From their meta-analysis,they concluded the following:\n– Arterial chemoembolization improved 2-year survival compared with control (41% vs.",
+      "metadata": {
+        "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+        "heading": "10. Arterial chemoembolization, chemotherapy",
+        "start_page": 8,
+        "end_page": 8,
+        "created_date": "1993",
+        "country": "BE",
+        "source_type": "clinical_guideline",
+        "original_file_path": "hcc/clinical guidelines/BE/Van_Vlierberghe_et_al_(Guidelines)_(p14-25)_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "27%). There was\na significant benefit of chemoembolization with cisplatin or doxorubicin but none with embolization alone. Overall, treatment induced objective responses in 35% of patients (range,16%-61%). The side effects of this chemoembolization procedures include those of the chemotherapeutic agent and the complications of arterial embolization (liver failure,\npain,fever). Serious complications arise in up to 5% of\npatients and there are no studies evaluating quality of life. Portal vein thrombosis is a contra-indication for\nembolization. Patients with well-preserved liver function (Child-Pugh A) and multinodular HCC without vas-\ncular invasion or extrahepatic spread,seem the best target population. – Tamoxifen showed no antitumoral effect and no effect on survival,and only low-quality trials suggested\n1-year improvement in survival.",
+      "metadata": {
+        "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+        "heading": "10. Arterial chemoembolization, chemotherapy",
+        "start_page": 8,
+        "end_page": 8,
+        "created_date": "1993",
+        "country": "BE",
+        "source_type": "clinical_guideline",
+        "original_file_path": "hcc/clinical guidelines/BE/Van_Vlierberghe_et_al_(Guidelines)_(p14-25)_cleaned.json",
+        "split_index": 1
+      }
+    },
+    {
+      "text": "There is no available evidence (69) to withhold or to give other palliative interventions and therefore the following interventions should only be offered to the\npatients in the context of well-designed clinical trials:\n– Systemic chemotherapy has been studied in 9\nRCTs (45). The best single agents are doxorubicin and\ncisplatin,with partial responses in 5-15% of cases. Only\n2studies had a no-treatment arm,but showed no survival benefit.",
+      "metadata": {
+        "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+        "heading": "10. Arterial chemoembolization, chemotherapy",
+        "start_page": 8,
+        "end_page": 8,
+        "created_date": "1993",
+        "country": "BE",
+        "source_type": "clinical_guideline",
+        "original_file_path": "hcc/clinical guidelines/BE/Van_Vlierberghe_et_al_(Guidelines)_(p14-25)_cleaned.json",
+        "split_index": 2
+      }
+    },
+    {
+      "text": "– A small RCT of subcutaneous octreotide therapy has suggested a survival benefit in HCC. However, a\nsubsequent study of 70 patients treated with long acting octreotide showed no benefit. • Chemoembolization (with doxorubicin or cisplatin)\nprolongs life in a subset of patients (preserved liver function) with unresectable HCC in controlled clinical trials . • Hormonal therapy with tamoxifen has shown no survival benefit in controlled trials and is not recom-\nmended. • Systemic chemotherapy and/or hormonal interventions (e.g. octreotide) should only be offered in the\ncontext of clinical trials.",
+      "metadata": {
+        "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+        "heading": "10. Arterial chemoembolization, chemotherapy",
+        "start_page": 8,
+        "end_page": 8,
+        "created_date": "1993",
+        "country": "BE",
+        "source_type": "clinical_guideline",
+        "original_file_path": "hcc/clinical guidelines/BE/Van_Vlierberghe_et_al_(Guidelines)_(p14-25)_cleaned.json",
+        "split_index": 3,
+        "merged": true
+      }
+    },
+    {
+      "text": "Via intra arterial way,a mixture of radioactive Iodine\n131 and Lipiodol is instilled in the HCC. The patients\nare to be isolated after each procedure as a radioactivity safety measure. A small randomised trial in patients with\nHCC and portal vein thrombosis demonstrated a limited\nbenefit in survival. A larger trial comparing arterial\nchemoembolization and radioactive Iodine 131 treatment did not show any difference in survival between the two groups. However,side effects were significantly\nlower in the group receiving radioactive Iodine\n131treatment. Radioactive Iodine 131 treatment was also used in a adjuvant setting in patients resected for HCC without\ndetectable residual disease. A longer delay of recurrence\nwas observed in the treated group (70). The use of radioactive Iodine 131 treatment can be used as an alternative for chemoembolization. 12. Treatment of early hepatocellular carcinoma in patients on the waiting list for liver trans-",
+      "metadata": {
+        "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+        "heading": "11. Radioactive Iodine 131 treatment",
+        "start_page": 8,
+        "end_page": 9,
+        "created_date": "1993",
+        "country": "BE",
+        "source_type": "clinical_guideline",
+        "original_file_path": "hcc/clinical guidelines/BE/Van_Vlierberghe_et_al_(Guidelines)_(p14-25)_cleaned.json",
+        "split_index": 0,
+        "merged": true
+      }
+    },
+    {
+      "text": "(single nodule < 5 cm or up to 3 nodules < 3 cm) achieve a 70% 5-year survival rate, with recurrence rate below HCC. However,these excellent results were obtained at bling time in asymptomatic HCC less than 5 cm was estimated to be around 4 months (71). Therefore, the treat analysis. It has been shown that a waiting time\nlonger than six months was associated with a 23% rate of dropout from the waiting list,usually because of progression of HCC (64). The dropout rates for a waiting\ntime of one year were as high as 50%.",
+      "metadata": {
+        "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+        "heading": "(HCC). The optimal candidates for liver transplantation",
+        "start_page": 9,
+        "end_page": 9,
+        "created_date": "1993",
+        "country": "BE",
+        "source_type": "clinical_guideline",
+        "original_file_path": "hcc/clinical guidelines/BE/Van_Vlierberghe_et_al_(Guidelines)_(p14-25)_cleaned.json",
+        "split_index": 0,
+        "merged": true
+      }
+    },
+    {
+      "text": "The benefits of these procedures for reducing the dropout rate or for modifying the outcome are unknown\nas prospective randomized controlled trials are lacking. However, some practical recommendations can be suggested, with stratification according to the expected waiting time on the list (parameter mostly influenced by\nthe patient’s Child-Pugh score). l If the expected waiting time is over 3 months,\n- percutaneous ethanol injection is probably the best\nn strategy. A decision analysis has shown that percutay neous ethanol injection increases the probability of\ne being transplanted and confers a survival advantage compared with conservative management, and this,\na since the start of the waiting period before transplantat tion (72).",
+      "metadata": {
+        "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+        "heading": "the advantage of avoiding a waiting list or resection followed by salvage cadaveric transplantation have also been proposed.",
+        "start_page": 9,
+        "end_page": 9,
+        "created_date": "1993",
+        "country": "BE",
+        "source_type": "clinical_guideline",
+        "original_file_path": "hcc/clinical guidelines/BE/Van_Vlierberghe_et_al_(Guidelines)_(p14-25)_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "risk of tumour seeding (Lvovet recorded as many as\n12.5% of needle-track seeding after this procedure), an\ne\nunacceptable risk in this subset of patients for whom a curative therapy is possible (73). It has to be stressed\nthat in this series seeding occurred always in subcapsu- lar tumours treated with multiple punctures, without\ntract ablation. Other studies much lower seeding rates,\ncomparable with PEI using a transhepatic approach, avoiding multiple punctures and applying liver and pari-\netal tract ablation (68,74,75). a\nChemoembolization is a common adjuvant treatment n\nfor patients on the waiting list. This option contributes to\ne\naccurate staging of the intrahepatic disease and may w\nachieve extensive tumor necrosis (76-80). The procedure\nis well tolerated in the majority of this subset of patients t t not increased in patients who underwent hepatic arterial s",
+      "metadata": {
+        "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+        "heading": "e On the opposite, the use of RFA, an effective procedure to control tumour, is discouraged prior to liver transplantation. There are concerns, indeed, about the",
+        "start_page": 9,
+        "end_page": 9,
+        "created_date": "1993",
+        "country": "BE",
+        "source_type": "clinical_guideline",
+        "original_file_path": "hcc/clinical guidelines/BE/Van_Vlierberghe_et_al_(Guidelines)_(p14-25)_cleaned.json",
+        "split_index": 0,
+        "merged": true
+      }
+    },
+    {
+      "text": "e\nprobably the treatment of choice during the waiting list w\nfor patient with Child A cirrhosis when percutaneous injection is not feasible. d g\napies is probably clinically less relevant. If the waiting list exceeds seven months, a decision analysis has shown that living donor liver transplanta-\ne\ntion is cost effective compared with cadaveric transplane tation (66). single HCC and well preserved hepatic function pro- vides moderate gains in life expectancy and is cost effece\ntive only if the waiting list exceeds one year (72). According to the available data, the following decis sion tree could be proposed for cirrhotic patients with\nearly HCC. o\ne\nn There are no randomized trials comparing different d ferent habits in the treatment of these patients. No disy tinct guidelines can be given here. Fig 2 only illustrates\na possible approach for these patients.",
+      "metadata": {
+        "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+        "heading": "chemoembolization before transplantation (76). It is",
+        "start_page": 9,
+        "end_page": 9,
+        "created_date": "1993",
+        "country": "BE",
+        "source_type": "clinical_guideline",
+        "original_file_path": "hcc/clinical guidelines/BE/Van_Vlierberghe_et_al_(Guidelines)_(p14-25)_cleaned.json",
+        "split_index": 0,
+        "merged": true
+      }
+    },
+    {
+      "text": "Table Title: (Table 1) described with a treatment logarithm (fig. 1). It\nTable contains the following columns: BASLguidelines 5, Column_2, Column_3, Column_4\nBASLguidelines 5: Table 1.— The Barcelona-Clinic Liver Cancer staging system (54)\nBASLguidelines 5: Stage, Column_2: Performance status, Column_3: Tumor stage, and Column_4: Liver function\nBASLguidelines 5: Stage A:early HCC A1 A2 A3 A4 Stage B:intermediate HCC Stage C:advanced HCC Stage D:end-stage HCC, Column_2: 0 0 1-2a 3-4b, Column_3: Single,< 5 cm Single,< 5 cm Single,< 5cm 3 tumors < 3 cm Large multinodular Vascular invasion or extrahepatic spreada Any, and Column_4: No portal HTNand normal bilirubin Portal HTNand normal bilirubin Portal HTNand elevated bilirubin Child-Pugh class A-B Child-Pugh class A-B Child-Pugh class A-B Child Cb\nBASLguidelines 5: NOTE.Stage A and B:all criteria should be fulfilled. HTN,hypertension. aStage C:At least 1 criteria should be fulfilled. bStage D:At least 1criteria should be fulfilled.",
+      "metadata": {
+        "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+        "heading": "(Table 1) described with a treatment logarithm (fig. 1). It",
+        "start_page": 5,
+        "end_page": 5,
+        "created_date": "1993",
+        "country": "BE",
+        "source_type": "clinical_guideline",
+        "original_file_path": "hcc/clinical guidelines/BE/Van_Vlierberghe_et_al_(Guidelines)_(p14-25)_cleaned.json",
+        "split_index": 0,
+        "merged": true
+      }
+    },
+    {
+      "text": "Table Title: 29points was given to these patients (63). 9. Percutaneous treatments Table contains the following columns: BASLguidelines 7, Column_2, Column_3 BASLguidelines 7: remains the treatment of choice in those patients with fibrolamellar HCC in a non-cirrhotic liver. In cirrhotic patients, the poor selection of candidates for resection in the eighties led to unacceptable survival rates below 50% at 3 years (60). To avoid these treat- ment-related complications such as post operative liver failure,selection has been refined to patients with",
+      "metadata": {
+        "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+        "heading": "29points was given to these patients (63). 9. Percutaneous treatments",
+        "start_page": 7,
+        "end_page": 7,
+        "created_date": "1993",
+        "country": "BE",
+        "source_type": "clinical_guideline",
+        "original_file_path": "hcc/clinical guidelines/BE/Van_Vlierberghe_et_al_(Guidelines)_(p14-25)_cleaned.json",
+        "split_index": "0_0_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "a sin- gle HCC and a well preserved liver function (Child Pugh A) with a normal bilirubin level and the absence of por- tal hypertension (defined as the presence of oesophageal varices, platelet count of less than 100,000/µl or splenomegaly). Subjects without relevant portal hyper- tension and normal bilirubin levels achieved a 70% sur- vival at 5 years, whereas this decreased to 50% in patients with portal hypertension and to 25% in patients with portal hypertension and abnormal bilirubin levels(61).",
+      "metadata": {
+        "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+        "heading": "29points was given to these patients (63). 9. Percutaneous treatments",
+        "start_page": 7,
+        "end_page": 7,
+        "created_date": "1993",
+        "country": "BE",
+        "source_type": "clinical_guideline",
+        "original_file_path": "hcc/clinical guidelines/BE/Van_Vlierberghe_et_al_(Guidelines)_(p14-25)_cleaned.json",
+        "split_index": "0_1_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "‘Ideal’candidates constitute only a minority in Western countries. 8.2. Transplantation Early results of liver transplantation for HCC were poor with 5 year survival rates below 50%, mainly due to tumour recurrence (60). This was the result of poor selection of patients for transplantation. It is well estab- lished that patients with single lesions of less than 5 cm or up to 3 lesions less than 3 cm in the absence of vas- cular invasion, have a low recurrence rate for HCC and the prognosis after transplantation is the same as for a similar underlying liver disease without HCC (57-59). Resection of HCC is a viable option, with short term survival rates similar to transplantation (61,62).",
+      "metadata": {
+        "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+        "heading": "29points was given to these patients (63). 9. Percutaneous treatments",
+        "start_page": 7,
+        "end_page": 7,
+        "created_date": "1993",
+        "country": "BE",
+        "source_type": "clinical_guideline",
+        "original_file_path": "hcc/clinical guidelines/BE/Van_Vlierberghe_et_al_(Guidelines)_(p14-25)_cleaned.json",
+        "split_index": 1
+      }
+    },
+    {
+      "text": "After three years of follow up, there is a clear advantage for transplantation in terms of tumour free survival (62). At present, the shortage of donors led to extremely long waiting times. Programs in the United States, Europe and Belgium face a waiting time of over 12months. The drop out rate on the waiting list is there- fore great. This event is also common in patients listed with HCC. In the United States,the UNOS have adopted the Model for End-Stage Liver Disease (MELD) system to allocate grafts according a composite score, which includes bilirubin, prothrombin activity and creatinine levels for non-cancer patients. This model answers to the principle: sickest patient first.",
+      "metadata": {
+        "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+        "heading": "29points was given to these patients (63). 9. Percutaneous treatments",
+        "start_page": 7,
+        "end_page": 7,
+        "created_date": "1993",
+        "country": "BE",
+        "source_type": "clinical_guideline",
+        "original_file_path": "hcc/clinical guidelines/BE/Van_Vlierberghe_et_al_(Guidelines)_(p14-25)_cleaned.json",
+        "split_index": 2
+      }
+    },
+    {
+      "text": "However patients with HCC frequently have a rather good liver function and a low MELD score. To avoid undesirable long waiting list time in HCC patients a variable score between 24 and 29points was given to these patients (63). Living donor liver transplantation (LDLT) has emerged as a feasible alternative to cadaveric transplanta- tion. Decision analyses have shown that LDLT is cost- effective for early HCC in comparison to cadaveric trans- plantation when waiting time exceed 7 months (64). However,the absence of donor constraints is counteract- ed by the fact that the procedure is associated with a 0.5% mortality rate of the donor,and around 20% morbidity.",
+      "metadata": {
+        "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+        "heading": "29points was given to these patients (63). 9. Percutaneous treatments",
+        "start_page": 7,
+        "end_page": 7,
+        "created_date": "1993",
+        "country": "BE",
+        "source_type": "clinical_guideline",
+        "original_file_path": "hcc/clinical guidelines/BE/Van_Vlierberghe_et_al_(Guidelines)_(p14-25)_cleaned.json",
+        "split_index": 3
+      }
+    },
+    {
+      "text": "and Column_3: The standard criteria (1 lesion less than 5 cm, 3lesions each less than 3 cm) have recently been ques- tioned with similar survival rates in patients with larger tumours and even in the presence of intrahepatic portal involvement. In the era of shortage of organs, these ‘expanded criteria’should be considered as unfair until more evidence is present about the long term outcome of these patients. On the contrary,the principle of expand- ed criteria may apply to LDLT,considering the unlimit- ed availability of this procedure as well as the almost non-existent waiting time. A set of new expanded crite- ria have been proposed and are expected to achieve 50% 5 year survival rates in patients with either single tumours < 7 cm,3 nodules < 5 cm,5 nodules < 3 cm,or downstaging to conventional criteria after any therapy lasting more than 6 months (65). However data at this moment are small to conclude these criteria will become the standard in patients waiting for LDLT.",
+      "metadata": {
+        "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+        "heading": "29points was given to these patients (63). 9. Percutaneous treatments",
+        "start_page": 7,
+        "end_page": 7,
+        "created_date": "1993",
+        "country": "BE",
+        "source_type": "clinical_guideline",
+        "original_file_path": "hcc/clinical guidelines/BE/Van_Vlierberghe_et_al_(Guidelines)_(p14-25)_cleaned.json",
+        "split_index": 4
+      }
+    },
+    {
+      "text": "Recommendations The only proven potentially curative treatment for HCC remains surgery, either hepatic resection for patients with a HCC in a non-cirrhotic liver or liver transplantation for patients with a HCC in a cirrhotic liver. Patients with single small HCC (< 5 cm) or up to three lesions should be referred for these treatment modalities. Surgical resection and percutaneous treat- ment modalities in patients with cirrhosis have the dis- advantage that the remnant liver remains a premalignant condition with the potential to develop new HCC lesions in this part of the liver. • Liver transplantation should be considered in any patient with cirrhosis and",
+      "metadata": {
+        "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+        "heading": "29points was given to these patients (63). 9. Percutaneous treatments",
+        "start_page": 7,
+        "end_page": 7,
+        "created_date": "1993",
+        "country": "BE",
+        "source_type": "clinical_guideline",
+        "original_file_path": "hcc/clinical guidelines/BE/Van_Vlierberghe_et_al_(Guidelines)_(p14-25)_cleaned.json",
+        "split_index": "5_0_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "a small (5cm or less single nodule or up to three lesions of 3 cm or less) HCC. • Hepatic resection should be considered as primary therapy in any patient with HCC and a non-cirrhotic liver (including fibrolamellar variant). • Resection can be carried out in highly selected patients with hepatic cirrhosis and well preserved hepatic function (Child Pugh A). Such surgery carries a high risk of postoperative decompensation and should be undertaken in units with expertise in hepat- ic resection and management of liver failure. • If surgery or transplantation is not possible, percuta- neous treatment modalities can be used as an alterna- tive.",
+      "metadata": {
+        "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+        "heading": "29points was given to these patients (63). 9. Percutaneous treatments",
+        "start_page": 7,
+        "end_page": 7,
+        "created_date": "1993",
+        "country": "BE",
+        "source_type": "clinical_guideline",
+        "original_file_path": "hcc/clinical guidelines/BE/Van_Vlierberghe_et_al_(Guidelines)_(p14-25)_cleaned.json",
+        "split_index": "5_1_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "9. Percutaneous treatments Percutaneous treatments are considered as minimally invasive procedures that constitute the best medical option for non-surgical HCC. Tumour ablation is achieved by using chemical substances (alcohol, acetic acid),or by modifying the temperature of the neoplastic cells (radiofrequency, microwave, laser, and cryoabla- tion) (45). BASLguidelines 7: Acta Gastro-Enterologica Belgica,Vol.LXVII,January-March 2004",
+      "metadata": {
+        "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+        "heading": "29points was given to these patients (63). 9. Percutaneous treatments",
+        "start_page": 7,
+        "end_page": 7,
+        "created_date": "1993",
+        "country": "BE",
+        "source_type": "clinical_guideline",
+        "original_file_path": "hcc/clinical guidelines/BE/Van_Vlierberghe_et_al_(Guidelines)_(p14-25)_cleaned.json",
+        "split_index": 6
+      }
+    },
+    {
+      "text": "Table Title: probably the treatment of choice during the waiting list\nTable contains the following columns: BASLguidelines 9, Column_2, Column_3\nBASLguidelines 9: benefit in survival. A larger trial comparing arterial chemoembolization and radioactive Iodine 131 treat- ment did not show any difference in survival between the two groups. However,side effects were significantly lower in the group receiving radioactive Iodine 131treatment. Radioactive Iodine 131 treatment was also used in a adjuvant setting in patients resected for HCC without detectable residual disease. A longer delay of recurrence was observed in the treated group (70). Recommendations The use of radioactive Iodine 131 treatment can be used as an alternative for chemoembolization.",
+      "metadata": {
+        "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+        "heading": "probably the treatment of choice during the waiting list",
+        "start_page": 9,
+        "end_page": 9,
+        "created_date": "1993",
+        "country": "BE",
+        "source_type": "clinical_guideline",
+        "original_file_path": "hcc/clinical guidelines/BE/Van_Vlierberghe_et_al_(Guidelines)_(p14-25)_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "12. Treatment of early hepatocellular carcino- ma in patients on the waiting list for liver trans- plantation Liver transplantation is the therapy of choice for cir- rhotic patients with early hepatocellular carcinoma (HCC). The optimal candidates for liver transplantation (single nodule < 5 cm or up to 3 nodules < 3 cm) achieve a 70% 5-year survival rate, with recurrence rate below 15% (59). The prognosis after transplantation is there- fore the same as for a similar underlying disease without HCC. However,these excellent results were obtained at a time when the average waiting time for liver trans- plantation was less than 6 months. But the tumour dou- bling time in asymptomatic HCC less than 5 cm was estimated to be around 4 months (71). Therefore, the delay between diagnosis and transplantation can allow the tumour to grow to stages that contraindicate trans- plantation.",
+      "metadata": {
+        "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+        "heading": "probably the treatment of choice during the waiting list",
+        "start_page": 9,
+        "end_page": 9,
+        "created_date": "1993",
+        "country": "BE",
+        "source_type": "clinical_guideline",
+        "original_file_path": "hcc/clinical guidelines/BE/Van_Vlierberghe_et_al_(Guidelines)_(p14-25)_cleaned.json",
+        "split_index": 1
+      }
+    },
+    {
+      "text": "In a time when the shortage of donors has led to longer waiting time (leading programs of transplanta- tion in Europe and in the United States face a waiting time of over 12 months),the results of liver transplanta- tion are expected to be sharply worsened in intention-to- treat analysis. It has been shown that a waiting time longer than six months was associated with a 23% rate of dropout from the waiting list,usually because of pro- gression of HCC (64).",
+      "metadata": {
+        "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+        "heading": "probably the treatment of choice during the waiting list",
+        "start_page": 9,
+        "end_page": 9,
+        "created_date": "1993",
+        "country": "BE",
+        "source_type": "clinical_guideline",
+        "original_file_path": "hcc/clinical guidelines/BE/Van_Vlierberghe_et_al_(Guidelines)_(p14-25)_cleaned.json",
+        "split_index": 2
+      }
+    },
+    {
+      "text": "The dropout rates for a waiting time of one year were as high as 50%. Several strategies (chemoembolization, ethanol per- cutaneous ablation or radiofrequency ablation) have been proposed to control HCC while awaiting transplan- tation. Living donor liver transplantation which provides the advantage of avoiding a waiting list or resection fol- lowed by salvage cadaveric transplantation have also been proposed. The benefits of these procedures for reducing the dropout rate or for modifying the outcome are unknown as prospective randomized controlled trials are lacking.",
+      "metadata": {
+        "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+        "heading": "probably the treatment of choice during the waiting list",
+        "start_page": 9,
+        "end_page": 9,
+        "created_date": "1993",
+        "country": "BE",
+        "source_type": "clinical_guideline",
+        "original_file_path": "hcc/clinical guidelines/BE/Van_Vlierberghe_et_al_(Guidelines)_(p14-25)_cleaned.json",
+        "split_index": 3
+      }
+    },
+    {
+      "text": "However, some practical recommendations can be sug- gested, with stratification according to the expected waiting time on the list (parameter mostly influenced by the patient’s Child-Pugh score). and Column_3: If the expected waiting time is over 3 months, percutaneous ethanol injection is probably the best strategy. A decision analysis has shown that percuta- neous ethanol injection increases the probability of being transplanted and confers a survival advantage compared with conservative management, and this, since the start of the waiting period before transplanta- tion (72). On the opposite, the use of RFA, an effective proce- dure to control tumour, is discouraged prior to liver transplantation.",
+      "metadata": {
+        "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+        "heading": "probably the treatment of choice during the waiting list",
+        "start_page": 9,
+        "end_page": 9,
+        "created_date": "1993",
+        "country": "BE",
+        "source_type": "clinical_guideline",
+        "original_file_path": "hcc/clinical guidelines/BE/Van_Vlierberghe_et_al_(Guidelines)_(p14-25)_cleaned.json",
+        "split_index": 4
+      }
+    },
+    {
+      "text": "There are concerns, indeed, about the risk of tumour seeding (Lvovet recorded as many as 12.5% of needle-track seeding after this procedure), an unacceptable risk in this subset of patients for whom a curative therapy is possible (73). It has to be stressed that in this series seeding occurred always in subcapsu- lar tumours treated with multiple punctures, without tract ablation. Other studies much lower seeding rates, comparable with PEI using a transhepatic approach,",
+      "metadata": {
+        "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+        "heading": "probably the treatment of choice during the waiting list",
+        "start_page": 9,
+        "end_page": 9,
+        "created_date": "1993",
+        "country": "BE",
+        "source_type": "clinical_guideline",
+        "original_file_path": "hcc/clinical guidelines/BE/Van_Vlierberghe_et_al_(Guidelines)_(p14-25)_cleaned.json",
+        "split_index": "5_0_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "avoiding multiple punctures and applying liver and pari- etal tract ablation (68,74,75). Chemoembolization is a common adjuvant treatment for patients on the waiting list. This option contributes to accurate staging of the intrahepatic disease and may achieve extensive tumor necrosis (76-80). The procedure is well tolerated in the majority of this subset of patients waiting for transplantation. Furthermore, it has been shown that the prevalence of hepatic arterial thrombosis, a graft-threatening complication of transplantation, was",
+      "metadata": {
+        "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+        "heading": "probably the treatment of choice during the waiting list",
+        "start_page": 9,
+        "end_page": 9,
+        "created_date": "1993",
+        "country": "BE",
+        "source_type": "clinical_guideline",
+        "original_file_path": "hcc/clinical guidelines/BE/Van_Vlierberghe_et_al_(Guidelines)_(p14-25)_cleaned.json",
+        "split_index": "5_0_1",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "not increased in patients who underwent hepatic arterial chemoembolization before transplantation (76). It is probably the treatment of choice during the waiting list for patient with Child A cirrhosis when percutaneous injection is not feasible. If the waiting time before transplantation is expected to be shorter than 3 months,the interest of adjuvant ther- apies is probably clinically less relevant. If the waiting list exceeds seven months, a decision analysis has shown that living donor liver transplanta- tion is cost effective compared with cadaveric transplan- tation (66). Decision analysis has also shown that surgical resec- tion while waiting for transplantation for patients with single HCC and well preserved hepatic function pro- vides moderate gains in life expectancy and is cost effec- tive only if the waiting list exceeds one year (72). According to the available data, the following deci- sion tree could be proposed for cirrhotic patients with early HCC.",
+      "metadata": {
+        "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+        "heading": "probably the treatment of choice during the waiting list",
+        "start_page": 9,
+        "end_page": 9,
+        "created_date": "1993",
+        "country": "BE",
+        "source_type": "clinical_guideline",
+        "original_file_path": "hcc/clinical guidelines/BE/Van_Vlierberghe_et_al_(Guidelines)_(p14-25)_cleaned.json",
+        "split_index": "5_1_0",
+        "oversized_split": true
+      }
+    },
+    {
+      "text": "Recommendations There are no randomized trials comparing different treatment options for the HCC patient on the liver trans- plant waiting list. Every transplantation center has dif- ferent habits in the treatment of these patients. No dis- tinct guidelines can be given here. Fig 2 only illustrates a possible approach for these patients. BASLguidelines 9: Acta Gastro-Enterologica Belgica,Vol.LXVII,January-March 2004",
+      "metadata": {
+        "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+        "heading": "probably the treatment of choice during the waiting list",
+        "start_page": 9,
+        "end_page": 9,
+        "created_date": "1993",
+        "country": "BE",
+        "source_type": "clinical_guideline",
+        "original_file_path": "hcc/clinical guidelines/BE/Van_Vlierberghe_et_al_(Guidelines)_(p14-25)_cleaned.json",
+        "split_index": 6
+      }
+    },
+    {
+      "text": "Table Title: 605. and treatment. Gastroenterology,2002,122:1609-19. Table contains the following columns: BASLguidelines 11, Column_2, Column_3\nBASLguidelines 11: 25.LOK A.,LAI C.-L. Factors determining the development of hepatocellular carcinoma in hepatitis B surface antigen carriers. Cancer,1988,61:1287- 1291. 26.HENRION J., DE MAEGHT S., DELTENRE P., CHILAIN J.-M., MAISINJ.-M.,SCHAPIRA M.,HELLER F. Impact of hepatitis C virus infection on the aetiology of cirrhosis and hepatocarcinoma in the affiliated hospitals in Southern Belgium. Acta Gastroenterol.",
+      "metadata": {
+        "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+        "heading": "605. and treatment. Gastroenterology,2002,122:1609-19.",
+        "start_page": 11,
+        "end_page": 11,
+        "created_date": "1993",
+        "country": "BE",
+        "source_type": "clinical_guideline",
+        "original_file_path": "hcc/clinical guidelines/BE/Van_Vlierberghe_et_al_(Guidelines)_(p14-25)_cleaned.json",
+        "split_index": 0
+      }
+    },
+    {
+      "text": "Belg.,2002,65:80- 82. 27.HENRION J., LIBON E., DE MAEGHT S., DELTENRE P., SCHAPI- RAM.,GHILAIN J.-M.,MAISIN J.-M.,HELLER F. Dépistage du carci- nome hépatocellulaire dans une cohorte de malades porteurs d’une cirrhose d’origine principalement alcoolique. Gastroenterol. Clin. Biol.,2003,27: 534-539. 28.VAN GOSSUM A.,DUBOIS P.,LAURENT E.,REDING P.,BURETTE A., ADLER M., CREMER M. Les caractéristiques cliniques, biologiques et épidémiologiques des hépatocarcinomes dans la région bruxelloise. Acta Gastroenterol.",
+      "metadata": {
+        "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+        "heading": "605. and treatment. Gastroenterology,2002,122:1609-19.",
+        "start_page": 11,
+        "end_page": 11,
+        "created_date": "1993",
+        "country": "BE",
+        "source_type": "clinical_guideline",
+        "original_file_path": "hcc/clinical guidelines/BE/Van_Vlierberghe_et_al_(Guidelines)_(p14-25)_cleaned.json",
+        "split_index": 1
+      }
+    },
+    {
+      "text": "Belg.,1985,48:337-351. 29.CALVET X., BRUIX J., GINES P., BRU C., SOLE M., VILANA R., RODES J. Prognostic factors of hepatocellular carcinoma in the west:a multivariate analysis in 206 patients. Hepatology,1990,12:753-763. 30.OKUDA K.,OHTSUKI T.,OBATA H.,TOMINATSU M.,OKAZAKIN., HASEGAWA H.,NAKAJIMA Y.,OHNISHI K. Natural history of hepato- cellular carcinoma and prognosis in relation to treatment. Study of 850 patients. Cancer,1985,56:912-928. 31.COLOMBO M. The natural history of hepatocellular carcinoma in western countries. Hepato-Gastroenterol.,1998,45:1221-1225.",
+      "metadata": {
+        "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+        "heading": "605. and treatment. Gastroenterology,2002,122:1609-19.",
+        "start_page": 11,
+        "end_page": 11,
+        "created_date": "1993",
+        "country": "BE",
+        "source_type": "clinical_guideline",
+        "original_file_path": "hcc/clinical guidelines/BE/Van_Vlierberghe_et_al_(Guidelines)_(p14-25)_cleaned.json",
+        "split_index": 2
+      }
+    },
+    {
+      "text": "32.TAKETA K. a-foetoprotein:reevaluation in hepatology. Hepatology,1990, 12:1420-1432. . 33.SHERMAN M. a-foetoprotein:an obituary.J. Hepatol.,2001,37:603- 605. 34.IKEDA K.,SAITOH S.,KOIDA I.,ARASE Y.,TSUBOTA.,CHAYAMA K., KUMADA H.,KAWANISHI N. A multivariate analysis of risk factors for hepatocellular carcinogenesis: a prospective observation of 795 patients with viral and alcoholic cirrhosis. Hepatology,1993,18:47-53. 35.OKA H., TAMORI A., KUROKI T., KOBAYASHI K.,YAHAMOTO S. Prospective study of a-foetoprotein in cirrhotic patients monitored for devel- opment of hepatocellular carcinoma. Hepatology,1994,19:61-66. 36.OKANO H., SHIRAKI K., INOUE H., ITO T., YAMANAKO T., DEGUCHIM.,SUGIMOTO K.,SAKAI T.,OHMORI S.,MURATA K., TAKASE K.,NAKANO T. Comparison of screening methods for hepato- cellular carcinoma in patients with cirrhosis.",
+      "metadata": {
+        "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+        "heading": "605. and treatment. Gastroenterology,2002,122:1609-19.",
+        "start_page": 11,
+        "end_page": 11,
+        "created_date": "1993",
+        "country": "BE",
+        "source_type": "clinical_guideline",
+        "original_file_path": "hcc/clinical guidelines/BE/Van_Vlierberghe_et_al_(Guidelines)_(p14-25)_cleaned.json",
+        "split_index": 3
+      }
+    },
+    {
+      "text": "Anticancer Research,2001,21: 2979-2982. 37.ZOLI M., MAGALOTTI D., GUELLI C., MARCHESINI G., PISI E. Efficiency of a surveillance program for early detection of hepatocellular carcinoma. Cancer,1996,78:977-985. 38.COLOMBO M.,DE FRANCHIS R.,DEL NINNO E.,SANGIOVANNI A., DE FAZIO C.,TOMMASINI M.,DONATO F.,PIVA A.,DI CARLO V., DIOGUARDI N. Hepatocellular carcinoma in Italian patients with cirrhosis. N.",
+      "metadata": {
+        "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+        "heading": "605. and treatment. Gastroenterology,2002,122:1609-19.",
+        "start_page": 11,
+        "end_page": 11,
+        "created_date": "1993",
+        "country": "BE",
+        "source_type": "clinical_guideline",
+        "original_file_path": "hcc/clinical guidelines/BE/Van_Vlierberghe_et_al_(Guidelines)_(p14-25)_cleaned.json",
+        "split_index": 4
+      }
+    },
+    {
+      "text": "Engl. J. Med.,1991,325:6. 39.PATERON D., GANNE N., TRINCHET J-C., AUROUSSEAU M-H., MALF.,MEICLER C.,CODERC E.,REBOULLET P.,BEAUGRAND M. Prospective study of screening for hepatocellular carcinoma in Caucasian patients with cirrhosis. J. Hepatol.,1994,20:65-71. 40.COTTONE M.,VIRDONE R., FUSCO G., ORLANDO A.,TURRI M., CALTAGIRONE H., MARINGHINI A., SCIARRINO E., DEMMA I., NICOLI N.,TINE F.,SAMMARCO S.,PAGLIARO L. Asymptomatic hepa- tocellular carcinoma in Child’s A cirrhosis.",
+      "metadata": {
+        "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+        "heading": "605. and treatment. Gastroenterology,2002,122:1609-19.",
+        "start_page": 11,
+        "end_page": 11,
+        "created_date": "1993",
+        "country": "BE",
+        "source_type": "clinical_guideline",
+        "original_file_path": "hcc/clinical guidelines/BE/Van_Vlierberghe_et_al_(Guidelines)_(p14-25)_cleaned.json",
+        "split_index": 5
+      }
+    },
+    {
+      "text": "A comparison of natural history and surgical treatment. Gastroenterology,1989,96:1566-1571. 41.FAIVRE J.,FORMAN D.,ESTEVE J.,OBRADOVIC M.,SANT M. and the EUROCARE working group. – Survival of patients with primary liver cancer,pancreatic cancer and biliary tract cancer in Europe. Eur. J. Cancer, 1998,34:2184-2190. 42.EL-SERAG H.,MASON A.,KEY C. Trends in survival of patients with hepatocellular carcinoma between, 1977 and, 1996 in the United States. Hepatology,2001,33:62-65. 43.BRUIX J., SHERMAN M., LLOVET J.M., BEAUGRAND M., LENCIONIR.,BURROUGHS A.K.,CHRISTENSEN E.,PAGLIARO L., COLOMBO M., RODES J.; EASL PANEL OF EXPERTS ON HCC. Clinical management of hepatocellular carcinoma. Conclusions of the Barcelona-2000 EASL conference. European Association for the Study of the Liver. J.",
+      "metadata": {
+        "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+        "heading": "605. and treatment. Gastroenterology,2002,122:1609-19.",
+        "start_page": 11,
+        "end_page": 11,
+        "created_date": "1993",
+        "country": "BE",
+        "source_type": "clinical_guideline",
+        "original_file_path": "hcc/clinical guidelines/BE/Van_Vlierberghe_et_al_(Guidelines)_(p14-25)_cleaned.json",
+        "split_index": 6
+      }
+    },
+    {
+      "text": "Hepatol.,2001,35:421-30. 44.HORIGOME H.,NOMURA T.,SASO K.,ITOH M.,JOH T.,OHARA H.L. Limitations of imaging diagnosis for small hepatocellular carcinoma:com- parison with histological findings. J. Gastroenterol. Hepatol., 1999, 14: 559-65. 45.LLOVET J.M.,BEAUGRAND M.Hepatocellular carcinoma:present status and future prospects. J. Hepatol.,2003,38(Suppl 1):S136-S49. and Column_3: 46.DURAND F., REGIMBEAU J.M., BELGHITI J., SAUVANET A., VILGRAIN V.,TERRIS B.,MOUTARDIER V.,FARGES O.,VALLA D. Assessment of the benefits and risks of percutaneous biopsy before surgical resection of hepatocellular carcinoma. J.",
+      "metadata": {
+        "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+        "heading": "605. and treatment. Gastroenterology,2002,122:1609-19.",
+        "start_page": 11,
+        "end_page": 11,
+        "created_date": "1993",
+        "country": "BE",
+        "source_type": "clinical_guideline",
+        "original_file_path": "hcc/clinical guidelines/BE/Van_Vlierberghe_et_al_(Guidelines)_(p14-25)_cleaned.json",
+        "split_index": 7
+      }
+    },
+    {
+      "text": "Hepatol.,2001,35:254-8. 47.KIM S.H.,LIM H.K.,LEE W.J.,CHO J.M.,JANG H.J. Needle-tract implan- tation in hepatocellular carcinoma:frequency and CT findings after biopsy with a 19.5-gauge automated biopsy gun. Abdom. Imaging,2000,25:246- 50. 48.LIU C.,FRILLING A.,DERESKEWITZ C.,BROELSCH CE. Tumor seed- ing after fine needle aspiration biopsy and percutaneous radiofrequency ther- mal ablation of hepatocellular carcinoma. Dig.",
+      "metadata": {
+        "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+        "heading": "605. and treatment. Gastroenterology,2002,122:1609-19.",
+        "start_page": 11,
+        "end_page": 11,
+        "created_date": "1993",
+        "country": "BE",
+        "source_type": "clinical_guideline",
+        "original_file_path": "hcc/clinical guidelines/BE/Van_Vlierberghe_et_al_(Guidelines)_(p14-25)_cleaned.json",
+        "split_index": 8
+      }
+    },
+    {
+      "text": "Surg.,2003,20:460-463. 49.MULIER S.,MULIER P.,NI Y.,MIAO Y.,DUPAS B.,MARCHAL G.,DE WEVER I.,MICHEL L.Complications of radiofrequency coagulation of liver tumours. Br. J. Surg.,2002,89:1206-22. 50.TAKAMORI R.,WONG L.L.,DANG C.,WONG L. Needle-tract implanta- tion from hepatocellular cancer:is needle biopsy of the liver always neces- sary? Liver Transplantation,2000,6:67-72. 51.PUGH R.N.H.,MURRAY-LYON I.M.,DAWSON J.L.,PIETRONI M.C., WILLIAMS R.Transsection of the oesophagus for bleeding oesophageal varices. Br.",
+      "metadata": {
+        "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+        "heading": "605. and treatment. Gastroenterology,2002,122:1609-19.",
+        "start_page": 11,
+        "end_page": 11,
+        "created_date": "1993",
+        "country": "BE",
+        "source_type": "clinical_guideline",
+        "original_file_path": "hcc/clinical guidelines/BE/Van_Vlierberghe_et_al_(Guidelines)_(p14-25)_cleaned.json",
+        "split_index": 9
+      }
+    },
+    {
+      "text": "J. Surg.,1973,60:646-9. 52.International Union against Cancer (UICC). TNM classification of malig- nant tumours. In:SOBIN L.H.,WITTEKIND C.H. (eds). 5th ed. New York: Wiley-Liss,1997:74-7. 53.SORENSEN J.B.,KLEE M.,PALSHOF T.,HANSEN H.H.Performance status assessment in cancer patients. An inter-observer validation study. Br. J. Cancer,1993,67:773-5. 54.LLOVET J.M.,BRU C.,BRUIX J.Prognosis of hepatocellular carcinoma: the BCLC staging classification. Semin. Liver Dis.,1999,19:329-38. 55.BEFELER A.S.,DI BISCEGLIE A.M.Hepatocellular carcinoma:diagnosis and treatment. Gastroenterology,2002,122:1609-19. 56.RYDER S.D.Guidelines for diagnosis and treatment of hepatocellular car- cinoma in adults. Gut,2003,52(Suppl III):1-8. 57.MAZZAFERRO V., REGALIA E., DOCI R., ANDREOLA S., PULVIRENTI A., BOZZETTI F., MONTALTO F.,AMMANTUNA M., MORAHITO A.,GENNARI L.Liver transplantation for the treatment of small hepatocellular carcinomas in patients with cirrhosis. N.",
+      "metadata": {
+        "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+        "heading": "605. and treatment. Gastroenterology,2002,122:1609-19.",
+        "start_page": 11,
+        "end_page": 11,
+        "created_date": "1993",
+        "country": "BE",
+        "source_type": "clinical_guideline",
+        "original_file_path": "hcc/clinical guidelines/BE/Van_Vlierberghe_et_al_(Guidelines)_(p14-25)_cleaned.json",
+        "split_index": 10
+      }
+    },
+    {
+      "text": "Eng. J. Med., 1996,334(11):693-699. 58.MC PEAKE J.R., O’GRADY J.G., ZAMAN S., PORTMANN B., WIGHTD.G.,CALNE R.Y.,WILLIAMS R.Liver transplantation for pri- mary hepatocellular carcinoma: tumour size and number determine out- come. J. Hepatol.,1993,18:226-234. 59.LLOVET J.M., BRUIX J., FUSTER J., CASTELLS A., GARCIA- VALDECASAS J.C.,GRANDE L.,FRANCA A.,BRU C.,NAVASA M., AYUSO M.C.,SOLE M.,REAL M.I.,VILANA R.,RIMOLA A.,VISA J., RODES J. Liver transplantation for small hepatocellular carcinoma: the tumour node metastasis classification does not have prognostic power.",
+      "metadata": {
+        "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+        "heading": "605. and treatment. Gastroenterology,2002,122:1609-19.",
+        "start_page": 11,
+        "end_page": 11,
+        "created_date": "1993",
+        "country": "BE",
+        "source_type": "clinical_guideline",
+        "original_file_path": "hcc/clinical guidelines/BE/Van_Vlierberghe_et_al_(Guidelines)_(p14-25)_cleaned.json",
+        "split_index": 11
+      }
+    },
+    {
+      "text": "Hepatology,1998,27:1572-1577. 60.RINGE B.,PICHLMAYR R.,WITTEKIND C.,TUSCH G.Surgical treat- ment of hepatocellular carcinoma:experience with liver resection and trans- plantation in 19 198 patients. Word J. Surg.,1999,15:270-285. 61.BRUIX J., CASTELLS A., BOSCH J., FEU F., FUSTER J., GARCIA- PAGAN J.C.,VISA J.,BRU C.,RODES J.Surgical resection of hepato- cellular carcinoma in cirrhotic patients:prognostic value of preoperative portal pressure. Gastroenterology,1996,111:1018-1022. 62.LLOVET J.M.,FUSTER J.,BRUIX J.Intention to treat analysis of surgical treatment for early hepatocellular carcinoma:resection versus transplanta- tion. Hepatology,1999,30:1434-1440. 63.FREEMAN R.,WIESNER R.,HARPER A.,MC DIARMID S.V.,LAKE J., EDWARDS E.,MERION R.,WOLFE R.,TURCOTTE J.,TEPERMAN L. UNOS/OPTN Liver disease severity score, UNOS/OPTN Liver and Intestine,and UNOS/OPTN pediatric transplantation committees.",
+      "metadata": {
+        "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+        "heading": "605. and treatment. Gastroenterology,2002,122:1609-19.",
+        "start_page": 11,
+        "end_page": 11,
+        "created_date": "1993",
+        "country": "BE",
+        "source_type": "clinical_guideline",
+        "original_file_path": "hcc/clinical guidelines/BE/Van_Vlierberghe_et_al_(Guidelines)_(p14-25)_cleaned.json",
+        "split_index": 12
+      }
+    },
+    {
+      "text": "The new liver allocation system:moving toward evidence-based transplantation poli- cy. Liver Transpl.,2002,8:851-858. 64.SARASIN F., MAJNO P., LLOVET J.M., BRUIX J., MENTHA G., HADENGUE A.A liver donor liver transplantation for early hepatocellular carcinoma:a cost-effectiveness perspective. Hepatology,2001,33:1073- 1079. 65.BRUIX J.,LLOVET J.M.Prognostic prediction and treatment strategy in hepatocellular carcinoma. Hepatology,2002,35:519-524. 66.LIVRAGHI T.,GIORGIO A.,MARIN G.,SALMI A.,DE SIO I.,BOLON- DI L., POMPILI M., BRUNELLO F., LAZZZARONI S.,TORZILLI G. Hepatocellular carcinoma and cirrhosis in 746 patients:long term results of percutaneous ethanol injection. Radiology,1995,197:101-108. 67.BUSCARINI L., BUSCARINE E., DI STASI M., VALLISA D., QUARETTI P.,ROCCA A.Percutaneous radiofrequency ablation of small hepatocellular carcinoma,long-term results. Eur. Radiol.,2001,11:914- 921. BASLguidelines 11: Acta Gastro-Enterologica Belgica,Vol.LXVII,January-March 2004",
+      "metadata": {
+        "doc_id": "Van_Vlierberghe_et_al_(Guidelines)_(p14-25)",
+        "heading": "605. and treatment. Gastroenterology,2002,122:1609-19.",
+        "start_page": 11,
+        "end_page": 11,
+        "created_date": "1993",
+        "country": "BE",
+        "source_type": "clinical_guideline",
+        "original_file_path": "hcc/clinical guidelines/BE/Van_Vlierberghe_et_al_(Guidelines)_(p14-25)_cleaned.json",
+        "split_index": 13,
+        "merged": true
+      }
+    }
+  ]
+}

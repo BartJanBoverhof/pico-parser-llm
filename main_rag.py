@@ -104,8 +104,8 @@ result_nsclc_hta_pc = rag_nsclc.run_population_comparator_retrieval_for_source_t
     countries=COUNTRIES,
     indication=case1_indication,
     mutation_boost_terms=case1_mutation_boost,
-    initial_k=80,
-    final_k=30
+    initial_k=60,
+    final_k=15
 )
 
 print("\n--- Running HTA Outcomes retrieval for NSCLC ---")
@@ -115,7 +115,7 @@ result_nsclc_hta_outcomes = rag_nsclc.run_outcomes_retrieval_for_source_type(
     indication=case1_indication,
     mutation_boost_terms=case1_mutation_boost,
     initial_k=60,
-    final_k=25
+    final_k=15
 )
 
 print("\n--- Running Clinical Guideline Population & Comparator retrieval for NSCLC ---")
@@ -125,8 +125,8 @@ result_nsclc_clinical_pc = rag_nsclc.run_population_comparator_retrieval_for_sou
     indication=case1_indication,
     required_terms=case1_required_terms,
     mutation_boost_terms=case1_mutation_boost,
-    initial_k=100,
-    final_k=25
+    initial_k=60,
+    final_k=12
 )
 
 print("\n--- Running Clinical Guideline Outcomes retrieval for NSCLC ---")
@@ -136,8 +136,8 @@ result_nsclc_clinical_outcomes = rag_nsclc.run_outcomes_retrieval_for_source_typ
     indication=case1_indication,
     required_terms=case1_required_terms,
     mutation_boost_terms=case1_mutation_boost,
-    initial_k=80,
-    final_k=20
+    initial_k=60,
+    final_k=12
 )
 
 print("\n=== Step 9: Initializing NSCLC PICO Extractors ===")
@@ -216,8 +216,8 @@ result_hcc_hta_pc = rag_hcc.run_population_comparator_retrieval_for_source_type(
     countries=COUNTRIES,
     indication=case2_indication,
     mutation_boost_terms=case2_mutation_boost,
-    initial_k=80,
-    final_k=30
+    initial_k=60,
+    final_k=15
 )
 
 print("\n--- Running HTA Outcomes retrieval for HCC ---")
@@ -227,7 +227,7 @@ result_hcc_hta_outcomes = rag_hcc.run_outcomes_retrieval_for_source_type(
     indication=case2_indication,
     mutation_boost_terms=case2_mutation_boost,
     initial_k=60,
-    final_k=25
+    final_k=15
 )
 
 print("\n--- Running Clinical Guideline Population & Comparator retrieval for HCC ---")
@@ -237,8 +237,8 @@ result_hcc_clinical_pc = rag_hcc.run_population_comparator_retrieval_for_source_
     indication=case2_indication,
     required_terms=case2_required_terms,
     mutation_boost_terms=case2_mutation_boost,
-    initial_k=100,
-    final_k=25
+    initial_k=60,
+    final_k=12
 )
 
 print("\n--- Running Clinical Guideline Outcomes retrieval for HCC ---")
@@ -248,8 +248,8 @@ result_hcc_clinical_outcomes = rag_hcc.run_outcomes_retrieval_for_source_type(
     indication=case2_indication,
     required_terms=case2_required_terms,
     mutation_boost_terms=case2_mutation_boost,
-    initial_k=80,
-    final_k=20
+    initial_k=60,
+    final_k=12
 )
 
 print("\n=== Step 9: Initializing HCC PICO Extractors ===")
