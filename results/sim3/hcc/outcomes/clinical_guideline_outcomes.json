@@ -1,6 +1,6 @@
 {
   "extraction_metadata": {
-    "timestamp": "2025-10-02T14:35:27.324896",
+    "timestamp": "2025-10-02T18:21:16.066135",
     "source_type": "clinical_guideline",
     "indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
     "total_countries": 11,
@@ -17,7 +17,7 @@
     "BE": {
       "Indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
       "Country": "BE",
-      "Outcomes": "partial response, survival, objective response, liver failure, pain, fever, serious complications, portal vein thrombosis, recurrence, adverse events (general)",
+      "Outcomes": "partial response, survival, objective response, liver failure, pain, fever, serious complications, recurrence, tumour growth, needle tract seeding, portal vein thrombosis, adverse events (general)",
       "ChunksUsed": 8,
       "ContextTokens": 1885
     },
@@ -31,7 +31,7 @@
     "DK": {
       "Indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
       "Country": "DK",
-      "Outcomes": "long-term survival, perioperative mortality, morbidity, leukaemia, postoperative softening, gallbladder abscess, recurrence, prognosis (tumour stage at diagnosis), prognosis (severity of underlying liver disease), prognosis (patient performance status)",
+      "Outcomes": "long-term survival, perioperative mortality, morbidity, leukaemia, postoperative softening, gallbladder abscess, recurrence, prognosis (assessed by diameter of largest tumour and number of tumours in the liver), extrahepatic tumour presence, microinvasion, tumour invasion in larger portal branches, distant metastases, thrombosis of the venae portae, thrombosis of the vena cavae main stem, performance status, severity of underlying liver disease",
       "ChunksUsed": 8,
       "ContextTokens": 1421
     },
@@ -45,7 +45,7 @@
     "EU": {
       "Indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
       "Country": "EU",
-      "Outcomes": "adverse events",
+      "Outcomes": "HCC-related mortality",
       "ChunksUsed": 8,
       "ContextTokens": 2242
     },
@@ -59,7 +59,7 @@
     "IT": {
       "Indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
       "Country": "IT",
-      "Outcomes": "improved survival, response rates, adverse events, diarrhoea, fatigue, nausea, neutropenia, EORTC QLQ-C30, EORTC QLQ-LC13, EQ-5D-5L",
+      "Outcomes": "improved survival, response rates, adverse events, Child-Pugh score, MELD score, rebleeding, liver-related morbidity, liver-related mortality, portal vein thrombosis, cost-effectiveness, false positives, hypersensitivity to monitoring, severe HCC, EORTC QLQ-C30, EORTC QLQ-LC13, EQ-5D-5L",
       "ChunksUsed": 8,
       "ContextTokens": 1960
     },
@@ -80,7 +80,7 @@
     "SE": {
       "Indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
       "Country": "SE",
-      "Outcomes": "EORTC QLQ-30, FACT-G, EORTC QLQ-HCC18, FACT-Hep, survival, quality of life",
+      "Outcomes": "EORTC QLQ-30, FACT-G, EORTC QLQ-HCC18, FACT-Hep, survival, prognosis, varicose vein bleeding, clinically detectable ascites, hepatic encephalopathy (grade > 1 on the New Haven criteria)",
       "ChunksUsed": 8,
       "ContextTokens": 1459
     }

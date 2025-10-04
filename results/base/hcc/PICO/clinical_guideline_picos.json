@@ -1,10 +1,10 @@
 {
   "extraction_metadata": {
-    "timestamp": "2025-10-02T18:20:45.598506",
+    "timestamp": "2025-10-02T18:42:43.445153",
     "source_type": "clinical_guideline",
     "indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
     "total_countries": 11,
-    "total_picos": 52,
+    "total_picos": 42,
     "temperature": 0.1
   },
   "picos_by_country": {
@@ -25,26 +25,14 @@
           "Outcomes": ""
         },
         {
-          "Population": "patients with HCC",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "conventional TACE",
-          "Outcomes": ""
-        },
-        {
-          "Population": "patients with HCC",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "drug-eluting TACE",
-          "Outcomes": ""
-        },
-        {
-          "Population": "patients with advanced or unresectable hepatocellular carcinoma or a tumour localization that cannot be locally controlled or resected and with an ECOG status of 0 1 points",
+          "Population": "patients with advanced or unresectable hepatocellular carcinoma",
           "Intervention": "Medicine X (under assessment)",
           "Comparator": "Sorafenib",
           "Outcomes": ""
         }
       ],
-      "ChunksUsed": 8,
-      "ContextTokens": 2082
+      "ChunksUsed": 12,
+      "ContextTokens": 3145
     },
     "BE": {
       "Indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
@@ -81,8 +69,8 @@
           "Outcomes": ""
         }
       ],
-      "ChunksUsed": 8,
-      "ContextTokens": 1577
+      "ChunksUsed": 12,
+      "ContextTokens": 2772
     },
     "DE": {
       "Indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
@@ -101,60 +89,42 @@
           "Outcomes": ""
         },
         {
-          "Population": "patients with HCC",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "conventional TACE",
-          "Outcomes": ""
-        },
-        {
-          "Population": "patients with HCC",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "drug-eluting TACE",
-          "Outcomes": ""
-        },
-        {
-          "Population": "patients with advanced or unresectable hepatocellular carcinoma or a tumour localization that cannot be locally controlled or resected and with an ECOG status of 0 1 points",
+          "Population": "patients with advanced or unresectable hepatocellular carcinoma",
           "Intervention": "Medicine X (under assessment)",
           "Comparator": "Sorafenib",
           "Outcomes": ""
         }
       ],
-      "ChunksUsed": 8,
-      "ContextTokens": 2082
+      "ChunksUsed": 12,
+      "ContextTokens": 3145
     },
     "DK": {
       "Indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
       "Country": "DK",
       "PICOs": [],
-      "ChunksUsed": 8,
-      "ContextTokens": 1234
+      "ChunksUsed": 12,
+      "ContextTokens": 1785
     },
     "ES": {
       "Indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
       "Country": "ES",
       "PICOs": [
         {
-          "Population": "patients with advanced disease, ECOG/PS 0-1 and Child–Pugh class A",
+          "Population": "patients with advanced or unresectable hepatocellular carcinoma",
           "Intervention": "Medicine X (under assessment)",
-          "Comparator": "systemic therapy",
-          "Outcomes": ""
-        },
-        {
-          "Population": "patients with advanced disease, ECOG/PS 0-1 and Child–Pugh class A",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "BSC",
+          "Comparator": "BSC best supportive care",
           "Outcomes": ""
         }
       ],
-      "ChunksUsed": 8,
-      "ContextTokens": 1666
+      "ChunksUsed": 12,
+      "ContextTokens": 2560
     },
     "EU": {
       "Indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
       "Country": "EU",
       "PICOs": [],
-      "ChunksUsed": 8,
-      "ContextTokens": 1838
+      "ChunksUsed": 11,
+      "ContextTokens": 2774
     },
     "FR": {
       "Indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
@@ -181,31 +151,19 @@
         {
           "Population": "patients with unresectable hepatocellular carcinoma",
           "Intervention": "Medicine X (under assessment)",
-          "Comparator": "selective internal radiation therapy with yttrium-90 resin microspheres",
-          "Outcomes": ""
-        },
-        {
-          "Population": "patients with advanced hepatocellular carcinoma",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "nivolumab",
-          "Outcomes": ""
-        },
-        {
-          "Population": "patients with advanced hepatocellular carcinoma",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "nivolumab plus ipilimumab",
+          "Comparator": "selective internal radiation therapy (SIRT) with yttrium-90 resin microspheres",
           "Outcomes": ""
         },
         {
           "Population": "patients with advanced hepatocellular carcinoma previously treated with sorafenib",
           "Intervention": "Medicine X (under assessment)",
-          "Comparator": "ramucirumab",
+          "Comparator": "regorafenib",
           "Outcomes": ""
         },
         {
           "Population": "patients with advanced hepatocellular carcinoma previously treated with sorafenib",
           "Intervention": "Medicine X (under assessment)",
-          "Comparator": "pembrolizumab",
+          "Comparator": "cabozantinib",
           "Outcomes": ""
         },
         {
@@ -215,78 +173,60 @@
           "Outcomes": ""
         },
         {
-          "Population": "patients with advanced hepatocellular carcinoma in CHILD B cirrhotic patients",
+          "Population": "patients with advanced hepatocellular carcinoma previously treated with sorafenib",
+          "Intervention": "Medicine X (under assessment)",
+          "Comparator": "nivolumab plus ipilimumab",
+          "Outcomes": ""
+        },
+        {
+          "Population": "patients with advanced hepatocellular carcinoma and Child B cirrhosis",
           "Intervention": "Medicine X (under assessment)",
           "Comparator": "pravastatin",
           "Outcomes": ""
         },
         {
-          "Population": "patients with advanced hepatocellular carcinoma in CHILD B cirrhotic patients",
+          "Population": "patients with advanced hepatocellular carcinoma and Child B cirrhosis",
           "Intervention": "Medicine X (under assessment)",
           "Comparator": "sorafenib and pravastatin",
           "Outcomes": ""
         },
         {
-          "Population": "patients with advanced hepatocellular carcinoma in CHILD B cirrhotic patients",
+          "Population": "patients with advanced hepatocellular carcinoma and Child B cirrhosis",
           "Intervention": "Medicine X (under assessment)",
           "Comparator": "best supportive care",
           "Outcomes": ""
         }
       ],
-      "ChunksUsed": 8,
-      "ContextTokens": 2359
+      "ChunksUsed": 12,
+      "ContextTokens": 3547
     },
     "IT": {
       "Indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
       "Country": "IT",
       "PICOs": [
         {
-          "Population": "patients with advanced HCC and Child-Pugh B liver cirrhosis",
+          "Population": "cirrhotic (max Child-Pugh B) patients with unresectable M0 multi-nodular HCC, in the absence of portal thrombosis",
           "Intervention": "Medicine X (under assessment)",
-          "Comparator": "sorafenib",
-          "Outcomes": ""
-        },
-        {
-          "Population": "patients with unresectable hepatocellular carcinoma",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "transarterial chemoembolization (TACE)",
-          "Outcomes": ""
-        },
-        {
-          "Population": "patients with unresectable hepatocellular carcinoma",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "doxorubicin-eluting bead transarterial chemoembolization (TACE-DEB)",
+          "Comparator": "TACE",
           "Outcomes": ""
         }
       ],
-      "ChunksUsed": 8,
-      "ContextTokens": 2147
+      "ChunksUsed": 12,
+      "ContextTokens": 2976
     },
     "NL": {
       "Indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
       "Country": "NL",
       "PICOs": [
         {
-          "Population": "patients with hepatocellulare carcinoms with an underlying hepatocytosis",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "other non-surgical topical treatments",
-          "Outcomes": ""
-        },
-        {
-          "Population": "HCC patients with underlying liver cirrhosis",
-          "Intervention": "Medicine X (under assessment)",
-          "Comparator": "stereotactic radiotherapy",
-          "Outcomes": ""
-        },
-        {
-          "Population": "patients with advanced or unresectable hepatocellular carcinoma",
+          "Population": "patients with (not locally treatable) HCC",
           "Intervention": "Medicine X (under assessment)",
           "Comparator": "atezolizumab with bevacizumab",
           "Outcomes": ""
         }
       ],
-      "ChunksUsed": 8,
-      "ContextTokens": 1841
+      "ChunksUsed": 12,
+      "ContextTokens": 2688
     },
     "PO": {
       "Indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
@@ -323,8 +263,8 @@
           "Outcomes": ""
         }
       ],
-      "ChunksUsed": 8,
-      "ContextTokens": 2081
+      "ChunksUsed": 12,
+      "ContextTokens": 2703
     },
     "SE": {
       "Indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
@@ -403,8 +343,8 @@
           "Outcomes": ""
         }
       ],
-      "ChunksUsed": 8,
-      "ContextTokens": 1518
+      "ChunksUsed": 12,
+      "ContextTokens": 2245
     }
   }
 }

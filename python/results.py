@@ -1713,7 +1713,8 @@ class RunResults:
         
         results_path_obj = Path(self.results_path)
         
-        if results_path_obj.name in ["base"] or results_path_obj.name.startswith("sim_"):
+        # Updated to handle both "sim_" and "sim" prefixes
+        if results_path_obj.name in ["base"] or results_path_obj.name.startswith("sim"):
             parent_results_path = results_path_obj.parent
         else:
             parent_results_path = results_path_obj
@@ -1722,7 +1723,8 @@ class RunResults:
         if parent_results_path.exists():
             for item in sorted(os.listdir(parent_results_path)):
                 item_path = os.path.join(parent_results_path, item)
-                if os.path.isdir(item_path) and (item == "base" or item.startswith("sim_")):
+                # Updated to handle both "sim_" and "sim" prefixes
+                if os.path.isdir(item_path) and (item == "base" or item.startswith("sim")):
                     simulation_folders.append(item)
         
         if not simulation_folders:

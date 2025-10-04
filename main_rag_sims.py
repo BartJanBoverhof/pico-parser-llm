@@ -199,7 +199,7 @@ def run_simulation_pipeline(
 
 validate_api_key()
 
-simulation_ids = ["sim1", "sim2", "sim3", "sim4", "sim5", "sim6"]
+simulation_ids = ["base_b, base_c,", "base_d", "base_e"]
 
 for simulation_id in simulation_ids:
     print("\n" + "="*80)

@@ -693,7 +693,83 @@ CONSOLIDATION_CONFIGS = {
 # --------------------------------
 SIMULATION_CONFIGS = {
     "base": {
-        "name": "Base",
+        "name": "base",
+        "description": "Tests impact of larger contextual windows",
+        "retrieval_params": {
+            "hta_submission": {
+                "population_comparator": {"initial_k": 60, "final_k": 15},
+                "outcomes": {"initial_k": 60, "final_k": 15}
+            },
+            "clinical_guideline": {
+                "population_comparator": {"initial_k": 50, "final_k": 12},
+                "outcomes": {"initial_k": 60, "final_k": 12}
+            }
+        },
+        "extraction_temperature": 0.1,
+        "chunk_params": {
+            "min_chunk_size": 600,
+            "max_chunk_size": 1500
+        }
+    },
+    "base_b": {
+        "name": "base_b",
+        "description": "Tests impact of larger contextual windows",
+        "retrieval_params": {
+            "hta_submission": {
+                "population_comparator": {"initial_k": 60, "final_k": 15},
+                "outcomes": {"initial_k": 60, "final_k": 15}
+            },
+            "clinical_guideline": {
+                "population_comparator": {"initial_k": 50, "final_k": 12},
+                "outcomes": {"initial_k": 60, "final_k": 12}
+            }
+        },
+        "extraction_temperature": 0.1,
+        "chunk_params": {
+            "min_chunk_size": 600,
+            "max_chunk_size": 1500
+        }
+    },
+    "base_c": {
+        "name": "base_c",
+        "description": "Tests impact of larger contextual windows",
+        "retrieval_params": {
+            "hta_submission": {
+                "population_comparator": {"initial_k": 60, "final_k": 15},
+                "outcomes": {"initial_k": 60, "final_k": 15}
+            },
+            "clinical_guideline": {
+                "population_comparator": {"initial_k": 50, "final_k": 12},
+                "outcomes": {"initial_k": 60, "final_k": 12}
+            }
+        },
+        "extraction_temperature": 0.1,
+        "chunk_params": {
+            "min_chunk_size": 600,
+            "max_chunk_size": 1500
+        }
+    },
+    "base_d": {
+        "name": "base_d",
+        "description": "Tests impact of larger contextual windows",
+        "retrieval_params": {
+            "hta_submission": {
+                "population_comparator": {"initial_k": 60, "final_k": 15},
+                "outcomes": {"initial_k": 60, "final_k": 15}
+            },
+            "clinical_guideline": {
+                "population_comparator": {"initial_k": 50, "final_k": 12},
+                "outcomes": {"initial_k": 60, "final_k": 12}
+            }
+        },
+        "extraction_temperature": 0.1,
+        "chunk_params": {
+            "min_chunk_size": 600,
+            "max_chunk_size": 1500
+        }
+    },
+    "base_e": {
+        "name": "base_e",
         "description": "Tests impact of larger contextual windows",
         "retrieval_params": {
             "hta_submission": {

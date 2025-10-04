@@ -1,10 +1,10 @@
 {
   "outcomes_metadata": {
-    "timestamp": "2025-10-02T14:29:43.457827",
+    "timestamp": "2025-10-02T18:38:02.856457",
     "indication": "treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context",
     "consolidation_type": "outcomes",
     "data_split": "test",
-    "total_unique_outcomes": 44,
+    "total_unique_outcomes": 43,
     "source_countries": [
       "DE",
       "DK",
@@ -24,27 +24,25 @@
       "survival_endpoints": [
         "overall survival (OS)",
         "overall survival (time from randomisation to death from any cause)",
-        "overall survival (time from randomization to death from any cause)",
-        "progression-free survival (PFS)",
-        "progression-free survival (blinded, independent central review)",
-        "progression-free survival (investigator-assessed)",
-        "progression-free survival (independent review committee, blinded; RECIST 1.1)",
+        "prolonged survival",
         "event-free survival",
         "eventless survival",
-        "prolonged survival",
-        "progression after next line of therapy (PFS2)",
-        "quality-adjusted life years (QALYs)"
+        "quality-adjusted life years (QALYs)",
+        "progression-free survival (PFS)",
+        "progression-free survival (blinded independent central review)",
+        "progression-free survival (RECIST v1.1)",
+        "progression-free survival (independent review committee, RECIST 1.1)"
       ],
       "response_measures": [
         "objective response rate (ORR)",
-        "objective response rate (independent review committee, blinded; RECIST 1.1)",
-        "overall response rate (ORR)",
+        "objective response rate (RECIST 1.1)",
+        "objective response rate (independent review committee, RECIST 1.1)",
+        "overall response rate",
         "response rate",
         "disease control rate",
-        "disease control rate (proportion of patients with complete, partial, or stable disease for at least 5 weeks)",
+        "time to response",
         "duration of response (DoR)",
         "duration of response (RECIST 1.1)",
-        "time to response (time from treatment initiation to first complete or partial response)",
         "treatment duration",
         "duration of treatment"
       ],
@@ -52,35 +50,39 @@
         "time to progression (TTP)",
         "time to progression",
         "time to next treatment (TTNT)",
-        "time to next treatment"
+        "time to next treatment",
+        "symptom control"
       ]
     },
     "safety": {
       "adverse_events": [
-        "adverse events (general)",
+        "adverse events",
         "adverse events (CTCAE v5.0)",
         "adverse events (CTCAE v4.03)",
+        "adverse drug reactions",
         "side effects",
         "serious adverse events",
-        "serious adverse events (Grade 3-4)",
+        "serious adverse events (grade 3-4)",
         "serious undesirable effects",
-        "mortality-related toxicity",
         "serious side effects on the skin",
+        "treatment-related disutility for intravenous administration",
+        "mortality-related toxicity",
         "diarrhoea",
         "alanine aminotransferase increase",
         "aspartate aminotransferase increase",
         "neutropenia",
-        "febrile neutropenia",
-        "fatigue"
+        "fatigue",
+        "febrile neutropenia"
       ],
       "serious_events": [
         "serious adverse events",
-        "serious adverse events (Grade 3-4)",
+        "serious adverse events (grade 3-4)",
         "serious undesirable effects",
         "serious side effects on the skin",
         "mortality-related toxicity"
       ],
       "discontinuations": [
+        "treatment discontinuation due to adverse events",
         "dropout rate"
       ]
     },
@@ -101,22 +103,20 @@
       ],
       "symptom_measures": [
         "symptomatology",
-        "symptom control",
         "health status",
-        "overall health status",
         "health-related quality of life",
-        "health-related quality of life (measured by time to death)",
+        "health-related quality of life measured by time to death",
         "quality of life",
+        "overall health status",
         "preservation of quality of life"
       ]
     },
     "economic": {
       "cost_effectiveness": [
-        "cost-effectiveness (cost per QALY achieved)"
+        "cost per QALY"
       ],
       "utilities": [
-        "utility decrement per cycle of treatment",
-        "treatment-related disutility for intravenous administration"
+        "utility decrement per cycle of treatment"
       ],
       "resource_utilization": []
     },
