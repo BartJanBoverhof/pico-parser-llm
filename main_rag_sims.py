@@ -5,7 +5,7 @@ from python.vectorise import Chunker, Vectoriser
 from python.run import RagPipeline, SimulationRunner
 from python.open_ai import validate_api_key
 from python.config import SOURCE_TYPE_CONFIGS, CASE_CONFIGS, CONSOLIDATION_CONFIGS, SIMULATION_CONFIGS
-from python.results import RunResults
+from python.results_descriptive import RunResults
 import glob
 import os
 from pathlib import Path

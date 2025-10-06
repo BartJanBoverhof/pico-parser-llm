@@ -5,7 +5,7 @@ from python.vectorise import Chunker, Vectoriser
 from python.run import RagPipeline
 from python.open_ai import validate_api_key
 from python.config import SOURCE_TYPE_CONFIGS, CASE_CONFIGS, CONSOLIDATION_CONFIGS
-from python.results import RunResults
+from python.results_descriptive import RunResults
 import glob
 import os
 from pathlib import Path
@@ -22,7 +22,5 @@ COUNTRIES = ["ALL"]
 
 CASES = ["nsclc", "hcc"]
 
-validate_api_key()
-
-tree = FolderTree(root_path=".")
-tree.generate()
+# Define which simulations to run and analyze
+SIMULATION_IDS = ["base", "base_b", "base_c", "base_d", "base_e"]
