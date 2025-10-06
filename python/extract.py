@@ -411,8 +411,11 @@ class PICOExtractor:
             
             extracted_results.append(outcomes_result)
             
-            print(f"Extracted outcomes for {country}: {outcomes_result.get('Outcomes', '')[:100]}...")
-        
+            # Safely handle None values in Outcomes field
+            outcomes_text = outcomes_result.get('Outcomes') or ''
+            outcomes_preview = outcomes_text[:100] if outcomes_text else '(empty)'
+            print(f"Extracted outcomes for {country}: {outcomes_preview}...")
+                    
         if extracted_results:
             self.save_extracted_outcomes(extracted_results, source_type_to_use, indication_from_metadata)
         

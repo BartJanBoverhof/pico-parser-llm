@@ -1,0 +1,88 @@
+{
+  "extraction_metadata": {
+    "timestamp": "2025-10-04T14:56:56.539727",
+    "source_type": "hta_submission",
+    "indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
+    "total_countries": 11,
+    "temperature": 0.1
+  },
+  "outcomes_by_country": {
+    "AT": {
+      "Indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
+      "Country": "AT",
+      "Outcomes": "all-cause mortality, overall survival (OS), tumor response rate, adverse events, quality of life, liver function, tumor reduction, time to progression (TTP), disease control rate (DCR), time to symptomatic progression (TTSP), mRECIST response, complication incidence, pain (EORTC QLQ-HCC18), jaundice (EORTC QLQ-HCC18), fever (EORTC QLQ-HCC18), abdominal swelling (EORTC QLQ-HCC18), diarrhoea, fatigue, hand-foot-skin reaction, hypertension, skin rash, skin desquamation, hypodynamia, post-treatment complications, liver failure, health status (EQ-5D visual analogue scale), global health status (EORTC QLQ-C30), function scales (EORTC QLQ-C30), function scales (EORTC QLQ-HCC18), disease recurrence, length of hospital stay, days of missed work",
+      "ChunksUsed": 15,
+      "ContextTokens": 2999
+    },
+    "CZ": {
+      "Indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
+      "Country": "CZ",
+      "Outcomes": "",
+      "ChunksUsed": 1,
+      "ContextTokens": 202
+    },
+    "DE": {
+      "Indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
+      "Country": "DE",
+      "Outcomes": "all-cause mortality, overall survival (OS), tumor response rate, adverse events, quality of life, liver function, tumor reduction, time to progression (TTP), disease control rate (DCR), time to symptomatic progression (TTSP), hand-foot skin reaction, diarrhoea, hypertension, skin rash, desquamation, hypody, pain (EORTC QLQ-HCC18), jaundice (EORTC QLQ-HCC18), fever (EORTC QLQ-HCC18), abdominal swelling (EORTC QLQ-HCC18), fatigue (EORTC QLQ-HCC18), health status (EQ-5D visual analogue scale), global health status (EORTC QLQ-C30), function scales (EORTC QLQ-C30), function scales (EORTC QLQ-HCC18), disease recurrence, length of hospital stay, complications, local control, days of missed work",
+      "ChunksUsed": 15,
+      "ContextTokens": 3168
+    },
+    "DK": {
+      "Indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
+      "Country": "DK",
+      "Outcomes": "overall survival (OS), progression-free survival (PFS), progression-free survival (PFS; RECIST 1.1), time to progression (TTP), objective response rate (ORR), complete response (CR), partial response (PR), tumour response rate, time to response, duration of response (DoR), disease control rate (DCR; mRECIST), clinical benefit rate (CBR), adverse events (general), serious adverse events, adverse events leading to discontinuation, diarrhoea, nutrition, pain, body image, health-related quality of life (HRQoL), EORTC QLQ-C30, EORTC QLQ-HCC18, EQ-5D, plasma pharmacokinetics parameters, blood and tumour biomarkers, time to clinically meaningful deterioration (EORTC QLQ-C30), time to clinically meaningful deterioration (EORTC QLQ-HCC18), time to clinically meaningful worsening (EQ-5D), cost-effectiveness analysis, quality-adjusted life years (QALYs)",
+      "ChunksUsed": 15,
+      "ContextTokens": 3197
+    },
+    "EN": {
+      "Indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
+      "Country": "EN",
+      "Outcomes": "overall survival, time to radiological disease progression, time to symptomatic disease progression (FHSI-8 questionnaire), diarrhoea, hand-foot skin reaction, adverse events (general), quality-adjusted life years (QALYs), cost-effectiveness (incremental cost-effectiveness ratio, ICER)",
+      "ChunksUsed": 15,
+      "ContextTokens": 2828
+    },
+    "ES": {
+      "Indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
+      "Country": "ES",
+      "Outcomes": "overall survival (OS; time from randomisation to death from any cause), progression-free survival (PFS; time from randomisation to tumour progression defined by RECIST 1.1 or death from any cause), objective response rate (ORR; percentage of patients with partial or complete response; RECIST 1.1), objective response rate (ORR; percentage of patients with partial or complete response; mRECIST), duration of response (DoR; time from partial or complete response to disease progression or exit), deterioration in patient quality of life (EORTC QLQ-C30), deterioration in patient quality of life (EORTC QLQ-HCC18), arterial hypertension, proteinuria, gastrointestinal disorders, bleeding, infections, liver disorders, hypothyroidism, infusion reactions, hyperthyroidism, hypertension, diabetes mellitus, adverse events (general), drug withdrawal due to adverse events",
+      "ChunksUsed": 15,
+      "ContextTokens": 4373
+    },
+    "FR": {
+      "Indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
+      "Country": "FR",
+      "Outcomes": "overall survival (OS), progression-free survival (PFS), time to progression, objective response rate (ORR), disease control rate, clinical benefit rate, quality of life (EQ-5D-3L), quality of life (EORTC QLQ-C30), quality of life (EORTC QLQ-HCC18), hypertension, diarrhoea, decreased appetite, weight loss, fatigue, hand-foot syndrome, proteinuria, dysphonia, alopecia, hepatic encephalopathy, hepatic insufficiency, arterial thromboembolic events, haemorrhagic events, hypothyroidism, renal events, brain haemorrhage, sepsis, brain/gastrointestinal bleeding, intestinal failure, respiratory failure, cerebral vascular accident, cardiovascular arrest, myocardial infarction, sudden death, adverse events (general), grade 3 adverse reactions, treatment-related deaths, discontinuation of treatment due to adverse events",
+      "ChunksUsed": 15,
+      "ContextTokens": 3841
+    },
+    "NL": {
+      "Indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
+      "Country": "NL",
+      "Outcomes": "overall survival, time to symptom progression, time to progression, disease control, partial response, minor response (reduction of tumour size by 25 to 50%), stable disease (for at least 16 weeks), fatigue, bleeding, abdominal pain, hypertension, diarrhoea, lymphoedema, hand feeding reactions, serious adverse reactions (grade 3/4), adverse reactions (general), cost-effectiveness analysis",
+      "ChunksUsed": 15,
+      "ContextTokens": 2530
+    },
+    "PO": {
+      "Indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
+      "Country": "PO",
+      "Outcomes": "overall survival (OS), progression-free survival (PFS), time to progression (TTP), objective response rate (ORR), complete response (CR), partial response (PR), stable disease (SD), disease control rate (DCR), EQ-5D (Euro QoL – 5 dimensions), EQ VAS (Euro QoL visual analogue scale), FACT-G (Functional Assessment of Cancer Therapy – General), number needed to harm (NNH), hazard ratio (HR), mean difference (MD), relative risk (RR), risk difference (RD), number needed to treat (NNT), secondary cancer, dyspnoea, pleural effusion, hand-foot skin reaction, diarrhoea, rash, skin desquamation, fatigue, weight loss, hypertension, decreased appetite, hypocalcaemia, increased ALT activity, alopecia, cough, back pain, limb pain, infections, lymphopenia, anorexia, hypophosphataemia, haemorrhage, nausea, vomiting, constipation, dry skin, erythema, pruritus, arthralgia, pain, fever, decreased weight, increased amylase, increased lipase, folliculitis, leukopenia, neutropenia, anaemia, thrombocytopenia, hypothyroidism, hypokalaemia, hyponatraemia, hypoglycaemia, depression, peripheral sensory neuropathy, dysgeusia, tinnitus, congestive heart failure, myocardial ischaemia, myocardial infarction, flushing, rhinorrhoea, dysphonia, stomatitis, dyspepsia, dysphagia, gastro oesophageal reflux disease, keratoacanthoma, squamous cell cancer of the skin, dermatitis exfoliative, acne, hyperkeratosis, myalgia, muscle spasms, renal failure, proteinuria, erectile dysfunction, asthenia, influenza like illness, mucosal inflammation, transient increase in transaminases, death, adverse events (general), treatment-emergent adverse events (TEAEs)",
+      "ChunksUsed": 15,
+      "ContextTokens": 3614
+    },
+    "PT": {
+      "Indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
+      "Country": "PT",
+      "Outcomes": "overall survival (OS), progression-free survival (PFS), progression-free survival (modified RECIST criteria), time to progression (TTP), objective response rate (ORR), quality of life, EORTC QLQ-C30, EORTC QLQ-HCC18, pharmacokinetic parameters, vital signs, laboratory haematological testing, laboratory biochemical testing, urinalysis, electrocardiography, adverse events, adverse events (graded by National Cancer Institute), grade 3 adverse reactions, grade 4 adverse reactions, treatment-related mortality, dropout rate for toxicity, tumour haemorrhage, ischaemic stroke, respiratory failure, sudden death",
+      "ChunksUsed": 15,
+      "ContextTokens": 2530
+    },
+    "SE": {
+      "Indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
+      "Country": "SE",
+      "Outcomes": "overall survival (OS; time from randomization to death from any cause), progression-free survival (PFS), objective tumour response, time to tumour progression, adverse reactions leading to discontinuation of treatment, quality of life weights, health state utility values, cost-benefit analysis, cost per quality-adjusted life year (QALY), progression-free state, progressive illness state, death state, tumour spread (TNM system), liver function (Child-Pugh scale), overall condition (ECOG Performance Status), Barcelona Clinic Liver Cancer (BCLC) staging system",
+      "ChunksUsed": 15,
+      "ContextTokens": 2695
+    }
+  }
+}

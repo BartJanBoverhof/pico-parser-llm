@@ -1,0 +1,88 @@
+{
+  "extraction_metadata": {
+    "timestamp": "2025-10-04T14:59:52.006082",
+    "source_type": "clinical_guideline",
+    "indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
+    "total_countries": 11,
+    "temperature": 0.1
+  },
+  "outcomes_by_country": {
+    "AT": {
+      "Indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
+      "Country": "AT",
+      "Outcomes": "overall survival, progression-free survival, partial response, complete remission, response (mRECIST), intraoperative complications, mortality, morbidity, disease progression, time to deterioration, time to progression of the tumor, adverse events, neurotoxicity",
+      "ChunksUsed": 12,
+      "ContextTokens": 2893
+    },
+    "BE": {
+      "Indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
+      "Country": "BE",
+      "Outcomes": "partial response, survival, objective response, liver failure, pain, fever, serious complications, portal vein thrombosis, recurrence, delay of recurrence, adverse events (general)",
+      "ChunksUsed": 12,
+      "ContextTokens": 2963
+    },
+    "DE": {
+      "Indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
+      "Country": "DE",
+      "Outcomes": "overall survival, progression-free survival, partial response, complete remission, response rates (CR, PR, mRECIST), time to progression of the tumor, time to deterioration, intraoperative complications, mortality, morbidity, adverse events (general), neurotoxicity",
+      "ChunksUsed": 12,
+      "ContextTokens": 2893
+    },
+    "DK": {
+      "Indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
+      "Country": "DK",
+      "Outcomes": "long-term survival, perioperative mortality, morbidity, leukaemia, postoperative softening, gallbladder abscess, complications, recurrence, quality of life",
+      "ChunksUsed": 12,
+      "ContextTokens": 2057
+    },
+    "ES": {
+      "Indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
+      "Country": "ES",
+      "Outcomes": "survival, prognosis (BCLC staging system), adverse events, long-term treatment-related complications",
+      "ChunksUsed": 12,
+      "ContextTokens": 2639
+    },
+    "EU": {
+      "Indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
+      "Country": "EU",
+      "Outcomes": "bleeding, tumour seeding, side-effects (general)",
+      "ChunksUsed": 11,
+      "ContextTokens": 2774
+    },
+    "FR": {
+      "Indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
+      "Country": "FR",
+      "Outcomes": "time-to-progression, toxicity, overall survival, response rates (RECIST criteria), adverse events, diarrhoea, fatigue, nausea, neutropenia, EORTC QLQ-C30, EORTC QLQ-LC13, EQ-5D-5L",
+      "ChunksUsed": 12,
+      "ContextTokens": 3575
+    },
+    "IT": {
+      "Indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
+      "Country": "IT",
+      "Outcomes": "improved survival, response rates, adverse events, safety, efficacy, rebleeding, liver-related morbidity, mortality, prognosis (Child-Pugh score), prognosis (MELD score), cost-effectiveness, false positives, hypersensitivity to monitoring, tolerance of treatment, severe adverse events, down-staging, donor morbidity, early diagnosis, risk of HCC development, alpha-fetoprotein level, ultrasound surveillance, intention-to-treat analysis, Milan criteria, UCSF-expanded criteria, BCLC staging classification",
+      "ChunksUsed": 12,
+      "ContextTokens": 3023
+    },
+    "NL": {
+      "Indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
+      "Country": "NL",
+      "Outcomes": "overall survival, progression-free survivorship, response rate, adverse events, adverse events (Grade ≥ 3), quality of life, overall quality of life (measured with a validated and reliable instrument), local tumour control, success rate (downstaging/bridging), complications, distress, physical complaints, psychological complaints, psychosocial problems, general complaints, early detection of recurrence, alpha-fetoprotein (AFP) monitoring, EORTC QLQ-C30, EORTC QLQ-LC13, EQ-5D-5L, SF-36, visual analogue scale",
+      "ChunksUsed": 12,
+      "ContextTokens": 2916
+    },
+    "PO": {
+      "Indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
+      "Country": "PO",
+      "Outcomes": "progression assessment (BCLC assessment system), response rates (RECIST criteria for locoregional therapies), response rates (mRECIST for systemic therapy), response rates (RECIS systems for systemic therapy), response assessment (multiphase computed tomography with contrast), response assessment (magnetic resonance imaging with contrast), perioperative mortality, adverse events (general), effectiveness of ablation (multiphase computed tomography with contrast), effectiveness of ablation (magnetic resonance imaging), time to progression, undesirable effects (general), bridging therapy benefit (reduction of progression), benefit from molecular chemoembolization, benefit from radioembolization (time to progression), benefit from combination of loco-regional methods (chemoembolization plus thermoablation)",
+      "ChunksUsed": 12,
+      "ContextTokens": 2703
+    },
+    "SE": {
+      "Indication": "treatment of patients with advanced or unresectable hepatocellular carcinoma",
+      "Country": "SE",
+      "Outcomes": "EORTC QLQ-30, FACT-G, EORTC QLQ-HCC18, FACT-Hep, survival, quality of life",
+      "ChunksUsed": 12,
+      "ContextTokens": 2045
+    }
+  }
+}

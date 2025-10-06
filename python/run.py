@@ -1115,13 +1115,16 @@ class SimulationRunner:
             
         return self.config["extraction_temperature"] != self.base_config["extraction_temperature"]
     
+
     def _determine_paths(self) -> Dict[str, str]:
         """
         Determines which paths to use for this simulation.
         Creates simulation-specific folders where needed.
+        Each simulation ALWAYS gets its own results folder to keep outputs separate.
         """
         paths = {}
         
+        # Vectorstore and chunks: only create new if chunk params differ from base
         if self._needs_new_vectorstore():
             if self.case:
                 paths["chunked"] = os.path.join(self.base_paths["chunked"], self.simulation_id, self.case)
@@ -1130,6 +1133,7 @@ class SimulationRunner:
                 paths["chunked"] = os.path.join(self.base_paths["chunked"], self.simulation_id)
                 paths["vectorstore"] = os.path.join(self.base_paths["vectorstore"], self.simulation_id)
         else:
+            # Reuse base vectorstore and chunks if params are the same
             if self.case:
                 paths["chunked"] = os.path.join(self.base_paths["chunked"], "base", self.case)
                 paths["vectorstore"] = os.path.join(self.base_paths["vectorstore"], "base")
@@ -1137,19 +1141,15 @@ class SimulationRunner:
                 paths["chunked"] = os.path.join(self.base_paths["chunked"], "base")
                 paths["vectorstore"] = os.path.join(self.base_paths["vectorstore"], "base")
         
+        # Results: ALWAYS create a separate folder for each simulation
+        # This ensures each simulation run keeps its own outputs separate
         if self.case:
-            if self._needs_new_extraction():
-                paths["results"] = os.path.join(self.base_paths["results"], self.simulation_id, self.case)
-            else:
-                paths["results"] = os.path.join(self.base_paths["results"], "base", self.case)
+            paths["results"] = os.path.join(self.base_paths["results"], self.simulation_id, self.case)
         else:
-            if self._needs_new_extraction():
-                paths["results"] = os.path.join(self.base_paths["results"], self.simulation_id)
-            else:
-                paths["results"] = os.path.join(self.base_paths["results"], "base")
+            paths["results"] = os.path.join(self.base_paths["results"], self.simulation_id)
         
         return paths
-    
+        
     def create_folders(self):
         """
         Creates necessary top-level folder structure for this simulation.

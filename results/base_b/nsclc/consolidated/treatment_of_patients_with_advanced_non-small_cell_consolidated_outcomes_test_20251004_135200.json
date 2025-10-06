@@ -1,0 +1,135 @@
+{
+  "outcomes_metadata": {
+    "timestamp": "2025-10-04T13:52:00.895130",
+    "indication": "treatment of patients with advanced non-small cell lung cancer (NSCLC) with KRAS G12C mutation and disease progression, monotherapy context",
+    "consolidation_type": "outcomes",
+    "data_split": "test",
+    "total_unique_outcomes": 39,
+    "source_countries": [
+      "DE",
+      "DK",
+      "EN",
+      "EU",
+      "FR",
+      "PT",
+      "SE"
+    ],
+    "source_types": [
+      "clinical_guideline",
+      "hta_submission"
+    ]
+  },
+  "consolidated_outcomes": {
+    "efficacy": {
+      "survival_endpoints": [
+        "overall survival (OS)",
+        "overall survival (time from randomisation to death from any cause)",
+        "overall survival (time from randomization to death from any cause)",
+        "prolonged survival",
+        "event-free survival",
+        "progression-free survival (PFS)",
+        "progression-free survival (blinded, independent central review)",
+        "progression-free survival (independent, blinded review panel; RECIST 1.1)",
+        "progression-free survival (RECIST v1.1)",
+        "progression-free survival (measured by RECIST 1.1)",
+        "progression-free survival",
+        "health-related quality of life (measured by time to death)"
+      ],
+      "response_measures": [
+        "objective response rate (ORR)",
+        "objective response rate (RECIST 1.1)",
+        "objective response rate (independent review committee; RECIST 1.1)",
+        "response rates",
+        "disease control rate",
+        "disease control rate (proportion with complete, partial, or stable disease for ≥5 weeks)",
+        "time to response",
+        "time to response (from treatment initiation to first complete or partial response)",
+        "duration of response (DoR)",
+        "duration of response (RECIST 1.1)",
+        "treatment duration",
+        "duration of treatment"
+      ],
+      "progression_measures": [
+        "progression-free survival (PFS; RECIST v1.1)",
+        "time to progression (TTP)",
+        "time to progression",
+        "time to next treatment (TTNT)",
+        "time to next treatment"
+      ]
+    },
+    "safety": {
+      "adverse_events": [
+        "adverse events",
+        "adverse events (CTCAE v5.0)",
+        "adverse events (CTCAE v4.03)",
+        "adverse drug reactions",
+        "side effects",
+        "serious adverse events",
+        "serious adverse events (grade 3-4)",
+        "serious undesirable effects",
+        "serious side effects on the skin",
+        "mortality-related toxicity",
+        "treatment discontinuation due to adverse events",
+        "dropout rate",
+        "diarrhoea",
+        "alanine aminotransferase increase",
+        "aspartate aminotransferase increase",
+        "neutropenia",
+        "fatigue",
+        "febrile neutropenia"
+      ],
+      "serious_events": [
+        "serious adverse events",
+        "serious adverse events (grade 3-4)",
+        "serious undesirable effects",
+        "serious side effects on the skin",
+        "mortality-related toxicity"
+      ],
+      "discontinuations": [
+        "treatment discontinuation due to adverse events",
+        "dropout rate"
+      ]
+    },
+    "quality_of_life": {
+      "patient_reported_outcomes": [
+        "EORTC QLQ-C30",
+        "EORTC QLQ-LC13",
+        "EQ-5D-5L",
+        "BPI-SF",
+        "FACT-G GP5",
+        "PGI-C",
+        "visual analogue scale"
+      ],
+      "functional_status": [
+        "Karnofsky performance status",
+        "ECOG performance status",
+        "physical functioning"
+      ],
+      "symptom_measures": [
+        "symptomatology",
+        "symptom control",
+        "health status",
+        "overall health status",
+        "health-related quality of life",
+        "health-related quality of life (measured by time to death)",
+        "quality of life",
+        "preservation of quality of life"
+      ]
+    },
+    "economic": {
+      "cost_effectiveness": [
+        "cost-effectiveness (cost per QALY)"
+      ],
+      "utilities": [
+        "quality-adjusted life years (QALYs)",
+        "utility decrement per cycle of treatment",
+        "treatment-related disutility for intravenous administration"
+      ],
+      "resource_utilization": []
+    },
+    "other": {
+      "exploratory_endpoints": [],
+      "biomarkers": []
+    }
+  }
+}
