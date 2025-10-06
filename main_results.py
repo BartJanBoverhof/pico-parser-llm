@@ -6,6 +6,7 @@ from python.run import RagPipeline
 from python.open_ai import validate_api_key
 from python.config import SOURCE_TYPE_CONFIGS, CASE_CONFIGS, CONSOLIDATION_CONFIGS
 from python.results_descriptive import RunResults
+from python.results_validated import ResultsAnalyzer
 import glob
 import os
 from pathlib import Path
@@ -24,3 +25,32 @@ CASES = ["nsclc", "hcc"]
 
 # Define which simulations to run and analyze
 SIMULATION_IDS = ["base", "base_b", "base_c", "base_d", "base_e"]
+
+
+print("\n" + "="*80)
+print("STARTING RAG-LLM PIPELINE RESULTS ANALYSIS")
+print("="*80)
+
+# Initialize the results analyzer
+analyzer = ResultsAnalyzer(results_folder="results/scored")
+
+# Run the analysis for all cases and analysis types
+analyzer.run_analysis()
+
+# Print formatted results to console
+analyzer.print_results()
+
+# Print best performing scenarios
+print("\n" + "="*80)
+print("BEST PERFORMING SCENARIOS")
+print("="*80)
+for case in ["NSCLC", "HCC"]:
+    print(f"\n{case}:")
+    for analysis_type in ["hpo", "con"]:
+        scenario, recall = analyzer.get_best_scenario(case, analysis_type)
+        if scenario:
+            print(f"  {analysis_type.upper():>3}: {scenario:<8} (Total Recall: {recall:.3f})")
+
+print("\n" + "="*80)
+print("ANALYSIS COMPLETE")
+print("="*80)
