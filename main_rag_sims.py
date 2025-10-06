@@ -22,6 +22,9 @@ MODEL = "gpt-4.1"
 COUNTRIES = ["ALL"]
 CASES = ["nsclc", "hcc"]
 
+# Define which simulations to run and analyze
+SIMULATION_IDS = ["base", "base_b", "base_c", "base_d", "base_e"]
+
 
 def run_simulation_pipeline(
     sim_runner,
@@ -199,9 +202,7 @@ def run_simulation_pipeline(
 
 validate_api_key()
 
-simulation_ids = ["base_b", "base_c", "base_d", "base_e"]
-
-for simulation_id in simulation_ids:
+for simulation_id in SIMULATION_IDS:
     print("\n" + "="*80)
     print(f"INITIALIZING SIMULATION: {simulation_id}")
     print("="*80)
@@ -243,7 +244,7 @@ for simulation_id in simulation_ids:
 print("\n" + "="*80)
 print("ALL SIMULATIONS COMPLETED")
 print("="*80)
-print(f"Completed {len(simulation_ids)} simulations: {', '.join(simulation_ids)}")
+print(f"Completed {len(SIMULATION_IDS)} simulations: {', '.join(SIMULATION_IDS)}")
 print("="*80)
 
 print("\n" + "="*80)
@@ -253,7 +254,8 @@ print("="*80)
 results_runner = RunResults(
     translated_path=TRANSLATED_PATH,
     results_path=RESULTS_PATH_BASE,
-    mode="consolidated_only"
+    mode="consolidated_only",
+    simulation_ids=SIMULATION_IDS  
 )
 
 results_runner.run_all()

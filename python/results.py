@@ -1535,7 +1535,7 @@ def run_complete_analysis(pico_file_path, outcome_file_path, output_suffix=""):
 
 class RunResults:
     
-    def __init__(self, translated_path="data/text_translated", results_path="results", mode="full"):
+    def __init__(self, translated_path="data/text_translated", results_path="results", mode="full", simulation_ids=None):
         """
         Initialize the RunResults analyzer.
         
@@ -1544,10 +1544,13 @@ class RunResults:
             results_path: Path to results directory
             mode: Analysis mode - "full" for complete analysis with visualizations,
                   "consolidated_only" for consolidated results only
+            simulation_ids: List of simulation IDs to analyze. If None, analyzes all simulations.
+                           Example: ["base", "base_b", "base_c", "sim1", "sim2"]
         """
         self.translated_path = translated_path
         self.results_path = results_path
         self.mode = mode
+        self.simulation_ids = simulation_ids  # NEW: Store simulation IDs to analyze
         
     def _get_case_folders(self):
         """Detect available case folders regardless of case sensitivity."""
@@ -1562,6 +1565,37 @@ class RunResults:
                     case_folders.append(item)
         
         return case_folders
+    
+    def _get_simulation_folders(self):
+        """
+        Get simulation folders to analyze, filtered by self.simulation_ids if provided.
+        
+        Returns:
+            List of simulation folder names (e.g., ["base", "base_b", "sim1"])
+        """
+        results_path_obj = Path(self.results_path)
+        
+        # Determine the parent results path
+        if results_path_obj.name in ["base"] or results_path_obj.name.startswith("sim") or results_path_obj.name.startswith("base_"):
+            parent_results_path = results_path_obj.parent
+        else:
+            parent_results_path = results_path_obj
+        
+        # Get all simulation folders
+        all_simulation_folders = []
+        if parent_results_path.exists():
+            for item in sorted(os.listdir(parent_results_path)):
+                item_path = os.path.join(parent_results_path, item)
+                # Include folders that are "base" or start with "sim" or "base_"
+                if os.path.isdir(item_path) and (item == "base" or item.startswith("sim") or item.startswith("base_")):
+                    all_simulation_folders.append(item)
+        
+        # Filter by simulation_ids if provided
+        if self.simulation_ids is not None:
+            filtered_folders = [sim for sim in all_simulation_folders if sim in self.simulation_ids]
+            return filtered_folders, parent_results_path
+        
+        return all_simulation_folders, parent_results_path
     
     def run_translation_analysis(self):
         print("\n" + "="*100)
@@ -1706,38 +1740,28 @@ class RunResults:
             print()
     
     def run_consolidated_analysis(self):
-        """Print consolidated PICOs and outcomes for all simulations across all cases."""
+        """Print consolidated PICOs and outcomes for specified simulations across all cases."""
         print("\n" + "="*100)
-        print("CONSOLIDATED RESULTS ANALYSIS - ALL SIMULATIONS")
+        print("CONSOLIDATED RESULTS ANALYSIS - SPECIFIED SIMULATIONS")
         print("="*100)
         
-        results_path_obj = Path(self.results_path)
-        
-        # Updated to handle both "sim_" and "sim" prefixes
-        if results_path_obj.name in ["base"] or results_path_obj.name.startswith("sim"):
-            parent_results_path = results_path_obj.parent
-        else:
-            parent_results_path = results_path_obj
-        
-        simulation_folders = []
-        if parent_results_path.exists():
-            for item in sorted(os.listdir(parent_results_path)):
-                item_path = os.path.join(parent_results_path, item)
-                # Updated to handle both "sim_" and "sim" prefixes
-                if os.path.isdir(item_path) and (item == "base" or item.startswith("sim")):
-                    simulation_folders.append(item)
+        simulation_folders, parent_results_path = self._get_simulation_folders()
         
         if not simulation_folders:
-            print("No simulation folders found.")
+            print("No simulation folders found matching the specified simulation IDs.")
+            if self.simulation_ids:
+                print(f"Requested simulations: {', '.join(self.simulation_ids)}")
             return
         
-        print(f"\nDetected {len(simulation_folders)} simulation(s): {', '.join(simulation_folders)}")
+        print(f"\nAnalyzing {len(simulation_folders)} simulation(s): {', '.join(simulation_folders)}")
+        if self.simulation_ids:
+            print(f"(Filtered from requested: {', '.join(self.simulation_ids)})")
         
         case_types = ["nsclc", "hcc"]
         
         for case_type in case_types:
             print(f"\n{'#'*100}")
-            print(f"# {case_type.upper()} RESULTS ACROSS ALL SIMULATIONS")
+            print(f"# {case_type.upper()} RESULTS ACROSS SPECIFIED SIMULATIONS")
             print(f"{'#'*100}")
             
             if case_type.upper() == "NSCLC":
@@ -1747,7 +1771,7 @@ class RunResults:
             
             for split in splits:
                 print(f"\n{'='*100}")
-                print(f"{case_type.upper()} - {split.upper()} SET - ALL SIMULATIONS")
+                print(f"{case_type.upper()} - {split.upper()} SET - SPECIFIED SIMULATIONS")
                 print(f"{'='*100}")
                 
                 for sim_folder in simulation_folders:
@@ -1797,6 +1821,7 @@ class RunResults:
                         print(f"\n[{sim_folder.upper()}] - No consolidated files found for {split} set")
     
     def run_all(self):
+        """Run analysis based on mode and simulation IDs."""
         if self.mode == "consolidated_only":
             self.run_consolidated_analysis()
         else:
