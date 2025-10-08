@@ -12,6 +12,7 @@ class ResultsAnalyzer:
     
     Handles HPO (hyperparameter optimization) and consistency check results
     for multiple disease cases (NSCLC, HCC).
+    Calculates recall, precision, and F1 scores.
     """
     
     def __init__(self, results_folder: str = "results/scored"):
@@ -33,6 +34,8 @@ class ResultsAnalyzer:
         
         # Store results
         self.results = {}
+        # Store precision data separately
+        self.precision_data = {}
         
     def read_excel_file(self, filepath: Path, case: str, scenarios: List[str]) -> Dict[str, pd.DataFrame]:
         """
@@ -86,6 +89,64 @@ class ResultsAnalyzer:
         wb.close()
         return data
     
+    def load_precision_data(self, case: str):
+        """
+        Load precision data from separate precision files.
+        
+        Args:
+            case: Case name (e.g., 'NSCLC', 'HCC')
+        """
+        # Construct precision filename
+        precision_filename = f"{case}_precision.xlsx"
+        precision_filepath = self.results_folder / precision_filename
+        
+        if not precision_filepath.exists():
+            print(f"Warning: Precision file not found: {precision_filepath}")
+            return
+        
+        print(f"Loading precision data for {case}...")
+        print(f"  File path: {precision_filepath}")
+        print(f"  File exists: {precision_filepath.exists()}")
+        print(f"  File size: {precision_filepath.stat().st_size} bytes")
+        
+        # First, check what sheets actually exist in the file
+        try:
+            wb = load_workbook(precision_filepath, read_only=True, data_only=True)
+            actual_sheets = wb.sheetnames
+            print(f"  Actual sheets in file: {actual_sheets}")
+            wb.close()
+        except Exception as e:
+            print(f"  ✗ Error reading workbook: {type(e).__name__}: {e}")
+            return
+        
+        if not actual_sheets:
+            print(f"  ✗ No sheets found in file. File may be corrupted or in wrong format.")
+            print(f"  Try opening the file in Excel to verify it's valid.")
+            return
+        
+        # Read only the 'base' scenario from precision file
+        precision_sheets = self.read_excel_file(precision_filepath, case, ["base"])
+        
+        print(f"  Looking for sheet: {case}_PC_base")
+        print(f"  Sheets loaded: {list(precision_sheets.keys())}")
+        
+        if "base_PC" in precision_sheets:
+            self.precision_data[case] = precision_sheets["base_PC"]
+            print(f"  ✓ Successfully loaded {len(precision_sheets['base_PC'])} rows")
+            print(f"  ✓ Columns: {list(precision_sheets['base_PC'].columns)}")
+            
+            # Extract and preview precision scores
+            test_scores = self.extract_scores(precision_sheets["base_PC"], ['Population', 'Comparator'])
+            print(f"  ✓ Found {len(test_scores.get('Population', []))} Population scores")
+            print(f"  ✓ Found {len(test_scores.get('Comparator', []))} Comparator scores")
+            if test_scores.get('Population'):
+                print(f"  ✓ Sample Population scores: {test_scores['Population'][:3]}")
+            if test_scores.get('Comparator'):
+                print(f"  ✓ Sample Comparator scores: {test_scores['Comparator'][:3]}")
+        else:
+            print(f"  ✗ Sheet 'base_PC' not found in loaded data")
+            print(f"  Available keys: {list(precision_sheets.keys())}")
+    
     def extract_scores(self, df: pd.DataFrame, columns: List[str]) -> Dict[str, List[float]]:
         """
         Extract score rows from a DataFrame.
@@ -125,6 +186,35 @@ class ResultsAnalyzer:
             return 0.0
         return np.mean(scores)
     
+    def calculate_precision(self, scores: List[float]) -> float:
+        """
+        Calculate precision score (average of all scores).
+        
+        Args:
+            scores: List of individual scores (0-1)
+            
+        Returns:
+            Average precision score
+        """
+        if not scores:
+            return 0.0
+        return np.mean(scores)
+    
+    def calculate_f1(self, precision: float, recall: float) -> float:
+        """
+        Calculate F1 score from precision and recall.
+        
+        Args:
+            precision: Precision score
+            recall: Recall score
+            
+        Returns:
+            F1 score
+        """
+        if precision + recall == 0:
+            return 0.0
+        return 2 * (precision * recall) / (precision + recall)
+    
     def analyze_case(self, case: str, analysis_type: str) -> Dict:
         """
         Analyze results for a specific case and analysis type.
@@ -136,7 +226,7 @@ class ResultsAnalyzer:
         Returns:
             Dictionary containing analysis results
         """
-        # Construct filename
+        # Construct filename for recall data
         filename = f"{case}_{analysis_type}.xlsx"
         filepath = self.results_folder / filename
         
@@ -149,7 +239,7 @@ class ResultsAnalyzer:
         # Select appropriate scenario list
         scenarios = self.scenarios_hpo if analysis_type == "hpo" else self.scenarios_con
         
-        # Read Excel file
+        # Read Excel file (recall data)
         sheets_data = self.read_excel_file(filepath, case, scenarios)
         
         # Store results for each scenario
@@ -157,57 +247,94 @@ class ResultsAnalyzer:
         
         for scenario in scenarios:
             scenario_scores = {
-                'Population': [],
-                'Comparator': [],
-                'Outcome': []
+                'Population': {'recall': [], 'precision': []},
+                'Comparator': {'recall': [], 'precision': []},
+                'Outcome': {'recall': []}
             }
             
-            # Extract PC scores
+            # Extract PC recall scores
             pc_key = f"{scenario}_PC"
             if pc_key in sheets_data:
-                pc_scores = self.extract_scores(
+                pc_recall_scores = self.extract_scores(
                     sheets_data[pc_key], 
                     ['Population', 'Comparator']
                 )
-                scenario_scores['Population'] = pc_scores.get('Population', [])
-                scenario_scores['Comparator'] = pc_scores.get('Comparator', [])
+                scenario_scores['Population']['recall'] = pc_recall_scores.get('Population', [])
+                scenario_scores['Comparator']['recall'] = pc_recall_scores.get('Comparator', [])
             
-            # Extract O scores
+            # Extract O recall scores (no precision for Outcome)
             o_key = f"{scenario}_O"
             if o_key in sheets_data:
-                o_scores = self.extract_scores(
+                o_recall_scores = self.extract_scores(
                     sheets_data[o_key], 
                     ['Outcome']
                 )
-                scenario_scores['Outcome'] = o_scores.get('Outcome', [])
+                scenario_scores['Outcome']['recall'] = o_recall_scores.get('Outcome', [])
             
-            # Calculate recall for each PICO element
-            scenario_results[scenario] = {
-                'Population': {
-                    'scores': scenario_scores['Population'],
-                    'recall': self.calculate_recall(scenario_scores['Population']),
-                    'n': len(scenario_scores['Population'])
-                },
-                'Comparator': {
-                    'scores': scenario_scores['Comparator'],
-                    'recall': self.calculate_recall(scenario_scores['Comparator']),
-                    'n': len(scenario_scores['Comparator'])
-                },
-                'Outcome': {
-                    'scores': scenario_scores['Outcome'],
-                    'recall': self.calculate_recall(scenario_scores['Outcome']),
-                    'n': len(scenario_scores['Outcome'])
-                }
+            # Extract precision scores (only for 'base' scenario from separate file)
+            if scenario == 'base' and case in self.precision_data:
+                pc_precision_scores = self.extract_scores(
+                    self.precision_data[case],
+                    ['Population', 'Comparator']
+                )
+                scenario_scores['Population']['precision'] = pc_precision_scores.get('Population', [])
+                scenario_scores['Comparator']['precision'] = pc_precision_scores.get('Comparator', [])
+            
+            # Calculate metrics for each PICO element
+            scenario_results[scenario] = {}
+            
+            # Population
+            pop_recall = self.calculate_recall(scenario_scores['Population']['recall'])
+            pop_precision = self.calculate_precision(scenario_scores['Population']['precision']) if scenario == 'base' and scenario_scores['Population']['precision'] else None
+            pop_f1 = self.calculate_f1(pop_precision, pop_recall) if pop_precision is not None else None
+            
+            scenario_results[scenario]['Population'] = {
+                'recall_scores': scenario_scores['Population']['recall'],
+                'recall': pop_recall,
+                'precision': pop_precision,
+                'f1': pop_f1,
+                'n': len(scenario_scores['Population']['recall'])
             }
             
-            # Calculate total recall (average of P, C, O)
-            recalls = [
-                scenario_results[scenario]['Population']['recall'],
-                scenario_results[scenario]['Comparator']['recall'],
-                scenario_results[scenario]['Outcome']['recall']
-            ]
+            # Comparator
+            comp_recall = self.calculate_recall(scenario_scores['Comparator']['recall'])
+            comp_precision = self.calculate_precision(scenario_scores['Comparator']['precision']) if scenario == 'base' and scenario_scores['Comparator']['precision'] else None
+            comp_f1 = self.calculate_f1(comp_precision, comp_recall) if comp_precision is not None else None
+            
+            scenario_results[scenario]['Comparator'] = {
+                'recall_scores': scenario_scores['Comparator']['recall'],
+                'recall': comp_recall,
+                'precision': comp_precision,
+                'f1': comp_f1,
+                'n': len(scenario_scores['Comparator']['recall'])
+            }
+            
+            # Outcome (no precision available)
+            out_recall = self.calculate_recall(scenario_scores['Outcome']['recall'])
+            
+            scenario_results[scenario]['Outcome'] = {
+                'recall_scores': scenario_scores['Outcome']['recall'],
+                'recall': out_recall,
+                'precision': None,
+                'f1': None,
+                'n': len(scenario_scores['Outcome']['recall'])
+            }
+            
+            # Calculate total metrics (average of P, C, O)
+            total_recall = np.mean([pop_recall, comp_recall, out_recall])
+            
+            # For precision and F1, only average P and C (O doesn't have precision)
+            if scenario == 'base' and pop_precision is not None and comp_precision is not None:
+                total_precision = np.mean([pop_precision, comp_precision])
+                total_f1 = self.calculate_f1(total_precision, total_recall)
+            else:
+                total_precision = None
+                total_f1 = None
+            
             scenario_results[scenario]['Total'] = {
-                'recall': np.mean(recalls),
+                'recall': total_recall,
+                'precision': total_precision,
+                'f1': total_f1,
                 'n': sum([
                     scenario_results[scenario]['Population']['n'],
                     scenario_results[scenario]['Comparator']['n'],
@@ -221,6 +348,11 @@ class ResultsAnalyzer:
         """
         Run analysis for all cases and analysis types.
         """
+        # First, load precision data for all cases
+        for case in self.cases:
+            self.load_precision_data(case)
+        
+        # Then analyze recall and combine with precision
         for case in self.cases:
             for analysis_type in self.analysis_types:
                 key = f"{case}_{analysis_type}"
@@ -250,11 +382,11 @@ class ResultsAnalyzer:
                 # Select appropriate scenario list
                 scenarios = self.scenarios_hpo if analysis_type == "hpo" else self.scenarios_con
                 
-                # Print header
-                print(f"\n{'Scenario':<12} {'Total':>8} {'Population':>12} {'Comparator':>12} {'Outcome':>10} {'N':>6}")
+                # Print RECALL results
+                print(f"\n{'RECALL SCORES':^80}")
+                print(f"{'Scenario':<12} {'Total':>8} {'Population':>12} {'Comparator':>12} {'Outcome':>10} {'N':>6}")
                 print("─" * 80)
                 
-                # Print results for each scenario
                 for scenario in scenarios:
                     if scenario not in results:
                         continue
@@ -267,9 +399,9 @@ class ResultsAnalyzer:
                           f"{r['Outcome']['recall']:>10.3f} "
                           f"{r['Total']['n']:>6}")
                 
-                # Calculate and print summary statistics
+                # Calculate and print summary statistics for RECALL
                 print("\n" + "─" * 80)
-                print("SUMMARY STATISTICS")
+                print("RECALL SUMMARY STATISTICS")
                 print("─" * 80)
                 
                 # Average across scenarios
@@ -301,6 +433,61 @@ class ResultsAnalyzer:
                       f"{np.max(pop_recalls):>12.3f} "
                       f"{np.max(comp_recalls):>12.3f} "
                       f"{np.max(out_recalls):>10.3f}")
+        
+        # Print PRECISION and F1 scores separately (once per case)
+        print("\n" + "="*80)
+        print("PRECISION & F1 SCORES (BASE SCENARIO)")
+        print("="*80)
+        
+        for case in self.cases:
+            # Check if precision data exists for this case
+            has_precision = False
+            base_metrics = None
+            
+            # Check both HPO and CON to find base scenario with precision
+            for analysis_type in self.analysis_types:
+                key = f"{case}_{analysis_type}"
+                if key in self.results and 'base' in self.results[key]:
+                    if self.results[key]['base']['Total']['precision'] is not None:
+                        has_precision = True
+                        base_metrics = self.results[key]['base']
+                        break
+            
+            if has_precision and base_metrics:
+                print(f"\n{'─'*80}")
+                print(f"CASE: {case}")
+                print(f"{'─'*80}")
+                
+                print(f"\n{'Metric':<15} {'Total':>8} {'Population':>12} {'Comparator':>12} {'Outcome':>10}")
+                print("─" * 80)
+                
+                # Recall
+                print(f"{'Recall':<15} "
+                      f"{base_metrics['Total']['recall']:>8.3f} "
+                      f"{base_metrics['Population']['recall']:>12.3f} "
+                      f"{base_metrics['Comparator']['recall']:>12.3f} "
+                      f"{base_metrics['Outcome']['recall']:>10.3f}")
+                
+                # Precision
+                print(f"{'Precision':<15} "
+                      f"{base_metrics['Total']['precision']:>8.3f} "
+                      f"{base_metrics['Population']['precision']:>12.3f} "
+                      f"{base_metrics['Comparator']['precision']:>12.3f} "
+                      f"{'N/A':>10}")
+                
+                # F1
+                print(f"{'F1 Score':<15} "
+                      f"{base_metrics['Total']['f1']:>8.3f} "
+                      f"{base_metrics['Population']['f1']:>12.3f} "
+                      f"{base_metrics['Comparator']['f1']:>12.3f} "
+                      f"{'N/A':>10}")
+            else:
+                print(f"\n{'─'*80}")
+                print(f"CASE: {case}")
+                print(f"{'─'*80}")
+                print("No precision data available")
+        
+        print("\n" + "="*80)
     
     
     def get_best_scenario(self, case: str, analysis_type: str) -> Tuple[str, float]:
@@ -337,5 +524,24 @@ class ResultsAnalyzer:
                 best_scenario = scenario
         
         return best_scenario, best_recall
-
-
+    
+    def get_base_metrics(self, case: str, analysis_type: str) -> Dict:
+        """
+        Get all metrics (recall, precision, F1) for the base scenario.
+        
+        Args:
+            case: Case name
+            analysis_type: 'hpo' or 'con'
+            
+        Returns:
+            Dictionary with metrics for each PICO element
+        """
+        key = f"{case}_{analysis_type}"
+        
+        if key not in self.results or not self.results[key]:
+            return {}
+        
+        if 'base' not in self.results[key]:
+            return {}
+        
+        return self.results[key]['base']
