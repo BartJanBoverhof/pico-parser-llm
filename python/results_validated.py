@@ -293,7 +293,8 @@ class ResultsAnalyzer:
                 'recall': pop_recall,
                 'precision': pop_precision,
                 'f1': pop_f1,
-                'n': len(scenario_scores['Population']['recall'])
+                'n': len(scenario_scores['Population']['recall']),
+                'precision_n': len(scenario_scores['Population']['precision']) if scenario_scores['Population']['precision'] else 0
             }
             
             # Comparator
@@ -306,7 +307,8 @@ class ResultsAnalyzer:
                 'recall': comp_recall,
                 'precision': comp_precision,
                 'f1': comp_f1,
-                'n': len(scenario_scores['Comparator']['recall'])
+                'n': len(scenario_scores['Comparator']['recall']),
+                'precision_n': len(scenario_scores['Comparator']['precision']) if scenario_scores['Comparator']['precision'] else 0
             }
             
             # Outcome (no precision available)
@@ -317,7 +319,8 @@ class ResultsAnalyzer:
                 'recall': out_recall,
                 'precision': None,
                 'f1': None,
-                'n': len(scenario_scores['Outcome']['recall'])
+                'n': len(scenario_scores['Outcome']['recall']),
+                'precision_n': 0
             }
             
             # Calculate total metrics (average of P, C, O)
@@ -339,6 +342,10 @@ class ResultsAnalyzer:
                     scenario_results[scenario]['Population']['n'],
                     scenario_results[scenario]['Comparator']['n'],
                     scenario_results[scenario]['Outcome']['n']
+                ]),
+                'precision_n': sum([
+                    scenario_results[scenario]['Population']['precision_n'],
+                    scenario_results[scenario]['Comparator']['precision_n']
                 ])
             }
         
@@ -361,10 +368,99 @@ class ResultsAnalyzer:
     def print_results(self):
         """
         Print analysis results in a clear, formatted manner.
+        NEW ORDER: Base scenarios first, then all simulation scenarios.
         """
         print("\n" + "="*80)
         print("RAG-LLM PIPELINE RESULTS ANALYSIS")
         print("="*80)
+        
+        # ===================================================================
+        # SECTION 1: BASE SCENARIO METRICS (RECALL, PRECISION, F1)
+        # ===================================================================
+        print("\n" + "█"*80)
+        print("█" + " "*78 + "█")
+        print("█" + "BASE SCENARIO RESULTS (RECALL, PRECISION, F1)".center(78) + "█")
+        print("█" + " "*78 + "█")
+        print("█"*80)
+        
+        for case in self.cases:
+            # Check if precision data exists for this case
+            has_precision = False
+            base_metrics = None
+            
+            # Check both HPO and CON to find base scenario with precision
+            for analysis_type in self.analysis_types:
+                key = f"{case}_{analysis_type}"
+                if key in self.results and 'base' in self.results[key]:
+                    if self.results[key]['base']['Total']['precision'] is not None:
+                        has_precision = True
+                        base_metrics = self.results[key]['base']
+                        break
+            
+            if has_precision and base_metrics:
+                print(f"\n{'─'*80}")
+                print(f"CASE: {case}")
+                print(f"{'─'*80}")
+                
+                print(f"\n{'Metric':<15} {'Total':>8} {'Population':>12} {'Comparator':>12} {'Outcome':>10}")
+                print("─" * 80)
+                
+                # Recall
+                print(f"{'Recall':<15} "
+                      f"{base_metrics['Total']['recall']:>8.3f} "
+                      f"{base_metrics['Population']['recall']:>12.3f} "
+                      f"{base_metrics['Comparator']['recall']:>12.3f} "
+                      f"{base_metrics['Outcome']['recall']:>10.3f}")
+                
+                # N for Recall
+                print(f"{'N (Recall)':<15} "
+                      f"{base_metrics['Total']['n']:>8} "
+                      f"{base_metrics['Population']['n']:>12} "
+                      f"{base_metrics['Comparator']['n']:>12} "
+                      f"{base_metrics['Outcome']['n']:>10}")
+                
+                print("─" * 80)
+                
+                # Precision
+                print(f"{'Precision':<15} "
+                      f"{base_metrics['Total']['precision']:>8.3f} "
+                      f"{base_metrics['Population']['precision']:>12.3f} "
+                      f"{base_metrics['Comparator']['precision']:>12.3f} "
+                      f"{'N/A':>10}")
+                
+                # N for Precision
+                n_pop_prec = base_metrics['Population']['precision_n']
+                n_comp_prec = base_metrics['Comparator']['precision_n']
+                n_total_prec = n_pop_prec + n_comp_prec
+                
+                print(f"{'N (Precision)':<15} "
+                      f"{n_total_prec:>8} "
+                      f"{n_pop_prec:>12} "
+                      f"{n_comp_prec:>12} "
+                      f"{'N/A':>10}")
+                
+                print("─" * 80)
+                
+                # F1
+                print(f"{'F1 Score':<15} "
+                      f"{base_metrics['Total']['f1']:>8.3f} "
+                      f"{base_metrics['Population']['f1']:>12.3f} "
+                      f"{base_metrics['Comparator']['f1']:>12.3f} "
+                      f"{'N/A':>10}")
+            else:
+                print(f"\n{'─'*80}")
+                print(f"CASE: {case}")
+                print(f"{'─'*80}")
+                print("No precision data available")
+        
+        # ===================================================================
+        # SECTION 2: ALL SIMULATION SCENARIOS (RECALL ONLY)
+        # ===================================================================
+        print("\n\n" + "█"*80)
+        print("█" + " "*78 + "█")
+        print("█" + "SIMULATION SCENARIOS (RECALL COMPARISON)".center(78) + "█")
+        print("█" + " "*78 + "█")
+        print("█"*80)
         
         for case in self.cases:
             for analysis_type in self.analysis_types:
@@ -433,59 +529,6 @@ class ResultsAnalyzer:
                       f"{np.max(pop_recalls):>12.3f} "
                       f"{np.max(comp_recalls):>12.3f} "
                       f"{np.max(out_recalls):>10.3f}")
-        
-        # Print PRECISION and F1 scores separately (once per case)
-        print("\n" + "="*80)
-        print("PRECISION & F1 SCORES (BASE SCENARIO)")
-        print("="*80)
-        
-        for case in self.cases:
-            # Check if precision data exists for this case
-            has_precision = False
-            base_metrics = None
-            
-            # Check both HPO and CON to find base scenario with precision
-            for analysis_type in self.analysis_types:
-                key = f"{case}_{analysis_type}"
-                if key in self.results and 'base' in self.results[key]:
-                    if self.results[key]['base']['Total']['precision'] is not None:
-                        has_precision = True
-                        base_metrics = self.results[key]['base']
-                        break
-            
-            if has_precision and base_metrics:
-                print(f"\n{'─'*80}")
-                print(f"CASE: {case}")
-                print(f"{'─'*80}")
-                
-                print(f"\n{'Metric':<15} {'Total':>8} {'Population':>12} {'Comparator':>12} {'Outcome':>10}")
-                print("─" * 80)
-                
-                # Recall
-                print(f"{'Recall':<15} "
-                      f"{base_metrics['Total']['recall']:>8.3f} "
-                      f"{base_metrics['Population']['recall']:>12.3f} "
-                      f"{base_metrics['Comparator']['recall']:>12.3f} "
-                      f"{base_metrics['Outcome']['recall']:>10.3f}")
-                
-                # Precision
-                print(f"{'Precision':<15} "
-                      f"{base_metrics['Total']['precision']:>8.3f} "
-                      f"{base_metrics['Population']['precision']:>12.3f} "
-                      f"{base_metrics['Comparator']['precision']:>12.3f} "
-                      f"{'N/A':>10}")
-                
-                # F1
-                print(f"{'F1 Score':<15} "
-                      f"{base_metrics['Total']['f1']:>8.3f} "
-                      f"{base_metrics['Population']['f1']:>12.3f} "
-                      f"{base_metrics['Comparator']['f1']:>12.3f} "
-                      f"{'N/A':>10}")
-            else:
-                print(f"\n{'─'*80}")
-                print(f"CASE: {case}")
-                print(f"{'─'*80}")
-                print("No precision data available")
         
         print("\n" + "="*80)
     
