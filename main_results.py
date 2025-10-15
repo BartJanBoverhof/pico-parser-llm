@@ -39,18 +39,3 @@ analyzer.run_analysis()
 
 # Print formatted results to console
 analyzer.print_results()
-
-# Print best performing scenarios
-print("\n" + "="*80)
-print("BEST PERFORMING SCENARIOS")
-print("="*80)
-for case in ["NSCLC", "HCC"]:
-    print(f"\n{case}:")
-    for analysis_type in ["hpo", "con"]:
-        scenario, recall = analyzer.get_best_scenario(case, analysis_type)
-        if scenario:
-            print(f"  {analysis_type.upper():>3}: {scenario:<8} (Total Recall: {recall:.3f})")
-
-print("\n" + "="*80)
-print("ANALYSIS COMPLETE")
-print("="*80)
