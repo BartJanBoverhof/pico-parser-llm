@@ -6,6 +6,7 @@ import glob
 from openpyxl import load_workbook
 from scipy import stats
 from scipy.stats import f
+from sklearn.metrics import cohen_kappa_score
 
 
 class ResultsAnalyzer:
@@ -15,6 +16,7 @@ class ResultsAnalyzer:
     Handles HPO (hyperparameter optimization) and consistency check results
     for multiple disease cases (NSCLC, HCC).
     Calculates recall, precision, F1 scores, and system reliability metrics.
+    Includes AI vs Human comparison analysis.
     """
     
     def __init__(self, results_folder: str = "results/scored"):
@@ -38,6 +40,10 @@ class ResultsAnalyzer:
         self.results = {}
         # Store precision data separately
         self.precision_data = {}
+        # Store human extraction data
+        self.human_data = {}
+        # Store AI vs Human comparison results
+        self.comparison_results = {}
         
     def read_excel_file(self, filepath: Path, case: str, scenarios: List[str]) -> Dict[str, pd.DataFrame]:
         """
@@ -148,6 +154,50 @@ class ResultsAnalyzer:
         else:
             print(f"  ✗ Sheet 'base_PC' not found in loaded data")
             print(f"  Available keys: {list(precision_sheets.keys())}")
+    
+    def load_human_data(self, case: str):
+        """
+        Load human extraction data for comparison with AI.
+        
+        Args:
+            case: Case name (e.g., 'NSCLC', 'HCC')
+        """
+        human_filename = f"{case}_human.xlsx"
+        human_filepath = self.results_folder / human_filename
+        
+        if not human_filepath.exists():
+            print(f"Warning: Human extraction file not found: {human_filepath}")
+            return
+        
+        print(f"Loading human extraction data for {case}...")
+        print(f"  File path: {human_filepath}")
+        
+        try:
+            wb = load_workbook(human_filepath, read_only=True, data_only=True)
+            actual_sheets = wb.sheetnames
+            print(f"  Sheets in file: {actual_sheets}")
+            wb.close()
+        except Exception as e:
+            print(f"  ✗ Error reading workbook: {type(e).__name__}: {e}")
+            return
+        
+        # Read both AI (base) and human sheets
+        human_sheets = self.read_excel_file(human_filepath, case, ["base", "human"])
+        
+        if "base_PC" in human_sheets and "human_PC" in human_sheets:
+            if "base_O" in human_sheets and "human_O" in human_sheets:
+                self.human_data[case] = {
+                    'ai_pc': human_sheets["base_PC"],
+                    'ai_o': human_sheets["base_O"],
+                    'human_pc': human_sheets["human_PC"],
+                    'human_o': human_sheets["human_O"]
+                }
+                print(f"  ✓ Successfully loaded all sheets for {case}")
+            else:
+                print(f"  ✗ Missing Outcome sheets")
+        else:
+            print(f"  ✗ Missing PC sheets")
+            print(f"  Available keys: {list(human_sheets.keys())}")
     
     def extract_scores(self, df: pd.DataFrame, columns: List[str]) -> Dict[str, List[float]]:
         """
@@ -422,6 +472,214 @@ class ResultsAnalyzer:
         else:
             return "Poor"
     
+    def calculate_cohens_kappa(self, ai_scores: List[float], human_scores: List[float], 
+                               threshold: float = 0.5) -> Tuple[float, float]:
+        """
+        Calculate Cohen's kappa for inter-rater agreement between AI and human.
+        
+        Args:
+            ai_scores: List of AI scores (0-1)
+            human_scores: List of human scores (0-1)
+            threshold: Threshold for binary classification (default 0.5)
+            
+        Returns:
+            Tuple of (kappa, percentage_agreement)
+        """
+        if not ai_scores or not human_scores or len(ai_scores) != len(human_scores):
+            return (0.0, 0.0)
+        
+        # Convert continuous scores to binary (present/absent)
+        ai_binary = [1 if score >= threshold else 0 for score in ai_scores]
+        human_binary = [1 if score >= threshold else 0 for score in human_scores]
+        
+        # Calculate Cohen's kappa
+        kappa = cohen_kappa_score(human_binary, ai_binary)
+        
+        # Calculate percentage agreement
+        agreements = sum([1 for i in range(len(ai_binary)) if ai_binary[i] == human_binary[i]])
+        pct_agreement = (agreements / len(ai_binary)) * 100
+        
+        return (kappa, pct_agreement)
+    
+    def interpret_kappa(self, kappa: float) -> str:
+        """
+        Interpret Cohen's kappa value according to Landis & Koch (1977).
+        
+        Args:
+            kappa: Cohen's kappa value
+            
+        Returns:
+            Interpretation string
+        """
+        if kappa > 0.80:
+            return "Almost Perfect"
+        elif kappa > 0.60:
+            return "Substantial"
+        elif kappa > 0.40:
+            return "Moderate"
+        elif kappa > 0.20:
+            return "Fair"
+        elif kappa > 0.00:
+            return "Slight"
+        else:
+            return "Poor"
+    
+    def analyze_concordance(self, ai_scores: List[float], human_scores: List[float],
+                           threshold: float = 0.5) -> Dict:
+        """
+        Analyze concordance and discordance patterns between AI and human.
+        
+        Args:
+            ai_scores: List of AI scores (0-1)
+            human_scores: List of human scores (0-1)
+            threshold: Threshold for classification
+            
+        Returns:
+            Dictionary with concordance statistics
+        """
+        if not ai_scores or not human_scores or len(ai_scores) != len(human_scores):
+            return {}
+        
+        n = len(ai_scores)
+        
+        # Binary classifications
+        ai_binary = np.array([1 if score >= threshold else 0 for score in ai_scores])
+        human_binary = np.array([1 if score >= threshold else 0 for score in human_scores])
+        
+        # Concordance patterns
+        both_correct = np.sum((ai_binary == 1) & (human_binary == 1))
+        both_missed = np.sum((ai_binary == 0) & (human_binary == 0))
+        ai_only = np.sum((ai_binary == 1) & (human_binary == 0))
+        human_only = np.sum((ai_binary == 0) & (human_binary == 1))
+        
+        # Error type analysis (for discordant cases)
+        discordant_indices = np.where(ai_binary != human_binary)[0]
+        
+        # Categorize discordance by score differences
+        incomplete_extraction = []  # Small differences (0.1-0.4)
+        complete_omission = []  # One has 0, other has high score (>0.6)
+        over_extraction = []  # AI high, human low
+        interpretation_diff = []  # Both have moderate scores (0.3-0.7)
+        
+        for idx in discordant_indices:
+            diff = abs(ai_scores[idx] - human_scores[idx])
+            ai_s = ai_scores[idx]
+            human_s = human_scores[idx]
+            
+            if 0.1 <= diff <= 0.4 and 0.3 <= min(ai_s, human_s) <= 0.7:
+                incomplete_extraction.append(idx)
+            elif (ai_s == 0 and human_s > 0.6) or (human_s == 0 and ai_s > 0.6):
+                complete_omission.append(idx)
+            elif ai_s > 0.7 and human_s < 0.3:
+                over_extraction.append(idx)
+            elif 0.3 <= ai_s <= 0.7 and 0.3 <= human_s <= 0.7:
+                interpretation_diff.append(idx)
+        
+        return {
+            'n_total': n,
+            'both_correct': both_correct,
+            'both_correct_pct': (both_correct / n * 100) if n > 0 else 0,
+            'both_missed': both_missed,
+            'both_missed_pct': (both_missed / n * 100) if n > 0 else 0,
+            'ai_only': ai_only,
+            'ai_only_pct': (ai_only / n * 100) if n > 0 else 0,
+            'human_only': human_only,
+            'human_only_pct': (human_only / n * 100) if n > 0 else 0,
+            'incomplete_extraction': len(incomplete_extraction),
+            'incomplete_extraction_pct': (len(incomplete_extraction) / n * 100) if n > 0 else 0,
+            'complete_omission': len(complete_omission),
+            'complete_omission_pct': (len(complete_omission) / n * 100) if n > 0 else 0,
+            'over_extraction': len(over_extraction),
+            'over_extraction_pct': (len(over_extraction) / n * 100) if n > 0 else 0,
+            'interpretation_diff': len(interpretation_diff),
+            'interpretation_diff_pct': (len(interpretation_diff) / n * 100) if n > 0 else 0
+        }
+    
+    def compare_ai_human_performance(self, case: str) -> Dict:
+        """
+        Compare AI and human extraction performance for a specific case.
+        
+        Args:
+            case: Case name (e.g., 'NSCLC', 'HCC')
+            
+        Returns:
+            Dictionary with comparison metrics
+        """
+        if case not in self.human_data:
+            return {}
+        
+        results = {
+            'case': case,
+            'elements': {}
+        }
+        
+        # Analyze Population and Comparator
+        for element in ['Population', 'Comparator']:
+            ai_scores = self.extract_scores(self.human_data[case]['ai_pc'], [element]).get(element, [])
+            human_scores = self.extract_scores(self.human_data[case]['human_pc'], [element]).get(element, [])
+            
+            if ai_scores and human_scores and len(ai_scores) == len(human_scores):
+                # Calculate recalls
+                ai_recall = self.calculate_recall(ai_scores)
+                human_recall = self.calculate_recall(human_scores)
+                
+                # Calculate inter-rater agreement
+                kappa, pct_agreement = self.calculate_cohens_kappa(ai_scores, human_scores)
+                
+                # Analyze concordance
+                concordance = self.analyze_concordance(ai_scores, human_scores)
+                
+                results['elements'][element] = {
+                    'ai_recall': ai_recall,
+                    'human_recall': human_recall,
+                    'recall_diff': ai_recall - human_recall,
+                    'kappa': kappa,
+                    'kappa_interpretation': self.interpret_kappa(kappa),
+                    'pct_agreement': pct_agreement,
+                    'concordance': concordance,
+                    'n': len(ai_scores)
+                }
+        
+        # Analyze Outcome
+        ai_scores_o = self.extract_scores(self.human_data[case]['ai_o'], ['Outcome']).get('Outcome', [])
+        human_scores_o = self.extract_scores(self.human_data[case]['human_o'], ['Outcome']).get('Outcome', [])
+        
+        if ai_scores_o and human_scores_o and len(ai_scores_o) == len(human_scores_o):
+            ai_recall = self.calculate_recall(ai_scores_o)
+            human_recall = self.calculate_recall(human_scores_o)
+            
+            kappa, pct_agreement = self.calculate_cohens_kappa(ai_scores_o, human_scores_o)
+            concordance = self.analyze_concordance(ai_scores_o, human_scores_o)
+            
+            results['elements']['Outcome'] = {
+                'ai_recall': ai_recall,
+                'human_recall': human_recall,
+                'recall_diff': ai_recall - human_recall,
+                'kappa': kappa,
+                'kappa_interpretation': self.interpret_kappa(kappa),
+                'pct_agreement': pct_agreement,
+                'concordance': concordance,
+                'n': len(ai_scores_o)
+            }
+        
+        # Calculate aggregate metrics
+        if results['elements']:
+            all_ai_recalls = [v['ai_recall'] for v in results['elements'].values()]
+            all_human_recalls = [v['human_recall'] for v in results['elements'].values()]
+            all_kappas = [v['kappa'] for v in results['elements'].values()]
+            all_agreements = [v['pct_agreement'] for v in results['elements'].values()]
+            
+            results['aggregate'] = {
+                'ai_recall_mean': np.mean(all_ai_recalls),
+                'human_recall_mean': np.mean(all_human_recalls),
+                'recall_diff_mean': np.mean(all_ai_recalls) - np.mean(all_human_recalls),
+                'kappa_mean': np.mean(all_kappas),
+                'kappa_interpretation': self.interpret_kappa(np.mean(all_kappas)),
+                'pct_agreement_mean': np.mean(all_agreements)
+            }
+        
+        return results
+    
     def analyze_case(self, case: str, analysis_type: str) -> Dict:
         """
         Analyze results for a specific case and analysis type.
@@ -566,16 +824,26 @@ class ResultsAnalyzer:
         for case in self.cases:
             self.load_precision_data(case)
         
+        # Load human extraction data
+        for case in self.cases:
+            self.load_human_data(case)
+        
         # Then analyze recall and combine with precision
         for case in self.cases:
             for analysis_type in self.analysis_types:
                 key = f"{case}_{analysis_type}"
                 self.results[key] = self.analyze_case(case, analysis_type)
+        
+        # Perform AI vs Human comparison
+        for case in self.cases:
+            if case in self.human_data:
+                self.comparison_results[case] = self.compare_ai_human_performance(case)
     
     def print_results(self):
         """
         Print analysis results in a clear, formatted manner.
-        Order: Base scenarios first, then simulation scenarios, then reliability analysis.
+        Order: Base scenarios first, then simulation scenarios, then reliability analysis,
+        finally AI vs Human comparison.
         """
         print("\n" + "="*80)
         print("RAG-LLM PIPELINE RESULTS ANALYSIS")
@@ -1131,9 +1399,298 @@ class ResultsAnalyzer:
                 print("─" * 80)
                 print(f"{'Overall':<15} {composite_score:>8.2f} {overall_grade}")
                 print("─" * 80)
+        
+        # ===================================================================
+        # SECTION 4: AI vs HUMAN COMPARISON ANALYSIS
+        # ===================================================================
+        self.print_human_ai_comparison()
+        
         print("\n" + "="*80)
         print("ANALYSIS COMPLETE")
         print("="*80)
+    
+    def print_human_ai_comparison(self):
+        """
+        Print comprehensive AI vs Human comparison analysis.
+        """
+        if not self.comparison_results:
+            print("\n\n" + "█"*80)
+            print("█" + " "*78 + "█")
+            print("█" + "AI vs HUMAN EXTRACTION COMPARISON".center(78) + "█")
+            print("█" + " "*78 + "█")
+            print("█"*80)
+            print("\nNo human extraction data available for comparison.")
+            return
+        
+        print("\n\n" + "█"*80)
+        print("█" + " "*78 + "█")
+        print("█" + "AI vs HUMAN EXTRACTION COMPARISON".center(78) + "█")
+        print("█" + " "*78 + "█")
+        print("█"*80)
+        
+        for case in self.cases:
+            if case not in self.comparison_results:
+                continue
+            
+            comp = self.comparison_results[case]
+            
+            if not comp or 'elements' not in comp or not comp['elements']:
+                continue
+            
+            print(f"\n{'═'*80}")
+            print(f"CASE: {case}")
+            print(f"{'═'*80}")
+            
+            # ---------------------------------------------------------------
+            # 4.1: DIRECT PERFORMANCE COMPARISON
+            # ---------------------------------------------------------------
+            print(f"\n{'▬'*80}")
+            print(f"4.1 DIRECT PERFORMANCE COMPARISON (RECALL)")
+            print(f"{'▬'*80}")
+            
+            print(f"\n{'Element':<15} {'AI Recall':>12} {'Human Recall':>14} {'Difference':>12} {'N':>6}")
+            print("─" * 80)
+            
+            for element in ['Population', 'Comparator', 'Outcome']:
+                if element in comp['elements']:
+                    e = comp['elements'][element]
+                    ai_recall = e['ai_recall']
+                    human_recall = e['human_recall']
+                    diff = e['recall_diff']
+                    n = e['n']
+                    
+                    # Color coding for difference (using text indicators)
+                    diff_str = f"{diff:+.4f}"
+                    if diff > 0.05:
+                        indicator = "↑"
+                    elif diff < -0.05:
+                        indicator = "↓"
+                    else:
+                        indicator = "≈"
+                    
+                    print(f"{element:<15} "
+                          f"{ai_recall:>12.4f} "
+                          f"{human_recall:>14.4f} "
+                          f"{diff_str:>11} {indicator} "
+                          f"{n:>6}")
+            
+            # Aggregate comparison
+            if 'aggregate' in comp:
+                agg = comp['aggregate']
+                print("─" * 80)
+                print(f"{'AGGREGATE':<15} "
+                      f"{agg['ai_recall_mean']:>12.4f} "
+                      f"{agg['human_recall_mean']:>14.4f} "
+                      f"{agg['recall_diff_mean']:>+12.4f}")
+            
+            print("\nNote: ↑ = AI outperforms Human by >5%, ↓ = Human outperforms AI by >5%, ≈ = Similar performance")
+            
+            # ---------------------------------------------------------------
+            # 4.2: INTER-RATER AGREEMENT ANALYSIS
+            # ---------------------------------------------------------------
+            print(f"\n{'▬'*80}")
+            print(f"4.2 INTER-RATER AGREEMENT ANALYSIS")
+            print(f"{'▬'*80}")
+            
+            print(f"\n{'Element':<15} {'Cohen Kappa':>12} {'Interpretation':>18} {'% Agreement':>14} {'N':>6}")
+            print("─" * 80)
+            
+            for element in ['Population', 'Comparator', 'Outcome']:
+                if element in comp['elements']:
+                    e = comp['elements'][element]
+                    kappa = e['kappa']
+                    interp = e['kappa_interpretation']
+                    pct_agr = e['pct_agreement']
+                    n = e['n']
+                    
+                    print(f"{element:<15} "
+                          f"{kappa:>12.4f} "
+                          f"{interp:>18} "
+                          f"{pct_agr:>13.2f}% "
+                          f"{n:>6}")
+            
+            # Aggregate agreement
+            if 'aggregate' in comp:
+                agg = comp['aggregate']
+                print("─" * 80)
+                print(f"{'AGGREGATE':<15} "
+                      f"{agg['kappa_mean']:>12.4f} "
+                      f"{agg['kappa_interpretation']:>18} "
+                      f"{agg['pct_agreement_mean']:>13.2f}%")
+            
+            print("\nInterpretation (Landis & Koch): Almost Perfect (>0.80), Substantial (0.60-0.80),")
+            print("                               Moderate (0.40-0.60), Fair (0.20-0.40), Slight (0-0.20)")
+            
+            # ---------------------------------------------------------------
+            # 4.3: CONCORDANCE AND DISCORDANCE PATTERNS
+            # ---------------------------------------------------------------
+            print(f"\n{'▬'*80}")
+            print(f"4.3 CONCORDANCE AND DISCORDANCE PATTERNS")
+            print(f"{'▬'*80}")
+            
+            for element in ['Population', 'Comparator', 'Outcome']:
+                if element in comp['elements'] and 'concordance' in comp['elements'][element]:
+                    e = comp['elements'][element]
+                    conc = e['concordance']
+                    
+                    print(f"\n{element}:")
+                    print("─" * 80)
+                    
+                    print(f"\n{'Pattern':<30} {'Count':>10} {'Percentage':>12}")
+                    print("─" * 80)
+                    
+                    # Perfect concordance
+                    print(f"{'Both Correct (Perfect)':<30} "
+                          f"{conc['both_correct']:>10} "
+                          f"{conc['both_correct_pct']:>11.2f}%")
+                    
+                    # Both missed
+                    print(f"{'Both Missed (Coverage Gap)':<30} "
+                          f"{conc['both_missed']:>10} "
+                          f"{conc['both_missed_pct']:>11.2f}%")
+                    
+                    # AI only
+                    print(f"{'AI Only (AI Advantage/FP)':<30} "
+                          f"{conc['ai_only']:>10} "
+                          f"{conc['ai_only_pct']:>11.2f}%")
+                    
+                    # Human only
+                    print(f"{'Human Only (Needs Improvement)':<30} "
+                          f"{conc['human_only']:>10} "
+                          f"{conc['human_only_pct']:>11.2f}%")
+                    
+                    print("\n" + "─" * 80)
+                    print("ERROR TYPE CATEGORIZATION (for discordant cases)")
+                    print("─" * 80)
+                    
+                    print(f"{'Error Type':<30} {'Count':>10} {'Percentage':>12}")
+                    print("─" * 80)
+                    
+                    # Incomplete extraction
+                    print(f"{'Incomplete Extraction':<30} "
+                          f"{conc['incomplete_extraction']:>10} "
+                          f"{conc['incomplete_extraction_pct']:>11.2f}%")
+                    
+                    # Complete omission
+                    print(f"{'Complete Omission':<30} "
+                          f"{conc['complete_omission']:>10} "
+                          f"{conc['complete_omission_pct']:>11.2f}%")
+                    
+                    # Over-extraction
+                    print(f"{'Over-extraction (False Pos.)':<30} "
+                          f"{conc['over_extraction']:>10} "
+                          f"{conc['over_extraction_pct']:>11.2f}%")
+                    
+                    # Interpretation differences
+                    print(f"{'Interpretation Differences':<30} "
+                          f"{conc['interpretation_diff']:>10} "
+                          f"{conc['interpretation_diff_pct']:>11.2f}%")
+            
+            # ---------------------------------------------------------------
+            # 4.4: SUMMARY AND RECOMMENDATIONS
+            # ---------------------------------------------------------------
+            print(f"\n{'▬'*80}")
+            print(f"4.4 SUMMARY AND RECOMMENDATIONS")
+            print(f"{'▬'*80}")
+            
+            if 'aggregate' in comp:
+                agg = comp['aggregate']
+                
+                # Overall assessment
+                ai_recall = agg['ai_recall_mean']
+                human_recall = agg['human_recall_mean']
+                kappa = agg['kappa_mean']
+                
+                print("\nOVERALL ASSESSMENT:")
+                print("─" * 80)
+                
+                # Performance comparison
+                if abs(ai_recall - human_recall) < 0.05:
+                    perf_assess = "COMPARABLE - AI and human performance are similar"
+                elif ai_recall > human_recall:
+                    perf_assess = f"AI ADVANTAGE - AI outperforms human by {(ai_recall - human_recall):.4f} ({((ai_recall - human_recall) / human_recall * 100):+.2f}%)"
+                else:
+                    perf_assess = f"HUMAN ADVANTAGE - Human outperforms AI by {(human_recall - ai_recall):.4f} ({((human_recall - ai_recall) / ai_recall * 100):+.2f}%)"
+                
+                print(f"Performance:  {perf_assess}")
+                
+                # Agreement assessment
+                if kappa > 0.80:
+                    agr_assess = "EXCELLENT - Almost perfect agreement between AI and human"
+                elif kappa > 0.60:
+                    agr_assess = "GOOD - Substantial agreement between AI and human"
+                elif kappa > 0.40:
+                    agr_assess = "FAIR - Moderate agreement between AI and human"
+                else:
+                    agr_assess = "NEEDS IMPROVEMENT - Agreement between AI and human is low"
+                
+                print(f"Agreement:    {agr_assess}")
+                
+                print("\nKEY FINDINGS:")
+                print("─" * 80)
+                
+                # Analyze concordance patterns across all elements
+                total_both_correct = sum([comp['elements'][e]['concordance']['both_correct'] 
+                                        for e in ['Population', 'Comparator', 'Outcome'] 
+                                        if e in comp['elements']])
+                total_ai_only = sum([comp['elements'][e]['concordance']['ai_only'] 
+                                   for e in ['Population', 'Comparator', 'Outcome'] 
+                                   if e in comp['elements']])
+                total_human_only = sum([comp['elements'][e]['concordance']['human_only'] 
+                                      for e in ['Population', 'Comparator', 'Outcome'] 
+                                      if e in comp['elements']])
+                total_both_missed = sum([comp['elements'][e]['concordance']['both_missed'] 
+                                       for e in ['Population', 'Comparator', 'Outcome'] 
+                                       if e in comp['elements']])
+                
+                total_n = sum([comp['elements'][e]['n'] 
+                             for e in ['Population', 'Comparator', 'Outcome'] 
+                             if e in comp['elements']])
+                
+                print(f"• Perfect Concordance Rate: {(total_both_correct / total_n * 100):.2f}%")
+                print(f"• AI-Only Identifications:  {(total_ai_only / total_n * 100):.2f}%")
+                print(f"• Human-Only Identifications: {(total_human_only / total_n * 100):.2f}%")
+                print(f"• Coverage Gaps (Both Missed): {(total_both_missed / total_n * 100):.2f}%")
+                
+                print("\nRECOMMENDATIONS:")
+                print("─" * 80)
+                
+                recommendations = []
+                
+                # Recommendation based on agreement
+                if kappa < 0.60:
+                    recommendations.append("• Investigate sources of disagreement between AI and human extraction")
+                    recommendations.append("• Consider additional training or calibration of extraction criteria")
+                
+                # Recommendation based on performance
+                if ai_recall < 0.70:
+                    recommendations.append("• AI recall is below 70% - system needs improvement before deployment")
+                elif ai_recall < 0.80:
+                    recommendations.append("• AI recall is moderate (70-80%) - consider optimization strategies")
+                
+                # Recommendation based on human performance
+                if human_recall < 0.75:
+                    recommendations.append("• Human recall indicates challenging extraction task")
+                    recommendations.append("• Consider improving ground truth clarity or extraction guidelines")
+                
+                # Recommendation based on concordance patterns
+                if total_both_missed / total_n > 0.15:
+                    recommendations.append("• High coverage gap rate (>15%) indicates difficult-to-extract elements")
+                    recommendations.append("• Review document quality and extraction methodology")
+                
+                if total_ai_only / total_n > 0.20:
+                    recommendations.append("• High AI-only rate (>20%) - validate for false positives")
+                
+                if total_human_only / total_n > 0.20:
+                    recommendations.append("• High human-only rate (>20%) - AI missing significant information")
+                    recommendations.append("• Focus on improving AI recall for these cases")
+                
+                if not recommendations:
+                    recommendations.append("• System performance is satisfactory")
+                    recommendations.append("• Monitor performance on new data to ensure consistency")
+                
+                for rec in recommendations:
+                    print(rec)
     
     def get_best_scenario(self, case: str, analysis_type: str) -> Tuple[str, float]:
         """
