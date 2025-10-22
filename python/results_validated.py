@@ -360,6 +360,9 @@ class ResultsAnalyzer:
         - Columns = raters/runs (fixed set of raters)
         - We want absolute agreement between runs
         
+        ICC(3,1) corresponds to ICC(C,1) in McGraw & Wong (1996) notation.
+        Formula and CI calculation based on Shrout & Fleiss (1979).
+        
         Args:
             data_matrix: 2D array where rows are subjects and columns are raters/runs
             
@@ -415,17 +418,31 @@ class ResultsAnalyzer:
         # Based on Shrout & Fleiss (1979)
         alpha = 0.05
         
-        F_rows = MS_rows / MS_error if MS_error > 0 else 0
+        if MS_error == 0:
+            # If no error variance, ICC is either 1 or undefined
+            icc = max(0.0, min(1.0, icc))
+            return (icc, (icc, icc))
         
-        # Lower bound
-        F_lower = F_rows / f.ppf(1 - alpha/2, df_rows, df_error)
-        icc_lower = (F_lower - 1) / (F_lower + (k - 1))
+        # Critical F values for confidence interval
+        F_U = f.ppf(1 - alpha/2, df_rows, df_error)
+        F_L = f.ppf(alpha/2, df_rows, df_error)
         
-        # Upper bound
-        F_upper = F_rows / f.ppf(alpha/2, df_rows, df_error)
-        icc_upper = (F_upper - 1) / (F_upper + (k - 1))
+        # Denominator is the same for both bounds (full ICC(3,1) denominator)
+        denom = MS_rows + (k - 1) * MS_error + k * (MS_cols - MS_error) / n
         
-        # Ensure ICC is in valid range [0, 1]
+        if denom == 0:
+            icc = max(0.0, min(1.0, icc))
+            return (icc, (0.0, 1.0))
+        
+        # Lower bound - uses F_U (upper F critical value)
+        numerator_lower = MS_rows - F_U * MS_error
+        icc_lower = numerator_lower / denom
+        
+        # Upper bound - uses F_L (lower F critical value)
+        numerator_upper = MS_rows - F_L * MS_error
+        icc_upper = numerator_upper / denom
+        
+        # Ensure ICC and bounds are in valid range [0, 1]
         icc = max(0.0, min(1.0, icc))
         icc_lower = max(0.0, min(1.0, icc_lower))
         icc_upper = max(0.0, min(1.0, icc_upper))
@@ -882,26 +899,26 @@ class ResultsAnalyzer:
                 
                 # Recall
                 print(f"{'Recall':<15} "
-                      f"{base_metrics['Total']['recall']:>8.3f} "
-                      f"{base_metrics['Population']['recall']:>12.3f} "
-                      f"{base_metrics['Comparator']['recall']:>12.3f} "
-                      f"{base_metrics['Outcome']['recall']:>10.3f}")
+                    f"{base_metrics['Total']['recall']:>8.3f} "
+                    f"{base_metrics['Population']['recall']:>12.3f} "
+                    f"{base_metrics['Comparator']['recall']:>12.3f} "
+                    f"{base_metrics['Outcome']['recall']:>10.3f}")
                 
                 # N for Recall
                 print(f"{'N (Recall)':<15} "
-                      f"{base_metrics['Total']['n']:>8} "
-                      f"{base_metrics['Population']['n']:>12} "
-                      f"{base_metrics['Comparator']['n']:>12} "
-                      f"{base_metrics['Outcome']['n']:>10}")
+                    f"{base_metrics['Total']['n']:>8} "
+                    f"{base_metrics['Population']['n']:>12} "
+                    f"{base_metrics['Comparator']['n']:>12} "
+                    f"{base_metrics['Outcome']['n']:>10}")
                 
                 print("─" * 80)
                 
                 # Precision
                 print(f"{'Precision':<15} "
-                      f"{base_metrics['Total']['precision']:>8.3f} "
-                      f"{base_metrics['Population']['precision']:>12.3f} "
-                      f"{base_metrics['Comparator']['precision']:>12.3f} "
-                      f"{'N/A':>10}")
+                    f"{base_metrics['Total']['precision']:>8.3f} "
+                    f"{base_metrics['Population']['precision']:>12.3f} "
+                    f"{base_metrics['Comparator']['precision']:>12.3f} "
+                    f"{'N/A':>10}")
                 
                 # N for Precision
                 n_pop_prec = base_metrics['Population']['precision_n']
@@ -909,19 +926,19 @@ class ResultsAnalyzer:
                 n_total_prec = n_pop_prec + n_comp_prec
                 
                 print(f"{'N (Precision)':<15} "
-                      f"{n_total_prec:>8} "
-                      f"{n_pop_prec:>12} "
-                      f"{n_comp_prec:>12} "
-                      f"{'N/A':>10}")
+                    f"{n_total_prec:>8} "
+                    f"{n_pop_prec:>12} "
+                    f"{n_comp_prec:>12} "
+                    f"{'N/A':>10}")
                 
                 print("─" * 80)
                 
                 # F1
                 print(f"{'F1 Score':<15} "
-                      f"{base_metrics['Total']['f1']:>8.3f} "
-                      f"{base_metrics['Population']['f1']:>12.3f} "
-                      f"{base_metrics['Comparator']['f1']:>12.3f} "
-                      f"{'N/A':>10}")
+                    f"{base_metrics['Total']['f1']:>8.3f} "
+                    f"{base_metrics['Population']['f1']:>12.3f} "
+                    f"{base_metrics['Comparator']['f1']:>12.3f} "
+                    f"{'N/A':>10}")
             else:
                 print(f"\n{'─'*80}")
                 print(f"CASE: {case}")
@@ -964,11 +981,11 @@ class ResultsAnalyzer:
                     
                     r = results[scenario]
                     print(f"{scenario:<12} "
-                          f"{r['Total']['recall']:>8.3f} "
-                          f"{r['Population']['recall']:>12.3f} "
-                          f"{r['Comparator']['recall']:>12.3f} "
-                          f"{r['Outcome']['recall']:>10.3f} "
-                          f"{r['Total']['n']:>6}")
+                        f"{r['Total']['recall']:>8.3f} "
+                        f"{r['Population']['recall']:>12.3f} "
+                        f"{r['Comparator']['recall']:>12.3f} "
+                        f"{r['Outcome']['recall']:>10.3f} "
+                        f"{r['Total']['n']:>6}")
                 
                 # Calculate and print summary statistics for RECALL
                 print("\n" + "─" * 80)
@@ -982,28 +999,28 @@ class ResultsAnalyzer:
                 out_recalls = [results[s]['Outcome']['recall'] for s in scenarios if s in results]
                 
                 print(f"{'Average':<12} "
-                      f"{np.mean(total_recalls):>8.3f} "
-                      f"{np.mean(pop_recalls):>12.3f} "
-                      f"{np.mean(comp_recalls):>12.3f} "
-                      f"{np.mean(out_recalls):>10.3f}")
+                    f"{np.mean(total_recalls):>8.3f} "
+                    f"{np.mean(pop_recalls):>12.3f} "
+                    f"{np.mean(comp_recalls):>12.3f} "
+                    f"{np.mean(out_recalls):>10.3f}")
                 
                 print(f"{'Std Dev':<12} "
-                      f"{np.std(total_recalls):>8.3f} "
-                      f"{np.std(pop_recalls):>12.3f} "
-                      f"{np.std(comp_recalls):>12.3f} "
-                      f"{np.std(out_recalls):>10.3f}")
+                    f"{np.std(total_recalls):>8.3f} "
+                    f"{np.std(pop_recalls):>12.3f} "
+                    f"{np.std(comp_recalls):>12.3f} "
+                    f"{np.std(out_recalls):>10.3f}")
                 
                 print(f"{'Min':<12} "
-                      f"{np.min(total_recalls):>8.3f} "
-                      f"{np.min(pop_recalls):>12.3f} "
-                      f"{np.min(comp_recalls):>12.3f} "
-                      f"{np.min(out_recalls):>10.3f}")
+                    f"{np.min(total_recalls):>8.3f} "
+                    f"{np.min(pop_recalls):>12.3f} "
+                    f"{np.min(comp_recalls):>12.3f} "
+                    f"{np.min(out_recalls):>10.3f}")
                 
                 print(f"{'Max':<12} "
-                      f"{np.max(total_recalls):>8.3f} "
-                      f"{np.max(pop_recalls):>12.3f} "
-                      f"{np.max(comp_recalls):>12.3f} "
-                      f"{np.max(out_recalls):>10.3f}")
+                    f"{np.max(total_recalls):>8.3f} "
+                    f"{np.max(pop_recalls):>12.3f} "
+                    f"{np.max(comp_recalls):>12.3f} "
+                    f"{np.max(out_recalls):>10.3f}")
         
         # ===================================================================
         # SECTION 3: SYSTEM RELIABILITY AND CONSISTENCY ANALYSIS
@@ -1020,385 +1037,18 @@ class ResultsAnalyzer:
             print(f"{'═'*80}")
             
             # ---------------------------------------------------------------
-            # 3.1: HPO Analysis - Identify best scenario
+            # 3.1: HPO Analysis - Reliability across different hyperparameters
             # ---------------------------------------------------------------
             hpo_key = f"{case}_hpo"
             if hpo_key in self.results and self.results[hpo_key]:
-                print(f"\n{'▬'*80}")
-                print(f"3.1 HYPERPARAMETER OPTIMIZATION ANALYSIS")
-                print(f"{'▬'*80}")
-                
-                hpo_results = self.results[hpo_key]
-                scenarios = [s for s in self.scenarios_hpo if s in hpo_results]
-                
-                # Find best scenario
-                best_scenario = None
-                best_recall = 0.0
-                for scenario in scenarios:
-                    recall = hpo_results[scenario]['Total']['recall']
-                    if recall > best_recall:
-                        best_recall = recall
-                        best_scenario = scenario
-                
-                base_recall = hpo_results['base']['Total']['recall']
-                
-                print(f"\nBest Performing Scenario: {best_scenario} (Total Recall: {best_recall:.4f})")
-                print(f"Baseline Scenario:        base (Total Recall: {base_recall:.4f})")
-                print(f"Performance Delta:        {(best_recall - base_recall):.4f} ({((best_recall - base_recall) / base_recall * 100):+.2f}%)")
-                
-                # Show all HPO scenarios ranked
-                print(f"\n{'All HPO Scenarios (Ranked by Total Recall):'}")
-                print(f"{'─'*80}")
-                print(f"{'Rank':<6} {'Scenario':<12} {'Total':>8} {'Population':>12} {'Comparator':>12} {'Outcome':>10}")
-                print(f"{'─'*80}")
-                
-                ranked_scenarios = sorted(scenarios, 
-                                        key=lambda s: hpo_results[s]['Total']['recall'], 
-                                        reverse=True)
-                
-                for rank, scenario in enumerate(ranked_scenarios, 1):
-                    r = hpo_results[scenario]
-                    marker = " ★" if scenario == best_scenario else ""
-                    marker += " [BASE]" if scenario == "base" else ""
-                    
-                    print(f"{rank:<6} {scenario:<12} "
-                          f"{r['Total']['recall']:>8.4f} "
-                          f"{r['Population']['recall']:>12.4f} "
-                          f"{r['Comparator']['recall']:>12.4f} "
-                          f"{r['Outcome']['recall']:>10.4f}{marker}")
-                
-                # HPO Variability Analysis
-                total_recalls = [hpo_results[s]['Total']['recall'] for s in scenarios]
-                hpo_cv = self.calculate_coefficient_of_variation(total_recalls)
-                hpo_range = max(total_recalls) - min(total_recalls)
-                
-                print(f"\n{'HPO Variability:'}")
-                print(f"  Coefficient of Variation: {hpo_cv:.2f}%")
-                print(f"  Range (Max - Min):        {hpo_range:.4f}")
-                print(f"  Relative Range:           {(hpo_range / np.mean(total_recalls) * 100):.2f}%")
+                self._print_hpo_reliability_analysis(case, hpo_key)
             
             # ---------------------------------------------------------------
             # 3.2: Consistency Analysis - Multiple runs of base scenario
             # ---------------------------------------------------------------
             con_key = f"{case}_con"
             if con_key in self.results and self.results[con_key]:
-                print(f"\n{'▬'*80}")
-                print(f"3.2 CONSISTENCY ANALYSIS (BASE SCENARIO REPEATED RUNS)")
-                print(f"{'▬'*80}")
-                
-                con_results = self.results[con_key]
-                scenarios = [s for s in self.scenarios_con if s in con_results]
-                n_runs = len(scenarios)
-                
-                print(f"\nNumber of Runs: {n_runs}")
-                print(f"Scenarios: {', '.join(scenarios)}")
-                
-                # Collect metrics for all runs
-                metrics_data = {
-                    'Total': [],
-                    'Population': [],
-                    'Comparator': [],
-                    'Outcome': []
-                }
-                
-                for scenario in scenarios:
-                    metrics_data['Total'].append(con_results[scenario]['Total']['recall'])
-                    metrics_data['Population'].append(con_results[scenario]['Population']['recall'])
-                    metrics_data['Comparator'].append(con_results[scenario]['Comparator']['recall'])
-                    metrics_data['Outcome'].append(con_results[scenario]['Outcome']['recall'])
-                
-                # =========================================================
-                # 1. CENTRAL TENDENCY AND DISPERSION
-                # =========================================================
-                print(f"\n{'─'*80}")
-                print("1. CENTRAL TENDENCY AND DISPERSION")
-                print("─" * 80)
-                
-                print(f"\n{'Metric':<15} {'Total':>12} {'Population':>12} {'Comparator':>12} {'Outcome':>10}")
-                print("─" * 80)
-                
-                # Mean ± SD
-                mean_total = np.mean(metrics_data['Total'])
-                mean_pop = np.mean(metrics_data['Population'])
-                mean_comp = np.mean(metrics_data['Comparator'])
-                mean_out = np.mean(metrics_data['Outcome'])
-                
-                std_total = np.std(metrics_data['Total'], ddof=1)
-                std_pop = np.std(metrics_data['Population'], ddof=1)
-                std_comp = np.std(metrics_data['Comparator'], ddof=1)
-                std_out = np.std(metrics_data['Outcome'], ddof=1)
-                
-                print(f"{'Mean ± SD':<15} "
-                      f"{mean_total:>5.4f}±{std_total:<.4f} "
-                      f"{mean_pop:>5.4f}±{std_pop:<.4f} "
-                      f"{mean_comp:>5.4f}±{std_comp:<.4f} "
-                      f"{mean_out:>5.4f}±{std_out:<.4f}")
-                
-                # Median
-                med_total = np.median(metrics_data['Total'])
-                med_pop = np.median(metrics_data['Population'])
-                med_comp = np.median(metrics_data['Comparator'])
-                med_out = np.median(metrics_data['Outcome'])
-                
-                print(f"{'Median':<15} "
-                      f"{med_total:>12.4f} "
-                      f"{med_pop:>12.4f} "
-                      f"{med_comp:>12.4f} "
-                      f"{med_out:>10.4f}")
-                
-                # Range (min-max)
-                min_total = np.min(metrics_data['Total'])
-                min_pop = np.min(metrics_data['Population'])
-                min_comp = np.min(metrics_data['Comparator'])
-                min_out = np.min(metrics_data['Outcome'])
-                
-                max_total = np.max(metrics_data['Total'])
-                max_pop = np.max(metrics_data['Population'])
-                max_comp = np.max(metrics_data['Comparator'])
-                max_out = np.max(metrics_data['Outcome'])
-                
-                print(f"{'Range (Min)':<15} "
-                      f"{min_total:>12.4f} "
-                      f"{min_pop:>12.4f} "
-                      f"{min_comp:>12.4f} "
-                      f"{min_out:>10.4f}")
-                
-                print(f"{'Range (Max)':<15} "
-                      f"{max_total:>12.4f} "
-                      f"{max_pop:>12.4f} "
-                      f"{max_comp:>12.4f} "
-                      f"{max_out:>10.4f}")
-                
-                # =========================================================
-                # 2. INTRACLASS CORRELATION COEFFICIENT (ICC)
-                # =========================================================
-                print(f"\n{'─'*80}")
-                print("2. INTRACLASS CORRELATION COEFFICIENT (ICC)")
-                print("   Two-way mixed-effects model, absolute agreement, single measure")
-                print("─" * 80)
-                
-                # Prepare data matrices for ICC calculation
-                # Each row is a test case, each column is a run
-                icc_matrices = {}
-                
-                for element in ['Population', 'Comparator', 'Outcome']:
-                    # Collect recall scores for each scenario
-                    scores_by_scenario = []
-                    for scenario in scenarios:
-                        scores = con_results[scenario][element]['recall_scores']
-                        scores_by_scenario.append(scores)
-                    
-                    # Check if all scenarios have the same number of scores
-                    if len(scores_by_scenario) > 0 and len(scores_by_scenario[0]) > 0:
-                        n_scores = len(scores_by_scenario[0])
-                        if all(len(s) == n_scores for s in scores_by_scenario):
-                            # Create matrix: rows = test cases, columns = runs
-                            icc_matrices[element] = np.array(scores_by_scenario).T
-                        else:
-                            print(f"  Warning: Inconsistent number of scores for {element}")
-                
-                # Calculate ICC for Total (using all PICO elements combined)
-                # Concatenate all matrices vertically
-                if len(icc_matrices) > 0:
-                    total_matrix = np.vstack([icc_matrices[elem] for elem in icc_matrices.keys()])
-                    icc_total, ci_total_icc = self.calculate_icc(total_matrix)
-                else:
-                    icc_total, ci_total_icc = 0.0, (0.0, 0.0)
-                
-                # Calculate ICC for each element
-                icc_results = {}
-                for element in ['Population', 'Comparator', 'Outcome']:
-                    if element in icc_matrices:
-                        icc_val, ci_icc = self.calculate_icc(icc_matrices[element])
-                        icc_results[element] = (icc_val, ci_icc)
-                    else:
-                        icc_results[element] = (0.0, (0.0, 0.0))
-                
-                print(f"\n{'Component':<15} {'ICC':>8} {'95% CI':>20} {'Interpretation':>15}")
-                print("─" * 80)
-                
-                # Overall ICC
-                print(f"{'Total (Overall)':<15} "
-                      f"{icc_total:>8.4f} "
-                      f"[{ci_total_icc[0]:>6.4f}, {ci_total_icc[1]:>6.4f}] "
-                      f"{self.interpret_icc(icc_total):>15}")
-                
-                # Per-element ICC
-                for element in ['Population', 'Comparator', 'Outcome']:
-                    icc_val, ci_icc = icc_results[element]
-                    print(f"{element:<15} "
-                          f"{icc_val:>8.4f} "
-                          f"[{ci_icc[0]:>6.4f}, {ci_icc[1]:>6.4f}] "
-                          f"{self.interpret_icc(icc_val):>15}")
-                
-                print(f"\nInterpretation: Excellent (>0.75), Good (0.60-0.75), Fair (0.40-0.59), Poor (<0.40)")
-                
-                # =========================================================
-                # 3. COEFFICIENT OF VARIATION (CV)
-                # =========================================================
-                print(f"\n{'─'*80}")
-                print("3. COEFFICIENT OF VARIATION (CV)")
-                print("─" * 80)
-                
-                cv_total = self.calculate_coefficient_of_variation(metrics_data['Total'])
-                cv_pop = self.calculate_coefficient_of_variation(metrics_data['Population'])
-                cv_comp = self.calculate_coefficient_of_variation(metrics_data['Comparator'])
-                cv_out = self.calculate_coefficient_of_variation(metrics_data['Outcome'])
-                
-                print(f"\n{'Component':<15} {'CV (%)':<10} {'Interpretation':<20}")
-                print("─" * 80)
-                
-                cv_interpretation_total = "Excellent" if cv_total < 10 else "Acceptable" if cv_total < 15 else "Poor"
-                cv_interpretation_pop = "Excellent" if cv_pop < 10 else "Acceptable" if cv_pop < 15 else "Poor"
-                cv_interpretation_comp = "Excellent" if cv_comp < 10 else "Acceptable" if cv_comp < 15 else "Poor"
-                cv_interpretation_out = "Excellent" if cv_out < 10 else "Acceptable" if cv_out < 15 else "Poor"
-                
-                print(f"{'Total':<15} {cv_total:<10.2f} {cv_interpretation_total:<20}")
-                print(f"{'Population':<15} {cv_pop:<10.2f} {cv_interpretation_pop:<20}")
-                print(f"{'Comparator':<15} {cv_comp:<10.2f} {cv_interpretation_comp:<20}")
-                print(f"{'Outcome':<15} {cv_out:<10.2f} {cv_interpretation_out:<20}")
-                
-                print(f"\nNote: CV < 10% is considered excellent consistency")
-                
-                # =========================================================
-                # 4. 95% CONFIDENCE INTERVALS
-                # =========================================================
-                print(f"\n{'─'*80}")
-                print("4. 95% CONFIDENCE INTERVALS FOR MEAN RECALL")
-                print("─" * 80)
-                
-                ci_total = self.calculate_confidence_interval(metrics_data['Total'])
-                ci_pop = self.calculate_confidence_interval(metrics_data['Population'])
-                ci_comp = self.calculate_confidence_interval(metrics_data['Comparator'])
-                ci_out = self.calculate_confidence_interval(metrics_data['Outcome'])
-                
-                print(f"\n{'Component':<15} {'Mean':>8} {'95% CI':>22} {'Width':>10}")
-                print("─" * 80)
-                
-                print(f"{'Total':<15} "
-                      f"{mean_total:>8.4f} "
-                      f"[{ci_total[0]:>7.4f}, {ci_total[1]:>7.4f}] "
-                      f"{ci_total[1] - ci_total[0]:>10.4f}")
-                
-                print(f"{'Population':<15} "
-                      f"{mean_pop:>8.4f} "
-                      f"[{ci_pop[0]:>7.4f}, {ci_pop[1]:>7.4f}] "
-                      f"{ci_pop[1] - ci_pop[0]:>10.4f}")
-                
-                print(f"{'Comparator':<15} "
-                      f"{mean_comp:>8.4f} "
-                      f"[{ci_comp[0]:>7.4f}, {ci_comp[1]:>7.4f}] "
-                      f"{ci_comp[1] - ci_comp[0]:>10.4f}")
-                
-                print(f"{'Outcome':<15} "
-                      f"{mean_out:>8.4f} "
-                      f"[{ci_out[0]:>7.4f}, {ci_out[1]:>7.4f}] "
-                      f"{ci_out[1] - ci_out[0]:>10.4f}")
-                
-                print(f"\nNote: Narrower confidence intervals indicate more precise estimates")
-                
-                # =========================================================
-                # 5. STABILITY METRICS
-                # =========================================================
-                print(f"\n{'─'*80}")
-                print("5. STABILITY METRICS")
-                print("─" * 80)
-                
-                # Absolute difference between best and worst
-                range_total = max_total - min_total
-                range_pop = max_pop - min_pop
-                range_comp = max_comp - min_comp
-                range_out = max_out - min_out
-                
-                # Percentage difference
-                pct_diff_total = (range_total / mean_total * 100) if mean_total > 0 else 0
-                pct_diff_pop = (range_pop / mean_pop * 100) if mean_pop > 0 else 0
-                pct_diff_comp = (range_comp / mean_comp * 100) if mean_comp > 0 else 0
-                pct_diff_out = (range_out / mean_out * 100) if mean_out > 0 else 0
-                
-                print(f"\n{'Component':<15} {'Abs. Diff':>12} {'% Diff':>10} {'Best Run':>12} {'Worst Run':>12}")
-                print("─" * 80)
-                
-                # Find which runs had best and worst performance for each component
-                best_run_total = scenarios[np.argmax(metrics_data['Total'])]
-                worst_run_total = scenarios[np.argmin(metrics_data['Total'])]
-                
-                print(f"{'Total':<15} "
-                      f"{range_total:>12.4f} "
-                      f"{pct_diff_total:>9.2f}% "
-                      f"{best_run_total:>12} "
-                      f"{worst_run_total:>12}")
-                
-                best_run_pop = scenarios[np.argmax(metrics_data['Population'])]
-                worst_run_pop = scenarios[np.argmin(metrics_data['Population'])]
-                
-                print(f"{'Population':<15} "
-                      f"{range_pop:>12.4f} "
-                      f"{pct_diff_pop:>9.2f}% "
-                      f"{best_run_pop:>12} "
-                      f"{worst_run_pop:>12}")
-                
-                best_run_comp = scenarios[np.argmax(metrics_data['Comparator'])]
-                worst_run_comp = scenarios[np.argmin(metrics_data['Comparator'])]
-                
-                print(f"{'Comparator':<15} "
-                      f"{range_comp:>12.4f} "
-                      f"{pct_diff_comp:>9.2f}% "
-                      f"{best_run_comp:>12} "
-                      f"{worst_run_comp:>12}")
-                
-                best_run_out = scenarios[np.argmax(metrics_data['Outcome'])]
-                worst_run_out = scenarios[np.argmin(metrics_data['Outcome'])]
-                
-                print(f"{'Outcome':<15} "
-                      f"{range_out:>12.4f} "
-                      f"{pct_diff_out:>9.2f}% "
-                      f"{best_run_out:>12} "
-                      f"{worst_run_out:>12}")
-                
-                # =========================================================
-                # SUMMARY AND INTERPRETATION
-                # =========================================================
-                print(f"\n{'─'*80}")
-                print("CONSISTENCY SUMMARY")
-                print("─" * 80)
-                
-                # Overall assessment based on multiple criteria
-                reliability_scores = []
-                
-                # ICC-based score (0-100)
-                icc_score = icc_total * 100
-                reliability_scores.append(('ICC', icc_score, self.interpret_icc(icc_total)))
-                
-                # CV-based score (100 - CV, capped at 0)
-                cv_score = max(0, 100 - cv_total)
-                cv_grade = "Excellent" if cv_total < 10 else "Acceptable" if cv_total < 15 else "Poor"
-                reliability_scores.append(('CV', cv_score, cv_grade))
-                
-                # Stability-based score (100 - percentage difference)
-                stability_score = max(0, 100 - pct_diff_total)
-                stability_grade = "Excellent" if pct_diff_total < 10 else "Acceptable" if pct_diff_total < 20 else "Poor"
-                reliability_scores.append(('Stability', stability_score, stability_grade))
-                
-                print(f"\n{'Metric':<15} {'Score':>8} {'Grade':>15}")
-                print("─" * 80)
-                for metric_name, score, grade in reliability_scores:
-                    print(f"{metric_name:<15} {score:>8.2f} {grade:>15}")
-                
-                # Overall composite score
-                composite_score = np.mean([s[1] for s in reliability_scores])
-                if composite_score >= 75 and icc_total > 0.75 and cv_total < 10:
-                    overall_grade = "EXCELLENT - System is highly reliable and deployment-ready"
-                elif composite_score >= 60 and icc_total > 0.60 and cv_total < 15:
-                    overall_grade = "GOOD - System shows reliable performance"
-                elif composite_score >= 40:
-                    overall_grade = "FAIR - System needs improvement for production use"
-                else:
-                    overall_grade = "POOR - System requires significant improvement"
-                
-                print("─" * 80)
-                print(f"{'Overall':<15} {composite_score:>8.2f} {overall_grade}")
-                print("─" * 80)
+                self._print_consistency_reliability_analysis(case, con_key)
         
         # ===================================================================
         # SECTION 4: AI vs HUMAN COMPARISON ANALYSIS
@@ -1408,6 +1058,664 @@ class ResultsAnalyzer:
         print("\n" + "="*80)
         print("ANALYSIS COMPLETE")
         print("="*80)
+
+
+    def _print_hpo_reliability_analysis(self, case: str, hpo_key: str):
+        """
+        Print reliability analysis for HPO scenarios (different hyperparameters).
+        
+        Args:
+            case: Case name
+            hpo_key: Key for HPO results in self.results
+        """
+        print(f"\n{'▬'*80}")
+        print(f"3.1 HYPERPARAMETER OPTIMIZATION RELIABILITY ANALYSIS")
+        print(f"{'▬'*80}")
+        
+        hpo_results = self.results[hpo_key]
+        scenarios = [s for s in self.scenarios_hpo if s in hpo_results]
+        n_scenarios = len(scenarios)
+        
+        print(f"\nNumber of Hyperparameter Configurations: {n_scenarios}")
+        print(f"Scenarios: {', '.join(scenarios)}")
+        
+        # Collect metrics for all scenarios
+        metrics_data = {
+            'Total': [],
+            'Population': [],
+            'Comparator': [],
+            'Outcome': []
+        }
+        
+        for scenario in scenarios:
+            metrics_data['Total'].append(hpo_results[scenario]['Total']['recall'])
+            metrics_data['Population'].append(hpo_results[scenario]['Population']['recall'])
+            metrics_data['Comparator'].append(hpo_results[scenario]['Comparator']['recall'])
+            metrics_data['Outcome'].append(hpo_results[scenario]['Outcome']['recall'])
+        
+        # =========================================================
+        # 1. CENTRAL TENDENCY AND DISPERSION
+        # =========================================================
+        print(f"\n{'─'*80}")
+        print("1. CENTRAL TENDENCY AND DISPERSION")
+        print("─" * 80)
+        
+        print(f"\n{'Metric':<15} {'Total':>12} {'Population':>12} {'Comparator':>12} {'Outcome':>10}")
+        print("─" * 80)
+        
+        # Mean ± SD
+        mean_total = np.mean(metrics_data['Total'])
+        mean_pop = np.mean(metrics_data['Population'])
+        mean_comp = np.mean(metrics_data['Comparator'])
+        mean_out = np.mean(metrics_data['Outcome'])
+        
+        std_total = np.std(metrics_data['Total'], ddof=1)
+        std_pop = np.std(metrics_data['Population'], ddof=1)
+        std_comp = np.std(metrics_data['Comparator'], ddof=1)
+        std_out = np.std(metrics_data['Outcome'], ddof=1)
+        
+        print(f"{'Mean ± SD':<15} "
+            f"{mean_total:>5.4f}±{std_total:<.4f} "
+            f"{mean_pop:>5.4f}±{std_pop:<.4f} "
+            f"{mean_comp:>5.4f}±{std_comp:<.4f} "
+            f"{mean_out:>5.4f}±{std_out:<.4f}")
+        
+        # Median
+        med_total = np.median(metrics_data['Total'])
+        med_pop = np.median(metrics_data['Population'])
+        med_comp = np.median(metrics_data['Comparator'])
+        med_out = np.median(metrics_data['Outcome'])
+        
+        print(f"{'Median':<15} "
+            f"{med_total:>12.4f} "
+            f"{med_pop:>12.4f} "
+            f"{med_comp:>12.4f} "
+            f"{med_out:>10.4f}")
+        
+        # Range (min-max)
+        min_total = np.min(metrics_data['Total'])
+        min_pop = np.min(metrics_data['Population'])
+        min_comp = np.min(metrics_data['Comparator'])
+        min_out = np.min(metrics_data['Outcome'])
+        
+        max_total = np.max(metrics_data['Total'])
+        max_pop = np.max(metrics_data['Population'])
+        max_comp = np.max(metrics_data['Comparator'])
+        max_out = np.max(metrics_data['Outcome'])
+        
+        print(f"{'Range (Min)':<15} "
+            f"{min_total:>12.4f} "
+            f"{min_pop:>12.4f} "
+            f"{min_comp:>12.4f} "
+            f"{min_out:>10.4f}")
+        
+        print(f"{'Range (Max)':<15} "
+            f"{max_total:>12.4f} "
+            f"{max_pop:>12.4f} "
+            f"{max_comp:>12.4f} "
+            f"{max_out:>10.4f}")
+        
+        # =========================================================
+        # 2. INTRACLASS CORRELATION COEFFICIENT (ICC)
+        # =========================================================
+        print(f"\n{'─'*80}")
+        print("2. INTRACLASS CORRELATION COEFFICIENT (ICC)")
+        print("   Two-way mixed-effects model, absolute agreement, single measure")
+        print("─" * 80)
+        
+        # Prepare data matrices for ICC calculation
+        # Each row is a test case, each column is a hyperparameter configuration
+        icc_matrices = {}
+        
+        for element in ['Population', 'Comparator', 'Outcome']:
+            # Collect recall scores for each scenario
+            scores_by_scenario = []
+            for scenario in scenarios:
+                scores = hpo_results[scenario][element]['recall_scores']
+                scores_by_scenario.append(scores)
+            
+            # Check if all scenarios have the same number of scores
+            if len(scores_by_scenario) > 0 and len(scores_by_scenario[0]) > 0:
+                n_scores = len(scores_by_scenario[0])
+                if all(len(s) == n_scores for s in scores_by_scenario):
+                    # Create matrix: rows = test cases, columns = configurations
+                    icc_matrices[element] = np.array(scores_by_scenario).T
+                else:
+                    print(f"  Warning: Inconsistent number of scores for {element}")
+        
+        # Calculate ICC for Total (using all PICO elements combined)
+        if len(icc_matrices) > 0:
+            total_matrix = np.vstack([icc_matrices[elem] for elem in icc_matrices.keys()])
+            icc_total, ci_total_icc = self.calculate_icc(total_matrix)
+        else:
+            icc_total, ci_total_icc = 0.0, (0.0, 0.0)
+        
+        # Calculate ICC for each element
+        icc_results = {}
+        for element in ['Population', 'Comparator', 'Outcome']:
+            if element in icc_matrices:
+                icc_val, ci_icc = self.calculate_icc(icc_matrices[element])
+                icc_results[element] = (icc_val, ci_icc)
+            else:
+                icc_results[element] = (0.0, (0.0, 0.0))
+        
+        print(f"\n{'Component':<15} {'ICC':>8} {'95% CI':>20} {'Interpretation':>15}")
+        print("─" * 80)
+        
+        # Overall ICC
+        print(f"{'Total (Overall)':<15} "
+            f"{icc_total:>8.4f} "
+            f"[{ci_total_icc[0]:>6.4f}, {ci_total_icc[1]:>6.4f}] "
+            f"{self.interpret_icc(icc_total):>15}")
+        
+        # Per-element ICC
+        for element in ['Population', 'Comparator', 'Outcome']:
+            icc_val, ci_icc = icc_results[element]
+            print(f"{element:<15} "
+                f"{icc_val:>8.4f} "
+                f"[{ci_icc[0]:>6.4f}, {ci_icc[1]:>6.4f}] "
+                f"{self.interpret_icc(icc_val):>15}")
+        
+        print(f"\nInterpretation: Excellent (>0.75), Good (0.60-0.75), Fair (0.40-0.59), Poor (<0.40)")
+        
+        # =========================================================
+        # 3. COEFFICIENT OF VARIATION (CV)
+        # =========================================================
+        print(f"\n{'─'*80}")
+        print("3. COEFFICIENT OF VARIATION (CV)")
+        print("─" * 80)
+        
+        cv_total = self.calculate_coefficient_of_variation(metrics_data['Total'])
+        cv_pop = self.calculate_coefficient_of_variation(metrics_data['Population'])
+        cv_comp = self.calculate_coefficient_of_variation(metrics_data['Comparator'])
+        cv_out = self.calculate_coefficient_of_variation(metrics_data['Outcome'])
+        
+        print(f"\n{'Component':<15} {'CV (%)':<10} {'Interpretation':<20}")
+        print("─" * 80)
+        
+        cv_interpretation_total = "Excellent" if cv_total < 10 else "Acceptable" if cv_total < 15 else "Poor"
+        cv_interpretation_pop = "Excellent" if cv_pop < 10 else "Acceptable" if cv_pop < 15 else "Poor"
+        cv_interpretation_comp = "Excellent" if cv_comp < 10 else "Acceptable" if cv_comp < 15 else "Poor"
+        cv_interpretation_out = "Excellent" if cv_out < 10 else "Acceptable" if cv_out < 15 else "Poor"
+        
+        print(f"{'Total':<15} {cv_total:<10.2f} {cv_interpretation_total:<20}")
+        print(f"{'Population':<15} {cv_pop:<10.2f} {cv_interpretation_pop:<20}")
+        print(f"{'Comparator':<15} {cv_comp:<10.2f} {cv_interpretation_comp:<20}")
+        print(f"{'Outcome':<15} {cv_out:<10.2f} {cv_interpretation_out:<20}")
+        
+        print(f"\nNote: CV < 10% indicates excellent stability across hyperparameters")
+        
+        # =========================================================
+        # 4. 95% CONFIDENCE INTERVALS
+        # =========================================================
+        print(f"\n{'─'*80}")
+        print("4. 95% CONFIDENCE INTERVALS FOR MEAN RECALL")
+        print("─" * 80)
+        
+        ci_total = self.calculate_confidence_interval(metrics_data['Total'])
+        ci_pop = self.calculate_confidence_interval(metrics_data['Population'])
+        ci_comp = self.calculate_confidence_interval(metrics_data['Comparator'])
+        ci_out = self.calculate_confidence_interval(metrics_data['Outcome'])
+        
+        print(f"\n{'Component':<15} {'Mean':>8} {'95% CI':>22} {'Width':>10}")
+        print("─" * 80)
+        
+        print(f"{'Total':<15} "
+            f"{mean_total:>8.4f} "
+            f"[{ci_total[0]:>7.4f}, {ci_total[1]:>7.4f}] "
+            f"{ci_total[1] - ci_total[0]:>10.4f}")
+        
+        print(f"{'Population':<15} "
+            f"{mean_pop:>8.4f} "
+            f"[{ci_pop[0]:>7.4f}, {ci_pop[1]:>7.4f}] "
+            f"{ci_pop[1] - ci_pop[0]:>10.4f}")
+        
+        print(f"{'Comparator':<15} "
+            f"{mean_comp:>8.4f} "
+            f"[{ci_comp[0]:>7.4f}, {ci_comp[1]:>7.4f}] "
+            f"{ci_comp[1] - ci_comp[0]:>10.4f}")
+        
+        print(f"{'Outcome':<15} "
+            f"{mean_out:>8.4f} "
+            f"[{ci_out[0]:>7.4f}, {ci_out[1]:>7.4f}] "
+            f"{ci_out[1] - ci_out[0]:>10.4f}")
+        
+        print(f"\nNote: Narrower confidence intervals indicate more precise performance estimates")
+        
+        # =========================================================
+        # 5. HYPERPARAMETER SENSITIVITY
+        # =========================================================
+        print(f"\n{'─'*80}")
+        print("5. HYPERPARAMETER SENSITIVITY")
+        print("─" * 80)
+        
+        # Absolute difference between best and worst
+        range_total = max_total - min_total
+        range_pop = max_pop - min_pop
+        range_comp = max_comp - min_comp
+        range_out = max_out - min_out
+        
+        # Percentage difference
+        pct_diff_total = (range_total / mean_total * 100) if mean_total > 0 else 0
+        pct_diff_pop = (range_pop / mean_pop * 100) if mean_pop > 0 else 0
+        pct_diff_comp = (range_comp / mean_comp * 100) if mean_comp > 0 else 0
+        pct_diff_out = (range_out / mean_out * 100) if mean_out > 0 else 0
+        
+        print(f"\n{'Component':<15} {'Abs. Diff':>12} {'% Diff':>10} {'Best Config':>12} {'Worst Config':>12}")
+        print("─" * 80)
+        
+        # Find which configurations had best and worst performance for each component
+        best_config_total = scenarios[np.argmax(metrics_data['Total'])]
+        worst_config_total = scenarios[np.argmin(metrics_data['Total'])]
+        
+        print(f"{'Total':<15} "
+            f"{range_total:>12.4f} "
+            f"{pct_diff_total:>9.2f}% "
+            f"{best_config_total:>12} "
+            f"{worst_config_total:>12}")
+        
+        best_config_pop = scenarios[np.argmax(metrics_data['Population'])]
+        worst_config_pop = scenarios[np.argmin(metrics_data['Population'])]
+        
+        print(f"{'Population':<15} "
+            f"{range_pop:>12.4f} "
+            f"{pct_diff_pop:>9.2f}% "
+            f"{best_config_pop:>12} "
+            f"{worst_config_pop:>12}")
+        
+        best_config_comp = scenarios[np.argmax(metrics_data['Comparator'])]
+        worst_config_comp = scenarios[np.argmin(metrics_data['Comparator'])]
+        
+        print(f"{'Comparator':<15} "
+            f"{range_comp:>12.4f} "
+            f"{pct_diff_comp:>9.2f}% "
+            f"{best_config_comp:>12} "
+            f"{worst_config_comp:>12}")
+        
+        best_config_out = scenarios[np.argmax(metrics_data['Outcome'])]
+        worst_config_out = scenarios[np.argmin(metrics_data['Outcome'])]
+        
+        print(f"{'Outcome':<15} "
+            f"{range_out:>12.4f} "
+            f"{pct_diff_out:>9.2f}% "
+            f"{best_config_out:>12} "
+            f"{worst_config_out:>12}")
+        
+        # =========================================================
+        # SUMMARY AND INTERPRETATION
+        # =========================================================
+        print(f"\n{'─'*80}")
+        print("HPO RELIABILITY SUMMARY")
+        print("─" * 80)
+        
+        # Overall assessment based on multiple criteria
+        reliability_scores = []
+        
+        # ICC-based score (0-100)
+        icc_score = icc_total * 100
+        reliability_scores.append(('ICC', icc_score, self.interpret_icc(icc_total)))
+        
+        # CV-based score (100 - CV, capped at 0)
+        cv_score = max(0, 100 - cv_total)
+        cv_grade = "Excellent" if cv_total < 10 else "Acceptable" if cv_total < 15 else "Poor"
+        reliability_scores.append(('CV', cv_score, cv_grade))
+        
+        # Sensitivity-based score (100 - percentage difference)
+        sensitivity_score = max(0, 100 - pct_diff_total)
+        sensitivity_grade = "Excellent" if pct_diff_total < 10 else "Acceptable" if pct_diff_total < 20 else "Poor"
+        reliability_scores.append(('Sensitivity', sensitivity_score, sensitivity_grade))
+        
+        print(f"\n{'Metric':<15} {'Score':>8} {'Grade':>15}")
+        print("─" * 80)
+        for metric_name, score, grade in reliability_scores:
+            print(f"{metric_name:<15} {score:>8.2f} {grade:>15}")
+        
+        # Overall composite score
+        composite_score = np.mean([s[1] for s in reliability_scores])
+        if composite_score >= 75 and icc_total > 0.75 and cv_total < 10:
+            overall_grade = "EXCELLENT - System is robust to hyperparameter changes"
+        elif composite_score >= 60 and icc_total > 0.60 and cv_total < 15:
+            overall_grade = "GOOD - System shows stable performance across configurations"
+        elif composite_score >= 40:
+            overall_grade = "FAIR - System is moderately sensitive to hyperparameters"
+        else:
+            overall_grade = "POOR - System is highly sensitive to hyperparameter settings"
+        
+        print("─" * 80)
+        print(f"{'Overall':<15} {composite_score:>8.2f} {overall_grade}")
+        print("─" * 80)
+        
+        print(f"\nKEY FINDINGS:")
+        print(f"• Best Configuration: {best_config_total} (Recall: {max_total:.4f})")
+        print(f"• Baseline (base) Performance: {hpo_results['base']['Total']['recall']:.4f}")
+        print(f"• Performance Range: {range_total:.4f} ({pct_diff_total:.2f}% variation)")
+        print(f"• System Reliability: ICC = {icc_total:.4f}, CV = {cv_total:.2f}%")
+
+
+    def _print_consistency_reliability_analysis(self, case: str, con_key: str):
+        """
+        Print reliability analysis for consistency scenarios (repeated base runs).
+        
+        Args:
+            case: Case name
+            con_key: Key for consistency results in self.results
+        """
+        print(f"\n{'▬'*80}")
+        print(f"3.2 CONSISTENCY ANALYSIS (BASE SCENARIO REPEATED RUNS)")
+        print(f"{'▬'*80}")
+        
+        con_results = self.results[con_key]
+        scenarios = [s for s in self.scenarios_con if s in con_results]
+        n_runs = len(scenarios)
+        
+        print(f"\nNumber of Runs: {n_runs}")
+        print(f"Scenarios: {', '.join(scenarios)}")
+        
+        # Collect metrics for all runs
+        metrics_data = {
+            'Total': [],
+            'Population': [],
+            'Comparator': [],
+            'Outcome': []
+        }
+        
+        for scenario in scenarios:
+            metrics_data['Total'].append(con_results[scenario]['Total']['recall'])
+            metrics_data['Population'].append(con_results[scenario]['Population']['recall'])
+            metrics_data['Comparator'].append(con_results[scenario]['Comparator']['recall'])
+            metrics_data['Outcome'].append(con_results[scenario]['Outcome']['recall'])
+        
+        # =========================================================
+        # 1. CENTRAL TENDENCY AND DISPERSION
+        # =========================================================
+        print(f"\n{'─'*80}")
+        print("1. CENTRAL TENDENCY AND DISPERSION")
+        print("─" * 80)
+        
+        print(f"\n{'Metric':<15} {'Total':>12} {'Population':>12} {'Comparator':>12} {'Outcome':>10}")
+        print("─" * 80)
+        
+        # Mean ± SD
+        mean_total = np.mean(metrics_data['Total'])
+        mean_pop = np.mean(metrics_data['Population'])
+        mean_comp = np.mean(metrics_data['Comparator'])
+        mean_out = np.mean(metrics_data['Outcome'])
+        
+        std_total = np.std(metrics_data['Total'], ddof=1)
+        std_pop = np.std(metrics_data['Population'], ddof=1)
+        std_comp = np.std(metrics_data['Comparator'], ddof=1)
+        std_out = np.std(metrics_data['Outcome'], ddof=1)
+        
+        print(f"{'Mean ± SD':<15} "
+            f"{mean_total:>5.4f}±{std_total:<.4f} "
+            f"{mean_pop:>5.4f}±{std_pop:<.4f} "
+            f"{mean_comp:>5.4f}±{std_comp:<.4f} "
+            f"{mean_out:>5.4f}±{std_out:<.4f}")
+        
+        # Median
+        med_total = np.median(metrics_data['Total'])
+        med_pop = np.median(metrics_data['Population'])
+        med_comp = np.median(metrics_data['Comparator'])
+        med_out = np.median(metrics_data['Outcome'])
+        
+        print(f"{'Median':<15} "
+            f"{med_total:>12.4f} "
+            f"{med_pop:>12.4f} "
+            f"{med_comp:>12.4f} "
+            f"{med_out:>10.4f}")
+        
+        # Range (min-max)
+        min_total = np.min(metrics_data['Total'])
+        min_pop = np.min(metrics_data['Population'])
+        min_comp = np.min(metrics_data['Comparator'])
+        min_out = np.min(metrics_data['Outcome'])
+        
+        max_total = np.max(metrics_data['Total'])
+        max_pop = np.max(metrics_data['Population'])
+        max_comp = np.max(metrics_data['Comparator'])
+        max_out = np.max(metrics_data['Outcome'])
+        
+        print(f"{'Range (Min)':<15} "
+            f"{min_total:>12.4f} "
+            f"{min_pop:>12.4f} "
+            f"{min_comp:>12.4f} "
+            f"{min_out:>10.4f}")
+        
+        print(f"{'Range (Max)':<15} "
+            f"{max_total:>12.4f} "
+            f"{max_pop:>12.4f} "
+            f"{max_comp:>12.4f} "
+            f"{max_out:>10.4f}")
+        
+        # =========================================================
+        # 2. INTRACLASS CORRELATION COEFFICIENT (ICC)
+        # =========================================================
+        print(f"\n{'─'*80}")
+        print("2. INTRACLASS CORRELATION COEFFICIENT (ICC)")
+        print("   Two-way mixed-effects model, absolute agreement, single measure")
+        print("─" * 80)
+        
+        # Prepare data matrices for ICC calculation
+        # Each row is a test case, each column is a run
+        icc_matrices = {}
+        
+        for element in ['Population', 'Comparator', 'Outcome']:
+            # Collect recall scores for each scenario
+            scores_by_scenario = []
+            for scenario in scenarios:
+                scores = con_results[scenario][element]['recall_scores']
+                scores_by_scenario.append(scores)
+            
+            # Check if all scenarios have the same number of scores
+            if len(scores_by_scenario) > 0 and len(scores_by_scenario[0]) > 0:
+                n_scores = len(scores_by_scenario[0])
+                if all(len(s) == n_scores for s in scores_by_scenario):
+                    # Create matrix: rows = test cases, columns = runs
+                    icc_matrices[element] = np.array(scores_by_scenario).T
+                else:
+                    print(f"  Warning: Inconsistent number of scores for {element}")
+        
+        # Calculate ICC for Total (using all PICO elements combined)
+        if len(icc_matrices) > 0:
+            total_matrix = np.vstack([icc_matrices[elem] for elem in icc_matrices.keys()])
+            icc_total, ci_total_icc = self.calculate_icc(total_matrix)
+        else:
+            icc_total, ci_total_icc = 0.0, (0.0, 0.0)
+        
+        # Calculate ICC for each element
+        icc_results = {}
+        for element in ['Population', 'Comparator', 'Outcome']:
+            if element in icc_matrices:
+                icc_val, ci_icc = self.calculate_icc(icc_matrices[element])
+                icc_results[element] = (icc_val, ci_icc)
+            else:
+                icc_results[element] = (0.0, (0.0, 0.0))
+        
+        print(f"\n{'Component':<15} {'ICC':>8} {'95% CI':>20} {'Interpretation':>15}")
+        print("─" * 80)
+        
+        # Overall ICC
+        print(f"{'Total (Overall)':<15} "
+            f"{icc_total:>8.4f} "
+            f"[{ci_total_icc[0]:>6.4f}, {ci_total_icc[1]:>6.4f}] "
+            f"{self.interpret_icc(icc_total):>15}")
+        
+        # Per-element ICC
+        for element in ['Population', 'Comparator', 'Outcome']:
+            icc_val, ci_icc = icc_results[element]
+            print(f"{element:<15} "
+                f"{icc_val:>8.4f} "
+                f"[{ci_icc[0]:>6.4f}, {ci_icc[1]:>6.4f}] "
+                f"{self.interpret_icc(icc_val):>15}")
+        
+        print(f"\nInterpretation: Excellent (>0.75), Good (0.60-0.75), Fair (0.40-0.59), Poor (<0.40)")
+        
+        # =========================================================
+        # 3. COEFFICIENT OF VARIATION (CV)
+        # =========================================================
+        print(f"\n{'─'*80}")
+        print("3. COEFFICIENT OF VARIATION (CV)")
+        print("─" * 80)
+        
+        cv_total = self.calculate_coefficient_of_variation(metrics_data['Total'])
+        cv_pop = self.calculate_coefficient_of_variation(metrics_data['Population'])
+        cv_comp = self.calculate_coefficient_of_variation(metrics_data['Comparator'])
+        cv_out = self.calculate_coefficient_of_variation(metrics_data['Outcome'])
+        
+        print(f"\n{'Component':<15} {'CV (%)':<10} {'Interpretation':<20}")
+        print("─" * 80)
+        
+        cv_interpretation_total = "Excellent" if cv_total < 10 else "Acceptable" if cv_total < 15 else "Poor"
+        cv_interpretation_pop = "Excellent" if cv_pop < 10 else "Acceptable" if cv_pop < 15 else "Poor"
+        cv_interpretation_comp = "Excellent" if cv_comp < 10 else "Acceptable" if cv_comp < 15 else "Poor"
+        cv_interpretation_out = "Excellent" if cv_out < 10 else "Acceptable" if cv_out < 15 else "Poor"
+        
+        print(f"{'Total':<15} {cv_total:<10.2f} {cv_interpretation_total:<20}")
+        print(f"{'Population':<15} {cv_pop:<10.2f} {cv_interpretation_pop:<20}")
+        print(f"{'Comparator':<15} {cv_comp:<10.2f} {cv_interpretation_comp:<20}")
+        print(f"{'Outcome':<15} {cv_out:<10.2f} {cv_interpretation_out:<20}")
+        
+        print(f"\nNote: CV < 10% is considered excellent consistency")
+        
+        # =========================================================
+        # 4. 95% CONFIDENCE INTERVALS
+        # =========================================================
+        print(f"\n{'─'*80}")
+        print("4. 95% CONFIDENCE INTERVALS FOR MEAN RECALL")
+        print("─" * 80)
+        
+        ci_total = self.calculate_confidence_interval(metrics_data['Total'])
+        ci_pop = self.calculate_confidence_interval(metrics_data['Population'])
+        ci_comp = self.calculate_confidence_interval(metrics_data['Comparator'])
+        ci_out = self.calculate_confidence_interval(metrics_data['Outcome'])
+        
+        print(f"\n{'Component':<15} {'Mean':>8} {'95% CI':>22} {'Width':>10}")
+        print("─" * 80)
+        
+        print(f"{'Total':<15} "
+            f"{mean_total:>8.4f} "
+            f"[{ci_total[0]:>7.4f}, {ci_total[1]:>7.4f}] "
+            f"{ci_total[1] - ci_total[0]:>10.4f}")
+        
+        print(f"{'Population':<15} "
+            f"{mean_pop:>8.4f} "
+            f"[{ci_pop[0]:>7.4f}, {ci_pop[1]:>7.4f}] "
+            f"{ci_pop[1] - ci_pop[0]:>10.4f}")
+        
+        print(f"{'Comparator':<15} "
+            f"{mean_comp:>8.4f} "
+            f"[{ci_comp[0]:>7.4f}, {ci_comp[1]:>7.4f}] "
+            f"{ci_comp[1] - ci_comp[0]:>10.4f}")
+        
+        print(f"{'Outcome':<15} "
+            f"{mean_out:>8.4f} "
+            f"[{ci_out[0]:>7.4f}, {ci_out[1]:>7.4f}] "
+            f"{ci_out[1] - ci_out[0]:>10.4f}")
+        
+        print(f"\nNote: Narrower confidence intervals indicate more precise estimates")
+        
+        # =========================================================
+        # 5. STABILITY METRICS
+        # =========================================================
+        print(f"\n{'─'*80}")
+        print("5. STABILITY METRICS")
+        print("─" * 80)
+        
+        # Absolute difference between best and worst
+        range_total = max_total - min_total
+        range_pop = max_pop - min_pop
+        range_comp = max_comp - min_comp
+        range_out = max_out - min_out
+        
+        # Percentage difference
+        pct_diff_total = (range_total / mean_total * 100) if mean_total > 0 else 0
+        pct_diff_pop = (range_pop / mean_pop * 100) if mean_pop > 0 else 0
+        pct_diff_comp = (range_comp / mean_comp * 100) if mean_comp > 0 else 0
+        pct_diff_out = (range_out / mean_out * 100) if mean_out > 0 else 0
+        
+        print(f"\n{'Component':<15} {'Abs. Diff':>12} {'% Diff':>10} {'Best Run':>12} {'Worst Run':>12}")
+        print("─" * 80)
+        
+        # Find which runs had best and worst performance for each component
+        best_run_total = scenarios[np.argmax(metrics_data['Total'])]
+        worst_run_total = scenarios[np.argmin(metrics_data['Total'])]
+        
+        print(f"{'Total':<15} "
+            f"{range_total:>12.4f} "
+            f"{pct_diff_total:>9.2f}% "
+            f"{best_run_total:>12} "
+            f"{worst_run_total:>12}")
+        
+        best_run_pop = scenarios[np.argmax(metrics_data['Population'])]
+        worst_run_pop = scenarios[np.argmin(metrics_data['Population'])]
+        
+        print(f"{'Population':<15} "
+            f"{range_pop:>12.4f} "
+            f"{pct_diff_pop:>9.2f}% "
+            f"{best_run_pop:>12} "
+            f"{worst_run_pop:>12}")
+        
+        best_run_comp = scenarios[np.argmax(metrics_data['Comparator'])]
+        worst_run_comp = scenarios[np.argmin(metrics_data['Comparator'])]
+        
+        print(f"{'Comparator':<15} "
+            f"{range_comp:>12.4f} "
+            f"{pct_diff_comp:>9.2f}% "
+            f"{best_run_comp:>12} "
+            f"{worst_run_comp:>12}")
+        
+        best_run_out = scenarios[np.argmax(metrics_data['Outcome'])]
+        worst_run_out = scenarios[np.argmin(metrics_data['Outcome'])]
+        
+        print(f"{'Outcome':<15} "
+            f"{range_out:>12.4f} "
+            f"{pct_diff_out:>9.2f}% "
+            f"{best_run_out:>12} "
+            f"{worst_run_out:>12}")
+        
+        # =========================================================
+        # SUMMARY AND INTERPRETATION
+        # =========================================================
+        print(f"\n{'─'*80}")
+        print("CONSISTENCY SUMMARY")
+        print("─" * 80)
+        
+        # Overall assessment based on multiple criteria
+        reliability_scores = []
+        
+        # ICC-based score (0-100)
+        icc_score = icc_total * 100
+        reliability_scores.append(('ICC', icc_score, self.interpret_icc(icc_total)))
+        
+        # CV-based score (100 - CV, capped at 0)
+        cv_score = max(0, 100 - cv_total)
+        cv_grade = "Excellent" if cv_total < 10 else "Acceptable" if cv_total < 15 else "Poor"
+        reliability_scores.append(('CV', cv_score, cv_grade))
+        
+        # Stability-based score (100 - percentage difference)
+        stability_score = max(0, 100 - pct_diff_total)
+        stability_grade = "Excellent" if pct_diff_total < 10 else "Acceptable" if pct_diff_total < 20 else "Poor"
+        reliability_scores.append(('Stability', stability_score, stability_grade))
+        
+        print(f"\n{'Metric':<15} {'Score':>8} {'Grade':>15}")
+        print("─" * 80)
+        for metric_name, score, grade in reliability_scores:
+            print(f"{metric_name:<15} {score:>8.2f} {grade:>15}")
+        
+        # Overall composite score
+        composite_score = np.mean([s[1] for s in reliability_scores])
+        if composite_score >= 75 and icc_total > 0.75 and cv_total < 10:
+            overall_grade = "EXCELLENT - System is highly reliable and deployment-ready"
+        elif composite_score >= 60 and icc_total > 0.60 and cv_total < 15:
+            overall_grade = "GOOD - System shows reliable performance"
+        elif composite_score >= 40:
+            overall_grade = "FAIR - System needs improvement for production use"
+        else:
+            overall_grade = "POOR - System requires significant improvement"
+        
+        print("─" * 80)
+        print(f"{'Overall':<15} {composite_score:>8.2f} {overall_grade}")
+        print("─" * 80)
     
     def print_human_ai_comparison(self):
         """

@@ -39,3 +39,4 @@ analyzer.run_analysis()
 
 # Print formatted results to console
 analyzer.print_results()
+

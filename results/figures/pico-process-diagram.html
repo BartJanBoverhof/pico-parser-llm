@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PICO Processing Flow</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background: white;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+        }
+
+        .labels-top {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            margin-bottom: 10px;
+            font-weight: bold;
+            font-size: 24px;
+            text-align: center;
+        }
+
+        .flow-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .box {
+            background: white;
+            border: 2px solid #333;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            min-height: 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .box.blue { background-color: #d4e9f7; }
+        .box.green { background-color: #d4f4dd; }
+        .box.orange { background-color: #ffe4d4; }
+
+        .box-title {
+            font-weight: bold;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .icon {
+            font-size: 64px;
+            margin: 15px 0;
+        }
+
+        .box-description {
+            font-size: 18px;
+            line-height: 1.4;
+            color: #333;
+            margin-top: 10px;
+        }
+
+        .labels-bottom {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            margin-top: 10px;
+            font-weight: bold;
+            font-size: 24px;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .flow-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .labels-top,
+            .labels-bottom {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="labels-top">
+            <div>Raw text</div>
+            <div>English text</div>
+            <div>Chunks</div>
+        </div>
+
+        <div class="flow-container">
+            <!-- Top Row -->
+            <div class="box blue">
+                <div class="box-title">1. PDF Processing</div>
+                <div class="icon">📄</div>
+                <div class="box-description">
+                    Text extraction, table extraction, boilerplate removal, structure preservation
+                </div>
+            </div>
+
+            <div class="box green">
+                <div class="box-title">2. Translation</div>
+                <div class="icon">🌐</div>
+                <div class="box-description">
+                    NLLB-200 model adaptive chunking, translation quality checks
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="box-title">3. Segmentation</div>
+                <div class="icon">✂️</div>
+                <div class="box-description">
+                    Semantic chunking (SentenceT), 600-1500 characters, coherence maintained
+                </div>
+            </div>
+
+            <!-- Bottom Row -->
+            <div class="box">
+                <div class="box-title">4. Vectorization</div>
+                <div class="icon">🔢</div>
+                <div class="box-description">
+                    BioBERT embeddings, metadata enrichment, indexing
+                </div>
+            </div>
+
+            <div class="box orange">
+                <div class="box-title">5. Extraction</div>
+                <div class="icon">🤖</div>
+                <div class="box-description">
+                    GPT-4 PICO extraction, prompt-engineered, n=3 simulations
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="box-title">6. PICO Consolidation</div>
+                <div class="icon">📊</div>
+                <div class="box-description">
+                    Exact-match grouping, conservative merging, validation
+                </div>
+            </div>
+        </div>
+
+        <div class="labels-bottom">
+            <div>Embeddings</div>
+            <div>Extracted PICOs</div>
+            <div>Consolidated PICOs</div>
+        </div>
+    </div>
+</body>
+</html>

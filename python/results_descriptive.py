@@ -1051,18 +1051,28 @@ class DataVisualizer:
         
         fig, axes = plt.subplots(2, 1, figsize=(14, 20))
         
-        for idx, pico_analyzer in enumerate(pico_analyzers):
+        # Define all countries from the file tree for each case
+        all_countries_by_case = {
+            'HCC': ['AT', 'BE', 'CZ', 'DE', 'DK', 'EN', 'ES', 'EU', 'FR', 'IT', 'NL', 'PO', 'PT', 'SE'],
+            'NSCLC': ['AT', 'DE', 'DK', 'EL', 'EN', 'ES', 'EU', 'FR', 'HR', 'IE', 'IT', 'NL', 'PO', 'PT', 'SE']
+        }
+        
+        # Sort analyzers to put NSCLC first, HCC second
+        sorted_analyzers = sorted(pico_analyzers, key=lambda x: 0 if x.case == 'NSCLC' else 1)
+        
+        for idx, pico_analyzer in enumerate(sorted_analyzers):
             ax = axes[idx]
             case_name = pico_analyzer.case
             
-            if pico_analyzer.picos_df.empty or 'Country' not in pico_analyzer.picos_df.columns:
-                ax.text(0.5, 0.5, f'No {case_name} country data available', 
-                    ha='center', va='center', transform=ax.transAxes)
-                continue
+            # Get countries with PICOs
+            country_counts = {}
+            if not pico_analyzer.picos_df.empty and 'Country' in pico_analyzer.picos_df.columns:
+                country_counts = pico_analyzer.picos_df['Country'].value_counts().to_dict()
             
-            country_counts = pico_analyzer.picos_df['Country'].value_counts()
+            # Get all countries that should be shown for this case
+            all_case_countries = all_countries_by_case.get(case_name, [])
             
-            self._plot_european_map(ax, country_counts, case_name)
+            self._plot_european_map(ax, country_counts, case_name, all_case_countries)
         
         axes[0].set_position([0.1, 0.53, 0.75, 0.40])
         axes[1].set_position([0.1, 0.05, 0.75, 0.40])
@@ -1071,9 +1081,9 @@ class DataVisualizer:
                 dpi=300, bbox_inches='tight', facecolor='white')
         plt.show()
 
-    def _plot_european_map(self, ax, country_counts, case_name):
+    def _plot_european_map(self, ax, country_counts, case_name, all_case_countries):
         if not GEOPANDAS_AVAILABLE:
-            self._plot_simplified_european_map(ax, country_counts, case_name)
+            self._plot_simplified_european_map(ax, country_counts, case_name, all_case_countries)
             return
         
         try:
@@ -1086,8 +1096,12 @@ class DataVisualizer:
                 try:
                     world = gpd.read_file(world_url_alt)
                 except:
-                    self._plot_simplified_european_map(ax, country_counts, case_name)
+                    self._plot_simplified_european_map(ax, country_counts, case_name, all_case_countries)
                     return
+            
+            # Define pastel blue for training set
+            training_color = '#A8D8EA'  # Pastel blue
+            no_pico_color = '#4A4A4A'  # Grey for countries with no PICOs
             
             country_mapping = {
                 'DE': 'Germany', 'DK': 'Denmark', 'EN': 'United Kingdom', 'FR': 'France',
@@ -1096,8 +1110,17 @@ class DataVisualizer:
                 'CH': 'Switzerland', 'NO': 'Norway', 'FI': 'Finland', 'IE': 'Ireland',
                 'CZ': 'Czech Republic', 'HU': 'Hungary', 'RO': 'Romania', 'BG': 'Bulgaria',
                 'GR': 'Greece', 'HR': 'Croatia', 'SI': 'Slovenia', 'SK': 'Slovakia',
-                'LT': 'Lithuania', 'LV': 'Latvia', 'EE': 'Estonia'
+                'LT': 'Lithuania', 'LV': 'Latvia', 'EE': 'Estonia', 'EL': 'Greece',
+                'EU': 'Europe', 'CY': 'Cyprus', 'LU': 'Luxembourg', 'MT': 'Malta'
             }
+            
+            # Define training countries by case
+            training_countries_by_case = {
+                'NSCLC': ['PO', 'NL', 'AT'],
+                'HCC': []
+            }
+            
+            training_country_codes = training_countries_by_case.get(case_name, [])
             
             name_column = 'NAME' if 'NAME' in world.columns else 'name'
             if name_column not in world.columns:
@@ -1106,42 +1129,76 @@ class DataVisualizer:
                         name_column = col
                         break
             
+            # Create data for all countries that should be shown
             pico_data = []
-            for country_code, count in country_counts.items():
+            for country_code in all_case_countries:
                 if country_code in country_mapping:
                     country_name = country_mapping[country_code]
+                    count = country_counts.get(country_code, 0)
+                    is_training = country_code in training_country_codes
+                    
                     pico_data.append({
                         name_column: country_name, 
                         'pico_count': count, 
-                        'code': country_code
+                        'code': country_code,
+                        'is_training': is_training
                     })
             
             pico_df = pd.DataFrame(pico_data)
             
+            # All EU member states plus some others to show complete map
             european_countries = [
                 'Germany', 'Denmark', 'United Kingdom', 'France', 'Netherlands', 
                 'Poland', 'Portugal', 'Sweden', 'Norway', 'Finland', 'Spain', 
                 'Italy', 'Switzerland', 'Austria', 'Belgium', 'Ireland',
-                'Czech Republic', 'Hungary', 'Romania', 'Bulgaria', 'Greece',
-                'Croatia', 'Slovenia', 'Slovakia', 'Lithuania', 'Latvia', 'Estonia'
+                'Czech Republic', 'Czechia', 'Hungary', 'Romania', 'Bulgaria', 'Greece',
+                'Croatia', 'Slovenia', 'Slovakia', 'Lithuania', 'Latvia', 'Estonia',
+                'Cyprus', 'Luxembourg', 'Malta'
             ]
             
             europe = world[world[name_column].isin(european_countries)].copy()
             europe = europe.merge(pico_df, on=name_column, how='left')
             europe['pico_count'] = europe['pico_count'].fillna(0).astype(int)
+            europe['is_training'] = europe['is_training'].fillna(False)
+            europe['code'] = europe['code'].fillna('')
             
             ax.set_xlim(-12, 32)
             ax.set_ylim(35, 72)
             
-            europe_no_data = europe[europe['pico_count'] == 0]
+            # Plot countries with no data (not in our dataset)
+            europe_no_data = europe[europe['code'] == '']
             if not europe_no_data.empty:
-                europe_no_data.plot(ax=ax, color='#F0F0F0', edgecolor='white', linewidth=0.8)
+                europe_no_data.plot(ax=ax, color='#F0F0F0', edgecolor='white', linewidth=0.8, zorder=1)
             
-            europe_with_data = europe[europe['pico_count'] > 0].copy()
+            # Plot countries with 0 PICOs (in dataset but no PICOs found)
+            europe_zero_picos = europe[(europe['pico_count'] == 0) & (~europe['is_training']) & (europe['code'] != '')]
+            if not europe_zero_picos.empty:
+                europe_zero_picos.plot(
+                    ax=ax,
+                    color=no_pico_color,
+                    edgecolor='white',
+                    linewidth=0.8,
+                    alpha=0.6,
+                    zorder=2
+                )
+            
+            # Plot training countries
+            europe_training = europe[(europe['is_training'] == True)]
+            if not europe_training.empty:
+                europe_training.plot(
+                    ax=ax,
+                    color=training_color,
+                    edgecolor='white',
+                    linewidth=0.8,
+                    zorder=4
+                )
+            
+            # Plot countries with PICOs (non-training)
+            europe_with_data = europe[(europe['pico_count'] > 0) & (~europe['is_training'])].copy()
             
             if not europe_with_data.empty:
                 vmin = 1
-                vmax = europe_with_data['pico_count'].max()
+                vmax = max(europe_with_data['pico_count'].max(), 1)
                 
                 europe_with_data.plot(
                     column='pico_count', 
@@ -1152,41 +1209,8 @@ class DataVisualizer:
                     linewidth=0.8,
                     vmin=vmin,
                     vmax=vmax,
-                    zorder=2
+                    zorder=3
                 )
-                
-                if case_name == 'NSCLC':
-                    training_countries_to_plot = ['Poland', 'Netherlands']
-                    europe_training = europe[europe[name_column].isin(training_countries_to_plot)]
-                    if not europe_training.empty:
-                        europe_training.plot(
-                            ax=ax,
-                            color=self.scientific_colors['dark_gray'],
-                            edgecolor='white',
-                            linewidth=0.8,
-                            zorder=4
-                        )
-                
-                for idx, row in europe_with_data.iterrows():
-                    try:
-                        centroid = row.geometry.centroid
-                        
-                        if row[name_column] == 'France':
-                            x_pos, y_pos = 2.2, 46.2
-                        else:
-                            x_pos, y_pos = centroid.x, centroid.y
-                        
-                        ax.annotate(
-                            f"{row['code']}\n({int(row['pico_count'])})",
-                            xy=(x_pos, y_pos),
-                            ha='center', va='center',
-                            fontsize=12, fontweight='bold',
-                            bbox=dict(boxstyle='round,pad=0.3', facecolor='white', 
-                                    alpha=0.8, edgecolor='none'),
-                            zorder=5
-                        )
-                    except Exception as e:
-                        pass
                 
                 sm = plt.cm.ScalarMappable(cmap='YlOrRd', 
                                         norm=plt.Normalize(vmin=vmin, vmax=vmax))
@@ -1195,14 +1219,55 @@ class DataVisualizer:
                 cbar.set_label('Number of PICOs', fontweight='bold', fontsize=14)
                 cbar.ax.tick_params(labelsize=12)
             
-            if case_name == 'NSCLC':
-                legend_elements = [
-                    plt.Rectangle((0,0),1,1, facecolor=self.scientific_colors['dark_gray'], 
+            # Annotate all countries in dataset
+            for idx, row in europe[europe['code'] != ''].iterrows():
+                try:
+                    centroid = row.geometry.centroid
+                    
+                    if row[name_column] == 'France':
+                        x_pos, y_pos = 2.2, 46.2
+                    else:
+                        x_pos, y_pos = centroid.x, centroid.y
+                    
+                    label_text = f"{row['code']}"
+                    if row['pico_count'] > 0:
+                        label_text += f"\n({int(row['pico_count'])})"
+                    
+                    # All text in black with white background
+                    ax.annotate(
+                        label_text,
+                        xy=(x_pos, y_pos),
+                        ha='center', va='center',
+                        fontsize=12, fontweight='bold',
+                        color='black',
+                        bbox=dict(boxstyle='round,pad=0.3', facecolor='white', 
+                                alpha=0.8, edgecolor='none'),
+                        zorder=6
+                    )
+                except Exception as e:
+                    pass
+            
+            # Create legend
+            legend_elements = []
+            
+            # Add training set legend if applicable
+            if training_country_codes:
+                legend_elements.append(
+                    plt.Rectangle((0,0),1,1, facecolor=training_color, 
                                 edgecolor='white', linewidth=0.8, label='Training Set')
-                ]
+                )
+            
+            # Add "No PICOs found" legend if there are countries with 0 PICOs
+            if not europe_zero_picos.empty:
+                legend_elements.append(
+                    plt.Rectangle((0,0),1,1, facecolor=no_pico_color, 
+                                edgecolor='white', linewidth=0.8, alpha=0.6, label='No PICOs Found')
+                )
+            
+            if legend_elements:
                 legend = ax.legend(handles=legend_elements, loc='upper left', 
                         bbox_to_anchor=(0.02, 0.98), frameon=True, fancybox=True, 
-                        shadow=True, fontsize=12, bbox_transform=ax.transAxes)
+                        shadow=True, fontsize=16, bbox_transform=ax.transAxes)
                 legend.set_zorder(10)
                 ax.add_artist(legend)
             
@@ -1214,14 +1279,19 @@ class DataVisualizer:
             ax.spines['left'].set_visible(False)
             ax.set_aspect('equal', adjustable='box')
             
-            ax.set_title(f'{case_name} - European Distribution ({len(country_counts)} countries)', 
-                        fontsize=16, fontweight='bold', pad=15)
+            total_countries = len([c for c in all_case_countries if c in country_counts and country_counts[c] > 0])
+            ax.set_title(f'{case_name} - European Distribution ({total_countries} countries with PICOs)', 
+                        fontsize=20, fontweight='bold', pad=15)
             
         except Exception as e:
             print(f"Error creating European map for {case_name}: {str(e)}")
-            self._plot_simplified_european_map(ax, country_counts, case_name)
+            self._plot_simplified_european_map(ax, country_counts, case_name, all_case_countries)
 
-    def _plot_simplified_european_map(self, ax, country_counts, case_name):
+    def _plot_simplified_european_map(self, ax, country_counts, case_name, all_case_countries):
+        # Define pastel blue for training set
+        training_color = '#A8D8EA'  # Pastel blue
+        no_pico_color = '#4A4A4A'  # Grey for countries with no PICOs
+        
         country_mapping = {
             'DE': 'Germany', 'DK': 'Denmark', 'EN': 'United Kingdom', 'FR': 'France',
             'NL': 'Netherlands', 'PO': 'Poland', 'PT': 'Portugal', 'SE': 'Sweden',
@@ -1229,7 +1299,8 @@ class DataVisualizer:
             'CH': 'Switzerland', 'NO': 'Norway', 'FI': 'Finland', 'IE': 'Ireland',
             'CZ': 'Czech Republic', 'HU': 'Hungary', 'RO': 'Romania', 'BG': 'Bulgaria',
             'GR': 'Greece', 'HR': 'Croatia', 'SI': 'Slovenia', 'SK': 'Slovakia',
-            'LT': 'Lithuania', 'LV': 'Latvia', 'EE': 'Estonia'
+            'LT': 'Lithuania', 'LV': 'Latvia', 'EE': 'Estonia', 'EL': 'Greece',
+            'EU': 'Europe', 'CY': 'Cyprus', 'LU': 'Luxembourg', 'MT': 'Malta'
         }
         
         european_positions = {
@@ -1241,90 +1312,117 @@ class DataVisualizer:
             'Ireland': (-8.0, 53.0), 'Czech Republic': (15.5, 49.8), 'Hungary': (19.5, 47.0),
             'Romania': (24.0, 45.9), 'Bulgaria': (25.0, 42.7), 'Greece': (22.0, 39.0),
             'Croatia': (15.5, 45.1), 'Slovenia': (14.5, 46.1), 'Slovakia': (19.5, 48.7),
-            'Lithuania': (23.9, 55.3), 'Latvia': (24.0, 56.9), 'Estonia': (25.0, 58.6)
+            'Lithuania': (23.9, 55.3), 'Latvia': (24.0, 56.9), 'Estonia': (25.0, 58.6),
+            'Europe': (10.0, 50.0), 'Cyprus': (33.0, 35.0), 'Luxembourg': (6.1, 49.8),
+            'Malta': (14.5, 35.9)
         }
         
-        ax.set_xlim(-12, 25)
-        ax.set_ylim(35, 70)
+        # Define training countries by case
+        training_countries_by_case = {
+            'NSCLC': ['PO', 'NL', 'AT'],
+            'HCC': []
+        }
         
-        ax.add_patch(plt.Rectangle((-10, 35), 35, 35, 
+        training_country_codes = training_countries_by_case.get(case_name, [])
+        
+        ax.set_xlim(-12, 35)
+        ax.set_ylim(34, 70)
+        
+        ax.add_patch(plt.Rectangle((-10, 35), 45, 35, 
                                 facecolor='#F8F9FA', edgecolor='#E9ECEF', 
                                 alpha=0.5, linewidth=1))
         
-        if len(country_counts) == 0:
+        if len(country_counts) == 0 and len(all_case_countries) == 0:
             return
-            
-        max_count = country_counts.max()
-        min_count = country_counts.min()
         
-        for country_code, count in country_counts.items():
+        # Calculate sizes for countries with PICOs
+        if country_counts:
+            max_count = max(country_counts.values())
+            min_count = min(country_counts.values())
+        else:
+            max_count = 1
+            min_count = 1
+        
+        # Plot all countries in the dataset
+        for country_code in all_case_countries:
             if country_code in country_mapping:
                 country_name = country_mapping[country_code]
                 if country_name in european_positions:
                     lon, lat = european_positions[country_name]
+                    count = country_counts.get(country_code, 0)
+                    is_training = country_code in training_country_codes
                     
-                    if max_count > min_count:
-                        normalized_size = (count - min_count) / (max_count - min_count)
+                    # Determine circle size and color
+                    if is_training:
+                        circle_size = 800
+                        color = training_color
+                        alpha = 0.8
+                        label = f'{country_code}\n(Train)'
+                    elif count == 0:
+                        circle_size = 600
+                        color = no_pico_color
+                        alpha = 0.6
+                        label = f'{country_code}'
                     else:
-                        normalized_size = 1.0
+                        if max_count > min_count:
+                            normalized_size = (count - min_count) / (max_count - min_count)
+                        else:
+                            normalized_size = 1.0
                         
-                    circle_size = 300 + normalized_size * 700
-                    
-                    color_intensity = 0.3 + 0.7 * normalized_size
-                    color = plt.cm.YlOrRd(color_intensity)
+                        circle_size = 300 + normalized_size * 700
+                        color_intensity = 0.3 + 0.7 * normalized_size
+                        color = plt.cm.YlOrRd(color_intensity)
+                        alpha = 0.8
+                        label = f'{country_code}\n({count})'
                     
                     ax.scatter(lon, lat, s=circle_size, 
                             color=color, 
-                            alpha=0.8, edgecolors='white', linewidth=2,
+                            alpha=alpha, edgecolors='white', linewidth=2,
                             zorder=5)
                     
-                    text_color = 'white' if normalized_size > 0.5 else 'black'
-                    ax.annotate(f'{country_code}\n({count})', 
+                    # All text in black with white background
+                    ax.annotate(label, 
                             (lon, lat), xytext=(0, 0), 
                             textcoords='offset points',
                             ha='center', va='center',
                             fontsize=12, fontweight='bold',
-                            color=text_color,
+                            color='black',
+                            bbox=dict(boxstyle='round,pad=0.3', facecolor='white', 
+                                    alpha=0.8, edgecolor='none'),
                             zorder=6)
         
-        if case_name == 'NSCLC':
-            training_country_codes = ['PO', 'NL']
-            for country_code in training_country_codes:
-                if country_code in country_mapping:
-                    country_name = country_mapping[country_code]
-                    if country_name in european_positions:
-                        lon, lat = european_positions[country_name]
-                        
-                        circle_size = 800
-                        
-                        ax.scatter(lon, lat, s=circle_size, 
-                                color=self.scientific_colors['dark_gray'], 
-                                alpha=0.8, edgecolors='white', linewidth=2,
-                                zorder=7)
-                        
-                        ax.annotate(f'{country_code}\n(Train)', 
-                                (lon, lat), xytext=(0, 0), 
-                                textcoords='offset points',
-                                ha='center', va='center',
-                                fontsize=12, fontweight='bold',
-                                color='white',
-                                zorder=8)
-            
-            legend_elements = [
-                plt.Rectangle((0,0),1,1, facecolor=self.scientific_colors['dark_gray'], 
+        # Create legend
+        legend_elements = []
+        
+        # Add training set legend if applicable
+        if training_country_codes:
+            legend_elements.append(
+                plt.Rectangle((0,0),1,1, facecolor=training_color, 
                             edgecolor='white', linewidth=2, alpha=0.8, label='Training Set')
-            ]
+            )
+        
+        # Add "No PICOs found" legend if there are countries with 0 PICOs
+        countries_with_zero_picos = [c for c in all_case_countries if country_counts.get(c, 0) == 0 and c not in training_country_codes]
+        if countries_with_zero_picos:
+            legend_elements.append(
+                plt.Rectangle((0,0),1,1, facecolor=no_pico_color, 
+                            edgecolor='white', linewidth=2, alpha=0.6, label='No PICOs Found')
+            )
+        
+        if legend_elements:
             legend = ax.legend(handles=legend_elements, loc='upper left', 
                     bbox_to_anchor=(0.02, 0.98), frameon=True, fancybox=True, 
-                    shadow=True, fontsize=12, bbox_transform=ax.transAxes)
+                    shadow=True, fontsize=16, bbox_transform=ax.transAxes)
             legend.set_zorder(10)
             ax.add_artist(legend)
         
         ax.set_xlabel('Longitude', fontweight='bold', fontsize=12)
         ax.set_ylabel('Latitude', fontweight='bold', fontsize=12)
         ax.set_aspect('equal', adjustable='box')
-        ax.set_title(f'{case_name} - European Distribution ({len(country_counts)} countries - Simplified View)', 
-                    fontsize=16, fontweight='bold', pad=15)
+        
+        total_countries = len([c for c in all_case_countries if country_counts.get(c, 0) > 0])
+        ax.set_title(f'{case_name} - European Distribution ({total_countries} countries with PICOs - Simplified View)', 
+                    fontsize=20, fontweight='bold', pad=15)
         ax.grid(True, alpha=0.3)
 
     def create_combined_venn_diagram(self, pico_analyzers):

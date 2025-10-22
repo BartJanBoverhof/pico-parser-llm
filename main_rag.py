@@ -293,7 +293,7 @@ consolidation_results_hcc_test = rag_hcc.run_pico_consolidation(
 
 results_runner = RunResults(
     translated_path=TRANSLATED_PATH,
-    results_path="results"
+    results_path="results/base"
 )
 
 results_runner.run_all()
